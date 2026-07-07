@@ -1,2 +1,2 @@
 # samhd1-site
-Website and news for SAMHD1 search engine
+Website and news for SAMHD1 eemantic search weblog
