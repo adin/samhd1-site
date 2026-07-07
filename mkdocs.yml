@@ -1,0 +1,87 @@
+site_name: The Glass Cannon Project
+site_description: >-
+  A patient-and-family-led research effort to characterize heterozygous
+  SAMHD1 p.A565T — mechanism, kindred, objectives, and weekly literature
+  surveillance.
+# Injected at deploy time from the GitHub Pages URL (see .github/workflows/deploy.yml).
+# The placeholder default lets `mkdocs build --strict` and `mkdocs serve` work locally.
+site_url: !ENV [SITE_URL, "https://example.github.io/glass-cannon/"]
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - The Science: samhd1.md
+  - The Kindred: kindred.md
+  - Objectives: objectives.md
+  - Foundation: foundation.md
+  - Research Blog:
+      - blog/index.md
+
+plugins:
+  - search
+  - blog:
+      blog_dir: blog
+      post_url_format: "{date}/{slug}"
+      post_date_format: long
+      archive_date_format: MMMM yyyy
+      categories_allowed:
+        - Weekly Digest
+        - Monthly Synthesis
+        - cGAS-STING
+        - NLRP3
+        - VDAC1
+        - ISG15-mitophagy
+        - JAK-STAT
+        - dNTPase
+        - POLG-mtDNA
+        - AGS-spectrum
+        - ME-CFS
+        - gene-editing
+        - treatment-target
+        - clinical-phenotype
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/solid/rss
+      link: feed_rss_created.xml
+      name: RSS feed

@@ -1,0 +1,59 @@
+# Deploys the Glass Cannon Project site to GitHub Pages.
+#
+# This workflow lives in the PUBLIC repository. It runs whenever the private
+# Med-docs publish pipeline pushes updated content here. It contains NO secrets
+# and NO private data — it only builds the already-sanitized MkDocs source.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; newer pushes cancel in-progress runs.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # RSS plugin reads git timestamps
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Resolve the canonical Pages URL and feed it to mkdocs (site_url: !ENV SITE_URL),
+      # so the RSS feed and canonical links are correct without hand-editing mkdocs.yml.
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - run: mkdocs build --strict
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
