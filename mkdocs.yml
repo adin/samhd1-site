@@ -48,21 +48,9 @@ plugins:
       post_url_format: "{date}/{slug}"
       post_date_format: long
       archive_date_format: MMMM yyyy
-      categories_allowed:
-        - Weekly Digest
-        - Monthly Synthesis
-        - cGAS-STING
-        - NLRP3
-        - VDAC1
-        - ISG15-mitophagy
-        - JAK-STAT
-        - dNTPase
-        - POLG-mtDNA
-        - AGS-spectrum
-        - ME-CFS
-        - gene-editing
-        - treatment-target
-        - clinical-phenotype
+      # No categories_allowed list: hand-written posts may use any category
+      # (e.g. "Foundation Update", "Paper Spotlight") without failing the
+      # strict build. Recommended categories are documented in blog-manual/.
   - rss:
       match_path: blog/posts/.*
       date_from_meta:

@@ -19,6 +19,7 @@ and deployed to GitHub Pages.
 | `docs/objectives.md` | Research objectives |
 | `docs/foundation.md` | Glass Cannon Foundation draft |
 | `docs/blog/` | Weekly digests + monthly syntheses (generated at publish time) |
+| `blog-manual/` | Hand-written posts (Foundation updates, paper spotlights) — see its README |
 | `.github/workflows/deploy.yml` | Builds and deploys to Pages (runs in the public repo) |
 
 ## Local preview
