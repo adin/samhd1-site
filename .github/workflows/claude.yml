@@ -1,14 +1,13 @@
 # Claude bot for samhd1-site issues.
-# This file is synced here from med-docs/public-site/ by publish_public.yml.
-#
-# Requires: ANTHROPIC_API_KEY secret set in samhd1-site repo Settings.
+# Synced here from med-docs/public-site/ by publish_public.yml — do not edit directly in samhd1-site.
+# Requires: ANTHROPIC_API_KEY secret in samhd1-site repo Settings.
 name: Claude bot
 
 on:
   issue_comment:
     types: [created]
   issues:
-    types: [opened]
+    types: [opened, assigned]
   pull_request_review_comment:
     types: [created]
 
@@ -22,9 +21,14 @@ jobs:
     if: |
       (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
       (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
-      github.event_name == 'issues'
+      (github.event_name == 'issues' && (github.event.action == 'opened' || contains(github.event.issue.body, '@claude')))
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -37,7 +41,7 @@ jobs:
             downstream mirror — it is overwritten on every publish. Any fix
             that requires source changes must be made in med-docs, not here.
 
-            For bug reports: diagnose whether the issue is in:
+            For bug reports, diagnose whether the issue is in:
             - The MkDocs config (mkdocs.yml)
             - The RSS/feed plugin configuration
             - The deploy.yml workflow in samhd1-site
