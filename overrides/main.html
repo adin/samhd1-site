@@ -1,0 +1,21 @@
+{#
+  Theme override: add RSS auto-discovery <link> tags to the page <head> so
+  browsers and feed readers can detect the feeds automatically.
+
+  The mkdocs-rss-plugin does not inject these tags itself; the canonical fix
+  (per both the plugin docs and Material for MkDocs) is this template override.
+  The default output filenames below match the `rss` plugin config in mkdocs.yml.
+#}
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% for feed in ["feed_rss_created.xml", "feed_rss_updated.xml"] %}
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ config.site_name }} — {{ 'created' if 'created' in feed else 'updated' }} feed"
+      href="{{ feed | url }}"
+    />
+  {% endfor %}
+{% endblock %}

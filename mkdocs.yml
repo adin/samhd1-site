@@ -9,6 +9,9 @@ site_url: !ENV [SITE_URL, "https://example.github.io/glass-cannon/"]
 
 theme:
   name: material
+  # Local template overrides. overrides/main.html adds RSS auto-discovery
+  # <link> tags to the <head> so feed readers can detect the feeds.
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
