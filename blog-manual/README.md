@@ -44,9 +44,11 @@ and admonitions like:
 
 - **The PII guard still runs.** No names, DOBs, or record IDs — the deploy fails
   closed if it finds any (check the Actions log for the file and line).
-- **Draft a paper spotlight fast:** run
-  `python scripts/spotlight.py --doi 10.xxxx/xxxxx` (or `--pmid 12345678`) to
-  generate a first-draft breakdown into this folder, then edit and commit.
+- **Draft a paper spotlight without a computer:** Med-docs → **Actions** →
+  **Draft paper spotlight** → **Run workflow**, enter a DOI or PMID. It runs on
+  GitHub using the repo's `ANTHROPIC_API_KEY` secret and commits a draft
+  (`_`-prefixed) here for you to edit. (Or run `python scripts/spotlight.py
+  --doi 10.xxxx/xxxxx` locally if you prefer.)
 
 Files beginning with `_` (e.g. `_template.md`) are ignored by the build — use
 that prefix for drafts you are not ready to publish.
