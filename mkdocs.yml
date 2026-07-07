@@ -9,6 +9,8 @@ site_url: !ENV [SITE_URL, "https://example.github.io/glass-cannon/"]
 
 theme:
   name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -53,6 +55,11 @@ plugins:
       # strict build. Recommended categories are documented in blog-manual/.
   - rss:
       match_path: blog/posts/.*
+      # Channel <image> for the feed header. The rss plugin only emits an
+      # <image> element when this is set (or the theme has a logo), so without
+      # it the feed shipped with no header image. Absolute URL is required by
+      # the RSS spec; keep it in sync with the production domain (docs/CNAME).
+      image: https://glasscannonfoundation.org/assets/logo.svg
       date_from_meta:
         as_creation: date
       categories:
