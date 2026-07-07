@@ -1,0 +1,48 @@
+# Claude bot for samhd1-site issues.
+# This file is synced here from med-docs/public-site/ by publish_public.yml.
+#
+# Requires: ANTHROPIC_API_KEY secret set in samhd1-site repo Settings.
+name: Claude bot
+
+on:
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened]
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  claude:
+    if: |
+      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+      github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          system_prompt: |
+            You are a technical assistant for the Glass Cannon Project public site
+            (samhd1-site), a GitHub Pages site built with MkDocs.
+
+            Important architecture note: the site SOURCE lives in the private
+            med-docs repo under public-site/. The samhd1-site repo is a
+            downstream mirror — it is overwritten on every publish. Any fix
+            that requires source changes must be made in med-docs, not here.
+
+            For bug reports: diagnose whether the issue is in:
+            - The MkDocs config (mkdocs.yml)
+            - The RSS/feed plugin configuration
+            - The deploy.yml workflow in samhd1-site
+            - The publish_public.yml pipeline in med-docs
+            - The source content in med-docs/public-site/
+
+            Suggest the exact file and change needed. Keep responses brief.
+          max_turns: "5"
