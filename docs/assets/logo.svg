@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="The Glass Cannon Project">
+  <title>The Glass Cannon Project</title>
+  <!-- Rounded teal badge (opaque background so it renders in RSS/feed headers) -->
+  <rect width="512" height="512" rx="96" fill="#00897b"/>
+  <!-- Cannon wheel -->
+  <circle cx="176" cy="360" r="60" fill="none" stroke="#e0f2f1" stroke-width="18"/>
+  <circle cx="176" cy="360" r="10" fill="#e0f2f1"/>
+  <g stroke="#e0f2f1" stroke-width="12" stroke-linecap="round">
+    <line x1="176" y1="312" x2="176" y2="408"/>
+    <line x1="128" y1="360" x2="224" y2="360"/>
+    <line x1="142" y1="326" x2="210" y2="394"/>
+    <line x1="210" y1="326" x2="142" y2="394"/>
+  </g>
+  <!-- Cannon barrel, angled up -->
+  <rect x="150" y="196" width="230" height="74" rx="16" fill="#e0f2f1"
+        transform="rotate(-28 265 233)"/>
+  <!-- Muzzle ring -->
+  <rect x="356" y="150" width="26" height="86" rx="10" fill="#b2dfdb"
+        transform="rotate(-28 369 193)"/>
+  <!-- "Glass" fracture line across the barrel -->
+  <polyline points="196,250 236,224 258,244 300,214"
+            fill="none" stroke="#00897b" stroke-width="9"
+            stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Firing spark in accent deep-orange -->
+  <g fill="#ff5722">
+    <circle cx="404" cy="150" r="20"/>
+    <path d="M404 108 l10 26 -10 -8 -10 8z"/>
+    <path d="M446 150 l-26 10 8 -10 -8 -10z"/>
+    <path d="M404 192 l-10 -26 10 8 10 -8z"/>
+  </g>
+</svg>
