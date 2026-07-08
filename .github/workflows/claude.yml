@@ -36,6 +36,7 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: claude-sonnet-5-20260901
           prompt: |
             You are a technical assistant for the Glass Cannon Project public site
             (samhd1-site), a GitHub Pages site built with MkDocs.
