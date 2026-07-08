@@ -1,6 +1,9 @@
 # Claude bot for samhd1-site issues.
-# Synced here from med-docs/public-site/ by publish_public.yml — do not edit directly in samhd1-site.
+# Synced from med-docs/public-site/ by publish_public.yml — do not edit directly in samhd1-site.
 # Requires: ANTHROPIC_API_KEY secret in samhd1-site repo Settings.
+#
+# Trigger: fires on new issues (auto-triage) and on @claude mentions
+# from the repo owner or the claude bot account.
 name: Claude bot
 
 on:
@@ -20,9 +23,9 @@ permissions:
 jobs:
   claude:
     if: |
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
-      (github.event_name == 'issues' && (github.event.action == 'opened' || contains(github.event.issue.body, '@claude')))
+      (github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'assigned')) ||
+      ((github.actor == 'adin' || github.actor == 'claude' || github.actor == 'claude[bot]') && github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+      ((github.actor == 'adin' || github.actor == 'claude' || github.actor == 'claude[bot]') && github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude'))
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -33,7 +36,7 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          system_prompt: |
+          prompt: |
             You are a technical assistant for the Glass Cannon Project public site
             (samhd1-site), a GitHub Pages site built with MkDocs.
 
@@ -50,4 +53,3 @@ jobs:
             - The source content in med-docs/public-site/
 
             Suggest the exact file and change needed. Keep responses brief.
-          max_turns: "5"
