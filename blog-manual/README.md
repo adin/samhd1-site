@@ -49,6 +49,11 @@ and admonitions like:
   GitHub using the repo's `ANTHROPIC_API_KEY` secret and commits a draft
   (`_`-prefixed) here for you to edit. (Or run `python scripts/spotlight.py
   --doi 10.xxxx/xxxxx` locally if you prefer.)
+- **Spotlight a paper straight from a digest (no DOI to copy):** each weekly
+  digest tags papers with a `[#N]` number. Med-docs → **Actions** → **Spotlight
+  from digest** → **Run workflow**, enter that **number** and a **digest** date
+  (or leave `latest`). It resolves the paper for you and drafts it here. Set
+  `publish: true` to skip the draft stage and go straight live.
 
 Files beginning with `_` (e.g. `_template.md`) are ignored by the build — use
 that prefix for drafts you are not ready to publish.
