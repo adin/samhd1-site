@@ -42,9 +42,11 @@ nav:
   - Foundation: foundation.md
   - Research Blog:
       - blog/index.md
+      - Tags: tags.md
 
 plugins:
   - search
+  - tags
   - blog:
       blog_dir: blog
       post_url_format: "{date}/{slug}"

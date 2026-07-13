@@ -3,9 +3,9 @@ date: 2026-07-13
 slug: recent-insights-into-mitochondrial-dysfunction-driven-cellular-senescence
 categories:
   - Paper Spotlight
+tags:
+  - Sonnet 5
 ---
-
-<!-- drafted by claude-sonnet-5 -->
 
 # Recent Insights into Mitochondrial Dysfunction-Driven Cellular Senescence in Chronic Kidney Disease
 

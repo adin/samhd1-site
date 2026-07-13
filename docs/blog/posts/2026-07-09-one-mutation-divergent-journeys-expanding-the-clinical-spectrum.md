@@ -3,6 +3,8 @@ date: 2026-07-09
 slug: one-mutation-divergent-journeys-expanding-the-clinical-spectrum
 categories:
   - Paper Spotlight
+tags:
+  - Sonnet 5
 ---
 
 # One mutation, divergent journeys: expanding the clinical spectrum of homozygous SAMHD1 deficiency in childhood

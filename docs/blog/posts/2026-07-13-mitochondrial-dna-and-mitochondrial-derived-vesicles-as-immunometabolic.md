@@ -3,9 +3,9 @@ date: 2026-07-13
 slug: mitochondrial-dna-and-mitochondrial-derived-vesicles-as-immunometabolic
 categories:
   - Paper Spotlight
+tags:
+  - Opus 4.8
 ---
-
-<!-- drafted by claude-opus-4-8 -->
 
 # Mitochondrial DNA and Mitochondrial-Derived Vesicles as Immunometabolic Modulators of Innate Immunosurveillance through Control of the Mitochondrial Permeability Transition Pore
 

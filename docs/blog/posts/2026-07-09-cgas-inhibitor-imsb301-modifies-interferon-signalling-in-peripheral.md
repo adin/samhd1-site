@@ -3,6 +3,8 @@ date: 2026-07-09
 slug: cgas-inhibitor-imsb301-modifies-interferon-signalling-in-peripheral
 categories:
   - Paper Spotlight
+tags:
+  - Sonnet 5
 ---
 
 # cGAS inhibitor IMSB301 modifies interferon signalling in peripheral mononuclear cells of SAMHD1 genetic interferonopathy in vitro

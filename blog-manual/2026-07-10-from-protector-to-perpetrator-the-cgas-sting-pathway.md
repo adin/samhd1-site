@@ -3,6 +3,8 @@ date: 2026-07-09
 slug: from-protector-to-perpetrator-the-cgas-sting-pathway
 categories:
   - Paper Spotlight
+tags:
+  - Sonnet 5
 ---
 
 # From protector to perpetrator: The cGAS-STING pathway at the intersection of neurodegeneration and neuroinflammation
