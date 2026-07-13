@@ -1,5 +1,6 @@
 ---
 date: 2026-07-13
+slug: recent-insights-into-mitochondrial-dysfunction-driven-cellular-senescence
 categories:
   - Paper Spotlight
 ---
@@ -27,4 +28,4 @@ Taken at face value, this paper sits closest to **ARM 2 (mitochondrial)** of the
 Once full text is accessible, the key question is whether the mitochondrial-senescence mechanisms it reviews (mtDNA release, mitophagy failure, POLG/PINK1-Parkin dysfunction) are described in ways that could generate testable hypotheses for Arm 2 of the SAMHD1 A565T model — partic
 
 ---
-*Source: [Recent Insights into Mitochondrial Dysfunction-Driven Cellular Senescence in Chronic Kidney Disease](https://doi.org/10.32604/biocell.2026.083188) — BIOCELL 2026. Auto-drafted; edit before publishing.*
+*Source: [Recent Insights into Mitochondrial Dysfunction-Driven Cellular Senescence in Chronic Kidney Disease](https://doi.org/10.32604/biocell.2026.083188) — BIOCELL 2026.*

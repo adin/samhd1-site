@@ -1,5 +1,6 @@
 ---
 date: 2026-07-09
+slug: cgas-inhibitor-imsb301-modifies-interferon-signalling-in-peripheral
 categories:
   - Paper Spotlight
 ---
@@ -25,4 +26,4 @@ This is squarely **ARM 1 (interferon/JAK-STAT)** evidence: it targets cGAS, the 
 The key open question is whether IMSB301 or similar cGAS inhibitors produce comparable ISG suppression in heterozygous, partial-function SAMHD1 A565T cells, and whether such suppression extends to ARM 2/3 readouts (mtDNA release, NLRP3 activation) or remains confined to ARM 1.
 
 ---
-*Source: [cGAS inhibitor IMSB301 modifies interferon signalling in peripheral mononuclear cells of &lt;i&gt;SAMHD1&lt;/i&gt; genetic interferonopathy &lt;i&gt;in vitro&lt;/i&gt;](https://doi.org/10.1002/cti2.70090) —  2026. Auto-drafted; edit before publishing.*
+*Source: [cGAS inhibitor IMSB301 modifies interferon signalling in peripheral mononuclear cells of &lt;i&gt;SAMHD1&lt;/i&gt; genetic interferonopathy &lt;i&gt;in vitro&lt;/i&gt;](https://doi.org/10.1002/cti2.70090) —  2026.*

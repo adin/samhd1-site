@@ -1,5 +1,6 @@
 ---
 date: 2026-07-09
+slug: one-mutation-divergent-journeys-expanding-the-clinical-spectrum
 categories:
   - Paper Spotlight
 ---
@@ -21,4 +22,4 @@ This paper is squarely about **ARM 1 (interferon/JAK-STAT)**: it documents real-
 The obvious next question is *why* one genotype produces such different organ-system phenotypes — modifier genes, stochastic ISG thresholds, or differential engagement of the mitochondrial/NLRP3 arms are all plausible explanations worth testing. For A565T specifically, it raises the question of whether heterozygous partial loss-of-function carriers show a similarly broad — if quieter — phenotypic range, and whether JAK-inhibitor responsiveness tracks with how much of the phenotype is ARM-1-driven versus ARM-2/3-driven.
 
 ---
-*Source: [One mutation, divergent journeys: expanding the clinical spectrum of homozygous SAMHD1 deficiency in childhood](https://doi.org/10.1093/rheumatology/keaf695) —  2026. Auto-drafted; edit before publishing.*
+*Source: [One mutation, divergent journeys: expanding the clinical spectrum of homozygous SAMHD1 deficiency in childhood](https://doi.org/10.1093/rheumatology/keaf695) —  2026.*

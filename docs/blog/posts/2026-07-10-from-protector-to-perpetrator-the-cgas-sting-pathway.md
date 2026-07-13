@@ -1,5 +1,6 @@
 ---
 date: 2026-07-09
+slug: from-protector-to-perpetrator-the-cgas-sting-pathway
 categories:
   - Paper Spotlight
 ---
@@ -25,4 +26,4 @@ This review speaks most directly to **ARM 1 (interferon/JAK-STAT)**, since cGAS-
 The open question this raises for the SAMHD1 program is whether the same CNS-specific microglia/astrocyte cGAS-STING amplification loops described here could be operative — at lower, chronic amplitude — in A565T carriers, and whether JAK inhibition (effective in ARM 1) would be sufficient to interrupt such a loop in neural tissue specifically, given the pathway's partly cell-autonomous, partly non-cell-autonomous character in brain.
 
 ---
-*Source: [From protector to perpetrator: The cGAS-STING pathway at the intersection of neurodegeneration and neuroinflammation](https://doi.org/10.1016/j.brainresbull.2026.111963) —  2026. Auto-drafted; edit before publishing.*
+*Source: [From protector to perpetrator: The cGAS-STING pathway at the intersection of neurodegeneration and neuroinflammation](https://doi.org/10.1016/j.brainresbull.2026.111963) —  2026.*

@@ -1,5 +1,6 @@
 ---
 date: 2026-07-13
+slug: mitochondrial-dna-and-mitochondrial-derived-vesicles-as-immunometabolic
 categories:
   - Paper Spotlight
 ---
@@ -27,4 +28,4 @@ This framework speaks directly to **ARM 2 (mitochondrial)** and **ARM 3 (nucleot
 The key next question is whether mPTP opening is measurably increased in SAMHD1 A565T cells — and, if so, whether MDV-mediated clearance is intact or itself blocked by the hypothesized ISG15–BECN1 mitophagy defect. Testing mPTP modulators against mtDNA release in primary A565T cells would show whether this valve is a JAK-independent therapeutic entry point for ARMs 2 and 3.
 
 ---
-*Source: [Mitochondrial DNA and Mitochondrial-Derived Vesicles as Immunometabolic Modulators of Innate Immunosurveillance through Control of the Mitochondrial Permeability Transition Pore](https://doi.org/10.53941/ti.2026.100010) — Translational Insights 2026. Auto-drafted; edit before publishing.*
+*Source: [Mitochondrial DNA and Mitochondrial-Derived Vesicles as Immunometabolic Modulators of Innate Immunosurveillance through Control of the Mitochondrial Permeability Transition Pore](https://doi.org/10.53941/ti.2026.100010) — Translational Insights 2026.*
