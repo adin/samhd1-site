@@ -40,9 +40,11 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v5
 
-      - run: mkdocs build --strict
+      - run: zensical build --strict
         env:
           SITE_URL: ${{ steps.pages.outputs.base_url }}/
+
+      - run: python scripts/generate_rss.py
 
       - uses: actions/upload-pages-artifact@v3
         with:

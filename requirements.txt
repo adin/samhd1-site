@@ -1,2 +1,5 @@
-mkdocs-material>=9.5
-mkdocs-rss-plugin>=1.15
+zensical>=0.0.50
+# mkdocs-rss-plugin: Zensical does not yet support this plugin natively
+# (https://github.com/zensical/backlog/issues/27). The rss config in
+# mkdocs.yml is silently ignored. Re-enable once Zensical ships RSS support.
+# mkdocs-rss-plugin>=1.15
