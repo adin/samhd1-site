@@ -11,7 +11,9 @@ first of each month, a synthesis post summarizes what moved.
 
 Posts are tagged by mechanistic pathway (cGAS-STING, NLRP3, VDAC1,
 ISG15-mitophagy, JAK-STAT, gene editing, and others) so you can follow a single
-thread through the literature. Subscribe via the **RSS icon** in the top bar.
+thread through the literature — see the [pathway map](../pathways.md) for
+what each tag means and how they connect. Subscribe via the **RSS icon** in
+the top bar.
 
 !!! info "How to read the scores"
     Each paper carries a 0–10 relevance score. **7–10** is high relevance
