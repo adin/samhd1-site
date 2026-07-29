@@ -17,25 +17,25 @@ branches into four largely independent streams, two of which converge on the
 
 ```mermaid
 flowchart TD
-    ROOT["SAMHD1 p.A565T<br/>dNTPase ↓40–60% → cytosolic dNTP pool ↑"]
+    ROOT["<span style='color:#222'>SAMHD1 p.A565T<br/>dNTPase ↓40–60% → cytosolic dNTP pool ↑</span>"]
 
-    ROOT --> PURPLE["🟣 PURPLE — dNTPase direct<br/>PNC1/PNC2 mito import → POLG stalling"]
-    ROOT --> BLUE["🔵 BLUE — mtDNA escape<br/>VDAC1 macropore loss → cGAS–STING"]
-    ROOT --> GOLD["🟡 GOLD — purine catabolism<br/>dGTP → uric acid → MSU crystals"]
+    ROOT --> PURPLE["<span style='color:#fff'>🟣 PURPLE — dNTPase direct<br/>PNC1/PNC2 mito import → POLG stalling</span>"]
+    ROOT --> BLUE["<span style='color:#fff'>🔵 BLUE — mtDNA escape<br/>VDAC1 macropore loss → cGAS–STING</span>"]
+    ROOT --> GOLD["<span style='color:#332200'>🟡 GOLD — purine catabolism<br/>dGTP → uric acid → MSU crystals</span>"]
 
-    PURPLE --> OXMTDNA["ox-mtDNA"]
-    OXMTDNA --> NLRP3["NLRP3 inflammasome<br/>IL-1β / IL-18"]
+    PURPLE --> OXMTDNA["<span style='color:#222'>ox-mtDNA</span>"]
+    OXMTDNA --> NLRP3["<span style='color:#222'>NLRP3 inflammasome<br/>IL-1β / IL-18</span>"]
     GOLD --> NLRP3
 
-    BLUE --> IFN["Type I interferon (IFN-I)"]
-    IFN --> RED["🔴 RED — IFN-I indirect<br/>JAK-STAT1/2 → ISG15 → mitophagy block"]
+    BLUE --> IFN["<span style='color:#222'>Type I interferon (IFN-I)</span>"]
+    IFN --> RED["<span style='color:#fff'>🔴 RED — IFN-I indirect<br/>JAK-STAT1/2 → ISG15 → mitophagy block</span>"]
     RED -.->|"more damaged mitochondria"| PURPLE
 
-    classDef purple fill:#7700aa,color:#fff,stroke:#550088
-    classDef blue fill:#003399,color:#fff,stroke:#002266
-    classDef red fill:#c0000a,color:#fff,stroke:#900008
-    classDef gold fill:#ddbb44,color:#332200,stroke:#aa9022
-    classDef neutral fill:#eceff1,color:#222,stroke:#90a4ae
+    classDef purple fill:#7700aa,stroke:#550088
+    classDef blue fill:#003399,stroke:#002266
+    classDef red fill:#c0000a,stroke:#900008
+    classDef gold fill:#ddbb44,stroke:#aa9022
+    classDef neutral fill:#eceff1,stroke:#90a4ae
 
     class PURPLE purple
     class BLUE blue
