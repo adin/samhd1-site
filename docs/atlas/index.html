@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Innate Immune Atlas 3D — SAMHD1 A565T</title>
+<link rel="stylesheet" href="css/app.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.js",
+    "three/addons/controls/OrbitControls.js": "./vendor/OrbitControls.js",
+    "three/addons/renderers/CSS2DRenderer.js": "./vendor/CSS2DRenderer.js"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="viewport">
+  <canvas id="gl"></canvas>
+  <div id="labels"></div>
+</div>
+
+<!-- ── Left rail: compartments + layers ───────────────────────────── -->
+<aside id="rail" class="panel">
+  <header class="rail-head">
+    <h1>Innate Immune Atlas</h1>
+    <p class="sub">SAMHD1 p.A565T haploinsufficiency &middot; interactive 3D</p>
+  </header>
+
+  <section class="rail-sec">
+    <h2>Compartments</h2>
+    <div id="compartment-list" class="chip-grid"></div>
+    <button id="btn-overview" class="wide-btn">↺ Whole-cell overview</button>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Pathway layers</h2>
+    <div id="layer-list"></div>
+    <div class="row-btns">
+      <button id="layers-all" class="mini-btn">All</button>
+      <button id="layers-none" class="mini-btn">None</button>
+    </div>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Mitochondrion Under Siege — streams</h2>
+    <div id="stream-list"></div>
+    <button id="btn-clear-stream" class="wide-btn hidden">× clear stream</button>
+  </section>
+
+  <section class="rail-sec">
+    <h2>The variant</h2>
+    <button id="btn-consequences" class="wide-btn" style="margin-top:0">
+      ⚡ All immune consequences of A565T
+    </button>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Cascade paths — step through</h2>
+    <div id="path-list"></div>
+    <button id="btn-clear-path" class="wide-btn hidden">× exit path mode</button>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Guided tours</h2>
+    <div id="tour-list"></div>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Display</h2>
+    <label class="toggle"><input type="checkbox" id="opt-flow" checked> Animate signal flow</label>
+    <label class="toggle"><input type="checkbox" id="opt-detail"> Force all sub-detail (LOD 2)</label>
+    <label class="toggle"><input type="checkbox" id="opt-membranes" checked> Show membranes</label>
+    <label class="toggle"><input type="checkbox" id="opt-spin"> Slow auto-rotate</label>
+    <label class="sel">Labels
+      <select id="opt-labels">
+        <option value="key">Key nodes</option>
+        <option value="all">All visible</option>
+        <option value="none">None</option>
+      </select>
+    </label>
+    <label class="sel">Evidence filter
+      <select id="opt-evidence">
+        <option value="all">All (S + G + I)</option>
+        <option value="SG">Demonstrated + imported (S+G)</option>
+        <option value="S">SAMHD1-demonstrated only (S)</option>
+      </select>
+    </label>
+  </section>
+
+  <footer class="rail-foot">
+    <span class="ev ev-S">S</span> shown in SAMHD1 systems &nbsp;
+    <span class="ev ev-G">G</span> established elsewhere &nbsp;
+    <span class="ev ev-I">I</span> inferred
+  </footer>
+</aside>
+
+<!-- ── Top bar: search ────────────────────────────────────────────── -->
+<div id="topbar" class="panel">
+  <input id="search" type="search" placeholder="Search a molecule — cGAS, VDAC1, LINE-1, ANKIB1, TYK2…" autocomplete="off">
+  <div id="search-results"></div>
+</div>
+
+<!-- ── Right: inspector ───────────────────────────────────────────── -->
+<aside id="inspector" class="panel hidden">
+  <button id="insp-close" class="close-btn" title="Close">×</button>
+  <div id="insp-body"></div>
+</aside>
+
+<!-- ── Bottom-left: legend / hint ─────────────────────────────────── -->
+<div id="hint" class="panel">
+  <b>drag</b> orbit &middot; <b>scroll</b> zoom &middot; <b>right-drag</b> pan &middot; <b>click</b> a molecule to inspect &middot; <b>double-click</b> a compartment to enter it
+</div>
+
+<div id="loading">Loading atlas…</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
