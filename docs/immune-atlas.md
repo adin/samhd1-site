@@ -64,6 +64,46 @@ Each route carries three things worth knowing:
   chain is only as defensible as its softest step.
 - **Which feedback loops** it passes through.
 
+## Send someone the exact view
+
+Every view in the atlas is a URL. Set something up — a tour paused on the step
+that matters, a single traced route, one compartment with one layer left on —
+and the address bar already says so. **⧉ Copy link to this view** in the left
+rail puts it on your clipboard, and the tour and cascade HUDs carry the same
+button so you can send the step you are looking at without leaving it.
+
+Opening that link puts the reader exactly where you were. It is a few hundred
+bytes instead of a screen recording, it stays legible if they want to see what
+it does before clicking, and unlike a video they can carry on exploring from
+where you left them.
+
+The grammar is plain enough to write by hand:
+
+| Link | Opens on |
+|---|---|
+| [`#tour=loop-a`](/atlas/#tour=loop-a){ target="_blank" } | the Loop A tour, from the start |
+| [`#tour=loop-b&step=5`](/atlas/#tour=loop-b&step=5){ target="_blank" } | Loop B, step 5 — the therapeutic gap |
+| [`#node=vdac1`](/atlas/#node=vdac1){ target="_blank" } | VDAC1, inspector open |
+| [`#stream=blue`](/atlas/#stream=blue){ target="_blank" } | the BLUE mtDNA-escape stream, whole chain lit |
+| [`#all`](/atlas/#all){ target="_blank" } | every downstream consequence of p.A565T |
+| [`#path=il1b`](/atlas/#path=il1b){ target="_blank" } | every route from the variant to IL-1β |
+| [`#from=a565t&to=pem`](/atlas/#from=a565t&to=pem){ target="_blank" } | a trace between any two molecules you name |
+| [`#focus=mitochondrion&layers=mito.mitophagy`](/atlas/#focus=mitochondrion&layers=mito.mitophagy){ target="_blank" } | inside the mitochondrion, two layers on |
+| [`#ev=S`](/atlas/#ev=S){ target="_blank" } | the whole map filtered to demonstrated evidence only |
+
+(All relative to `/atlas/` — the full link is
+`https://glasscannonfoundation.org/atlas/#tour=loop-a` and so on.)
+
+A shared **route** carries its full chain of molecules rather than a position in
+the route list, so the link keeps meaning the same argument as the atlas grows.
+If a route is ever edited out from under a link, the atlas says so and shows the
+route list instead of quietly opening a different one.
+
+Two things worth knowing before you send one to a patient or a colleague:
+the links contain no identifiers of any kind, and **Pin the exact camera angle**
+is off by default — tick it only if the specific angle is part of what you are
+trying to show, since each view already frames itself on arrival.
+
 ## How confident is any of this?
 
 Every molecule and every arrow carries an evidence grade, and the atlas will

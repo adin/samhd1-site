@@ -100,6 +100,67 @@ export function buildRail(cb) {
   opt('opt-evidence', 'change', (e) => cb.onOption('evidence', e.target.value));
 }
 
+// ── Share / permalinks ────────────────────────────────────────────────────
+// The rail panel that turns the current view into something you can send.
+let shareCb = null;
+
+export function buildShare(cb) {
+  shareCb = cb;
+  document.getElementById('btn-copy-link').addEventListener('click', () => copyLink());
+  document.getElementById('opt-cam').addEventListener('change', (e) => cb.onPinCamera(e.target.checked));
+  // Reading the URL is part of trusting it, so the box is selectable — but it
+  // must not fight the live rewrite while the reader has it selected.
+  document.getElementById('share-url').addEventListener('focus', (e) => e.target.select());
+}
+
+/** Say in words what the current link opens, so you can check before sending. */
+export function setShareNote(text, link) {
+  const note = document.getElementById('share-note');
+  if (note) note.textContent = text;
+  const box = document.getElementById('share-url');
+  if (box && document.activeElement !== box) box.value = link;
+}
+
+/**
+ * Copy the current view's URL.
+ *
+ * The async Clipboard API is the right call, but it is refused in two places
+ * this atlas genuinely runs: inside the docs-site iframe, and on any non-secure
+ * origin. So there is a synchronous fallback, and if both fail the URL is left
+ * selected — being told "press ⌘C" beats being told nothing happened.
+ */
+export async function copyLink() {
+  const link = shareCb?.getLink?.() ?? location.href;
+  const box = document.getElementById('share-url');
+  if (box) box.value = link;
+
+  let ok = false;
+  try {
+    await navigator.clipboard.writeText(link);
+    ok = true;
+  } catch {
+    try { box?.select(); ok = document.execCommand('copy'); } catch { ok = false; }
+  }
+
+  if (ok) toast('Link copied — it opens on exactly this view');
+  else { box?.select(); toast('Press ⌘C / Ctrl-C to copy the selected link'); }
+}
+
+let toastEl = null;
+let toastTimer = 0;
+
+export function toast(msg) {
+  if (!toastEl) {
+    toastEl = document.createElement('div');
+    toastEl.id = 'toast';
+    document.body.appendChild(toastEl);
+  }
+  toastEl.textContent = msg;
+  toastEl.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toastEl.classList.remove('on'), 2600);
+}
+
 export function setLayerChecks(on) {
   document.querySelectorAll('#layer-list .layer').forEach((row) => {
     row.querySelector('input').checked = on;
@@ -310,10 +371,12 @@ export function showTourStep(tour, index, cb) {
       <button class="mini-btn" data-act="next">${index === tour.steps.length - 1 ? 'finish' : 'next →'}</button>
       <div class="spacer"></div>
       <div class="dots">${tour.steps.map((_, i) => `<i class="${i === index ? 'on' : ''}"></i>`).join('')}</div>
+      <button class="mini-btn" data-act="link" title="Copy a link that opens on this step">⧉ link</button>
       <button class="mini-btn" data-act="exit">exit</button>
     </div>`;
   hud.querySelector('[data-act="prev"]').addEventListener('click', cb.onPrev);
   hud.querySelector('[data-act="next"]').addEventListener('click', cb.onNext);
+  hud.querySelector('[data-act="link"]').addEventListener('click', () => copyLink());
   hud.querySelector('[data-act="exit"]').addEventListener('click', cb.onExit);
 }
 
@@ -597,12 +660,14 @@ export function showPathStep(route, stepIdx, cb) {
       <div class="dots">${route.steps.map((_, i) =>
         `<i class="${i === stepIdx ? 'on' : i < stepIdx ? 'past' : ''}"></i>`).join('')}</div>
       <button class="mini-btn" data-act="routes">all routes</button>
+      <button class="mini-btn" data-act="link" title="Copy a link that opens on this route, at this step">⧉ link</button>
       <button class="mini-btn" data-act="exit">exit</button>
     </div>`;
 
   pathHud.querySelector('[data-act="prev"]').addEventListener('click', () => cb.onStep(-1));
   pathHud.querySelector('[data-act="next"]').addEventListener('click', () => cb.onStep(+1));
   pathHud.querySelector('[data-act="routes"]').addEventListener('click', cb.onShowRoutes);
+  pathHud.querySelector('[data-act="link"]').addEventListener('click', () => copyLink());
   pathHud.querySelector('[data-act="exit"]').addEventListener('click', cb.onExit);
   pathHud.querySelectorAll('[data-goto]').forEach((el) => {
     el.addEventListener('click', () => cb.onNavigate(el.dataset.goto));

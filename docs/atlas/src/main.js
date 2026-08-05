@@ -9,7 +9,8 @@ import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 import { COMPARTMENTS, PATHWAYS, SETTINGS, STREAMS } from './config.js';
 import { NODE_BY_ID } from './data/index.js';
 import { TOURS, PATH_PRESETS } from './data/tours.js';
-import { findRoutes } from './paths.js';
+import { findRoutes, routeFromNodes } from './paths.js';
+import { encodeView, decodeView, describeView } from './permalink.js';
 import { buildCell, setMembranesVisible, emphasiseCompartment } from './scene/cell.js';
 import { buildGraph, applyVisibility, applyHighlight, updateBillboards,
          applyStream, resetRings, downstreamOf,
@@ -95,6 +96,8 @@ function refresh() {
     applyStream(graph, null);
     resetRings(graph);
   }
+
+  syncHash();
 }
 
 // ── Camera choreography ───────────────────────────────────────────────────
@@ -180,6 +183,12 @@ function selectNode(id, { fly = true } = {}) {
 // ── Streams and the consequences view ─────────────────────────────────────
 function selectStream(key) {
   if (key && key === state.stream) key = null;      // clicking again clears it
+  // Streams, tours and path mode all claim the same HUD and the same arrow
+  // keys, so entering one has to LEAVE the others rather than layer on top of
+  // them. Without this a stream picked mid-tour leaves the tour running
+  // invisibly underneath, and the view stops being describable as one thing.
+  if (state.tour) exitTour();
+  if (state.path) exitPath();
   state.stream = key;
   state.consequences = null;
   state.selected = null;
@@ -204,6 +213,8 @@ function selectStream(key) {
 }
 
 function showConsequences() {
+  if (state.tour) exitTour();
+  if (state.path) exitPath();
   state.stream = null;
   state.selected = null;
   UI.markStream(null);
@@ -243,7 +254,13 @@ function clearOtherModes() {
   UI.markStream(null);
 }
 
-function startPath(query) {
+/**
+ * @param {object} query          { from, to, title, id? } — `id` marks a preset
+ * @param {object} opts
+ *   route    node-id chain to reopen (from a permalink) instead of route 0
+ *   stepIdx  which step of that route to open at
+ */
+function startPath(query, { route = null, stepIdx = 0 } = {}) {
   clearOtherModes();
   const result = findRoutes(query.from, query.to);
   state.path = { query, result, routeIdx: -1, stepIdx: 0, route: null };
@@ -264,6 +281,23 @@ function startPath(query) {
   refresh();
   showRouteList();
 
+  if (route) {
+    // A shared route names its nodes, not its rank in the list. Prefer the
+    // matching entry so the chooser highlights it, but fall back to rebuilding
+    // the chain from the graph: the sender may have walked a route that this
+    // build's diversity selection no longer puts in the shown subset.
+    const chain = route.join('.');
+    const i = result.routes.findIndex((r) => r.nodes.join('.') === chain);
+    if (i >= 0) { pickRoute(i, stepIdx); return; }
+    const rebuilt = routeFromNodes(route);
+    if (rebuilt) { adoptRoute(rebuilt, -1, stepIdx); return; }
+    // Otherwise the graph no longer contains that chain. Say so and leave the
+    // route list up, rather than silently opening a different route under a
+    // link that was sent to argue a specific one.
+    UI.toast('That link names a route the atlas no longer contains — showing the current routes instead');
+    return;
+  }
+
   if (result.routes.length) pickRoute(0);
   else flyTo(new THREE.Vector3(0, 0, 0), 300, 1.0);
 }
@@ -275,12 +309,19 @@ function showRouteList() {
   });
 }
 
-function pickRoute(i) {
+function pickRoute(i, stepIdx = 0) {
   const p = state.path;
   if (!p || !p.result.routes[i]) return;
-  p.routeIdx = i;
-  p.route = p.result.routes[i];
-  p.stepIdx = 0;
+  adoptRoute(p.result.routes[i], i, stepIdx);
+}
+
+/** Make `route` the walked one. `routeIdx` is -1 for a route rebuilt from a link. */
+function adoptRoute(route, routeIdx, stepIdx = 0) {
+  const p = state.path;
+  if (!p) return;
+  p.routeIdx = routeIdx;
+  p.route = route;
+  p.stepIdx = THREE.MathUtils.clamp(stepIdx, 0, route.steps.length - 1);
   refresh();
   showStep();
 }
@@ -299,6 +340,8 @@ function showStep() {
     onExit: exitPath,
     onNavigate: (id) => { const keep = state.path; selectNode(id); state.path = keep; },
   });
+
+  syncHash();
 }
 
 function stepPath(delta) {
@@ -327,15 +370,34 @@ function traceTo(id) {
 // ── Tour engine ───────────────────────────────────────────────────────────
 const currentTourStep = () => (state.tour ? state.tour.tour.steps[state.tour.index] : null);
 
-function startTour(id) {
+function startTour(id, index = 0) {
   const tour = TOURS.find((t) => t.id === id);
   if (!tour) return;
-  state.tour = { tour, index: 0 };
+  const at = THREE.MathUtils.clamp(index, 0, tour.steps.length - 1);
+  state.tour = { tour, index: at };
   state.selected = null;
   state.stream = null;
   state.consequences = null;
+  // Path mode owns the same HUD slot and the same arrow keys, so a tour
+  // starting on top of one has to take them back.
+  if (state.path) { state.path = null; UI.markPathActive(false); UI.hidePathHud(); }
   UI.markStream(null);
   UI.hideInspector();
+
+  // Steps accumulate: each one ADDS its layers, and a compartment stays entered
+  // until a later step names a different one. A link that opens at step 5 has
+  // to replay that, or it shows step 5 through step 1's empty state — which is
+  // not the view the sender was looking at when they copied the link.
+  for (const step of tour.steps.slice(0, at)) {
+    for (const l of step.layers ?? []) state.layers.add(l);
+    if (step.focus) {
+      state.focus = step.focus;
+      UI.markCompartment(step.focus);
+      emphasiseCompartment(cell.parts, step.focus);
+    }
+  }
+  syncLayerChecks();
+
   playTourStep();
 }
 
@@ -378,6 +440,124 @@ function exitTour() {
   UI.hideTour();
   refresh();
 }
+
+// ── Permalinks ────────────────────────────────────────────────────────────
+// Every view is a URL. That is what makes a pathway shareable: instead of
+// screen-recording a walk through Loop B for a colleague, you send them the
+// step. The hash is rewritten with replaceState — history stays clean through
+// an eight-step tour, and the address bar always names what is on screen.
+
+let hashQueued = false;
+let lastHash = null;
+let pinCamera = false;          // whether the exact camera pose rides along
+
+/** The link for the current view, as an absolute URL. */
+function currentLink(hash = encodeView(state, pinCamera ? { camera, controls } : {})) {
+  return location.origin + location.pathname + location.search + (hash ? `#${hash}` : '');
+}
+
+/**
+ * Rewrite the hash to match the state. Coalesced through one animation frame
+ * because a single click can call refresh() several times on its way to a
+ * settled view, and only the settled one is worth writing.
+ */
+function syncHash() {
+  if (hashQueued) return;
+  hashQueued = true;
+  requestAnimationFrame(() => {
+    hashQueued = false;
+    const h = encodeView(state, pinCamera ? { camera, controls } : {});
+    if (h === lastHash) return;
+    lastHash = h;
+    history.replaceState(null, '', h ? `#${h}` : location.pathname + location.search);
+    UI.setShareNote(describeView(state), currentLink(h));
+  });
+}
+
+/** Display options are applied on their own so a link can override a mode's defaults. */
+function applyDisplay(view) {
+  const set = (id, prop, v) => { document.getElementById(id)[prop] = v; };
+  if (view.layers) { state.layers = new Set(view.layers); syncLayerChecks(); }
+  if (view.evidence) { state.evidence = view.evidence; set('opt-evidence', 'value', view.evidence); }
+  if (view.labels) { state.labels = view.labels; set('opt-labels', 'value', view.labels); }
+  if (view.detail !== undefined) { state.forceDetail = view.detail; set('opt-detail', 'checked', view.detail); }
+  if (view.flow !== undefined) { state.flow = view.flow; set('opt-flow', 'checked', view.flow); }
+  if (view.membranes !== undefined) {
+    state.membranes = view.membranes; set('opt-membranes', 'checked', view.membranes);
+    setMembranesVisible(cell.parts, view.membranes);
+  }
+  if (view.spin !== undefined) {
+    state.spin = view.spin; set('opt-spin', 'checked', view.spin); controls.autoRotate = view.spin;
+  }
+}
+
+/**
+ * Put the atlas into the view a hash describes. Returns false when the hash
+ * named no view at all, so the caller can fall back to the overview.
+ *
+ * Display options are applied twice on purpose: once before the mode, so the
+ * mode is built against the right layer set, and once after, because path and
+ * consequences mode force every layer on and an explicit `layers=` in the link
+ * is the sender's choice and should survive that.
+ */
+function applyView(view) {
+  if (!view) return false;
+
+  applyDisplay(view);
+
+  if (view.focus) {
+    state.focus = view.focus;
+    UI.markCompartment(view.focus);
+    emphasiseCompartment(cell.parts, view.focus);
+  }
+
+  let placed = true;
+  if (view.path) {
+    const preset = PATH_PRESETS.find((x) => x.id === view.path.preset);
+    const to = view.path.to.length === 1 ? view.path.to[0] : view.path.to;
+    const query = preset ?? {
+      from: view.path.from, to,
+      title: `${NODE_BY_ID.get(view.path.from)?.label ?? view.path.from} → ` +
+             view.path.to.map((t) => NODE_BY_ID.get(t)?.label ?? t).join(', '),
+    };
+    startPath(query, { route: view.path.route, stepIdx: view.step ?? 0 });
+  } else if (view.tour) startTour(view.tour, view.step ?? 0);
+  else if (view.stream) selectStream(view.stream);
+  else if (view.consequences) showConsequences();
+  else if (view.node) selectNode(view.node);
+  else if (view.focus) enterCompartment(view.focus);
+  else placed = false;
+
+  applyDisplay(view);
+  refresh();
+
+  if (view.cam) {
+    // Last word on the camera, so it beats whatever the mode just framed.
+    // Damping has to be off across the assignment: with it on, OrbitControls
+    // carries residual momentum from the flight we just cancelled and applies
+    // it on the next update, landing a few units off the pose that was sent.
+    tween.active = false;
+    controls.enableDamping = false;
+    controls.update();                                   // flush the residual
+    camera.position.set(view.cam[0], view.cam[1], view.cam[2]);
+    controls.target.set(view.cam[3], view.cam[4], view.cam[5]);
+    controls.update();
+    controls.enableDamping = true;
+    pinCamera = true;
+    document.getElementById('opt-cam').checked = true;
+  }
+
+  return placed || Boolean(view.cam);
+}
+
+addEventListener('hashchange', () => {
+  // replaceState does not fire this, so anything arriving here is a real
+  // navigation — a pasted link, or a back/forward across one.
+  const h = location.hash.replace(/^#/, '');
+  if (h === lastHash) return;
+  lastHash = h;
+  if (!applyView(decodeView(location.hash))) enterCompartment(null);
+});
 
 // ── Picking ───────────────────────────────────────────────────────────────
 const raycaster = new THREE.Raycaster();
@@ -454,16 +634,26 @@ UI.buildRail({
   onPathPreset: (id) => { const q = PATH_PRESETS.find((x) => x.id === id); if (q) startPath(q); },
   onExitPath: exitPath,
   onOption: (k, v) => {
-    if (k === 'flow') state.flow = v;
+    if (k === 'flow') { state.flow = v; syncHash(); }
     else if (k === 'detail') { state.forceDetail = v; refresh(); }
-    else if (k === 'membranes') { state.membranes = v; setMembranesVisible(cell.parts, v); }
-    else if (k === 'spin') { state.spin = v; controls.autoRotate = v; }
+    else if (k === 'membranes') { state.membranes = v; setMembranesVisible(cell.parts, v); syncHash(); }
+    else if (k === 'spin') { state.spin = v; controls.autoRotate = v; syncHash(); }
     else if (k === 'labels') { state.labels = v; refresh(); }
     else if (k === 'evidence') { state.evidence = v; refresh(); }
   },
 });
 
 UI.buildSearch({ onPick: (id) => selectNode(id) });
+
+UI.buildShare({
+  getLink: () => currentLink(),
+  onPinCamera: (on) => { pinCamera = on; lastHash = null; syncHash(); },
+});
+
+// Only re-encode the camera when the user stops moving it. Writing a pose on
+// every frame of a drag would leave the URL unreadable and the history API busy
+// for no gain — the pose that matters is the one you stopped on.
+controls.addEventListener('end', () => { if (pinCamera) syncHash(); });
 document.getElementById('insp-close').addEventListener('click', () => {
   state.selected = null; UI.hideInspector(); refresh();
 });
@@ -519,7 +709,8 @@ function animate() {
 }
 
 refresh();
-enterCompartment(null);
+// A link decides the opening view; without one, the whole-cell overview does.
+if (!applyView(decodeView(location.hash))) enterCompartment(null);
 animate();
 
 const loading = document.getElementById('loading');
@@ -527,4 +718,4 @@ loading.classList.add('done');
 setTimeout(() => loading.remove(), 600);
 
 // Handy for poking at the graph from the console during development.
-window.atlas = { scene, camera, controls, graph, cell, state, refresh, selectNode, enterCompartment, startTour, selectStream, showConsequences, startPath, traceTo, stepPath };
+window.atlas = { scene, camera, controls, graph, cell, state, refresh, selectNode, enterCompartment, startTour, selectStream, showConsequences, startPath, traceTo, stepPath, currentLink, applyView };

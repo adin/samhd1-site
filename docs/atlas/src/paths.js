@@ -160,6 +160,31 @@ export function findRoutes(from, to, { maxDepth = 16, maxRoutes = 24, enumerateC
 }
 
 /**
+ * Rebuild one route from a bare list of node ids — the form a permalink carries.
+ *
+ * Links encode the chain rather than an index into `findRoutes`, because those
+ * indices shift the moment the graph gains an edge, and a shared link that
+ * quietly resolves to a DIFFERENT argument than the one that was sent is worse
+ * than one that fails visibly. Returns null if any hop no longer exists, which
+ * is the honest answer when the atlas has moved on past the link.
+ *
+ * Where two edges connect the same ordered pair the first is taken: the pair is
+ * the mechanism here, and the graph does not currently carry two distinct
+ * mechanisms between the same two nodes in the same direction.
+ */
+export function routeFromNodes(ids) {
+  if (!Array.isArray(ids) || ids.length < 2) return null;
+  const adj = adjacency();
+  const steps = [];
+  for (let i = 0; i + 1 < ids.length; i++) {
+    const e = (adj.get(ids[i]) ?? []).find((x) => x.to === ids[i + 1]);
+    if (!e) return null;
+    steps.push(e);
+  }
+  return summarise(steps);
+}
+
+/**
  * Greedy maximal-coverage selection: seed with the shortest route, then
  * repeatedly take whichever remaining route introduces the most nodes not yet
  * covered. Novelty dominates; length and evidence break ties. This is what
