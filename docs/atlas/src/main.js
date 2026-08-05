@@ -12,7 +12,7 @@ import { TOURS, PATH_PRESETS } from './data/tours.js';
 import { findRoutes, routeFromNodes } from './paths.js';
 import { encodeView, decodeView, describeView } from './permalink.js';
 import { buildCell, setMembranesVisible, emphasiseCompartment } from './scene/cell.js';
-import { buildGraph, applyVisibility, applyHighlight, updateBillboards,
+import { buildGraph, applyVisibility, applyHighlight, applyEdgeHighlight, updateBillboards,
          applyStream, resetRings, downstreamOf,
          applyPath, forceRouteVisible } from './scene/graph.js';
 import { buildFlow } from './scene/flow.js';
@@ -64,6 +64,7 @@ const state = {
   membranes: true,
   spin: false,
   selected: null,         // node id
+  selectedEdge: null,     // edge object from data/index.js EDGES
   tour: null,             // { tour, index }
   stream: null,           // key of STREAMS
   consequences: null,     // BFS result from the variant
@@ -92,9 +93,12 @@ function refresh() {
     applyStream(graph, null);
     resetRings(graph);
   } else {
-    applyHighlight(graph, state.selected, state.tour ? new Set(currentTourStep()?.nodes ?? []) : null);
+    // Colour first, then emphasis: applyStream(null) restores every edge to its
+    // base colour, so an edge highlight applied before it would be wiped.
     applyStream(graph, null);
     resetRings(graph);
+    if (state.selectedEdge) applyEdgeHighlight(graph, state.selectedEdge);
+    else applyHighlight(graph, state.selected, state.tour ? new Set(currentTourStep()?.nodes ?? []) : null);
   }
 
   syncHash();
@@ -149,6 +153,7 @@ function selectNode(id, { fly = true } = {}) {
   state.stream = null;
   state.consequences = null;
   state.path = null;
+  state.selectedEdge = null;
   UI.markStream(null);
   UI.markPathActive(false);
   UI.hidePathHud();
@@ -180,6 +185,31 @@ function selectNode(id, { fly = true } = {}) {
   }
 }
 
+/**
+ * Inspect one interaction (B2).
+ *
+ * Edges carry a great deal of the mechanism — an edge's `label` and `detail`
+ * are often the substance of a claim, and its `refs` are the citation for it —
+ * so an arrow is a thing you can click, not scenery between two things you can
+ * click.
+ */
+function selectEdge(edge, { fly = true } = {}) {
+  if (!edge) return;
+  state.stream = null;
+  state.consequences = null;
+  state.path = null;
+  state.selected = null;
+  state.selectedEdge = edge;
+  UI.markStream(null);
+  UI.markPathActive(false);
+  UI.hidePathHud();
+  UI.hideEdgeTip();
+  refresh();
+
+  UI.renderEdgeInspector(edge, { onNavigate: (next) => selectNode(next), onTrace: traceTo });
+  if (fly) frameNodes([edge.from, edge.to], 3.0);
+}
+
 // ── Streams and the consequences view ─────────────────────────────────────
 function selectStream(key) {
   if (key && key === state.stream) key = null;      // clicking again clears it
@@ -192,6 +222,7 @@ function selectStream(key) {
   state.stream = key;
   state.consequences = null;
   state.selected = null;
+  state.selectedEdge = null;
   UI.markStream(key);
 
   if (!key) { UI.hideInspector(); refresh(); return; }
@@ -217,6 +248,7 @@ function showConsequences() {
   if (state.path) exitPath();
   state.stream = null;
   state.selected = null;
+  state.selectedEdge = null;
   UI.markStream(null);
 
   // The question is "everything this variant causes", so nothing may be hidden.
@@ -250,6 +282,7 @@ function clearOtherModes() {
   state.stream = null;
   state.consequences = null;
   state.selected = null;
+  state.selectedEdge = null;
   if (state.tour) { state.tour = null; UI.hideTour(); }
   UI.markStream(null);
 }
@@ -376,6 +409,7 @@ function startTour(id, index = 0) {
   const at = THREE.MathUtils.clamp(index, 0, tour.steps.length - 1);
   state.tour = { tour, index: at };
   state.selected = null;
+  state.selectedEdge = null;
   state.stream = null;
   state.consequences = null;
   // Path mode owns the same HUD slot and the same arrow keys, so a tour
@@ -524,6 +558,7 @@ function applyView(view) {
   } else if (view.tour) startTour(view.tour, view.step ?? 0);
   else if (view.stream) selectStream(view.stream);
   else if (view.consequences) showConsequences();
+  else if (view.edge) selectEdge(view.edge);
   else if (view.node) selectNode(view.node);
   else if (view.focus) enterCompartment(view.focus);
   else placed = false;
@@ -576,6 +611,24 @@ function pickNode(ev) {
   return null;
 }
 
+/**
+ * The edge under the pointer, or null.
+ *
+ * Kept separate from pickNode and only ever consulted after it misses: node
+ * meshes are the primary targets, and a tube passing behind one must not steal
+ * its click. Arrowheads have raycast disabled, so only the tubes answer here.
+ */
+function pickEdge(ev) {
+  pointer.x = (ev.clientX / innerWidth) * 2 - 1;
+  pointer.y = -(ev.clientY / innerHeight) * 2 + 1;
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(graph.edgeGroup.children, false);
+  for (const h of hits) {
+    if (h.object.visible && h.object.userData.edge) return h.object.userData.edge;
+  }
+  return null;
+}
+
 function pickCompartment(ev) {
   pointer.x = (ev.clientX / innerWidth) * 2 - 1;
   pointer.y = -(ev.clientY / innerHeight) * 2 + 1;
@@ -599,8 +652,11 @@ renderer.domElement.addEventListener('pointerup', (e) => {
   downAt = null;
   if (moved > 5 || e.button !== 0) return;      // that was a drag, not a click
   const id = pickNode(e);
-  if (id) selectNode(id);
-  else { state.selected = null; UI.hideInspector(); refresh(); }
+  if (id) { selectNode(id); return; }
+  const edge = pickEdge(e);
+  if (edge) { selectEdge(edge); return; }
+  state.selected = null; state.selectedEdge = null;
+  UI.hideInspector(); refresh();
 });
 
 renderer.domElement.addEventListener('dblclick', (e) => {
@@ -611,12 +667,41 @@ renderer.domElement.addEventListener('dblclick', (e) => {
 
 // Hover only sets state; the declutter pass in updateBillboards() decides what
 // that means for labels, so the two never fight over the same DOM property.
+//
+// Edge hover is throttled and only consulted when no node is under the pointer.
+// The 380 tubes are ~100k triangles between them, which is far too much to
+// raycast on every pointermove — but it is imperceptible at ~15 Hz, and a node
+// hit means the answer is already known.
+let hoveredEdge = null;
+let lastEdgeProbe = 0;
+
 renderer.domElement.addEventListener('pointermove', (e) => {
   const id = pickNode(e);
-  if (id !== hovered) {
-    hovered = id;
+  if (id !== hovered) hovered = id;
+
+  if (id || downAt) {                       // a node wins, and a drag suppresses
+    if (hoveredEdge) { hoveredEdge = null; UI.hideEdgeTip(); }
     renderer.domElement.style.cursor = id ? 'pointer' : 'default';
+    return;
   }
+
+  const now = performance.now();
+  if (now - lastEdgeProbe < 65) {
+    if (hoveredEdge) UI.showEdgeTip(e.clientX, e.clientY, hoveredEdge);   // keep it under the pointer
+    return;
+  }
+  lastEdgeProbe = now;
+
+  const edge = pickEdge(e);
+  hoveredEdge = edge;
+  renderer.domElement.style.cursor = edge ? 'pointer' : 'default';
+  if (edge) UI.showEdgeTip(e.clientX, e.clientY, edge);
+  else UI.hideEdgeTip();
+});
+
+renderer.domElement.addEventListener('pointerleave', () => {
+  hoveredEdge = null;
+  UI.hideEdgeTip();
 });
 
 // ── UI wiring ─────────────────────────────────────────────────────────────
@@ -644,6 +729,7 @@ UI.buildRail({
 });
 
 UI.buildSearch({ onPick: (id) => selectNode(id) });
+UI.buildLegend();
 
 UI.buildShare({
   getLink: () => currentLink(),
@@ -655,7 +741,7 @@ UI.buildShare({
 // for no gain — the pose that matters is the one you stopped on.
 controls.addEventListener('end', () => { if (pinCamera) syncHash(); });
 document.getElementById('insp-close').addEventListener('click', () => {
-  state.selected = null; UI.hideInspector(); refresh();
+  state.selected = null; state.selectedEdge = null; UI.hideInspector(); refresh();
 });
 
 addEventListener('keydown', (e) => {
@@ -665,6 +751,7 @@ addEventListener('keydown', (e) => {
     else if (state.tour) exitTour();
     else if (state.stream) selectStream(null);
     else if (state.consequences) { state.consequences = null; UI.hideInspector(); refresh(); }
+    else if (state.selectedEdge) { state.selectedEdge = null; UI.hideInspector(); refresh(); }
     else if (state.selected) { state.selected = null; UI.hideInspector(); refresh(); }
     else enterCompartment(null);
   } else if (e.key === '/') { e.preventDefault(); document.getElementById('search').focus(); }
@@ -718,4 +805,4 @@ loading.classList.add('done');
 setTimeout(() => loading.remove(), 600);
 
 // Handy for poking at the graph from the console during development.
-window.atlas = { scene, camera, controls, graph, cell, state, refresh, selectNode, enterCompartment, startTour, selectStream, showConsequences, startPath, traceTo, stepPath, currentLink, applyView };
+window.atlas = { scene, camera, controls, graph, cell, state, refresh, selectNode, selectEdge, enterCompartment, startTour, selectStream, showConsequences, startPath, traceTo, stepPath, currentLink, applyView };

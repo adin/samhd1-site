@@ -244,6 +244,47 @@ export function applyHighlight(graph, id, extra = null, opts = {}) {
   }
 }
 
+/**
+ * Spotlight ONE interaction: the edge burns, its two endpoints are lit, and
+ * everything else recedes.
+ *
+ * Deliberately not `applyHighlight(graph, null, new Set([from, to]))` — that
+ * lights every edge touching either endpoint, which for a hub like NF-κB is
+ * forty arrows and buries the one that was actually clicked.
+ */
+const EDGE_LIT = new THREE.Color(0xffd75e);   // same amber the cascade stepper burns
+
+export function applyEdgeHighlight(graph, edgeData) {
+  if (!edgeData) return;
+  const ends = new Set([edgeData.from, edgeData.to]);
+
+  for (const entry of graph.nodes.values()) {
+    if (!entry.visible) continue;
+    const isEnd = ends.has(entry.data.id);
+    const m = entry.mesh.material;
+    m.opacity = isEnd ? 1 : 0.14;
+    m.emissive.copy(entry.baseColor).multiplyScalar(isEnd ? 0.95 : 0.04);
+    entry.mesh.scale.setScalar(entry.size * (isEnd ? 1.35 : 0.86));
+    entry.ring.material.opacity = isEnd ? 0.95 : 0.07;
+    entry.hlOpacity = isEnd ? 1 : 0.12;
+    // Both endpoints keep their labels: the caption names them, and a lit
+    // arrow between two anonymous dots is not an interaction you can read.
+    entry.labelForced = isEnd;
+    entry.spotlit = isEnd;
+  }
+
+  for (const e of graph.edges) {
+    if (!e.visible) continue;
+    const isIt = e.data === edgeData;
+    e.tube.material.opacity = isIt ? 1 : 0.04;
+    if (e.head) e.head.material.opacity = isIt ? 1 : 0.04;
+    if (isIt) {
+      e.tube.material.color.copy(EDGE_LIT);
+      if (e.head) e.head.material.color.copy(EDGE_LIT);
+    }
+  }
+}
+
 // ── Label decluttering ────────────────────────────────────────────────────
 // Screen-space greedy suppression: project every eligible label, sort by
 // priority (spotlit → key → nearest), and drop any that would overlap one
@@ -399,7 +440,7 @@ export function downstreamOf(graph, startId, { maxDepth = 12 } = {}) {
 // nothing — the point of the mode is one chain at a time.
 
 const PAST    = new THREE.Color(0x5f7fa8);
-const CURRENT = new THREE.Color(0xffd75e);
+const CURRENT = EDGE_LIT;
 const FUTURE  = new THREE.Color(0x3f5570);
 
 /**

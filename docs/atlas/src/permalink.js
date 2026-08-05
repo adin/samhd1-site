@@ -22,6 +22,7 @@
  *   node=<id>                       a molecule, with its inspector open
  *   tour=<id>[&step=<n>]            a guided tour, 1-based step
  *   stream=<key>                    one of the Mitochondrion Under Siege streams
+ *   edge=<from>.<kind>.<to>         one interaction, inspector open
  *   all                             the "all consequences of A565T" closure
  *   path=<preset>|from=<id>&to=<id>[.<id>…]
  *     [&route=<id>.<id>.…][&step=<n>]   cascade navigator, route as node chain
@@ -31,8 +32,8 @@
  *   cam=<x,y,z,tx,ty,tz>            an exact camera pose, opt-in
  */
 
-import { COMPARTMENTS, PATHWAYS, STREAMS } from './config.js';
-import { NODE_BY_ID } from './data/index.js';
+import { COMPARTMENTS, EDGE_KINDS, PATHWAYS, STREAMS } from './config.js';
+import { EDGES, NODE_BY_ID } from './data/index.js';
 import { TOURS, PATH_PRESETS } from './data/tours.js';
 
 /** The layer set in force when nobody has touched anything. */
@@ -77,6 +78,11 @@ export function encodeView(state, { camera = null, controls = null } = {}) {
     put('stream', state.stream);
   } else if (state.consequences) {
     p.push('all');
+  } else if (state.selectedEdge) {
+    // from.kind.to — the kind is part of the identity because two nodes may be
+    // joined by more than one reaction, and they would not be the same claim.
+    const e = state.selectedEdge;
+    put('edge', `${e.from}.${e.kind}.${e.to}`);
   } else if (state.selected) {
     put('node', state.selected);
   }
@@ -143,6 +149,10 @@ export function decodeView(hash = location.hash) {
     if (STREAMS[q.get('stream')]) view.stream = q.get('stream');
   } else if (q.has('all')) {
     view.consequences = true;
+  } else if (q.has('edge')) {
+    const [from, kind, to] = idList('edge');
+    const e = EDGES.find((x) => x.from === from && x.kind === kind && x.to === to);
+    if (e) view.edge = e;
   } else if (q.has('node')) {
     if (NODE_BY_ID.has(q.get('node'))) view.node = q.get('node');
   }
@@ -201,6 +211,11 @@ export function describeView(state) {
   }
   if (state.stream) return `Stream — ${STREAMS[state.stream].label}, whole chain lit.`;
   if (state.consequences) return 'Every downstream consequence of p.A565T.';
+  if (state.selectedEdge) {
+    const e = state.selectedEdge;
+    const glyph = EDGE_KINDS[e.kind].head === 'bar' ? '⊣' : '→';
+    return `Interaction — ${labelOf(e.from)} ${glyph} ${labelOf(e.to)}, inspector open.`;
+  }
   if (state.selected) return `Molecule — ${labelOf(state.selected)}, inspector open.`;
   if (state.focus) return `Inside the ${COMPARTMENTS[state.focus].label.toLowerCase()}.`;
   return 'Whole-cell overview.';

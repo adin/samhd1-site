@@ -298,6 +298,190 @@ export function hideInspector() {
   document.getElementById('inspector').classList.add('hidden');
 }
 
+// ── Edge inspection (B2) ──────────────────────────────────────────────────
+// Much of the mechanism lives on edges — the label and `detail` of a reaction
+// are frequently the substance — and until now it was reachable only by
+// scrolling a node's in/out list. Edges are the primary object here, not
+// decoration between nodes, so they get a first-class inspector.
+
+/** Hover tooltip: enough to decide whether to click, and no more. */
+export function showEdgeTip(x, y, edge) {
+  let tip = document.getElementById('edge-tip');
+  if (!tip) {
+    tip = document.createElement('div');
+    tip.id = 'edge-tip';
+    document.body.appendChild(tip);
+  }
+  const kind = EDGE_KINDS[edge.kind];
+  const a = NODE_BY_ID.get(edge.from), b = NODE_BY_ID.get(edge.to);
+  const glyph = kind.head === 'bar' ? '⊣' : '→';
+
+  tip.innerHTML =
+    `<b>${esc(a?.label ?? edge.from)}</b> ` +
+    `<span style="color:${hex(kind.color)}">${glyph}</span> ` +
+    `<b>${esc(b?.label ?? edge.to)}</b>` +
+    (edge.label ? `<span class="tip-label">${esc(edge.label)}</span>`
+                : `<span class="tip-label">${esc(kind.label)}</span>`) +
+    `<span class="tip-meta"><i class="ev ev-${edge.evidence}">${edge.evidence}</i>` +
+    (edge.loop ? ` loop ${esc(edge.loop)}` : '') +
+    (edge.detail || (edge.refs ?? []).length ? ' · click to inspect' : '') + '</span>';
+
+  // Flip before the pointer near the right/bottom edge so the tip never leaves
+  // the window and never sits under the cursor swallowing the next click.
+  tip.classList.add('on');
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = `${Math.min(x + 16, innerWidth - w - 12)}px`;
+  tip.style.top  = `${y + h + 28 > innerHeight ? y - h - 14 : y + 18}px`;
+}
+
+export function hideEdgeTip() {
+  document.getElementById('edge-tip')?.classList.remove('on');
+}
+
+export function renderEdgeInspector(edge, cb) {
+  const panel = document.getElementById('inspector');
+  const body = document.getElementById('insp-body');
+  const kind = EDGE_KINDS[edge.kind];
+  const a = NODE_BY_ID.get(edge.from), b = NODE_BY_ID.get(edge.to);
+  const glyph = kind.head === 'bar' ? '⊣' : '→';
+  const sign = kind.sign ?? 1;
+
+  const parts = [];
+  parts.push(`<div class="insp-kicker" style="color:${hex(kind.color)}">Interaction — ${esc(kind.label)}</div>`);
+  parts.push(`<h2 class="insp-title edge-title">
+      <span class="hop-node" data-goto="${esc(edge.from)}">${esc(a?.label ?? edge.from)}</span>
+      <span class="hop-kind" style="color:${hex(kind.color)}">${glyph}</span>
+      <span class="hop-node" data-goto="${esc(edge.to)}">${esc(b?.label ?? edge.to)}</span>
+    </h2>`);
+
+  parts.push('<div class="insp-tags">');
+  parts.push(`<span class="tag ev-${edge.evidence}">${edge.evidence} — ${esc(EVIDENCE[edge.evidence].label)}</span>`);
+  // The polarity is the whole reason the cascade navigator can reason rather
+  // than merely walk, so it is stated outright rather than left to the glyph.
+  parts.push(`<span class="tag" style="border-color:${sign < 0 ? '#46d18a80' : '#e0674f80'}">` +
+    `${sign < 0 ? '↓ suppresses' : '↑ increases'} its target</span>`);
+  if (edge.loop) parts.push(`<span class="tag" style="border-color:#c06bff80">loop ${esc(edge.loop)}</span>`);
+  for (const p of edge.pathways ?? []) {
+    if (PATHWAYS[p]) parts.push(`<span class="tag" style="border-color:${hex(PATHWAYS[p].color)}66">${esc(PATHWAYS[p].label)}</span>`);
+  }
+  parts.push('</div>');
+
+  if (edge.label) parts.push(`<p>${esc(edge.label)}</p>`);
+  if (edge.detail) {
+    parts.push('<h4>Mechanism</h4>');
+    for (const para of edge.detail.split('\n')) {
+      if (para.trim()) parts.push(`<p class="dim">${esc(para.trim())}</p>`);
+    }
+  }
+  if (!edge.label && !edge.detail) {
+    parts.push(`<p class="dim">${esc(stepSentence(edge))}. No further mechanism recorded on this edge.</p>`);
+  }
+
+  parts.push('<h4>Endpoints</h4>');
+  parts.push(`<div class="pill-row">${nodePills([edge.from, edge.to], cb)}</div>`);
+
+  parts.push(`<button class="trace-btn" data-trace="${esc(edge.to)}">
+    ⇢ Trace every route from p.A565T to ${esc(b?.label ?? edge.to)}</button>`);
+
+  if ((edge.refs ?? []).length) {
+    parts.push('<h4>Sources</h4><ul class="ref-list">');
+    parts.push(edge.refs.map(refItem).join(''));
+    parts.push('</ul>');
+  }
+
+  body.innerHTML = parts.join('');
+  panel.classList.remove('hidden');
+  panel.scrollTop = 0;
+  body.querySelectorAll('[data-goto]').forEach((el) => {
+    el.addEventListener('click', () => cb.onNavigate(el.dataset.goto));
+  });
+  body.querySelectorAll('[data-trace]').forEach((el) => {
+    el.addEventListener('click', () => cb.onTrace?.(el.dataset.trace));
+  });
+}
+
+// ── Legend (D1) ───────────────────────────────────────────────────────────
+// Every visual property in the scene means something, and until now the only
+// way to learn the encoding was to click things until it became apparent. That
+// was tolerable while the atlas was a private working tool; it is not, now that
+// the link goes to clinicians and patients who get one look at it.
+
+/** 2D silhouettes of the GEO shapes in scene/graph.js. Keep the two in step. */
+function shapeGlyph(shape, color) {
+  const c = hex(color);
+  const svg = (inner) =>
+    `<svg class="lg-shape" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">${inner}</svg>`;
+  switch (shape) {
+    case 'box':    return svg(`<rect x="3" y="3" width="10" height="10" fill="${c}"/>`);
+    case 'octa':   return svg(`<polygon points="8,1 15,8 8,15 1,8" fill="${c}"/>`);
+    case 'cone':   return svg(`<polygon points="8,1.5 14.5,14 1.5,14" fill="${c}"/>`);
+    // A tetrahedron reads as a triangle too, so it carries its visible back
+    // edge — otherwise kinase and transcription factor are the same glyph.
+    case 'tetra':  return svg(`<polygon points="8,1.5 14.5,14 1.5,14" fill="${c}"/>` +
+                              `<path d="M8 1.5 L8 14 M8 14 L14.5 14" stroke="#05070c" stroke-width="1.1" fill="none"/>`);
+    case 'cyl':    return svg(`<rect x="4" y="1.5" width="8" height="13" rx="4" fill="${c}"/>`);
+    case 'torus':  return svg(`<circle cx="8" cy="8" r="5.4" fill="none" stroke="${c}" stroke-width="3.4"/>`);
+    case 'ring':   return svg(`<circle cx="8" cy="8" r="6" fill="none" stroke="${c}" stroke-width="1.6"/>`);
+    case 'dodeca': return svg(`<polygon points="8,1 14,5 14,11 8,15 2,11 2,5" fill="${c}"/>`);
+    default:       return svg(`<circle cx="8" cy="8" r="5.6" fill="${c}"/>`);
+  }
+}
+
+function edgeGlyph(kind) {
+  const c = hex(kind.color);
+  const dash = kind.dashed ? ' stroke-dasharray="3 2.4"' : '';
+  const head = kind.head === 'bar'
+    ? `<line x1="27" y1="2" x2="27" y2="10" stroke="${c}" stroke-width="2.4"/>`
+    : kind.head === 'arrow'
+      ? `<polygon points="22,1.6 29,6 22,10.4" fill="${c}"/>`
+      : '';
+  const x2 = kind.head === 'none' ? 29 : kind.head === 'bar' ? 26 : 22;
+  return `<svg class="lg-edge" viewBox="0 0 30 12" width="30" height="12" aria-hidden="true">` +
+         `<line x1="1" y1="6" x2="${x2}" y2="6" stroke="${c}" stroke-width="2"${dash}/>${head}</svg>`;
+}
+
+export function buildLegend() {
+  const host = document.getElementById('legend-body');
+  if (!host) return;
+  const parts = [];
+
+  parts.push('<p class="lg-note">Nothing in the scene is decorative. Shape and colour ' +
+             'both encode what a molecule <em>is</em>; the thin ring around it encodes how ' +
+             'well established it is; arrow colour encodes the kind of interaction.</p>');
+
+  parts.push('<h5>Molecule — shape and colour</h5><div class="lg-grid">');
+  for (const cls of Object.values(CLASSES)) {
+    parts.push(`<div class="lg-row">${shapeGlyph(cls.shape, cls.color)}<span>${esc(cls.label)}</span></div>`);
+  }
+  parts.push('</div>');
+
+  parts.push('<h5>Interaction — arrow colour and head</h5><div class="lg-grid">');
+  // Sorted so the two suppressing kinds sit together: the ⊣ head is the single
+  // most load-bearing glyph in the atlas, because a route's net effect is the
+  // product of these polarities.
+  const kinds = Object.values(EDGE_KINDS).sort((a, b) => (a.sign ?? 1) - (b.sign ?? 1));
+  for (const kind of kinds) {
+    parts.push(`<div class="lg-row">${edgeGlyph(kind)}<span>${esc(kind.label)}` +
+      `<i class="lg-sign ${(kind.sign ?? 1) < 0 ? 'down' : 'up'}">${(kind.sign ?? 1) < 0 ? '↓' : '↑'}</i></span></div>`);
+  }
+  parts.push('</div>');
+  parts.push('<p class="lg-note">Net effect along a route is the <b>product</b> of these: ' +
+             'two ⊣ in a row is an increase. Losing a brake on a brake raises the target.</p>');
+
+  parts.push('<h5>Evidence — the ring around each molecule</h5><div class="lg-grid">');
+  for (const [key, ev] of Object.entries(EVIDENCE)) {
+    parts.push(`<div class="lg-row"><span class="lg-ring" style="border-color:${hex(ev.color)}"></span>` +
+      `<span><b>${key}</b> — ${esc(ev.label)}</span></div>`);
+  }
+  parts.push('</div>');
+
+  parts.push('<p class="lg-note">A bigger molecule with a brighter label is a <b>key</b> node — ' +
+             'one that stays labelled at whole-cell zoom. Faint ones appear only once you ' +
+             'enter their compartment, or tick <em>Force all sub-detail</em>.</p>');
+
+  host.innerHTML = parts.join('');
+}
+
 // ── Search ────────────────────────────────────────────────────────────────
 export function buildSearch(cb) {
   const input = document.getElementById('search');
