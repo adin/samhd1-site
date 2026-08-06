@@ -64,7 +64,7 @@ export const nodes = [
   {
     id: 'orf1p', label: 'ORF1p', full: 'L1 ORF1 protein — trimeric nucleic-acid chaperone',
     compartment: 'granule', klass: 'retro', pathways: ['retro'],
-    pos: [-58, -30, 32], lod: 2, evidence: 'G',
+    pos: [-58, -27, 30], lod: 2, evidence: 'G',
     summary: 'Coats L1 RNA in a strong cis preference, so an L1 mRNA is mobilised by the proteins it encoded.',
   },
   {
@@ -83,7 +83,7 @@ export const nodes = [
   {
     id: 'l1-rnp', label: 'L1 RNP', full: 'L1 ribonucleoprotein particle (L1 RNA + ORF1p + ORF2p)',
     compartment: 'granule', klass: 'retro', pathways: ['retro'],
-    pos: [-64, -26, 28], lod: 1, evidence: 'S',
+    pos: [-62, -19, 28], lod: 1, evidence: 'S',
     summary: 'The transposition-competent intermediate. Must reach the nucleus to insert.',
     samhd1: 'SAMHD1 promotes stress-granule formation that traps L1 RNPs out of circulation. This is a physical, ' +
       'non-enzymatic restriction mechanism — and it is regulated by SAMHD1 T592 phosphorylation, meaning the same ' +
@@ -193,7 +193,7 @@ export const nodes = [
   {
     id: 'mov10', label: 'MOV10', full: 'Moloney leukaemia virus 10 — RNA helicase',
     compartment: 'granule', klass: 'restrict', pathways: ['retro'],
-    pos: [-58, -34, 34], lod: 2, evidence: 'G',
+    pos: [-66, -27, 26], lod: 2, evidence: 'G',
     summary: 'Associates with L1 RNP and unwinds/destabilises it; an ISG, so interferon reinforces this layer.',
   },
   {
@@ -211,7 +211,7 @@ export const nodes = [
   {
     id: 'adar1', label: 'ADAR1 p150', full: 'Adenosine deaminase acting on RNA 1, interferon-inducible isoform',
     compartment: 'cytosol', klass: 'restrict', pathways: ['retro', 'rlr-mavs', 'isg'],
-    pos: [-20, -30, 52], lod: 1, evidence: 'G', key: true,
+    pos: [-12, -26, 46], lod: 1, evidence: 'G', key: true,
     summary: 'A-to-I edits Alu duplex RNA, creating I:U mismatches that keep MDA5 below its activation threshold.',
     detail: 'ADAR1 is the reason self dsRNA is tolerated. Loss of ADAR1 editing is AGS6, and the resulting disease is ' +
       'entirely MDA5-dependent: deleting MDA5 rescues ADAR1-null mice. It is the cleanest demonstration in immunology ' +
@@ -268,7 +268,7 @@ export const nodes = [
   {
     id: 'micronucleus', label: 'micronuclei', full: 'Micronuclei from mis-segregated or damaged chromatin',
     compartment: 'nucleus', klass: 'ligand', pathways: ['genome', 'cgas-sting'],
-    pos: [-18, 30, -26], lod: 2, evidence: 'G',
+    pos: [-18, 34, -22], lod: 2, evidence: 'G',
     summary: 'Rupture-prone envelopes that expose genomic DNA to cGAS — a nuclear source of Loop A ligand.',
   },
 ];

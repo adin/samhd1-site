@@ -28,11 +28,12 @@
  *     [&route=<id>.<id>.…][&step=<n>]   cascade navigator, route as node chain
  *   focus=<compartment>             camera inside a compartment
  *   layers=all|none|<key>.<key>…    pathway layers, when not the default set
+ *   state=<key>                     perturbation state, when not wild type
  *   ev=all|SG|S · labels=key|all|none · detail=1 · flow=0 · membranes=0 · spin=1
  *   cam=<x,y,z,tx,ty,tz>            an exact camera pose, opt-in
  */
 
-import { COMPARTMENTS, EDGE_KINDS, PATHWAYS, STREAMS } from './config.js';
+import { COMPARTMENTS, EDGE_KINDS, PATHWAYS, STREAMS, PERTURBATIONS } from './config.js';
 import { EDGES, NODE_BY_ID } from './data/index.js';
 import { TOURS, PATH_PRESETS } from './data/tours.js';
 
@@ -98,6 +99,9 @@ export function encodeView(state, { camera = null, controls = null } = {}) {
     else if (state.layers.size === 0) put('layers', 'none');
     else put('layers', [...state.layers].join('.'));
   }
+  // Orthogonal to the mode keys: a perturbation can be combined with a tour,
+  // a stream or a traced route, so it is written alongside rather than instead.
+  if (state.perturb && state.perturb !== 'wt') put('state', state.perturb);
   if (state.evidence !== 'all') put('ev', state.evidence);
   if (state.labels !== 'key') put('labels', state.labels);
   if (state.forceDetail) put('detail', '1');
@@ -172,6 +176,7 @@ export function decodeView(hash = location.hash) {
     else if (v === 'none') view.layers = new Set();
     else view.layers = new Set(idList('layers').filter((k) => k in PATHWAYS));
   }
+  if (q.has('state') && PERTURBATIONS[q.get('state')]) view.perturb = q.get('state');
   if (q.has('ev') && EVIDENCE_VALUES.includes(q.get('ev'))) view.evidence = q.get('ev');
   if (q.has('labels') && LABEL_VALUES.includes(q.get('labels'))) view.labels = q.get('labels');
   if (q.has('detail')) view.detail = q.get('detail') !== '0';
@@ -196,6 +201,14 @@ export function decodeView(hash = location.hash) {
  * feature is handing someone else a specific argument.
  */
 export function describeView(state) {
+  // The perturbation is orthogonal to the mode, so it is a suffix on whatever
+  // the mode already says rather than a description of its own.
+  const st = state.perturb && state.perturb !== 'wt' ? PERTURBATIONS[state.perturb] : null;
+  const suffix = st ? ` Rendered in the ${st.label} state.` : '';
+  return describeMode(state) + suffix;
+}
+
+function describeMode(state) {
   if (state.path) {
     const q = state.path.query ?? {};
     const title = q.title ?? `${labelOf(q.from)} → ${(Array.isArray(q.to) ? q.to : [q.to]).map(labelOf).join(', ')}`;

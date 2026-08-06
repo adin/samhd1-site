@@ -130,7 +130,7 @@ export const nodes = [
   {
     id: 'ssdna', label: 'cytosolic ssDNA fragments', full: 'Single-stranded DNA released from collapsed forks and resected breaks',
     compartment: 'cytosol', klass: 'ligand', pathways: ['genome', 'cgas-sting'],
-    pos: [-24, -16, 12], lod: 1, evidence: 'S',
+    pos: [-26, -12, 18], lod: 1, evidence: 'S',
     summary: 'The genomic contribution to the cGAS ligand pool — parallel to the mitochondrial and retroelement routes.',
     detail: 'The Arm 7 vs Arm 8 comparison is designed to size this stream: if cGAS inhibition (Arm 8) suppresses ISGs ' +
       'more deeply than VDAC1 blockade (Arm 7), a non-mitochondrial DNA source — this one — is contributing ' +

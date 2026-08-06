@@ -104,7 +104,7 @@ export const nodes = [
   {
     id: 'mavs', label: 'MAVS', full: 'Mitochondrial antiviral-signalling protein (IPS-1 / VISA / Cardif)',
     compartment: 'mitochondrion', klass: 'adaptor', pathways: ['rlr-mavs', 'mito'],
-    pos: [38, 14, 32], lod: 1, evidence: 'S', key: true,
+    pos: [34, 12, 25], lod: 1, evidence: 'S', key: true,
     summary: 'Tail-anchored in the outer mitochondrial membrane. RLR CARDs seed self-propagating MAVS prion-like filaments.',
     detail: 'MAVS is why RNA sensing is a mitochondrial event. Filament assembly is all-or-nothing and requires an intact ' +
       'membrane potential — which links ΔΨm collapse directly to signalling competence.',
@@ -172,7 +172,7 @@ export const nodes = [
   {
     id: 'trif', label: 'TRIF', full: 'TIR-domain-containing adapter-inducing IFN-β (TICAM1)',
     compartment: 'endosome', klass: 'adaptor', pathways: ['tlr', 'ankib1'],
-    pos: [-18, -28, 56], lod: 1, evidence: 'S',
+    pos: [-30, -34, 59], lod: 1, evidence: 'S',
     summary: 'The IRF3-directing TLR adaptor; also a bona fide ANKIB1 K11-Ub substrate.',
     samhd1: 'Reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed — one of the five substrates ' +
       'that lowers the TBK1/IRF3 assembly threshold.',
@@ -187,7 +187,7 @@ export const nodes = [
   {
     id: 'irak14', label: 'IRAK4/1', full: 'Interleukin-1 receptor-associated kinases 4 and 1',
     compartment: 'endosome', klass: 'kinase', pathways: ['tlr', 'nfkb'],
-    pos: [-46, -40, 36], lod: 2, evidence: 'G',
+    pos: [-45, -40, 37], lod: 2, evidence: 'G',
     summary: 'Myddosome kinases; IRAK1 phosphorylates IRF7 directly in the plasmacytoid dendritic-cell IFN burst.',
   },
 

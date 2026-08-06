@@ -47,7 +47,7 @@ export const nodes = [
   {
     id: 'th17-cell', label: 'Th17 / ILC3 / γδ T', full: 'IL-17-producing lymphocyte populations',
     compartment: 'responder', klass: 'cell', pathways: ['th17'],
-    pos: [-96, 78, 34], lod: 1, evidence: 'G',
+    pos: [-98, 80, 30], lod: 1, evidence: 'G',
     summary: 'The IL-23-responsive compartment. In enthesitis the dominant producers are tissue-resident γδ T and ILC3, not circulating Th17.',
     detail: 'This distinction is clinically load-bearing: entheseal IL-17 comes largely from resident innate-like ' +
       'lymphocytes responding to IL-23, which is why the psoriatic arthritis arm can run without a classical ' +
@@ -159,20 +159,20 @@ export const nodes = [
   {
     id: 'il23r', label: 'IL-23R / IL-12Rβ1', full: 'Interleukin-23 receptor complex',
     compartment: 'responder', klass: 'receptor', pathways: ['th17'],
-    pos: [-86, 68, 44], lod: 2, evidence: 'G',
+    pos: [-100, 92, 42], lod: 2, evidence: 'G',
     summary: 'JAK2/TYK2 → STAT3. IL23R variants are among the strongest genetic associations in psoriatic disease.',
     drugs: ['brepocitinib'],
   },
   {
     id: 'stat3', label: 'STAT3', full: 'Signal transducer and activator of transcription 3',
     compartment: 'responder', klass: 'tf', pathways: ['th17'],
-    pos: [-98, 62, 42], lod: 2, evidence: 'G',
+    pos: [-104, 88, 34], lod: 2, evidence: 'G',
     summary: 'The Th17 STAT, driven by IL-6 and IL-23. Induces RORγt.',
   },
   {
     id: 'rorgt', label: 'RORγt (RORC)', full: 'Retinoic acid receptor-related orphan receptor gamma t',
     compartment: 'responder', klass: 'tf', pathways: ['th17'],
-    pos: [-90, 56, 30], lod: 1, evidence: 'G',
+    pos: [-109, 83, 27], lod: 1, evidence: 'G',
     summary: 'Master Th17 transcription factor. IL-23 does not create Th17 cells so much as stabilise and license them.',
   },
   {

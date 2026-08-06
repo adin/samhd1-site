@@ -419,3 +419,56 @@ export const STREAMS = {
     refs: ['liu2026nlrp3', 'swanson2019', 'xu2023vdac1', 'tannahill2013'],
   },
 };
+
+// ── Perturbation states (B1) ─────────────────────────────────────────────
+// A state is a VIEW OVER THE GRAPH, exactly as a stream is — not a second copy
+// of the data. Rather than hand-authoring an activity number per node per
+// state (8 states × 217 nodes of unsourced fold-changes), a state is COMPUTED
+// by propagating a single perturbation through the signed edges that the C4
+// polarity audit already validated. `src/activity.js` does the arithmetic.
+//
+// Why derived rather than authored: the alternative invents ~1700 quantitative
+// claims with no citation behind any of them, in an atlas whose first ground
+// rule is that every claim carries its evidence grade. Deriving instead means
+// the ONLY new claims are the per-arm knobs below, each of which is a statement
+// about a drug that the manuscripts do make — and adding an eleventh arm costs
+// two lines instead of a new column of numbers.
+//
+//   source    node the perturbation starts from (baseline state only)
+//   drug      drug node id; its outgoing edges name the targets and polarity
+//   efficacy  0–1, how completely the drug acts at its target
+//   reach     per-hop damping as the effect propagates downstream (0–1)
+//   evidence  grade for the arm, same S/G/I key as everything else
+//
+// Nodes may optionally carry `activity: 2.4` (fold-change vs WT in the A565T
+// state) to PIN a value where a real measurement exists; that overrides the
+// derived figure for that node. None are pinned yet — see C1/C2.
+export const BASELINE = { source: 'a565t', strength: 0.9, reach: 0.86 };
+
+export const PERTURBATIONS = {
+  wt:           { label: 'Wild type', short: 'WT', evidence: 'S',
+                  blurb: 'Reference state. Every node at 1.0 by definition — this is what the other states are ratios against.' },
+  a565t:        { label: 'A565T baseline', short: 'A565T', evidence: 'S',
+                  blurb: 'Untreated haploinsufficiency. The perturbation propagates from the variant through the signed graph, so what lights up is what the polarity data actually implies.' },
+
+  upadacitinib: { label: '+ upadacitinib', short: 'Arm 2', drug: 'upadacitinib', efficacy: 0.85, reach: 0.86, evidence: 'S',
+                  blurb: 'JAK1-selective. Cuts the RED stream where it re-enters the cell, so the ISG arm falls while anything upstream of IFNAR is untouched.' },
+  brepocitinib: { label: '+ brepocitinib', short: 'TYK2i', drug: 'brepocitinib', efficacy: 0.80, reach: 0.86, evidence: 'G',
+                  blurb: 'Dual JAK1/TYK2. Same arm as upadacitinib, entered one receptor-associated kinase further along.' },
+  amlexanox:    { label: '+ amlexanox', short: 'Arm 5', drug: 'amlexanox', efficacy: 0.70, reach: 0.84, evidence: 'G',
+                  blurb: 'TBK1/IKKε inhibitor — cuts IFN at the source rather than at the receptor. Carries its own tradeoff edge: suppressing IRF3 also lowers SAMHD1 transcription in an already haploinsufficient cell, and the model propagates that too.' },
+  polyiclc:     { label: '+ poly-ICLC', short: 'Arms 3–4', drug: 'polyiclc', efficacy: 0.60, reach: 0.82, evidence: 'S',
+                  blurb: 'The only arm pushing UPWARD: a TLR3 agonist inducing SAMHD1 through IRF3. Watch the sign — raising a restriction factor lowers what it restrains.' },
+  vbit4:        { label: '+ VBIT-4', short: 'Arm 7', drug: 'vbit4', efficacy: 0.85, reach: 0.86, evidence: 'S',
+                  blurb: 'Blocks VDAC1 oligomerisation, closing the macropore. Cuts the BLUE stream at its escape route, upstream of cGAS.' },
+  imsb301:      { label: '+ IMSB301', short: 'Arm 8', drug: 'imsb301', efficacy: 0.90, reach: 0.87, evidence: 'S',
+                  blurb: 'cGAS inhibitor. The mirror of Arm 9: the ISG arm goes dark while Loop B stays lit, because ox-mtDNA→NLRP3 never passed through cGAS.' },
+  mcc950:       { label: '+ MCC950', short: 'Arm 9', drug: 'mcc950', efficacy: 0.85, reach: 0.86, evidence: 'G',
+                  blurb: 'NLRP3 inhibitor. The mirror of Arm 8: IL-1β/IL-18 fall and the interferon arm does not. Note it does NOT touch AIM2 — that is what makes the residual interpretable.' },
+  plp:          { label: '+ PLP / B6', short: 'Arm 10', drug: 'plp', efficacy: 0.50, reach: 0.84, evidence: 'I',
+                  blurb: 'PNC1 transport inhibition — the only arm upstream of BOTH loops, so it should dim the whole board rather than one stream.' },
+  allopurinol:  { label: '+ allopurinol', short: 'adjunct', drug: 'allopurinol', efficacy: 0.80, reach: 0.82, evidence: 'I',
+                  blurb: 'Only meaningful if the GOLD stream is real. Isolates the urate→MSU contribution to NLRP3 from the ox-mtDNA one.' },
+  abe8e:        { label: '+ ABE8e-YA (reversion)', short: 'edit', drug: 'abe8e', efficacy: 1.00, reach: 0.86, evidence: 'I',
+                  blurb: 'Correcting the variant itself. Serves as the arithmetic sanity anchor: full reversion should collapse the whole board back onto wild type.' },
+};

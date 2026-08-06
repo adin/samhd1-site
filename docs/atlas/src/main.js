@@ -6,15 +6,16 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 
-import { COMPARTMENTS, PATHWAYS, SETTINGS, STREAMS } from './config.js';
+import { COMPARTMENTS, PATHWAYS, SETTINGS, STREAMS, PERTURBATIONS } from './config.js';
 import { NODE_BY_ID } from './data/index.js';
 import { TOURS, PATH_PRESETS } from './data/tours.js';
 import { findRoutes, routeFromNodes } from './paths.js';
+import { activityFor, movers } from './activity.js';
 import { encodeView, decodeView, describeView } from './permalink.js';
 import { buildCell, setMembranesVisible, emphasiseCompartment } from './scene/cell.js';
 import { buildGraph, applyVisibility, applyHighlight, applyEdgeHighlight, updateBillboards,
          applyStream, resetRings, downstreamOf,
-         applyPath, forceRouteVisible } from './scene/graph.js';
+         applyPath, forceRouteVisible, setActivity } from './scene/graph.js';
 import { buildFlow } from './scene/flow.js';
 import * as UI from './ui.js';
 
@@ -69,10 +70,33 @@ const state = {
   stream: null,           // key of STREAMS
   consequences: null,     // BFS result from the variant
   path: null,             // { query, result, routeIdx, stepIdx } — cascade navigator
+  perturb: 'wt',          // key of PERTURBATIONS — B1 comparison mode
 };
+
+// Activity is derived from the graph, not stored on it, so it is recomputed
+// whenever the state changes and cached until it changes again. Recomputing
+// inside refresh() would run it on every layer toggle and every selection.
+let activity = null;
+
+function setPerturbation(key) {
+  if (!PERTURBATIONS[key]) key = 'wt';
+  state.perturb = key;
+  activity = activityFor(key);
+  setActivity(graph, activity);
+  UI.markState(key);
+  // A drug arm is interesting relative to the UNTREATED disease, not to WT —
+  // ranking it against WT re-lists what the disease does, identically for
+  // every arm. The baseline state is its own reference.
+  const ref = PERTURBATIONS[key]?.drug ? activityFor('a565t') : null;
+  UI.renderStateReadout(key, movers(activity, ref, 6), { onSelect: (id) => selectNode(id) });
+  refresh();
+}
 
 function refresh() {
   applyVisibility(graph, state);
+  // applyVisibility recomputes halo visibility from entry.haloOn, which
+  // setActivity owns — nothing to redo here, but the ordering matters: any
+  // future call that rebuilds meshes must re-run setActivity afterwards.
 
   if (state.path?.route) {
     // A traced route must be fully visible even where it dips into lod-2
@@ -512,6 +536,10 @@ function syncHash() {
 function applyDisplay(view) {
   const set = (id, prop, v) => { document.getElementById(id)[prop] = v; };
   if (view.layers) { state.layers = new Set(view.layers); syncLayerChecks(); }
+  // Applied before the mode below, so a link that combines a state with a tour
+  // or a route renders that mode already in the perturbed state rather than
+  // flashing the wild-type view first.
+  if (view.perturb !== undefined) setPerturbation(view.perturb);
   if (view.evidence) { state.evidence = view.evidence; set('opt-evidence', 'value', view.evidence); }
   if (view.labels) { state.labels = view.labels; set('opt-labels', 'value', view.labels); }
   if (view.detail !== undefined) { state.forceDetail = view.detail; set('opt-detail', 'checked', view.detail); }
@@ -718,6 +746,7 @@ UI.buildRail({
   onConsequences: showConsequences,
   onPathPreset: (id) => { const q = PATH_PRESETS.find((x) => x.id === id); if (q) startPath(q); },
   onExitPath: exitPath,
+  onState: setPerturbation,
   onOption: (k, v) => {
     if (k === 'flow') { state.flow = v; syncHash(); }
     else if (k === 'detail') { state.forceDetail = v; refresh(); }

@@ -11,6 +11,7 @@ import * as THREE from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { CLASSES, EDGE_KINDS, EVIDENCE, SETTINGS } from '../config.js';
 import { NODES, EDGES, NODE_BY_ID } from '../data/index.js';
+import { edgeActivity } from '../activity.js';
 
 // ── Shared geometry (one per shape, reused across every node) ────────────
 const GEO = {
@@ -90,6 +91,25 @@ export function buildGraph(scene, labelLayer) {
     ring.raycast = () => {};
     nodeGroup.add(ring);
 
+    // Activity halo (B1) — a second, wider billboarded ring that ONLY the
+    // perturbation view writes to. It is a separate mesh rather than a tweak to
+    // the emissive or to `ring` on purpose: applyHighlight/applyEdgeHighlight
+    // own those every time they run, so an activity signal written there would
+    // be silently erased by the next selection. Owning its own mesh means state
+    // and selection compose instead of fighting.
+    const halo = new THREE.Mesh(
+      new THREE.TorusGeometry(size * 2.15, size * 0.13, 6, 30),
+      new THREE.MeshBasicMaterial({
+        color: 0xffffff, transparent: true, opacity: 0,
+        depthWrite: false, blending: THREE.AdditiveBlending,
+      })
+    );
+    halo.position.fromArray(n.pos);
+    halo.userData.billboard = true;
+    halo.raycast = () => {};
+    halo.visible = false;
+    nodeGroup.add(halo);
+
     const el = document.createElement('div');
     el.className = 'node-label' + (n.key ? '' : ' dim');
     el.textContent = n.label;
@@ -98,7 +118,7 @@ export function buildGraph(scene, labelLayer) {
     label.center.set(0.5, 1);
     nodeGroup.add(label);
 
-    nodes.set(n.id, { data: n, mesh, ring, label, el, baseColor: color, size, visible: true });
+    nodes.set(n.id, { data: n, mesh, ring, halo, label, el, baseColor: color, size, visible: true });
   }
 
   // ── Edges ──────────────────────────────────────────────────────────────
@@ -136,7 +156,8 @@ export function buildGraph(scene, labelLayer) {
       edgeGroup.add(head);
     }
 
-    edges.push({ data: e, tube, head, curve, baseColor: color, visible: true, isLoop });
+    const baseRadius = isLoop ? 0.34 : 0.24;
+    edges.push({ data: e, tube, head, curve, baseColor: color, visible: true, isLoop, baseRadius });
   }
 
   return { root, nodeGroup, edgeGroup, nodes, edges };
@@ -164,6 +185,7 @@ export function applyVisibility(graph, state) {
     entry.visible = vis;
     entry.mesh.visible = vis;
     entry.ring.visible = vis;
+    entry.halo.visible = vis && entry.haloOn === true;
     // Base eligibility only — the final call is made per-frame by the
     // declutter pass in updateBillboards(), which also honours hover.
     entry.labelEligible = vis && state.labels !== 'none' && (state.labels === 'all' || !!n.key);
@@ -296,7 +318,9 @@ let _declutterTick = 0;
 /** Keep evidence rings facing the camera; fade and declutter labels. */
 export function updateBillboards(graph, camera, labelMode, hoveredId = null) {
   for (const entry of graph.nodes.values()) {
-    if (entry.visible) entry.ring.quaternion.copy(camera.quaternion);
+    if (!entry.visible) continue;
+    entry.ring.quaternion.copy(camera.quaternion);
+    if (entry.halo.visible) entry.halo.quaternion.copy(camera.quaternion);
   }
 
   // Every 3rd frame is plenty — labels are not fast-moving objects.
@@ -517,5 +541,65 @@ export function forceRouteVisible(graph, route) {
       e.tube.visible = true;
       if (e.head) e.head.visible = true;
     }
+  }
+}
+
+// ── Perturbation rendering (B1) ───────────────────────────────────────────
+// Two channels, chosen so neither collides with anything selection already
+// owns: node ACTIVITY becomes a coloured halo (its own mesh — see buildGraph),
+// and edge activity becomes tube THICKNESS (geometry, not opacity, which
+// applyHighlight rewrites on every selection).
+
+const ACT_HOT  = new THREE.Color(0xff7043);   // above wild type
+const ACT_COLD = new THREE.Color(0x4fc3f7);   // below wild type
+
+/** Map an activity ratio to a 0–1 magnitude. log so 2× and 0.5× read equally. */
+const actMagnitude = (a) => Math.min(1, Math.abs(Math.log(Math.max(a, 1e-6))) / Math.log(3));
+
+/**
+ * Render an activity map, or clear it with `null`.
+ *
+ * Rebuilding 380 TubeGeometries is affordable ONLY because this runs on a
+ * discrete state change, never per frame. Do not call it from the animation
+ * loop. Old geometry is disposed explicitly — three.js does not free GPU
+ * buffers on garbage collection, and a user clicking through eleven arms would
+ * otherwise leak eleven full sets of tubes.
+ */
+export function setActivity(graph, act) {
+  for (const entry of graph.nodes.values()) {
+    if (!act) {
+      entry.haloOn = false;
+      entry.halo.visible = false;
+      entry.activity = undefined;
+      continue;
+    }
+    const a = act.get(entry.data.id) ?? 1;
+    const mag = actMagnitude(a);
+    entry.activity = a;
+    entry.haloOn = mag > 0.12;
+    entry.halo.visible = entry.visible && entry.haloOn;
+    if (entry.haloOn) {
+      entry.halo.material.color.copy(a >= 1 ? ACT_HOT : ACT_COLD);
+      // Strongly super-linear on purpose. In the A565T baseline four nodes in
+      // five are elevated to SOME degree — that is what the disease is — so a
+      // linear ramp haloes 80% of the board at once and the reader cannot tell
+      // which arm actually moved. Raising it to a power keeps the faint
+      // majority as a whisper and lets only genuine movers read as lit.
+      entry.halo.material.opacity = 0.62 * mag ** 1.7;
+      entry.halo.scale.setScalar(1 + 0.26 * mag);
+    }
+  }
+
+  for (const e of graph.edges) {
+    // Anchored at 1.0: an edge whose endpoints are at wild-type activity must
+    // come out at exactly its base radius, or every arrow in the scene thickens
+    // the moment any state is selected and thickness stops meaning anything.
+    const want = act
+      ? e.baseRadius * Math.min(2.2, Math.max(0.4, edgeActivity(act, e.data) ** 0.55))
+      : e.baseRadius;
+    if (Math.abs((e.renderedRadius ?? e.baseRadius) - want) < 0.005) continue;
+    e.tube.geometry.dispose();
+    e.tube.geometry = new THREE.TubeGeometry(e.curve, 26, want, 5, false);
+    e.renderedRadius = want;
   }
 }

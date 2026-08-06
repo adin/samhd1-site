@@ -51,7 +51,7 @@ export const nodes = [
   {
     id: 'polyiclc', label: 'poly-ICLC (Hiltonol)', full: 'TLR3 agonist — Arm 3 (Arm 4 with JAK1 shielding)',
     compartment: 'endosome', klass: 'drug', pathways: ['drugs'],
-    pos: [-16, -24, 60], lod: 1, evidence: 'S',
+    pos: [-20, -22, 60], lod: 1, evidence: 'S',
     summary: 'The "upward" direction: drive IRF3 to INDUCE more SAMHD1 protein in a haploinsufficient cell.',
     detail: 'Arm 3 alone is expected to improve genomic-stability endpoints while provoking an interferon surge. Arm 4 ' +
       'adds upadacitinib to test whether the genome-stability gain can be uncoupled from the surge. Dosing follows ' +
@@ -112,7 +112,7 @@ export const nodes = [
   {
     id: 'abe8e', label: 'ABE8e-YA base editor', full: 'Adenine base editor for A·T → G·C reversion of c.1693G>A',
     compartment: 'nucleus', klass: 'drug', pathways: ['drugs'],
-    pos: [-14, 18, 40], lod: 2, evidence: 'I',
+    pos: [-20, 20, 6], lod: 2, evidence: 'I',
     summary: 'The curative horizon: a clean transition mutation is a premier base-editing candidate, with no double-strand break required.',
     refs: ['docGlass'],
   },

@@ -6,8 +6,10 @@
  * scene, and vice versa.
  */
 
-import { COMPARTMENTS, PATHWAYS, CLASSES, EDGE_KINDS, EVIDENCE, STREAMS } from './config.js';
+import { COMPARTMENTS, PATHWAYS, CLASSES, EDGE_KINDS, EVIDENCE, STREAMS, PERTURBATIONS } from './config.js';
 import { NODES, NODE_BY_ID, EDGES_BY_NODE, PATHWAY_COUNTS } from './data/index.js';
+import { CROSSLINKS as XLINKS, CROSSLINK_KINDS as XKINDS, SIBLING as XSIB,
+         siblingUrl as xUrl } from './data/crosslinks.js';
 import { REFS } from './data/refs.js';
 import { TOURS, PATH_PRESETS } from './data/tours.js';
 import { signLabel, stepSentence } from './paths.js';
@@ -67,6 +69,18 @@ export function buildRail(cb) {
   }
   document.getElementById('btn-clear-stream').addEventListener('click', () => cb.onStream(null));
   document.getElementById('btn-consequences').addEventListener('click', () => cb.onConsequences());
+
+  // Perturbation states (B1)
+  const stateList = document.getElementById('state-list');
+  for (const [key, st] of Object.entries(PERTURBATIONS)) {
+    const chip = document.createElement('div');
+    chip.className = 'chip state-chip' + (key === 'wt' ? ' on' : '');
+    chip.dataset.state = key;
+    chip.title = st.blurb;
+    chip.innerHTML = `<span>${esc(st.short)}</span>`;
+    chip.addEventListener('click', () => cb.onState(key));
+    stateList.appendChild(chip);
+  }
 
   // Cascade path presets
   const pathList = document.getElementById('path-list');
@@ -274,6 +288,25 @@ export function renderInspector(id, cb) {
     parts.push('</ul>');
   }
 
+  // Cross-atlas links. These were private-build-only while the SAMHD1 Function
+  // Atlas was unpublished — a link to a page that does not exist is worse than
+  // no link. It is published now, at the base named in ./data/crosslinks.js, so
+  // the gate is gone. If it is ever withdrawn, restore `IS_PRIVATE_BUILD &&`
+  // here rather than leaving the dead links in place.
+  const xs = XLINKS[id];
+  if (xs?.length) {
+    parts.push(`<h4>Also in the ${esc(XSIB.name)}</h4><div class="xlink-list">`);
+    for (const x of xs) {
+      const k = XKINDS[x.kind] ?? { glyph: '→', label: x.kind };
+      parts.push(`<a class="xlink" href="${esc(xUrl(x.to))}" target="_blank" rel="noopener">` +
+        `<span class="xl-glyph">${esc(k.glyph)}</span>` +
+        `<span class="xl-txt"><b>${esc(x.to)}</b><span>${esc(k.label)}</span>` +
+        (x.note ? `<span class="xl-note">${esc(x.note)}</span>` : '') +
+        `</span></a>`);
+    }
+    parts.push('</div>');
+  }
+
   const refs = new Set(n.refs ?? []);
   for (const e of [...links.in, ...links.out]) for (const r of e.refs ?? []) refs.add(r);
   if (refs.size) {
@@ -478,6 +511,21 @@ export function buildLegend() {
   parts.push('<p class="lg-note">A bigger molecule with a brighter label is a <b>key</b> node — ' +
              'one that stays labelled at whole-cell zoom. Faint ones appear only once you ' +
              'enter their compartment, or tick <em>Force all sub-detail</em>.</p>');
+
+  // Perturbation mode adds two encodings that are otherwise undiscoverable —
+  // an outer halo and a change in arrow thickness. Both are dormant until a
+  // state is picked, so they are described as conditional rather than listed
+  // beside the always-on encodings above.
+  parts.push('<h5>Perturbation state — halo and arrow width</h5><div class="lg-grid">');
+  parts.push('<div class="lg-row"><span class="lg-ring" style="border-color:#ff7043"></span>' +
+             '<span><b>warm halo</b> — running above wild type</span></div>');
+  parts.push('<div class="lg-row"><span class="lg-ring" style="border-color:#4fc3f7"></span>' +
+             '<span><b>cool halo</b> — running below wild type</span></div>');
+  parts.push('</div>');
+  parts.push('<p class="lg-note">Halo brightness and arrow thickness both scale with how far ' +
+             'a node has moved from wild type; an unchanged arrow keeps its normal width. ' +
+             'These are <b>coarse ordinal expectations</b> propagated through the signed ' +
+             'graph — direction and rough magnitude, not predicted fold-changes.</p>');
 
   host.innerHTML = parts.join('');
 }
@@ -860,4 +908,57 @@ export function showPathStep(route, stepIdx, cb) {
 
 export function hidePathHud() {
   if (pathHud) { pathHud.remove(); pathHud = null; }
+}
+
+// ── Perturbation readout (B1) ─────────────────────────────────────────────
+// The panel that says, in words, what the selected arm is predicted to do.
+// A picture of thickened arrows is not self-explaining: without naming what
+// moved and in which direction, the reader is left inferring the model's claim
+// from tube diameter, which is exactly the kind of implicit argument the atlas
+// is supposed to avoid.
+
+/** Highlight the active state chip. */
+export function markState(key) {
+  for (const chip of document.querySelectorAll('.state-chip')) {
+    chip.classList.toggle('on', chip.dataset.state === key);
+  }
+}
+
+/**
+ * Render the readout for `key`. `moved` is the {up, down} from movers(),
+ * already computed against the right reference by main.js.
+ */
+export function renderStateReadout(key, moved, cb) {
+  const box = document.getElementById('state-readout');
+  const st = PERTURBATIONS[key];
+
+  if (!st || key === 'wt') {
+    box.classList.add('hidden');
+    box.innerHTML = '';
+    return;
+  }
+
+  const isDrug = !!st.drug;
+  const ref = isDrug ? 'vs untreated A565T' : 'vs wild type';
+  const row = (m) =>
+    `<button class="mover" data-node="${esc(m.id)}">` +
+    `<span class="mv-label">${esc(m.label)}</span>` +
+    `<span class="mv-x">×${m.change.toFixed(2)}</span></button>`;
+
+  box.classList.remove('hidden');
+  box.innerHTML =
+    `<p class="state-blurb"><span class="ev ev-${st.evidence}">${st.evidence}</span> ${esc(st.blurb)}</p>` +
+    (moved.down.length
+      ? `<h3 class="mv-head down">falls most <span>${esc(ref)}</span></h3>` +
+        `<div class="mv-list">${moved.down.map(row).join('')}</div>` : '') +
+    (moved.up.length
+      ? `<h3 class="mv-head up">rises most <span>${esc(ref)}</span></h3>` +
+        `<div class="mv-list">${moved.up.map(row).join('')}</div>` : '') +
+    `<p class="state-caveat">Coarse ordinal expectations propagated through the ` +
+    `signed graph — direction and rough magnitude, <b>not</b> predicted fold-changes. ` +
+    `There are no rate constants in this model.</p>`;
+
+  for (const b of box.querySelectorAll('.mover')) {
+    b.addEventListener('click', () => cb.onSelect(b.dataset.node));
+  }
 }

@@ -64,6 +64,27 @@ Each route carries three things worth knowing:
   chain is only as defensible as its softest step.
 - **Which feedback loops** it passes through.
 
+**Compare treated against untreated.** Pick a state in the left rail — wild
+type, the untreated variant, or any of ten study arms — and the board re-renders
+to what the model predicts that arm would do. Molecules running above wild type
+carry a warm halo, ones running below carry a cool one, and the arrows thicken
+or thin with the traffic through them. The rail names the biggest movers in
+words, measured against the *untreated* variant so you are reading what the drug
+changed rather than what the disease does.
+
+It is worth seeing the two sensor arms side by side, because they are close to
+mirror images: [MCC950](/atlas/#state=mcc950){ target="_blank" } takes NLRP3 and
+IL-1β down while the interferon arm barely moves, and
+[IMSB301](/atlas/#state=imsb301){ target="_blank" } does the reverse. Neither
+leaves the other completely untouched, and that is not a rounding error — cGAS
+–STING primes NLRP3 through NF-κB, so blocking the first really should dim the
+second.
+
+These are **coarse directional expectations**, not predicted fold-changes. The
+graph has no rate constants, no stoichiometry and no time axis, so the numbers
+say "this goes down, that does not" and nothing finer. Read them as arrows, not
+as measurements.
+
 ## Send someone the exact view
 
 Every view in the atlas is a URL. Set something up — a tour paused on the step
@@ -90,6 +111,8 @@ The grammar is plain enough to write by hand:
 | [`#from=a565t&to=pem`](/atlas/#from=a565t&to=pem){ target="_blank" } | a trace between any two molecules you name |
 | [`#focus=mitochondrion&layers=mito.mitophagy`](/atlas/#focus=mitochondrion&layers=mito.mitophagy){ target="_blank" } | inside the mitochondrion, two layers on |
 | [`#ev=S`](/atlas/#ev=S){ target="_blank" } | the whole map filtered to demonstrated evidence only |
+| [`#state=mcc950`](/atlas/#state=mcc950){ target="_blank" } | the board as predicted under MCC950 (Arm 9) |
+| [`#state=vbit4&tour=loop-a`](/atlas/#state=vbit4&tour=loop-a){ target="_blank" } | the Loop A tour, rendered in the VBIT-4 state |
 
 (All relative to `/atlas/` — the full link is
 `https://glasscannonfoundation.org/atlas/#tour=loop-a` and so on.)

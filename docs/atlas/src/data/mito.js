@@ -70,7 +70,7 @@ export const nodes = [
   {
     id: 'cytc', label: 'cytochrome c', full: 'Cytochrome c — ETC electron shuttle and apoptotic signal',
     compartment: 'mitochondrion', klass: 'metabolite', pathways: ['mito'],
-    pos: [50, -20, 28], lod: 2, evidence: 'S',
+    pos: [52, -24, 24], lod: 2, evidence: 'S',
     summary: 'Its release is simultaneously a bioenergetic loss (Complex III→IV gap) and an apoptotic signal.',
     refs: ['yang2025bik'],
   },
@@ -320,7 +320,7 @@ export const nodes = [
   {
     id: 'mitf', label: 'MITF / TFEB', full: 'Lysosomal biogenesis transcription factors',
     compartment: 'lysosome', klass: 'tf', pathways: ['mitophagy'],
-    pos: [32, -46, -44], lod: 2, evidence: 'I',
+    pos: [31, -46, -44], lod: 2, evidence: 'I',
     summary: 'Cytoplasmically retained by mTORC1 → lysosomal hydrolase genes under-transcribed.',
     refs: ['yaxian2025', 'napolitano2020'],
   },
@@ -336,7 +336,7 @@ export const nodes = [
   {
     id: 'dnase2', label: 'DNase II', full: 'Deoxyribonuclease II alpha (DNASE2) — the lysosomal acid DNase',
     compartment: 'lysosome', klass: 'enzyme', pathways: ['mitophagy', 'cgas-sting', 'retro'],
-    pos: [12, -50, -44], lod: 1, evidence: 'G', key: true,
+    pos: [10, -52, -46], lod: 1, evidence: 'G', key: true,
     summary: 'The terminal step of DNA disposal: whatever autophagy and phagocytosis deliver, DNase II is what actually destroys it.',
     detail: 'DNase II is acid-dependent and lysosome-restricted, so it only works in a compartment that has been ' +
       'properly acidified and properly stocked. Human DNASE2 deficiency is a type-I interferonopathy, and in mice ' +

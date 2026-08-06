@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAMHD1 Function Atlas — what it does, where, and what fails</title>
+<link rel="stylesheet" href="css/app.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.js",
+    "three/addons/controls/OrbitControls.js": "./vendor/OrbitControls.js",
+    "three/addons/renderers/CSS2DRenderer.js": "./vendor/CSS2DRenderer.js"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="viewport"><canvas id="gl"></canvas><div id="labels"></div></div>
+
+<aside id="rail" class="panel">
+  <header class="rail-head">
+    <h1>SAMHD1 Function Atlas</h1>
+    <p class="sub">what the protein does &middot; where in the cell &middot; what fails at half dose</p>
+  </header>
+
+  <section class="rail-sec">
+    <h2>Compare</h2>
+    <div id="state-list" class="chip-grid"></div>
+    <div id="state-note" class="state-note"></div>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Domains — the canonical groupings</h2>
+    <div id="domain-list"></div>
+    <button id="btn-clear-domain" class="wide-btn hidden">× show all domains</button>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Guided tours</h2>
+    <div id="tour-list"></div>
+    <button id="btn-exit-tour" class="wide-btn hidden">× exit tour</button>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Tiers — distance from the protein</h2>
+    <div id="tier-list"></div>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Compartments</h2>
+    <div id="compartment-list" class="chip-grid"></div>
+    <button id="btn-overview" class="wide-btn">↺ Whole-cell overview</button>
+  </section>
+
+  <section class="rail-sec">
+    <h2>Display</h2>
+    <label class="toggle"><input type="checkbox" id="opt-structural" checked> Show SAMHD1 ↔ function links</label>
+    <label class="toggle"><input type="checkbox" id="opt-membranes" checked> Show membranes</label>
+    <label class="toggle"><input type="checkbox" id="opt-spin"> Slow auto-rotate</label>
+    <label class="sel">Labels
+      <select id="opt-labels">
+        <option value="key">Critical only</option>
+        <option value="all">All visible</option>
+        <option value="none">None</option>
+      </select>
+    </label>
+    <label class="sel">Location evidence
+      <select id="opt-evidence">
+        <option value="all">All (S+G+I)</option>
+        <option value="SG">Demonstrated + imported</option>
+        <option value="S">Demonstrated only</option>
+      </select>
+    </label>
+  </section>
+
+  <section class="rail-sec">
+    <details id="legend"><summary><h2>Legend</h2></summary><div id="legend-body"></div></details>
+  </section>
+
+  <footer class="rail-foot">
+    <span class="ev ev-S">S</span> demonstrated &nbsp;
+    <span class="ev ev-G">G</span> imported &nbsp;
+    <span class="ev ev-I">I</span> inferred
+  </footer>
+</aside>
+
+<div id="topbar" class="panel">
+  <input id="search" type="search" placeholder="Search a function — dNTPase, VDAC1, R-loop, T592…" autocomplete="off">
+  <div id="search-results"></div>
+</div>
+
+<aside id="inspector" class="panel hidden">
+  <button id="insp-close" class="close-btn" title="Close">×</button>
+  <div id="insp-body"></div>
+</aside>
+
+<div id="tour-hud" class="panel hidden">
+  <div class="th-head"><span id="th-title"></span><span id="th-count"></span></div>
+  <p id="th-body"></p>
+  <div class="th-btns">
+    <button id="th-prev" class="mini-btn">← back</button>
+    <button id="th-next" class="mini-btn">next →</button>
+  </div>
+</div>
+
+<div id="hint" class="panel">
+  <b>drag</b> orbit &middot; <b>scroll</b> zoom &middot; <b>click</b> a node to inspect &middot; <b>←/→</b> step a tour
+</div>
+
+<div id="loading">Loading atlas…</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

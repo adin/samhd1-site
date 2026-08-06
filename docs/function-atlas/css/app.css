@@ -290,269 +290,94 @@ html, body {
 }
 
 /* ── Stream chips ─────────────────────────────────────────────── */
-.stream {
-  display: flex; align-items: center; gap: 8px; width: 100%;
-  margin-bottom: 4px; padding: 6px 8px 6px 0;
-  background: rgba(255,255,255,0.03); border: 1px solid transparent;
-  border-radius: 6px; cursor: pointer; font: inherit; text-align: left;
-  color: var(--ink-dim); transition: background .13s, border-color .13s, color .13s;
-}
-.stream:hover { background: rgba(255,255,255,0.09); color: var(--ink); }
-.stream.active { border-color: var(--stream); background: color-mix(in srgb, var(--stream) 16%, transparent); color: var(--ink); }
-.stream .bar { width: 4px; align-self: stretch; border-radius: 3px; background: var(--stream); flex: 0 0 4px; }
-.stream .txt { flex: 1; min-width: 0; }
-.stream .txt b { display: block; font-size: 11.5px; font-weight: 620; color: var(--stream); }
-.stream .txt span { display: block; font-size: 9.5px; color: var(--ink-faint); line-height: 1.35; }
-.stream .ev { flex: 0 0 15px; }
 
-#btn-consequences {
-  border-color: rgba(255,180,84,0.4); color: var(--accent-warm);
-  background: rgba(255,180,84,0.08); font-weight: 550;
-}
-#btn-consequences:hover { background: rgba(255,180,84,0.2); color: #ffd8a0; }
+/* ── SAMHD1 atlas specifics ───────────────────────────────────────────── */
 
-/* ── Pills, chains, hops (stream + consequences inspectors) ───── */
-.pill-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 4px; }
-.node-pill {
-  font-size: 10.5px; padding: 3px 8px; border-radius: 20px; cursor: pointer;
-  background: rgba(255,255,255,0.06); border: 1px solid var(--edge); color: var(--ink);
-  transition: background .12s;
-}
-.node-pill:hover { background: rgba(255,255,255,0.18); }
+.state-chip { justify-content: center; text-align: center; font-weight: 500; }
+.state-chip.on { border-color: var(--accent-warm); color: var(--ink); background: rgba(255,180,84,0.16); }
 
-.chain-list { list-style: none; margin: 0; padding: 0; counter-reset: step; }
-.chain-list li {
-  position: relative; padding: 6px 8px 6px 26px; border-radius: 5px;
-  cursor: pointer; font-size: 11.5px; color: var(--ink-dim);
-  border-left: 2px solid var(--edge); margin-left: 4px;
-}
-.chain-list li::before {
-  counter-increment: step; content: counter(step);
-  position: absolute; left: 7px; top: 7px;
-  font-family: var(--mono); font-size: 9px; color: var(--ink-faint);
-}
-.chain-list li:hover { background: rgba(255,255,255,0.07); color: var(--ink); }
-.chain-list .en { color: var(--ink); font-weight: 600; }
-.chain-list .el { font-size: 10px; color: var(--ink-faint); }
-.chain-list .cb {
-  font-style: normal; font-size: 8.5px; text-transform: uppercase; letter-spacing: 0.06em;
-  padding: 1px 5px; border-radius: 8px; margin-left: 6px; vertical-align: 1px;
-}
-.chain-list .cb.in  { background: rgba(70,209,138,0.22); color: #7ce4ae; }
-.chain-list .cb.out { background: rgba(224,103,79,0.22); color: #f09079; }
+.state-note { margin-top: 9px; font-size: 11px; line-height: 1.55; color: var(--ink-dim); }
 
-.hop { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 7px; }
-.hop-n {
-  flex: 0 0 20px; text-align: center; font-family: var(--mono); font-size: 10px;
-  color: var(--ink-faint); background: rgba(255,255,255,0.05);
-  border-radius: 4px; padding: 2px 0; margin-top: 2px;
-}
-
-/* ── Cascade path mode ────────────────────────────────────────── */
-.path-preset:hover { background: rgba(255,215,94,0.14); border-color: rgba(255,215,94,0.4); }
-
-.trace-btn {
-  display: block; width: 100%; margin: 14px 0 4px; padding: 8px 10px;
-  font: inherit; font-size: 11.5px; font-weight: 550; text-align: left; cursor: pointer;
-  color: #ffd75e; background: rgba(255,215,94,0.09);
-  border: 1px solid rgba(255,215,94,0.35); border-radius: 6px;
-  transition: background .13s;
-}
-.trace-btn:hover { background: rgba(255,215,94,0.22); }
-
-.route-list { list-style: none; margin: 0; padding: 0; }
-.route-list li {
-  padding: 8px 10px; margin-bottom: 5px; border-radius: 6px; cursor: pointer;
-  background: rgba(255,255,255,0.035); border: 1px solid transparent;
-  transition: background .12s, border-color .12s;
-}
-.route-list li:hover { background: rgba(255,255,255,0.10); }
-.route-list li.sel { border-color: rgba(255,215,94,0.5); background: rgba(255,215,94,0.12); }
-.route-head { display: flex; align-items: center; gap: 7px; margin-bottom: 3px; }
-.route-sign { font-size: 15px; font-weight: 700; line-height: 1; width: 12px; }
-.route-sign.up { color: #e0674f; }
-.route-sign.down { color: #46d18a; }
-.route-n { font-size: 11px; color: var(--ink); font-weight: 600; }
-.route-loops {
-  font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em;
-  padding: 1px 6px; border-radius: 8px;
-  background: rgba(192,107,255,0.2); color: #d3a6ff;
-}
-.route-via { font-size: 10.5px; color: var(--ink-faint); line-height: 1.4; }
-
-/* ── Share / permalinks ───────────────────────────────────────── */
-.share-note {
-  margin: 0 0 8px; font-size: 11px; line-height: 1.45; color: var(--ink-dim);
-}
-.share-url {
-  display: block; width: 100%;
-  font-family: var(--mono); font-size: 9.5px; color: var(--ink-faint);
-  background: rgba(0,0,0,0.32); border: 1px solid var(--edge);
-  border-radius: 5px; padding: 5px 7px; outline: 0;
-  text-overflow: ellipsis;
-}
-.share-url:focus { color: var(--ink); border-color: var(--accent); }
-
-#btn-copy-link {
-  border-color: rgba(70,200,255,0.35); color: #8fdcff;
-  background: rgba(70,200,255,0.10); font-weight: 550;
-}
-#btn-copy-link:hover { background: rgba(70,200,255,0.24); color: var(--ink); }
-
-/* Anchored to the rail rather than centred, so it never lands on the HUD the
-   ⧉ link button lives in. */
-#toast {
-  position: fixed; z-index: 60; left: 296px; bottom: 54px;
-  padding: 8px 15px; border-radius: 20px;
-  font-size: 11.5px; color: var(--ink);
-  background: rgba(20,27,40,0.96); border: 1px solid var(--edge-strong);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  opacity: 0; transform: translateY(10px); pointer-events: none;
-  transition: opacity .18s, transform .18s;
-}
-#toast.on { opacity: 1; transform: translateY(0); }
-@media (max-width: 1180px) { #toast { left: 14px; bottom: 14px; } }
-
-/* ── Edge hover tip + edge inspector (B2) ─────────────────────── */
-#edge-tip {
-  position: fixed; z-index: 40; max-width: 300px;
-  padding: 7px 11px; border-radius: 7px;
-  background: rgba(12,17,27,0.97); border: 1px solid var(--edge-strong);
-  box-shadow: 0 8px 26px rgba(0,0,0,0.65);
-  font-size: 11.5px; color: var(--ink); line-height: 1.4;
-  opacity: 0; pointer-events: none; transition: opacity .12s;
-}
-#edge-tip.on { opacity: 1; }
-#edge-tip b { font-weight: 620; }
-#edge-tip .tip-label { display: block; margin-top: 3px; font-size: 10.5px; color: var(--ink-dim); }
-#edge-tip .tip-meta  { display: block; margin-top: 4px; font-size: 9.5px; color: var(--ink-faint); }
-#edge-tip .tip-meta .ev { font-style: normal; margin-right: 4px; }
-
-.insp-title.edge-title {
-  display: flex; align-items: center; gap: 9px; flex-wrap: wrap; font-size: 17px;
-}
-.edge-title .hop-node { cursor: pointer; border-bottom: 1px dashed rgba(255,255,255,0.25); }
-.edge-title .hop-node:hover { color: var(--accent); border-bottom-color: var(--accent); }
-.edge-title .hop-kind { font-size: 21px; line-height: 1; }
-
-/* ── Legend (D1) ──────────────────────────────────────────────── */
-#legend > summary {
-  cursor: pointer; list-style: none; user-select: none;
-  display: flex; align-items: center; gap: 6px;
-}
-#legend > summary::-webkit-details-marker { display: none; }
-#legend > summary h2 { margin: 0; }
-#legend > summary::before {
-  content: '▸'; color: var(--ink-faint); font-size: 9px; transition: transform .15s;
-}
-#legend[open] > summary::before { transform: rotate(90deg); }
-#legend > summary:hover h2, #legend > summary:hover::before { color: var(--ink-dim); }
-
-#legend-body { margin-top: 10px; }
-#legend-body h5 {
-  margin: 13px 0 6px; font-size: 9.5px; font-weight: 650;
-  text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-faint);
-}
-#legend-body h5:first-child { margin-top: 0; }
-.lg-note { margin: 0 0 9px; font-size: 10.5px; line-height: 1.5; color: var(--ink-faint); }
-.lg-note b { color: var(--ink-dim); }
-.lg-note em { color: var(--ink-dim); font-style: normal; }
-
-/* One column, not two. Labels like "Transcription factor" and "Multiprotein
-   complex" set a min-content width that two columns cannot honour inside a
-   268px rail, and the rail then scrolls sideways. The panel is collapsed by
-   default, so the extra height costs nothing. */
-.lg-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px 8px; }
-.lg-row {
-  display: flex; align-items: center; gap: 7px;
-  font-size: 10.5px; color: var(--ink-dim); line-height: 1.25;
-}
-.lg-row > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
-.lg-shape, .lg-edge { flex: 0 0 auto; display: block; }
-.lg-ring {
-  flex: 0 0 14px; width: 14px; height: 14px; border-radius: 50%;
-  border: 2px solid currentColor; display: block;
-}
-.lg-sign { font-style: normal; margin-left: 5px; font-size: 10px; }
-.lg-sign.up { color: #e0674f; }
-.lg-sign.down { color: #46d18a; }
-
-/* Stepper HUD — reuses #tour-hud geometry with its own accents */
-#tour-hud.path-hud { border-color: rgba(255,215,94,0.3); }
-.path-hud .step-kicker { color: var(--ink-faint); text-transform: none; letter-spacing: 0; font-size: 10.5px; }
-.path-hud .step-kicker b.up { color: #e0674f; }
-.path-hud .step-kicker b.down { color: #46d18a; }
-.path-hud h3 { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
-.path-hud .hop-node {
-  cursor: pointer; border-bottom: 1px dashed rgba(255,255,255,0.25);
-}
-.path-hud .hop-node:hover { color: var(--accent); border-bottom-color: var(--accent); }
-.path-hud .hop-kind { font-size: 20px; line-height: 1; }
-.path-hud .step-meta {
-  display: flex; align-items: center; gap: 7px; margin-top: 9px;
-  font-size: 10.5px; color: var(--ink-dim);
-}
-.path-hud .dots i.past { background: rgba(255,215,94,0.55); }
-.path-hud .dots i.on { background: #ffd75e; }
-
-/* ── Perturbation / comparison mode (B1) ──────────────────────────────── */
-/* Chips are centred rather than left-aligned with a dot, because a state has
-   no colour of its own — the colour in this feature belongs to the direction
-   of change (hot = up, cold = down) and reusing it on the chip would imply
-   the state itself was "up". */
-.state-chip { justify-content: center; text-align: center; font-size: 10.5px; }
-.state-chip.on {
-  border-color: #ff7043;
-  color: var(--ink);
-  background: rgba(255,112,67,0.16);
-}
-
-.state-readout { margin-top: 9px; }
-.state-readout.hidden { display: none; }
-
-.state-blurb {
-  margin: 0 0 9px; font-size: 11px; line-height: 1.5; color: var(--ink-dim);
-}
-.state-blurb .ev { margin-right: 5px; }
-
-.mv-head {
-  margin: 9px 0 5px; font-size: 9.5px; letter-spacing: .07em; text-transform: uppercase;
-  display: flex; justify-content: space-between; align-items: baseline; gap: 6px;
-}
-.mv-head.down { color: #4fc3f7; }
-.mv-head.up   { color: #ff7043; }
-.mv-head span { font-size: 9px; letter-spacing: 0; text-transform: none; color: var(--ink-dim); opacity: .8; }
-
-.mv-list { display: flex; flex-direction: column; gap: 3px; }
-.mover {
-  display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  font: inherit; font-size: 11px; text-align: left; cursor: pointer;
-  color: var(--ink-dim); background: rgba(255,255,255,0.035);
-  border: 1px solid transparent; border-radius: 5px; padding: 4px 7px;
+/* Tier rows: a swatch, a name, a count, and the shape it draws as. */
+.tier {
+  display: flex; align-items: center; gap: 7px; padding: 5px 6px;
+  border-radius: 6px; cursor: pointer; font-size: 11.5px; color: var(--ink-dim);
   transition: background .13s, color .13s;
 }
-.mover:hover { background: rgba(255,255,255,0.10); color: var(--ink); }
-/* The label may be long and the multiplier must never be pushed off-screen or
-   wrap under it — the number is the whole point of the row. */
-.mv-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.mv-x { flex: 0 0 auto; font-variant-numeric: tabular-nums; opacity: .85; }
+.tier:hover { background: rgba(255,255,255,0.07); color: var(--ink); }
+.tier.off { opacity: .42; }
+.tier .swatch { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 10px; }
+.tier .count { margin-left: auto; font-size: 10px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.tier input { accent-color: var(--accent); }
 
-.state-caveat {
-  margin: 10px 0 0; font-size: 10px; line-height: 1.5;
-  color: var(--ink-dim); opacity: .75; border-top: 1px solid var(--edge); padding-top: 8px;
+.node-label.hub { font-size: 13px; font-weight: 650; color: var(--accent-warm); letter-spacing: .01em; }
+
+/* ── Loss bar: the WT vs A565T readout on a node ─────────────────────── */
+.loss {
+  margin: 10px 0 4px; padding: 9px 10px; border-radius: 7px;
+  background: rgba(79,195,247,0.08); border: 1px solid rgba(79,195,247,0.22);
+}
+.loss.protective { background: rgba(127,217,122,0.08); border-color: rgba(127,217,122,0.26); }
+.loss.risk { background: rgba(224,103,79,0.07); border-color: rgba(224,103,79,0.22); }
+.loss h4 { margin: 0 0 6px; font-size: 9.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-dim); }
+.loss-bar { height: 7px; border-radius: 4px; background: rgba(255,255,255,0.09); overflow: hidden; }
+.loss-fill { height: 100%; background: linear-gradient(90deg, #4fc3f7, #2f7fa8); }
+.loss.protective .loss-fill { background: linear-gradient(90deg, #7fd97a, #4f9a4a); }
+.loss-txt { margin-top: 6px; font-size: 11px; color: var(--ink); }
+.loss-txt b { font-variant-numeric: tabular-nums; }
+
+/* ── Citation flags ──────────────────────────────────────────────────── */
+.cite-flag {
+  display: inline-block; margin-left: 6px; padding: 1px 5px; border-radius: 3px;
+  font-size: 9px; letter-spacing: .04em; text-transform: uppercase;
+  background: rgba(224,103,79,0.18); color: #e0674f; border: 1px solid rgba(224,103,79,0.3);
 }
 
-/* ── Cross-atlas links (private build only — see data/crosslinks.js) ───── */
-.xlink-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 4px; }
+/* ── Tour HUD ────────────────────────────────────────────────────────── */
+#tour-hud {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 20px;
+  width: min(620px, calc(100vw - 340px)); padding: 14px 16px; z-index: 40;
+}
+#tour-hud.hidden { display: none; }
+.th-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+#th-title { font-weight: 600; font-size: 13.5px; color: var(--ink); }
+#th-count { font-size: 10.5px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+#tour-hud p { margin: 8px 0 11px; font-size: 12px; line-height: 1.6; color: var(--ink-dim); }
+.th-btns { display: flex; gap: 7px; }
+.th-btns .mini-btn { flex: 1; }
+
+.tier-pill {
+  display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 10px;
+  letter-spacing: .04em; text-transform: uppercase; margin-bottom: 8px;
+}
+
+/* ── Cross-atlas links ────────────────────────────────────────────────── */
+.xlink-list { display: flex; flex-direction: column; gap: 5px; }
 .xlink {
   display: flex; gap: 9px; align-items: flex-start;
   padding: 7px 9px; border-radius: 6px; text-decoration: none;
-  background: rgba(255,180,84,0.07); border: 1px solid rgba(255,180,84,0.20);
+  background: rgba(70,200,255,0.06); border: 1px solid rgba(70,200,255,0.18);
   transition: background .13s, border-color .13s;
 }
-.xlink:hover { background: rgba(255,180,84,0.14); border-color: rgba(255,180,84,0.38); }
-.xl-glyph { color: var(--accent-warm); font-size: 13px; line-height: 1.3; flex: 0 0 auto; }
+.xlink:hover { background: rgba(70,200,255,0.13); border-color: rgba(70,200,255,0.35); }
+.xl-glyph { color: var(--accent); font-size: 13px; line-height: 1.3; flex: 0 0 auto; }
 .xl-txt { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
 .xl-txt b { color: var(--ink); font-size: 11.5px; font-family: var(--mono); }
 .xl-txt > span { color: var(--ink-dim); font-size: 10px; }
 .xl-note { color: var(--ink-faint) !important; font-size: 10px; line-height: 1.5; margin-top: 3px; }
+
+/* ── Domain rows ──────────────────────────────────────────────────────── */
+.domain {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  font: inherit; text-align: left; cursor: pointer;
+  padding: 7px 8px; margin-bottom: 4px; border-radius: 6px;
+  background: rgba(255,255,255,0.035); border: 1px solid transparent; color: var(--ink-dim);
+  transition: background .13s, border-color .13s, color .13s;
+}
+.domain:hover { background: rgba(255,255,255,0.09); color: var(--ink); }
+.domain.on { border-color: var(--dom); background: color-mix(in srgb, var(--dom) 14%, transparent); color: var(--ink); }
+.domain .bar { width: 3px; align-self: stretch; border-radius: 2px; background: var(--dom); flex: 0 0 3px; }
+.domain .txt { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.domain .txt b { font-size: 12px; color: var(--ink); }
+.domain .txt > span { font-size: 10px; color: var(--ink-faint); }
+.domain .count { margin-left: auto; font-size: 10px; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
