@@ -220,10 +220,17 @@ export function renderInspector(id, cb) {
     for (const rid of n.refs) {
       const r = REFS[rid];
       if (!r) continue;
-      const flag = r.flag
+      // A corrected entry carries the evidence for its correction, so it reads
+      // as verified rather than as an unresolved defect. The duplicate marker
+      // stays either way — that is a fact about the list, not a doubt about the
+      // source.
+      const flag = r.verifiedBy
+        ? `<span class="cite-ok" title="${esc(r.verifiedBy)}">verified</span>`
+        : r.flag
         ? `<span class="cite-flag" title="${esc(flagHelp(r.flag))}">${esc(r.flag)}</span>` : '';
       const dup = r.duplicateOf ? `<span class="cite-flag">same as ${esc(r.duplicateOf)}</span>` : '';
       p.push(`<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.short)}</a>${flag}${dup}` +
+             (r.caution ? `<br><span class="ref-caution">⚠ ${esc(r.caution)}</span>` : '') +
              (r.finding ? `<br><span class="ref-find">${esc(r.finding)}</span>` : '') + `</li>`);
     }
     p.push(`</ol>`);
