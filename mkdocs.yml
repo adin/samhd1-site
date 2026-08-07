@@ -3,49 +3,49 @@ site_description: >-
   A patient-and-family-led research effort to characterize heterozygous
   SAMHD1 p.A565T — mechanism, kindred, objectives, and weekly literature
   surveillance.
-# Injected at deploy time from the GitHub Pages URL (see .github/workflows/deploy.yml).
-# The placeholder default lets `mkdocs build --strict` and `mkdocs serve` work locally.
 site_url: !ENV [SITE_URL, "https://example.github.io/glass-cannon/"]
 
 theme:
   name: material
-  logo: assets/logo.svg
-  favicon: assets/logo.svg
+  custom_dir: overrides          # <-- NEW
+  logo: assets/mark.png          # <-- was assets/logo.svg
+  favicon: assets/mark.png       # <-- was assets/logo.svg
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: teal
+    # Single dark scheme. The redesign is dark-first; a light variant of
+    # the atlases does not exist, so a light site scheme only creates a
+    # jarring transition when a reader clicks through to one.
+    - scheme: slate
+      primary: black
       accent: deep orange
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: teal
-      accent: deep orange
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+  font: false                    # fonts come from overrides/main.html
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.instant
     - content.code.copy
     - search.suggest
     - search.highlight
 
+extra_css:                       # <-- NEW
+  - stylesheets/glasscannon.css
+
 nav:
   - Home: index.md
-  - The Science: samhd1.md
-  - Pathway Map: pathways.md
-  - SAMHD1 Atlas: samhd1-atlas.md
-  - Immune Atlas: immune-atlas.md
+  - The Variant: samhd1.md
+  - Atlases:
+      - Function Atlas: samhd1-atlas.md
+      - Immune Atlas: immune-atlas.md
   - The Kindred: kindred.md
-  - Objectives: objectives.md
-  - Foundation: foundation.md
+  - For Clinicians: clinicians.md     # <-- NEW
   - Research Blog:
       - blog/index.md
       - Tags: tags.md
+  - Foundation: foundation.md
+
+# REMOVED from nav (content preserved, see notes in SHIP.md):
+#   pathways.md   -> folded into the Immune Atlas page
+#   objectives.md -> compressed into the homepage "What we're trying to do" block
 
 plugins:
   - search
@@ -56,16 +56,9 @@ plugins:
       post_url_format: "{date}/{slug}"
       post_date_format: long
       archive_date_format: MMMM yyyy
-      # No categories_allowed list: hand-written posts may use any category
-      # (e.g. "Foundation Update", "Paper Spotlight") without failing the
-      # strict build. Recommended categories are documented in blog-manual/.
   - rss:
       match_path: blog/posts/.*
-      # Channel <image> for the feed header. The rss plugin only emits an
-      # <image> element when this is set (or the theme has a logo), so without
-      # it the feed shipped with no header image. Absolute URL is required by
-      # the RSS spec; keep it in sync with the production domain (docs/CNAME).
-      image: https://glasscannonfoundation.org/assets/logo.svg
+      image: https://glasscannonfoundation.org/assets/mark.png
       date_from_meta:
         as_creation: date
       categories:
@@ -93,3 +86,6 @@ extra:
     - icon: fontawesome/solid/rss
       link: feed_rss_created.xml
       name: RSS feed
+    - icon: fontawesome/solid/envelope
+      link: mailto:contact@glasscannonfoundation.org
+      name: contact@glasscannonfoundation.org

@@ -1,0 +1,207 @@
+{% extends "main.html" %}
+
+{#
+  overrides/home.html — the full-bleed homepage.
+  Activate by putting this in the front matter of docs/index.md:
+
+      ---
+      template: home.html
+      title: The Glass Cannon Project
+      ---
+
+  Everything below is plain HTML styled by docs/stylesheets/glasscannon.css.
+  Keep prose that changes often in index.md instead of here where you can.
+#}
+
+{% block content %}
+<div class="gc-home">
+
+  <!-- ── Hero ───────────────────────────────────────────────────────── -->
+  <section class="gc-hero">
+    <div>
+      <span class="gc-eyebrow">SAMHD1 c.1693G&gt;A &middot; p.Ala565Thr &middot; heterozygous</span>
+      <h1>Two bonds.<br><em>54 functions.</em></h1>
+      <p>A threonine where an alanine should be. It grabs Ser561 and Cys554, stiffens a domain built to stay
+         loose, and puts torsion through all three domains of the enzyme.</p>
+      <p>SAMHD1 is not one job. It is nucleotide metabolism, DNA repair, viral restriction, immune regulation
+         and mitochondrial integrity &mdash; 54 catalogued functions. Damage the enzyme and you do not get one
+         disease. You get a family that has been misdiagnosed one organ system at a time for a hundred years.</p>
+      <p style="margin-top:1.6rem">
+        <a class="md-button md-button--primary" href="{{ 'samhd1/' | url }}">See the blast radius</a>
+        <a class="md-button" href="{{ 'kindred/' | url }}">Study the kindred</a>
+      </p>
+    </div>
+    <figure class="gc-figure">
+      <img src="{{ 'assets/a565t-annotated.jpg' | url }}"
+           alt="AlphaFold 3 model of A565T: two new hydrogen bonds from Thr565 to Ser561 and Cys554">
+      <figcaption><span>The two new bonds &middot; AF3 &middot; chain A &middot; surroundings 5&Aring;</span>
+                  <span style="color:var(--gc-fuse)">Predicted</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- ── Stats ──────────────────────────────────────────────────────── -->
+  <section class="gc-stats">
+    <div><b>54</b><span>functions mapped in the atlas</span></div>
+    <div><b>&gt;75%</b><span>loss where the tetramer must be intact</span></div>
+    <div><b>5 / 3</b><span>generations traced / sequence-confirmed</span></div>
+    <div><b>0</b><span>published heterozygous case series</span></div>
+  </section>
+
+  <!-- ── The blast radius ───────────────────────────────────────────── -->
+  <section class="gc-sec">
+    <span class="gc-kicker">The blast radius</span>
+    <h2>It was never only an immune problem.</h2>
+    <p class="gc-lede">SAMHD1 only works as a tetramer &mdash; four copies assembled together. One variant copy
+      does not give you half an enzyme; it gives you tetramers of mixed composition. Anything that needs all
+      four subunits intact falls much further than gene dosage predicts. That split is why the damage lands
+      across five separate domains of biology at once.</p>
+
+    <div class="gc-grid gc-grid--5" style="margin-top:1.75rem">
+      <div><span class="gc-rule" style="background:#4a7fd4"></span><h3>dNTP balance</h3>
+        <p>Cell metabolism. The dNTPase and everything that runs on it &mdash; the hardest hit.</p>
+        <span class="gc-tag">9 functions &middot; &gt;75% loss</span></div>
+      <div><span class="gc-rule" style="background:#7d6bd4"></span><h3>Genome integrity</h3>
+        <p>Fork stabilisation and homologous recombination. Tumour-development risk.</p>
+        <span class="gc-tag" style="color:#c9a227">16 functions &middot; 30&ndash;40% loss</span></div>
+      <div><span class="gc-rule" style="background:#4fd1a5"></span><h3>Viral restriction</h3>
+        <p>Intrinsic immunity &mdash; HIV-1 and mobile elements. Runs on the dNTPase.</p>
+        <span class="gc-tag">5 functions &middot; &gt;75% loss</span></div>
+      <div><span class="gc-rule" style="background:#d4574a"></span><h3>Immune modulation</h3>
+        <p>The IRF7 brake and the interferon second wave. Autoimmunity.</p>
+        <span class="gc-tag" style="color:#c9a227">15 functions &middot; 30&ndash;40% loss</span></div>
+      <div style="outline:1px solid #46280f"><span class="gc-rule" style="background:#f26522"></span>
+        <h3>Mitochondrial integrity</h3>
+        <p>VDAC1, mtDNA containment, mitophagy. Where the metabolic arm and the immune arm turn out to be
+           the same arm.</p>
+        <span class="gc-tag">9 functions &middot; catastrophic</span></div>
+    </div>
+
+    <p class="gc-lede" style="margin-top:1rem; font-size:.86rem; color:var(--gc-ink-faint); max-width:88ch">
+      Kept deliberately off that scale: the cancer associations, which are lifetime probabilistic risk rather
+      than a per-cell deficit &mdash; including renal clear cell carcinoma, the one place where having less
+      SAMHD1 <em>helps</em>. An atlas that showed only harms would be an advocacy document rather than a model.</p>
+  </section>
+
+  <!-- ── The two atlases ────────────────────────────────────────────── -->
+  <section class="gc-sec">
+    <div class="gc-grid gc-grid--2" style="background:transparent; border:0; gap:1.25rem">
+      <a class="gc-card" href="{{ 'immune-atlas/' | url }}" style="padding:0">
+        <figure class="gc-card__shot" style="margin:0">
+          <img src="{{ 'assets/immune-atlas.jpg' | url }}" alt="The Immune Atlas &mdash; 3D innate immune signalling map">
+          <figcaption>217 molecules &middot; 380 interactions &middot; 11 compartments</figcaption>
+        </figure>
+        <div class="gc-card__body">
+          <h3>The Immune Atlas</h3>
+          <p>Fly inside the cell. Isolate one pathway. Ask for every route from the variant to type-I interferon
+             and it enumerates 379 of them, then walks you along one reaction at a time &mdash; each with its
+             mechanism, its citation and its evidence grade. Compare wild type against ten predicted study arms.</p>
+          <span class="gc-more">Open atlas &rarr;</span>
+        </div>
+      </a>
+      <a class="gc-card" href="{{ 'samhd1-atlas/' | url }}" style="padding:0">
+        <figure class="gc-card__shot" style="margin:0">
+          <img src="{{ 'assets/function-atlas.jpg' | url }}" alt="The SAMHD1 Function Atlas &mdash; 3D map of 54 functions">
+          <figcaption>54 functions &middot; 4 tiers of claim &middot; WT/A565T switch</figcaption>
+        </figure>
+        <div class="gc-card__body">
+          <h3>The Function Atlas</h3>
+          <p>Every function SAMHD1 has, placed in the compartment where it happens &mdash; sorted into four tiers
+             so that distance on screen is distance in the argument. One switch dims the whole board to what a
+             single working copy can still do.</p>
+          <span class="gc-more">Open atlas &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Deep-link answers ──────────────────────────────────────────── -->
+  <section class="gc-sec gc-answers">
+    <span class="gc-kicker">Answers, not paragraphs</span>
+    <h2>Every question on this site opens as a live view.</h2>
+    <p class="gc-lede">Both atlases address every state, every route and every evidence filter. So a question here
+      is not a link to an article &mdash; it is a link into the model, already set to the answer, with the
+      citations attached. A few hundred bytes you can send a colleague instead of a screen recording.</p>
+
+    <div class="gc-grid gc-grid--2" style="margin-top:1.75rem">
+      <div class="gc-answer"><h3>Every way A565T induces type-I interferon</h3>
+        <p>The question the whole framework turns on. 379 routes, enumerated within sixteen steps.</p>
+        <a class="gc-link" href="{{ 'atlas/' | url }}#all">/atlas/#all &rarr;</a></div>
+      <div class="gc-answer"><h3>Why half a gene is not half a function</h3>
+        <p>The tetramer, and the shape of the damage it makes.</p>
+        <a class="gc-link" href="{{ 'function-atlas/' | url }}#tour=tetramer&amp;step=1">/function-atlas/#tour=tetramer&amp;step=1 &rarr;</a></div>
+      <div class="gc-answer"><h3>What a JAK inhibitor actually fixes &mdash; and what it misses</h3>
+        <p>Loop B, step 5: the therapeutic gap, rendered as the board under treatment.</p>
+        <a class="gc-link" href="{{ 'atlas/' | url }}#tour=loop-b&amp;step=5">/atlas/#tour=loop-b&amp;step=5 &rarr;</a></div>
+      <div class="gc-answer"><h3>Where the evidence is thin</h3>
+        <p>Filter to demonstrated-only and watch most of the picture disappear. What is left is what can be
+           argued from.</p>
+        <a class="gc-link" href="{{ 'atlas/' | url }}#ev=S">/atlas/#ev=S &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- ── Kindred + objectives ───────────────────────────────────────── -->
+  <section class="gc-sec" style="display:grid; grid-template-columns:1fr 480px; gap:3.25rem; align-items:start">
+    <div>
+      <span class="gc-kicker">The kindred</span>
+      <h2>A hundred years of misdiagnosis, in one family.</h2>
+      <p class="gc-lede">Post-viral fatigue in one generation. Inflammatory arthritis in another. Metabolic
+        disease at normal body weight. Connective-tissue failure. Pre-eclampsia and early delivery, recurring.
+        Five generations of specialists, each treating one organ correctly and none of them holding the whole
+        picture.</p>
+      <p class="gc-lede">Sequencing found the same single-copy variant running from an infant to a relative in
+        advanced old age &mdash; including one confirmed carrier who is clinically unaffected, which makes this
+        family its own control group.</p>
+
+      <div class="gc-pedigree" style="margin-top:1.5rem">
+        <div><span class="g">G1</span><span class="s">Presumed</span><p>Advanced old age</p></div>
+        <div class="confirmed"><span class="g">G2</span><span class="s">Confirmed</span><p>ME/CFS, decades ago</p></div>
+        <div class="confirmed"><span class="g">G3</span><span class="s">Confirmed &times;N</span><p>Includes the unaffected carrier</p></div>
+        <div class="confirmed"><span class="g">G4</span><span class="s">Confirmed</span><p>Index generation</p></div>
+        <div><span class="g">G5</span><span class="s">Presumed</span><p>An infant</p></div>
+      </div>
+      <p class="gc-lede" style="margin-top:.9rem; font-size:.82rem; color:var(--gc-ink-faint)">
+        No names, ages, dates, photographs or identifying details appear on this site. The kindred is described
+        only by generation and de-identified phenotype; clinical records are held privately and never published.</p>
+    </div>
+
+    <div style="border:1px solid var(--gc-edge); background:var(--gc-panel); padding:1.9rem 1.75rem">
+      <span class="gc-kicker">What we're trying to do</span>
+      <ol style="margin:1rem 0 0; padding-left:1.1rem">
+        <li style="margin-bottom:.9rem"><b>Publish the phenotype.</b>
+          <span style="color:var(--gc-ink-dim)">No case report of the heterozygous state exists. Until one does,
+          no clinician can recognise it.</span></li>
+        <li style="margin-bottom:.9rem"><b>Confirm the mechanism.</b>
+          <span style="color:var(--gc-ink-dim)">ISG scores across the kindred, primary-cell work, and the
+          structural question at the C-terminal latch.</span></li>
+        <li style="margin-bottom:.9rem"><b>Treat what is treatable now.</b>
+          <span style="color:var(--gc-ink-dim)">JAK inhibition clears the interferon arm and leaves a
+          JAK-resistant floor. Six study arms are designed around that split.</span></li>
+        <li><b>Open a path to correction.</b>
+          <span style="color:var(--gc-ink-dim)">One base change. The weekly sweep tracks prime editing, base
+          editing and delivery alongside the biology.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Contact ────────────────────────────────────────────────────── -->
+  <section class="gc-cta">
+    <div>
+      <h2>Looking for a cohort? We are one, already assembled.</h2>
+      <p class="gc-lede">Five generations, three sequence-confirmed, with an internal control carrier. Consent,
+        records and scheduling are coordinated by one family member acting as cohort manager, so you correspond
+        with a single inbox rather than five households. Six-arm study proposal and mechanism concept note
+        available on request.</p>
+      <p style="margin-top:1.4rem">
+        <a class="gc-mailto" href="mailto:contact@glasscannonfoundation.org">contact@glasscannonfoundation.org</a>
+      </p>
+    </div>
+    <div>
+      <span class="gc-kicker">Research blog &middot; weekly</span>
+      <p class="gc-lede" style="margin-top:1rem">An automated semantic sweep of the literature, scored against
+        this exact phenotype, published every week.</p>
+      <p><a class="gc-more" href="{{ 'blog/' | url }}">Read the blog &rarr;</a></p>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

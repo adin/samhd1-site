@@ -1,0 +1,36 @@
+/* ============================================================
+   Glass Cannon — atlas reskin
+   docs/stylesheets/atlas-theme.css
+   Loaded AFTER css/app.css in both atlas index.html files.
+   The atlases are already fully token-driven, so this is the
+   whole reskin: retune the tokens, restyle the panel chrome.
+   ============================================================ */
+
+:root {
+  --bg:          #0b0b0c;   /* was #05070c — matches the site shell */
+  --panel:       rgba(17, 17, 20, 0.92);
+  --panel-solid: #111114;
+  --edge:        #232326;
+  --edge-strong: #3a3a3e;
+  --ink:         #e8e6e1;
+  --ink-dim:     #a8a49c;
+  --ink-faint:   #6f6b64;
+  --accent:      #f26522;   /* the fuse — replaces the default cyan  */
+  --accent-warm: #ffb454;
+  --radius:      0;         /* square corners, like the rest of the site */
+  --font: "Archivo", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  /* evidence grades stay exactly as they are — they are a shared
+     vocabulary with the site and the working documents */
+}
+
+/* Rail headings pick up the site's mono-caps treatment */
+#rail h1 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; }
+#rail .sub { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; color: var(--ink-faint); }
+.rail-sec > h2 { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* Panels: hairline edges instead of rounded cards */
+.panel { border: 1px solid var(--edge); box-shadow: none; }
+
+/* The mark, top-left of the rail — 3rem, no chip */
+.rail-head { background: url("../assets/mark.png") left center / 2rem no-repeat; padding-left: 2.75rem; }
