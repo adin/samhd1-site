@@ -255,82 +255,6 @@ export const SETTINGS = {
 //   source  — true if the stream appears in the manuscript figure; false marks
 //             an extension added in this atlas and not yet in the document.
 export const STREAMS = {
-  // The two feedback loops come first: they are the structures the colour
-  // streams feed INTO, and reading them before the streams is the order the
-  // manuscript itself uses (§Feedback Loops). Their edges already carry
-  // `loop: 'A' | 'B'` in the data; the chains below are the figure's version of
-  // each cycle — the closing arc included, so it reads as a loop rather than a
-  // path. Colours are the manuscript's Red and Amber, darkened and brightened
-  // respectively so neither collides with the RED or ORANGE streams below.
-  loopA: {
-    label: 'cGAS–STING (Loop A)', color: 0xe03131, evidence: 'S', source: true,
-    vectors: 'Initiated by cytosolic mtDNA FRAGMENTS (VDAC1 macropore / mPTP) — not ox-mtDNA',
-    summary: 'The interferon this loop produces comes back and disables the mitophagy that would have cleared the source. That block is what makes it a loop rather than a cascade.',
-    mechanism: [
-      'Written out as a chain this reads SAMHD1 → dNTP → mtDNA → cGAS → IFN, and stops. What the compressed ' +
-      'version hides is the return leg: type-I interferon does not merely signal outward, it disables the disposal ' +
-      'system for the very organelle that produced the ligand. Without that step there is a cascade. With it there ' +
-      'is a loop, and the difference is the whole clinical picture.',
-      'The species matters at the entrance. Cytosolic mtDNA FRAGMENTS — unoxidised, escaping through the VDAC1 ' +
-      'macropore or an open mPTP — are what cGAS binds. cGAS → 2′3′-cGAMP → STING, which traffics ER → ERGIC → ' +
-      'Golgi picking up TBK1 en route, then TBK1 → IRF3 → IFNB1 → IFN-β. Note what this is NOT: ox-mtDNA does not ' +
-      'activate cGAS. It activates NLRP3, and that is Loop B. Same organelle, different oxidation state, ' +
-      'different sensor.',
-      'IFN-β returns at IFNAR1/2 → JAK1 + TYK2 → STAT1/STAT2/IRF9 as ISGF3 (not the STAT1 homodimer GAF — that is ' +
-      'the IFN-γ arm) → ISRE → several hundred ISGs. ISG15 is the one that closes it: ISGylated MFN1/2 blocks ' +
-      'PINK1/Parkin mitophagy, ISGylated BECN1 blocks autophagic flux by a second independent route, unopposed MFN ' +
-      'loss tips fusion–fission toward DRP1, fragmentation raises mtROS, and mtROS drives further VDAC1 ' +
-      'oligomerisation. More DNA escapes to cGAS. That is what closes it into a loop.',
-      'The brake is the ANKIB1/K11-Ub node — ANKIB1 assembles K11-linked ubiquitin on TRIF/NEMO and attenuates the ' +
-      'amplification, so the loop runs with its own inhibitor already engaged, exactly as the IFN-γ arm does with ' +
-      'IL-18BP. That is the proposed reason a heterozygote smoulders at moderate amplitude instead of presenting ' +
-      'in acute interferon crisis. And once running it needs NO new dNTP input — so test it against cGAS blockade ' +
-      '(IMSB301 normalises the ISG signature in AGS PBMCs; SAMHD1+cGAS double KO abolishes it) rather than against ' +
-      'upstream nucleotide rescue, which alone need not stop it.',
-    ],
-    inputs: ['mtdna-frag', 'cgas'],
-    outputs: ['ifnb', 'isg15', 'mfn', 'becn1'],
-    chain: ['samhd1-mito', 'vdac1', 'vdac1-oligo', 'mptp', 'mtdna', 'mtdna-frag', 'dnase2', 'necroptosis',
-            'micronucleus', 'l1-cdna', 'ssdna', 'ifi16', 'cgas', 'cgamp', 'sting', 'sting-golgi', 'tbk1', 'irf3',
-            'ifnb1-gene', 'ifnb', 'ifnar1', 'ifnar2', 'jak1', 'tyk2', 'stat1', 'stat2', 'irf9', 'isgf3', 'isre',
-            'isg-set', 'isg15', 'mfn', 'becn1', 'pink1', 'parkin', 'drp1', 'mtros'],
-    refs: ['rabinowitz2025', 'han2026', 'xu2023vdac1', 'deng2024', 'xu2015becn1', 'betrancourt2026', 'docSiege'],
-  },
-
-  loopB: {
-    label: 'NLRP3 (Loop B)', color: 0xffbf1f, evidence: 'S', source: true,
-    vectors: 'Initiated by ox-mtDNA (POLG/dNTP route) + MSU crystals — not cytosolic mtDNA fragments',
-    summary: 'Priming is the loop; the ligands are only the trigger. NF-κB must build the sensor before ox-mtDNA can fire it, and the IL-1β that results builds it again.',
-    mechanism: [
-      'NLRP3 is usually written as though it were a switch that ox-mtDNA flips. It is not. An unprimed cell has ' +
-      'neither NLRP3 nor pro-IL-1β in useful amounts, so the ligand arrives at a sensor that is not there. Signal 1 ' +
-      '(priming) and signal 2 (activation) are separate events — and it is the priming arm, not the ligand arm, ' +
-      'that closes into a loop.',
-      'Signal 1: mtROS → NF-κB → the κB target set, which contains NLRP3 itself, pro-IL-1β, IL-6, IL-23 and TNF. ' +
-      'Only then does signal 2 matter, and there are two of them arriving in parallel from one lesion: OXIDISED ' +
-      'mtDNA, the product of dNTP overload stalling POLG and distinct from the unoxidised fragments feeding Loop A; ' +
-      'and MSU crystals, arriving from excess dGTP through purine catabolism to urate, because humans lack uricase. ' +
-      'One genetic lesion, two ligands, one sensor.',
-      'NLRP3 nucleates a single ASC speck, caspase-1 autoprocesses on it and cleaves pro-IL-1β and pro-IL-18, and ' +
-      'mature IL-1β binds IL-1R → MyD88 → NF-κB — priming the sensor that produced it. That is what closes it into ' +
-      'a loop, and it is entirely cytosolic: caspase-1 activation does NOT occur inside the mitochondrion. The exit ' +
-      'is pyroptotic — caspase-1 cleaves GSDMD, the N-terminal fragment pores the plasma membrane, and above the ' +
-      'lytic threshold the cell spills mtDNA into the extracellular space where bystander cGAS picks it up. That ' +
-      'dotted cross-link is how Loop B feeds Loop A.',
-      'The brakes are A20 (TNFAIP3) and IκBα — both themselves κB targets, so this loop transcribes its own ' +
-      'inhibitor and can be fully engaged and still losing, exactly as the type-I arm does with USP18. The two ' +
-      'loops are PARALLEL, not sequential, and the rescue data is the proof: IMSB301 (cGAS) does not abolish NLRP3 ' +
-      'activation, and MCC950 (NLRP3) does not suppress the ISG signature. Measure ASC specks and caspase-1 p20 — ' +
-      'countable, binary readouts — rather than IL-1β alone, which is consumed and cleared.',
-    ],
-    inputs: ['oxmtdna', 'msu', 'nlrp3'],
-    outputs: ['il1b', 'il18', 'pyroptosis', 'mtdna-frag'],
-    chain: ['mtros', 'polg', 'oxmtdna', 'dntp-pool', 'urate', 'msu', 'nfkb', 'nfkb-targets', 'proil1b',
-            'mlkl', 'nlrp3', 'asc', 'casp1', 'il1b', 'proil18', 'il18', 'il1r', 'myd88',
-            'gsdmd', 'gsdmd-pore', 'pyroptosis', 'mtdna-frag'],
-    refs: ['liu2026nlrp3', 'martinon2006', 'west2015', 'swanson2019', 'shi2015gsdmd', 'docSiege'],
-  },
-
   purple: {
     label: 'PURPLE — dNTPase direct', color: 0x9b6bff, evidence: 'I', source: true,
     vectors: '#1 PNC1/PNC2 transporter overload · #2 POLG stalling',
@@ -474,6 +398,86 @@ export const STREAMS = {
     outputs: ['deltapsi', 'atp', 'm1'],
     chain: ['samhd1-mito', 'vdac1', 'vdac1-oligo', 'deltapsi', 'tom20', 'etc-v', 'atp', 'm1'],
     refs: ['xu2023vdac1', 'rabinowitz2025', 'vbit4mem2025'],
+  },
+
+  // ── The three feedback loops ─────────────────────────────────────────
+  // Kept together at the END of the list, in A/B/C order. The colour streams
+  // above are attack vectors — routes INTO the pathology — and these three are
+  // the cycles those routes feed, so the list reads inputs-then-loops. Loop C
+  // was already last; A and B join it rather than splitting the set.
+  //
+  // A and B are §Feedback Loops of the manuscript. Their edges already carry
+  // `loop: 'A' | 'B'` in the data; the chains below are the figure's version of
+  // each cycle — the closing arc included, so each reads as a loop rather than
+  // a path. Colours are the manuscript's Red and Amber, darkened and brightened
+  // respectively so neither collides with the RED or ORANGE streams above.
+  loopA: {
+    label: 'cGAS–STING (Loop A)', color: 0xe03131, evidence: 'S', source: true,
+    vectors: 'Initiated by cytosolic mtDNA FRAGMENTS (VDAC1 macropore / mPTP) — not ox-mtDNA',
+    summary: 'The interferon this loop produces comes back and disables the mitophagy that would have cleared the source. That block is what makes it a loop rather than a cascade.',
+    mechanism: [
+      'Written out as a chain this reads SAMHD1 → dNTP → mtDNA → cGAS → IFN, and stops. What the compressed ' +
+      'version hides is the return leg: type-I interferon does not merely signal outward, it disables the disposal ' +
+      'system for the very organelle that produced the ligand. Without that step there is a cascade. With it there ' +
+      'is a loop, and the difference is the whole clinical picture.',
+      'The species matters at the entrance. Cytosolic mtDNA FRAGMENTS — unoxidised, escaping through the VDAC1 ' +
+      'macropore or an open mPTP — are what cGAS binds. cGAS → 2′3′-cGAMP → STING, which traffics ER → ERGIC → ' +
+      'Golgi picking up TBK1 en route, then TBK1 → IRF3 → IFNB1 → IFN-β. Note what this is NOT: ox-mtDNA does not ' +
+      'activate cGAS. It activates NLRP3, and that is Loop B. Same organelle, different oxidation state, ' +
+      'different sensor.',
+      'IFN-β returns at IFNAR1/2 → JAK1 + TYK2 → STAT1/STAT2/IRF9 as ISGF3 (not the STAT1 homodimer GAF — that is ' +
+      'the IFN-γ arm) → ISRE → several hundred ISGs. ISG15 is the one that closes it: ISGylated MFN1/2 blocks ' +
+      'PINK1/Parkin mitophagy, ISGylated BECN1 blocks autophagic flux by a second independent route, unopposed MFN ' +
+      'loss tips fusion–fission toward DRP1, fragmentation raises mtROS, and mtROS drives further VDAC1 ' +
+      'oligomerisation. More DNA escapes to cGAS. That is what closes it into a loop.',
+      'The brake is the ANKIB1/K11-Ub node — ANKIB1 assembles K11-linked ubiquitin on TRIF/NEMO and attenuates the ' +
+      'amplification, so the loop runs with its own inhibitor already engaged, exactly as the IFN-γ arm does with ' +
+      'IL-18BP. That is the proposed reason a heterozygote smoulders at moderate amplitude instead of presenting ' +
+      'in acute interferon crisis. And once running it needs NO new dNTP input — so test it against cGAS blockade ' +
+      '(IMSB301 normalises the ISG signature in AGS PBMCs; SAMHD1+cGAS double KO abolishes it) rather than against ' +
+      'upstream nucleotide rescue, which alone need not stop it.',
+    ],
+    inputs: ['mtdna-frag', 'cgas'],
+    outputs: ['ifnb', 'isg15', 'mfn', 'becn1'],
+    chain: ['samhd1-mito', 'vdac1', 'vdac1-oligo', 'mptp', 'mtdna', 'mtdna-frag', 'dnase2', 'necroptosis',
+            'micronucleus', 'l1-cdna', 'ssdna', 'ifi16', 'cgas', 'cgamp', 'sting', 'sting-golgi', 'tbk1', 'irf3',
+            'ifnb1-gene', 'ifnb', 'ifnar1', 'ifnar2', 'jak1', 'tyk2', 'stat1', 'stat2', 'irf9', 'isgf3', 'isre',
+            'isg-set', 'isg15', 'mfn', 'becn1', 'pink1', 'parkin', 'drp1', 'mtros'],
+    refs: ['rabinowitz2025', 'han2026', 'xu2023vdac1', 'deng2024', 'xu2015becn1', 'betrancourt2026', 'docSiege'],
+  },
+
+  loopB: {
+    label: 'NLRP3 (Loop B)', color: 0xffbf1f, evidence: 'S', source: true,
+    vectors: 'Initiated by ox-mtDNA (POLG/dNTP route) + MSU crystals — not cytosolic mtDNA fragments',
+    summary: 'Priming is the loop; the ligands are only the trigger. NF-κB must build the sensor before ox-mtDNA can fire it, and the IL-1β that results builds it again.',
+    mechanism: [
+      'NLRP3 is usually written as though it were a switch that ox-mtDNA flips. It is not. An unprimed cell has ' +
+      'neither NLRP3 nor pro-IL-1β in useful amounts, so the ligand arrives at a sensor that is not there. Signal 1 ' +
+      '(priming) and signal 2 (activation) are separate events — and it is the priming arm, not the ligand arm, ' +
+      'that closes into a loop.',
+      'Signal 1: mtROS → NF-κB → the κB target set, which contains NLRP3 itself, pro-IL-1β, IL-6, IL-23 and TNF. ' +
+      'Only then does signal 2 matter, and there are two of them arriving in parallel from one lesion: OXIDISED ' +
+      'mtDNA, the product of dNTP overload stalling POLG and distinct from the unoxidised fragments feeding Loop A; ' +
+      'and MSU crystals, arriving from excess dGTP through purine catabolism to urate, because humans lack uricase. ' +
+      'One genetic lesion, two ligands, one sensor.',
+      'NLRP3 nucleates a single ASC speck, caspase-1 autoprocesses on it and cleaves pro-IL-1β and pro-IL-18, and ' +
+      'mature IL-1β binds IL-1R → MyD88 → NF-κB — priming the sensor that produced it. That is what closes it into ' +
+      'a loop, and it is entirely cytosolic: caspase-1 activation does NOT occur inside the mitochondrion. The exit ' +
+      'is pyroptotic — caspase-1 cleaves GSDMD, the N-terminal fragment pores the plasma membrane, and above the ' +
+      'lytic threshold the cell spills mtDNA into the extracellular space where bystander cGAS picks it up. That ' +
+      'dotted cross-link is how Loop B feeds Loop A.',
+      'The brakes are A20 (TNFAIP3) and IκBα — both themselves κB targets, so this loop transcribes its own ' +
+      'inhibitor and can be fully engaged and still losing, exactly as the type-I arm does with USP18. The two ' +
+      'loops are PARALLEL, not sequential, and the rescue data is the proof: IMSB301 (cGAS) does not abolish NLRP3 ' +
+      'activation, and MCC950 (NLRP3) does not suppress the ISG signature. Measure ASC specks and caspase-1 p20 — ' +
+      'countable, binary readouts — rather than IL-1β alone, which is consumed and cleared.',
+    ],
+    inputs: ['oxmtdna', 'msu', 'nlrp3'],
+    outputs: ['il1b', 'il18', 'pyroptosis', 'mtdna-frag'],
+    chain: ['mtros', 'polg', 'oxmtdna', 'dntp-pool', 'urate', 'msu', 'nfkb', 'nfkb-targets', 'proil1b',
+            'mlkl', 'nlrp3', 'asc', 'casp1', 'il1b', 'proil18', 'il18', 'il1r', 'myd88',
+            'gsdmd', 'gsdmd-pore', 'pyroptosis', 'mtdna-frag'],
+    refs: ['liu2026nlrp3', 'martinon2006', 'west2015', 'swanson2019', 'shi2015gsdmd', 'docSiege'],
   },
 
   gamma: {
