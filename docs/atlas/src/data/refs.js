@@ -134,4 +134,10 @@ export const REFS = {
   vbit4mem2025:   { text: 'VBIT-4 produces VDAC1-independent membrane disruption above ~10 µM — dose ceiling rationale. (2025)' },
   immunesensor:   { text: 'ImmuneSensor Therapeutics — IMSB301 oral cGAS inhibitor, Phase 1 in AGS, chilblain lupus 1 and COPA syndrome.' },
   jochem2026:     { text: 'Jochem M et al. Ubiquitination of glycogen and metabolites in cells and tissues. Nature 2026.', doi: '10.1038/s41586-026-10548-x' },
+  jalali2026:     { text: 'Jalali S, Natesampillai S, Nie Z, … Billadeau DD, Badley AD. TRAIL splice variant TRAILshort disrupts T cell receptor signaling and promotes immune tolerance in vivo. J Clin Invest 2026;136(15):e194449.', doi: '10.1172/JCI194449' },
+
+  // ── Canonical TCR signalling (imported, not SAMHD1-derived) ─────────
+  courtney2018:   { text: 'Courtney AH, Lo W-L, Weiss A. TCR signaling: mechanisms of initiation and propagation. Trends Biochem Sci 2018;43(2):108–23.', doi: '10.1016/j.tibs.2017.11.008', pmid: '29269020' },
+  esensten2016:   { text: 'Esensten JH, Helou YA, Chopra G, Weiss A, Bluestone JA. CD28 costimulation: from mechanism to therapy. Immunity 2016;44(5):973–88.', doi: '10.1016/j.immuni.2016.04.020', pmid: '27192564' },
+  rudolph2006:    { text: 'Rudolph MG, Stanfield RL, Wilson IA. How TCRs bind MHCs, peptides, and coreceptors. Annu Rev Immunol 2006;24:419–66.', doi: '10.1146/annurev.immunol.23.021704.115658', pmid: '16551255' },
 };

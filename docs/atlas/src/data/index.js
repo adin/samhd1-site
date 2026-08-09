@@ -15,6 +15,7 @@ import * as cytokines    from './cytokines.js';
 import * as celldeath    from './celldeath.js';
 import * as retro        from './retro.js';
 import * as samhd1       from './samhd1.js';
+import * as trailshort   from './trailshort.js';
 import * as drugs        from './drugs.js';
 
 import { COMPARTMENTS, CLASSES, PATHWAYS, EDGE_KINDS } from '../config.js';
@@ -30,6 +31,7 @@ const MODULES = [
   ['celldeath', celldeath],
   ['retro', retro],
   ['samhd1', samhd1],
+  ['trailshort', trailshort],
   ['drugs', drugs],
 ];
 
