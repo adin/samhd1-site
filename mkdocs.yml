@@ -8,8 +8,14 @@ site_url: !ENV [SITE_URL, "https://example.github.io/glass-cannon/"]
 theme:
   name: material
   custom_dir: overrides          # <-- NEW
-  logo: assets/mark.png          # <-- was assets/logo.svg
-  favicon: assets/mark.png       # <-- was assets/logo.svg
+  # The header logo sits on the near-black header, so the transparent mark is
+  # right there. The favicon is a DIFFERENT problem: it lands on the browser's
+  # tab bar, which is light for most users, and a near-white mark on light grey
+  # is invisible. assets/favicon.png is the same mark composited onto the
+  # site's own #0b0b0c ground so it reads on either theme — and at 21 KB
+  # against mark.png's 233 KB, since a favicon is fetched on every page view.
+  logo: assets/mark.png
+  favicon: assets/favicon.png
   palette:
     # Single dark scheme. The redesign is dark-first; a light variant of
     # the atlases does not exist, so a light site scheme only creates a
