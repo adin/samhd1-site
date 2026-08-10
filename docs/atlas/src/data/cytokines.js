@@ -29,10 +29,63 @@
  * IL-18BP is the natural brake and is the node most worth watching: it is
  * itself IFN-γ-inducible, so the loop builds its own inhibitor — and, like
  * USP18 in the type-I arm, can be present, engaged, and still losing.
+ *
+ * ── The second cell type in this compartment (E4) ─────────────────────────
+ * The plasmacytoid dendritic cell also lives here. It is not part of Loop C —
+ * it makes IFN-α, not IFN-γ, and it reads TLR7/9 rather than IL-18/IL-12 — but
+ * it is a NEIGHBOURING cell, and `responder` is the atlas's only compartment
+ * for those. The kinase chain it runs on is already in data/sensing.js; what
+ * this module adds is the cell, and the edges that say where that chain runs.
+ * How pdc, responder-cell and any later nk-cell/th1-cell split relate to one
+ * another is A3's question, not this file's — see the OPEN notes below.
  */
 
 export const nodes = [
   // ── The responder cell ───────────────────────────────────────────────
+  //
+  // OPEN — Loop C population restructure. HELD, deliberately, pending design.
+  //
+  // The current responder compartment is a single-bounce abstraction: affected
+  // cell -> IL-18/IL-12 -> one responder cell -> IFN-γ -> back. That is a known
+  // simplification. A population-level treatment (intra-population autocrine /
+  // paracrine amplification before IFN-γ returns) is probably more faithful.
+  // It is NOT built yet, because three questions are unresolved and guessing at
+  // them would produce something that looks decisive and is not:
+  //
+  //   1. SCOPE OF A CALCIUM NODE. There is no cytosolic Ca²⁺ node anywhere in
+  //      this atlas today. Two options, and they are not equivalent: a GENERIC
+  //      ca-cyt that other channels could later plug into — which immediately
+  //      invites edges to mPTP and VDAC1 in the PRIMARY cell, conflating NK
+  //      calcium with macrophage calcium, exactly what §2 correction 10 warns
+  //      against — or a node LOCAL to the responder cell only. Undecided.
+  //      Whichever is chosen inherits evidence 'I' and carries the ambiguity
+  //      in item 2 explicitly.
+  //
+  //   2. TRPM3 DIRECTION IS SPLIT INSIDE ITS OWN SOURCE. Magawa 2026 (BMC
+  //      Immunol, N=10 vs 10) reports BASELINE mitochondrial Ca²⁺ influx
+  //      amplitude and slope significantly HIGHER in ME/CFS NK cells, while
+  //      AGONIST-TRIGGERED, TRPM3-dependent cytosolic and mitochondrial
+  //      mobilisation are significantly LOWER, with a shorter T½. That is one
+  //      paper disagreeing with itself depending on what is measured, not two
+  //      papers disagreeing with each other. Do NOT flatten it to "reduced
+  //      throughout", and do not describe it as consistent or non-paradoxical.
+  //      Replication of the channel defect itself is solid (Sasso 2026, n=36 vs
+  //      42, two sites); the mitochondrial consequence is what is unsettled.
+  //
+  //   3. NO ESTABLISHED SAMHD1 LINK. TRPM3/NK is imported ME/CFS context, in
+  //      the same evidentiary position as the TCR/TRAILshort arm (§2 item 7):
+  //      a candidate modifier to test, not part of the A565T cascade. It does
+  //      not inherit Loop B's cross-species strength. Related: see the note on
+  //      the samhd1 node for why SAMHD1 -> NK function is deliberately NOT an
+  //      edge.
+  //
+  // Also unresolved before anything is added here: responder-cell is already
+  // overloaded — it produces IFN-γ for Loop C AND receives plcg1 -> responder
+  // -cell from the TRAILshort/TCR arm, which is a T-cell context. Splitting it
+  // into nk-cell and th1-cell may be the right move BEFORE adding population
+  // nodes alongside it, rather than after. Any nk-il8 node would likewise need
+  // to justify itself against the existing cxcl8 node.
+  //
   {
     id: 'responder-cell', label: 'NK / Th1 cell', full: 'Neighbouring NK cell or Th1 lymphocyte — the IFN-γ source',
     compartment: 'responder', klass: 'cell', pathways: ['ifn-gamma', 'th17'],
@@ -53,6 +106,48 @@ export const nodes = [
       'lymphocytes responding to IL-23, which is why the psoriatic arthritis arm can run without a classical ' +
       'autoantigen or autoantibody.',
     refs: ['fragoulis2023'],
+  },
+
+  // ── The plasmacytoid dendritic cell (E4) ─────────────────────────────
+  //
+  // Everything this arm needs was already in the atlas EXCEPT the cell it runs
+  // in: tlr7, tlr9, myd88 and irak14 in data/sensing.js, irf7 in the same file,
+  // and irf7 -> ifna in data/ifn.js — wired tlr7/9 -> myd88 -> irak14 --phos-->
+  // irf7 -> ifna, with the irak14 node already carrying the note that IRAK1
+  // phosphorylates IRF7 in the pDC burst. None of that is duplicated here. What
+  // is added is the CELL, so the arm reads as "this happens in a pDC" instead
+  // of as generic endosomal TLR signalling in the affected cell.
+  //
+  // OPEN — pdc vs responder-cell. NOT resolved here; this is A3's question.
+  // responder-cell is already overloaded (NK/Th1 for Loop C, plus the inbound
+  // plcg1 edge from the TRAILshort/TCR arm), and pdc makes a third population in
+  // the same compartment. Whether the right structure is nk-cell / th1-cell /
+  // pdc as siblings, or something else again, is the A3 split described in the
+  // OPEN block at the top of this file. pdc is therefore wired ONLY to receptors
+  // and cytokines: there is deliberately no edge in either direction between pdc
+  // and responder-cell, so that A3 can choose the relationship rather than
+  // having to unpick one that was guessed at here.
+  //
+  // OPEN — the pDC is drawn in the `responder` compartment because that is the
+  // atlas's only "a different cell" compartment. That is a reuse of geometry,
+  // not a claim that a pDC is a responder to IL-18/IL-12. If A3 splits the
+  // compartment, this node moves with it.
+  {
+    id: 'pdc', label: 'pDC', full: 'Plasmacytoid dendritic cell — the professional type-I interferon producer',
+    compartment: 'responder', klass: 'cell', pathways: ['tlr', 'ifn-jak'],
+    pos: [-118, 104, -2], lod: 1, evidence: 'G',
+    summary: 'The cell that converts TLR7/9 ligation into an IFN-α burst — orders of magnitude more type-I interferon per cell than any other blood leukocyte.',
+    detail: 'Among the TLRs a pDC expresses essentially only TLR7 and TLR9, and it retains ligand in an early ' +
+      'endosome long enough for the MyD88–IRAK1–IRF7 complex to assemble there. That retention, together with ' +
+      'constitutively high resting IRF7, is why the same receptor gives NF-κB cytokines in a macrophage and an ' +
+      'interferon burst here — the difference is the cell, not the receptor. IRAK1 is the kinase step and it is ' +
+      'already an atlas node (irak14, data/sensing.js); this is the cell that step happens in, not a second copy.',
+    samhd1: 'NOT demonstrated in a SAMHD1 system, and graded G for exactly that reason — it sits downstream of an S ' +
+      'claim without inheriting its grade. What makes the cell worth drawing is arithmetic rather than a new ' +
+      'mechanism: IRF7 is the node SAMHD1 physically restrains (Brake 1), and the pDC is where derepressed IRF7 has ' +
+      'the largest per-cell interferon consequence. Whether pDCs contribute measurably to the tonic IFN-α of this ' +
+      'phenotype is a MEASUREMENT — pDC frequency together with per-cell IFN-α — not something this model asserts.',
+    refs: ['siegal1999', 'uematsu2005', 'honda2005'],
   },
 
   // ── IL-18 arm (signal A) ─────────────────────────────────────────────
@@ -227,6 +322,21 @@ export const edges = [
   { from: 'nos2', to: 'etc-i', kind: 'inhibit', label: 'NO S-nitrosylates Complex I', pathways: ['ifn-gamma', 'mito'], evidence: 'G' },
   { from: 'nos2', to: 'etc-iv', kind: 'inhibit', label: 'NO competes with O₂ at cytochrome c oxidase', pathways: ['ifn-gamma', 'mito'], evidence: 'G' },
   { from: 'm1', to: 'deltapsi', kind: 'inhibit', label: 'M1 skewing accompanies ΔΨm collapse in Samhd1-KO', pathways: ['ifn-gamma', 'mito'], evidence: 'S', refs: ['xu2023vdac1'] },
+
+  // ── pDC: giving the IFN-α burst the cell it happens in (E4) ──────────
+  //
+  // The kinase chain tlr7/9 -> myd88 -> irak14 --phos--> irf7 -> ifna is
+  // untouched in data/sensing.js and data/ifn.js. These four edges add the cell
+  // around it. `influence()` in activity.js keeps the largest-magnitude route to
+  // each node rather than summing routes, so tlr9 -> pdc -> ifna alongside the
+  // longer kinase chain is not a double count.
+  //
+  // All four are graded G: pDC biology is textbook, and none of it has been
+  // shown in SAMHD1-deficient cells, animals or AGS patients.
+  { from: 'tlr7', to: 'pdc', kind: 'activate', label: 'ssRNA — a pDC expresses essentially only TLR7 and TLR9 among the TLRs', pathways: ['tlr'], evidence: 'G', refs: ['uematsu2005'] },
+  { from: 'tlr9', to: 'pdc', kind: 'activate', label: 'CpG DNA — the receptor the LL-37 arm converts a SELF ligand for', pathways: ['tlr'], evidence: 'G', refs: ['uematsu2005'] },
+  { from: 'irf7', to: 'pdc', kind: 'activate', label: 'constitutively high resting IRF7 licenses the burst — a licensing step, not lineage', pathways: ['tlr', 'ifn-jak'], evidence: 'G', refs: ['honda2005'], bend: 0.3 },
+  { from: 'pdc', to: 'ifna', kind: 'produce', label: 'the IFN-α burst — the reason one rare cell type can set the interferon tone of a tissue', pathways: ['tlr', 'ifn-jak'], evidence: 'G', refs: ['siegal1999', 'uematsu2005'] },
 
   // ── IL-23 / IL-17 arm ────────────────────────────────────────────────
   { from: 'il23', to: 'il23r', kind: 'bind', pathways: ['th17'], evidence: 'G' },

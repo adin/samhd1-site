@@ -25,10 +25,22 @@ export const nodes = [
       'and only the fully loaded tetramer hydrolyses. Activity is further switched by CDK1/2–cyclin A phosphorylation ' +
       'at Thr592 — phospho-SAMHD1 retains the genome-stability functions while the dephospho form carries the dNTPase ' +
       'restriction activity. That split is why any therapy that changes total SAMHD1 protein must be evaluated for ' +
-      'BOTH functions, not just the one being targeted.',
+      'BOTH functions, not just the one being targeted.\n\n' +
+      'DELIBERATELY NOT AN EDGE — the SAMHD1/NK-function relation. It is context-dependent with opposite ' +
+      'signs, so no single signed edge can carry it, and this note exists so the next person to reach for one hits ' +
+      'the same wall rather than picking a direction. In the TUMOUR microenvironment SAMHD1 RESTRAINS NK killing: ' +
+      'selectively depleting tumour-associated SAMHD1 improves NK-mediated killing (Sun 2025), and SAMHD1-expressing ' +
+      'breast tumours carry shorter time-to-progression via downregulated IL-12 signalling (Gutiérrez-Chamorro 2024). ' +
+      'In acute RETROVIRAL infection it does the reverse: Samhd1-KO mice mount weaker NK, CD4+ and CD8+ responses ' +
+      '(Barrett 2022) — and only male mice did so. Different cell of origin, different direction, and one of the ' +
+      'three findings is sex-limited. Signs multiply along paths in this model, so an edge whose sign cannot be ' +
+      'defended is worse than a documented gap.',
     samhd1: 'Highly conserved down to zebrafish. Nuclear-predominant, but with functionally required cytosolic and ' +
-      'mitochondrial pools.',
-    refs: ['ji2014', 'bester2025', 'franzolin2013', 'daddacha2017'],
+      'mitochondrial pools. NOTE, and do not collapse this into an edge: the SAMHD1/NK-function relation is ' +
+      'CONTEXT-DEPENDENT with opposite signs — SAMHD1 restrains NK killing in the tumour microenvironment ' +
+      '(Sun 2025, Gutiérrez-Chamorro 2024) but supports NK/CD4/CD8 responses in acute retroviral infection, in male ' +
+      'mice only (Barrett 2022). No signed edge is drawn for it, deliberately.',
+    refs: ['ji2014', 'bester2025', 'franzolin2013', 'daddacha2017', 'sun2025nk', 'gutierrez2024', 'barrett2022'],
   },
   {
     id: 'a565t', label: 'p.A565T', full: 'SAMHD1 c.1693G>A (p.Ala565Thr), NM_015474.3 — rs779491090',

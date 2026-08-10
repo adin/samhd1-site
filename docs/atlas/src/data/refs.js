@@ -46,7 +46,19 @@ export const REFS = {
   shoshan2020:    { text: 'Shoshan-Barmatz V et al. VDAC1 as a central mediator of mitochondria-driven apoptosis and metabolism. Front Oncol 2020.' },
   dolce2001:      { text: 'Dolce V et al. PNC1/SLC25A33 as mitochondrial pyrimidine nucleotide carrier. J Biol Chem 2001;276:6742.', pmid: '11110787' },
   lunetti2016:    { text: 'Lunetti P et al. Characterisation of human SLC25A36 (PNC2) as a mitochondrial pyrimidine nucleotide carrier. J Biol Chem 2016;291:12241.', pmid: '27129270' },
-  kim2025:        { text: 'Kim et al. SLC25A33 upregulation drives mtDNA synthesis and VDAC1 oligomerisation via mtROS. 2025.', pmid: '40384854' },
+  kim2025:        { text: 'Kim D, Jin J, Lee Y-R et al. SLC25A33-mediated mitochondrial DNA synthesis plays a critical role in the inflammatory response of M1 macrophages by contributing to mitochondrial ROS and VDAC oligomerization. Int J Biol Sci 2025;21(7):2935–51.', doi: '10.7150/ijbs.96563', pmid: '40384854' },
+  dinoia2014:     { text: 'Di Noia MA, Todisco S, Cirigliano A et al. The human SLC25A33 and SLC25A36 genes of solute carrier family 25 encode two mitochondrial pyrimidine nucleotide transporters. J Biol Chem 2014;289(48):33137–48. Both carriers also transport GUANINE (deoxy)nucleotides but not adenine — the biochemical basis for routing a dGTP-skewed pool through carriers named for pyrimidines.', pmid: '25320081' },
+
+  // ── SAMHD1 and NK cells: context-dependent, NOT a single signed relation ──
+  // Two tumour-microenvironment studies and one retroviral-infection study
+  // point in OPPOSITE directions. See the note on the samhd1 node.
+  sun2025nk:      { text: 'Sun J et al. Selective depletion of tumor-associated SAMHD1 enhances chemotherapeutic efficacy and antitumor immune responses. Signal Transduct Target Ther 2025;10:e02523. Depleting SAMHD1 in TUMOUR cells triggers innate immune responses and IMPROVES NK-mediated killing — a negative-direction relation.', doi: '10.1038/s41392-025-02523-1' },
+  gutierrez2024:  { text: 'Gutiérrez-Chamorro L et al. SAMHD1 expression is a surrogate marker of immune infiltration and determines prognosis after neoadjuvant chemotherapy in early breast cancer. Cell Oncol 2024;47(1):189–208. SAMHD1-EXPRESSING tumours showed shorter time-to-progression and overall survival, via downregulated IL-12 signalling.', doi: '10.1007/s13402-023-00862-1' },
+  barrett2022:    { text: 'Barrett BS, Nguyen DH, Xu J et al. SAMHD1 promotes the antiretroviral adaptive immune response in mice exposed to lipopolysaccharide. J Immunol 2022;208(2):444–53. Samhd1-KO gave WEAKER NK, CD4+ and CD8+ responses by 14 dpi in Friend retrovirus infection — the opposite direction to the tumour data, and observed in MALE mice only.', doi: '10.4049/jimmunol.2001389', pmid: '34893529' },
+
+  // ── TRPM3 / NK calcium: imported ME/CFS context, no established SAMHD1 link ──
+  magawa2026:     { text: 'Magawa CT, Eaton-Fitch N, … Marshall-Gradisnik S. Deficient TRPM3-linked mitochondrial Ca²⁺ influx in natural killer cells associated with myalgic encephalomyelitis/chronic fatigue syndrome. BMC Immunol 2026. Fluo-8 AM / Rhod-2 AM live-cell imaging, N=10 ME/CFS vs N=10 HC. Direction is split WITHIN the paper — see the note in data/cytokines.js.', doi: '10.1186/s12865-026-00849-1' },
+  sasso2026:      { text: 'Sasso EM, Er TS, Eaton-Fitch N, Hool L, Muraki K, Marshall-Gradisnik S. Large-scale investigation confirms TRPM3 ion channel dysfunction in myalgic encephalomyelitis/chronic fatigue syndrome. Front Med 2026;12:1703924. Whole-cell patch clamp, n=36 ME/CFS vs 42 HC, split across two sites (Griffith NCNED 26/33; UWA 10/9) with no significant site effect.', doi: '10.3389/fmed.2025.1703924' },
   elpeleg2008:    { text: 'Elpeleg O et al. POLG and mtDNA depletion/deletion syndromes. Hum Mol Genet 2008.' },
   gudz1997:       { text: 'Gudz TI et al. Direct inhibition of mitochondrial respiratory chain complex III by ceramide. J Biol Chem 1997;272:24154.', pmid: '9305864' },
   yang2025bik:    { text: 'Yang H, Cheung PH, Wu L. SAMHD1 enhances HIV-1-induced apoptosis in monocytic cells via the mitochondrial pathway. mBio 2025;16(7):e00425-25.', doi: '10.1128/mbio.00425-25' },
@@ -60,7 +72,7 @@ export const REFS = {
   napolitano2020: { text: 'Napolitano G et al. A substrate-specific mTORC1 pathway underlies Birt-Hogg-Dubé syndrome. Nature 2020;585:597–602.', doi: '10.1038/s41586-020-2444-0' },
 
   // ── NLRP3 inflammasome ──────────────────────────────────────────────
-  liu2026nlrp3:   { text: 'Liu Y, Zhou Z, Zhong Z et al. Nucleotide metabolic rewiring enables NLRP3 inflammasome hyperactivation in obesity. Science 2026;391:eadq9006.', doi: '10.1126/science.adq9006' },
+  liu2026nlrp3:   { text: 'Liu D, Zhou C, Wang X, Luo Z, Xu R, … Hancks DC, Chen EH, Liang S, Zhong Z. Nucleotide metabolic rewiring enables NLRP3 inflammasome hyperactivation in obesity. Science 2026;391(6782):eadq9006. Myeloid-conditional Samhd1ΔMye KO AND pharmacologic dNTP-transport blockade, in cells from zebrafish, mice and humans.', doi: '10.1126/science.adq9006', pmid: '41538457' },
   swanson2019:    { text: 'Swanson KV, Deng M, Ting JP-Y. The NLRP3 inflammasome: molecular activation and regulation to therapeutics. Nat Rev Immunol 2019;19:477–89.', doi: '10.1038/s41577-019-0165-0' },
   martinon2006:   { text: 'Martinon F et al. Gout-associated uric acid crystals activate the NALP3 inflammasome. Nature 2006;440:237–41.', doi: '10.1038/nature04516' },
   coll2019:       { text: 'Coll RC et al. MCC950 directly targets the NLRP3 ATP-hydrolysis motif for inflammasome inhibition. Nat Commun 2019;10:2986.', doi: '10.1038/s41467-019-10702-2' },
@@ -140,4 +152,16 @@ export const REFS = {
   courtney2018:   { text: 'Courtney AH, Lo W-L, Weiss A. TCR signaling: mechanisms of initiation and propagation. Trends Biochem Sci 2018;43(2):108–23.', doi: '10.1016/j.tibs.2017.11.008', pmid: '29269020' },
   esensten2016:   { text: 'Esensten JH, Helou YA, Chopra G, Weiss A, Bluestone JA. CD28 costimulation: from mechanism to therapy. Immunity 2016;44(5):973–88.', doi: '10.1016/j.immuni.2016.04.020', pmid: '27192564' },
   rudolph2006:    { text: 'Rudolph MG, Stanfield RL, Wilson IA. How TCRs bind MHCs, peptides, and coreceptors. Annu Rev Immunol 2006;24:419–66.', doi: '10.1146/annurev.immunol.23.021704.115658', pmid: '16551255' },
+
+  // ── E4: plasmacytoid dendritic cells and the IFN-α burst ────────────
+  // Imported cell biology, not SAMHD1 data — everything citing these is G.
+  siegal1999:     { text: 'Siegal FP, Kadowaki N, Shodell M, Fitzgerald-Bocarsly PA, Shah K, Ho S, Antonenko S, Liu Y-J. The nature of the principal type 1 interferon-producing cells in human blood. Science 1999;284(5421):1835–7.', doi: '10.1126/science.284.5421.1835', pmid: '10364556' },
+  uematsu2005:    { text: 'Uematsu S, Sato S, Yamamoto M, Hirotani T, Kato H, Takeshita F, Matsuda M, Coban C, Ishii KJ, Kawai T, Takeuchi O, Akira S. Interleukin-1 receptor-associated kinase-1 plays an essential role for Toll-like receptor (TLR)7- and TLR9-mediated interferon-α induction. J Exp Med 2005;201(6):915–23.', doi: '10.1084/jem.20042372', pmid: '15767370' },
+  honda2005:      { text: 'Honda K, Yanai H, Negishi H, Asagiri M, Sato M, Mizutani T, Shimada N, Ohba Y, Takaoka A, Yoshida N, Taniguchi T. IRF-7 is the master regulator of type-I interferon-dependent immune responses. Nature 2005;434(7034):772–7.', doi: '10.1038/nature03464', pmid: '15800576' },
+
+  // ── E7: LL-37 + self-DNA → TLR9 (the psoriasis conversion step) ─────
+  // Human pDCs and psoriatic skin, not SAMHD1 systems — everything citing
+  // these is G. See the four held items in data/sensing.js.
+  lande2007:      { text: 'Lande R, Gregorio J, Facchinetti V, Chatterjee B, Wang Y-H, Homey B, Cao W, Su B, Nestle FO, Zal T, Mellman I, Schröder J-M, Liu Y-J, Gilliet M. Plasmacytoid dendritic cells sense self-DNA coupled with antimicrobial peptide. Nature 2007;449(7162):564–9. LL-37 condenses self-DNA into aggregates retained in the pDC early endosome that trigger TLR9; self-DNA alone does not.', doi: '10.1038/nature06116', pmid: '17873860' },
+  ganguly2009:    { text: 'Ganguly D, Chamilos G, Lande R, Gregorio J, Meller S, Facchinetti V, Homey B, Barrat FJ, Zal T, Gilliet M. Self-RNA–antimicrobial peptide complexes activate human dendritic cells through TLR7 and TLR8. J Exp Med 2009;206(9):1983–94. The TLR7/8 companion to Lande 2007 — cited as context on the ll37 node; the RNA arm itself is deliberately NOT drawn.', doi: '10.1084/jem.20090480', pmid: '19703986' },
 };

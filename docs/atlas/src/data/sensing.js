@@ -160,6 +160,75 @@ export const nodes = [
     detail: 'Mitochondrial DNA released from dying cells is a TLR9 agonist as well as a cGAS ligand: the same molecule ' +
       'drives two receptors in two compartments.',
   },
+
+  // ── LL-37 + self-DNA: the canonical psoriasis conversion step (E7) ────
+  //
+  // Self-DNA is not a TLR9 agonist. That is the whole point of the arm: host DNA
+  // is degraded before it reaches an endosome and does not, alone, trigger the
+  // receptor. LL-37 changes that, and the resulting IFN-α burst is the canonical
+  // initiating event of psoriasis. It terminates in the pdc node added by E4
+  // (data/cytokines.js) through the tlr9 -> pdc edge, so the two tasks are wired
+  // together at TLR9 rather than by a second copy of the receptor.
+  //
+  // FOUR THINGS DELIBERATELY NOT DRAWN. Each would make the arm look more
+  // complete and at least one would be wrong:
+  //
+  //   1. NO EXTRACELLULAR SELF-DNA NODE. The atlas has no node for extracellular
+  //      host DNA. `ssdna` (data/samhd1.js) is declared CYTOSOLIC and means
+  //      fork-collapse product inside the affected cell; reusing it here would
+  //      misplace it and quietly assert that the psoriasis ligand is this
+  //      patient's replication-stress DNA. The self-DNA is therefore named in
+  //      the ll37-dna label and has no node of its own. A visible gap.
+  //
+  //   2. NO PRODUCER FOR LL-37. Tempting: il17a -> ll37 would close a
+  //      Th17 -> LL-37 -> pDC -> IFN-α feed-forward against the existing IL-17
+  //      arm. Not drawn, because the primary literature does not support a plain
+  //      produce edge. The best source found is Peric 2008 (J Immunol
+  //      181:8504-12, PMID 19050268), whose claim is that IL-17A ENHANCES
+  //      VITAMIN-D3-INDUCED cathelicidin in keratinocytes — conditional on
+  //      vitamin D, not IL-17A alone. Sakabe 2014 (Acta Derm Venereol 94:512-6,
+  //      PMID 24419155) then reports a vitamin-D analogue RAISING hCAP18 mRNA
+  //      while INHIBITING extracellular LL-37 peptide in IL-17/IL-22-stimulated
+  //      keratinocytes. One edge cannot carry that.
+  //
+  //   3. NO EDGE TO `psa`. pDC-derived IFN-α initiating disease is established
+  //      for SKIN psoriasis. The atlas's psa node is enthesitis-predominant
+  //      psoriatic ARTHRITIS — a different tissue, and no verified primary
+  //      source connects pDC IFN-α to enthesitis. Held.
+  //
+  //   4. NO SELF-RNA / TLR7 ARM. LL-37 does the equivalent trick with self-RNA
+  //      at TLR7/8 (Ganguly 2009, PMID 19703986). It would need its own complex
+  //      node rather than an ll37 -> tlr7 shortcut, which would misstate the
+  //      mechanism as direct receptor binding. Held. Related and also unchecked:
+  //      whether LL-37 complexes mtDNA specifically — mtDNA is hypomethylated
+  //      CpG and mtdna-frag is already a node, so the edge would be cheap, but
+  //      it was not verified and is not drawn.
+  {
+    id: 'll37', label: 'LL-37', full: 'Cathelicidin antimicrobial peptide LL-37 (CAMP / hCAP18 C-terminal peptide)',
+    compartment: 'extracellular', klass: 'effector', pathways: ['tlr'],
+    pos: [-58, 86, 40], lod: 1, evidence: 'G',
+    summary: 'A cationic antimicrobial peptide whose second job is to chaperone self-DNA — converting an inert host molecule into a TLR9 agonist.',
+    detail: 'LL-37 is massively overexpressed in psoriatic skin. It binds extracellular self-DNA electrostatically ' +
+      'and condenses it into ordered aggregates that resist nuclease digestion and are retained in the pDC early ' +
+      'endosome long enough to signal. Neither component does this alone: LL-37 without DNA is not an interferon ' +
+      'stimulus, and self-DNA without LL-37 is not a TLR9 ligand.',
+    samhd1: 'No SAMHD1 link is claimed, and none should be read in. This arm is in the atlas because the phenotype ' +
+      'includes enthesitis-predominant psoriatic arthritis and the canonical psoriasis initiation mechanism was ' +
+      'absent — a gap in the DISEASE model rather than in the SAMHD1 cascade. What joins it to the rest of the board ' +
+      'is its product, IFN-α, which is already modelled; it does not join through SAMHD1.',
+    refs: ['lande2007', 'ganguly2009'],
+  },
+  {
+    id: 'll37-dna', label: 'LL-37 · self-DNA', full: 'LL-37–self-DNA condensate — the converted TLR9 agonist',
+    compartment: 'endosome', klass: 'ligand', pathways: ['tlr'],
+    pos: [-22, -42, 54], lod: 2, evidence: 'G',
+    summary: 'The conversion product. This is the node that carries the claim, because self-DNA alone is not a TLR9 agonist and this complex is.',
+    detail: 'Lande et al. showed the discrimination is one of trafficking and residence rather than of chemistry — ' +
+      'the aggregate is delivered to and retained in the early endosome, which is the compartment where a pDC ' +
+      'couples TLR9 to IRF7 rather than to NF-κB. Same receptor, same nucleotide sequence, different outcome, ' +
+      'because a peptide changed where and for how long the ligand sat.',
+    refs: ['lande2007'],
+  },
   {
     id: 'tlr4', label: 'TLR4', full: 'Toll-like receptor 4 (LPS / DAMP receptor)',
     compartment: 'membrane', klass: 'receptor', pathways: ['tlr', 'nfkb'],
@@ -347,6 +416,12 @@ export const edges = [
   { from: 'myd88', to: 'irak14', kind: 'activate', label: 'Myddosome assembly', pathways: ['tlr'], evidence: 'G' },
   { from: 'irak14', to: 'traf6', kind: 'activate', pathways: ['tlr', 'nfkb'], evidence: 'G' },
   { from: 'irak14', to: 'irf7', kind: 'phos', label: 'IRAK1 → IRF7 (pDC burst)', pathways: ['tlr'], evidence: 'G' },
+
+  // LL-37 + self-DNA → TLR9 (E7). Both G: canonical psoriasis immunology,
+  // demonstrated in human pDCs and psoriatic skin, never in a SAMHD1 system.
+  // The arm continues through tlr9 -> pdc -> ifna in data/cytokines.js.
+  { from: 'll37', to: 'll37-dna', kind: 'bind', label: 'condenses self-DNA into nuclease-resistant aggregates', pathways: ['tlr'], evidence: 'G', refs: ['lande2007'] },
+  { from: 'll37-dna', to: 'tlr9', kind: 'sense', label: 'the conversion step — self-DNA alone is NOT a TLR9 agonist, the complex is', pathways: ['tlr'], evidence: 'G', refs: ['lande2007'] },
   { from: 'trif', to: 'traf3', kind: 'activate', pathways: ['tlr'], evidence: 'G' },
   { from: 'trif', to: 'traf6', kind: 'activate', pathways: ['tlr', 'nfkb'], evidence: 'G' },
 

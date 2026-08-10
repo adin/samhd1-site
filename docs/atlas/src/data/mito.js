@@ -122,23 +122,28 @@ export const nodes = [
   {
     id: 'pnc1', label: 'PNC1 (SLC25A33)', full: 'Pyrimidine nucleotide carrier 1 — inner-membrane dNTP importer',
     compartment: 'mitochondrion', klass: 'structure', pathways: ['mito', 'metabolic'],
-    pos: [42, 8, 18], lod: 1, evidence: 'I', key: true,
-    summary: 'Imports cytosolic (deoxy)nucleotides across the inner membrane into the matrix.',
+    pos: [42, 8, 18], lod: 1, evidence: 'G', key: true,
+    summary: 'Imports cytosolic (deoxy)nucleotides across the inner membrane into the matrix — including guanine, not only pyrimidines.',
     detail: 'PNC1 sits at the intersection of BOTH loops: it feeds the matrix dNTP pool that stalls POLG (→ ox-mtDNA ' +
       '→ NLRP3, Loop B), and its upregulation independently drives mtDNA synthesis and VDAC1 oligomerisation via mtROS ' +
-      '(→ cGAS, Loop A). That makes it the only node in the study upstream of both NLRP3 and VDAC1.',
+      '(→ cGAS, Loop A). That makes it the only node in the study upstream of both NLRP3 and VDAC1.\n\n' +
+      'The name is misleading and the distinction matters here. Di Noia 2014 reconstituted both carriers in ' +
+      'proteoliposomes: SLC25A33 antiports uracil, thymine and cytosine (deoxy)nucleoside di- and triphosphates — ' +
+      'and BOTH carriers also transport guanine (deoxy)nucleotides, though neither transports adenine. That is what ' +
+      'licenses this atlas to route a dGTP-SKEWED cytosolic pool through carriers named for pyrimidines. Without it ' +
+      'the purple stream would have a chemical gap at exactly its load-bearing step.',
     samhd1: 'Cytosolic dNTP excess from dNTPase failure floods PNC1/PNC2. Arm 10 tests this with PLP (vitamin B6), ' +
       'which inhibits SLC25A33 transport and is clinically trivial to obtain. The bifurcating prediction is the ' +
       'sharpest experiment in the study: suppress Loop B only → the loops are independently gated; suppress both → ' +
       'PNC1-driven mtROS is the dominant driver of VDAC1 oligomerisation.',
-    drugs: ['plp'], refs: ['dolce2001', 'kim2025', 'doc10arm', 'liu2026nlrp3'],
+    drugs: ['plp'], refs: ['dolce2001', 'dinoia2014', 'kim2025', 'doc10arm', 'liu2026nlrp3'],
   },
   {
     id: 'pnc2', label: 'PNC2 (SLC25A36)', full: 'Pyrimidine nucleotide carrier 2',
     compartment: 'mitochondrion', klass: 'structure', pathways: ['mito', 'metabolic'],
-    pos: [48, 10, 15], lod: 2, evidence: 'I',
-    summary: 'Second inner-membrane pyrimidine nucleotide carrier; shares the overload with PNC1.',
-    refs: ['lunetti2016'],
+    pos: [48, 10, 15], lod: 2, evidence: 'G',
+    summary: 'Second inner-membrane carrier; uniports and antiports cytosine/uracil nucleotides plus guanine, and shares the overload with PNC1.',
+    refs: ['lunetti2016', 'dinoia2014'],
   },
   {
     id: 'etc-i', label: 'Complex I', full: 'NADH:ubiquinone oxidoreductase',
@@ -228,11 +233,15 @@ export const nodes = [
   {
     id: 'mito-dntp', label: 'matrix dNTP pool', full: 'Mitochondrial deoxynucleotide pool',
     compartment: 'mitochondrion', klass: 'metabolite', pathways: ['mito', 'metabolic'],
-    pos: [44, 2, 21], lod: 1, evidence: 'I',
+    pos: [44, 2, 21], lod: 1, evidence: 'S',
     summary: 'Independently maintained from the cytosolic pool — but only as long as PNC1/PNC2 import is balanced.',
+    detail: 'Upgraded S on Liu 2026: cytosolic dNTP accumulating behind a disabled SAMHD1 is transported into ' +
+      'mitochondria through nucleotide carriers, supplying excess building blocks for mtDNA neosynthesis and ' +
+      'bypassing the CMPK2 salvage pathway that normally rate-limits it. Demonstrated in cells from zebrafish, mice ' +
+      'and humans, with a myeloid-conditional Samhd1 knockout, and reversed by blocking the transport step.',
     samhd1: 'The perturbation here is qualitative as well as quantitative: it is the dGTP skew, not just total ' +
       'concentration, that impairs POLG fidelity.',
-    refs: ['dolce2001', 'liu2026nlrp3'],
+    refs: ['dolce2001', 'dinoia2014', 'liu2026nlrp3'],
   },
   {
     id: 'mtros', label: 'mtROS', full: 'Mitochondrial reactive oxygen species',
@@ -370,8 +379,8 @@ export const nodes = [
 
 export const edges = [
   // ── PURPLE stream: dNTPase failure → PNC1/2 → POLG → ox-mtDNA → NLRP3
-  { from: 'pnc1', to: 'mito-dntp', kind: 'transport', label: 'imports cytosolic dNTPs across the inner membrane', pathways: ['mito', 'metabolic'], evidence: 'I', refs: ['dolce2001'] },
-  { from: 'pnc2', to: 'mito-dntp', kind: 'transport', pathways: ['mito'], evidence: 'I', refs: ['lunetti2016'] },
+  { from: 'pnc1', to: 'mito-dntp', kind: 'transport', label: 'imports cytosolic dNTPs (incl. dGTP) across the inner membrane', pathways: ['mito', 'metabolic'], evidence: 'S', refs: ['dolce2001', 'dinoia2014', 'liu2026nlrp3'] },
+  { from: 'pnc2', to: 'mito-dntp', kind: 'transport', pathways: ['mito'], evidence: 'G', refs: ['lunetti2016', 'dinoia2014'] },
   { from: 'mito-dntp', to: 'polg', kind: 'inhibit', label: 'dGTP skew impairs fidelity + processivity', pathways: ['mito'], evidence: 'I', refs: ['elpeleg2008'] },
   { from: 'polg', to: 'mtdna', kind: 'degrade', label: 'stalling → strand breaks', pathways: ['mito'], evidence: 'I' },
   { from: 'polg', to: 'oxmtdna', kind: 'produce', label: 'uncontrolled neosynthesis → oxidised product', pathways: ['mito', 'inflammasome'], evidence: 'S', loop: 'B', refs: ['liu2026nlrp3'] },
@@ -385,7 +394,7 @@ export const edges = [
   { from: 'vdac1-oligo', to: 'mtdna-frag', kind: 'release', label: 'primary constitutive escape route', pathways: ['mito', 'cgas-sting'], evidence: 'S', loop: 'A', refs: ['rabinowitz2025', 'xu2023vdac1'] },
   { from: 'mptp', to: 'mtdna-frag', kind: 'release', label: 'secondary route, downstream of ΔΨm collapse', pathways: ['mito'], evidence: 'G', loop: 'A' },
   { from: 'mtdna-frag', to: 'cgas', kind: 'sense', label: 'cGAS binds cytosolic dsDNA → Loop A initiation', pathways: ['mito', 'cgas-sting'], evidence: 'S', loop: 'A', refs: ['west2015', 'han2026'] },
-  { from: 'oxmtdna', to: 'nlrp3', kind: 'activate', label: 'direct NLRP3 ligand → Loop B initiation', pathways: ['mito', 'inflammasome'], evidence: 'S', loop: 'B', refs: ['liu2026nlrp3'] },
+  { from: 'oxmtdna', to: 'nlrp3', kind: 'activate', label: 'direct NLRP3 ligand → Loop B initiation', detail: 'Cross-species: SAMHD1 deletion promoted NLRP3 hyperactivation in cells from zebrafish, mice AND humans (Liu 2026). The strongest evidence in this atlas — and it does not extend to Loop C.', pathways: ['mito', 'inflammasome'], evidence: 'S', loop: 'B', refs: ['liu2026nlrp3'] },
 
   // ── Membrane potential and bioenergetics
   { from: 'vdac1-oligo', to: 'deltapsi', kind: 'inhibit', label: 'ΔΨm collapse', pathways: ['mito'], evidence: 'S', refs: ['xu2023vdac1'] },

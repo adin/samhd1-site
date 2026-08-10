@@ -184,7 +184,7 @@ export const nodes = [
   {
     id: 'plcg1', label: 'PLCγ1', full: 'Phospholipase C gamma 1',
     compartment: 'responder', klass: 'enzyme', pathways: ['tcr'],
-    pos: [-100, 84, 46], lod: 2, evidence: 'G',
+    pos: [-107, 80, 40], lod: 2, evidence: 'G',
     summary: 'Recruited to phospho-LAT and activated at Y783. Its output is the calcium and DAG arm that licenses the effector programme.',
     detail: 'PLCγ1 is where reduced proximal phosphorylation turns into reduced function: less IP3/DAG means less ' +
       'calcium flux and less PKCθ activity, and downstream the paper measures exactly that as fewer CD69+CD40L+ ' +
@@ -200,7 +200,7 @@ export const nodes = [
   {
     id: 'cd69', label: 'CD69', full: 'Early T-cell activation marker',
     compartment: 'responder', klass: 'effector', pathways: ['tcr'],
-    pos: [-94, 90, 44], lod: 2, evidence: 'G',
+    pos: [-94, 86, 36], lod: 2, evidence: 'G',
     summary: 'The earliest surface readout of successful activation — up within hours, and reduced by TRAILshort.',
     detail: 'Measured by flow cytometry as the CD69+CD40L+CD4+ fraction responding to EBV gp350. TRAILshort EVs ' +
       'reduce it; SHP-1 inhibition raises it back. As an early marker it reports on the proximal block directly, ' +
@@ -220,7 +220,7 @@ export const nodes = [
   {
     id: 'tcell-prolif', label: 'clonal proliferation', full: 'Antigen-driven T-cell expansion',
     compartment: 'responder', klass: 'effector', pathways: ['tcr'],
-    pos: [-92, 104, 46], lod: 2, evidence: 'G',
+    pos: [-98, 106, 36], lod: 2, evidence: 'G',
     summary: 'Measured by CFSE dilution. Suppressed by TRAILshort EVs across a Transwell, and restored by SHP-1 inhibition.',
     detail: 'The Transwell design is the load-bearing control: TRAILshort-expressing MEFs suppress proliferation ' +
       'of T cells they never touch. That establishes the effect as EV-mediated and soluble, which is what licenses ' +
