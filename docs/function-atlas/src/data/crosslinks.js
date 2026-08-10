@@ -121,6 +121,28 @@ export const CROSSLINKS = {
     { to: 'ctsd', kind: 'feeds',
       note: 'Cathepsin D — the mTOR–MITF–CTSD arm where lysosomal failure becomes cGAS ligand supply.' },
   ],
+
+  // ── Clinical outcomes — a second route, not in the source workbook ──────
+  // `bladder` had only one modelled cause (sterile inflammation, via
+  // sterile-inflam in links.js). The IL-23/Th17/IL-17A axis is a second,
+  // mechanistically independent route: it is the immune atlas's own model of
+  // enthesitis-predominant disease, where the same driver produces joint
+  // involvement (psa) at one insertion site and could plausibly produce
+  // genitourinary/pelvic involvement at another. No SAMHD1-specific citation
+  // supports the bladder-specific claim — this is a structural analogy to an
+  // already-modelled mechanism, not a demonstrated one, and is graded I
+  // accordingly. It is NOT one of the 54 workbook functions, so it lives here
+  // as a cross-link rather than as a fabricated internal node.
+  bladder: [
+    { to: 'il17a', kind: 'feeds',
+      note: 'The IL-23/Th17/IL-17A axis that drives enthesitis at tendon–bone insertions ' +
+            'in psoriatic arthritis. The same axis acting on a different insertion site is a ' +
+            'structural analogy, not a demonstrated mechanism — no citation places IL-17A ' +
+            'at the bladder specifically.' },
+    { to: 'psa', kind: 'feeds',
+      note: 'Psoriatic arthritis is the outcome this axis is modelled against. Genitourinary ' +
+            'enthesitis sits on the same spectrum but is not the same claim as joint disease.' },
+  ],
 };
 
 export const CROSSLINK_KINDS = {

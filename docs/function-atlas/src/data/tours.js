@@ -159,13 +159,24 @@ export const TOURS = [
               'degradation to a co-purifying nuclease.',
       },
       {
-        title: 'The urological claims are the furthest reach',
+        title: 'Two routes to the same outcome, neither one cited',
         focus: 'clinical',
-        nodes: ['prostatitis', 'bladder', 'cytokine-storm'],
+        nodes: ['prostatitis', 'bladder'],
         body: '"Bladder Dysfunction Prevention" is listed in the source workbook as a ' +
               'SAMHD1 function with Critical criticality. It is not a function — it is a ' +
-              'phenotype at the end of a chain of inference, and no cytokine-storm event ' +
-              'has been documented in this variant at all. Shown, but graded honestly.',
+              'phenotype at the end of a chain of inference. Two independent routes converge ' +
+              'on it: sterile inflammation, modelled here, and the IL-23/Th17/IL-17A axis ' +
+              'that drives enthesitis in psoriatic arthritis, modelled in the immune atlas and ' +
+              'reachable from this node’s cross-links. Neither route has a citation placing it ' +
+              'at the bladder specifically — the atlas shows two plausible mechanisms, not one ' +
+              'demonstrated claim, and grades both I.',
+      },
+      {
+        title: 'And a claim with no route at all',
+        nodes: ['cytokine-storm'],
+        body: 'Cytokine Storm Prevention sits on weaker ground still: no cytokine-storm event ' +
+              'has been documented in this variant, and unlike the urological claims above it ' +
+              'has no second mechanism to fall back on. Shown, but graded honestly.',
       },
       {
         title: 'And the citations behind them',
