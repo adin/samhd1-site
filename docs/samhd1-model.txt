@@ -1,5 +1,5 @@
 # SAMHD1 p.A565T — CAUSAL MODEL  (machine-readable, generated)
-# 238 nodes · 406 edges · 20 layers · 10 streams
+# 244 nodes · 419 edges · 20 layers · 10 streams
 # source: viz/innate-immune-3d · regenerate: jsc -m tools/export_context.mjs > samhd1-model.txt
 # DO NOT EDIT BY HAND — regenerate instead.
 
@@ -121,18 +121,18 @@ ankib1|ANKIB1 K11-Ub gain node|10
 nfkb|NF-κB|29
 inflammasome|NLRP3 (Loop B)|25
 celldeath|Cell death (ZBP1/RIPK3)|8
-ifn-jak|IFNAR–JAK/TYK2–STAT|22
+ifn-jak|IFNAR–JAK/TYK2–STAT|23
 ifn-gamma|IFN-γ loop (Loop C)|13
 th17|IL-12/IL-23 – Th1/Th17|10
 tcr|TCR signalling (TRAILshort)|18
 isg|ISG effectors & brakes|15
-mito|Mitochondrial injury|37
+mito|Mitochondrial injury|38
 mitophagy|Mitophagy / lysosome|16
 retro|Retroelement defence|35
-genome|Genome stability|16
-metabolic|Metabolic / bioenergetic|24
-drugs|Drugs & study arms|13
-clinical|Clinical outcomes|15
+genome|Genome stability|19
+metabolic|Metabolic / bioenergetic|28
+drugs|Drugs & study arms|15
+clinical|Clinical outcomes|17
 
 §5 NODES   id|label|cmp|class|ev|layers|summary
 # The summary is one sentence. The MECHANISM is in §7, and A565T-specific
@@ -201,6 +201,9 @@ mtdna-frag|cytosolic mtDNA fragments|CYT|LIG|S|mito,cgas-sting|Escapes via the V
 succinate|succinate|MIT|MET|G|mito,metabolic|Accumulates in M1 macrophages, inhibits prolyl hydroxylases, stabilises HIF-1α under normoxia.
 hif1a|HIF-1α|CYT|TF|G|metabolic,inflammasome|Stabilised normoxically by succinate → aerobic glycolysis (Warburg shift) and IL-1β transcription.
 atp|ATP output|MIT|MET|G|mito,metabolic|The bottom line of the whole mitochondrial arm — and the readout that JAK inhibition did NOT rescue.
+glycolysis|aerobic glycolysis|CYT|MET|G|metabolic,mito|Emergency metabolic switch when OXPHOS fails; prevents bioenergetic necrosis but fuels lactate and pyruvate overflow.
+lactate|lactate|CYT|MET|G|metabolic,clinical|Glycolytic end-product; fuels nuclear histone lactylation and delivers a synovial entrapment signal for Th17 cells.
+h3k18la|H3K18la|NUC|STR|G|metabolic,genome,clinical|Persistent epigenetic chromatin lock responsible for multi-day post-exertional malaise (PEM) and immune exhaustion.
 becn1|BECN1|CYT|ADA|S|mitophagy,isg|ISGylated by ISG15, which competes with the activating K63-Ub mark and independently blocks autophagic flux.
 lc3|LC3-II|CYT|EFF|G|mitophagy|Autophagosome membrane marker; LC3-II/I ratio with p62 is the standard flux readout in Arm 1.
 p62|p62 / SQSTM1|CYT|ADA|G|mitophagy|Accumulates when flux is blocked — the readout that separates "more autophagosomes" from "working autophagy".
@@ -233,6 +236,7 @@ stat1|STAT1|CYT|TF|S|ifn-jak,metabolic|Y701-phosphorylated by JAK1/TYK2. Forms I
 stat2|STAT2|CYT|TF|S|ifn-jak|Type-I-specific; provides the transactivation domain of ISGF3.
 irf9|IRF9|CYT|TF|G|ifn-jak|The DNA-binding subunit of ISGF3; supplies ISRE specificity.
 isgf3|ISGF3|NUC|COM|S|ifn-jak,isg|The type-I interferon transcription complex. Binds ISRE elements across several hundred ISGs.
+pyr-stat1|pyr-STAT1 (K201)|CYT|TF|G|ifn-jak,metabolic|Glycolytic overflow covalently pyruvilates STAT1 at Lys201, selectively disrupting STAT1–STAT2 heterodimerization.
 ifnb1-gene|IFNB1 locus|NUC|STR|G|cgas-sting,rlr-mavs,tlr|Requires IRF3 dimers (PRDIII-I) AND NF-κB (PRDII) AND ATF2/c-Jun on the same enhanceosome.
 isre|ISRE elements|NUC|STR|G|ifn-jak,isg|ISGF3 binding sites upstream of several hundred interferon-stimulated genes.
 gas|GAS elements|NUC|STR|G|ifn-jak|STAT1-homodimer (GAF) binding sites — the type II interferon transcriptional programme.
@@ -366,6 +370,8 @@ mcc950|MCC950|CYT|DRU|G|drugs|Binds the NACHT-domain Walker B motif, blocking AT
 plp|PLP / vitamin B6|MIT|DRU|I|drugs|The only arm upstream of BOTH NLRP3 and VDAC1 — and clinically available over the counter.
 allopurinol|allopurinol|CYT|DRU|I|drugs|Would cut the GOLD stream at urate production if MSU crystals prove to be a real third NLRP3 input.
 abe8e|ABE8e-YA base editor|NUC|DRU|I|drugs|The curative horizon: a clean transition mutation is a premier base-editing candidate, with no double-strand break required.
+arac|Ara-C (Ara-CTP)|CYT|DRU|S|drugs,genome|SAMHD1 hydrolyzes and inactivates Ara-CTP; haploinsufficiency causes marked hypersensitivity and clinical chemotherapy toxicity.
+gemcitabine|gemcitabine (dFdCTP)|CYT|DRU|S|drugs,genome|Substrate of SAMHD1 catalytic inactivation; defective tetramer assembly impairs drug hydrolysis, enhancing cytotoxic stalling.
 naci|NACI|EXT|OUT|I|clinical|Tonic, source-driven interferon activation with no flare-remit cyclicity and a seronegative cytokine profile.
 mecfs|ME/CFS|EXT|OUT|G|clinical|Multi-generational, concordant phenotype, with age at onset falling in each successive generation.
 pem|PEM / fatigue|EXT|OUT|G|clinical|Reduced OXPHOS, impaired ATP generation, metabolic shifts worsening post-exertion — and largely refractory to JAK inhibition.
@@ -478,11 +484,14 @@ tfam|West et al. 2015 showed that mtDNA stress from TFAM depletion primes the an
 mito-dntp|Upgraded S on Liu 2026: cytosolic dNTP accumulating behind a disabled SAMHD1 is transported into mitochondria through nucleotide carriers, supplying excess building blocks for mtDNA neosynthesis and bypassing the CMPK2 salvage pathway that normally rate-limits it. Demonstrated in cells from zebrafish, mice and humans, with a myeloid-conditional Samhd1 knockout, and reversed by blocking the transport step.
 oxmtdna|This species distinction is the correction at the heart of the project's mitochondrial manuscript. ox-mtDNA is the direct NLRP3 ligand demonstrated in SAMHD1-null and obese macrophages (Loop B). It is NOT the species that drives the ISG signature — that is the unoxidised/mixed fragment pool escaping through VDAC1 (Loop A). Same organelle, different oxidation state, different sensor, different loop, different rescue point.
 mtdna-frag|The proof is pharmacological and clean: VBIT-4 prevents release and abolishes the spontaneous ISG response; IMSB301 (cGAS inhibitor) normalises the ISG signature in AGS PBMCs. Both confirm the route is cGAS-dependent and VDAC1-gated rather than oxidation-dependent.
+glycolysis|Marcucci & Rumio (2026) demonstrated that compensatory fermentative glycolysis acts as an emergency survival switch when mitochondrial membrane potential collapses, preventing catastrophic necrotic lysis. However, the resulting pyruvate overflow pyruvilates STAT1 (Zuo 2026) and lactate accumulation drives H3K18 lactylation (Ziogas 2025).
+h3k18la|Ziogas et al. (Cell 2025) and Marcucci & Rumio (2026) established that chronic lactate accumulation drives enzymatic histone lactylation (H3K18la) at enhancer loci. This modification persists long after exertion terminates, locking macrophages and immune cells in a refractory exhaustion state that directly models prolonged PEM crashes.
 becn1|This is the second, ISG15-dependent brake — distinct from the MFN1/2 block and additive to it. The project manuscript calls the ISG15–BECN1 block the KEYSTONE stressor (S6): it is what converts transient mitochondrial damage into permanent accumulation.
 dnase2|DNase II is acid-dependent and lysosome-restricted, so it only works in a compartment that has been properly acidified and properly stocked. Human DNASE2 deficiency is a type-I interferonopathy, and in mice Dnase2 loss is embryonically lethal from interferon — rescued by deleting the interferon receptor, and by deleting cGAS or STING. Undigested DNA in a failing lysosome is sufficient, by itself, to drive the exact signature this whole framework is about.
 dnase1l3|It handles the extracellular half of the same problem: DNA that leaves a dying cell packaged in membrane, where soluble DNase I cannot reach it. Relevant here because the framework already posits continuous sub-lethal and lytic death — pyroptosis, and now necroptosis — as ongoing sources of extracellular DNA.
 ifng|Tonic IFN-γ suppresses collagen-I transcription via STAT1 antagonism of TGF-β/Smad3 while coordinately upregulating MMP-1 and MMP-3 in dermal fibroblasts — the established mechanism behind the connective-tissue and fascial failure phenotype.
 tyk2|TYK2 also serves IL-12 and IL-23, so TYK2 blockade hits the Th17/psoriatic arm as well as the interferon arm — relevant given the confirmed PsA diagnosis.
+pyr-stat1|Zuo et al. (Cell 2026) established that pyruvate modification of STAT1 at Lys201 uncouples Type I IFN antiviral transcriptional output from upstream cGAS–STING drive without blunting NF-κB or STAT3 inflammatory signaling. This resolves the central paradox of heightened viral susceptibility despite sustained interferon pathway activation.
 ifnb1-gene|The AND-gate architecture is why interferon induction is normally so hard to trigger — and why priming several inputs at once, as the ANKIB1 node does, changes the output so dramatically.
 pgc1a|STAT1-knockout hepatocytes show higher mtDNA content and more mitochondria — the clean demonstration that this repression is real and reversible. Stressor #5 of the mitochondrial figure.
 isg15|ISG15 is simultaneously protective and destructive here. Free ISG15 stabilises USP18 (the IFNAR2 brake), while conjugated ISG15 shuts down the two autophagy routes the cell needs to clear the mitochondria that are generating the ligand. Knockdown restores flux, ΔΨm and ATP.
@@ -565,6 +574,7 @@ vbit4|Dose constraint is non-negotiable: above ~10 µM VBIT-4 produces VDAC1-IND
 imsb301|Predicted outcome is the single highest-value result in Axis 3: ISG and IFN normalised, while IL-1β, ASC specks and caspase-1 p20 stay UNCHANGED. With Arm 9's mirror-image profile, that pair is the definitive Loop A/B independence matrix in primary human heterozygous cells.
 mcc950|Predicted mirror image of Arm 8: IL-1β, IL-18, ASC specks and caspase-1 p20 normalised; ISG signature unchanged. Residual IL-1β despite confirmed absence of ASC specks would implicate a caspase-1-independent maturation route — which points at allopurinol as an adjunct.
 plp|The bifurcating prediction is what makes this arm worth running: Outcome A — Loop B suppressed, Loop A intact: the two loops are independently gated, and VDAC1 oligomerisation is driven by existing mtROS tone rather than by PNC1 substrate flux. Outcome B — both suppressed: PNC1-driven mtROS is the dominant upstream driver, and the therapeutic target hierarchy shifts to the inner membrane. Null — neither: heterozygous dNTP excess is below the SLC25A33 overload threshold, meaning this arm needs near-complete dNTPase loss to engage. Equally informative, and it defines the haploinsufficiency threshold. The class has a positive control now. Liu 2026 blocked mitochondrial dNTP transport pharmacologically and abolished NLRP3 hyperactivation in macrophages from Samhd1-deficient mice AND from obese human donors — the rescue experiment that anchors Loop B. That validates the TARGET, not this compound: PLP itself remains graded I here, because nobody has run pyridoxal 5′-phosphate against a SAMHD1-haploinsufficient cell.
+arac|Schneider et al. (Nature Medicine 2017) and Herold et al. (2017) demonstrated that SAMHD1 is the primary cellular triphosphohydrolase degrading Ara-CTP. Defective tetramer assembly prevents drug inactivation, creating synthetic lethality in AML/hematological malignancies but severe host toxicity under standard dosing.
 naci|Distinguished from AGS, SAVI and CANDLE by kinetics and biomarkers rather than by signalling architecture: non-acute (persistently engaged, not episodic), chronic (sustained over decades, progressive rather than episodic), and acting through intracellular ISG induction rather than elevated serum cytokines. That last property is the clinically actionable part — it predicts that standard cytokine panels will read normal in active multi-system disease, and it redirects workup toward IFN-α/β, free ISG15, CXCL10 and ISG scoring.
 mecfs|Heightened innate immunity, mitochondrial dysfunction, lipid oxidation and a Warburg shift are all documented in ME/CFS cohorts independently. SAMHD1 haploinsufficiency is proposed as a genetic driver of that convergent interferon–mitochondrial phenotype in a subset — not as an explanation for all of ME/CFS. Falling age at onset across generations is consistent with apparent anticipation, plausibly from cumulative genomic instability or telomere attrition.
 psa|The distinction matters: PsA is established at the diagnosis level, whereas SAMHD1-to-PsA causality remains a mechanistic hypothesis pending specialist review and cell-based confirmation.
@@ -654,6 +664,14 @@ ceramide|inhibit|-|etc-iii|G||direct Complex III inhibition + inner-membrane per
 ceramide|activate|+|mptp|G||raises mPTP propensity
 succinate|activate|+|hif1a|G||inhibits PHD → normoxic HIF-1α stabilisation
 etc-iii|produce|+|succinate|G||TCA remodelling in M1 skewing
+deltapsi|drive|+|glycolysis|G||OXPHOS collapse forces emergency fermentative glycolysis
+hif1a|activate|+|glycolysis|G||normoxic HIF-1α upregulates glycolytic enzymes
+glycolysis|produce|+|atp|G||emergency glycolytic ATP generation
+glycolysis|produce|+|lactate|G||LDHA reduction of pyruvate to lactate
+lactate|drive|+|h3k18la|G||enzymatic histone lactylation at Lys18
+h3k18la|drive|+|pem|G||epigenetic chromatin lock driving multi-day PEM crashes
+glycolysis|inhibit|-|mlkl|G||necrosis defense: glycolytic ATP prevents bioenergetic necrotic lysis
+lactate|drive|+|psa|G||synovial lactate entrapment & Th17 priming
 bik|activate|+|baxbak|S||BH3-only priming
 baxbak|release|+|cytc|S||sublethal / minority MOMP
 mptp|release|+|cytc|G||chronic sublethal leak (TNF-α/ROS driven)
@@ -701,6 +719,9 @@ ifnlr|activate|+|jak1|G||
 jak1|phos|+|stat1|S|A|Y701
 tyk2|phos|+|stat2|S|A|Y690
 jak2|phos|+|stat1|G||
+stat1|drive|+|pyr-stat1|G||STAT1 Lys201 pyruvilation
+glycolysis|drive|+|pyr-stat1|G||glycolytic pyruvate overflow drives pyruvilation
+pyr-stat1|inhibit|-|isgf3|G||blocks STAT1–STAT2 heterodimerization; uncouples antiviral ISGs
 stat1|bind|+|isgf3|S|A|STAT1:STAT2:IRF9 assembly
 stat2|bind|+|isgf3|S||
 irf9|bind|+|isgf3|G||supplies ISRE DNA-binding specificity
@@ -971,6 +992,8 @@ mcc950|inhibit|-|nlrp3|G||Arm 9 — NACHT Walker B motif
 plp|inhibit|-|pnc1|I||Arm 10 — inner membrane, upstream of BOTH loops
 allopurinol|inhibit|-|urate|I||candidate adjunct if the GOLD stream is real
 abe8e|inhibit|-|a565t|I||A·T → G·C reversion to wild type
+samhd1|inhibit|-|arac|S||hydrolyzes Ara-CTP; haploinsufficiency causes hypersensitivity
+samhd1|inhibit|-|gemcitabine|S||hydrolyzes dFdCTP; loss enhances cytotoxicity
 ifnb|drive|+|naci|I||tonic, moderate-amplitude, source-driven
 isg-set|drive|+|naci|I||intracellular ISG induction with flat serum cytokines
 atp|drive|+|pem|G||the JAK-refractory bioenergetic residual
@@ -1212,6 +1235,12 @@ mohanty2026|Mohanty S, Suklabaidya S, Mnatsakanyan N, Jacobson S, Harhaj EW. HTL
 gurbuz2026|Gürbüz N, Ismayilova S, Ahmadova G, Çiftçi R, Aksu G. Type I Interferonopathies in the Differential Diagnosis of Vasculitis: A Comprehensive Review. J Vis Exp 2026;209:e71286.|doi:10.3791/71286
 lu2026micro|Lu X, Sun W, Zhang D, Hou B, Tai H. Emerging microbiome–mitochondria crosstalk in host defense and infectious diseases: mechanistic insights into NLRP3 inflammasome activation and mtDNA-mediated immunomodulation. Front Cell Infect Microbiol 2026;16:1866924.|doi:10.3389/fcimb.2026.1866924
 xiao2026fih|Xiao T, Liu Y, He Z, Yang A, Li J. Engineered Exosome-Mediated FIH-1 Delivery for Targeted Therapy of Hyperuricemic Nephropathy by Inhibiting NF-κB/NLRP3 Inflammasome Signaling and Restoring Autophagic Homeostasis. Adv Healthc Mater 2026;15(14):e2501602.|doi:10.1002/adhm.71602
+zuo2026|Zuo Y, Wang Q, Tian W, Wang X, Zheng Z et al. Pyruvate is a natural suppressor of interferon signaling by inducing STAT1 protein pyruvilation. Cell 2026;189(8):1975–1989.e19.|doi:10.1016/j.cell.2026.01.023
+marcucci2026|Marcucci F, Rumio C. The consequences of mitochondrial dysfunction and upregulated glycolysis on innate and adaptive immune responses. Cell Signal Inflamm Dis 2026;1(1):5.|doi:10.1186/s44505-026-00005-x
+ziogas2025|Ziogas A, Novakovic B, Ventriglia L, Galang N, Tran KA et al. Long-term histone lactylation connects metabolic and epigenetic rewiring in innate immune memory. Cell 2025;188(11):2992–3012.e16.|doi:10.1016/j.cell.2025.03.048
+certo2025|Certo M, Pontarini E, Gilbert SG, Schmidt R, Turner JD et al. Lactate signalling leads to aggregation of immune-inflammatory hotspots and SLC5A12 blockade promotes their resolution. Nat Metab 2025;7(10):1663–1680.|doi:10.1038/s42255-025-01331-9
+schneider2017|Schneider C, Oellerich T, Baldauf HM et al. SAMHD1 is a biomarker for cytarabine response and a therapeutic target in acute myeloid leukemia. Nat Med 2017;23(2):250–255.|doi:10.1038/nm.4255
+herold2017|Herold N, Rudd SG, Ljungblad L et al. Targeting SAMHD1 with the Vpx protein to improve cytarabine therapy for hematological malignancies. Nat Med 2017;23(2):256–263.|doi:10.1038/nm.4265
 
 §12 PRIVACY
 Case notes present in this build: YES (16 entries).

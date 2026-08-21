@@ -152,7 +152,7 @@ export const TOURS = [
     steps: [
       {
         title: 'Not all of this is equally solid',
-        nodes: ['rnase', 'cytokine-storm', 'bladder', 'prostatitis'],
+        nodes: ['rnp-sequestration', 'cytokine-storm', 'bladder', 'prostatitis'],
         body: 'Every node and arrow here carries a grade. These are the I-graded ones: ' +
               'mechanistically reasonable, not demonstrated. Whether SAMHD1 has intrinsic ' +
               'RNase activity is actively contested — several groups attribute the observed ' +
@@ -180,7 +180,7 @@ export const TOURS = [
       },
       {
         title: 'And the citations behind them',
-        nodes: ['rnase', 'cytokine-storm'],
+        nodes: ['rnp-sequestration', 'cytokine-storm'],
         body: 'Ten of the 48 sources are flagged: two duplicates cited under different IDs, ' +
               'six where the "author" is a publisher or a vendor — the signature of a ' +
               'reference that was never resolved to a real paper — three unrefereed ' +

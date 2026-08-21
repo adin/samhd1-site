@@ -123,11 +123,18 @@ export const LINKS = [
     "evidence": "I"
   },
   {
-    "from": "rnase",
+    "from": "rnp-sequestration",
     "to": "ifn-i",
     "kind": "prevents",
-    "evidence": "I",
-    "detail": "Whether SAMHD1 has intrinsic RNase activity is contested — several groups attribute the observed degradation to a co-purifying nuclease."
+    "evidence": "S",
+    "detail": "Non-catalytic RNP sequestration and stress-granule trapping prevent retroelement sensing by cytosolic receptors."
+  },
+  {
+    "from": "chemo-hydrolysis",
+    "to": "sphase",
+    "kind": "maintains",
+    "evidence": "S",
+    "detail": "Hydrolysis of nucleoside analogue triphosphates (Ara-CTP, dFdCTP) prevents premature S-phase arrest and cytotoxicity."
   },
   {
     "from": "mrna-deg",

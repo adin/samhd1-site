@@ -185,6 +185,14 @@ export const nodes = [
     pos: [-40, 30, -2], lod: 1, evidence: 'S',
     summary: 'The type-I interferon transcription complex. Binds ISRE elements across several hundred ISGs.',
   },
+  {
+    id: 'pyr-stat1', label: 'pyr-STAT1 (K201)', full: 'STAT1 Lys201 pyruvilation via glycolytic overflow',
+    compartment: 'cytosol', klass: 'tf', pathways: ['ifn-jak', 'metabolic'],
+    pos: [-20, 36, 14], lod: 1, evidence: 'G', key: true,
+    summary: 'Glycolytic overflow covalently pyruvilates STAT1 at Lys201, selectively disrupting STAT1–STAT2 heterodimerization.',
+    detail: 'Zuo et al. (Cell 2026) established that pyruvate modification of STAT1 at Lys201 uncouples Type I IFN antiviral transcriptional output from upstream cGAS–STING drive without blunting NF-κB or STAT3 inflammatory signaling. This resolves the central paradox of heightened viral susceptibility despite sustained interferon pathway activation.',
+    refs: ['zuo2026'],
+  },
 
   // ── Nuclear elements ─────────────────────────────────────────────────
   {
@@ -291,6 +299,9 @@ export const edges = [
   { from: 'jak1', to: 'stat1', kind: 'phos', label: 'Y701', pathways: ['ifn-jak'], evidence: 'S', loop: 'A' },
   { from: 'tyk2', to: 'stat2', kind: 'phos', label: 'Y690', pathways: ['ifn-jak'], evidence: 'S', loop: 'A' },
   { from: 'jak2', to: 'stat1', kind: 'phos', pathways: ['ifn-jak'], evidence: 'G' },
+  { from: 'stat1', to: 'pyr-stat1', kind: 'drive', label: 'STAT1 Lys201 pyruvilation', pathways: ['ifn-jak', 'metabolic'], evidence: 'G', refs: ['zuo2026'] },
+  { from: 'glycolysis', to: 'pyr-stat1', kind: 'drive', label: 'glycolytic pyruvate overflow drives pyruvilation', pathways: ['ifn-jak', 'metabolic'], evidence: 'G', refs: ['zuo2026'] },
+  { from: 'pyr-stat1', to: 'isgf3', kind: 'inhibit', label: 'blocks STAT1–STAT2 heterodimerization; uncouples antiviral ISGs', pathways: ['ifn-jak'], evidence: 'G', refs: ['zuo2026'] },
   { from: 'stat1', to: 'isgf3', kind: 'bind', label: 'STAT1:STAT2:IRF9 assembly', pathways: ['ifn-jak'], evidence: 'S', loop: 'A' },
   { from: 'stat2', to: 'isgf3', kind: 'bind', pathways: ['ifn-jak'], evidence: 'S' },
   { from: 'irf9', to: 'isgf3', kind: 'bind', label: 'supplies ISRE DNA-binding specificity', pathways: ['ifn-jak'], evidence: 'G' },

@@ -175,5 +175,11 @@ export const REFS = {
   gurbuz2026:     { text: 'Gürbüz N, Ismayilova S, Ahmadova G, Çiftçi R, Aksu G. Type I Interferonopathies in the Differential Diagnosis of Vasculitis: A Comprehensive Review. J Vis Exp 2026;209:e71286.', doi: '10.3791/71286' },
   lu2026micro:    { text: 'Lu X, Sun W, Zhang D, Hou B, Tai H. Emerging microbiome–mitochondria crosstalk in host defense and infectious diseases: mechanistic insights into NLRP3 inflammasome activation and mtDNA-mediated immunomodulation. Front Cell Infect Microbiol 2026;16:1866924.', doi: '10.3389/fcimb.2026.1866924' },
   xiao2026fih:    { text: 'Xiao T, Liu Y, He Z, Yang A, Li J. Engineered Exosome-Mediated FIH-1 Delivery for Targeted Therapy of Hyperuricemic Nephropathy by Inhibiting NF-κB/NLRP3 Inflammasome Signaling and Restoring Autophagic Homeostasis. Adv Healthc Mater 2026;15(14):e2501602.', doi: '10.1002/adhm.71602' },
+  zuo2026:        { text: 'Zuo Y, Wang Q, Tian W, Wang X, Zheng Z et al. Pyruvate is a natural suppressor of interferon signaling by inducing STAT1 protein pyruvilation. Cell 2026;189(8):1975–1989.e19.', doi: '10.1016/j.cell.2026.01.023' },
+  marcucci2026:   { text: 'Marcucci F, Rumio C. The consequences of mitochondrial dysfunction and upregulated glycolysis on innate and adaptive immune responses. Cell Signal Inflamm Dis 2026;1(1):5.', doi: '10.1186/s44505-026-00005-x' },
+  ziogas2025:     { text: 'Ziogas A, Novakovic B, Ventriglia L, Galang N, Tran KA et al. Long-term histone lactylation connects metabolic and epigenetic rewiring in innate immune memory. Cell 2025;188(11):2992–3012.e16.', doi: '10.1016/j.cell.2025.03.048' },
+  certo2025:      { text: 'Certo M, Pontarini E, Gilbert SG, Schmidt R, Turner JD et al. Lactate signalling leads to aggregation of immune-inflammatory hotspots and SLC5A12 blockade promotes their resolution. Nat Metab 2025;7(10):1663–1680.', doi: '10.1038/s42255-025-01331-9' },
+  schneider2017:  { text: 'Schneider C, Oellerich T, Baldauf HM et al. SAMHD1 is a biomarker for cytarabine response and a therapeutic target in acute myeloid leukemia. Nat Med 2017;23(2):250–255.', doi: '10.1038/nm.4255' },
+  herold2017:     { text: 'Herold N, Rudd SG, Ljungblad L et al. Targeting SAMHD1 with the Vpx protein to improve cytarabine therapy for hematological malignancies. Nat Med 2017;23(2):256–263.', doi: '10.1038/nm.4265' },
 };
 

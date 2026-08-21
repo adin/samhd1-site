@@ -478,5 +478,37 @@ export const REFS = {
     "finding": "Identifies homozygous and compound heterozygous loss-of-function SAMHD1 mutations causing Aicardi-Gouti\u00e8res syndrome (AGS5) with chronic intracranial interferonopathy",
     "doi": "10.1038/ng.424",
     "pmid": "19525956"
+  },
+  "[59]": {
+    "id": "[59]",
+    "short": "Zuo Y et al. 2026 - Cell",
+    "full": "Zuo Y, Wang Q, Tian W, Wang X, Zheng Z, et al. Pyruvate is a natural suppressor of interferon signaling by inducing STAT1 protein pyruvilation. Cell. 2026;189(8):1975-1989.e19.",
+    "url": "https://doi.org/10.1016/j.cell.2026.01.023",
+    "finding": "Pyruvate covalently modifies STAT1 at Lys201 (pyruvilation), sterically blocking STAT1-STAT2 heterodimerization and selectively shutting down antiviral ISGs without dampening NF-κB or STAT3",
+    "doi": "10.1016/j.cell.2026.01.023"
+  },
+  "[60]": {
+    "id": "[60]",
+    "short": "Marcucci F & Rumio C 2026",
+    "full": "Marcucci F, Rumio C. The consequences of mitochondrial dysfunction and upregulated glycolysis on innate and adaptive immune responses. Cell Signal Inflamm Dis. 2026;1(1):5.",
+    "url": "https://doi.org/10.1186/s44505-026-00005-x",
+    "finding": "Mitochondrial failure and compensatory glycolysis act as emergency necrosis defense, but fuel pyruvate overflow and lactate accumulation that reprogram immune and metabolic memory",
+    "doi": "10.1186/s44505-026-00005-x"
+  },
+  "[61]": {
+    "id": "[61]",
+    "short": "Ziogas A et al. 2025 - Cell",
+    "full": "Ziogas A, Novakovic B, Ventriglia L, Galang N, Tran KA, et al. Long-term histone lactylation connects metabolic and epigenetic rewiring in innate immune memory. Cell. 2025;188(11):2992-3012.e16.",
+    "url": "https://doi.org/10.1016/j.cell.2025.03.048",
+    "finding": "Long-term histone H3 Lys18 lactylation (H3K18la) establishes an epigenetic chromatin lock at enhancer elements, sustaining an exhausted, refractory state in macrophages and immune cells",
+    "doi": "10.1016/j.cell.2025.03.048"
+  },
+  "[62]": {
+    "id": "[62]",
+    "short": "Certo M et al. 2025 - Nat Metab",
+    "full": "Certo M, Pontarini E, Gilbert SG, Schmidt R, Turner JD, et al. Lactate signalling leads to aggregation of immune-inflammatory hotspots and SLC5A12 blockade promotes their resolution. Nat Metab. 2025;7(10):1663-1680.",
+    "url": "https://doi.org/10.1038/s42255-025-01331-9",
+    "finding": "Lactate accumulation in inflamed synovium delivers an arrest signal that traps migrating T cells, promoting local IL-23/Th17 differentiation and tissue enthesitis",
+    "doi": "10.1038/s42255-025-01331-9"
   }
 };

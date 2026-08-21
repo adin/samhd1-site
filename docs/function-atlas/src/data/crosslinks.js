@@ -109,6 +109,12 @@ export const CROSSLINKS = {
       note: 'The pool this enzyme sets. In the immune atlas it is the head of the PURPLE stream.' },
     { to: 'mito-dntp', kind: 'feeds' },
   ],
+  'chemo-hydrolysis': [
+    { to: 'arac', kind: 'acts-on',
+      note: 'Hydrolysis and inactivation of cytarabine triphosphate (Ara-CTP).' },
+    { to: 'gemcitabine', kind: 'acts-on',
+      note: 'Inactivation of gemcitabine triphosphate (dFdCTP).' },
+  ],
   rloop:  [{ to: 'rloop', kind: 'acts-on' }],
   fork:   [{ to: 'fork', kind: 'acts-on' }],
   'dna-resection': [{ to: 'mre11', kind: 'acts-on' }, { to: 'micronucleus', kind: 'feeds' }],

@@ -120,6 +120,21 @@ export const nodes = [
     summary: 'The curative horizon: a clean transition mutation is a premier base-editing candidate, with no double-strand break required.',
     refs: ['docGlass'],
   },
+  {
+    id: 'arac', label: 'Ara-C (Ara-CTP)', full: 'Cytarabine triphosphate (Ara-CTP) — nucleoside analogue chemotherapy',
+    compartment: 'cytosol', klass: 'drug', pathways: ['drugs', 'genome'],
+    pos: [-12, 16, 36], lod: 2, evidence: 'S',
+    summary: 'SAMHD1 hydrolyzes and inactivates Ara-CTP; haploinsufficiency causes marked hypersensitivity and clinical chemotherapy toxicity.',
+    detail: 'Schneider et al. (Nature Medicine 2017) and Herold et al. (2017) demonstrated that SAMHD1 is the primary cellular triphosphohydrolase degrading Ara-CTP. Defective tetramer assembly prevents drug inactivation, creating synthetic lethality in AML/hematological malignancies but severe host toxicity under standard dosing.',
+    refs: ['schneider2017', 'herold2017'],
+  },
+  {
+    id: 'gemcitabine', label: 'gemcitabine (dFdCTP)', full: 'Gemcitabine triphosphate (dFdCTP) — cytidine analogue chemotherapy',
+    compartment: 'cytosol', klass: 'drug', pathways: ['drugs', 'genome'],
+    pos: [-4, 18, 40], lod: 2, evidence: 'S',
+    summary: 'Substrate of SAMHD1 catalytic inactivation; defective tetramer assembly impairs drug hydrolysis, enhancing cytotoxic stalling.',
+    refs: ['schneider2017'],
+  },
 
   // ── Clinical outcomes ────────────────────────────────────────────────
   {
@@ -224,6 +239,8 @@ export const edges = [
   { from: 'plp', to: 'pnc1', kind: 'inhibit', label: 'Arm 10 — inner membrane, upstream of BOTH loops', pathways: ['drugs'], evidence: 'I' },
   { from: 'allopurinol', to: 'urate', kind: 'inhibit', label: 'candidate adjunct if the GOLD stream is real', pathways: ['drugs'], evidence: 'I' },
   { from: 'abe8e', to: 'a565t', kind: 'inhibit', label: 'A·T → G·C reversion to wild type', pathways: ['drugs'], evidence: 'I' },
+  { from: 'samhd1', to: 'arac', kind: 'inhibit', label: 'hydrolyzes Ara-CTP; haploinsufficiency causes hypersensitivity', pathways: ['drugs', 'genome'], evidence: 'S', refs: ['schneider2017', 'herold2017'] },
+  { from: 'samhd1', to: 'gemcitabine', kind: 'inhibit', label: 'hydrolyzes dFdCTP; loss enhances cytotoxicity', pathways: ['drugs', 'genome'], evidence: 'S', refs: ['schneider2017'] },
 
   // ── Mechanism → clinical outcome
   { from: 'ifnb', to: 'naci', kind: 'drive', label: 'tonic, moderate-amplitude, source-driven', pathways: ['clinical'], evidence: 'I' },

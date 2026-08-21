@@ -94,22 +94,44 @@ export const FUNCTIONS = [
   },
   {
     "id": "mrna-deg",
-    "label": "mRNA Degradation",
+    "label": "ssRNA Binding & Post-Transcriptional Restraint",
     "compartment": "cytosol",
     "tier": "function",
     "category": "RNA Metabolism",
     "criticality": "High",
     "impact": "Moderate",
     "priority": "Monitor",
-    "relevance": "Degrades viral and cellular mRNAs for immune regulation; dysfunction may contribute to chronic inflammatory responses",
-    "rationale": "Secondary function to primary dNTPase activity; moderate impact on overall cellular function",
-    "locEvidence": "G",
+    "relevance": "Non-catalytically binds single-stranded RNA with high affinity without active site-associated nuclease activity; coordinates with stress granules and post-transcriptional buffering (Seamon et al. 2015, Jang et al. 2025)",
+    "rationale": "Non-catalytic stoichiometric nucleic acid binding distinct from dNTPase activity; moderate ~40% loss under haploinsufficiency",
+    "locEvidence": "S",
     "domain": "immune",
     "lossLabel": "Modestly Impaired",
     "lossKind": "loss",
     "loss": 0.4,
     "refs": [
+      "[39]",
       "[21]"
+    ],
+    "layer": 2
+  },
+  {
+    "id": "chemo-hydrolysis",
+    "label": "Chemotherapy Triphosphate Hydrolysis",
+    "compartment": "cytosol",
+    "tier": "function",
+    "category": "Enzymatic Hydrolysis / Pharmacogenomics",
+    "criticality": "Critical",
+    "impact": "Severe",
+    "priority": "Most Urgent",
+    "relevance": "Hydrolyzes and inactivates nucleoside analogue triphosphates (Ara-CTP, dFdCTP/gemcitabine-TP), mediating chemotherapy resistance in AML and solid tumors; haploinsufficiency induces severe clinical hypersensitivity (Schneider et al. 2017)",
+    "rationale": "Catalytic triphosphohydrolase requiring tetramer assembly; severe >75% loss in heterozygous A565T background",
+    "locEvidence": "S",
+    "domain": "dntp",
+    "lossLabel": "Critically Impaired",
+    "lossKind": "loss",
+    "loss": 0.75,
+    "refs": [
+      "[54]"
     ],
     "layer": 2
   },
@@ -150,54 +172,52 @@ export const FUNCTIONS = [
     "domain": "genome",
     "lossLabel": "Moderately Impaired",
     "lossKind": "loss",
-    "loss": 0.5,
+    "loss": 0.45,
     "refs": [
-      "[23]",
-      "[45]",
-      "[46]"
+      "[4]"
     ],
     "layer": 2
   },
   {
     "id": "lentivirus",
-    "label": "Lentivirus Restriction",
+    "label": "Lentivirus Restriction (HIV-1, SIV)",
     "compartment": "cytosol",
     "tier": "function",
     "category": "Innate Immunity",
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Restricts HIV-1, HIV-2, and other lentiviruses through dNTP depletion and RNase activity; dysfunction increases retroviral susceptibility",
-    "rationale": "Critical antiviral defense; A565T mutation affects both dNTPase-dependent and independent restriction",
+    "relevance": "Depletes cellular dNTP pools below threshold required for reverse transcription, restricting HIV-1/SIV in non-dividing myeloid cells (macrophages, dendritic cells) and resting CD4+ T-cells. Complete Loss of Function - loss of viral restriction capacity in target cells",
+    "rationale": "Complete Loss of Function - loss of viral restriction capacity in target cells - CRITICAL - Hallmark function of SAMHD1; Vpx-mediated degradation target; loss causes enhanced viral infection susceptibility and impaired innate immunity",
     "locEvidence": "S",
     "domain": "viral",
     "lossLabel": "Critically Impaired",
     "lossKind": "loss",
     "loss": 0.75,
     "refs": [
-      "[21]",
-      "[24]"
+      "[1]"
     ],
     "layer": 2
   },
   {
-    "id": "rnase",
-    "label": "Retroviral RNA Degradation (RNase Activity)",
+    "id": "rnp-sequestration",
+    "label": "Retroelement RNP Sequestration",
     "compartment": "cytosol",
     "tier": "function",
-    "category": "Innate Immunity",
+    "category": "Innate Immunity / Phase Separation",
     "criticality": "Critical",
     "impact": "Moderate-Severe",
     "priority": "Most Urgent",
-    "relevance": "Direct RNase activity degrades retroviral genomic RNA (FIV, F-MLV, EIAV, HIV) independent of dNTPase; reduces viral cDNA synthesis ~2-fold; second parallel antiviral mechanism beyond dNTP depletion specifically targeting retroviruses",
-    "rationale": "Enzymatic RNase activity distinct from dNTPase; may not require tetramerization for RNA binding; moderate-high functional loss (~50-60%) under haploinsufficiency",
-    "locEvidence": "I",
+    "relevance": "Non-catalytic sequestration of retroviral/retroelement RNA and RNPs into stress granules and condensates; acts independently of dNTPase to restrict retrotransposition and viral cDNA synthesis (Hu et al. 2015, Seamon et al. 2015)",
+    "rationale": "Non-catalytic physical RNP trapping and stress granule assembly rather than enzymatic RNA cleavage; ~40-50% loss under haploinsufficiency",
+    "locEvidence": "S",
     "domain": "viral",
-    "lossLabel": "Significantly Impaired",
+    "lossLabel": "Moderately Impaired",
     "lossKind": "loss",
-    "loss": 0.6,
+    "loss": 0.5,
     "refs": [
-      "[37]"
+      "[35]",
+      "[39]"
     ],
     "layer": 2
   },

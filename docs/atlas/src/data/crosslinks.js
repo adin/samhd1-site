@@ -40,6 +40,7 @@ export const CROSSLINK_KINDS = {
 /** immune atlas node id -> the SAMHD1-atlas claims that correspond to it. */
 export const CROSSLINKS = {
   "a565t": [{"to":"samhd1","kind":"feeds","note":"The variant node. Everything the immune atlas traces downstream starts there."}],
+  "arac": [{"to":"chemo-hydrolysis","kind":"acts-on","note":"Hydrolysis and inactivation of cytarabine triphosphate (Ara-CTP)."}],
   "autolysosome": [{"to":"autophagy","kind":"acts-on"}],
   "baxbak": [{"to":"apoptosis","kind":"acts-on"}],
   "becn1": [{"to":"bik","kind":"feeds"}],
@@ -52,6 +53,7 @@ export const CROSSLINKS = {
   "dntp-pool": [{"to":"dntpase","kind":"acts-on","note":"The pool this enzyme sets. In the immune atlas it is the head of the PURPLE stream."}],
   "dsrna-cyt": [{"to":"dsrna-seq","kind":"acts-on"}],
   "fork": [{"to":"fork","kind":"acts-on"}],
+  "gemcitabine": [{"to":"chemo-hydrolysis","kind":"acts-on","note":"Inactivation of gemcitabine triphosphate (dFdCTP)."}],
   "genomic-instability": [{"to":"senescence","kind":"feeds"},{"to":"checkpoint","kind":"feeds"}],
   "ifnb": [{"to":"mtdna-ifn","kind":"feeds"},{"to":"ifn-i","kind":"acts-on"}],
   "il17a": [{"to":"bladder","kind":"feeds","note":"The IL-23/Th17/IL-17A axis that drives enthesitis at tendon–bone insertions in psoriatic arthritis. The same axis acting on a different insertion site is a structural analogy, not a demonstrated mechanism — no citation places IL-17A at the bladder specifically."}],

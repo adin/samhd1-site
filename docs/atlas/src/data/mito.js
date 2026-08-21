@@ -295,6 +295,29 @@ export const nodes = [
       'injuries, both of which run independently of JAK–STAT.',
     refs: ['mihaylova2024', 'che2025', 'doc10arm'],
   },
+  {
+    id: 'glycolysis', label: 'aerobic glycolysis', full: 'Compensatory fermentative / aerobic glycolysis (Warburg shift)',
+    compartment: 'cytosol', klass: 'metabolite', pathways: ['metabolic', 'mito'],
+    pos: [20, -8, 48], lod: 1, evidence: 'G', key: true,
+    summary: 'Emergency metabolic switch when OXPHOS fails; prevents bioenergetic necrosis but fuels lactate and pyruvate overflow.',
+    detail: 'Marcucci & Rumio (2026) demonstrated that compensatory fermentative glycolysis acts as an emergency survival switch when mitochondrial membrane potential collapses, preventing catastrophic necrotic lysis. However, the resulting pyruvate overflow pyruvilates STAT1 (Zuo 2026) and lactate accumulation drives H3K18 lactylation (Ziogas 2025).',
+    refs: ['marcucci2026', 'tannahill2013'],
+  },
+  {
+    id: 'lactate', label: 'lactate', full: 'Cytosolic and extracellular lactic acid accumulation',
+    compartment: 'cytosol', klass: 'metabolite', pathways: ['metabolic', 'clinical'],
+    pos: [12, -18, 46], lod: 1, evidence: 'G',
+    summary: 'Glycolytic end-product; fuels nuclear histone lactylation and delivers a synovial entrapment signal for Th17 cells.',
+    refs: ['certo2025', 'marcucci2026'],
+  },
+  {
+    id: 'h3k18la', label: 'H3K18la', full: 'Histone H3 Lys18 lactylation (H3K18la) chromatin lock',
+    compartment: 'nucleus', klass: 'structure', pathways: ['metabolic', 'genome', 'clinical'],
+    pos: [-28, -6, -10], lod: 1, evidence: 'G', key: true,
+    summary: 'Persistent epigenetic chromatin lock responsible for multi-day post-exertional malaise (PEM) and immune exhaustion.',
+    detail: 'Ziogas et al. (Cell 2025) and Marcucci & Rumio (2026) established that chronic lactate accumulation drives enzymatic histone lactylation (H3K18la) at enhancer loci. This modification persists long after exertion terminates, locking macrophages and immune cells in a refractory exhaustion state that directly models prolonged PEM crashes.',
+    refs: ['ziogas2025', 'marcucci2026', 'certo2025'],
+  },
 
   // ── Mitophagy / lysosomal arm ────────────────────────────────────────
   {
@@ -412,6 +435,14 @@ export const edges = [
   { from: 'ceramide', to: 'mptp', kind: 'activate', label: 'raises mPTP propensity', pathways: ['mito'], evidence: 'G' },
   { from: 'succinate', to: 'hif1a', kind: 'activate', label: 'inhibits PHD → normoxic HIF-1α stabilisation', pathways: ['metabolic'], evidence: 'G', refs: ['tannahill2013'] },
   { from: 'etc-iii', to: 'succinate', kind: 'produce', label: 'TCA remodelling in M1 skewing', pathways: ['metabolic'], evidence: 'G' },
+  { from: 'deltapsi', to: 'glycolysis', kind: 'drive', label: 'OXPHOS collapse forces emergency fermentative glycolysis', pathways: ['metabolic', 'mito'], evidence: 'G', refs: ['marcucci2026'] },
+  { from: 'hif1a', to: 'glycolysis', kind: 'activate', label: 'normoxic HIF-1α upregulates glycolytic enzymes', pathways: ['metabolic'], evidence: 'G', refs: ['tannahill2013'] },
+  { from: 'glycolysis', to: 'atp', kind: 'produce', label: 'emergency glycolytic ATP generation', pathways: ['metabolic'], evidence: 'G' },
+  { from: 'glycolysis', to: 'lactate', kind: 'produce', label: 'LDHA reduction of pyruvate to lactate', pathways: ['metabolic'], evidence: 'G' },
+  { from: 'lactate', to: 'h3k18la', kind: 'drive', label: 'enzymatic histone lactylation at Lys18', pathways: ['metabolic', 'genome'], evidence: 'G', refs: ['ziogas2025'] },
+  { from: 'h3k18la', to: 'pem', kind: 'drive', label: 'epigenetic chromatin lock driving multi-day PEM crashes', pathways: ['clinical', 'metabolic'], evidence: 'G', refs: ['ziogas2025', 'marcucci2026'] },
+  { from: 'glycolysis', to: 'mlkl', kind: 'inhibit', label: 'necrosis defense: glycolytic ATP prevents bioenergetic necrotic lysis', pathways: ['celldeath', 'metabolic'], evidence: 'G', refs: ['marcucci2026'] },
+  { from: 'lactate', to: 'psa', kind: 'drive', label: 'synovial lactate entrapment & Th17 priming', pathways: ['clinical'], evidence: 'G', refs: ['certo2025'] },
 
   // ── Apoptotic priming
   { from: 'bik', to: 'baxbak', kind: 'activate', label: 'BH3-only priming', pathways: ['mito'], evidence: 'S', refs: ['yang2025bik'] },
