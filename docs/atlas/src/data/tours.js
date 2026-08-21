@@ -465,6 +465,73 @@ export const TOURS = [
       },
     ],
   },
+
+  {
+    id: 'breakthroughs-2026-aug',
+    title: 'August 2026 Breakthroughs — 9 New Model Extensions',
+    blurb: 'Flying through the 9 new 2026 discoveries: monocyte CRISPR screens, single-molecule POLG replisome dynamics, and Loop C paracrine feedback.',
+    steps: [
+      {
+        title: '1. Cardiovascular & Calcific Remodeling (Meng 2026)',
+        text: 'Engineered human valve tissues identify SAMHD1 in aortic valvular calcification and osteogenic remodeling, ' +
+              'extending the clinical spectrum of SAMHD1 beyond pure immune cells into the systemic vascular phenotype.',
+        nodes: ['a565t', 'samhd1', 'connective'],
+        layers: ['samhd1', 'clinical'],
+      },
+      {
+        title: '2. Monocyte cGAS-STING Genetic Map (Thomsen 2026)',
+        text: 'Genome-wide CRISPR screens in human monocytes map the regulatory network controlling cGAS-STING-driven IFNB1 expression. ' +
+              'Critically, primed monocytes (mimicking chronic A565T tone) recruit distinct regulators like HDAC3/TBL1XR1 to sustain Loop A.',
+        nodes: ['cgas', 'cgamp', 'sting', 'tbk1', 'irf3', 'ifnb1-gene', 'ifnb'],
+        layers: ['cgas-sting', 'ifn-jak'],
+      },
+      {
+        title: '3. POLG Replisome Single-Molecule Stalling (Plaza-G 2026)',
+        text: 'Single-molecule dynamics of the core human POLG replisome prove that nucleotide pool imbalances directly trigger ' +
+              'replisome stalling, fork collapse, and mtDNA fragmentation in the mitochondrial matrix.',
+        focus: 'mitochondrion',
+        nodes: ['dntp-pool', 'pnc1', 'polg', 'mtdna', 'oxmtdna'],
+        layers: ['samhd1', 'mito', 'inflammasome'],
+      },
+      {
+        title: '4. Dual Activation by Oxidized mtDNA (Zhang 2026)',
+        text: 'In systemic autoimmunity, 8-OHdG oxidized mtDNA functions as a dual-activation bridge, simultaneously triggering ' +
+              'cytosolic cGAS-STING (Loop A) and metabolic licensing of the NLRP3 inflammasome (Loop B).',
+        focus: 'mitochondrion',
+        nodes: ['oxmtdna', 'cgas', 'nlrp3'],
+        layers: ['mito', 'cgas-sting', 'inflammasome'],
+      },
+      {
+        title: '5. Mitophagy Gating Chronic cGAS-STING Tone (Mohanty 2026)',
+        text: 'Direct coupling between PINK1-Parkin mitophagy clearance of mtDNA and cGAS-STING suppression confirms that ' +
+              'impaired mitochondrial clearance sustains chronic interferon tone without requiring new upstream dNTP input.',
+        nodes: ['pink1', 'parkin', 'isg15', 'mfn', 'mtdna-frag', 'cgas'],
+        layers: ['mitophagy', 'isg', 'cgas-sting', 'mito'],
+      },
+      {
+        title: '6. Mitochondrial ROS & NLRP3 Licensing (Lu 2026)',
+        text: 'Mitochondrial dynamics and mtROS act as the metabolic licensing gate for NLRP3 inflammasome assembly, ' +
+              'converting POLG-derived mtDNA damage into Caspase-1 activation and pro-IL-18 / pro-IL-1β cleavage.',
+        focus: 'mitochondrion',
+        nodes: ['mtros', 'nlrp3', 'casp1', 'il18', 'il1b'],
+        layers: ['mito', 'inflammasome'],
+      },
+      {
+        title: '7. Loop C: Paracrine Responder Cells & M1 Shift (Xiao 2026)',
+        text: 'Secreted IL-18/IL-12 recruits NK and Th1 responder cells to secrete IFN-γ. IFN-γ returns to macrophages to drive ' +
+              'M1 polarization, TCA cycle collapse (succinate buildup), mtROS surge, and tissue-scale CXCL9/10/11 chemokine amplification.',
+        nodes: ['il18', 'responder-cell', 'ifng', 'ifngr', 'm1', 'cxcl9-11'],
+        layers: ['ifn-gamma', 'inflammasome', 'metabolic'],
+      },
+      {
+        title: '8. Adult AGS Spectrum & Targeted JAK Blockade (Cobb 2026 & Gürbüz 2026)',
+        text: 'Adult-onset presentation, intracranial/cardiac calcifications, and vasculopathy are clinically responsive to ' +
+              'JAK1 inhibition (baricitinib/upadacitinib), confirming Loop A suppression while bioenergetic Loop B remains the residual target.',
+        nodes: ['ifnar1', 'ifnar2', 'jak1', 'tyk2', 'upadacitinib', 'isg-set'],
+        layers: ['ifn-jak', 'drugs', 'isg', 'clinical'],
+      },
+    ],
+  },
 ];
 
 // ── Cascade path presets ──────────────────────────────────────────────────

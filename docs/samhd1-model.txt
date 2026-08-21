@@ -1,0 +1,1221 @@
+# SAMHD1 p.A565T — CAUSAL MODEL  (machine-readable, generated)
+# 238 nodes · 406 edges · 20 layers · 10 streams
+# source: viz/innate-immune-3d · regenerate: jsc -m tools/export_context.mjs > samhd1-model.txt
+# DO NOT EDIT BY HAND — regenerate instead.
+
+§0 HOW TO READ THIS
+Line-oriented, pipe-delimited, one record per line. Field order is fixed and
+given per section. Empty field = not recorded (NOT "known to be absent").
+
+EVIDENCE GRADE is the load-bearing field. Never restate an I-graded claim as
+established, and never attach a citation to one that does not carry a ref:
+  S = Demonstrated in SAMHD1 systems
+  G = Established elsewhere, imported
+  I = Inferred extrapolation
+
+EDGE SIGN: + raises/activates the target, - lowers/inhibits it. Signs are
+multiplicative along a path — a route with an even number of - edges is net
+activating. This is how the model DERIVES an effect rather than asserting it.
+
+EDGE KINDS (kind = sign):
+  activate=+ produce=+ inhibit=- translocate=+ bind=+ ubiq=+ phos=+ transport=+ sense=+ degrade=- release=+ drive=+
+
+COMPARTMENT CODES:
+  EXT=Extracellular · MEM=Plasma membrane · CYT=Cytosol · NUC=Nucleus · MIT=Mitochondrion · ER=ER / Golgi · END=Endosome · LYS=Lysosome · PER=Peroxisome · RES=Responder cell · GRA=Stress granule
+CLASS CODES:
+  SEN=Sensor / PRR · ADA=Adaptor / scaffold · KIN=Kinase · TF=Transcription factor · REC=Receptor · CYT=Cytokine / IFN · EFF=Effector / ISG · LIG=Nucleic acid ligand · MET=Metabolite / dNTP · STR=Structure / channel · COM=Multiprotein complex · ENZ=Enzyme · RET=Retroelement · RES=Restriction factor · DRU=Drug / intervention · CEL=Responder cell type · OUT=Clinical outcome
+
+§1 THE MODEL, IN ONE PAGE  [authored, not derived]
+SAMHD1 is a dNTP triphosphohydrolase — it holds the cytosolic dNTP pool down.
+p.A565T is HETEROZYGOUS and leaves roughly 40-60% residual activity: enough to
+avoid Aicardi-Goutieres syndrome, not enough to hold the system down. The
+consequence is not one disease but a multi-system phenotype, because SAMHD1 is
+not one job (dNTP control, DNA repair, retroelement restriction, mitochondrial
+integrity, innate-immune regulation).
+
+The mitochondrion is where the arms converge. Excess cytosolic dNTP floods the
+PNC1/PNC2 carriers, perturbs the matrix pool, and stalls POLG. TWO chemically
+DISTINCT DNA species then leave the organelle by TWO routes and hit TWO sensors:
+
+  LOOP A  unoxidised mtDNA FRAGMENTS -> VDAC1 macropore/mPTP -> cGAS -> STING
+          -> IRF3 -> IFN-I -> IFNAR/JAK/STAT -> ISGs. ISG15 then ISGylates
+          MFN1/2 and BECN1, blocking mitophagy, so damaged mitochondria are
+          flagged and never cleared, and keep leaking. Self-sustaining WITHOUT
+          new dNTP input — which is why upstream rescue alone need not stop it.
+
+  LOOP B  OXIDISED mtDNA (POLG stalling) + MSU crystals (dG catabolism) -> an
+          NLRP3 already primed by NF-kB -> caspase-1 -> IL-1b/IL-18 -> NF-kB
+          primed again. Exits via GSDMD pyroptosis, which spills mtDNA to
+          bystander cGAS — the only coupling between the loops.
+
+  LOOP C  paracrine, and requires a SECOND CELL: IL-18 + IL-12 recruit a
+          neighbouring NK/Th1 cell to make IFN-gamma, which returns and drives
+          M1 polarisation, raising mtROS and feeding both loops again.
+
+The loops are PARALLEL, not sequential, and that is the model's central
+testable claim: blocking cGAS does not abolish NLRP3 activation, and blocking
+NLRP3 does not suppress the ISG signature. Two independent rescue points.
+
+Gain control sits at the ANKIB1/K11-ubiquitin node, which attenuates the
+amplification — the proposed reason a heterozygote smoulders at moderate
+amplitude ("non-acute chronic inflammation", NACI) instead of presenting as an
+acute interferonopathy.
+
+§2 CORRECTIONS — the errors this model exists to prevent
+Stated explicitly because they are the mistakes a reader or model reliably
+makes from the compressed version of the story.
+
+1. ox-mtDNA does NOT activate cGAS. It activates NLRP3. The cGAS ligand is
+   the UNOXIDISED fragment leaving via VDAC1. Same organelle, different
+   oxidation state, different sensor, different loop, different rescue point.
+2. The VDAC1 macropore route does NOT require depolarisation. A living,
+   dividing cell can leak mtDNA continuously; mPTP opening is a second route.
+3. Caspase-1 activation is CYTOSOLIC. It does not occur inside the mitochondrion.
+4. NLRP3 is not a switch a ligand flips. Priming (signal 1, NF-kB) and
+   activation (signal 2, ligand) are separate events; the priming arm is what
+   closes into a loop.
+5. IFN-gamma is NOT made by the affected cell. Loop C is paracrine by
+   construction and cannot be drawn in a single-cell diagram.
+6. TRAILshort does NOT signal through NF-kB. Measured directly and negative
+   (Jalali 2026 Fig 4C). Its mechanism is DR5 -> SHP-1 -> ZAP-70
+   dephosphorylation. NF-kB belongs to full-length TRAIL, which trimerises;
+   TRAILshort cannot trimerise and is the dominant negative of it.
+7. The TCR/TRAILshort arm has NO established SAMHD1 link. It is imported
+   context for the T-cell attrition phenotype, graded G throughout.
+8. A565T is HETEROZYGOUS. Do not reason from a knockout. Residual activity is
+   the whole point of the phenotype.
+9. Loop B (SAMHD1 -> dNTP -> mtDNA -> NLRP3 -> IL-1b) is DEMONSTRATED, not
+   inferred. Liu 2026 (Science 391:eadq9006) carries a myeloid-conditional
+   Samhd1 knockout AND a pharmacologic rescue by dNTP-transport blockade in
+   the SAME paper, in cells from zebrafish, mice and humans. It is the
+   strongest cross-species evidence in this model. It does NOT extend to
+   Loop C, which remains G throughout and paracrine by construction.
+10. SAMHD1 expression and function are CELL-TYPE STRATIFIED: high in
+   monocytes, macrophages and DCs, low-to-absent in classical T-cell lines,
+   and dynamic across myeloid differentiation. Unless a node or edge says
+   otherwise, read "the cell" in this model as a MYELOID cell — that is
+   where the S-graded work was done. This applies retroactively to every
+   layer. Note it is NOT a licence to assume the myeloid direction holds
+   elsewhere: in tumour tissue, SAMHD1 depletion IMPROVES NK-mediated
+   killing, which is the opposite sign to the retroviral-infection data.
+
+§3 COMPARTMENTS   code|label|role
+EXT|Extracellular|Secreted IFN-α/β, IFN-γ, IFN-λ, IL-1β, IL-18, IL-6, MCP-1, TNF-α. The autocrine and paracrine space where the interferon loop closes back onto the cell.
+MEM|Plasma membrane|Cytokine receptors (IFNAR1/2, IFNGR, IFNLR, IL1R, TNFR), TLR4, and the P2X7 K⁺-efflux channel that licenses NLRP3.
+CYT|Cytosol|Where nucleic-acid sensing happens: cGAS, RIG-I/MDA5, the NLRP3 inflammasome, the dNTP pool SAMHD1 is supposed to hold down, and every retroelement intermediate that escapes its restriction layer.
+NUC|Nucleus|Transcriptional output (IFNB1, ISGs, NLRP3, pro-IL-1β), replication-fork and R-loop biology, HUSH/SETDB1 silencing of LINE-1 and HERV loci, and the L1 target-primed reverse transcription that writes new insertions into the genome.
+MIT|Mitochondrion|The convergence point of the whole framework. Outer membrane (VDAC1, MAVS, BAX/BAK, BIK), inner membrane (PNC1/PNC2 dNTP carriers, ETC complexes, mPTP), and matrix (mtDNA nucleoid, POLG, TFAM). Two escape routes, two DNA species, two sensors, two loops.
+ER|ER / Golgi|STING resides here at rest and traffics ER → ERGIC → Golgi on activation, picking up TBK1 en route. Also the site of ISG15 conjugation machinery and the ceramide synthesis that IL-1β drives into the mitochondrial inner membrane.
+END|Endosome|TLR3 (dsRNA), TLR7/8 (ssRNA), TLR9 (CpG DNA) signalling through TRIF and MyD88. The TLR3 → IRF3 → SAMHD1 induction arm that Arm 3 (poly-ICLC) targets.
+LYS|Lysosome|Autolysosome maturation, cathepsin D, mTORC1–MITF–TFEB control. Where mitophagic cargo is supposed to be destroyed — and is not, in this disease.
+PER|Peroxisome|The second MAVS platform. Peroxisomal MAVS drives fast, IFN-independent ISG expression; mitochondrial MAVS drives the type-I IFN amplitude.
+RES|Responder cell|A NEIGHBOURING cell — NK cell, Th1/Th17 lymphocyte or recruited monocyte. IL-18 and IL-12 leave the affected cell and act here; the IFN-γ that comes back is made in this compartment, not the first one. Loop C is paracrine by construction, which is why it cannot be seen in a single-cell diagram.
+GRA|Stress granule|Where SAMHD1 sequesters immunostimulatory dsRNA in LLPS condensates and where L1 ORF1p ribonucleoprotein particles are held out of circulation.
+
+§4 LAYERS   key|label|nodes
+samhd1|SAMHD1 node|5
+cgas-sting|cGAS–STING (Loop A)|23
+rlr-mavs|RIG-I / MDA5 – MAVS|16
+tlr|TLR3/4/7/9 – TRIF/MyD88|18
+ankib1|ANKIB1 K11-Ub gain node|10
+nfkb|NF-κB|29
+inflammasome|NLRP3 (Loop B)|25
+celldeath|Cell death (ZBP1/RIPK3)|8
+ifn-jak|IFNAR–JAK/TYK2–STAT|22
+ifn-gamma|IFN-γ loop (Loop C)|13
+th17|IL-12/IL-23 – Th1/Th17|10
+tcr|TCR signalling (TRAILshort)|18
+isg|ISG effectors & brakes|15
+mito|Mitochondrial injury|37
+mitophagy|Mitophagy / lysosome|16
+retro|Retroelement defence|35
+genome|Genome stability|16
+metabolic|Metabolic / bioenergetic|24
+drugs|Drugs & study arms|13
+clinical|Clinical outcomes|15
+
+§5 NODES   id|label|cmp|class|ev|layers|summary
+# The summary is one sentence. The MECHANISM is in §7, and A565T-specific
+# consequences are in §6 — both keyed by node id.
+cgas|cGAS|CYT|SEN|S|cgas-sting|Length-dependent cytosolic dsDNA sensor. Binds DNA as a 2:2 ladder and switches on its nucleotidyl-transferase activity.
+cgamp|2′3′-cGAMP|CYT|MET|G|cgas-sting|Non-canonical 2′-5′/3′-5′ cyclic dinucleotide; the highest-affinity endogenous STING agonist known.
+sting|STING|ER|ADA|S|cgas-sting,ankib1|ER-resident dimer. cGAMP binding closes its ligand-binding lid, triggering polymerisation and ER exit.
+sting-golgi|STING°(Golgi)|ER|ADA|G|cgas-sting|Palmitoylation at Cys88/91 clusters STING into signalling-competent microdomains on Golgi membranes.
+rigi|RIG-I|CYT|SEN|G|rlr-mavs|Senses short 5′-triphosphate blunt-ended dsRNA — the signature of viral replication intermediates.
+mda5|MDA5|CYT|SEN|S|rlr-mavs,retro|Senses long duplex RNA by cooperative filament assembly. The retroelement sensor of the RLR family.
+lgp2|LGP2|CYT|SEN|G|rlr-mavs|CARD-less RLR that tunes MDA5 filament nucleation — accelerates it at low levels, caps it at high levels.
+dsrna-cyt|cytosolic dsRNA|CYT|LIG|S|rlr-mavs,retro|Mixed pool: Alu inverted repeats, mitochondrial bidirectional transcripts, HERV transcripts, viral replication intermediates.
+mtdsrna|mito dsRNA|MIT|LIG|I|rlr-mavs,mito|Both mtDNA strands are transcribed fully; the resulting complementary RNAs form duplexes that PNPASE and SUV3 normally degrade.
+mavs|MAVS|MIT|ADA|S|rlr-mavs,mito|Tail-anchored in the outer mitochondrial membrane. RLR CARDs seed self-propagating MAVS prion-like filaments.
+mavs-perox|MAVS (peroxisomal)|PER|ADA|G|rlr-mavs|Drives rapid, IFN-independent ISG expression; the mitochondrial pool supplies the slower type-I IFN amplitude.
+traf3|TRAF3|CYT|ADA|G|rlr-mavs,tlr|K63-Ub ligase that couples MAVS and TRIF to the TBK1/IKKε arm (IRF branch).
+traf6|TRAF6|CYT|ADA|G|rlr-mavs,tlr,nfkb|K63-Ub ligase that couples MAVS/MyD88 to the IKK complex (NF-κB branch).
+tlr3|TLR3|END|REC|S|tlr|Endosomal dsRNA receptor. The only TLR that signals exclusively through TRIF.
+tlr7|TLR7/8|END|REC|G|tlr,retro|Sense GU-rich ssRNA including HERV and LINE-1 transcripts delivered by autophagy or phagocytosis.
+tlr9|TLR9|END|REC|G|tlr|Senses hypomethylated CpG DNA — including mtDNA, which is bacterially hypomethylated by ancestry.
+ll37|LL-37|EXT|EFF|G|tlr|A cationic antimicrobial peptide whose second job is to chaperone self-DNA — converting an inert host molecule into a TLR9 agonist.
+ll37-dna|LL-37 · self-DNA|END|LIG|G|tlr|The conversion product. This is the node that carries the claim, because self-DNA alone is not a TLR9 agonist and this complex is.
+tlr4|TLR4|MEM|REC|S|tlr,nfkb|Surface receptor using both MyD88 (NF-κB) and, after endocytosis, TRIF (IRF3). The canonical NLRP3 priming signal.
+trif|TRIF|END|ADA|S|tlr,ankib1|The IRF3-directing TLR adaptor; also a bona fide ANKIB1 K11-Ub substrate.
+myd88|MyD88|END|ADA|G|tlr,nfkb|Assembles the Myddosome with IRAK4/IRAK1 → TRAF6 → NF-κB, and in pDCs → IRF7 directly.
+irak14|IRAK4/1|END|KIN|G|tlr,nfkb|Myddosome kinases; IRAK1 phosphorylates IRF7 directly in the plasmacytoid dendritic-cell IFN burst.
+ankib1|ANKIB1|CYT|ENZ|G|ankib1,cgas-sting,tlr|Assembles K11-linked ubiquitin chains on STING, TRIF, NEMO, OPTN — and on itself. The gain-control knob of the whole system.
+k11ub|K11-Ub chains|CYT|MET|G|ankib1|Distinct from K48 (degradation) and K63 (canonical signalling). K11 loading on the five substrates lowers scaffold-assembly threshold.
+optn|OPTN|CYT|ADA|G|ankib1,mitophagy|Dual role: recruits TBK1 into signalling scaffolds, and acts as an autophagy receptor on ubiquitinated mitochondria.
+nemo|NEMO|CYT|ADA|G|nfkb,ankib1|Regulatory subunit of the IKK complex; ubiquitin-chain receptor and ANKIB1 K11-Ub substrate.
+tbk1|TBK1|CYT|KIN|S|cgas-sting,rlr-mavs,tlr,ankib1|The master switch linking every upstream sensor to IRF3/IRF7 transactivation. Trans-autophosphorylates at Ser172.
+ikke|IKKε|CYT|KIN|S|cgas-sting,rlr-mavs,ankib1,metabolic|TBK1 paralogue; the dominant IRF7 kinase and an independent driver of metabolic inflammation.
+irf3|IRF3|CYT|TF|S|cgas-sting,rlr-mavs,tlr|Constitutively expressed first-wave IFN transcription factor. Phosphorylation → dimerisation → nuclear import.
+irf7|IRF7|CYT|TF|S|cgas-sting,tlr,metabolic|The second-wave amplifier: itself an ISG, so once interferon starts, IRF7 rises and drives more interferon.
+ikk|IKKβ|CYT|KIN|G|nfkb|Phosphorylates IκBα on Ser32/36, marking it for K48-Ub and proteasomal destruction. The canonical arm runs through here; IKKα carries the non-canonical one.
+ikba|IκBα|CYT|STR|G|nfkb|Masks the NF-κB nuclear localisation signal. Its degradation is the licensing step for NF-κB nuclear entry.
+nfkb|NF-κB p65/p50|CYT|TF|S|nfkb,inflammasome|Drives the NLRP3 priming signal (NLRP3 + pro-IL-1β transcription), IL-6, IL-23, TNF-α and IκBα.
+vdac1|VDAC1|MIT|STR|S|mito,cgas-sting|The most abundant outer-membrane protein and the gatekeeper of metabolite flux — and, when it oligomerises, of DNA escape.
+vdac1-oligo|VDAC1 macropore|MIT|STR|S|mito,cgas-sting|The primary constitutive mtDNA-fragment escape route in SAMHD1 haploinsufficiency.
+mptp|mPTP|MIT|STR|G|mito|Second mtDNA escape route, opening downstream of ΔΨm collapse and Ca²⁺/ROS overload.
+bik|BIK|MIT|EFF|S|mito,mitophagy|Directly upregulated by SAMHD1; sequesters BECN1, biasing the cell toward apoptosis over mitophagy.
+baxbak|BAX / BAK|MIT|EFF|G|mito|Macropore formation for cytochrome-c release; sublethal ("minority") MOMP also permits mtDNA herniation.
+cytc|cytochrome c|MIT|MET|S|mito|Its release is simultaneously a bioenergetic loss (Complex III→IV gap) and an apoptotic signal.
+drp1|DRP1|MIT|ENZ|I|mito,mitophagy|STING activation drives DRP1-mediated fission far in excess of fusion, fragmenting the network.
+mfn|MFN1/2|MIT|ENZ|S|mito,mitophagy,isg|ISGylated by ISG15, which blocks the PINK1/Parkin mitophagy programme downstream of them.
+pink1|PINK1|MIT|KIN|S|mitophagy,mito|Accumulates on the outer membrane only when import fails — i.e. only on depolarised mitochondria.
+parkin|Parkin|MIT|ENZ|S|mitophagy|Amplifies the pS65-Ub signal into a dense ubiquitin coat that autophagy receptors read.
+tom20|TOM/TIM|MIT|STR|G|mito|Protein import machinery. ΔΨm-dependent: when the potential collapses, import stops and PINK1 accumulates.
+pnc1|PNC1 (SLC25A33)|MIT|STR|G|mito,metabolic|Imports cytosolic (deoxy)nucleotides across the inner membrane into the matrix — including guanine, not only pyrimidines.
+pnc2|PNC2 (SLC25A36)|MIT|STR|G|mito,metabolic|Second inner-membrane carrier; uniports and antiports cytosine/uracil nucleotides plus guanine, and shares the overload with PNC1.
+etc-i|Complex I|MIT|STR|S|mito,metabolic|Suppressed by sustained STAT1/2 signalling; also the dominant site of reverse-electron-transport ROS.
+etc-iii|Complex III|MIT|STR|S|mito,metabolic|Directly inhibited by ceramide, and suppressed by ISG-driven transcriptional programmes.
+etc-iv|Complex IV|MIT|STR|G|mito,metabolic|Terminal oxidase; its activity falls with cytochrome-c leak and with mtDNA-encoded subunit loss.
+etc-v|ATP synthase|MIT|STR|G|mito,metabolic|Uses the proton-motive force to make ATP; runs in reverse to defend ΔΨm when the ETC fails, burning ATP.
+deltapsi|ΔΨm|MIT|MET|S|mito,metabolic|The master state variable of the organelle: sets ATP output, protein import, PINK1 stability and mPTP threshold.
+cardiolipin|cardiolipin|MIT|MET|G|mito,mitophagy|Externalised cardiolipin is itself a mitophagy "eat-me" signal and an NLRP3-binding surface.
+ceramide|ceramide|ER|MET|G|mito,inflammasome|Synthesised downstream of IL-1β/NF-κB; inhibits Complex III and permeabilises the inner membrane.
+mtdna|mtDNA nucleoid|MIT|LIG|S|mito,cgas-sting|~16.6 kb circular genome at 100–1000 copies per cell. Hypomethylated, unprotected by histones, adjacent to the ROS source.
+polg|POLG|MIT|ENZ|I|mito,metabolic|Fidelity and processivity both degrade when the matrix dNTP pool is skewed, especially by excess dGTP.
+tfam|TFAM|MIT|TF|G|mito,metabolic|Compacts and protects mtDNA. TFAM insufficiency alone is enough to release mtDNA and prime cGAS.
+twnk|TWNK / mtSSB|MIT|ENZ|G|mito|The rest of the mtDNA replisome; stalls with POLG when nucleotide supply is unbalanced.
+mito-dntp|matrix dNTP pool|MIT|MET|S|mito,metabolic|Independently maintained from the cytosolic pool — but only as long as PNC1/PNC2 import is balanced.
+mtros|mtROS|MIT|MET|S|mito,inflammasome|The hub metabolite: oxidises mtDNA, drives VDAC1 oligomerisation, primes NLRP3, and damages the ETC that made it.
+oxmtdna|ox-mtDNA|CYT|LIG|S|mito,inflammasome|Product of dNTP overload → POLG stalling → uncontrolled mtDNA neosynthesis, oxidised in situ. Activates NLRP3, NOT cGAS.
+mtdna-frag|cytosolic mtDNA fragments|CYT|LIG|S|mito,cgas-sting|Escapes via the VDAC1 macropore (primary, constitutive) and mPTP (secondary). Bound by cGAS → Loop A.
+succinate|succinate|MIT|MET|G|mito,metabolic|Accumulates in M1 macrophages, inhibits prolyl hydroxylases, stabilises HIF-1α under normoxia.
+hif1a|HIF-1α|CYT|TF|G|metabolic,inflammasome|Stabilised normoxically by succinate → aerobic glycolysis (Warburg shift) and IL-1β transcription.
+atp|ATP output|MIT|MET|G|mito,metabolic|The bottom line of the whole mitochondrial arm — and the readout that JAK inhibition did NOT rescue.
+becn1|BECN1|CYT|ADA|S|mitophagy,isg|ISGylated by ISG15, which competes with the activating K63-Ub mark and independently blocks autophagic flux.
+lc3|LC3-II|CYT|EFF|G|mitophagy|Autophagosome membrane marker; LC3-II/I ratio with p62 is the standard flux readout in Arm 1.
+p62|p62 / SQSTM1|CYT|ADA|G|mitophagy|Accumulates when flux is blocked — the readout that separates "more autophagosomes" from "working autophagy".
+mtor|mTORC1|LYS|KIN|I|mitophagy,metabolic|Constitutively active under chronic inflammation; retains MITF/TFEB in the cytoplasm.
+mitf|MITF / TFEB|LYS|TF|I|mitophagy|Cytoplasmically retained by mTORC1 → lysosomal hydrolase genes under-transcribed.
+ctsd|Cathepsin D|LYS|ENZ|I|mitophagy|Under-produced when MITF is retained; autolysosomes fail to degrade their cargo.
+dnase2|DNase II|LYS|ENZ|G|mitophagy,cgas-sting,retro|The terminal step of DNA disposal: whatever autophagy and phagocytosis deliver, DNase II is what actually destroys it.
+dnase1l3|DNASE1L3|EXT|ENZ|G|cgas-sting|The only nuclease that digests chromatin inside apoptotic microparticles. Loss-of-function causes familial SLE.
+autolysosome|autolysosome|LYS|STR|G|mitophagy|Where mitophagy should terminate. In this disease the cargo arrives and is not destroyed.
+ifnb|IFN-β|EXT|CYT|S|ifn-jak,cgas-sting|The single-gene first-wave interferon. IRF3-driven, requires no new protein synthesis.
+ifna|IFN-α (13 subtypes)|EXT|CYT|S|ifn-jak|The second-wave amplifier set, driven by IRF7 rather than IRF3.
+ifng|IFN-γ|EXT|CYT|G|ifn-jak,clinical|Different receptor, different STAT dimer, overlapping ISG output. Drives the collagen-catabolic arm.
+ifnl|IFN-λ|EXT|CYT|G|ifn-jak,ankib1|Epithelial-restricted receptor, identical downstream JAK module. Also driven by the ANKIB1 K11-Ub node.
+il6|IL-6|EXT|CYT|G|nfkb,clinical|NF-κB output; dose-dependently elevated in ME/CFS PBMCs after poly I:C stimulation.
+tnfa|TNF-α|EXT|CYT|G|nfkb,mito|Drives sublethal chronic mPTP opening via ROS — a persistent cytochrome-c leak rather than an execution signal.
+il23|IL-23|EXT|CYT|G|nfkb,clinical|NF-κB output driving Th17 differentiation — the psoriatic arthritis axis.
+il17a|IL-17A|EXT|CYT|G|clinical|With TNF-α, drives enthesitis at tendon–bone and fascial insertions.
+mcp1|MCP-1 / CCL2|EXT|CYT|S|metabolic,clinical|IRF7 transactivates MCP-1 specifically in VISCERAL adipocytes, not subcutaneous ones.
+gdf15|GDF15|EXT|CYT|G|metabolic,mito|The canonical circulating readout of integrated mitochondrial stress; elevated post-exercise in ME/CFS.
+ifnar1|IFNAR1|MEM|REC|S|ifn-jak|Low-affinity subunit, constitutively associated with TYK2. Ligand affinity here sets ISG-response breadth.
+ifnar2|IFNAR2|MEM|REC|S|ifn-jak,isg|High-affinity subunit bound to JAK1; the docking site for the USP18 negative-feedback brake.
+jak1|JAK1|CYT|KIN|S|ifn-jak|Shared by type I, type II and type III interferon receptors. The pharmacologic choke point of the whole ISG arm.
+tyk2|TYK2|CYT|KIN|G|ifn-jak|Partners JAK1 on IFNAR1. Human TYK2 deficiency is well tolerated, which is what makes it a clean drug target.
+jak2|JAK2|CYT|KIN|G|ifn-jak|Partners JAK1 on IFNGR. Also the erythropoietin/thrombopoietin kinase — the source of JAK-inhibitor cytopenias.
+ifngr|IFNGR1/2|MEM|REC|G|ifn-jak|Uses JAK1 + JAK2 → STAT1 homodimer (GAF) → GAS elements.
+ifnlr|IFNLR1/IL10RB|MEM|REC|G|ifn-jak|Epithelial-restricted; converges on the same JAK1/TYK2 → ISGF3 module.
+il1r|IL-1R1|MEM|REC|G|inflammasome,nfkb|Reads IL-1β back into MyD88 → NF-κB — how Loop B keeps its own priming signal alive.
+tnfr|TNFR1|MEM|REC|G|nfkb,mito|NF-κB activation and, via ROS, chronic sublethal mPTP opening.
+stat1|STAT1|CYT|TF|S|ifn-jak,metabolic|Y701-phosphorylated by JAK1/TYK2. Forms ISGF3 with STAT2/IRF9, or GAF homodimers downstream of IFN-γ.
+stat2|STAT2|CYT|TF|S|ifn-jak|Type-I-specific; provides the transactivation domain of ISGF3.
+irf9|IRF9|CYT|TF|G|ifn-jak|The DNA-binding subunit of ISGF3; supplies ISRE specificity.
+isgf3|ISGF3|NUC|COM|S|ifn-jak,isg|The type-I interferon transcription complex. Binds ISRE elements across several hundred ISGs.
+ifnb1-gene|IFNB1 locus|NUC|STR|G|cgas-sting,rlr-mavs,tlr|Requires IRF3 dimers (PRDIII-I) AND NF-κB (PRDII) AND ATF2/c-Jun on the same enhanceosome.
+isre|ISRE elements|NUC|STR|G|ifn-jak,isg|ISGF3 binding sites upstream of several hundred interferon-stimulated genes.
+gas|GAS elements|NUC|STR|G|ifn-jak|STAT1-homodimer (GAF) binding sites — the type II interferon transcriptional programme.
+isg-set|ISG programme|NUC|COM|S|isg,ifn-jak|Several hundred genes. The quantitative ISG score is the practical clinical biomarker of this disease.
+pgc1a|PGC-1α|NUC|TF|S|metabolic,mito|Directly repressed by IFN-I/STAT1 → mitochondrial biogenesis failure.
+isg15|ISG15|CYT|EFF|S|isg,mitophagy|The hinge of the whole ISG arm: stabilises the USP18 brake, but also ISGylates MFN1/2 and BECN1 to block mitophagy.
+usp18|USP18|CYT|EFF|S|isg,ifn-jak|Sterically displaces JAK1 from IFNAR2. Its protease activity is dispensable for this function.
+socs|SOCS1/3|CYT|EFF|G|isg,ifn-jak|Second brake layer: direct JAK inhibition plus ElonginBC-Cul2 ubiquitination of receptor complexes.
+irf1|IRF1|NUC|TF|S|isg|Drives PARP12 → ISG15 in the axis that ISGylates MFN1/2 and blocks PINK1/Parkin mitophagy.
+nlrp3|NLRP3|CYT|SEN|S|inflammasome|Two-signal sensor: NF-κB primes its expression (signal 1), then ox-mtDNA, MSU crystals or K⁺ efflux trigger assembly (signal 2).
+aim2|AIM2|CYT|SEN|G|inflammasome,cgas-sting|The third cytosolic DNA sensor. Binds dsDNA ≥ ~80 bp along the backbone and nucleates ASC directly — no NLRP3, no NEK7, no priming step.
+ifi16|IFI16|NUC|SEN|G|cgas-sting,inflammasome|The other ALR: predominantly nuclear, and required for full cGAS–STING signalling in human macrophages rather than acting instead of it.
+nek7|NEK7|CYT|KIN|G|inflammasome|Bridges adjacent NLRP3 subunits; required for oligomerisation and mutually exclusive with mitosis.
+asc|ASC speck|CYT|COM|S|inflammasome|Single micron-scale prion-like polymer per cell — the visible, countable commitment step of the loop.
+casp1|caspase-1|CYT|ENZ|S|inflammasome|Proximity-induced autoprocessing on the ASC filament; cleaves pro-IL-1β, pro-IL-18 and GSDMD.
+proil1b|pro-IL-1β|CYT|CYT|G|inflammasome,nfkb|Transcribed by NF-κB (signal 1). Held inert until caspase-1 cleaves it.
+il1b|IL-1β|EXT|CYT|S|inflammasome|The output of Loop B and the primary readout separating it from the interferon arm.
+il18|IL-18|EXT|CYT|S|inflammasome|Co-matured with IL-1β; drives IFN-γ from NK and T cells, linking Loop B back into the interferon arm.
+gsdmd|GSDMD|CYT|EFF|G|inflammasome|Cleaved N-terminal fragment oligomerises into plasma-membrane pores — the IL-1β export route and the pyroptotic lesion.
+gsdmd-pore|GSDMD pore|MEM|STR|G|inflammasome|Unconventional secretion channel below lytic threshold; the pyroptotic lesion above it.
+pyroptosis|pyroptosis|CYT|OUT|G|inflammasome|Spills cytosolic contents — including mtDNA — into the extracellular space, re-arming bystander cGAS.
+p2x7|P2X7|MEM|REC|G|inflammasome|The classic signal-2 route: extracellular ATP from dying cells → K⁺ efflux → NLRP3 assembly.
+urate|uric acid|CYT|MET|I|inflammasome,metabolic|Excess dGTP is catabolised through the purine pathway; humans lack uricase, so urate is the endpoint.
+msu|MSU crystals|CYT|LIG|I|inflammasome|Third NLRP3 input, independent of cGAS status; hits an NLRP3 already sensitised by NF-κB priming.
+tak1|TAK1 / TAB1-3|CYT|KIN|G|nfkb|Reads K63-ubiquitin chains through TAB2/3 and phosphorylates IKKβ at Ser177/181.
+lubac|LUBAC|CYT|ENZ|G|nfkb,ankib1|The only E3 that builds M1-linear ubiquitin. Conjugates it onto NEMO, stabilising the active IKK complex.
+m1ub|M1-linear Ub|CYT|MET|G|nfkb|Head-to-tail ubiquitin chains — the linkage NEMO binds with highest affinity.
+a20|A20 / TNFAIP3|CYT|EFF|G|nfkb|NF-κB target gene and NF-κB terminator: a dual DUB/E3 that strips K63 chains and adds K48.
+cyld|CYLD|CYT|EFF|G|nfkb|Removes K63 and M1 chains from NEMO, TRAF2/6 and RIP1. A tumour suppressor, for the obvious reason.
+otulin|OTULIN|CYT|EFF|G|nfkb|Exclusively hydrolyses M1-linear chains, counter-balancing LUBAC. Its loss causes ORAS, an autoinflammatory syndrome.
+nik|NIK|CYT|KIN|G|nfkb|Constitutively degraded at rest; stabilised by receptor engagement, then activates IKKα.
+ikka|IKKα|CYT|KIN|G|nfkb|Phosphorylates p100 for partial proteasomal processing to p52 — a slower, NEMO-independent arm.
+relb|p52 : RelB|NUC|TF|G|nfkb|Drives BAFF, CCL19/21 and lymphoid-organisation genes rather than the acute inflammatory set.
+baff|BAFF|EXT|CYT|G|nfkb,th17|B-cell survival and differentiation factor; elevated across interferonopathies and autoimmune disease.
+nfkb-targets|NF-κB target set|NUC|COM|S|nfkb,inflammasome|One transcription factor, the entire priming layer: the inflammasome components, its substrates, the Th17-driving cytokine, and its own brakes.
+proil18|pro-IL-18|CYT|CYT|G|inflammasome,nfkb,ifn-gamma|Unlike pro-IL-1β, it is constitutively present in many cells — so caspase-1 activation alone can release mature IL-18 fast.
+cxcl8|CXCL8 / IL-8|EXT|CYT|G|nfkb|Canonical NF-κB output and part of the ME/CFS cytokine panel measured in Arm 1.
+responder-cell|NK / Th1 cell|RES|CEL|G|ifn-gamma,th17|IFN-γ is made HERE, not in the cell whose mitochondria are failing. Loop C is paracrine by construction.
+th17-cell|Th17 / ILC3 / γδ T|RES|CEL|G|th17|The IL-23-responsive compartment. In enthesitis the dominant producers are tissue-resident γδ T and ILC3, not circulating Th17.
+pdc|pDC|RES|CEL|G|tlr,ifn-jak|The cell that converts TLR7/9 ligation into an IFN-α burst — orders of magnitude more type-I interferon per cell than any other blood leukocyte.
+il18r|IL-18R1 / IL-18RAP|RES|REC|G|ifn-gamma,inflammasome|An IL-1-family receptor: TIR domains, MyD88, IRAK — the same module TLRs use.
+il18bp|IL-18BP|EXT|EFF|G|ifn-gamma,isg|A high-affinity secreted decoy that neutralises free IL-18. Itself IFN-γ-inducible — the loop builds its own brake.
+il12|IL-12 (p35/p40)|EXT|CYT|G|ifn-gamma,th17|Made by activated myeloid cells. Shares its p40 subunit with IL-23 — which is why one antibody can hit both.
+il12r|IL-12Rβ1/β2|RES|REC|G|ifn-gamma|Signals through TYK2 and JAK2 → STAT4. The TYK2 dependence is why TYK2 inhibitors reach this arm.
+stat4|STAT4|RES|TF|G|ifn-gamma|The Th1 STAT. Induces T-bet, which is what actually licenses the IFNG locus.
+tbet|T-bet (TBX21)|RES|TF|G|ifn-gamma|Remodels the IFNG locus. Without it, IL-18 and IL-12 signalling produce no interferon-γ.
+gaf|STAT1 : STAT1 (GAF)|CYT|COM|G|ifn-gamma,ifn-jak|A different dimer from ISGF3, reading a different element (GAS, not ISRE) — but drawing on the same STAT1 pool.
+cxcl9-11|CXCL9/10/11|EXT|CYT|G|ifn-gamma,isg|CXCR3 ligands that recruit more Th1 and NK cells — the loop's amplification step at tissue level.
+ciita|CIITA → MHC-II|NUC|TF|G|ifn-gamma|IFN-γ turns non-professional cells into antigen presenters — how an innate loop acquires an adaptive audience.
+nos2|NOS2 / iNOS|CYT|ENZ|G|ifn-gamma,metabolic|IFN-γ + NF-κB output. NO nitrosylates and inhibits Complexes I and IV — an interferon-driven respiratory lesion.
+m1|M1 polarisation|CYT|OUT|S|ifn-gamma,metabolic,mito|IFN-γ locks macrophages into aerobic glycolysis with a broken TCA cycle, high mtROS, and succinate accumulation.
+il23r|IL-23R / IL-12Rβ1|RES|REC|G|th17|JAK2/TYK2 → STAT3. IL23R variants are among the strongest genetic associations in psoriatic disease.
+stat3|STAT3|RES|TF|G|th17|The Th17 STAT, driven by IL-6 and IL-23. Induces RORγt.
+rorgt|RORγt (RORC)|RES|TF|G|th17|Master Th17 transcription factor. IL-23 does not create Th17 cells so much as stabilise and license them.
+il17ra|IL-17RA / RC|MEM|REC|G|th17|Signals through ACT1 → TRAF6 → NF-κB in fibroblasts, synoviocytes and keratinocytes.
+act1|ACT1 (TRAF3IP2)|CYT|ADA|G|th17,nfkb|U-box E3 that couples IL-17R to TRAF6 → NF-κB — closing an IL-17 → NF-κB → IL-23 feed-forward at tissue level.
+il22|IL-22 / GM-CSF|EXT|CYT|G|th17|Epithelial proliferation (IL-22) and myeloid recruitment (GM-CSF) — the rest of the Th17 output.
+z-rna|Z-form nucleic acid|CYT|LIG|G|celldeath,retro|Left-handed duplex conformation favoured by alternating purine-pyrimidine repeats — abundant in ERV and SINE transcripts.
+zbp1|ZBP1|CYT|SEN|G|celldeath,retro|Two Zα domains read Z-form nucleic acid; two RHIM domains hand the signal to RIPK3. Itself an interferon-stimulated gene.
+ripk3|RIPK3|CYT|KIN|G|celldeath|RHIM-dependent amyloid-like assembly with ZBP1 or RIPK1; phosphorylates MLKL. The commitment step.
+ripk1|RIPK1|CYT|KIN|G|celldeath,nfkb|The three-way switch: scaffold for NF-κB survival signalling, or substrate for caspase-8, or RHIM partner for necroptosis.
+mlkl|MLKL|CYT|EFF|G|celldeath|Phosphorylated by RIPK3, then oligomerises and permeabilises the plasma membrane directly.
+casp8|caspase-8 / FADD|CYT|ENZ|G|celldeath|Cleaves RIPK1 and RIPK3 to suppress necroptosis. Losing it does not stop death — it switches the mode.
+necroptosis|necroptosis|CYT|OUT|G|celldeath|Membrane rupture with the cytosol intact — maximally immunogenic, and invisible to every caspase inhibitor.
+panoptosome|PANoptosome|CYT|COM|G|celldeath,inflammasome|ZBP1 scaffolds NLRP3, ASC, caspase-1, caspase-8 and RIPK3 into one complex — the three death modes stop being separate.
+l1-locus|LINE-1 locus|NUC|RET|G|retro,genome|~500 000 copies, ~17% of the genome, ~100 still retrotransposition-competent. 6 kb bicistronic unit with its own internal promoter.
+alu-locus|Alu / SINE loci|NUC|RET|G|retro,rlr-mavs|~1.1 million copies, ~11% of the genome. Non-autonomous — mobilised in trans by L1 ORF2p.
+herv-locus|HERV loci|NUC|RET|G|retro|~8% of the genome. Mostly ORF-dead, but transcriptionally reactivatable and immunogenic.
+l1-mrna|L1 mRNA|NUC|LIG|G|retro|RNA Pol II transcript from the internal 5′UTR promoter; exported and translated in the cytoplasm.
+orf1p|ORF1p|GRA|RET|G|retro|Coats L1 RNA in a strong cis preference, so an L1 mRNA is mobilised by the proteins it encoded.
+orf2p|ORF2p|CYT|RET|S|retro,genome|The business end: an APE-like endonuclease that nicks genomic DNA and an RT that copies L1 RNA into it.
+l1-rnp|L1 RNP|GRA|RET|S|retro|The transposition-competent intermediate. Must reach the nucleus to insert.
+tprt|TPRT|NUC|RET|G|retro,genome|ORF2p nicks genomic DNA at a TTAAAA-like consensus; the freed 3′-OH primes reverse transcription in situ.
+l1-insertion|new L1 insertion|NUC|RET|I|retro,genome|Usually 5′-truncated and inert; occasionally disruptive, and always a source of structural variation.
+l1-cdna|L1 cDNA|CYT|LIG|G|retro,cgas-sting|Aborted or cytoplasmic reverse transcription leaves DNA where DNA should not be — and cGAS reads it.
+alu-dsrna|Alu inverted-repeat dsRNA|CYT|LIG|G|retro,rlr-mavs|The endogenous MDA5 ligand. Long, perfectly duplexed, abundant — and entirely self.
+herv-rna|HERV transcripts|CYT|LIG|G|retro,tlr|Feeds the cytosolic dsRNA pool, TLR7/8 in endosomes, and TLR4 via Env protein.
+hush|HUSH complex|NUC|RES|G|retro|Recognises young, intronless, long transcription units — the structural signature of a recent L1 insertion.
+morc2|MORC2|NUC|RES|G|retro|The effector arm of HUSH: physically compacts chromatin over the target locus.
+setdb1|SETDB1|NUC|RES|G|retro|Deposits H3K9me3, the repressive mark that keeps L1 and HERV loci heterochromatic.
+h3k9me3|H3K9me3|NUC|STR|G|retro|Read by HP1, propagated across the locus. The physical substrate of retroelement silence.
+dnmt1|DNMT1 / UHRF1|NUC|RES|G|retro|Maintains CpG methylation of the L1 5′UTR promoter through replication — the oldest defence layer.
+trim28|TRIM28 / KAP1|NUC|RES|G|retro|The LTR/HERV silencing arm: KRAB-ZFPs supply sequence specificity, TRIM28 recruits SETDB1.
+zap|ZAP / ZC3HAV1|CYT|RES|G|retro|Binds CpG-dinucleotide-rich RNA and routes it to the exosome. Inhibits both L1 and Alu retrotransposition.
+mov10|MOV10|GRA|RES|G|retro|Associates with L1 RNP and unwinds/destabilises it; an ISG, so interferon reinforces this layer.
+oas|OAS1-3|CYT|EFF|G|isg,retro|dsRNA-activated; makes 2-5A to switch on RNase L. A parallel dsRNA-sensing arm to MDA5.
+rnasel|RNase L|CYT|EFF|G|isg,retro|Cleaves single-stranded RNA indiscriminately once activated — including L1 and Alu transcripts.
+adar1|ADAR1 p150|CYT|RES|G|retro,rlr-mavs,isg|A-to-I edits Alu duplex RNA, creating I:U mismatches that keep MDA5 below its activation threshold.
+apobec3|APOBEC3A/B|CYT|RES|G|retro,genome|Cytidine deaminases that hypermutate L1 cDNA (C→U, read as G→A) before it can integrate.
+trex1|TREX1|CYT|RES|G|retro,cgas-sting|The dominant cytosolic 3′→5′ ssDNA exonuclease. Its job is to destroy L1 cDNA and other cytosolic DNA before cGAS finds it.
+rnaseh2|RNase H2 (A/B/C)|NUC|RES|G|retro,genome|Removes ribonucleotides misincorporated into DNA and resolves RNA:DNA hybrids — including L1 TPRT intermediates.
+ags-family|AGS gene family|NUC|COM|G|retro|TREX1 · RNASEH2A/B/C · SAMHD1 · ADAR1 · IFIH1 · LSM11/RNU7-1 — every one a nucleic-acid metabolism gene.
+micronucleus|micronuclei|NUC|LIG|G|genome,cgas-sting|Rupture-prone envelopes that expose genomic DNA to cGAS — a nuclear source of Loop A ligand.
+samhd1|SAMHD1|CYT|RES|S|samhd1|Obligate homotetramer. dNTPase, replication-fork guardian, retroelement restrictor, innate-immune brake, mitochondrial stabiliser.
+a565t|p.A565T|CYT|OUT|S|samhd1|Heterozygous missense at the extreme C-terminal boundary of the phosphohydrolase HD domain — 27 residues from the T592 regulatory hinge.
+samhd1-t592|p-SAMHD1 (T592)|NUC|RES|S|samhd1,genome|The phospho-switch that partitions SAMHD1 between its dNTPase and its genome-stability roles.
+samhd1-mito|SAMHD1 (mitochondrial pool)|MIT|RES|S|samhd1,mito|Diaz-Griffero's group showed SAMHD1 must be present INSIDE the mitochondrial compartment to prevent ΔΨm collapse and mtDNA release.
+dntp-pool|cytosolic dNTP pool|CYT|MET|S|samhd1,metabolic,genome,retro|Elevated 40–60% by dNTPase failure, with a disproportionate dGTP skew. The single upstream quantity from which four streams descend.
+fork|stalled replication fork|NUC|STR|S|genome|SAMHD1 acts at stalled forks to prevent interferon induction — a nuclear, dNTPase-independent function.
+mre11|MRE11|NUC|ENZ|S|genome|Recruited by SAMHD1 for controlled nascent-strand degradation at stalled forks.
+ctip|CtIP|NUC|ENZ|S|genome|SAMHD1 recruits CtIP to double-strand breaks to initiate resection for homologous recombination.
+dsb|DNA double-strand break|NUC|STR|S|genome|Repair choice here determines whether the cell keeps its genome or accumulates rearrangements.
+rloop|R-loops|NUC|STR|S|genome,retro|SAMHD1 prevents R-loop formation; accumulation drives transcription–replication conflict and breaks.
+ssdna|cytosolic ssDNA fragments|CYT|LIG|S|genome,cgas-sting|The genomic contribution to the cGAS ligand pool — parallel to the mitochondrial and retroelement routes.
+genomic-instability|genomic instability|NUC|OUT|S|genome,clinical|Three converging pressures: elevated dNTP replication error load, impaired HR, and retroelement insertion burden.
+apc-antigen|peptide–MHC|EXT|COM|G|tcr|The physiological input. Everything in this arm is a response to an antigen a T cell has recognised.
+tcr-cd3|TCR–CD3|RES|REC|G|tcr|The antigen receptor itself. It has no catalytic activity of its own — all its signalling is borrowed from associated kinases.
+lck|Lck|RES|KIN|G|tcr|The Src-family kinase that phosphorylates the CD3ζ ITAMs — the first catalytic event of the cascade.
+cd28|CD28|RES|REC|G|tcr|Signal 2. Antigen recognition alone drives anergy; costimulation is what makes it activation.
+trail-fl|TRAIL (full length)|EXT|CYT|G|tcr|The functional counterpart. It trimerises DR4/DR5 and kills; TRAILshort occupies the same receptor and does not.
+trailshort|TRAILshort|EXT|CYT|G|tcr|A non-trimerising TRAIL splice variant that silences T cells by phosphatase recruitment rather than by killing them.
+dr5|DR5 (TRAIL-R2)|RES|REC|G|tcr|The receptor TRAILshort binds preferentially. Engaged WITHOUT clustering, it becomes a phosphatase-docking site instead of a death platform.
+shp1|SHP-1 (PTPN6)|RES|ENZ|G|tcr|The actual effector. Recruited to TRAILshort-bound DR5, autophosphorylated at Y536, and it switches the TCR off from the inside.
+cd3z|CD3ζ|RES|ADA|G|tcr|The ITAM platform ZAP-70 docks onto. TRAILshort does not remove it — it breaks the association.
+zap70|ZAP-70|RES|KIN|G|tcr|The dephosphorylation target (Y319). Everything downstream in the TCR cascade falls behind it.
+lat|LAT|RES|ADA|G|tcr|The scaffold ZAP-70 phosphorylates at Y191/Y220, and the point where one lost phosphosite becomes a whole lost programme.
+plcg1|PLCγ1|RES|ENZ|G|tcr|Recruited to phospho-LAT and activated at Y783. Its output is the calcium and DAG arm that licenses the effector programme.
+cd69|CD69|RES|EFF|G|tcr|The earliest surface readout of successful activation — up within hours, and reduced by TRAILshort.
+cd40l|CD40L|RES|EFF|G|tcr|The molecule by which an activated T cell licenses B cells and dendritic cells. Losing it silences help, not just killing.
+tcell-prolif|clonal proliferation|RES|EFF|G|tcr|Measured by CFSE dilution. Suppressed by TRAILshort EVs across a Transwell, and restored by SHP-1 inhibition.
+car-t|CD19 CAR-T|EXT|DRU|G|tcr,drugs|A therapy this arm predicts will underperform in a TRAILshort-high tumour — and did, in humanised mice.
+anti-trailshort|anti-TRAILshort|EXT|DRU|G|tcr,drugs|Neutralising the ligand restores T-cell function — the "release the brake" direction.
+nsc87877|NSC-87877|RES|DRU|G|tcr,drugs|Blocks the phosphatase rather than the ligand. Works, but only modestly — and the gap is informative.
+upadacitinib|upadacitinib|CYT|DRU|S|drugs|Arrests IFNAR signal transduction at JAK1 — the only node in this framework with in-human response data.
+brepocitinib|brepocitinib / TYK2i|CYT|DRU|G|drugs|Alternative to JAK1-only blockade; adds IL-12/IL-23 coverage relevant to the Th17/psoriatic arm.
+amlexanox|amlexanox|CYT|DRU|G|drugs|Cuts interferon production at source rather than blocking its reception. Also an established metabolic agent.
+polyiclc|poly-ICLC (Hiltonol)|END|DRU|S|drugs|The "upward" direction: drive IRF3 to INDUCE more SAMHD1 protein in a haploinsufficient cell.
+vbit4|VBIT-4|MIT|DRU|S|drugs|Closes the macropore. In SAMHD1-KO monocytes it prevents mtDNA release and FULLY abolishes the spontaneous ISG response.
+imsb301|IMSB301|CYT|DRU|S|drugs|Intercepts cytosolic DNA AFTER mitochondrial egress. Blind to the ox-mtDNA/NLRP3 arm by construction.
+mcc950|MCC950|CYT|DRU|G|drugs|Binds the NACHT-domain Walker B motif, blocking ATPase-driven assembly downstream of BOTH ox-mtDNA and MSU inputs.
+plp|PLP / vitamin B6|MIT|DRU|I|drugs|The only arm upstream of BOTH NLRP3 and VDAC1 — and clinically available over the counter.
+allopurinol|allopurinol|CYT|DRU|I|drugs|Would cut the GOLD stream at urate production if MSU crystals prove to be a real third NLRP3 input.
+abe8e|ABE8e-YA base editor|NUC|DRU|I|drugs|The curative horizon: a clean transition mutation is a premier base-editing candidate, with no double-strand break required.
+naci|NACI|EXT|OUT|I|clinical|Tonic, source-driven interferon activation with no flare-remit cyclicity and a seronegative cytokine profile.
+mecfs|ME/CFS|EXT|OUT|G|clinical|Multi-generational, concordant phenotype, with age at onset falling in each successive generation.
+pem|PEM / fatigue|EXT|OUT|G|clinical|Reduced OXPHOS, impaired ATP generation, metabolic shifts worsening post-exertion — and largely refractory to JAK inhibition.
+psa|psoriatic arthritis|EXT|OUT|G|clinical|IL-23 → Th17 → IL-17A/TNF-α at tendon–bone and fascial insertions.
+steatosis|metabolic interferonopathy|EXT|OUT|S|clinical|Diet-refractory steatosis, pancreatic fatty infiltration and android-pattern central adiposity.
+immunodef|immunodeficiency|EXT|OUT|G|clinical|Impaired intrinsic antiviral restriction + chronic antigenic load + interferon-driven lymphocyte attrition.
+connective|connective tissue failure|EXT|OUT|G|clinical|Tonic IFN-γ → STAT1 antagonises TGF-β/Smad3 collagen-I transcription while upregulating MMP-1/MMP-3.
+dysautonomia|dysautonomia / SFN|EXT|OUT|G|clinical|Chronic tonic type-I IFN drives progressive injury to intraepidermal autonomic nerve fibres.
+cancer-risk|cancer surveillance|EXT|OUT|S|clinical|Prostate (BIK + SAMHD1 co-segregating), colorectal (heterozygous SAMHD1) and haematological lineages.
+
+§6 A565T EFFECTS   node|what haploinsufficiency does here
+# The haploinsufficiency model proper: only nodes carrying an explicit claim.
+cgas|A565T haploinsufficiency supplies cGAS with three ligand streams at once: mtDNA fragments through the VDAC1 macropore, ssDNA fragments from collapsed replication forks, and LINE-1 cDNA that escaped restriction. This is the entry point of Loop A.
+sting|STING is one of the five ANKIB1 K11-Ub substrates held constitutively primed by SAMHD1 loss. Primed STING lowers the threshold for TBK1/IRF3 scaffold assembly, producing tonic rather than pulsatile interferon.
+mda5|SAMHD1 deficiency activates MDA5 in a cGAS/STING-INDEPENDENT manner — a genuinely separate arm from Loop A. SAMHD1 normally sequesters immunostimulatory dsRNA in LLPS condensates; losing that sequestration exposes duplex RNA that MDA5 reads as viral.
+dsrna-cyt|SAMHD1 normally holds this pool inside LLPS condensates. Haploinsufficiency releases it into free solution where MDA5 can polymerise on it.
+mavs|SAMHD1 impairs type I IFN induction through the MAVS–IKKε–IRF3/7 axis; losing it de-represses this platform at the same time as the mitochondrion beneath it is being damaged.
+tlr3|A two-phase onset — prodromal immune fragility, then a full phenotype precipitated by acute viral infection — is read as the TLR3→IRF3→SAMHD1 loop failing to terminate the innate response after viral clearance. Losing the induction arm means the response has no scheduled end.
+ll37|No SAMHD1 link is claimed, and none should be read in. This arm is in the atlas because the phenotype includes enthesitis-predominant psoriatic arthritis and the canonical psoriasis initiation mechanism was absent — a gap in the DISEASE model rather than in the SAMHD1 cascade. What joins it to the rest of the board is its product, IFN-α, which is already modelled; it does not join through SAMHD1.
+tlr4|TLR4 engagement triggers interferon-independent G0 arrest with SAMHD1-dependent dNTP depletion — a normal response that a haploinsufficient cell cannot execute properly.
+trif|Reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed — one of the five substrates that lowers the TBK1/IRF3 assembly threshold.
+ankib1|This is the framework's central gain-control claim. SAMHD1 loss primes all five substrates at once: dNTPase failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression primes NEMO. Worse, ANKIB1 AUTO-ubiquitinates during activation and is degraded by the proteasome — so the master negative regulator destroys itself exactly when it is needed most. A self-terminating feedback controller cannot hold homeostasis under chronic drive. Predicted readout: ANKIB1 protein REDUCED at baseline in A565T cells, restored by amlexanox (Arms 5–6) but NOT by upadacitinib (Arm 2).
+nemo|Loss of SAMHD1's NF-κB-suppressive function leaves NEMO constitutively primed — the third of the five ANKIB1 substrates.
+tbk1|p-TBK1(Ser172) is unaffected by JAK1 inhibition, making it the cleanest pharmacologic separator across the study arms: it moves with amlexanox (Arms 5–6) and not with upadacitinib (Arm 2).
+ikke|SAMHD1 occupies IRF7's inhibitory domain and physically prevents IKKε-mediated phosphorylation. Haploinsufficiency removes that block, so IKKε phosphorylates IRF7 constitutively.
+irf3|The IRF3→SAMHD1 induction arm is the therapeutic "upward" direction (Arms 3–4). It is also the reason amlexanox carries a genome-stability tradeoff: suppressing IRF3 lowers SAMHD1 transcription in a cell that is already haploinsufficient.
+irf7|SAMHD1 physically occupies IRF7's inhibitory domain. This is Brake 1 of the four failed brakes: haploinsufficiency removes IRF7 restraint, giving constitutive second-wave interferon. IRF7 also transactivates MCP-1 SPECIFICALLY in visceral adipocytes — the mechanistic link from an immune gene to android-pattern adiposity and diet-refractory steatosis.
+nfkb|SAMHD1 suppresses innate immune responses by inhibiting the NF-κB pathway directly. Its loss is Brake 4 of the four failed brakes — de-suppressed IKK gives IL-1β/IL-23 → Th17 → the psoriatic arthritis axis.
+vdac1|SAMHD1 physically interacts with VDAC1 on the outer membrane, and Diaz-Griffero's group showed SAMHD1 must be present INSIDE the mitochondrial compartment to prevent ΔΨm collapse and mtDNA release. Losing that interaction opens the macropore. VBIT-4 in SAMHD1-KO monocytes prevents cytosolic mtDNA release and FULLY abolishes the spontaneous ISG response — which is the strongest single piece of evidence that Loop A is VDAC1-gated rather than oxidation-dependent.
+parkin|The pathway is intact but jammed downstream: ISGylated MFN1/2 and ISGylated BECN1 both block flux, so damaged mitochondria are flagged and then never cleared.
+pnc1|Cytosolic dNTP excess from dNTPase failure floods PNC1/PNC2. Arm 10 tests this with PLP (vitamin B6), which inhibits SLC25A33 transport and is clinically trivial to obtain. The bifurcating prediction is the sharpest experiment in the study: suppress Loop B only → the loops are independently gated; suppress both → PNC1-driven mtROS is the dominant driver of VDAC1 oligomerisation.
+deltapsi|Samhd1-KO causes measurable ΔΨm collapse and M1 macrophage skewing. Collapse here is not a downstream symptom — it re-enters the loop by stopping PINK1 import and opening mPTP.
+mito-dntp|The perturbation here is qualitative as well as quantitative: it is the dGTP skew, not just total concentration, that impairs POLG fidelity.
+atp|This node is the JAK-refractory residual. When JAK1 inhibition clears the inflammatory arm and the fatigue and metabolic dysfunction stay, what is left is bioenergetic — Loop B and the direct mitochondrial injuries, both of which run independently of JAK–STAT.
+ctsd|The SAMHD1 → mTOR → MITF → CTSD axis was described in macrophage autophagy-lysosomal failure. Damaged mitochondria stay trapped upstream of a non-functional lysosome, amplifying mtROS.
+dnase2|This is a missing EDGE between two arms the atlas already had, not a new subgraph. The mTOR→MITF→CTSD axis is already modelled as under-producing lysosomal hydrolases — and DNase II is one of them. So the same lysosomal failure that traps damaged mitochondria upstream also stops the cell degrading the mtDNA it did manage to engulf. Mitophagy failure and cGAS ligand supply turn out to be the same lesion seen from two directions.
+ifnb|Tonic and moderate-amplitude rather than surging — the signature the concept note names NACI (Non-Acute Chronic Interferonopathy).
+mcp1|This tissue specificity is the mechanistic explanation for android-pattern adiposity with no subcutaneous lower-body accumulation — a metabolic phenotype produced by an immune transcription factor.
+ifnar2|USP18 is stabilised by ISG15 and is the primary IFNAR2 brake. In this disease the brake is present and even upregulated — it is simply overwhelmed by an upstream genetic drive it cannot reach.
+jak1|JAK1-selective inhibition clears the inflammatory arm of this disease almost completely and the bioenergetic arm barely at all. What it fails to move is therefore a map of everything downstream of the genetic lesion that does not route through JAK–STAT: Loop B, the direct mitochondrial injuries, and the upstream ANKIB1 priming that JAK inhibition never reaches.
+stat1|SAMHD1-KO monocytes show persistent JAK–STAT1/2 and ISG activation that JAK inhibition normalises. STAT1 also directly represses PGC-1α transcription, so the interferon arm suppresses mitochondrial biogenesis as a transcriptional side effect.
+isg-set|The concept note predicts a SERONEGATIVE profile: standard serum cytokine panels normal, but intracellular ISG expression elevated. Workup should target IFN-α/β, free ISG15, CXCL10 and ISG scoring rather than a conventional cytokine panel.
+usp18|Tonic IFN upregulates ISG15, which stabilises USP18 — but this compensatory axis is constitutively overwhelmed by the upstream genetic defect. A brake that is fully engaged and still losing.
+nlrp3|SAMHD1 is a metabolic gatekeeper of NLRP3: dNTPase loss ALONE — with no obesity and no exogenous trigger — drives cytoplasmic dNTP accumulation, mitochondrial dNTP overload, ox-mtDNA generation and NLRP3 hyperactivation. SAMHD1-deficient animals develop elevated circulating IL-1β, insulin resistance and steatohepatitis without any diet challenge.
+aim2|IMPORTANT FOR THE STUDY DESIGN, and untested. The atlas claims ox-mtDNA→NLRP3 and fragments→cGAS run in parallel; AIM2 is the third DNA sensor a reviewer will ask about, and it changes how Arm 9 reads. MCC950 inhibits NLRP3 specifically — it does NOT touch AIM2. So residual IL-1β and residual ASC specks under MCC950 have TWO possible explanations: a caspase-1-independent maturation route (the current reading), or an AIM2 inflammasome the drug was never going to block. Those are distinguishable — AIM2 specks are NLRP3-independent and NEK7-independent — and the arm should be designed to tell them apart rather than attributing the residual to the first hypothesis.
+il1b|Predicted to stay ELEVATED in Arm 2 (upadacitinib) and Arm 5 (amlexanox) despite improving cytokine panels — because the dNTP→PNC1/2→ox-mtDNA→NLRP3 cascade is upstream of both drug targets. Persistent IL-1β in those arms is the formal proof that Loop B is an independent, currently unaddressed therapeutic axis.
+baff|Amlexanox suppresses BAFF induction alongside type-I IFN production — one of the reasons the TBK1/IKKε clamp is expected to reach further than JAK1 blockade alone.
+nfkb-targets|SAMHD1 suppresses the NF-κB pathway directly, so haploinsufficiency raises the resting level of every gene on this list at once. That is Brake 4 — and it is why Loop B and the Th17 arm are elevated at baseline rather than only after a trigger.
+responder-cell|This is the step that is missing from the compressed chain. An inflammasome running constitutively in one cell recruits a second cell into the disease, and that second cell sends back a cytokine that damages the first one further.
+pdc|NOT demonstrated in a SAMHD1 system, and graded G for exactly that reason — it sits downstream of an S claim without inheriting its grade. What makes the cell worth drawing is arithmetic rather than a new mechanism: IRF7 is the node SAMHD1 physically restrains (Brake 1), and the pDC is where derepressed IRF7 has the largest per-cell interferon consequence. Whether pDCs contribute measurably to the tonic IFN-α of this phenotype is a MEASUREMENT — pDC frequency together with per-cell IFN-α — not something this model asserts.
+il18bp|Worth measuring alongside free ISG15 in this framework: both are brakes that are induced by the very signal they oppose, and both are candidates for being present, engaged, and overwhelmed.
+cxcl9-11|CXCL10 is one of the four assays the concept note directs workup toward (with IFN-α/β, free ISG15 and ISG scoring) precisely because it reports intracellular interferon activity when a standard cytokine panel reads normal.
+m1|Samhd1-KO drives M1 skewing directly, and does so alongside ΔΨm collapse. The cell arrives at this state from two directions at once: its own genetic lesion, and the IFN-γ its neighbours send back.
+z-rna|The substrate pool for this sensor is exactly what SAMHD1 haploinsufficiency raises. HERV and LINE-1 de-repression is already modelled in the retroelement layer; this is where those transcripts acquire a second way to be dangerous, independent of MDA5.
+zbp1|Untested in SAMHD1 systems. The prediction is straightforward and worth measuring: ZBP1 protein should be elevated in A565T cells simply because it is an ISG, at the same time as its Z-form substrate rises from retroelement de-repression. If both are true, necroptotic priming is a phenotype nobody has looked for here.
+necroptosis|The framework has a caspase-1 lytic route (pyroptosis) and now a caspase-INDEPENDENT one. Nothing in the ten-arm design touches this axis: MCC950 blocks NLRP3, IMSB301 blocks cGAS, and neither has any effect on RIPK3–MLKL. If necroptosis contributes to the mtDNA released into the extracellular space, it is an unmeasured source of the ligand that keeps Loop A supplied.
+orf2p|SAMHD1 restricts L1 by two routes at once: it starves ORF2p reverse transcriptase of dNTPs, and it promotes stress-granule formation that sequesters the L1 ribonucleoprotein. Both routes are lost together in haploinsufficiency — and the dNTP route is lost in the WRONG direction, because the pool goes UP by 40–60%.
+l1-rnp|SAMHD1 promotes stress-granule formation that traps L1 RNPs out of circulation. This is a physical, non-enzymatic restriction mechanism — and it is regulated by SAMHD1 T592 phosphorylation, meaning the same phospho-switch that governs genome stability also governs retroelement restriction.
+l1-insertion|Elevated dNTP pools support L1 reverse transcription, so retroelement mutagenic burden is one of the three pressures in the genomic-instability block alongside replication-error load and impaired homologous recombination.
+ags-family|The heterozygous phenotype is the attenuated version: survival-compatible, adult-onset, moderate-amplitude, chronic rather than catastrophic — what the concept note names NACI.
+samhd1|Highly conserved down to zebrafish. Nuclear-predominant, but with functionally required cytosolic and mitochondrial pools. NOTE, and do not collapse this into an edge: the SAMHD1/NK-function relation is CONTEXT-DEPENDENT with opposite signs — SAMHD1 restrains NK killing in the tumour microenvironment (Sun 2025, Gutiérrez-Chamorro 2024) but supports NK/CD4/CD8 responses in acute retroviral infection, in male mice only (Barrett 2022). No signed edge is drawn for it, deliberately.
+a565t|The interpretive constraint is clinical, and it is the honest part of this framework: the observed course is survival to middle age without AGS, with symptomatic improvement during acute viral illness. Both are inconsistent with complete dNTPase loss and consistent with ~40–60% residual activity — one functional allele. Enough to prevent AGS5, not enough to prevent a sustained low-grade interferonopathy. Because SAMHD1 is an obligate homotetramer, HD-domain missense variants can additionally poison wild-type tetramers, so real activity may sit below 50%.
+samhd1-t592|The p-T592/total-SAMHD1 RATIO — not total protein — is proposed as a therapeutic monitoring biomarker. It is the readout that would catch amlexanox starving the genome-stability arm while it improves inflammation.
+dntp-pool|Measured by LC-MS/MS. This is the first-line Arm 1 readout, and the cheapest decisive experiment in the programme: a 40–60% elevation in primary heterozygous cells would establish that haploinsufficiency alone perturbs the pool, which no published work has yet shown.
+genomic-instability|Translates into a cancer-surveillance rationale rather than a claim of present malignancy: prostate (BIK + SAMHD1 co-segregating susceptibility), colorectal (heterozygous SAMHD1 mutations), and haematological risk from SAMHD1's canonical tumour-suppressor role in myeloid and lymphoid lineages. It is also the reason the framework treats amlexanox as a tradeoff rather than a free anti-inflammatory.
+trailshort|NO established SAMHD1 link. This arm is imported context for the T-cell attrition phenotype, not a consequence of A565T. Treat it as a candidate modifier to be tested, not as part of the variant cascade.
+upadacitinib|Predicted NOT to change: dNTP pools, R-loops, autophagy flux, p-TBK1(Ser172), ANKIB1 protein, IL-1β, or ASC speck burden. Everything it fails to move is a map of the disease it does not treat.
+amlexanox|CRITICAL TRADEOFF, and the most important safety claim in the study: by suppressing IRF3/7-mediated SAMHD1 transcription, amlexanox may reduce total SAMHD1 protein in a cell that is ALREADY haploinsufficient. As total protein falls, the p-T592/total ratio shifts toward dNTPase-active tetramers while functionally starving the phospho-dependent genome-stability roles. If DR-GFP efficiency or S9.6 R-loop burden WORSENS in Arm 5 despite inflammatory improvement, that is direct human evidence of a genome-stability/immune-control tradeoff — and an argument for pulsed rather than continuous dosing.
+naci|Proposed as a descriptive category for this patient's pattern, explicitly NOT an established clinical entity. It requires independent validation before use outside the concept note.
+
+§7 MECHANISM DETAIL   node|mechanism   ·   from>to|mechanism
+# The paragraph behind the one-sentence summary, for the nodes and edges that
+# carry one. Not every node does; absence here means nothing was written, NOT
+# that the mechanism is simple. Node rows come first, then edge rows keyed
+# "from>to". Newlines are flattened to single spaces like every other section.
+cgas|cGAS does not care where the DNA came from — only that it is double-stranded and in the cytosol. In SAMHD1-deficient cells the cytosolic DNA is overwhelmingly mitochondrial, and the entire ISG signature is cGAS-dependent: double knockout of SAMHD1 + cGAS abolishes ISGs, and IMSB301 normalises the ISG signature in AGS PBMCs.
+cgamp|cGAMP also passes to neighbouring cells through gap junctions and via SLC19A1 import, which is how one stressed cell can raise the interferon tone of a whole tissue field.
+sting|Activated STING traffics ER → ERGIC → Golgi. Only after it reaches the ERGIC does its C-terminal tail recruit TBK1 in a way that permits IRF3 phosphorylation — trafficking is part of the switch, not incidental to it.
+sting-golgi|This step is where the covalent-inhibitor class (H-151, nitrofurans) acts, and it is the reason STING signalling is terminated by lysosomal degradation rather than by dephosphorylation.
+rigi|ATP-driven translocation along duplex RNA releases the CARD domains from autorepression; the freed CARDs nucleate MAVS filaments in a prion-like manner.
+mda5|MDA5 has no end-recognition mechanism — it polymerises along the length of a duplex, so it reads duplex LENGTH as the danger signal. Its physiological self-antigen problem is Alu inverted-repeat dsRNA in 3′UTRs, which ADAR1 p150 must continuously edit to keep below the MDA5 threshold. IFIH1 gain-of-function is AGS7; ADAR1 loss is AGS6. Both converge on this node.
+mtdsrna|When mitochondrial RNA-degradosome capacity is exceeded, mito-dsRNA escapes to the cytosol and is read by MDA5 — stressor S5 in the Convergent Mitochondrial Catastrophe figure.
+mavs|MAVS is why RNA sensing is a mitochondrial event. Filament assembly is all-or-nothing and requires an intact membrane potential — which links ΔΨm collapse directly to signalling competence.
+mavs-perox|Two platforms, two kinetics: peroxisomal MAVS gives an immediate local antiviral state, mitochondrial MAVS gives the systemic interferon wave. Only the mitochondrial pool is degraded by mitochondrial injury.
+tlr3|TLR3 → TRIF → TBK1 → IRF3 is also the arm that INDUCES SAMHD1 transcription. That makes it the “upward” therapeutic direction: poly-ICLC agonism raises SAMHD1 protein in a haploinsufficient cell.
+tlr9|Mitochondrial DNA released from dying cells is a TLR9 agonist as well as a cGAS ligand: the same molecule drives two receptors in two compartments.
+ll37|LL-37 is massively overexpressed in psoriatic skin. It binds extracellular self-DNA electrostatically and condenses it into ordered aggregates that resist nuclease digestion and are retained in the pDC early endosome long enough to signal. Neither component does this alone: LL-37 without DNA is not an interferon stimulus, and self-DNA without LL-37 is not a TLR9 ligand.
+ll37-dna|Lande et al. showed the discrimination is one of trafficking and residence rather than of chemistry — the aggregate is delivered to and retained in the early endosome, which is the compartment where a pDC couples TLR9 to IRF7 rather than to NF-κB. Same receptor, same nucleotide sequence, different outcome, because a peptide changed where and for how long the ligand sat.
+ankib1|Betrancourt/Rieser/Walczak (Nat Cell Biol 2026) established K11 ubiquitination as the linkage that drives type-I/III interferon induction downstream of both cGAS–STING and TLR3/4. ANKIB1 is not a terminal effector — it sets the THRESHOLD at which TBK1/IRF3 scaffolds assemble. That is why the resulting phenotype is a moderate, unrelenting tonic interferon output rather than discrete cytokine surges.
+k11ub|Measurable with linkage-specific antibodies (clone 2A3/2E6) or K11-TUBE reagents — which is what makes K11-Ub/STING loading a candidate patient-stratification biomarker rather than a purely theoretical node.
+optn|OPTN sits at the exact junction where this disease turns on itself — the same protein that amplifies interferon signalling is the one needed to clear the damaged mitochondria producing the ligands.
+tbk1|TBK1 activation requires clustering on a scaffold, not simple ligand binding — which is precisely why K11-Ub priming of the scaffold components is a gain-control mechanism rather than an on/off switch.
+ikke|Reilly et al. showed TBK1/IKKε inhibition improves obesity-related metabolic dysfunction — which is why amlexanox lands on both the interferon and the metabolic arms of this phenotype at once.
+irf3|IRF3 drives IFN-β (IFNB1) and a subset of ISGs directly, without needing new protein synthesis — it is the immediate response. It also drives SAMHD1 transcription, closing a normally protective loop.
+irf7|IRF7 is the master regulator of the IFN-α subtypes. Because IRF7 is interferon-inducible, IRF3 → IFN-β → IFNAR → IRF7 → IFN-α is a positive-feedback amplifier with no intrinsic ceiling except its brakes.
+ikba|IκBα is itself an NF-κB target gene, giving the pathway its classic oscillatory negative feedback — oscillation that a constitutively driven system flattens into a plateau.
+nfkb|NF-κB is signal 1 of the two-signal inflammasome model. Without it, NLRP3 and pro-IL-1β are not present in sufficient quantity for signal 2 to matter.
+vdac1|Monomeric VDAC1 passes ATP/ADP, NAD⁺ and Ca²⁺. Oligomeric VDAC1 forms a large-conductance macropore wide enough to pass mtDNA fragments into the cytosol. The switch between the two states is the single most therapeutically addressable event in this figure.
+vdac1-oligo|Driven by mtROS and amplified by SLC25A33 (PNC1) upregulation. Distinct from mPTP: this route operates without ΔΨm collapse, which is why it can run constitutively in a cell that is still alive and dividing.
+mptp|TNF-α drives sublethal chronic mPTP opening via ROS, producing a persistent cytochrome-c leak rather than a lethal burst — stressor S8, and the reason apoptotic priming here is chronic rather than executioner.
+bik|BIK knockdown blunts apoptosis and cytochrome-c release in THP-1 cells. Germline BIK + SAMHD1 variants co-segregate as prostate cancer susceptibility genes — a rare instance where the mitochondrial arm and the oncologic arm of this framework touch the same two genes.
+drp1|Fragmentation raises surface-to-volume ratio, raises mtROS, and multiplies the number of VDAC1 oligomerisation sites — the geometry itself becomes part of the feedback loop.
+mfn|The IRF1 → PARP12 → ISG15 → MFN1/2 ISGylation axis is the replacement anchor for the retracted Sliter 2018 paper. ISG15 knockdown restores mitophagic flux, ΔΨm and ATP.
+pink1|In a healthy mitochondrion PINK1 is imported and cleaved by PARL. ΔΨm collapse stops import, so PINK1 stabilises on the surface and phosphorylates ubiquitin at Ser65, recruiting Parkin. This is the sensor that is supposed to flag exactly the mitochondria this disease creates.
+pnc1|PNC1 sits at the intersection of BOTH loops: it feeds the matrix dNTP pool that stalls POLG (→ ox-mtDNA → NLRP3, Loop B), and its upregulation independently drives mtDNA synthesis and VDAC1 oligomerisation via mtROS (→ cGAS, Loop A). That makes it the only node in the study upstream of both NLRP3 and VDAC1. The name is misleading and the distinction matters here. Di Noia 2014 reconstituted both carriers in proteoliposomes: SLC25A33 antiports uracil, thymine and cytosine (deoxy)nucleoside di- and triphosphates — and BOTH carriers also transport guanine (deoxy)nucleotides, though neither transports adenine. That is what licenses this atlas to route a dGTP-SKEWED cytosolic pool through carriers named for pyrimidines. Without it the purple stream would have a chemical gap at exactly its load-bearing step.
+etc-iii|The IL-1β/NF-κB axis drives ceramide synthesis, and ceramide inhibits Complex III directly while permeabilising the inner membrane and raising mPTP propensity. One cytokine, three simultaneous injuries.
+mtdna|mtDNA is the perfect autoantigen: bacterial in ancestry, CpG-hypomethylated, chemically damaged by its own neighbourhood, and present in high copy number. Everything the innate immune system evolved to treat as foreign.
+polg|POLG stalling produces mtDNA strand breaks, and the uncontrolled neosynthesis that follows yields the OXIDISED product — ox-mtDNA — which is the NLRP3 ligand. This is the purple stream.
+tfam|West et al. 2015 showed that mtDNA stress from TFAM depletion primes the antiviral interferon response — the foundational demonstration that the mitochondrion can start an interferon reaction with no pathogen present.
+mito-dntp|Upgraded S on Liu 2026: cytosolic dNTP accumulating behind a disabled SAMHD1 is transported into mitochondria through nucleotide carriers, supplying excess building blocks for mtDNA neosynthesis and bypassing the CMPK2 salvage pathway that normally rate-limits it. Demonstrated in cells from zebrafish, mice and humans, with a myeloid-conditional Samhd1 knockout, and reversed by blocking the transport step.
+oxmtdna|This species distinction is the correction at the heart of the project's mitochondrial manuscript. ox-mtDNA is the direct NLRP3 ligand demonstrated in SAMHD1-null and obese macrophages (Loop B). It is NOT the species that drives the ISG signature — that is the unoxidised/mixed fragment pool escaping through VDAC1 (Loop A). Same organelle, different oxidation state, different sensor, different loop, different rescue point.
+mtdna-frag|The proof is pharmacological and clean: VBIT-4 prevents release and abolishes the spontaneous ISG response; IMSB301 (cGAS inhibitor) normalises the ISG signature in AGS PBMCs. Both confirm the route is cGAS-dependent and VDAC1-gated rather than oxidation-dependent.
+becn1|This is the second, ISG15-dependent brake — distinct from the MFN1/2 block and additive to it. The project manuscript calls the ISG15–BECN1 block the KEYSTONE stressor (S6): it is what converts transient mitochondrial damage into permanent accumulation.
+dnase2|DNase II is acid-dependent and lysosome-restricted, so it only works in a compartment that has been properly acidified and properly stocked. Human DNASE2 deficiency is a type-I interferonopathy, and in mice Dnase2 loss is embryonically lethal from interferon — rescued by deleting the interferon receptor, and by deleting cGAS or STING. Undigested DNA in a failing lysosome is sufficient, by itself, to drive the exact signature this whole framework is about.
+dnase1l3|It handles the extracellular half of the same problem: DNA that leaves a dying cell packaged in membrane, where soluble DNase I cannot reach it. Relevant here because the framework already posits continuous sub-lethal and lytic death — pyroptosis, and now necroptosis — as ongoing sources of extracellular DNA.
+ifng|Tonic IFN-γ suppresses collagen-I transcription via STAT1 antagonism of TGF-β/Smad3 while coordinately upregulating MMP-1 and MMP-3 in dermal fibroblasts — the established mechanism behind the connective-tissue and fascial failure phenotype.
+tyk2|TYK2 also serves IL-12 and IL-23, so TYK2 blockade hits the Th17/psoriatic arm as well as the interferon arm — relevant given the confirmed PsA diagnosis.
+ifnb1-gene|The AND-gate architecture is why interferon induction is normally so hard to trigger — and why priming several inputs at once, as the ANKIB1 node does, changes the output so dramatically.
+pgc1a|STAT1-knockout hepatocytes show higher mtDNA content and more mitochondria — the clean demonstration that this repression is real and reversible. Stressor #5 of the mitochondrial figure.
+isg15|ISG15 is simultaneously protective and destructive here. Free ISG15 stabilises USP18 (the IFNAR2 brake), while conjugated ISG15 shuts down the two autophagy routes the cell needs to clear the mitochondria that are generating the ligand. Knockdown restores flux, ΔΨm and ATP.
+nlrp3|NLRP3 does not bind its activators the way cGAS binds DNA — it integrates a set of cell-stress proxies (K⁺ efflux, lysosomal rupture, mtROS, ox-mtDNA, crystals) into one ATPase-driven conformational switch. That integration is why one genetic lesion can drive it from several directions at once.
+aim2|AIM2 matters to this atlas because of what it does NOT need. It reads DNA by length rather than sequence, exactly as cGAS does, but its output is an ASC speck rather than an interferon. So the same cytosolic mtDNA fragment pool that feeds Loop A can produce inflammasome activation without ever passing through NLRP3 or ox-mtDNA. In psoriatic lesions AIM2 is activated by cytosolic DNA in keratinocytes, which puts it directly on the confirmed skin/enthesis arm.
+ifi16|IFI16 is a cooperator, not a competitor — it promotes cGAMP production and STING activation, so knocking it down blunts DNA sensing that would otherwise be called purely cGAS-dependent. Its nuclear localisation also puts it where the genome-stability arm generates its ligands, which is the one place cGAS is normally kept away from chromatin by nucleosome autoinhibition.
+asc|ASC speck formation by immunofluorescence is a primary Arm 1 readout precisely because it is binary and countable. Specks are also released intact and keep processing IL-1β extracellularly.
+casp1|Note the compartment: caspase-1 activation is strictly cytosolic. It does not happen inside the mitochondrion, even though its trigger comes from there.
+pyroptosis|This is the dotted cross-link between the two loops: Loop B ends by handing Loop A fresh ligand in the neighbouring cell.
+msu|The feedforward trap: one genetic lesion generates both NLRP3 ligands at once. dGTP excess yields ox-mtDNA through POLG stalling AND MSU crystals through purine catabolism — driving NLRP3 from two directions with a single mutation. Note the honest caveat: MSU crystal presence in SAMHD1-null cells has not been confirmed by peer-reviewed primary data and is carried as inferred input only.
+tak1|TAK1 is the branch point where innate signalling splits between NF-κB and the MAPK arm (p38, JNK → AP-1). Everything upstream — TRAF6, RIP1, MyD88 — converges here before the pathway commits.
+lubac|LUBAC is what converts a transient receptor event into a sustained IKK signal: linear chains on NEMO create a self-reinforcing recruitment surface. It is also the system in which the ANKIB1 K11 work was done — the linear-ubiquitin and K11-ubiquitin arms of this atlas come out of the same laboratory, which is why the gain-control framing transfers cleanly between them.
+a20|A20 is the pathway's own off-switch, transcribed by the very signal it exists to end. That negative feedback is why healthy NF-κB signalling oscillates rather than plateaus — and why a constitutive upstream drive produces a fundamentally different waveform, not merely a bigger one.
+otulin|OTULIN deficiency is instructive here: losing a single linear-chain-editing enzyme is enough to produce systemic autoinflammation in humans. Ubiquitin-linkage editing is not a detail of this pathway — it is the control system.
+nfkb-targets|Reading the target list explains why "NF-κB primes NLRP3" is doing so much work as a phrase. The same activation event supplies NLRP3 protein, pro-IL-1β AND pro-IL-18 (the two inflammasome substrates), IL-23 (the Th17 driver), IL-6, TNF-α, and both of its own negative regulators. Signal 1 is not a permissive step; it builds the whole downstream apparatus.
+proil18|This asymmetry matters for the IFN-γ loop: IL-18 does not have to wait for signal 1, so a purely metabolic NLRP3 trigger can drive IFN-γ induction without any classical priming event.
+responder-cell|NK cells respond fastest and need no antigen; Th1 cells sustain the response. Both read the same two signals — IL-18 through a MyD88 receptor and IL-12 through a STAT4 receptor — and neither alone is sufficient.
+th17-cell|This distinction is clinically load-bearing: entheseal IL-17 comes largely from resident innate-like lymphocytes responding to IL-23, which is why the psoriatic arthritis arm can run without a classical autoantigen or autoantibody.
+pdc|Among the TLRs a pDC expresses essentially only TLR7 and TLR9, and it retains ligand in an early endosome long enough for the MyD88–IRAK1–IRF7 complex to assemble there. That retention, together with constitutively high resting IRF7, is why the same receptor gives NF-κB cytokines in a macrophage and an interferon burst here — the difference is the cell, not the receptor. IRAK1 is the kinase step and it is already an atlas node (irak14, data/sensing.js); this is the cell that step happens in, not a second copy.
+il18r|Because IL-18 signals through MyD88, the inflammasome output reaches NF-κB in the responder cell by exactly the route a pathogen would use. The cell cannot distinguish sterile metabolic inflammasome activity from infection.
+il18bp|The clinically useful readout is not total IL-18 but FREE IL-18 — the fraction unbound by IL-18BP. Total IL-18 can look unremarkable while free IL-18 is high, which is the same measurement trap the concept note describes for serum cytokines generally. Recombinant IL-18BP (tadekinig alfa) exists as a therapeutic.
+il12|The p40 sharing is the reason ustekinumab (anti-p40) suppresses the Th1 and Th17 arms together while anti-p19 agents spare IL-12. In a disease with both an IFN-γ arm and a Th17 arm, that choice is not neutral.
+tbet|T-bet is the step that makes the two-signal requirement real: IL-18's NF-κB arm cannot transactivate a closed locus, and IL-12's STAT4 arm is what opens it.
+gaf|Type-I and type-II interferon compete for STAT1. That shared dependency is why JAK1 inhibition dampens both arms, and why STAT1 abundance is a better readout of total interferon burden than either ligand alone.
+nos2|NOS2 induction is one of the most direct routes from a cytokine to a bioenergetic defect: nitric oxide competes with oxygen at cytochrome c oxidase and S-nitrosylates Complex I.
+m1|M1 is where Loop C re-enters the mitochondrion. The programme itself raises mtROS and remodels the TCA cycle — so an interferon signal arriving from a neighbouring cell physically worsens the organelle damage that started the cascade. Succinate accumulation from the broken cycle stabilises HIF-1α under normoxia, which is the Warburg shift already in this figure.
+il17ra|IL-17 is a weak cytokine alone and a potent one with TNF-α. The synergy is why enthesitis responds to blocking either arm and why the two appear together in every mechanistic account of psoriatic disease.
+z-rna|Z-form is a conformation, not a sequence: the same molecule flips between B and Z depending on torsional strain, salt and sequence. That is why it works as a danger signal at all — the cell is reading a physical state that accumulates when repeat transcription runs unchecked, rather than a motif a virus could simply mutate away.
+zbp1|ZBP1 is the only sensor in this atlas whose ligand is a CONFORMATION. Being an ISG makes it self-amplifying in an interferon-high state: the more interferon, the more sensor, and the sensor detects something the same interferon programme is failing to suppress.
+ripk3|RHIM–RHIM interaction builds a genuine amyloid core, which is why necroptotic commitment is so hard to reverse once made — the same all-or-nothing polymer logic as MAVS filaments and ASC specks. This graph now has three of them.
+ripk1|Which of the three happens is decided by ubiquitin editing — the same LUBAC/A20/CYLD machinery already in the NF-κB module. That makes RIPK1 a direct link between this arm and the ubiquitin control layer.
+mlkl|A pseudokinase with no catalytic activity of its own — it is a pore, not an enzyme. Sub-lytic MLKL activity causes K⁺ efflux without killing the cell, which is enough to license NLRP3.
+casp8|Caspase-8-null mice die embryonically, and deleting RIPK3 rescues them completely. The apoptotic machinery is not only an executioner; it is the thing holding the lytic pathway shut. That inversion is why blocking apoptosis pharmacologically can convert a silent death into an inflammatory one.
+panoptosome|The practical consequence for this atlas is that the tidy separation between Loop B and the cell-death arm is a modelling convenience. Where a PANoptosome forms, ASC specks and RIPK3 filaments are the same event, and blocking one output redistributes flux to the others rather than stopping it.
+l1-locus|L1 encodes everything it needs: a 5′UTR promoter, ORF1p (an RNA chaperone) and ORF2p (endonuclease + reverse transcriptase). Alu and SVA elements have no ORFs at all and hijack ORF2p in trans — which means silencing L1 silences the whole mobile fraction of the genome, and de-silencing it releases all of it.
+alu-locus|Alus matter here for a reason unrelated to mobility: inverted Alu pairs in 3′UTRs fold into long duplex RNA. That duplex is the endogenous MDA5 ligand the cell must continuously suppress by editing.
+herv-locus|HERV-K and HERV-W envelope proteins are direct TLR4 agonists, and HERV transcripts feed both TLR7/8 and the cytosolic dsRNA pool. Silenced by TRIM28/KAP1 with KRAB zinc-finger proteins rather than by HUSH.
+orf2p|ORF2p is translated at very low efficiency by an unconventional mechanism — the cell keeps it scarce because it is genuinely dangerous. Its reverse transcriptase is dNTP-dependent, which is exactly where SAMHD1 intervenes.
+tprt|The mechanism is the reason retrotransposition is inseparable from DNA damage: every insertion attempt begins with a deliberate nick in the genome, and most attempts abort, leaving the break behind.
+l1-cdna|This is the mechanistic bridge from retroelement biology to interferonopathy. In TREX1-deficient models, L1 cDNA accumulation is a demonstrated source of neuroinflammation; in senescence, L1 de-repression drives the age-associated interferon response. The same ligand class, three different diseases.
+alu-dsrna|The cell has no structural way to distinguish this from viral dsRNA. Its only defence is to chemically mark it: ADAR1 p150 deaminates adenosine to inosine, creating I:U mismatches that destabilise the duplex below the MDA5 filament-nucleation threshold. Lose the editing and self RNA becomes non-self.
+hush|HUSH is remarkable because it identifies retroelements by the SHAPE of the transcription unit rather than by sequence, which lets it silence insertions the genome has never seen before. It recruits MORC2 for chromatin compaction and SETDB1 to deposit H3K9me3.
+dnmt1|Global hypomethylation in cancer and in ageing de-represses L1 by exactly this route, which is why retroelement activity and genomic instability track together across so many conditions.
+zap|ZAP works because the human genome is CpG-depleted while retroelement and viral RNAs are not — a compositional tell rather than a sequence motif.
+adar1|ADAR1 is the reason self dsRNA is tolerated. Loss of ADAR1 editing is AGS6, and the resulting disease is entirely MDA5-dependent: deleting MDA5 rescues ADAR1-null mice. It is the cleanest demonstration in immunology that an autoinflammatory disease can be a failure of self-marking rather than a failure of sensing.
+apobec3|The same enzymes are a major endogenous mutagen in cancer genomes — restriction and mutagenesis are the same activity pointed at different substrates.
+trex1|TREX1 is the cleanest possible control experiment for this entire framework: remove one cytosolic DNA-clearing enzyme and you get lethal cGAS-driven autoimmunity in mice, and AGS1 in humans. Trex1-null disease is fully rescued by cGAS or STING deletion. SAMHD1 haploinsufficiency is the same logic applied one step upstream — instead of failing to clear the DNA, the cell fails to stop making it.
+rnaseh2|Three of the eight AGS loci are RNase H2 subunits. Their loss produces genome-embedded ribonucleotides, replication stress, and DNA fragments that reach the cytosol — arriving at cGAS by a different road than TREX1 loss but ending in the same interferon signature.
+ags-family|Read as a set, the AGS genes are a map of retroelement containment. TREX1 clears the cDNA; RNase H2 clears the hybrids; SAMHD1 starves the reverse transcriptase and sequesters the RNP; ADAR1 marks the duplex RNA as self; MDA5 is the sensor that reads the mark. Mutate any one and the same interferon signature appears. This is why SAMHD1 belongs in this family, and why a heterozygous SAMHD1 variant should be expected to produce an attenuated version of the same syndrome rather than something unrelated to it.
+samhd1|The enzyme is allosterically gated: GTP/dGTP occupy allosteric site 1, the substrate dNTP occupies site 2, and only the fully loaded tetramer hydrolyses. Activity is further switched by CDK1/2–cyclin A phosphorylation at Thr592 — phospho-SAMHD1 retains the genome-stability functions while the dephospho form carries the dNTPase restriction activity. That split is why any therapy that changes total SAMHD1 protein must be evaluated for BOTH functions, not just the one being targeted. DELIBERATELY NOT AN EDGE — the SAMHD1/NK-function relation. It is context-dependent with opposite signs, so no single signed edge can carry it, and this note exists so the next person to reach for one hits the same wall rather than picking a direction. In the TUMOUR microenvironment SAMHD1 RESTRAINS NK killing: selectively depleting tumour-associated SAMHD1 improves NK-mediated killing (Sun 2025), and SAMHD1-expressing breast tumours carry shorter time-to-progression via downregulated IL-12 signalling (Gutiérrez-Chamorro 2024). In acute RETROVIRAL infection it does the reverse: Samhd1-KO mice mount weaker NK, CD4+ and CD8+ responses (Barrett 2022) — and only male mice did so. Different cell of origin, different direction, and one of the three findings is sex-limited. Signs multiply along paths in this model, so an edge whose sign cannot be defended is worse than a documented gap.
+a565t|Introducing a polar, hydroxyl-bearing threonine at 565 warps the allosteric pocket walls of site 2 and destabilises the C-terminal regulatory lobe. The only direct functional data — Schneider, LMU Munich 2022 — showed 2.4× reduced protein stability at equal mRNA in LN-18 and THP-1, but ONLY in homozygous/complete-loss models. Heterozygous cells were never tested. gnomAD v4 AF ≈ 1.1×10⁻⁵.
+samhd1-t592|Phosphorylation at T592 also regulates LINE-1 restriction, tying the retroelement and genome-stability arms to the same residue.
+samhd1-mito|This finding matters because it makes the mitochondrial arm a direct, local SAMHD1 function rather than a downstream consequence of cytosolic dNTP excess.
+dntp-pool|Four streams descend from this one number: PURPLE — PNC1/PNC2 overload → POLG stalling → ox-mtDNA → NLRP3 (Loop B) BLUE — mtDNA escape via VDAC1 → cGAS (Loop A bridge) RED — IFN-I → JAK-STAT → ISGs → mitophagy block, ETC suppression GOLD — dG catabolism → uric acid → MSU crystals → NLRP3 (second Loop B input)
+fork|Coquel et al. showed SAMHD1 recruits MRE11 to degrade nascent DNA at stalled forks in a controlled way. Without it, the fork collapses instead, and the resulting single-stranded DNA fragments are released into the cytosol where cGAS binds them. This is interferon induction with no mitochondrion and no retroelement involved.
+ctip|This is a scaffolding function entirely independent of dNTPase activity — which is why the genome-stability arm can fail even when residual enzymatic activity looks adequate.
+rloop|Quantified by S9.6 immunofluorescence — a primary readout in the study and a safety signal in Arm 5, where amlexanox may worsen it by suppressing IRF3-driven SAMHD1 transcription.
+ssdna|The Arm 7 vs Arm 8 comparison is designed to size this stream: if cGAS inhibition (Arm 8) suppresses ISGs more deeply than VDAC1 blockade (Arm 7), a non-mitochondrial DNA source — this one — is contributing meaningfully.
+apc-antigen|The paper drives this arm two ways — tetanus toxoid–loaded antigen-presenting cells, and EBV gp350 — in addition to the antibody-bead shortcut of CD3/CD28 ligation. That matters for interpretation: TRAILshort suppresses responses to REAL antigen, not only to artificial receptor crosslinking.
+tcr-cd3|The αβ heterodimer does the recognising but carries no enzymatic function; the signalling is done by the CD3 chains bolted to it, whose cytoplasmic tails hold the ITAMs. This is why the pathway can be switched off by a phosphatase without the receptor being blocked, removed, or its antigen displaced — which is exactly what TRAILshort does.
+lck|Lck writes the phosphates that ZAP-70 later reads. Because SHP-1 is a phosphatase, the TRAILshort lesion is best understood as an ERASER acting on what Lck WRITES: the two enzymes contest the same residues, and the balance between them sets whether the receptor signals at all.
+cd28|The two-signal requirement is the T-cell analogue of the priming/activation split that governs NLRP3 in Loop B — a recurring shape in immunology, where a dangerous effector programme needs two independent permissions. Every CD3/CD28 bead experiment in this paper is supplying both.
+trail-fl|Full-length TRAIL is expressed on activated T and NK cells and used to kill virally infected and transformed targets while sparing healthy tissue. Trimerised, it clusters death receptors, recruits FADD and pro-caspase-8 into a DISC, and drives apoptosis — and can additionally signal necroptosis via RIPK1/RIPK3, or non-apoptotic NF-κB and MAPK/p38 in TRAIL-resistant tumour cells. THAT is the route to NF-κB in this arm, and it belongs to the parent ligand, not to TRAILshort. TRAILshort is the dominant negative of all of it.
+trailshort|TRAILshort lacks Cys230 and therefore cannot form the trimer that clusters death receptors. It is presented on cell surfaces AND packaged into extracellular vesicles, which is what lets it act on bystander cells rather than only on the cell that made it — the reason it appears in this compartment at all. Unbiased GEO enrichment finds TRAILshort RNA elevated across COVID-19, Zika, tuberculosis, myelofibrosis, multiple neoplasms, Crohn disease and SLE; prior work adds HIV. The common thread across that list is immune dysfunction, which is the observation the mechanistic work set out to explain.
+dr5|Full-length TRAIL trimerises DR5, recruits FADD and pro-caspase-8 into a DISC, and drives apoptosis, necroptosis or NF-κB. TRAILshort occupies the same receptor and does none of that: DR5 pull-downs after TRAILshort treatment show no FADD, no caspase-8 and no RIPK1, whereas super-killer TRAIL shows all three. The receptor is the same; the signal is entirely different. DR5-KO abolishes TRAILshort signalling, which is what makes DR5 the required junction rather than an incidental binding partner.
+shp1|SHP-1 sits autoinhibited at rest through an intramolecular N-terminal SH2–phosphatase interaction, and is released on engagement by ITIM- or ITSM-bearing receptors, autophosphorylating at Y536. TNFR-family receptors including Fas were already known to recruit it; this paper establishes DR5 doing so in human T cells. Mass spectrometry of TRAILshort-Fc pull-downs identified ZAP-70, CD3ζ and SHP-1 as uniquely TRAILshort-interacting. Both TRAILshort peptide and TRAILshort EVs induce SHP-1 pY536.
+cd3z|Lck phosphorylates the CD3ζ ITAMs on TCR engagement, and the doubly phosphorylated ITAM is what the ZAP-70 tandem SH2 module binds. Because SHP-1 strips the activating phosphates, the ZAP-70–CD3ζ interaction is lost rather than the components being degraded — which is why the effect is reversible on SHP-1 removal.
+zap70|ZAP-70 is the first kinase of the TCR cascade proper, and pY319 is the site the paper tracks by both immunoblot and flow cytometry. CD3/CD28 ligation normally raises p–ZAP-70, p-LAT and p-PLCγ together; TRAILshort pretreatment diminishes all three. TRAILshort alone, without CD3/CD28 stimulation, does nothing — this is a brake on activation, not a stimulus in its own right.
+plcg1|PLCγ1 is where reduced proximal phosphorylation turns into reduced function: less IP3/DAG means less calcium flux and less PKCθ activity, and downstream the paper measures exactly that as fewer CD69+CD40L+ cells, less proliferation, and less IFN-γ. Note that NFAT — the classic calcium-dependent readout — falls only SLIGHTLY, which is why the authors locate the lesion proximally rather than at the transcription factor.
+cd69|Measured by flow cytometry as the CD69+CD40L+CD4+ fraction responding to EBV gp350. TRAILshort EVs reduce it; SHP-1 inhibition raises it back. As an early marker it reports on the proximal block directly, without the confound of the days-long proliferation readouts.
+cd40l|This is the output that makes TRAILshort a TOLERANCE mechanism rather than merely a cytotoxicity block. A T cell that cannot express CD40L cannot license the antigen-presenting cell that activated it, so the suppression propagates outward into the humoral and dendritic compartments as well.
+tcell-prolif|The Transwell design is the load-bearing control: TRAILshort-expressing MEFs suppress proliferation of T cells they never touch. That establishes the effect as EV-mediated and soluble, which is what licenses placing TRAILshort in the extracellular compartment acting on a bystander cell.
+car-t|CAR-T cells signal through the same CD3ζ ITAMs as a native TCR, which is precisely why they are vulnerable here: the CAR changes what the cell recognises, not how it transduces. TRAILshort MEFs impaired CD19 CAR-T–mediated control of lymphoma in vivo. If that generalises, TRAILshort level is a candidate predictive biomarker for CAR-T failure, and anti-TRAILshort a candidate combination partner.
+anti-trailshort|In co-cultures of patient T cells with autologous TRAILshort-expressing B cells, anti-TRAILshort antibody raised IFN-γ secretion across marginal zone lymphoma, DLBCL and florid lymphoid hyperplasia (P < 0.05). In humanised mice TRAILshort promoted persistence of transformed MEFs and L428 cells and antagonised CD19-directed CAR-T activity, so neutralisation is the proposed route to restoring it.
+nsc87877|SHP-1 inhibition raised CD69+CD40L+CD4+ frequency and IFN-γ in TRAILshort-treated T cells responding to EBV antigen, and restored proliferation against TRAILshort EVs. But pharmacological inhibition reversed the ZAP-70 phosphorylation defect far less completely than CRISPR KO or siRNA knockdown of SHP-1 did. The authors attribute this to the limited potency and specificity of the compound — so read this node as validating the TARGET, not as endorsing this molecule.
+upadacitinib|Short-course JAK1 inhibition resolves the inflammatory arm of this disease almost completely while leaving core fatigue and metabolic dysfunction largely intact. That split is the empirical basis for the two-arm (and later three-arm) model: a JAK–STAT-driven inflammatory component, and a metabolic/bioenergetic component that requires upstream rescue.
+amlexanox|Because TBK1/IKKε is the master switch linking cGAS–STING to IRF3/7 transactivation, this clamp suppresses IFN production upstream of everything JAK inhibition touches. Reilly et al. showed the same target improves obesity-related metabolic dysfunction, so it lands on both arms at once.
+polyiclc|Arm 3 alone is expected to improve genomic-stability endpoints while provoking an interferon surge. Arm 4 adds upadacitinib to test whether the genome-stability gain can be uncoupled from the surge. Dosing follows the published ME/CFS poly I:C PBMC protocol of Che et al. 2025 (0.2–20 µg/ml, 12–48 h).
+vbit4|Dose constraint is non-negotiable: above ~10 µM VBIT-4 produces VDAC1-INDEPENDENT membrane disruption, so the arm runs a strict 5 µM ceiling with PI/annexin-V viability gating at every timepoint. ISG suppression at non-cytotoxic concentrations is required for the result to mean anything.
+imsb301|Predicted outcome is the single highest-value result in Axis 3: ISG and IFN normalised, while IL-1β, ASC specks and caspase-1 p20 stay UNCHANGED. With Arm 9's mirror-image profile, that pair is the definitive Loop A/B independence matrix in primary human heterozygous cells.
+mcc950|Predicted mirror image of Arm 8: IL-1β, IL-18, ASC specks and caspase-1 p20 normalised; ISG signature unchanged. Residual IL-1β despite confirmed absence of ASC specks would implicate a caspase-1-independent maturation route — which points at allopurinol as an adjunct.
+plp|The bifurcating prediction is what makes this arm worth running: Outcome A — Loop B suppressed, Loop A intact: the two loops are independently gated, and VDAC1 oligomerisation is driven by existing mtROS tone rather than by PNC1 substrate flux. Outcome B — both suppressed: PNC1-driven mtROS is the dominant upstream driver, and the therapeutic target hierarchy shifts to the inner membrane. Null — neither: heterozygous dNTP excess is below the SLC25A33 overload threshold, meaning this arm needs near-complete dNTPase loss to engage. Equally informative, and it defines the haploinsufficiency threshold. The class has a positive control now. Liu 2026 blocked mitochondrial dNTP transport pharmacologically and abolished NLRP3 hyperactivation in macrophages from Samhd1-deficient mice AND from obese human donors — the rescue experiment that anchors Loop B. That validates the TARGET, not this compound: PLP itself remains graded I here, because nobody has run pyridoxal 5′-phosphate against a SAMHD1-haploinsufficient cell.
+naci|Distinguished from AGS, SAVI and CANDLE by kinetics and biomarkers rather than by signalling architecture: non-acute (persistently engaged, not episodic), chronic (sustained over decades, progressive rather than episodic), and acting through intracellular ISG induction rather than elevated serum cytokines. That last property is the clinically actionable part — it predicts that standard cytokine panels will read normal in active multi-system disease, and it redirects workup toward IFN-α/β, free ISG15, CXCL10 and ISG scoring.
+mecfs|Heightened innate immunity, mitochondrial dysfunction, lipid oxidation and a Warburg shift are all documented in ME/CFS cohorts independently. SAMHD1 haploinsufficiency is proposed as a genetic driver of that convergent interferon–mitochondrial phenotype in a subset — not as an explanation for all of ME/CFS. Falling age at onset across generations is consistent with apparent anticipation, plausibly from cumulative genomic instability or telomere attrition.
+psa|The distinction matters: PsA is established at the diagnosis level, whereas SAMHD1-to-PsA causality remains a mechanistic hypothesis pending specialist review and cell-based confirmation.
+steatosis|Two independent drivers converge here. IRF7 → MCP-1 in visceral adipocytes gives the distribution (android, with no subcutaneous lower-body accumulation). The NLRP3/IL-1β arm gives the hepatic insulin resistance — and SAMHD1-null animals develop steatohepatitis with no diet challenge at all, which is why this phenotype is modelled as immune-driven rather than as a caloric-balance problem.
+cancer-risk|Framed as a surveillance rationale, not a claim of present malignancy — and as the reason IRF3→SAMHD1 signalling should not be blunted too aggressively. SAMHD1 is a canonical tumour suppressor in myeloid and lymphoid lineages, so structural uncoupling drives replication stress in exactly the compartments this disease already inflames.
+oxmtdna>nlrp3|Cross-species: SAMHD1 deletion promoted NLRP3 hyperactivation in cells from zebrafish, mice AND humans (Liu 2026). The strongest evidence in this atlas — and it does not extend to Loop C.
+trail-fl>dr5|The signalling TRAILshort displaces. Both ligands occupy the same receptor; only this one clusters it.
+trailshort>dr5|DR5-KO cells lose TRAILshort signalling entirely, establishing this as the required junction. The absence of clustering is the whole mechanism: an occupied but unclustered DR5 recruits a phosphatase instead of a death-inducing signalling complex.
+shp1>zap70|The sign-negative step, and the one the whole arm turns on. CRISPR KO or siRNA of SHP-1 reverses it cleanly; the small-molecule inhibitor only partially.
+plcg1>responder-cell|This is the edge that joins the TCR arm to Loop C. Follow the signs from TRAILshort and the product is negative: the atlas therefore DERIVES a damping of the paracrine IFN-γ source rather than asserting it.
+trailshort>car-t|CAR-T cells transduce through the same CD3ζ ITAMs as a native TCR, so a phosphatase lesion at ZAP-70 reaches them unchanged. The CAR alters recognition, not transduction.
+trailshort>immunodef|The in vivo arm: TRAILshort-knockin promoted persistence of transformed MEFs and L428 lymphoma in humanised mice and antagonised CD19 CAR-T control, while the human association data span chronic viral infection, malignancy and autoimmunity.
+
+§8 EDGES   from|kind|sign|to|ev|loop|label
+cgas|produce|+|cgamp|G|A|ATP + GTP → 2′3′-cGAMP
+cgamp|activate|+|sting|G|A|binds CDN pocket, closes lid
+sting|translocate|+|sting-golgi|G||ER → ERGIC → Golgi trafficking
+sting-golgi|activate|+|tbk1|G|A|CTT recruits TBK1
+sting|activate|+|tbk1|S|A|STING–TBK1 scaffold
+sting|activate|+|nemo|G||STING → NF-κB branch
+dsrna-cyt|sense|+|mda5|S||long duplex → cooperative filament
+dsrna-cyt|sense|+|rigi|G||5′ppp blunt end
+mtdsrna|sense|+|mda5|I||mito dsRNA escape (stressor S5)
+lgp2|activate|+|mda5|G||tunes filament nucleation
+mda5|activate|+|mavs|S||CARD–CARD prion-like seeding
+rigi|activate|+|mavs|G||CARD–CARD seeding
+mda5|activate|+|mavs-perox|G||peroxisomal platform — fast, IFN-independent ISGs
+mavs|activate|+|traf3|G||
+mavs|activate|+|traf6|G||
+mavs-perox|activate|+|traf3|G||
+traf3|activate|+|tbk1|G||K63-Ub scaffolding
+traf3|activate|+|ikke|S||
+traf6|activate|+|ikk|G||K63-Ub → TAK1 → IKK
+tlr3|activate|+|trif|S||TIR–TIR, TRIF-exclusive
+tlr4|activate|+|trif|G||after endocytosis (TRAM-dependent)
+tlr4|activate|+|myd88|G||surface, MAL-dependent
+tlr7|activate|+|myd88|G||
+tlr9|activate|+|myd88|G||
+myd88|activate|+|irak14|G||Myddosome assembly
+irak14|activate|+|traf6|G||
+irak14|phos|+|irf7|G||IRAK1 → IRF7 (pDC burst)
+ll37|bind|+|ll37-dna|G||condenses self-DNA into nuclease-resistant aggregates
+ll37-dna|sense|+|tlr9|G||the conversion step — self-DNA alone is NOT a TLR9 agonist, the complex is
+trif|activate|+|traf3|G||
+trif|activate|+|traf6|G||
+ankib1|produce|+|k11ub|G|ankib1|assembles K11-linked chains
+k11ub|ubiq|+|sting|G|ankib1|substrate 1 — primes STING
+k11ub|ubiq|+|trif|G|ankib1|substrate 2 — primes TRIF
+k11ub|ubiq|+|nemo|G|ankib1|substrate 3 — primes NEMO
+k11ub|ubiq|+|optn|G|ankib1|substrate 4 — primes OPTN
+k11ub|ubiq|+|ankib1|G|ankib1|substrate 5 — AUTO-ubiquitination → proteasomal self-destruction
+optn|activate|+|tbk1|G|ankib1|OPTN recruits TBK1 to the scaffold
+tbk1|phos|+|irf3|S|A|Ser386/396 → dimerisation
+tbk1|phos|+|irf7|S||
+ikke|phos|+|irf7|S|irf7|dominant IRF7 kinase — blocked by SAMHD1 in health
+ikke|phos|+|irf3|G||
+nemo|activate|+|ikk|G||ubiquitin-chain-dependent IKK activation
+ikk|phos|+|ikba|G||Ser32/36 → K48-Ub → proteasome
+ikba|inhibit|-|nfkb|G||masks NLS until degraded
+ikk|activate|+|nfkb|G||releases p65/p50
+pnc1|transport|+|mito-dntp|S||imports cytosolic dNTPs (incl. dGTP) across the inner membrane
+pnc2|transport|+|mito-dntp|G||
+mito-dntp|inhibit|-|polg|I||dGTP skew impairs fidelity + processivity
+polg|degrade|-|mtdna|I||stalling → strand breaks
+polg|produce|+|oxmtdna|S|B|uncontrolled neosynthesis → oxidised product
+mtros|produce|+|oxmtdna|S|B|oxidises nascent mtDNA in situ
+pnc1|drive|+|mtros|I||SLC25A33 upregulation → mtDNA synthesis → mtROS
+vdac1|activate|+|vdac1-oligo|S|A|oligomerisation (loss of SAMHD1 restraint + mtROS)
+mtros|drive|+|vdac1-oligo|S|A|mtROS drives oligomerisation
+mtdna|release|+|mtdna-frag|S|A|escape through the macropore
+vdac1-oligo|release|+|mtdna-frag|S|A|primary constitutive escape route
+mptp|release|+|mtdna-frag|G|A|secondary route, downstream of ΔΨm collapse
+mtdna-frag|sense|+|cgas|S|A|cGAS binds cytosolic dsDNA → Loop A initiation
+oxmtdna|activate|+|nlrp3|S|B|direct NLRP3 ligand → Loop B initiation
+vdac1-oligo|inhibit|-|deltapsi|S||ΔΨm collapse
+deltapsi|inhibit|-|mptp|G||intact potential holds the pore shut — collapse is what lowers the threshold
+deltapsi|activate|+|atp|G||proton-motive force drives Complex V
+deltapsi|activate|+|tom20|G||import is ΔΨm-dependent
+tom20|degrade|-|pink1|G||healthy import → PARL cleavage of PINK1
+etc-i|produce|+|mtros|G||reverse electron transport
+etc-i|activate|+|deltapsi|G||
+etc-iii|activate|+|deltapsi|G||
+etc-iii|produce|+|mtros|G||
+etc-iv|activate|+|deltapsi|G||
+etc-v|produce|+|atp|G||
+ceramide|inhibit|-|etc-iii|G||direct Complex III inhibition + inner-membrane permeabilisation
+ceramide|activate|+|mptp|G||raises mPTP propensity
+succinate|activate|+|hif1a|G||inhibits PHD → normoxic HIF-1α stabilisation
+etc-iii|produce|+|succinate|G||TCA remodelling in M1 skewing
+bik|activate|+|baxbak|S||BH3-only priming
+baxbak|release|+|cytc|S||sublethal / minority MOMP
+mptp|release|+|cytc|G||chronic sublethal leak (TNF-α/ROS driven)
+cytc|inhibit|-|etc-iv|G||losing the shuttle breaks III→IV
+bik|inhibit|-|becn1|S||BH3-only proteins sequester BECN1 → apoptosis bias over mitophagy
+deltapsi|inhibit|-|pink1|G||intact potential imports and destroys PINK1 — collapse is what stabilises it
+pink1|phos|+|parkin|G||pSer65-Ub recruits and activates Parkin
+parkin|activate|+|optn|G||Ub coat read by OPTN/p62 receptors
+optn|bind|+|lc3|G||LIR-motif engagement of the phagophore
+p62|bind|+|lc3|G||
+becn1|activate|+|lc3|G||PI3KC3 initiation
+lc3|translocate|+|autolysosome|G||autophagosome–lysosome fusion
+ctsd|activate|+|autolysosome|I||hydrolytic degradation of cargo
+mtor|inhibit|-|mitf|I||phosphorylation → cytoplasmic retention
+mitf|produce|+|ctsd|I||transcribes lysosomal hydrolases
+mitf|produce|+|dnase2|I||DNase II is a MITF/TFEB lysosomal target gene — the same failure hits it
+autolysosome|activate|+|dnase2|G||acidified compartment licenses the nuclease
+dnase2|degrade|-|mtdna-frag|G|A|THE MISSING EDGE — destroys engulfed mtDNA before it can reach cGAS
+dnase2|degrade|-|l1-cdna|I||lysosomal disposal of retroelement DNA
+dnase1l3|degrade|-|ssdna|G||digests chromatin inside apoptotic microparticles
+drp1|drive|+|mtros|I|sting-fission|fragmentation raises surface-to-volume → more mtROS
+mfn|inhibit|-|drp1|G||fusion opposes fission
+mfn|bind|+|pink1|G||MFN2 is a Parkin substrate on the mitophagy path
+mtdna|produce|+|mtdsrna|I||bidirectional transcription → complementary duplexes
+irf3|translocate|+|ifnb1-gene|S|A|dimer → nuclear import → PRDIII-I
+nfkb|activate|+|ifnb1-gene|G||PRDII — the AND-gate partner
+ifnb1-gene|produce|+|ifnb|S|A|IFN-β synthesis and secretion
+irf7|produce|+|ifna|S|irf7|second-wave IFN-α subtypes
+irf3|produce|+|ifnl|G||
+ifnb|bind|+|ifnar1|S|A|autocrine and paracrine
+ifnb|bind|+|ifnar2|S|A|
+ifna|bind|+|ifnar1|S|irf7|
+ifng|bind|+|ifngr|G||
+ifnl|bind|+|ifnlr|G||
+il1b|bind|+|il1r|G|B|
+tnfa|bind|+|tnfr|G||
+il1r|activate|+|myd88|G|B|TIR-domain recruitment
+tnfr|activate|+|ikk|G||
+tnfr|drive|+|mptp|G||ROS → chronic sublethal mPTP opening (stressor S8)
+ifnar1|activate|+|tyk2|G|A|constitutively associated
+ifnar2|activate|+|jak1|S|A|
+ifngr|activate|+|jak2|G||
+ifngr|activate|+|jak1|G||
+ifnlr|activate|+|jak1|G||
+jak1|phos|+|stat1|S|A|Y701
+tyk2|phos|+|stat2|S|A|Y690
+jak2|phos|+|stat1|G||
+stat1|bind|+|isgf3|S|A|STAT1:STAT2:IRF9 assembly
+stat2|bind|+|isgf3|S||
+irf9|bind|+|isgf3|G||supplies ISRE DNA-binding specificity
+stat1|translocate|+|gas|G||GAF homodimer → GAS
+isgf3|bind|+|isre|S|A|
+isre|produce|+|isg-set|S|A|several hundred ISGs
+gas|produce|+|isg-set|G||
+isg-set|produce|+|isg15|S|A|
+isg-set|produce|+|usp18|S||
+isg-set|produce|+|socs|G||
+isg-set|produce|+|irf7|S|irf7|IRF7 is itself an ISG — the amplifier is interferon-inducible
+isg-set|produce|+|irf1|S||
+stat1|inhibit|-|pgc1a|S||represses PGC-1α → biogenesis failure (stressor #5)
+stat1|inhibit|-|etc-i|S||sustained STAT1/2 suppresses Complexes I and III
+stat1|inhibit|-|etc-iii|S||
+pgc1a|produce|+|tfam|G||NRF1/NRF2 → TFAM → biogenesis
+isg15|activate|+|usp18|S||free ISG15 stabilises USP18 against degradation
+usp18|inhibit|-|ifnar2|S||sterically displaces JAK1 — the primary brake
+socs|inhibit|-|jak1|G||
+irf1|produce|+|isg15|S||IRF1 → PARP12 → ISG15
+isg15|inhibit|-|mfn|S||ISGylation of MFN1/2 blocks PINK1/Parkin mitophagy
+isg15|inhibit|-|becn1|S||ISGylates BECN1, competing with activating K63-Ub (KEYSTONE stressor S6)
+irf7|produce|+|mcp1|S||transactivates MCP-1 in VISCERAL adipocytes only
+atp|produce|+|gdf15|G||integrated mitochondrial stress response
+nfkb|produce|+|il6|G||
+nfkb|produce|+|tnfa|G||
+nfkb|produce|+|il23|G||
+nfkb|produce|+|ikba|G||its own inhibitor — the oscillator that a constitutive drive flattens
+il23|drive|+|il17a|G||Th17 differentiation
+nfkb|produce|+|nlrp3|S|B|signal 1 — transcriptional priming
+nfkb|produce|+|proil1b|G|B|signal 1 — pro-IL-1β transcription
+mtros|activate|+|nfkb|S|B|mtROS primes NF-κB
+msu|activate|+|nlrp3|I|B|GOLD feedforward — crystal activation, cGAS-independent
+urate|produce|+|msu|I|B|urate retention → crystal formation in cytosol
+p2x7|activate|+|nlrp3|G||K⁺ efflux
+mtros|activate|+|nlrp3|G|B|mtROS as signal 2
+nek7|bind|+|nlrp3|G||licenses oligomerisation
+mtdna-frag|sense|+|aim2|G||the same fragment pool that feeds cGAS also feeds AIM2
+l1-cdna|sense|+|aim2|I||retroelement cDNA as inflammasome ligand
+micronucleus|sense|+|aim2|G||
+aim2|activate|+|asc|G||nucleates ASC DIRECTLY — no NLRP3, no NEK7, no priming, and no MCC950 sensitivity
+mtdna-frag|sense|+|ifi16|G||
+ssdna|sense|+|ifi16|G||nuclear ligands from replication stress
+ifi16|activate|+|sting|G|A|promotes cGAMP production and STING activation — a cooperator, not a rival
+ifi16|activate|+|asc|G||
+isg-set|produce|+|aim2|G||both ALRs are interferon-inducible
+isg-set|produce|+|ifi16|G||
+aim2|drive|+|psa|G||cytosolic DNA activates AIM2 in psoriatic keratinocytes
+nlrp3|activate|+|asc|S|B|PYD–PYD nucleation of the speck
+asc|activate|+|casp1|S|B|CARD–CARD → proximity-induced autoprocessing
+casp1|produce|+|il1b|S|B|cleaves pro-IL-1β → mature IL-1β
+proil1b|produce|+|il1b|S|B|maturation
+casp1|produce|+|il18|S|B|
+casp1|activate|+|gsdmd|G||cleaves GSDMD
+gsdmd|translocate|+|gsdmd-pore|G||N-terminal fragment oligomerises in the plasma membrane
+gsdmd-pore|release|+|il1b|G||unconventional secretion
+gsdmd-pore|drive|+|pyroptosis|G||above lytic threshold
+il1b|activate|+|nfkb|G|B|IL-1R → further NF-κB priming (Loop B closure)
+pyroptosis|release|+|mtdna-frag|G||DOTTED CROSS-LINK — pyroptotic mtDNA reactivates bystander cGAS
+il1b|produce|+|ceramide|S||IL-1β → ceramide synthesis → inner-membrane injury
+traf6|activate|+|tak1|G||K63 chains read by TAB2/3
+tak1|phos|+|ikk|G||Ser177/181 on the activation loop
+lubac|produce|+|m1ub|G||the only E3 that builds head-to-tail chains
+m1ub|ubiq|+|nemo|G||linear chains on NEMO stabilise the active IKK complex
+a20|inhibit|-|nemo|G||strips K63, adds K48 — the pathway's own off-switch
+cyld|inhibit|-|nemo|G||removes K63 and M1 chains
+otulin|degrade|-|m1ub|G||linear-chain-specific hydrolysis, counter-balancing LUBAC
+nfkb-targets|produce|+|a20|G||A20 is an NF-κB target gene — negative feedback
+nik|phos|+|ikka|G||
+ikka|activate|+|relb|G||p100 → p52 partial proteasomal processing
+relb|produce|+|baff|G||
+tbk1|activate|+|nik|I||TBK1/IKKε cross-talk into the non-canonical arm
+nfkb|translocate|+|nfkb-targets|S||nuclear import → κB elements
+nfkb-targets|produce|+|nlrp3|S|B|NLRP3 protein — signal 1
+nfkb-targets|produce|+|proil1b|G|B|pro-IL-1β — inflammasome substrate 1
+nfkb-targets|produce|+|proil18|G|C|pro-IL-18 — inflammasome substrate 2
+nfkb-targets|produce|+|il23|G||IL-23p19 — the Th17 driver
+nfkb-targets|produce|+|il6|G||
+nfkb-targets|produce|+|tnfa|G||
+nfkb-targets|produce|+|cxcl8|G||
+nfkb-targets|produce|+|ikba|G||its own inhibitor — the oscillator a constitutive drive flattens
+proil18|produce|+|il18|S|C|caspase-1 cleavage → mature IL-18
+casp1|activate|+|proil18|S|C|cleaves pro-IL-18
+samhd1|inhibit|-|nfkb-targets|S||BRAKE 4 — suppression here lowers the entire priming layer at once
+il18|bind|+|il18r|G|C|STEP 1 — mature IL-18 crosses to a NEIGHBOURING cell
+il18bp|inhibit|-|il18|G||decoy — only FREE IL-18 signals
+il18r|activate|+|myd88|G|C|STEP 2 — TIR domain, the same module TLRs use
+il12|bind|+|il12r|G|C|STEP 3 — second signal, from the same inflamed myeloid cell
+nfkb-targets|produce|+|il12|G||IL-12p35/p40 from the activated myeloid cell
+il12r|phos|+|stat4|G|C|STEP 4 — TYK2/JAK2 → STAT4
+stat4|produce|+|tbet|G|C|STEP 5 — T-bet opens the IFNG locus
+tbet|activate|+|responder-cell|G|C|Th1/NK effector programme
+il18r|activate|+|responder-cell|G||
+responder-cell|produce|+|ifng|G|C|STEP 6 — IFN-γ requires BOTH signals; neither alone suffices
+ifng|bind|+|ifngr|G|C|STEP 7 — paracrine return to the cell that started it
+stat1|bind|+|gaf|G|C|STEP 8 — STAT1 homodimer, not ISGF3
+gaf|translocate|+|gas|G|C|GAS elements — a different programme from ISRE
+gas|produce|+|cxcl9-11|G|C|CXCR3 ligands recruit more Th1/NK — tissue-level amplification
+gas|produce|+|ciita|G||
+gas|produce|+|nos2|G||
+gas|produce|+|il18bp|G||the loop induces its own brake — as the type-I arm does with USP18
+gas|produce|+|m1|S|C|STEP 9 — classical macrophage activation
+cxcl9-11|drive|+|responder-cell|G|C|recruits more responders — Loop C amplifies at tissue scale
+m1|drive|+|mtros|S|C|STEP 10 — M1 metabolic reprogramming raises mtROS
+m1|produce|+|succinate|G|C|broken TCA cycle → succinate accumulation
+nos2|inhibit|-|etc-i|G||NO S-nitrosylates Complex I
+nos2|inhibit|-|etc-iv|G||NO competes with O₂ at cytochrome c oxidase
+m1|inhibit|-|deltapsi|S||M1 skewing accompanies ΔΨm collapse in Samhd1-KO
+tlr7|activate|+|pdc|G||ssRNA — a pDC expresses essentially only TLR7 and TLR9 among the TLRs
+tlr9|activate|+|pdc|G||CpG DNA — the receptor the LL-37 arm converts a SELF ligand for
+irf7|activate|+|pdc|G||constitutively high resting IRF7 licenses the burst — a licensing step, not lineage
+pdc|produce|+|ifna|G||the IFN-α burst — the reason one rare cell type can set the interferon tone of a tissue
+il23|bind|+|il23r|G||
+il23r|phos|+|stat3|G||JAK2/TYK2 → STAT3
+il6|activate|+|stat3|G||IL-6 is the other STAT3 input — with TGF-β it initiates Th17
+stat3|produce|+|rorgt|G||
+rorgt|activate|+|th17-cell|G||licenses the IL-17 programme
+th17-cell|produce|+|il17a|G||
+th17-cell|produce|+|il22|G||
+il1b|activate|+|th17-cell|G||IL-1β is a Th17-stabilising signal — Loop B feeds the Th17 arm directly
+il17a|bind|+|il17ra|G||
+il17ra|activate|+|act1|G||
+act1|activate|+|traf6|G||IL-17 → NF-κB in the target tissue — a feed-forward at tissue level
+tnfa|activate|+|il17ra|G||TNF-α synergy — IL-17 is weak alone and potent with it
+ifng|drive|+|m1|G||
+cxcl9-11|drive|+|naci|I||CXCL10 as a NACI workup biomarker
+il22|drive|+|psa|G||
+herv-rna|produce|+|z-rna|G||ERV transcripts are the major endogenous Z-form source
+alu-dsrna|produce|+|z-rna|G||alternating purine-pyrimidine repeats flip to Z under torsional strain
+l1-mrna|produce|+|z-rna|I||
+adar1|inhibit|-|z-rna|G||THE MISSING BRANCH — the Zα domain competes with ZBP1 for Z-form, a job separate from A-to-I editing
+adar1|inhibit|-|zbp1|G||ADAR1 Zα mutants cause ZBP1-dependent disease rescued by deleting ZBP1, not MDA5
+z-rna|sense|+|zbp1|G||Zα domains read the left-handed conformation
+zbp1|activate|+|ripk3|G||RHIM–RHIM amyloid-like nucleation
+zbp1|activate|+|ripk1|G||RHIM engagement — the branch point between survival and death
+ripk1|activate|+|ripk3|G||
+ripk1|activate|+|nfkb|G||the survival branch — ubiquitin editing decides which one runs
+lubac|ubiq|+|ripk1|G||M1 chains push RIPK1 toward survival signalling
+ripk3|phos|+|mlkl|G||activation-loop phosphorylation → oligomerisation
+mlkl|drive|+|necroptosis|G||direct plasma-membrane permeabilisation
+casp8|degrade|-|ripk3|G||cleaves RIPK1/RIPK3 — losing this switches death mode rather than preventing death
+casp8|degrade|-|ripk1|G||
+mlkl|activate|+|nlrp3|G|B|sub-lytic MLKL pores drive K⁺ efflux — a second, caspase-1-independent route to ASC specks
+necroptosis|release|+|mtdna-frag|G|A|lytic death spills mtDNA — the same cross-link pyroptosis makes, by a route no caspase inhibitor blocks
+zbp1|activate|+|panoptosome|G||
+nlrp3|bind|+|panoptosome|G||
+ripk3|bind|+|panoptosome|G||
+casp8|bind|+|panoptosome|G||
+panoptosome|activate|+|casp1|G||the three death modes stop being separable here
+zbp1|activate|+|tbk1|G||ZBP1 was first described as a cytosolic DNA sensor driving IRF3
+isg-set|produce|+|zbp1|G||ZBP1 is an ISG — the interferon state raises the sensor while retroelement de-repression raises the ligand
+necroptosis|drive|+|mecfs|I||candidate contributor — untested
+l1-locus|produce|+|l1-mrna|G||Pol II from the internal 5′UTR promoter
+l1-mrna|produce|+|orf1p|G||cap-dependent translation
+l1-mrna|produce|+|orf2p|G||unconventional, very low efficiency
+orf1p|bind|+|l1-rnp|G||cis-preferential RNP assembly
+orf2p|bind|+|l1-rnp|G||
+l1-rnp|translocate|+|tprt|G||nuclear import of the RNP
+orf2p|activate|+|tprt|G||endonuclease nicks at TTAAAA; 3′-OH primes RT
+tprt|produce|+|l1-insertion|I||de novo insertion (usually 5′-truncated)
+tprt|produce|+|l1-cdna|G||aborted / cytoplasmic RT leaves free cDNA
+orf2p|produce|+|l1-cdna|G||reverse transcription — dNTP-dependent
+tprt|produce|+|dsb|G||every insertion attempt starts with a deliberate nick
+l1-insertion|produce|+|l1-locus|I||new copies are new substrate — the pool only grows
+orf2p|activate|+|alu-locus|G||Alu and SVA hijack ORF2p in trans
+alu-locus|produce|+|alu-dsrna|G||inverted pairs in 3′UTRs fold into long duplex
+herv-locus|produce|+|herv-rna|G||
+herv-rna|produce|+|dsrna-cyt|G||
+herv-rna|sense|+|tlr7|G||GU-rich ssRNA in endosomes
+herv-rna|sense|+|tlr4|G||HERV-K/W Env protein is a TLR4 agonist
+alu-dsrna|produce|+|dsrna-cyt|G||
+alu-dsrna|sense|+|mda5|G||THE endogenous MDA5 ligand — self RNA read as viral
+hush|activate|+|setdb1|G||recruits the methyltransferase
+hush|activate|+|morc2|G||ATP-dependent chromatin compaction
+setdb1|produce|+|h3k9me3|G||
+h3k9me3|inhibit|-|l1-locus|G||heterochromatic silencing of young L1s
+morc2|inhibit|-|l1-locus|G||
+dnmt1|inhibit|-|l1-locus|G||CpG methylation of the 5′UTR promoter
+trim28|inhibit|-|herv-locus|G||KRAB-ZFP-directed LTR silencing
+trim28|activate|+|setdb1|G||
+zap|degrade|-|l1-mrna|G||CpG-rich RNA → exosome
+mov10|inhibit|-|l1-rnp|G||helicase destabilises the RNP
+dsrna-cyt|activate|+|oas|G||
+oas|activate|+|rnasel|G||2-5A second messenger
+rnasel|degrade|-|l1-mrna|G||
+adar1|inhibit|-|alu-dsrna|G||A-to-I editing → I:U mismatches destabilise the duplex below the MDA5 threshold
+apobec3|degrade|-|l1-cdna|G||C→U hypermutation of nascent cDNA
+trex1|degrade|-|l1-cdna|G||3′→5′ exonucleolytic destruction before cGAS can bind
+trex1|degrade|-|ssdna|G||clears cytosolic ssDNA generally
+rnaseh2|degrade|-|rloop|G||resolves RNA:DNA hybrids
+rnaseh2|inhibit|-|tprt|G||removes the hybrid intermediate of retrotransposition
+samhd1|inhibit|-|orf2p|S||dNTP starvation of the L1 reverse transcriptase
+samhd1|inhibit|-|l1-rnp|S||promotes stress-granule sequestration of the RNP
+samhd1|inhibit|-|dsrna-cyt|S||sequesters immunostimulatory dsRNA in LLPS condensates
+dntp-pool|activate|+|orf2p|S||elevated dNTPs FUEL reverse transcription — restriction fails in the wrong direction
+l1-cdna|sense|+|cgas|G|A|retroelement cDNA is a cGAS ligand
+micronucleus|sense|+|cgas|G|A|envelope rupture exposes genomic DNA
+trex1|bind|+|ags-family|G||AGS1
+rnaseh2|bind|+|ags-family|G||AGS2/3/4
+samhd1|bind|+|ags-family|S||AGS5 — this family
+adar1|bind|+|ags-family|G||AGS6
+mda5|bind|+|ags-family|G||AGS7 (IFIH1 gain-of-function)
+isg-set|produce|+|apobec3|G||
+isg-set|produce|+|mov10|G||
+isg-set|produce|+|zap|G||
+isg-set|produce|+|adar1|G||ADAR1 p150 is itself interferon-induced
+isg-set|produce|+|oas|G||
+isg-set|produce|+|samhd1|S||SAMHD1 is an ISG — the pathway tries to fix itself and cannot
+a565t|inhibit|-|samhd1|S||2.4× reduced protein stability; ~40–60% residual dNTPase (one functional allele)
+samhd1|phos|+|samhd1-t592|S||CDK1/2–cyclin A phospho-switch
+samhd1|translocate|+|samhd1-mito|S||mitochondrial pool — required in situ
+samhd1|inhibit|-|dntp-pool|S||dNTP triphosphohydrolase — the primary restriction
+dntp-pool|drive|+|pnc1|I||cytosolic excess floods the inner-membrane carriers
+dntp-pool|drive|+|pnc2|I||
+dntp-pool|produce|+|urate|I|B|GOLD stream — dG catabolism → purine degradation → urate retention
+dntp-pool|drive|+|fork|S||unbalanced pools raise replication error rate
+samhd1|inhibit|-|irf7|S||BRAKE 1 — occupies the IRF7 inhibitory domain, blocking IKKε phosphorylation
+samhd1|inhibit|-|nfkb|S||BRAKE 4 — direct suppression of the NF-κB pathway
+samhd1|inhibit|-|mavs|S||impairs IFN-I induction through the MAVS–IKKε–IRF3/7 axis
+samhd1|inhibit|-|ikke|S||
+samhd1-mito|bind|+|vdac1|S||physical interaction on the outer membrane
+samhd1-mito|inhibit|-|vdac1-oligo|S|A|the interaction RESTRAINS oligomerisation — losing it is what opens the macropore
+samhd1-mito|activate|+|deltapsi|S||presence in the compartment preserves ΔΨm
+samhd1|activate|+|bik|S||SAMHD1 directly upregulates BIK in THP-1 cells
+samhd1|inhibit|-|mtor|I||SAMHD1 → mTOR → MITF → CTSD autophagy-lysosomal axis
+samhd1-t592|activate|+|ctip|S||recruits CtIP for end resection → homologous recombination
+samhd1-t592|activate|+|mre11|S||controlled nascent-strand degradation at stalled forks
+samhd1-t592|inhibit|-|rloop|S||prevents R-loop formation
+ctip|inhibit|-|dsb|S||resection commits the break to homologous recombination — i.e. resolves it
+mre11|inhibit|-|fork|S||fork protection — controlled resection prevents collapse
+fork|produce|+|ssdna|S||collapse → immunogenic ssDNA fragments into the cytosol
+rloop|drive|+|dsb|S||transcription–replication conflict
+dsb|drive|+|genomic-instability|S||
+l1-insertion|drive|+|genomic-instability|I||retroelement mutagenic burden
+dntp-pool|drive|+|genomic-instability|S||replication error load
+ssdna|sense|+|cgas|S|A|genomic contribution to the cGAS ligand pool
+dsb|produce|+|micronucleus|G||
+irf3|produce|+|samhd1|S||IRF3 induces SAMHD1 transcription — the "upward" therapeutic direction (Arms 3–4)
+apc-antigen|bind|+|tcr-cd3|G||peptide–MHC engagement — signal 1
+tcr-cd3|activate|+|lck|G||receptor engagement brings Lck to the CD3 tails
+lck|phos|+|cd3z|G||phosphorylates the CD3ζ ITAMs — the phosphates SHP-1 later removes
+cd28|activate|+|tcell-prolif|G||signal 2 — without costimulation, antigen recognition drives anergy rather than activation
+trail-fl|bind|+|dr5|G||trimerises DR5 → DISC → apoptosis, necroptosis, or non-apoptotic NF-κB/p38
+trailshort|inhibit|-|trail-fl|G||dominant negative — blocks TRAIL-mediated apoptosis in producing AND bystander cells
+trailshort|bind|+|dr5|G||binds DR5 preferentially — but cannot trimerise, so the receptor never clusters
+dr5|activate|+|shp1|G||recruits SHP-1 and drives autophosphorylation at Y536
+cd3z|bind|+|zap70|G||phospho-ITAMs dock the ZAP-70 tandem SH2 module — the association TRAILshort disrupts
+shp1|inhibit|-|zap70|G||dephosphorylates ZAP-70 at Y319
+zap70|phos|+|lat|G||phosphorylates LAT at Y191/Y220
+lat|activate|+|plcg1|G||phospho-LAT recruits and activates PLCγ1 (pY783)
+plcg1|activate|+|responder-cell|G||proximal TCR output — CD69/CD40L upregulation, proliferation, cytokine production
+plcg1|activate|+|cd69|G||early activation marker — CD69+CD40L+CD4+ fraction falls under TRAILshort
+plcg1|activate|+|cd40l|G||T-cell help — the output that makes this tolerance rather than only cytotoxicity loss
+plcg1|activate|+|tcell-prolif|G||clonal expansion, by CFSE dilution — suppressed across a Transwell by TRAILshort EVs
+trailshort|inhibit|-|car-t|G||antagonises CD19-directed CAR-T control of lymphoma in humanised mice
+trailshort|drive|+|immunodef|G||T-cell hyporesponsiveness → impaired viral and tumour control
+anti-trailshort|inhibit|-|trailshort|G||neutralises the ligand — restores IFN-γ in patient B-cell malignancy co-cultures
+nsc87877|inhibit|-|shp1|G||SHP-1 inhibition — partial rescue of p–ZAP-70, fuller rescue of CD69/CD40L and IFN-γ
+upadacitinib|inhibit|-|jak1|S||Arm 2 — JAK1-selective
+brepocitinib|inhibit|-|tyk2|G||dual JAK1/TYK2
+amlexanox|inhibit|-|tbk1|G||Arm 5 — cuts IFN production at source
+amlexanox|inhibit|-|ikke|G||
+amlexanox|inhibit|-|samhd1|I||TRADEOFF — suppressing IRF3 lowers SAMHD1 transcription in an already haploinsufficient cell
+polyiclc|activate|+|tlr3|S||Arms 3–4 — agonist, the "upward" direction
+vbit4|inhibit|-|vdac1-oligo|S||Arm 7 — outer membrane, ≤5 µM ceiling
+imsb301|inhibit|-|cgas|S||Arm 8 — cytosolic sensor
+mcc950|inhibit|-|nlrp3|G||Arm 9 — NACHT Walker B motif
+plp|inhibit|-|pnc1|I||Arm 10 — inner membrane, upstream of BOTH loops
+allopurinol|inhibit|-|urate|I||candidate adjunct if the GOLD stream is real
+abe8e|inhibit|-|a565t|I||A·T → G·C reversion to wild type
+ifnb|drive|+|naci|I||tonic, moderate-amplitude, source-driven
+isg-set|drive|+|naci|I||intracellular ISG induction with flat serum cytokines
+atp|drive|+|pem|G||the JAK-refractory bioenergetic residual
+atp|drive|+|mecfs|G||
+naci|drive|+|mecfs|I||
+il17a|drive|+|psa|G||enthesitis at tendon–bone insertions
+il17a|drive|+|connective|G||
+ifng|drive|+|connective|G||STAT1 antagonises TGF-β/Smad3; MMP-1/3 up
+mcp1|drive|+|steatosis|S||visceral adipocyte inflammation → android distribution
+il1b|drive|+|steatosis|S||JAK-resistant hepatic insulin resistance
+hif1a|drive|+|steatosis|G||Warburg shift
+ifnb|drive|+|immunodef|G||IFN-mediated lymphocyte attrition
+ifnb|drive|+|dysautonomia|G||small-fibre neuropathy
+genomic-instability|drive|+|cancer-risk|S||
+
+§9 LOOPS AND STREAMS
+# A stream is a VIEW over the graph: an ordered node chain, not extra data.
+--- purple | PURPLE — dNTPase direct | ev=I | in source figure
+initiated_by: #1 PNC1/PNC2 transporter overload · #2 POLG stalling
+summary: Cytosolic dNTP excess is pushed into the matrix, wrecks mtDNA replication, and the oxidised product becomes an NLRP3 ligand.
+  . This is the stream that runs entirely on nucleotide chemistry. dNTPase failure raises the cytosolic pool by 40–60% with a disproportionate dGTP skew, and that excess floods the PNC1 (SLC25A33) and PNC2 (SLC25A36) carriers in the inner mitochondrial membrane.
+  . A perturbed matrix pool is worse than a large one: POLG fidelity and processivity both degrade when the four dNTPs are out of ratio, especially with excess dGTP. The polymerase stalls, mtDNA strand breaks accumulate, and the uncontrolled neosynthesis that follows yields an OXIDISED product.
+  . The species matters. ox-mtDNA is the direct NLRP3 ligand — it is not what activates cGAS. That is the BLUE stream, using a different escape route and a different sensor. Same organelle, parallel mechanisms.
+chain: a565t > samhd1 > dntp-pool > pnc1 > pnc2 > mito-dntp > polg > mtdna > mtros > oxmtdna > nlrp3
+refs: dolce2001,lunetti2016,liu2026nlrp3,elpeleg2008,docSiege
+--- blue | BLUE — mtDNA escape / cGAS bridge | ev=S | in source figure
+initiated_by: #3 VDAC1 macropore — cytosolic mtDNA fragment escape
+summary: Unoxidised mtDNA fragments leave through the VDAC1 macropore and are bound by cGAS. This is the bridge from PURPLE into RED.
+  . SAMHD1 physically interacts with VDAC1 on the outer membrane, and must be present inside the mitochondrial compartment to prevent membrane-potential collapse and DNA release. Losing that interaction — with mtROS rising underneath — drives VDAC1 into oligomers wide enough to pass DNA.
+  . Two routes exist: the VDAC1 macropore, which is the primary constitutive one, and mPTP opening downstream of ΔΨm collapse. The macropore route is the important one because it runs WITHOUT depolarisation — a living, dividing cell can leak DNA continuously.
+  . The pharmacology settles the mechanism cleanly. VBIT-4 prevents release and fully abolishes the spontaneous ISG response; IMSB301 (cGAS inhibitor) normalises the ISG signature in AGS PBMCs. The route is VDAC1-gated and cGAS-dependent, not oxidation-dependent.
+chain: samhd1-mito > vdac1 > vdac1-oligo > mptp > mtdna > mtdna-frag > cgas > cgamp > sting > tbk1 > irf3 > ifnb1-gene > ifnb
+refs: xu2023vdac1,rabinowitz2025,han2026,west2015,docSiege
+--- red | RED — IFN-I indirect | ev=S | in source figure
+initiated_by: #4 ISG15 → mitophagy doubly blocked · #5 PGC-1α suppression · #6 STAT1/2 → Complexes I and III
+summary: Interferon returns and attacks the mitochondrion transcriptionally — blocking mitophagy, suppressing biogenesis, and shutting down respiration.
+  . This stream is the reason the disease does not simply burn out. Type-I interferon arrives back at IFNAR, runs JAK1/TYK2 → STAT1/STAT2/IRF9 → ISGs, and the ISG programme then damages the organelle that produced the original ligand.
+  . It does so three ways at once. ISG15 ISGylates MFN1/2, blocking PINK1/Parkin mitophagy, and independently ISGylates BECN1, blocking autophagic flux by a second route — the KEYSTONE stressor, because it converts transient damage into permanent accumulation. STAT1 represses PGC-1α, so biogenesis cannot replace what is lost. And sustained STAT1/2 signalling suppresses Complexes I and III directly.
+  . Damaged mitochondria are therefore flagged, not cleared, not replaced, and not respiring. They keep leaking DNA. Once running, this loop needs no new dNTP input at all — which is why upstream rescue alone may not stop it.
+chain: ifnb > ifnar1 > ifnar2 > jak1 > tyk2 > stat1 > stat2 > irf9 > isgf3 > isre > isg-set > isg15 > irf1 > mfn > becn1 > pink1 > parkin > pgc1a > etc-i > etc-iii
+refs: deng2024,xu2015becn1,bhimavarapu2015,mihaylova2024,rabinowitz2025
+--- gold | GOLD — dG catabolism | ev=I | in source figure
+initiated_by: #11 MSU crystal formation — the dG catabolism feedforward
+summary: The same dGTP excess that stalls POLG is also catabolised to urate, and the crystals hit an NLRP3 already primed.
+  . Excess cytosolic dGTP enters purine catabolism and ends at uric acid, because humans lack uricase. Urate retention permits monosodium urate crystal formation in the cytosol — the classic gout ligand, arriving here from a nucleotide-metabolism defect rather than from diet.
+  . This is a feedforward trap: ONE genetic lesion generates both NLRP3 ligands. dGTP excess yields ox-mtDNA through POLG stalling (PURPLE) and MSU crystals through catabolism (GOLD), driving a single sensor from two directions. And because cGAS–STING has already primed NLRP3 via NF-κB, the crystals hit a sensitised target with synergistically greater IL-1β/IL-18 output.
+  . Honest caveat: MSU crystal presence in SAMHD1-null cells has not been confirmed by peer-reviewed primary data. This stream is carried as inferred input only. If it is real, allopurinol becomes an obvious adjunct.
+chain: dntp-pool > urate > msu > nlrp3 > asc > casp1 > il1b
+refs: martinon2006,swanson2019,docSiege
+--- orange | ORANGE — downstream inflammatory | ev=S | in source figure
+initiated_by: #7 IL-1β / NF-κB → ceramide, inner-membrane damage · #8 TNF-α / mPTP opening
+summary: The cytokines the loops produce come back and injure the inner membrane directly.
+  . NF-κB → IL-1β promotes ceramide synthesis, and ceramide does three things to the mitochondrion at once: it inhibits Complex III directly, permeabilises the inner membrane, and raises mPTP propensity. One cytokine, three simultaneous lesions.
+  . TNF-α drives chronic SUBLETHAL mPTP opening through ROS. The result is a persistent cytochrome-c leak rather than an apoptotic burst — which is exactly the phenotype needed for a chronic disease: enough damage to degrade function permanently, not enough to kill the cell and end the signal.
+chain: nfkb > nfkb-targets > il1b > tnfa > ceramide > etc-iii > mptp > cytc > deltapsi
+refs: gudz1997,shoshan2020,docSiege
+--- teal | TEAL — mitophagy failure | ev=S | in source figure
+initiated_by: #9a BIK/BECN1 competition · #9b mTOR–MITF–CTSD lysosomal failure · #9c STING self-reinforcing loop
+summary: Three independent brakes on clearance, so damaged mitochondria are tagged and then simply accumulate.
+  . BIK — which SAMHD1 itself upregulates — sequesters BECN1, biasing the cell toward apoptosis over mitophagy. That is the first block, and it sits upstream of the ISG15 route entirely.
+  . Constitutive mTORC1 activation retains MITF in the cytoplasm, so cathepsin D and the lysosomal hydrolases are under-produced. Autolysosomes form and fail to digest their cargo — damaged mitochondria are trapped one step from destruction, amplifying mtROS while they wait.
+  . And STING activation drives DRP1-mediated fission far in excess of fusion. Fragmentation raises the surface-to-volume ratio, raises mtROS, and multiplies VDAC1 oligomerisation sites — while ISGylated BECN1 blocks clearance of the fragments. Self-sustaining once initiated, independent of new dNTP input.
+chain: bik > becn1 > lc3 > p62 > optn > autolysosome > mtor > mitf > ctsd > sting > drp1 > mtros > vdac1-oligo > isg15 > mfn
+refs: yang2025bik,luo2012,yaxian2025,napolitano2020,xu2015becn1,docSiege
+--- green | GREEN — direct membrane | ev=S | in source figure
+initiated_by: #10 VDAC1 oligomerisation + direct depolarisation
+summary: Losing the SAMHD1–VDAC1 interaction is a structural lesion in its own right, independent of any nucleotide effect.
+  . This stream is what makes the mitochondrial arm a direct SAMHD1 function rather than a downstream consequence of cytosolic dNTP excess. SAMHD1 physically interacts with VDAC1, and Samhd1-KO causes measurable ΔΨm collapse and M1 macrophage skewing.
+  . Membrane potential is the organelle's master state variable: it sets ATP output, protein import, PINK1 stability and the mPTP threshold simultaneously. Collapse is not a symptom here — it re-enters the loop by stopping PINK1 import and lowering the mPTP threshold.
+  . VBIT-4 at non-cytotoxic concentrations (≤5 µM) is the pharmacologic test of this stream, and the dose ceiling is not optional: above ~10 µM the compound disrupts membranes independently of VDAC1, which would make any result uninterpretable.
+chain: samhd1-mito > vdac1 > vdac1-oligo > deltapsi > tom20 > etc-v > atp > m1
+refs: xu2023vdac1,rabinowitz2025,vbit4mem2025
+--- loopA | cGAS–STING (Loop A) | ev=S | in source figure
+initiated_by: Initiated by cytosolic mtDNA FRAGMENTS (VDAC1 macropore / mPTP) — not ox-mtDNA
+summary: The interferon this loop produces comes back and disables the mitophagy that would have cleared the source. That block is what makes it a loop rather than a cascade.
+  . Written out as a chain this reads SAMHD1 → dNTP → mtDNA → cGAS → IFN, and stops. What the compressed version hides is the return leg: type-I interferon does not merely signal outward, it disables the disposal system for the very organelle that produced the ligand. Without that step there is a cascade. With it there is a loop, and the difference is the whole clinical picture.
+  . The species matters at the entrance. Cytosolic mtDNA FRAGMENTS — unoxidised, escaping through the VDAC1 macropore or an open mPTP — are what cGAS binds. cGAS → 2′3′-cGAMP → STING, which traffics ER → ERGIC → Golgi picking up TBK1 en route, then TBK1 → IRF3 → IFNB1 → IFN-β. Note what this is NOT: ox-mtDNA does not activate cGAS. It activates NLRP3, and that is Loop B. Same organelle, different oxidation state, different sensor.
+  . IFN-β returns at IFNAR1/2 → JAK1 + TYK2 → STAT1/STAT2/IRF9 as ISGF3 (not the STAT1 homodimer GAF — that is the IFN-γ arm) → ISRE → several hundred ISGs. ISG15 is the one that closes it: ISGylated MFN1/2 blocks PINK1/Parkin mitophagy, ISGylated BECN1 blocks autophagic flux by a second independent route, unopposed MFN loss tips fusion–fission toward DRP1, fragmentation raises mtROS, and mtROS drives further VDAC1 oligomerisation. More DNA escapes to cGAS. That is what closes it into a loop.
+  . The brake is the ANKIB1/K11-Ub node — ANKIB1 assembles K11-linked ubiquitin on TRIF/NEMO and attenuates the amplification, so the loop runs with its own inhibitor already engaged, exactly as the IFN-γ arm does with IL-18BP. That is the proposed reason a heterozygote smoulders at moderate amplitude instead of presenting in acute interferon crisis. And once running it needs NO new dNTP input — so test it against cGAS blockade (IMSB301 normalises the ISG signature in AGS PBMCs; SAMHD1+cGAS double KO abolishes it) rather than against upstream nucleotide rescue, which alone need not stop it.
+chain: samhd1-mito > vdac1 > vdac1-oligo > mptp > mtdna > mtdna-frag > dnase2 > necroptosis > micronucleus > l1-cdna > ssdna > ifi16 > cgas > cgamp > sting > sting-golgi > tbk1 > irf3 > ifnb1-gene > ifnb > ifnar1 > ifnar2 > jak1 > tyk2 > stat1 > stat2 > irf9 > isgf3 > isre > isg-set > isg15 > mfn > becn1 > pink1 > parkin > drp1 > mtros
+refs: rabinowitz2025,han2026,xu2023vdac1,deng2024,xu2015becn1,betrancourt2026,docSiege
+--- loopB | NLRP3 (Loop B) | ev=S | in source figure
+initiated_by: Initiated by ox-mtDNA (POLG/dNTP route) + MSU crystals — not cytosolic mtDNA fragments
+summary: Priming is the loop; the ligands are only the trigger. NF-κB must build the sensor before ox-mtDNA can fire it, and the IL-1β that results builds it again.
+  . NLRP3 is usually written as though it were a switch that ox-mtDNA flips. It is not. An unprimed cell has neither NLRP3 nor pro-IL-1β in useful amounts, so the ligand arrives at a sensor that is not there. Signal 1 (priming) and signal 2 (activation) are separate events — and it is the priming arm, not the ligand arm, that closes into a loop.
+  . Signal 1: mtROS → NF-κB → the κB target set, which contains NLRP3 itself, pro-IL-1β, IL-6, IL-23 and TNF. Only then does signal 2 matter, and there are two of them arriving in parallel from one lesion: OXIDISED mtDNA, the product of dNTP overload stalling POLG and distinct from the unoxidised fragments feeding Loop A; and MSU crystals, arriving from excess dGTP through purine catabolism to urate, because humans lack uricase. One genetic lesion, two ligands, one sensor.
+  . NLRP3 nucleates a single ASC speck, caspase-1 autoprocesses on it and cleaves pro-IL-1β and pro-IL-18, and mature IL-1β binds IL-1R → MyD88 → NF-κB — priming the sensor that produced it. That is what closes it into a loop, and it is entirely cytosolic: caspase-1 activation does NOT occur inside the mitochondrion. The exit is pyroptotic — caspase-1 cleaves GSDMD, the N-terminal fragment pores the plasma membrane, and above the lytic threshold the cell spills mtDNA into the extracellular space where bystander cGAS picks it up. That dotted cross-link is how Loop B feeds Loop A.
+  . The brakes are A20 (TNFAIP3) and IκBα — both themselves κB targets, so this loop transcribes its own inhibitor and can be fully engaged and still losing, exactly as the type-I arm does with USP18. The two loops are PARALLEL, not sequential, and the rescue data is the proof: IMSB301 (cGAS) does not abolish NLRP3 activation, and MCC950 (NLRP3) does not suppress the ISG signature. Measure ASC specks and caspase-1 p20 — countable, binary readouts — rather than IL-1β alone, which is consumed and cleared.
+chain: mtros > polg > oxmtdna > dntp-pool > urate > msu > nfkb > nfkb-targets > proil1b > mlkl > nlrp3 > asc > casp1 > il1b > proil18 > il18 > il1r > myd88 > gsdmd > gsdmd-pore > pyroptosis > mtdna-frag
+refs: liu2026nlrp3,martinon2006,west2015,swanson2019,shi2015gsdmd,docSiege
+--- gamma | IFN-γ (Loop C) | ev=G | atlas extension
+initiated_by: Extension — not in the source figure
+summary: The paracrine arm: IL-18 leaves the cell, recruits a neighbour to make IFN-γ, and the IFN-γ comes back and drives M1.
+  . The compressed chain SAMHD1 → dNTP → mtDNA → cGAS → NLRP3 → IFN-γ hides its most important step: NLRP3 cannot make IFN-γ, because the affected cell has no IFN-γ programme running. A second cell is required.
+  . Caspase-1 cleaves pro-IL-18, mature IL-18 is secreted, and it binds IL-18R1/IL-18RAP on a neighbouring NK cell or Th1 lymphocyte — signalling through MyD88, the same module a TLR uses. That alone is not enough: IL-12 from the inflamed myeloid cell must also engage IL-12R → TYK2/JAK2 → STAT4 → T-bet, which is what opens the IFNG locus. Only with both signals does IFN-γ appear.
+  . IFN-γ then returns to the original cell: IFNGR1/2 → JAK1 + JAK2 → STAT1 HOMODIMER (GAF, not ISGF3) → GAS elements → IRF1, CXCL9/10/11, CIITA, NOS2 and M1 polarisation. M1 reprogramming raises mtROS and breaks the TCA cycle, which feeds straight back into PURPLE and BLUE. That is what closes it into a loop.
+  . The brake is IL-18BP, a secreted decoy that is itself IFN-γ-inducible — so the loop builds its own inhibitor, exactly as the type-I arm does with USP18. Measure FREE IL-18, not total.
+chain: nlrp3 > asc > casp1 > proil18 > il18 > il18r > myd88 > il12 > il12r > stat4 > tbet > responder-cell > ifng > ifngr > jak1 > jak2 > stat1 > gaf > gas > cxcl9-11 > nos2 > m1 > mtros
+refs: liu2026nlrp3,swanson2019,xu2023vdac1,tannahill2013
+
+§10 PERTURBATIONS   key|label|drug|efficacy|ev|rationale
+# States are DERIVED by propagating one perturbation through the signed edges,
+# not authored per node. Baseline: source=a565t strength=0.9 reach=0.86
+wt|Wild type|||S|Reference state. Every node at 1.0 by definition — this is what the other states are ratios against.
+a565t|A565T baseline|||S|Untreated haploinsufficiency. The perturbation propagates from the variant through the signed graph, so what lights up is what the polarity data actually implies.
+upadacitinib|+ upadacitinib|upadacitinib|0.85|S|JAK1-selective. Cuts the RED stream where it re-enters the cell, so the ISG arm falls while anything upstream of IFNAR is untouched.
+brepocitinib|+ brepocitinib|brepocitinib|0.8|G|Dual JAK1/TYK2. Same arm as upadacitinib, entered one receptor-associated kinase further along.
+amlexanox|+ amlexanox|amlexanox|0.7|G|TBK1/IKKε inhibitor — cuts IFN at the source rather than at the receptor. Carries its own tradeoff edge: suppressing IRF3 also lowers SAMHD1 transcription in an already haploinsufficient cell, and the model propagates that too.
+polyiclc|+ poly-ICLC|polyiclc|0.6|S|The only arm pushing UPWARD: a TLR3 agonist inducing SAMHD1 through IRF3. Watch the sign — raising a restriction factor lowers what it restrains.
+vbit4|+ VBIT-4|vbit4|0.85|S|Blocks VDAC1 oligomerisation, closing the macropore. Cuts the BLUE stream at its escape route, upstream of cGAS.
+imsb301|+ IMSB301|imsb301|0.9|S|cGAS inhibitor. The mirror of Arm 9: the ISG arm goes dark while Loop B stays lit, because ox-mtDNA→NLRP3 never passed through cGAS.
+mcc950|+ MCC950|mcc950|0.85|G|NLRP3 inhibitor. The mirror of Arm 8: IL-1β/IL-18 fall and the interferon arm does not. Note it does NOT touch AIM2 — that is what makes the residual interpretable.
+plp|+ PLP / B6|plp|0.5|I|PNC1 transport inhibition — the only arm upstream of BOTH loops, so it should dim the whole board rather than one stream.
+allopurinol|+ allopurinol|allopurinol|0.8|I|Only meaningful if the GOLD stream is real. Isolates the urate→MSU contribution to NLRP3 from the ox-mtDNA one.
+abe8e|+ ABE8e-YA (reversion)|abe8e|1|I|Correcting the variant itself. Serves as the arithmetic sanity anchor: full reversion should collapse the whole board back onto wild type.
+
+§11 REFS   key|citation|doi/pmid
+docSiege|The Mitochondrion Under Siege — extended figure legend & citation guide (this project)|internal-document
+doc10arm|SAMHD1 Haploinsufficiency in Familial ME/CFS — 10-arm ex vivo study proposal (this project)|internal-document
+docConcept|SAMHD1 A565T concept note — NACI framework (this project)|internal-document
+docGlass|The Glass Cannon Foundation — executive prospectus (this project)|internal-document
+schneider2022|Schneider A. Functional characterisation of SAMHD1 variants in glioblastoma and monocytic cell lines. LMU München doctoral dissertation, 2022.|doi:10.5282/edoc.30871
+rentoft2016|Rentoft M et al. Heterozygous colon cancer-associated mutations of SAMHD1 have functional significance. PNAS 2016;113(17):4723–8.|doi:10.1073/pnas.1519128113
+franzolin2013|Franzolin E et al. The deoxynucleotide triphosphohydrolase SAMHD1 is a major regulator of DNA precursor pools in mammalian cells. PNAS 2013;110(35):14272–7.|
+ji2014|Ji X et al. Structural basis of cellular dNTP regulation by SAMHD1. PNAS 2014;111(41):E4305–14.|
+bester2025|Bester AC et al. SAMHD1 shapes dNTP homeostasis by allosteric regulation in resting cells. Nat Commun 2025.|doi:10.1038/s41467-025-56208-y
+rice2009|Rice GI et al. Mutations in SAMHD1 cause Aicardi-Goutières syndrome at the AGS5 locus. Nat Genet 2009;41:829–32.|
+daddacha2017|Daddacha W et al. SAMHD1 promotes DNA end resection to facilitate DNA repair by homologous recombination. Cell Rep 2017;20(8):1921–35.|
+park2021|Park K et al. AGS-associated gene SAMHD1 preserves genome integrity by preventing R-loop formation. PLoS Genet 2021;17:e1009523.|
+coquel2018|Coquel F et al. SAMHD1 acts at stalled replication forks to prevent interferon induction. Nature 2018;557:57–61.|doi:10.1038/s41586-018-0050-1
+espada2023|Espada CE et al. SAMHD1 impairs type I interferon induction through the MAVS, IKKε, IRF3/7 signalling axis. J Biol Chem 2023;299:104925.|doi:10.1016/j.jbc.2023.104925
+schumann2023|Schumann T et al. Deficiency for SAMHD1 activates MDA5 in a cGAS/STING-independent manner. J Exp Med 2023;220(1):e20220829.|
+wang2018|Wang D et al. SAMHD1 suppresses innate immune responses to viral infections and inflammatory stimuli by inhibiting the NF-κB and interferon pathways. PNAS 2018;115(16):E3798–807.|
+mlcochova2020|Mlcochova P et al. TLR4-mediated pathway triggers interferon-independent G0 arrest and SAMHD1-dependent dNTP depletion. EMBO Rep 2020;21(3):e49420.|
+yang2016irf3|Yang S et al. IRF3 is a key regulation factor for inducing SAMHD1 expression in antiviral innate immunity. Sci Rep 2016;6:29665.|
+betrancourt2026|Betrancourt A, … Rieser E, Walczak H et al. Lysine-11 ubiquitination drives type-I/III interferon induction by cGAS–STING and TLR3/4 via ANKIB1. Nat Cell Biol 2026;28:608–21.|doi:10.1038/s41556-026-01886-z
+west2015|West AP et al. Mitochondrial DNA stress primes the antiviral innate immune response. Nature 2015;520:553–7.|doi:10.1038/nature14156
+rabinowitz2025|Rabinowitz J / Diaz-Griffero F et al. SAMHD1 mitochondrial localisation and the ability to prevent mtDNA release. J Biol Chem 2025.|
+han2026|Han et al. IMSB301 (cGAS inhibitor) normalises IFN/ISG signature in SAMHD1-AGS PBMCs by scRNA-seq. Clin Transl Immunol 2026.|
+ablasser2013|Ablasser A et al. cGAS produces a 2′-5′-linked cyclic dinucleotide second messenger that activates STING. Nature 2013;498:380–4.|
+ng2024|Sun X et al. Targeting STING in dendritic cells alleviates psoriatic inflammation. Cell Mol Immunol 2024;21:738–51.|
+xu2023vdac1|Xu B et al. SAMHD1–VDAC1 interaction; Samhd1-KO impairs ΔΨm and drives M1 skewing. Int J Mol Sci 2023;24:7888.|doi:10.3390/ijms24097888
+shoshan2020|Shoshan-Barmatz V et al. VDAC1 as a central mediator of mitochondria-driven apoptosis and metabolism. Front Oncol 2020.|
+dolce2001|Dolce V et al. PNC1/SLC25A33 as mitochondrial pyrimidine nucleotide carrier. J Biol Chem 2001;276:6742.|pmid:11110787
+lunetti2016|Lunetti P et al. Characterisation of human SLC25A36 (PNC2) as a mitochondrial pyrimidine nucleotide carrier. J Biol Chem 2016;291:12241.|pmid:27129270
+kim2025|Kim D, Jin J, Lee Y-R et al. SLC25A33-mediated mitochondrial DNA synthesis plays a critical role in the inflammatory response of M1 macrophages by contributing to mitochondrial ROS and VDAC oligomerization. Int J Biol Sci 2025;21(7):2935–51.|doi:10.7150/ijbs.96563
+dinoia2014|Di Noia MA, Todisco S, Cirigliano A et al. The human SLC25A33 and SLC25A36 genes of solute carrier family 25 encode two mitochondrial pyrimidine nucleotide transporters. J Biol Chem 2014;289(48):33137–48. Both carriers also transport GUANINE (deoxy)nucleotides but not adenine — the biochemical basis for routing a dGTP-skewed pool through carriers named for pyrimidines.|pmid:25320081
+sun2025nk|Sun J et al. Selective depletion of tumor-associated SAMHD1 enhances chemotherapeutic efficacy and antitumor immune responses. Signal Transduct Target Ther 2025;10:e02523. Depleting SAMHD1 in TUMOUR cells triggers innate immune responses and IMPROVES NK-mediated killing — a negative-direction relation.|doi:10.1038/s41392-025-02523-1
+gutierrez2024|Gutiérrez-Chamorro L et al. SAMHD1 expression is a surrogate marker of immune infiltration and determines prognosis after neoadjuvant chemotherapy in early breast cancer. Cell Oncol 2024;47(1):189–208. SAMHD1-EXPRESSING tumours showed shorter time-to-progression and overall survival, via downregulated IL-12 signalling.|doi:10.1007/s13402-023-00862-1
+barrett2022|Barrett BS, Nguyen DH, Xu J et al. SAMHD1 promotes the antiretroviral adaptive immune response in mice exposed to lipopolysaccharide. J Immunol 2022;208(2):444–53. Samhd1-KO gave WEAKER NK, CD4+ and CD8+ responses by 14 dpi in Friend retrovirus infection — the opposite direction to the tumour data, and observed in MALE mice only.|doi:10.4049/jimmunol.2001389
+magawa2026|Magawa CT, Eaton-Fitch N, … Marshall-Gradisnik S. Deficient TRPM3-linked mitochondrial Ca²⁺ influx in natural killer cells associated with myalgic encephalomyelitis/chronic fatigue syndrome. BMC Immunol 2026. Fluo-8 AM / Rhod-2 AM live-cell imaging, N=10 ME/CFS vs N=10 HC. Direction is split WITHIN the paper — see the note in data/cytokines.js.|doi:10.1186/s12865-026-00849-1
+sasso2026|Sasso EM, Er TS, Eaton-Fitch N, Hool L, Muraki K, Marshall-Gradisnik S. Large-scale investigation confirms TRPM3 ion channel dysfunction in myalgic encephalomyelitis/chronic fatigue syndrome. Front Med 2026;12:1703924. Whole-cell patch clamp, n=36 ME/CFS vs 42 HC, split across two sites (Griffith NCNED 26/33; UWA 10/9) with no significant site effect.|doi:10.3389/fmed.2025.1703924
+elpeleg2008|Elpeleg O et al. POLG and mtDNA depletion/deletion syndromes. Hum Mol Genet 2008.|
+gudz1997|Gudz TI et al. Direct inhibition of mitochondrial respiratory chain complex III by ceramide. J Biol Chem 1997;272:24154.|pmid:9305864
+yang2025bik|Yang H, Cheung PH, Wu L. SAMHD1 enhances HIV-1-induced apoptosis in monocytic cells via the mitochondrial pathway. mBio 2025;16(7):e00425-25.|doi:10.1128/mbio.00425-25
+luo2012|Luo S et al. BIM inhibits autophagy by recruiting Beclin 1 to microtubules. Mol Cell 2012;47:359–70.|pmid:22742832
+tannahill2013|Tannahill GM et al. Succinate is an inflammatory signal that induces IL-1β through HIF-1α. Nature 2013;496:238–42.|doi:10.1038/nature11986
+deng2024|Deng Z et al. IRF1→PARP12→ISG15→MFN1/2 ISGylation blocks PINK1/Parkin mitophagy. Bone Research 2024;12:63. (Replaces retracted Sliter 2018.)|doi:10.1038/s41413-024-00363-3
+xu2015becn1|Xu D et al. Modification of BECN1 by ISG15 plays a crucial role in autophagy regulation. Autophagy 2015;11(4):617–28.|doi:10.1080/15548627.2015.1023982
+yaxian2025|Yaxian L et al. SAMHD1 deficiency disrupts macrophage autophagy-lysosomal homeostasis via the mTOR–MITF–CTSD axis. Int J Biol Macromol 2025;327:147188.|doi:10.1016/j.ijbiomac.2025.147188
+napolitano2020|Napolitano G et al. A substrate-specific mTORC1 pathway underlies Birt-Hogg-Dubé syndrome. Nature 2020;585:597–602.|doi:10.1038/s41586-020-2444-0
+liu2026nlrp3|Liu D, Zhou C, Wang X, Luo Z, Xu R, … Hancks DC, Chen EH, Liang S, Zhong Z. Nucleotide metabolic rewiring enables NLRP3 inflammasome hyperactivation in obesity. Science 2026;391(6782):eadq9006. Myeloid-conditional Samhd1ΔMye KO AND pharmacologic dNTP-transport blockade, in cells from zebrafish, mice and humans.|doi:10.1126/science.adq9006
+swanson2019|Swanson KV, Deng M, Ting JP-Y. The NLRP3 inflammasome: molecular activation and regulation to therapeutics. Nat Rev Immunol 2019;19:477–89.|doi:10.1038/s41577-019-0165-0
+martinon2006|Martinon F et al. Gout-associated uric acid crystals activate the NALP3 inflammasome. Nature 2006;440:237–41.|doi:10.1038/nature04516
+coll2019|Coll RC et al. MCC950 directly targets the NLRP3 ATP-hydrolysis motif for inflammasome inhibition. Nat Commun 2019;10:2986.|doi:10.1038/s41467-019-10702-2
+shi2015gsdmd|Shi J et al. Cleavage of GSDMD by inflammatory caspases determines pyroptotic cell death. Nature 2015;526:660–5.|
+zhang2015isg15|Zhang X et al. Human intracellular ISG15 prevents interferon-α/β over-amplification and auto-inflammation. Nature 2015;517:89–93.|doi:10.1038/nature13801
+bhimavarapu2015|Bhimavarapu et al. STAT1 represses PGC-1α; STAT1-KO hepatocytes show more mitochondria and higher mtDNA. PLoS One 2015.|
+mihaylova2024|Mihaylova et al. JAK inhibitors improve mitochondrial ATP, coupling and reduce proton leak in PBMCs. Rheumatol Int 2024.|pmid:37985499
+fremond2023|Frémond ML et al. JAK inhibition in monogenic interferonopathies. J Clin Immunol 2023.|pmid:36763178
+rodriguez2023|Rodríguez-García E et al. Homozygous SAMHD1 AGS; divergent phenotypes; JAK inhibitors effective. JIMD 2023.|
+tesser2025|Tesser A et al. Type I interferon signature: a quantitative standardised method for assessment in interferonopathies. Clin Exp Immunol 2025;219(1):uxaf018.|
+crow2006trex1|Crow YJ et al. Mutations in the gene encoding the 3′-5′ DNA exonuclease TREX1 cause Aicardi-Goutières syndrome at the AGS1 locus. Nat Genet 2006;38:917–20.|
+stetson2008|Stetson DB et al. Trex1 prevents cell-intrinsic initiation of autoimmunity. Cell 2008;134:587–98.|
+crow2006rnaseh2|Crow YJ et al. Mutations in genes encoding ribonuclease H2 subunits cause Aicardi-Goutières syndrome. Nat Genet 2006;38:910–6.|
+ricemda5|Rice GI et al. Gain-of-function mutations in IFIH1 cause a spectrum of human disease phenotypes associated with upregulated type I interferon signalling. Nat Genet 2014;46:503–9.|
+riceadar|Rice GI et al. Mutations in ADAR1 cause Aicardi-Goutières syndrome associated with a type I interferon signature. Nat Genet 2012;44:1243–8.|
+ahmad2018|Ahmad S et al. Breaching self-tolerance to Alu duplex RNA underlies MDA5-mediated inflammation. Cell 2018;172:797–810.|
+liddicoat2015|Liddicoat BJ et al. RNA editing by ADAR1 prevents MDA5 sensing of endogenous dsRNA as nonself. Science 2015;349:1115–20.|
+zhao2013samhd1|Zhao K et al. Modulation of LINE-1 and Alu/SVA retrotransposition by Aicardi-Goutières syndrome-related SAMHD1. Cell Rep 2013;4:1108–15.|
+herrmann2018|Herrmann A et al. The SAMHD1-mediated block of LINE-1 retroelements is regulated by phosphorylation. Mob DNA 2018;9:11.|
+hu2015samhd1|Hu S et al. SAMHD1 inhibits LINE-1 retrotransposition by promoting stress granule formation. PLoS Genet 2015;11:e1005367.|
+liu2018hush|Liu N et al. Selective silencing of euchromatic L1s revealed by genome-wide screens for L1 regulators. Nature 2018;553:228–32.|
+tchasovnikarova2015|Tchasovnikarova IA et al. Epigenetic silencing by the HUSH complex mediates position-effect variegation in human cells. Science 2015;348:1481–5.|
+rowe2010|Rowe HM et al. KAP1 controls endogenous retroviruses in embryonic stem cells. Nature 2010;463:237–40.|
+richardson2014|Richardson SR et al. The influence of LINE-1 and SINE retrotransposons on mammalian genomes. Microbiol Spectr 2014;3:MDNA3-0061.|
+goodier2016|Goodier JL. Restricting retrotransposons: a review. Mob DNA 2016;7:16.|
+moldovan2015|Moldovan JB, Moran JV. The zinc-finger antiviral protein ZAP inhibits LINE and Alu retrotransposition. PLoS Genet 2015;11:e1005121.|
+richardson2018|Richardson SR et al. Heritable L1 retrotransposition in the mouse primordial germline and early embryo. Genome Res 2017;27:1395–405.|
+demarco2021|De Cecco M et al. L1 drives IFN in senescent cells and promotes age-associated inflammation. Nature 2019;566:73–8.|
+thomas2017|Thomas CA et al. Modeling of TREX1-dependent autoimmune disease using human stem cells highlights L1 accumulation as a source of neuroinflammation. Cell Stem Cell 2017;21:319–31.|
+zhang2024l1cgas|Reviews of L1 cDNA as a cGAS ligand and the retroelement origin of sterile interferon. (Composite anchor — see Goodier 2016, De Cecco 2019, Thomas 2017.)|
+jiao2020|Jiao H, Wachsmuth L, Kumari S et al. Z-nucleic-acid sensing triggers ZBP1-dependent necroptosis and inflammation. Nature 2020;580:391–395.|doi:10.1038/s41586-020-2129-8
+zhang2022adar|Zhang T, Yin C, Fedorov A et al. ADAR1 masks the cancer immunotherapeutic promise of ZBP1-driven necroptosis. Nature 2022;606:594–602.|doi:10.1038/s41586-022-04753-7
+dereuver2022|de Reuver R, Verdonck S, Dierick E et al. ADAR1 prevents autoinflammation by suppressing spontaneous ZBP1 activation. Nature 2022;607:784–789.|doi:10.1038/s41586-022-04974-w
+upton2012|Upton JW, Kaiser WJ, Mocarski ES. DAI/ZBP1/DLM-1 complexes with RIP3 to mediate virus-induced programmed necrosis. Cell Host Microbe 2012;11:290–297.|doi:10.1016/j.chom.2012.01.016
+sun2012mlkl|Sun L, Wang H, Wang Z et al. Mixed lineage kinase domain-like protein mediates necrosis signaling downstream of RIP3 kinase. Cell 2012;148:213–227.|doi:10.1016/j.cell.2011.11.031
+kaiser2011|Kaiser WJ, Upton JW, Long AB et al. RIP3 mediates the embryonic lethality of caspase-8-deficient mice. Nature 2011;471:368–372.|doi:10.1038/nature09857
+conos2017|Conos SA, Chen KW, De Nardo D et al. Active MLKL triggers the NLRP3 inflammasome in a cell-intrinsic manner. PNAS 2017;114:E961–E969.|doi:10.1073/pnas.1613305114
+malireddi2019|Malireddi RKS, Kesavardhana S, Kanneganti T-D. ZBP1 and PANoptosis. Front Cell Infect Microbiol 2019;9:406.|doi:10.3389/fcimb.2019.00406
+kawane2006|Kawane K, Ohtani M, Miwa K et al. Chronic polyarthritis caused by mammalian DNA that escapes from degradation in macrophages. Nature 2006;443:998–1002.|doi:10.1038/nature05245
+rodero2017|Rodero MP, Tesser A, Bartok E et al. Type I interferon-mediated autoinflammation due to DNASE2 deficiency. Nat Commun 2017;8:2176.|doi:10.1038/s41467-017-01932-3
+lan2014|Lan YY, Londoño D, Bouley R, Rooney MS, Hacohen N. Dnase2a deficiency uncovers lysosomal clearance of damaged nuclear DNA via autophagy. Cell Rep 2014;9:180–192.|doi:10.1016/j.celrep.2014.08.074
+almayouf2011|Al-Mayouf SM, Sunker A, Abdwani R et al. Loss-of-function variant in DNASE1L3 causes a familial form of systemic lupus erythematosus. Nat Genet 2011;43:1186–1188.|doi:10.1038/ng.975
+sisirak2016|Sisirak V, Sally B, D'Agati V et al. Digestion of chromatin in apoptotic cell microparticles prevents autoimmunity. Cell 2016;166:88–101.|doi:10.1016/j.cell.2016.05.034
+hornung2009aim2|Hornung V, Ablasser A, Charrel-Dennis M et al. AIM2 recognizes cytosolic dsDNA and forms a caspase-1-activating inflammasome with ASC. Nature 2009;458:514–518.|doi:10.1038/nature07725
+fernandes2009aim2|Fernandes-Alnemri T, Yu J-W, Datta P, Wu J, Alnemri ES. AIM2 activates the inflammasome and cell death in response to cytoplasmic DNA. Nature 2009;458:509–513.|doi:10.1038/nature07710
+unterholzner2010|Unterholzner L, Keating SE, Baran M et al. IFI16 is an innate immune sensor for intracellular DNA. Nat Immunol 2010;11:997–1004.|doi:10.1038/ni.1932
+jonsson2017|Jønsson KL, Laustsen A, Krapp C et al. IFI16 is required for DNA sensing in human macrophages by promoting production and function of cGAMP. Nat Commun 2017;8:14391.|doi:10.1038/ncomms14391
+dombrowski2011|Dombrowski Y, Peric M, Koglin S et al. Cytosolic DNA triggers inflammasome activation in keratinocytes in psoriatic lesions. Sci Transl Med 2011;3:82ra38.|doi:10.1126/scitranslmed.3002001
+kuroda2020|Kuroda M et al. IRF7 mediates obesity-associated MCP-1 transcription in adipocytes. PLOS ONE 2020;15(5):e0233390.|
+ghazarian2017|Ghazarian M et al. Type I interferon responses drive intrahepatic T cells to promote metabolic syndrome. Sci Immunol 2017;2(10):eaai7616.|
+li2013irf7|Li H et al. IRF7 deficiency prevents diet-induced obesity and insulin resistance. Am J Physiol Endocrinol Metab 2013;305(4):E485–95.|
+reilly2013|Reilly SM et al. An inhibitor of the protein kinases TBK1/IKKε improves obesity-related metabolic dysfunctions. Nat Med 2013;19(3):313–21.|doi:10.1038/nm.3082
+bjork2025|Björk A et al. Amlexanox inhibits production of type I interferon and suppresses B cell differentiation in vitro. RMD Open 2025;11:e005351.|doi:10.1136/rmdopen-2024-005351
+che2025|Che X, Hornig M, Bateman L, Klimas N, Komaroff AL, Lipkin WI et al. Heightened innate immunity may trigger chronic inflammation, fatigue and post-exertional malaise in ME/CFS. npj Metab Health Dis 2025;3:5.|doi:10.1038/s44324-025-00079-w
+verrecchia2004|Verrecchia F, Mauviel A. TGF-β and IFN-γ: ultimate antagonists of extracellular matrix remodelling. Cell Signal 2004;16(11):1309–16.|
+fragoulis2023|Fragoulis GE et al. Type-I interferon pathway and DNA damage accumulation in psoriatic arthritis. Front Immunol 2023;14:1274060.|
+wirth2021|Wirth K, Scheibenbogen C. A unifying hypothesis of ME/CFS pathophysiology: oxidative stress, neuroimmunological impairment, autoantibodies and neuroinflammation affecting small fibre nerves. Free Radic Biol Med 2021;167:154–65.|
+pavlovich2025|Pavlovich CP et al. Confirmation of BIK and SAMHD1 as prostate cancer susceptibility genes. The Prostate 2025;85(16):1556–61.|doi:10.1002/pros.70037
+vbit4mem2025|VBIT-4 produces VDAC1-independent membrane disruption above ~10 µM — dose ceiling rationale. (2025)|
+immunesensor|ImmuneSensor Therapeutics — IMSB301 oral cGAS inhibitor, Phase 1 in AGS, chilblain lupus 1 and COPA syndrome.|
+jochem2026|Jochem M et al. Ubiquitination of glycogen and metabolites in cells and tissues. Nature 2026.|doi:10.1038/s41586-026-10548-x
+jalali2026|Jalali S, Natesampillai S, Nie Z, … Billadeau DD, Badley AD. TRAIL splice variant TRAILshort disrupts T cell receptor signaling and promotes immune tolerance in vivo. J Clin Invest 2026;136(15):e194449.|doi:10.1172/JCI194449
+courtney2018|Courtney AH, Lo W-L, Weiss A. TCR signaling: mechanisms of initiation and propagation. Trends Biochem Sci 2018;43(2):108–23.|doi:10.1016/j.tibs.2017.11.008
+esensten2016|Esensten JH, Helou YA, Chopra G, Weiss A, Bluestone JA. CD28 costimulation: from mechanism to therapy. Immunity 2016;44(5):973–88.|doi:10.1016/j.immuni.2016.04.020
+rudolph2006|Rudolph MG, Stanfield RL, Wilson IA. How TCRs bind MHCs, peptides, and coreceptors. Annu Rev Immunol 2006;24:419–66.|doi:10.1146/annurev.immunol.23.021704.115658
+siegal1999|Siegal FP, Kadowaki N, Shodell M, Fitzgerald-Bocarsly PA, Shah K, Ho S, Antonenko S, Liu Y-J. The nature of the principal type 1 interferon-producing cells in human blood. Science 1999;284(5421):1835–7.|doi:10.1126/science.284.5421.1835
+uematsu2005|Uematsu S, Sato S, Yamamoto M, Hirotani T, Kato H, Takeshita F, Matsuda M, Coban C, Ishii KJ, Kawai T, Takeuchi O, Akira S. Interleukin-1 receptor-associated kinase-1 plays an essential role for Toll-like receptor (TLR)7- and TLR9-mediated interferon-α induction. J Exp Med 2005;201(6):915–23.|doi:10.1084/jem.20042372
+honda2005|Honda K, Yanai H, Negishi H, Asagiri M, Sato M, Mizutani T, Shimada N, Ohba Y, Takaoka A, Yoshida N, Taniguchi T. IRF-7 is the master regulator of type-I interferon-dependent immune responses. Nature 2005;434(7034):772–7.|doi:10.1038/nature03464
+lande2007|Lande R, Gregorio J, Facchinetti V, Chatterjee B, Wang Y-H, Homey B, Cao W, Su B, Nestle FO, Zal T, Mellman I, Schröder J-M, Liu Y-J, Gilliet M. Plasmacytoid dendritic cells sense self-DNA coupled with antimicrobial peptide. Nature 2007;449(7162):564–9. LL-37 condenses self-DNA into aggregates retained in the pDC early endosome that trigger TLR9; self-DNA alone does not.|doi:10.1038/nature06116
+ganguly2009|Ganguly D, Chamilos G, Lande R, Gregorio J, Meller S, Facchinetti V, Homey B, Barrat FJ, Zal T, Gilliet M. Self-RNA–antimicrobial peptide complexes activate human dendritic cells through TLR7 and TLR8. J Exp Med 2009;206(9):1983–94. The TLR7/8 companion to Lande 2007 — cited as context on the ll37 node; the RNA arm itself is deliberately NOT drawn.|doi:10.1084/jem.20090480
+meng2026|Meng X, Zhou Q, Zhu Z, Qiao W, Geng B. Modeling calcific aortic valve disease with engineered human valve tissues identifies SAMHD1 as a therapeutic target. Biomaterials 2026;308:124432.|doi:10.1016/j.biomaterials.2026.124432
+thomsen2026|Thomsen EA, Zhao J, Narita R, Davis LJ, Olagnier D. A genome-wide map of the genetic network in monocytes that regulates type I interferon induction by the cGAS-STING pathway. Sci Signal 2026;19(898):eadx3808.|doi:10.1126/scisignal.adx3808
+plazag2026|Plaza-G AI, Miguez-Amil S, Hayes AM, Ciesielski GL, Feinstein P. Structural and single-molecule insights into the core human mitochondrial DNA replisome. Biochem J 2026;483(15):BCJ20260373.|doi:10.1042/BCJ20260373
+zhang2026ra|Zhang R, Song Z, Xin Q, Xing W, Zhang W. The mitochondrial DNA signal in rheumatoid arthritis: From metabolic victim to inflammatory driver. Biochem Biophys Res Commun 2026;710:154304.|doi:10.1016/j.bbrc.2026.154304
+cobb2026|Cobb L, Kumar J, Roy A, Walsh S, Sheerin U-M. Case of Aicardi-Goutières syndrome diagnosed in adulthood on whole-genome sequencing. BMJ Neurol Open 2026;8(1):e001407.|doi:10.1136/bmjno-2025-001407
+mohanty2026|Mohanty S, Suklabaidya S, Mnatsakanyan N, Jacobson S, Harhaj EW. HTLV-1 Tax induces PINK1-PRKN/parkin-dependent mitophagy to mitigate activation of the CGAS-STING1 pathway. Autophagy 2026;22(7):1–18.|doi:10.1080/15548627.2026.2707897
+gurbuz2026|Gürbüz N, Ismayilova S, Ahmadova G, Çiftçi R, Aksu G. Type I Interferonopathies in the Differential Diagnosis of Vasculitis: A Comprehensive Review. J Vis Exp 2026;209:e71286.|doi:10.3791/71286
+lu2026micro|Lu X, Sun W, Zhang D, Hou B, Tai H. Emerging microbiome–mitochondria crosstalk in host defense and infectious diseases: mechanistic insights into NLRP3 inflammasome activation and mtDNA-mediated immunomodulation. Front Cell Infect Microbiol 2026;16:1866924.|doi:10.3389/fcimb.2026.1866924
+xiao2026fih|Xiao T, Liu Y, He Z, Yang A, Li J. Engineered Exosome-Mediated FIH-1 Delivery for Targeted Therapy of Hyperuricemic Nephropathy by Inhibiting NF-κB/NLRP3 Inflammasome Signaling and Restoring Autophagic Homeostasis. Adv Healthc Mater 2026;15(14):e2501602.|doi:10.1002/adhm.71602
+
+§12 PRIVACY
+Case notes present in this build: YES (16 entries).
+Emitted into this document: NONE — asserted at generation, not assumed.
+Node fields are copied by allow-list (id,label,compartment,klass,evidence,
+pathways,summary,detail,samhd1); caseNote is never read. A private and a
+public build therefore produce byte-identical output.
