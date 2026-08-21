@@ -582,7 +582,14 @@ export const LINKS = [
     "to": "fork",
     "kind": "maintains",
     "evidence": "S",
-    "detail": "Phosphorylated SAMHD1 preserves replication fork protection during DNA synthesis"
+    "detail": "Phosphorylated SAMHD1 preserves replication fork protection during DNA synthesis; asymmetric latch uncoupling in heterozygous A565T complexes causes dominant-negative fork collapse"
+  },
+  {
+    "from": "p-t592",
+    "to": "dna-resection",
+    "kind": "maintains",
+    "evidence": "I",
+    "detail": "Symmetric phosphorylation-gated latch transition is required for coordinated CtIP/MRE11 recruitment to DNA double-strand breaks during homologous recombination"
   },
   {
     "from": "dntpase",

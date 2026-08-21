@@ -510,5 +510,12 @@ export const REFS = {
     "url": "https://doi.org/10.1038/s42255-025-01331-9",
     "finding": "Lactate accumulation in inflamed synovium delivers an arrest signal that traps migrating T cells, promoting local IL-23/Th17 differentiation and tissue enthesitis",
     "doi": "10.1038/s42255-025-01331-9"
+  },
+  "[63]": {
+    "id": "[63]",
+    "short": "Med-Docs In Silico Consortium 2026",
+    "full": "Med-Docs Computational Biophysics Pipeline. Multi-tier structural modeling of SAMHD1 A565T: AlphaFold 3 co-folding ensemble (N=346 runs, 1,795 models) and OpenMM 100 ns explicit-solvent MD simulations. 2026.",
+    "url": "file:///analysis/reports/SAMHD1_AF3_Phosphorylation_Claude_Science_Briefing.md",
+    "finding": "Heterozygous A565T preserves basal allosteric catalytic core under nucleotide saturation (~50% dNTPase capacity), but induces asymmetric latch torsional mismatch upon Thr592 phosphorylation (Dist_CTD_A2 deficit 4.4 Å, pLDDT -4.9), causing dominant-negative uncoupling of PTM-dependent replication fork protection and DNA repair"
   }
 };

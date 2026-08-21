@@ -310,22 +310,23 @@ export const FUNCTIONS = [
   },
   {
     "id": "p-t592",
-    "label": "Phosphorylation at T592",
+    "label": "Phosphorylation at T592 (Latch Switch)",
     "compartment": "nucleus",
     "tier": "regulation",
     "category": "Post-Translational Regulation",
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "CDK1/2-mediated phosphorylation controlling cell cycle progression; dysfunction causes aberrant cell cycle transitions and proliferation defects",
-    "rationale": "Critical cell cycle control mechanism; A565T mutation disrupts CDK-mediated regulation",
-    "locEvidence": "S",
+    "relevance": "CDK1/2-mediated phosphorylation of Thr592 regulates cell cycle progression and replication fork protection. In heterozygous A565T complexes, pre-existing localized interface strain (Thr565-Cys554 aberrant contact) induces asymmetric latch torsional mismatch, uncoupling PTM response and acting as a dominant-negative block to downstream homologous recombination and fork restart",
+    "rationale": "Asymmetric allosteric uncoupling model (v14.4 AF3 ensemble N=346 runs / OpenMM 100ns MD); phosphorylation of WT chains in mixed 2xWT+2xA565T tetramers causes asymmetric torsional mismatch (Dist_CTD_A2 blunted by 4.4 A), poisoning 4-chain cooperative effector recruitment (>85% functional loss for PTM-dependent repair)",
+    "locEvidence": "I",
     "domain": "viral",
-    "lossLabel": "Moderately Impaired",
+    "lossLabel": "Severely Impaired",
     "lossKind": "loss",
-    "loss": 0.5,
+    "loss": 0.85,
     "refs": [
-      "[6]"
+      "[6]",
+      "[63]"
     ],
     "layer": 1
   },
@@ -1216,18 +1217,19 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Obligate cooperative homotetramer assembly driven by dual-site nucleotide occupancy (GTP at Site 1, dGTP/dNTP at Site 2). Monomers and dimers lack catalytic dNTPase activity. Heterozygous A565T disrupts the subunit polar latch, causing non-linear cooperative tetramer collapse (>75% activity loss at 50% protein dosage)",
-    "rationale": "Master allosteric gateway; assumes random 4-subunit assembly from 1:1 WT:mutant monomer pool, yielding a 93.75% probability of containing ≥1 mutant subunit and causing dominant-negative tetramer collapse (>75% activity loss)",
+    "relevance": "Obligate cooperative homotetramer assembly driven by dual-site nucleotide occupancy (GTP at Site 1, dGTP/dNTP at Site 2). Monomers and dimers lack catalytic dNTPase activity. Under basal unphosphorylated conditions, nucleotide clamping stabilizes the catalytic Dimer 1 interface in heterozygous 2xWT+2xA565T complexes (ipTM=0.81), preserving ~50% dosage-limited dNTPase capacity",
+    "rationale": "Dosage-limited haploinsufficiency model; full allosteric saturation (4xGTP + 4xATP) stabilizes the primary catalytic core, preventing complete tetramer collapse in the unphosphorylated basal state (~50% activity loss)",
     "locEvidence": "S",
     "domain": "dntp",
-    "lossLabel": "Critically Impaired",
+    "lossLabel": "Moderately Impaired",
     "lossKind": "loss",
-    "loss": 0.75,
+    "loss": 0.50,
     "refs": [
       "[49]",
       "[50]",
       "[51]",
-      "[55]"
+      "[55]",
+      "[63]"
     ]
   },
   {
