@@ -1,6 +1,9 @@
 ---
 template: home.html
 title: The Glass Cannon Project
+hide:
+  - navigation
+  - toc
 ---
 A patient-and-family-led research effort to characterize heterozygous
 *SAMHD1* p.A565T — a single-copy variant that appears to tune the innate

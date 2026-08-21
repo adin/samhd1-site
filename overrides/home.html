@@ -7,11 +7,17 @@
       ---
       template: home.html
       title: The Glass Cannon Project
+      hide:
+        - navigation
+        - toc
       ---
 
   Everything below is plain HTML styled by docs/stylesheets/glasscannon.css.
   Keep prose that changes often in index.md instead of here where you can.
 #}
+
+{% block site_nav %}
+{% endblock %}
 
 {% block content %}
 <div class="gc-home">
@@ -140,7 +146,7 @@
   </section>
 
   <!-- ── Kindred + objectives ───────────────────────────────────────── -->
-  <section class="gc-sec" style="display:grid; grid-template-columns:1fr 480px; gap:3.25rem; align-items:start">
+  <section class="gc-sec gc-kindred-split">
     <div>
       <span class="gc-kicker">The kindred</span>
       <h2>A hundred years of misdiagnosis, in one family.</h2>

@@ -18,8 +18,8 @@
   --accent:      #f26522;   /* the fuse — replaces the default cyan  */
   --accent-warm: #ffb454;
   --radius:      0;         /* square corners, like the rest of the site */
-  --font: "Archivo", system-ui, -apple-system, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   /* evidence grades stay exactly as they are — they are a shared
      vocabulary with the site and the working documents */
 }
