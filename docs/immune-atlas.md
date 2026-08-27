@@ -151,9 +151,16 @@ It is a **qualitative map**, not a simulation. An arrow means "acts on", not
 no time axis, so it can tell you that a route exists and which direction it
 pushes — but not how much, or how fast, or which route dominates in a real cell.
 
-It is also a **model of one variant's predicted biology**, assembled from
-published mechanism. Nothing in it is a clinical finding, and nothing in it is
-medical advice.
+## Machine-Readable Model Downloads & Permalinks
+
+The complete causal graph and semantic vector embeddings are available for computational biology pipelines, Cytoscape, and LLM agent RAG:
+
+| Format | File & Permalinks | Description | Size |
+| :--- | :--- | :--- | :--- |
+| **Pipe-Delimited Model** | [`samhd1-model.txt`](/samhd1-model.txt) | 248 nodes, 426 edges, 20 layers, S/G/I & L1–L6 evidence | ~230 KB |
+| **Cytoscape CX2 Standard** | [`samhd1-innate-immune-cx2.json`](/samhd1-innate-immune-cx2.json) | Direct import for Cytoscape Desktop, Cytoscape Web & NDEx | ~3.1 MB |
+| **Binary Vector Matrix** | [`samhd1-model-embeddings.npz`](/samhd1-model-embeddings.npz) | High-speed 1536-dim NumPy matrix for sub-millisecond semantic search | **0.86 MB** |
+| **JSON Vector Embeddings** | [`samhd1-model-embeddings.json`](/samhd1-model-embeddings.json) | Complete metadata + 1536-dim OpenAI embedding vectors | 9.8 MB |
 
 ## Colophon
 

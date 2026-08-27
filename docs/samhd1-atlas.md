@@ -111,6 +111,16 @@ references never resolved to a specific paper, preprints, a press release. They
 are shown rather than removed so a reader can judge them; verifying the
 remainder against PubMed is still outstanding work.
 
+## Machine-Readable Model Downloads & Permalinks
+
+The 5-Layer Function Atlas and vector embeddings are available for direct download and computational modeling:
+
+| Format | File & Permalinks | Description | Size |
+| :--- | :--- | :--- | :--- |
+| **Pipe-Delimited Model** | [`samhd1-functions-model.txt`](/samhd1-functions-model.txt) | 74 checkpoints across 5 layers, kinetics, L1–L6 evidence | ~60 KB |
+| **Binary Vector Matrix** | [`samhd1-functions-embeddings.npz`](/samhd1-functions-embeddings.npz) | 1536-dim NumPy matrix for sub-millisecond semantic search | **0.26 MB** |
+| **JSON Vector Embeddings** | [`samhd1-functions-embeddings.json`](/samhd1-functions-embeddings.json) | Complete metadata + 1536-dim OpenAI embedding vectors | 2.9 MB |
+
 ## See also
 
 The [Immune Atlas](immune-atlas.md) picks up where this one leaves off: the
