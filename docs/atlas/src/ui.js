@@ -192,11 +192,15 @@ export function markCompartment(key) {
 function refItem(key) {
   const r = REFS[key];
   if (!r) return `<li>${esc(key)} <em>(missing from refs.js)</em></li>`;
-  const link = r.doi
-    ? ` <a href="https://doi.org/${esc(r.doi)}" target="_blank" rel="noopener">doi</a>`
-    : r.pmid ? ` <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(r.pmid)}/" target="_blank" rel="noopener">PubMed</a>` : '';
-  const tag = r.doc ? '<b style="color:#ffb454">▸ project document — </b>' : '';
-  return `<li>${tag}${esc(r.text)}${link}</li>`;
+  // refs.js schema (2026-09, Phase 3 split): bibliography holds
+  // text/doi/pmid/doc; atlas is always {} for this atlas today (it never
+  // had a curation layer distinct from the citation prose in `text`).
+  const bib = r.bibliography;
+  const link = bib.doi
+    ? ` <a href="https://doi.org/${esc(bib.doi)}" target="_blank" rel="noopener">doi</a>`
+    : bib.pmid ? ` <a href="https://pubmed.ncbi.nlm.nih.gov/${esc(bib.pmid)}/" target="_blank" rel="noopener">PubMed</a>` : '';
+  const tag = bib.doc ? '<b style="color:#ffb454">▸ project document — </b>' : '';
+  return `<li>${tag}${esc(bib.text)}${link}</li>`;
 }
 
 function edgeRow(e, selfId) {

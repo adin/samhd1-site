@@ -220,18 +220,25 @@ export function renderInspector(id, cb) {
     for (const rid of n.refs) {
       const r = REFS[rid];
       if (!r) continue;
+      // refs.js schema (2026-09, Phase 3 split): bibliography = source-
+      // identifying/display metadata (short/full/url/doi/pmid); atlas =
+      // this atlas's own curation on top of that source (finding/note/
+      // caution/verifiedBy/flag/duplicateOf). See refs.js's own header
+      // comment for the full contract.
+      const bib = r.bibliography;
+      const a = r.atlas;
       // A corrected entry carries the evidence for its correction, so it reads
       // as verified rather than as an unresolved defect. The duplicate marker
       // stays either way — that is a fact about the list, not a doubt about the
       // source.
-      const flag = r.verifiedBy
-        ? `<span class="cite-ok" title="${esc(r.verifiedBy)}">verified</span>`
-        : r.flag
-        ? `<span class="cite-flag" title="${esc(flagHelp(r.flag))}">${esc(r.flag)}</span>` : '';
-      const dup = r.duplicateOf ? `<span class="cite-flag">same as ${esc(r.duplicateOf)}</span>` : '';
-      p.push(`<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.short)}</a>${flag}${dup}` +
-             (r.caution ? `<br><span class="ref-caution">⚠ ${esc(r.caution)}</span>` : '') +
-             (r.finding ? `<br><span class="ref-find">${esc(r.finding)}</span>` : '') + `</li>`);
+      const flag = a.verifiedBy
+        ? `<span class="cite-ok" title="${esc(a.verifiedBy)}">verified</span>`
+        : a.flag
+        ? `<span class="cite-flag" title="${esc(flagHelp(a.flag))}">${esc(a.flag)}</span>` : '';
+      const dup = a.duplicateOf ? `<span class="cite-flag">same as ${esc(a.duplicateOf)}</span>` : '';
+      p.push(`<li><a href="${esc(bib.url)}" target="_blank" rel="noopener">${esc(bib.short)}</a>${flag}${dup}` +
+             (a.caution ? `<br><span class="ref-caution">⚠ ${esc(a.caution)}</span>` : '') +
+             (a.finding ? `<br><span class="ref-find">${esc(a.finding)}</span>` : '') + `</li>`);
     }
     p.push(`</ol>`);
   }

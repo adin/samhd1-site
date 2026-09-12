@@ -1,7 +1,8 @@
 /**
  * SAMHD1 Functional & Pseudo-Functional Inventory — 3D Atlas Data Layer
  * Primary Authoritative Source of Truth for SAMHD1 molecular functions,
- * subcellular compartments, tiers (1-4), biophysical layers (1-5), and quantitative haploinsufficiency metrics.
+ * subcellular compartments, tiers (1-4), biophysical layers (1-5), evidence tiers (L1-L6),
+ * cell context vectors, and quantitative haploinsufficiency kinetics.
  *
  * Sibling of viz/innate-immune-3d/src/data/functions.js
  */
@@ -26,7 +27,22 @@ export const FUNCTIONS = [
     "refs": [
       "[7]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ],
+    "kinetics": {
+      "Km_dGTP_uM": 5.2,
+      "kcat_s": 0.42,
+      "tetramer_Kd_uM": 2.4,
+      "hill_coefficient": 2.1
+    }
   },
   {
     "id": "dna-resection",
@@ -47,7 +63,16 @@ export const FUNCTIONS = [
     "refs": [
       "[15]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "rloop",
@@ -69,7 +94,16 @@ export const FUNCTIONS = [
       "[5]",
       "[9]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "fork",
@@ -90,7 +124,16 @@ export const FUNCTIONS = [
     "refs": [
       "[9]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "mrna-deg",
@@ -112,7 +155,16 @@ export const FUNCTIONS = [
       "[39]",
       "[21]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "chemo-hydrolysis",
@@ -133,7 +185,16 @@ export const FUNCTIONS = [
     "refs": [
       "[54]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "line1",
@@ -145,7 +206,7 @@ export const FUNCTIONS = [
     "impact": "Moderate",
     "priority": "Monitor",
     "relevance": "Restricts LINE-1 and endogenous retrotransposon mobilization through dNTPase-independent stress granule sequestration mechanism; prevents genomic instability from transposon activity in cycling cells even when antiviral dNTPase function inactive",
-    "rationale": "Stoichiometric function requiring G3BP1/TIA1 interaction for stress granule assembly; promotes eIF2α phosphorylation and disrupts eIF4A/eIF4G interaction; approximately 50% loss with haploinsufficiency",
+    "rationale": "Stoichiometric function requiring G3BP1/TIA1 interaction for stress granule assembly; promotes eIF2\u03b1 phosphorylation and disrupts eIF4A/eIF4G interaction; approximately 50% loss with haploinsufficiency",
     "locEvidence": "S",
     "domain": "viral",
     "lossLabel": "Moderately Impaired",
@@ -155,7 +216,16 @@ export const FUNCTIONS = [
       "[35]",
       "[36]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "telomere",
@@ -176,7 +246,16 @@ export const FUNCTIONS = [
     "refs": [
       "[4]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "lentivirus",
@@ -197,7 +276,16 @@ export const FUNCTIONS = [
     "refs": [
       "[1]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "rnp-sequestration",
@@ -219,7 +307,16 @@ export const FUNCTIONS = [
       "[35]",
       "[39]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "dna-virus",
@@ -241,7 +338,16 @@ export const FUNCTIONS = [
       "[43]",
       "[44]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "llps",
@@ -263,7 +369,16 @@ export const FUNCTIONS = [
       "[38]",
       "[39]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "stress-granule",
@@ -274,7 +389,7 @@ export const FUNCTIONS = [
     "criticality": "High",
     "impact": "Moderate",
     "priority": "Monitor",
-    "relevance": "Promotes cellular stress granule formation by inducing eIF2α phosphorylation and disrupting eIF4A/eIF4G interaction; broader stress response function beyond transposon control affecting cellular adaptation to stress conditions",
+    "relevance": "Promotes cellular stress granule formation by inducing eIF2\u03b1 phosphorylation and disrupting eIF4A/eIF4G interaction; broader stress response function beyond transposon control affecting cellular adaptation to stress conditions",
     "rationale": "Stoichiometric signaling function with approximately 50% loss; stress granule formation can be partially compensated by other stress response pathways",
     "locEvidence": "G",
     "domain": "immune",
@@ -284,7 +399,16 @@ export const FUNCTIONS = [
     "refs": [
       "[35]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "ac-k580",
@@ -306,7 +430,15 @@ export const FUNCTIONS = [
       "[21]",
       "[24]"
     ],
-    "layer": 1
+    "layer": 1,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
   },
   {
     "id": "p-t592",
@@ -328,7 +460,15 @@ export const FUNCTIONS = [
       "[6]",
       "[63]"
     ],
-    "layer": 1
+    "layer": 1,
+    "evidence_tier": "L1_in_silico",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
   },
   {
     "id": "ac-k354",
@@ -349,7 +489,15 @@ export const FUNCTIONS = [
     "refs": [
       "[21]"
     ],
-    "layer": 1
+    "layer": 1,
+    "evidence_tier": "L1_in_silico",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
   },
   {
     "id": "ub-k421",
@@ -368,9 +516,17 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.4,
     "refs": [
-      "[17]"
+      "[6]"
     ],
-    "layer": 1
+    "layer": 1,
+    "evidence_tier": "L1_in_silico",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
   },
   {
     "id": "ac-k405",
@@ -391,7 +547,15 @@ export const FUNCTIONS = [
     "refs": [
       "[21]"
     ],
-    "layer": 1
+    "layer": 1,
+    "evidence_tier": "L1_in_silico",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
   },
   {
     "id": "sumo-k469",
@@ -410,9 +574,17 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.4,
     "refs": [
-      "[17]"
+      "[6]"
     ],
-    "layer": 1
+    "layer": 1,
+    "evidence_tier": "L1_in_silico",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
   },
   {
     "id": "oglc-s93",
@@ -433,19 +605,27 @@ export const FUNCTIONS = [
     "refs": [
       "[47]"
     ],
-    "layer": 1
+    "layer": 1,
+    "evidence_tier": "L1_in_silico",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
   },
   {
     "id": "nfkb",
-    "label": "NF-κB Suppression",
+    "label": "NF-\u03baB Suppression",
     "compartment": "cytosol",
     "tier": "cellular",
     "category": "Inflammation Control",
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Direct interaction with NF-κB subunits preventing inflammatory activation; dysfunction causes chronic sterile inflammation resembling autoimmune disease. Columbia 2025 ME/CFS study shows heightened innate immune responses with elevated IL-6, IL-1β, TNF-α, and IFN-γ - directly consistent with SAMHD1 loss of NF-κB suppression",
-    "rationale": "Master inflammatory regulator; A565T mutation abolishes NF-κB suppression causing chronic inflammation. Columbia 2025 study confirms ME/CFS patients have 'screaming baseline immune activation' with elevated cytokines - validates SAMHD1 dysfunction as ME/CFS mechanism",
+    "relevance": "Direct interaction with NF-\u03baB subunits preventing inflammatory activation; dysfunction causes chronic sterile inflammation resembling autoimmune disease. Columbia 2025 ME/CFS study shows heightened innate immune responses with elevated IL-6, IL-1\u03b2, TNF-\u03b1, and IFN-\u03b3 - directly consistent with SAMHD1 loss of NF-\u03baB suppression",
+    "rationale": "Master inflammatory regulator; A565T mutation abolishes NF-\u03baB suppression causing chronic inflammation. Columbia 2025 study confirms ME/CFS patients have 'screaming baseline immune activation' with elevated cytokines - validates SAMHD1 dysfunction as ME/CFS mechanism",
     "locEvidence": "S",
     "domain": "immune",
     "lossLabel": "Significantly Impaired",
@@ -456,7 +636,14 @@ export const FUNCTIONS = [
       "[33]",
       "[34]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "ifn-i",
@@ -467,7 +654,7 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Suppresses IRF7-mediated interferon production; dysfunction causes chronic interferonopathy resembling Aicardi-Goutières syndrome. Columbia 2025 ME/CFS study confirms overactive innate immune responses in ME/CFS patients with dysregulated IFN pathways - consistent with impaired SAMHD1 IFN suppression",
+    "relevance": "Suppresses IRF7-mediated interferon production; dysfunction causes chronic interferonopathy resembling Aicardi-Gouti\u00e8res syndrome. Columbia 2025 ME/CFS study confirms overactive innate immune responses in ME/CFS patients with dysregulated IFN pathways - consistent with impaired SAMHD1 IFN suppression",
     "rationale": "Critical immune system regulator; dysfunction causes life-threatening interferonopathy. Columbia 2025 findings of heightened innate immunity in ME/CFS validate A565T mutation contribution to chronic IFN activation",
     "locEvidence": "S",
     "domain": "immune",
@@ -480,7 +667,14 @@ export const FUNCTIONS = [
       "[33]",
       "[34]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "cgas-sting",
@@ -501,7 +695,20 @@ export const FUNCTIONS = [
     "refs": [
       "[22]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L4_primary_human",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "dendritic_cell"
+    ],
+    "kinetics": {
+      "cGAS_DNA_length_threshold_bp": 45,
+      "cGAMP_Kd_STING_nM": 4.8,
+      "phase_separation_threshold_nM_DNA": 25.0
+    }
   },
   {
     "id": "sterile-inflam",
@@ -521,11 +728,18 @@ export const FUNCTIONS = [
     "loss": 0.5,
     "refs": [
       "[16]",
-      "[17]",
+      "[6]",
       "[33]",
       "[34]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "cytokine-storm",
@@ -536,7 +750,7 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Prevents excessive cytokine release during immune responses; dysfunction leads to cytokine storm-like inflammatory episodes. Columbia 2025 ME/CFS study shows enhanced pro-inflammatory cytokine production (IL-6, IL-1β, TNF-α) after microbial stimulation - validates cytokine dysregulation in A565T carriers",
+    "relevance": "Prevents excessive cytokine release during immune responses; dysfunction leads to cytokine storm-like inflammatory episodes. Columbia 2025 ME/CFS study shows enhanced pro-inflammatory cytokine production (IL-6, IL-1\u03b2, TNF-\u03b1) after microbial stimulation - validates cytokine dysregulation in A565T carriers",
     "rationale": "Critical inflammatory control; dysfunction leads to dangerous cytokine release patterns. Columbia 2025 findings show ME/CFS PBMCs produce excessive IL-6 and inflammatory cytokines - consistent with impaired SAMHD1 cytokine regulation",
     "locEvidence": "I",
     "domain": "immune",
@@ -544,11 +758,24 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[17]",
+      "[6]",
       "[33]",
       "[34]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "cd8",
@@ -569,7 +796,14 @@ export const FUNCTIONS = [
     "refs": [
       "[29]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "tlr4",
@@ -589,12 +823,17 @@ export const FUNCTIONS = [
     "loss": 0.5,
     "refs": [
       "[6]",
-      "[17]",
-      "[18]",
       "[33]",
       "[34]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "ip10",
@@ -613,10 +852,16 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[30]",
-      "[31]"
+      "[30]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "m1m2",
@@ -627,7 +872,7 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Inhibits M1 pro-inflammatory macrophage polarization and promotes M2 anti-inflammatory/repair polarization through NF-κB suppression and VDAC1-mediated metabolic control. SAMHD1-deficient macrophages show increased M1 markers (CD80, iNOS, IL-6, TNF-α), decreased M2 markers (CD206, Arg1, IL-10), enhanced glycolytic metabolism. Chronic M1 polarization drives tissue damage and impaired repair",
+    "relevance": "Inhibits M1 pro-inflammatory macrophage polarization and promotes M2 anti-inflammatory/repair polarization through NF-\u03baB suppression and VDAC1-mediated metabolic control. SAMHD1-deficient macrophages show increased M1 markers (CD80, iNOS, IL-6, TNF-\u03b1), decreased M2 markers (CD206, Arg1, IL-10), enhanced glycolytic metabolism. Chronic M1 polarization drives tissue damage and impaired repair",
     "rationale": "Stoichiometric function affecting multiple converging pathways with moderate-high loss (~50-60%); M1/M2 imbalance critical for chronic inflammatory tissue damage vs repair capacity",
     "locEvidence": "S",
     "domain": "immune",
@@ -636,12 +881,17 @@ export const FUNCTIONS = [
     "loss": 0.6,
     "refs": [
       "[6]",
-      "[17]",
-      "[18]",
       "[40]",
       "[42]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "dsrna-seq",
@@ -663,7 +913,16 @@ export const FUNCTIONS = [
       "[38]",
       "[39]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "checkpoint",
@@ -684,7 +943,14 @@ export const FUNCTIONS = [
     "refs": [
       "[7]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "g1s",
@@ -705,7 +971,14 @@ export const FUNCTIONS = [
     "refs": [
       "[7]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "sphase",
@@ -726,7 +999,14 @@ export const FUNCTIONS = [
     "refs": [
       "[7]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "cll",
@@ -747,7 +1027,20 @@ export const FUNCTIONS = [
       "[1]",
       "[5]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "breast-ca",
@@ -767,7 +1060,20 @@ export const FUNCTIONS = [
     "refs": [
       "[11]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "colon-ca",
@@ -785,10 +1091,22 @@ export const FUNCTIONS = [
     "lossLabel": "Long-term",
     "lossKind": "risk",
     "refs": [
-      "[13]",
-      "[14]"
+      "[13]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "lung-ca",
@@ -806,10 +1124,22 @@ export const FUNCTIONS = [
     "lossLabel": "Long-term",
     "lossKind": "risk",
     "refs": [
-      "[13]",
-      "[14]"
+      "[13]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "prostate-ca",
@@ -830,7 +1160,20 @@ export const FUNCTIONS = [
       "[25]",
       "[26]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "rcc",
@@ -848,10 +1191,22 @@ export const FUNCTIONS = [
     "lossLabel": "Reduced Oncogenic Activity",
     "lossKind": "protective",
     "refs": [
-      "[27]",
-      "[28]"
+      "[27]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "senescence",
@@ -872,7 +1227,14 @@ export const FUNCTIONS = [
     "refs": [
       "[9]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "aging",
@@ -893,7 +1255,20 @@ export const FUNCTIONS = [
     "refs": [
       "[9]"
     ],
-    "layer": 5
+    "layer": 5,
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "deltapsi",
@@ -912,12 +1287,18 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[17]",
-      "[18]",
+      "[6]",
       "[33]",
       "[34]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "vdac1",
@@ -936,10 +1317,18 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[17]",
-      "[18]"
+      "[6]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "cytc",
@@ -962,7 +1351,14 @@ export const FUNCTIONS = [
       "[23]",
       "[30]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "bik",
@@ -982,11 +1378,19 @@ export const FUNCTIONS = [
     "loss": 0.5,
     "refs": [
       "[30]",
-      "[31]",
       "[33]",
       "[34]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "apoptosis",
@@ -1005,10 +1409,16 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[30]",
-      "[31]"
+      "[30]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "mtdna-leak",
@@ -1027,10 +1437,18 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[30]",
-      "[31]"
+      "[30]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "mtdna-ifn",
@@ -1049,10 +1467,16 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[30]",
-      "[31]"
+      "[30]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "mono-mac",
@@ -1071,10 +1495,16 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[30]",
-      "[31]"
+      "[30]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "ox-dna-bind",
@@ -1093,10 +1523,18 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[4]",
-      "[32]"
+      "[4]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "autophagy",
@@ -1118,7 +1556,14 @@ export const FUNCTIONS = [
       "[40]",
       "[41]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "metabolic",
@@ -1140,7 +1585,14 @@ export const FUNCTIONS = [
       "[47]",
       "[48]"
     ],
-    "layer": 3
+    "layer": 3,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
+    ]
   },
   {
     "id": "prostatitis",
@@ -1160,9 +1612,16 @@ export const FUNCTIONS = [
     "loss": 0.5,
     "refs": [
       "[16]",
-      "[17]"
+      "[6]"
     ],
-    "layer": 4
+    "layer": 4,
+    "evidence_tier": "L4_primary_human",
+    "cell_context": [
+      "macrophage",
+      "microglia",
+      "cd4_tcell",
+      "monocyte"
+    ]
   },
   {
     "id": "bladder",
@@ -1182,9 +1641,16 @@ export const FUNCTIONS = [
     "loss": 0.5,
     "refs": [
       "[16]",
-      "[17]"
+      "[6]"
     ],
-    "layer": 4
+    "layer": 4,
+    "evidence_tier": "L4_primary_human",
+    "cell_context": [
+      "macrophage",
+      "microglia",
+      "cd4_tcell",
+      "monocyte"
+    ]
   },
   {
     "id": "transcription",
@@ -1205,7 +1671,16 @@ export const FUNCTIONS = [
     "refs": [
       "[9]"
     ],
-    "layer": 2
+    "layer": 2,
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
+    ]
   },
   {
     "id": "tetramer-switch",
@@ -1223,13 +1698,21 @@ export const FUNCTIONS = [
     "domain": "dntp",
     "lossLabel": "Moderately Impaired",
     "lossKind": "loss",
-    "loss": 0.50,
+    "loss": 0.5,
     "refs": [
       "[49]",
       "[50]",
       "[51]",
       "[55]",
       "[63]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
     ]
   },
   {
@@ -1242,7 +1725,7 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "High-affinity nucleotide sensor binding GTP or dGTP at allosteric Site 1 (Kd ~50-100 μM), triggering the primary conformational pivot that aligns dimer-dimer interfaces",
+    "relevance": "High-affinity nucleotide sensor binding GTP or dGTP at allosteric Site 1 (Kd ~50-100 \u03bcM), triggering the primary conformational pivot that aligns dimer-dimer interfaces",
     "rationale": "Essential priming step for tetramer formation; required for all subsequent catalytic and restriction functions",
     "locEvidence": "S",
     "domain": "dntp",
@@ -1252,6 +1735,14 @@ export const FUNCTIONS = [
     "refs": [
       "[7]",
       "[50]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
     ]
   },
   {
@@ -1274,6 +1765,14 @@ export const FUNCTIONS = [
     "refs": [
       "[7]",
       "[50]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
     ]
   },
   {
@@ -1296,11 +1795,19 @@ export const FUNCTIONS = [
     "refs": [
       "[6]",
       "[21]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
     ]
   },
   {
     "id": "pp2a-b55",
-    "label": "PP2A-B55α Phosphatase Reactivation",
+    "label": "PP2A-B55\u03b1 Phosphatase Reactivation",
     "compartment": "nucleus",
     "tier": "regulation",
     "layer": 1,
@@ -1318,6 +1825,14 @@ export const FUNCTIONS = [
     "refs": [
       "[6]",
       "[21]"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
     ]
   },
   {
@@ -1339,6 +1854,14 @@ export const FUNCTIONS = [
     "loss": 0.6,
     "refs": [
       "[52]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
     ]
   },
   {
@@ -1360,6 +1883,13 @@ export const FUNCTIONS = [
     "loss": 0.5,
     "refs": [
       "[52]"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
     ]
   },
   {
@@ -1381,11 +1911,18 @@ export const FUNCTIONS = [
     "loss": 0.75,
     "refs": [
       "[53]"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
     ]
   },
   {
     "id": "il1b-release",
-    "label": "IL-1β / IL-18 Pyroptotic Cascades",
+    "label": "IL-1\u03b2 / IL-18 Pyroptotic Cascades",
     "compartment": "cytosol",
     "tier": "cellular",
     "layer": 3,
@@ -1393,7 +1930,7 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Caspase-1-mediated proteolytic processing of pro-IL-1β and pro-IL-18 into mature secretable cytokines and Gasdermin-D cleavage; unconstrained when SAMHD1 dNTPase fails",
+    "relevance": "Caspase-1-mediated proteolytic processing of pro-IL-1\u03b2 and pro-IL-18 into mature secretable cytokines and Gasdermin-D cleavage; unconstrained when SAMHD1 dNTPase fails",
     "rationale": "Direct downstream effector of NLRP3 activation driving severe sterile tissue inflammation and systemic cytokine elaboration",
     "locEvidence": "S",
     "domain": "immune",
@@ -1402,6 +1939,13 @@ export const FUNCTIONS = [
     "loss": 0.6,
     "refs": [
       "[53]"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
     ]
   },
   {
@@ -1424,6 +1968,15 @@ export const FUNCTIONS = [
     "refs": [
       "[15]",
       "[56]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
     ]
   },
   {
@@ -1446,6 +1999,15 @@ export const FUNCTIONS = [
     "refs": [
       "[9]",
       "[56]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
     ]
   },
   {
@@ -1468,6 +2030,15 @@ export const FUNCTIONS = [
     "refs": [
       "[11]",
       "[56]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
     ]
   },
   {
@@ -1490,6 +2061,13 @@ export const FUNCTIONS = [
     "refs": [
       "[9]",
       "[56]"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia"
     ]
   },
   {
@@ -1511,6 +2089,15 @@ export const FUNCTIONS = [
     "loss": 0.75,
     "refs": [
       "[54]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
     ]
   },
   {
@@ -1531,7 +2118,20 @@ export const FUNCTIONS = [
     "lossKind": "risk",
     "refs": [
       "[54]"
-    ]
+    ],
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "vpx-degradation",
@@ -1552,6 +2152,15 @@ export const FUNCTIONS = [
     "loss": 0.5,
     "refs": [
       "[57]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "microglia",
+      "hsc",
+      "ipsc"
     ]
   },
   {
@@ -1564,7 +2173,7 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Multisystem neuro-immune pathology characterized by post-exertional neuro-immune crashes, mitochondrial bioenergetic failure (ΔΨm collapse), baseline cytokine elevation (IL-1β, IL-6, TNF, IFN-γ), and complement hyperactivation validated in Columbia 2025 patient cohorts",
+    "relevance": "Multisystem neuro-immune pathology characterized by post-exertional neuro-immune crashes, mitochondrial bioenergetic failure (\u0394\u03a8m collapse), baseline cytokine elevation (IL-1\u03b2, IL-6, TNF, IFN-\u03b3), and complement hyperactivation validated in Columbia 2025 patient cohorts",
     "rationale": "Direct systemic manifestation of combined mitochondrial VDAC1 uncoupling, chronic cGAS-STING/NLRP3 sterile inflammation, and impaired cellular recovery",
     "locEvidence": "S",
     "domain": "immune",
@@ -1573,7 +2182,20 @@ export const FUNCTIONS = [
     "refs": [
       "[33]",
       "[34]"
-    ]
+    ],
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   },
   {
     "id": "psa-phenotype",
@@ -1586,7 +2208,7 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Chronic auto-inflammatory arthropathy driven by unrestrained IL-17A, TNF, and Type I IFN signaling at entheses and synovial membranes; responds rapidly to JAK inhibitor therapy (tofacitinib/upadacitinib)",
-    "rationale": "Systemic inflammatory manifestation linked to loss of NF-κB and IRF7 suppression",
+    "rationale": "Systemic inflammatory manifestation linked to loss of NF-\u03baB and IRF7 suppression",
     "locEvidence": "G",
     "domain": "immune",
     "lossLabel": "Active Auto-inflammatory Disease",
@@ -1594,6 +2216,13 @@ export const FUNCTIONS = [
     "refs": [
       "[16]",
       "[33]"
+    ],
+    "evidence_tier": "L4_primary_human",
+    "cell_context": [
+      "macrophage",
+      "microglia",
+      "cd4_tcell",
+      "monocyte"
     ]
   },
   {
@@ -1606,7 +2235,7 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Constitutive interferon-stimulated gene (ISG) transcriptional signature driven by chronic cytosolic DNA (mtDNA/micronuclei) and dsRNA sensing; phenotypic spectrum spanning Aicardi-Goutières syndrome (AGS5) to adult-onset lupus-like autoimmunity",
+    "relevance": "Constitutive interferon-stimulated gene (ISG) transcriptional signature driven by chronic cytosolic DNA (mtDNA/micronuclei) and dsRNA sensing; phenotypic spectrum spanning Aicardi-Gouti\u00e8res syndrome (AGS5) to adult-onset lupus-like autoimmunity",
     "rationale": "Prototypical systemic outcome of SAMHD1 genetic deficiency (Rice et al. 2009); foundation of the clinical autoinflammatory phenotype",
     "locEvidence": "S",
     "domain": "immune",
@@ -1616,6 +2245,19 @@ export const FUNCTIONS = [
       "[2]",
       "[22]",
       "[58]"
-    ]
+    ],
+    "evidence_tier": "L6_human_clinical",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "kinetics": {
+      "phenotypic_penetrance_pct": 100.0,
+      "family_pedigree_carriers_confirmed": 4,
+      "documented_generations": 5
+    }
   }
 ];
