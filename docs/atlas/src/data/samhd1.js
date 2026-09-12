@@ -28,7 +28,8 @@ export const nodes = [
       "gutierrez2024",
       "barrett2022"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Composite node citing 7 papers of mixed methodology: structural/recombinant (ji2014, bester2025), cell-line (franzolin2013, daddacha2017), mouse (sun2025nk, barrett2022), and one real human clinical cohort (gutierrez2024, breast cancer patients). A single evidence_tier can't fairly represent all seven -- set to the majority-characteristic tier (cell-line/non-primary-human) rather than the strongest one, since the node's overall claim isn't specifically the gutierrez2024 finding. Fixed 2026-09-12; see redteam audit (commit 20ae777).",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -104,7 +105,7 @@ export const nodes = [
       "doc10arm",
       "teodorocastro2026"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -136,7 +137,7 @@ export const nodes = [
       "rabinowitz2025",
       "xu2023vdac1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -173,7 +174,8 @@ export const nodes = [
       "docSiege",
       "doc10arm"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "The general SAMHD1-regulates-dNTP-pools mechanism (franzolin2013) was shown in mammalian cell lines, not primary human heterozygous cells -- L4_primary_human directly contradicted this node's own `samhd1` field, which says the specific 40-60% heterozygous elevation 'no published work has yet shown'. Fixed 2026-09-12; see redteam audit (commit 20ae777).",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -205,7 +207,7 @@ export const nodes = [
       "coquel2018",
       "park2021"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -236,7 +238,7 @@ export const nodes = [
       "coquel2018",
       "teodorocastro2026"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -304,7 +306,7 @@ export const nodes = [
     "refs": [
       "daddacha2017"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -335,7 +337,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "S",
     "summary": "Repair choice here determines whether the cell keeps its genome or accumulates rearrangements.",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "No refs -- a general DNA-repair-biology node with no independent citation of its own, not something 'demonstrated in primary human cells'. Fixed 2026-09-12; see redteam audit (commit 20ae777).",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -399,7 +402,7 @@ export const nodes = [
       "coquel2018",
       "doc10arm"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -459,23 +462,18 @@ export const nodes = [
       -8
     ],
     "lod": 1,
-    "evidence": "S",
-    "evidence_tier": "L4_primary_human",
-    "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "vic_cardiac",
-      "ipsc"
-    ],
+    "evidence": "I",
+    "evidence_tier": "L1_in_silico",
     "kinetics": {
-      "tetramer_Kd_uM": 2.4,
-      "hill_coefficient": 2.1,
-      "mixed_tetramer_fraction": 0.375
+      "mixed_tetramer_fraction": 0.375,
+      "mixed_tetramer_fraction_basis": "binomial_prediction: C(4,2)/2^4, assumes equal WT/A565T monomer abundance and random assembly -- not directly measured",
+      "tetramer_Kd_uM": null,
+      "hill_coefficient": null
     },
     "summary": "In A565T heterozygotes, SAMHD1 forms mixed 2xWT + 2xA565T tetramers retaining ~50% dNTPase but uncoupling cooperative PTM switches.",
-    "detail": "Binomial distribution predicts 37.5% of complexes assemble as 2:2 heterotetramers. They maintain dosage-limited basal dNTPase activity (ipTM=0.81) but suffer severe allosteric uncoupling at the phosphorylated C-terminal hinge.",
-    "samhd1": "The structural basis for heterozygous haploinsufficiency with 100% phenotypic penetrance."
+    "detail": "Binomial distribution predicts 37.5% of complexes assemble as 2:2 heterotetramers (assumes equal WT/A565T abundance and random assembly). They maintain dosage-limited basal dNTPase activity (ipTM=0.81, an AlphaFold structure-prediction confidence metric, not a measured binding affinity) but suffer severe allosteric uncoupling at the phosphorylated C-terminal hinge.",
+    "samhd1": "The structural basis for heterozygous haploinsufficiency with 100% phenotypic penetrance.",
+    "modelNote": "OPEN 2026-09-12 -- no direct measurement exists for THIS specific mixed 2:2 complex's Kd/Hill coefficient. A prior version of this node carried tetramer_Kd_uM=2.4 and hill_coefficient=2.1 copied verbatim from the wild-type dntpase node's own sourced values (ref [7], Ji et al. 2014 PNAS) -- those describe wild-type tetramerization, not the mixed heterotetramer, and were never actually measured for this complex. Removed rather than left misleadingly precise; re-add only with its own citation. See redteam audit 2026-09-12 (commit 20ae777)."
   }
 ];
 
@@ -649,7 +647,7 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -672,7 +670,7 @@ export const edges = [
     "refs": [
       "espada2023"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
@@ -699,6 +697,7 @@ export const edges = [
     "refs": [
       "wang2018"
     ],
+    "evidenceTierNote": "OPEN 2026-09-12 -- wang2018's methodology (cell line vs primary human) not yet verified against PubMed; the systemic pattern found elsewhere in this file (espada2023, xu2023vdac1, daddacha2017, herrmann2018, yang2025bik all mistagged L4_primary_human when actually cell-line/mouse) makes this tier suspect too, but left unchanged rather than guessed. Verify before trusting.",
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
@@ -722,7 +721,7 @@ export const edges = [
     "refs": [
       "espada2023"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
@@ -743,7 +742,7 @@ export const edges = [
     "refs": [
       "espada2023"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
@@ -838,7 +837,7 @@ export const edges = [
     "refs": [
       "yang2025bik"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -884,7 +883,7 @@ export const edges = [
     "refs": [
       "daddacha2017"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -907,7 +906,7 @@ export const edges = [
     "refs": [
       "coquel2018"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -949,7 +948,7 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
@@ -968,7 +967,7 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
@@ -991,7 +990,7 @@ export const edges = [
     "refs": [
       "coquel2018"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -1010,7 +1009,7 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -1028,7 +1027,7 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -1067,7 +1066,7 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -1088,7 +1087,8 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "A",
-    "evidence_tier": "L4_primary_human",
+    "evidenceNote": "Coquel et al. 2018 (Nature; PMID 29670289) explicitly reports single-stranded DNA activating cGAS-STING in this system -- this edge correctly reflects its cited source, despite cGAS's canonical dsDNA preference. Methodology was HEK293/HeLa cell lines, not primary human tissue (per the paper's own MeSH terms), hence L3 not L4. Verified 2026-09-12; see redteam audit (commit 20ae777).",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
     "cell_context": [
       "monocyte",
@@ -1171,8 +1171,8 @@ export const edges = [
     "kind": "produce",
     "sign": "+",
     "interaction_type": "catalytic_activation",
-    "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence": "I",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1188,8 +1188,8 @@ export const edges = [
     "kind": "inhibit",
     "sign": "-",
     "interaction_type": "allosteric_suppression",
-    "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence": "I",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
