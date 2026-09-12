@@ -37344,7 +37344,7 @@
     ],
     "relevance": "Prevents excessive cytokine release during immune responses; dysfunction leads to cytokine storm-like inflammatory episodes. Columbia 2025 ME/CFS study shows enhanced pro-inflammatory cytokine production (IL-6, IL-1\u03b2, TNF-\u03b1) after microbial stimulation - validates cytokine dysregulation in A565T carriers",
     "loss": 0.5,
-    "text": "Checkpoint: Cytokine Storm Prevention (cytokine-storm). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Prevents excessive cytokine release during immune responses; dysfunction leads to cytokine storm-like inflammatory episodes. Columbia 2025 ME/CFS study shows enhanced pro-inflammatory cytokine production (IL-6, IL-1\u03b2, TNF-\u03b1) after microbial stimulation - validates cytokine dysregulation in A565T carriers. Rationale & Mechanism: Critical inflammatory control; dysfunction leads to dangerous cytokine release patterns. Columbia 2025 findings show ME/CFS PBMCs produce excessive IL-6 and inflammatory cytokines - consistent with impaired SAMHD1 cytokine regulation. Predicted Activity Loss: 0.5 (Significantly Impaired). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Cytokine Storm Prevention (cytokine-storm). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Prevents excessive cytokine release during immune responses; dysfunction leads to cytokine storm-like inflammatory episodes. Columbia 2025 ME/CFS study shows enhanced pro-inflammatory cytokine production (IL-6, IL-1\u03b2, TNF-\u03b1) after microbial stimulation - validates cytokine dysregulation in A565T carriers. Rationale & Mechanism: Critical inflammatory control; dysfunction leads to dangerous cytokine release patterns. Columbia 2025 findings show ME/CFS PBMCs produce excessive IL-6 and inflammatory cytokines - consistent with impaired SAMHD1 cytokine regulation. Predicted Activity Loss: 0.5 (Significantly Impaired).",
     "embedding": [
       0.0281829833984375,
       0.01377105712890625,
@@ -51333,7 +51333,7 @@
     ],
     "relevance": "Tumor suppressor in B-cell malignancies; dysfunction directly correlates with poor prognosis and aggressive disease progression",
     "loss": 0.0,
-    "text": "Checkpoint: Chronic Lymphocytic Leukemia Suppression (cll). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Tumor suppressor in B-cell malignancies; dysfunction directly correlates with poor prognosis and aggressive disease progression. Rationale & Mechanism: Direct tumor suppressor role; A565T mutation strongly correlates with poor cancer outcomes. Predicted Activity Loss: 0.0 (Long-term). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Chronic Lymphocytic Leukemia Suppression (cll). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Tumor suppressor in B-cell malignancies; dysfunction directly correlates with poor prognosis and aggressive disease progression. Rationale & Mechanism: Direct tumor suppressor role; A565T mutation strongly correlates with poor cancer outcomes. Predicted Activity Loss: 0.0 (Long-term).",
     "embedding": [
       -0.00875091552734375,
       0.0226898193359375,
@@ -52888,7 +52888,7 @@
     ],
     "relevance": "Prognostic biomarker in early breast cancer; dysfunction associated with increased recurrence risk and reduced overall survival",
     "loss": 0.0,
-    "text": "Checkpoint: Breast Cancer Suppression (breast-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Prognostic biomarker in early breast cancer; dysfunction associated with increased recurrence risk and reduced overall survival. Rationale & Mechanism: Established prognostic factor; A565T dysfunction increases breast cancer recurrence and mortality. Predicted Activity Loss: 0.0 (Long-term). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Breast Cancer Suppression (breast-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Prognostic biomarker in early breast cancer; dysfunction associated with increased recurrence risk and reduced overall survival. Rationale & Mechanism: Established prognostic factor; A565T dysfunction increases breast cancer recurrence and mortality. Predicted Activity Loss: 0.0 (Long-term).",
     "embedding": [
       0.031768798828125,
       0.028656005859375,
@@ -54443,7 +54443,7 @@
     ],
     "relevance": "Protective role in colorectal cancer through dNTP regulation; dysfunction increases mutation rates in mismatch repair-deficient tumors",
     "loss": 0.0,
-    "text": "Checkpoint: Colon Cancer Suppression (colon-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Protective role in colorectal cancer through dNTP regulation; dysfunction increases mutation rates in mismatch repair-deficient tumors. Rationale & Mechanism: Cancer protection in high-turnover tissue; A565T mutation increases colorectal malignancy risk. Predicted Activity Loss: 0.0 (Long-term). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Colon Cancer Suppression (colon-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Protective role in colorectal cancer through dNTP regulation; dysfunction increases mutation rates in mismatch repair-deficient tumors. Rationale & Mechanism: Cancer protection in high-turnover tissue; A565T mutation increases colorectal malignancy risk. Predicted Activity Loss: 0.0 (Long-term).",
     "embedding": [
       0.0206298828125,
       0.033905029296875,
@@ -55998,7 +55998,7 @@
     ],
     "relevance": "Tumor suppressor in lung adenocarcinoma; dysfunction promotes oncogenic transformation and metastatic potential",
     "loss": 0.0,
-    "text": "Checkpoint: Lung Cancer Suppression (lung-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Tumor suppressor in lung adenocarcinoma; dysfunction promotes oncogenic transformation and metastatic potential. Rationale & Mechanism: Tumor suppressor in lung tissue; A565T dysfunction promotes oncogenic transformation. Predicted Activity Loss: 0.0 (Long-term). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Lung Cancer Suppression (lung-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Tumor suppressor in lung adenocarcinoma; dysfunction promotes oncogenic transformation and metastatic potential. Rationale & Mechanism: Tumor suppressor in lung tissue; A565T dysfunction promotes oncogenic transformation. Predicted Activity Loss: 0.0 (Long-term).",
     "embedding": [
       0.003993988037109375,
       0.00923919677734375,
@@ -57553,7 +57553,7 @@
     ],
     "relevance": "2.02-fold increased hereditary prostate cancer risk requiring enhanced surveillance protocols similar to BRCA carriers. Mechanism involves telomere maintenance dysfunction through same variant model associated with longer telomere length",
     "loss": 0.0,
-    "text": "Checkpoint: Prostate Cancer Risk Modulation (prostate-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: 2.02-fold increased hereditary prostate cancer risk requiring enhanced surveillance protocols similar to BRCA carriers. Mechanism involves telomere maintenance dysfunction through same variant model associated with longer telomere length. Rationale & Mechanism: Established hereditary cancer predisposition with odds ratio (2.02) comparable to validated cancer genes like BRCA2 and ATM. Meta-analysis of 37,184 cases validates genome-wide significance requiring enhanced surveillance. Predicted Activity Loss: 0.0 (Long-term). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Prostate Cancer Risk Modulation (prostate-ca). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: 2.02-fold increased hereditary prostate cancer risk requiring enhanced surveillance protocols similar to BRCA carriers. Mechanism involves telomere maintenance dysfunction through same variant model associated with longer telomere length. Rationale & Mechanism: Established hereditary cancer predisposition with odds ratio (2.02) comparable to validated cancer genes like BRCA2 and ATM. Meta-analysis of 37,184 cases validates genome-wide significance requiring enhanced surveillance. Predicted Activity Loss: 0.0 (Long-term).",
     "embedding": [
       -0.00797271728515625,
       0.03643798828125,
@@ -59108,7 +59108,7 @@
     ],
     "relevance": "Paradoxical oncogenic role where SAMHD1 promotes clear cell renal cell carcinoma metastasis through endosomal FAK-Rac1 signaling pathway. High SAMHD1 expression correlates with poor prognosis in ccRCC patients requiring enhanced renal imaging surveillance",
     "loss": 0.0,
-    "text": "Checkpoint: Renal Clear Cell Carcinoma Progression (Oncogenic) (rcc). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Paradoxical oncogenic role where SAMHD1 promotes clear cell renal cell carcinoma metastasis through endosomal FAK-Rac1 signaling pathway. High SAMHD1 expression correlates with poor prognosis in ccRCC patients requiring enhanced renal imaging surveillance. Rationale & Mechanism: Unique oncogenic mechanism in kidney cancer promoting metastasis through cortactin binding and lamellipodia formation. Contradicts tumor suppressor role in other cancers, creating enhanced cancer progression risk. Predicted Activity Loss: 0.0 (Reduced Oncogenic Activity). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Renal Clear Cell Carcinoma Progression (Oncogenic) (rcc). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Paradoxical oncogenic role where SAMHD1 promotes clear cell renal cell carcinoma metastasis through endosomal FAK-Rac1 signaling pathway. High SAMHD1 expression correlates with poor prognosis in ccRCC patients requiring enhanced renal imaging surveillance. Rationale & Mechanism: Unique oncogenic mechanism in kidney cancer promoting metastasis through cortactin binding and lamellipodia formation. Contradicts tumor suppressor role in other cancers, creating enhanced cancer progression risk. Predicted Activity Loss: 0.0 (Reduced Oncogenic Activity).",
     "embedding": [
       0.0271453857421875,
       0.00473785400390625,
@@ -62217,7 +62217,7 @@
     ],
     "relevance": "Controls cellular lifespan and aging-related dysfunction; dysfunction may contribute to accelerated aging phenotypes in ME/CFS",
     "loss": 0.4,
-    "text": "Checkpoint: Premature Aging & Cellular Exhaustion Phenotype (aging). Layer: 5. Compartment: nucleus. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Controls cellular lifespan and aging-related dysfunction; dysfunction may contribute to accelerated aging phenotypes in ME/CFS. Rationale & Mechanism: Secondary aging-related function; moderate impact on lifespan regulation. Predicted Activity Loss: 0.4 (Modestly Impaired). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Premature Aging & Cellular Exhaustion Phenotype (aging). Layer: 5. Compartment: nucleus. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Controls cellular lifespan and aging-related dysfunction; dysfunction may contribute to accelerated aging phenotypes in ME/CFS. Rationale & Mechanism: Secondary aging-related function; moderate impact on lifespan regulation. Predicted Activity Loss: 0.4 (Modestly Impaired).",
     "embedding": [
       0.02838134765625,
       0.054229736328125,
@@ -107308,7 +107308,7 @@
     ],
     "relevance": "Impaired antimetabolite hydrolysis in SAMHD1 A565T carriers leads to intracellular accumulation of Ara-CTP / gemcitabine-TP, dramatically increasing therapeutic sensitivity and toxicity risk at standard oncology doses",
     "loss": 0.0,
-    "text": "Checkpoint: Chemotherapy Synthetic Hypersensitivity (chemo-sensitivity). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Impaired antimetabolite hydrolysis in SAMHD1 A565T carriers leads to intracellular accumulation of Ara-CTP / gemcitabine-TP, dramatically increasing therapeutic sensitivity and toxicity risk at standard oncology doses. Rationale & Mechanism: Critical pharmacogenomic precision medicine endpoint; dictates tailored dosing protocols for nucleoside analogue chemotherapies. Predicted Activity Loss: 0.0 (Therapeutic Vulnerability). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Chemotherapy Synthetic Hypersensitivity (chemo-sensitivity). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Impaired antimetabolite hydrolysis in SAMHD1 A565T carriers leads to intracellular accumulation of Ara-CTP / gemcitabine-TP, dramatically increasing therapeutic sensitivity and toxicity risk at standard oncology doses. Rationale & Mechanism: Critical pharmacogenomic precision medicine endpoint; dictates tailored dosing protocols for nucleoside analogue chemotherapies. Predicted Activity Loss: 0.0 (Therapeutic Vulnerability).",
     "embedding": [
       0.00907135009765625,
       0.003505706787109375,
@@ -110419,7 +110419,7 @@
     ],
     "relevance": "Multisystem neuro-immune pathology characterized by post-exertional neuro-immune crashes, mitochondrial bioenergetic failure (\u0394\u03a8m collapse), baseline cytokine elevation (IL-1\u03b2, IL-6, TNF, IFN-\u03b3), and complement hyperactivation validated in Columbia 2025 patient cohorts",
     "loss": 0.0,
-    "text": "Checkpoint: ME/CFS & Post-Exertional Malaise (PEM) (mecfs-phenotype). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Multisystem neuro-immune pathology characterized by post-exertional neuro-immune crashes, mitochondrial bioenergetic failure (\u0394\u03a8m collapse), baseline cytokine elevation (IL-1\u03b2, IL-6, TNF, IFN-\u03b3), and complement hyperactivation validated in Columbia 2025 patient cohorts. Rationale & Mechanism: Direct systemic manifestation of combined mitochondrial VDAC1 uncoupling, chronic cGAS-STING/NLRP3 sterile inflammation, and impaired cellular recovery. Predicted Activity Loss: 0.0 (Primary Clinical Manifestation). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: ME/CFS & Post-Exertional Malaise (PEM) (mecfs-phenotype). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Multisystem neuro-immune pathology characterized by post-exertional neuro-immune crashes, mitochondrial bioenergetic failure (\u0394\u03a8m collapse), baseline cytokine elevation (IL-1\u03b2, IL-6, TNF, IFN-\u03b3), and complement hyperactivation validated in Columbia 2025 patient cohorts. Rationale & Mechanism: Direct systemic manifestation of combined mitochondrial VDAC1 uncoupling, chronic cGAS-STING/NLRP3 sterile inflammation, and impaired cellular recovery. Predicted Activity Loss: 0.0 (Primary Clinical Manifestation).",
     "embedding": [
       0.0218505859375,
       0.042510986328125,
@@ -113528,7 +113528,7 @@
     ],
     "relevance": "Constitutive interferon-stimulated gene (ISG) transcriptional signature driven by chronic cytosolic DNA (mtDNA/micronuclei) and dsRNA sensing; phenotypic spectrum spanning Aicardi-Gouti\u00e8res syndrome (AGS5) to adult-onset lupus-like autoimmunity",
     "loss": 0.0,
-    "text": "Checkpoint: Type I Interferonopathy / AGS-like Spectrum (interferonopathy-ags). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Constitutive interferon-stimulated gene (ISG) transcriptional signature driven by chronic cytosolic DNA (mtDNA/micronuclei) and dsRNA sensing; phenotypic spectrum spanning Aicardi-Gouti\u00e8res syndrome (AGS5) to adult-onset lupus-like autoimmunity. Rationale & Mechanism: Prototypical systemic outcome of SAMHD1 genetic deficiency (Rice et al. 2009); foundation of the clinical autoinflammatory phenotype. Predicted Activity Loss: 0.0 (Haploinsufficient Interferonopathy). Kinetics: {\"phenotypic_penetrance_pct\": 100.0, \"family_pedigree_carriers_confirmed\": 4, \"documented_generations\": 5}.",
+    "text": "Checkpoint: Type I Interferonopathy / AGS-like Spectrum (interferonopathy-ags). Layer: 5. Compartment: clinical. Evidence Tier: L6_human_clinical. Cell Context: [systemic_immune, cns_neuro, cardiovascular, hepatic, musculoskeletal]. Relevance: Constitutive interferon-stimulated gene (ISG) transcriptional signature driven by chronic cytosolic DNA (mtDNA/micronuclei) and dsRNA sensing; phenotypic spectrum spanning Aicardi-Gouti\u00e8res syndrome (AGS5) to adult-onset lupus-like autoimmunity. Rationale & Mechanism: Prototypical systemic outcome of SAMHD1 genetic deficiency (Rice et al. 2009); foundation of the clinical autoinflammatory phenotype. Predicted Activity Loss: 0.0 (Haploinsufficient Interferonopathy).",
     "embedding": [
       -0.048553466796875,
       0.016876220703125,

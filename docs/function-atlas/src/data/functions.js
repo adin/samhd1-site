@@ -770,12 +770,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "cd8",
@@ -1035,12 +1030,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "breast-ca",
@@ -1068,12 +1058,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "colon-ca",
@@ -1101,12 +1086,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "lung-ca",
@@ -1134,12 +1114,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "prostate-ca",
@@ -1168,12 +1143,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "rcc",
@@ -1201,12 +1171,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "senescence",
@@ -1263,12 +1228,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "deltapsi",
@@ -2126,12 +2086,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "vpx-degradation",
@@ -2190,12 +2145,7 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   },
   {
     "id": "psa-phenotype",
@@ -2253,11 +2203,6 @@ export const FUNCTIONS = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ],
-    "kinetics": {
-      "phenotypic_penetrance_pct": 100.0,
-      "family_pedigree_carriers_confirmed": 4,
-      "documented_generations": 5
-    }
+    ]
   }
 ];
