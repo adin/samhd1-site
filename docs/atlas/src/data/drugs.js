@@ -841,7 +841,7 @@ export const nodes = [
     ],
     "lod": 1,
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "systemic_immune",
       "monocyte",
@@ -866,13 +866,12 @@ export const edges = [
       "drugs"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -891,7 +890,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -910,7 +908,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -928,7 +925,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -949,7 +945,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -962,13 +957,12 @@ export const edges = [
       "drugs"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -981,13 +975,12 @@ export const edges = [
       "drugs"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1000,13 +993,12 @@ export const edges = [
       "drugs"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1025,7 +1017,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1044,7 +1035,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1063,7 +1053,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1082,7 +1071,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1106,7 +1094,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1129,7 +1116,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1148,7 +1134,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1167,7 +1152,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1187,7 +1171,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1205,7 +1188,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1219,12 +1201,13 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): both endpoints (naci, mecfs) are systemic clinical-outcome nodes tagged with the systemic array, but this edge carried the generic myeloid template. Matched the edge to its endpoints.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -1242,7 +1225,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1260,7 +1242,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1279,7 +1260,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1293,14 +1273,15 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): mcp1's own node is visceral-adipocyte-specific (no myeloid vocabulary token exists for that), but this edge's destination (steatosis) is a systemic clinical outcome -- matched the edge to the endpoint that has a valid tag rather than the generic myeloid template.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -1313,13 +1294,12 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1339,7 +1319,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1358,7 +1337,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1377,7 +1355,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1390,14 +1367,15 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): both endpoints (genomic-instability, cancer-risk) are systemic clinical-outcome nodes tagged with the systemic array, but this edge carried the generic myeloid template. Matched the edge to its endpoints.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -1407,7 +1385,7 @@ export const edges = [
     "sign": "-",
     "interaction_type": "allosteric_suppression",
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "systemic_immune"
     ],

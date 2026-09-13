@@ -28,12 +28,12 @@ export const nodes = [
       "rabinowitz2025",
       "shoshan2020"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "xu2023vdac1 = mouse + RAW264.7; rabinowitz2025 = THP-1 monocytes; shoshan2020 = review. No primary human evidence among these three. Fixed 2026-09-12; see literature-agent audit of commit e62bb56.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "db_xrefs": {
@@ -74,7 +74,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -105,7 +104,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -133,12 +131,12 @@ export const nodes = [
       "luo2012",
       "pavlovich2025"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "OPEN 2026-09-12: yang2025bik is THP-1/U937 (this node's own detail text even says 'in THP-1 cells', directly contradicting the prior L4 tag). luo2012 (Luo S et al. Mol Cell 2012;47:359-370, PMID 22742832) is about BIM (BCL2L11) sequestering BECN1, NOT BIK -- flagged, not removed, since the BECN1-sequestration claim in this node's summary needs a real BIK-specific source or correction. pavlovich2025 IS a genuine human genetic cohort (BIK+SAMHD1 prostate cancer susceptibility) but backs the germline-variant claim, not the apoptosis/BECN1 mechanism this tier covers. See literature-agent audit of commit 20ae777.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -159,12 +157,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Macropore formation for cytochrome-c release; sublethal (\"minority\") MOMP also permits mtDNA herniation.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -188,12 +185,11 @@ export const nodes = [
     "refs": [
       "yang2025bik"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -224,7 +220,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -256,7 +251,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -287,7 +281,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -318,7 +311,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -339,12 +331,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Protein import machinery. ΔΨm-dependent: when the potential collapses, import stops and PINK1 accumulates.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -384,7 +375,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -415,7 +405,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -446,7 +435,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -473,12 +461,12 @@ export const nodes = [
       "gudz1997",
       "mihaylova2024"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "The core claim (ceramide directly inhibits Complex III) rests on gudz1997 -- isolated rat heart/muscle mitochondria + HL-60 cells, not primary human. mihaylova2024 is genuine primary human (RA patient PBMCs) but establishes a different, more general JAK-inhibitor/ATP finding, not this specific ceramide->CIII mechanism. Fixed 2026-09-12; see literature-agent audit of commit 20ae777.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -500,12 +488,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Terminal oxidase; its activity falls with cytochrome-c leak and with mtDNA-encoded subunit loss.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -527,12 +514,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Uses the proton-motive force to make ATP; runs in reverse to defend ΔΨm when the ETC fails, burning ATP.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -559,12 +545,11 @@ export const nodes = [
     "refs": [
       "xu2023vdac1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -586,12 +571,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Externalised cardiolipin is itself a mitophagy \"eat-me\" signal and an NLRP3-binding surface.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -621,7 +605,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -648,12 +631,12 @@ export const nodes = [
     "refs": [
       "west2015"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "west2015 = mouse cell lines + mouse peritoneal macrophages, not primary human. Fixed 2026-09-12; see literature-agent audit of commit 20ae777.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -686,7 +669,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "db_xrefs": {
@@ -722,7 +704,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -743,12 +724,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "The rest of the mtDNA replisome; stalls with POLG when nucleotide supply is unbalanced.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -782,7 +762,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -815,7 +794,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -848,7 +826,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -883,7 +860,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -913,7 +889,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -943,7 +918,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -977,7 +951,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1010,7 +983,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1041,7 +1013,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1064,19 +1035,17 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "key": true,
-    "summary": "Persistent epigenetic chromatin lock responsible for multi-day post-exertional malaise (PEM) and immune exhaustion.",
-    "detail": "Ziogas et al. (Cell 2025) and Marcucci & Rumio (2026) established that chronic lactate accumulation drives enzymatic histone lactylation (H3K18la) at enhancer loci. This modification persists long after exertion terminates, locking macrophages and immune cells in a refractory exhaustion state that directly models prolonged PEM crashes.",
+    "summary": "Persistent epigenetic chromatin mark linking sustained innate-immune activation to multi-day post-exertional malaise (PEM).",
+    "detail": "Ziogas et al. (Cell 2025) established that chronic/repeated lactate exposure drives long-term enzymatic histone lactylation (H3K18la) at active enhancer loci in monocytes, persisting for weeks and marking a durable state of ENHANCED innate-immune responsiveness (trained immunity) -- not exhaustion. Fixed 2026-09-12 (cell_context topical-fit literature audit): the node previously described this as an 'exhaustion' state, inverting what ziogas2025 actually shows. The atlas's own hypothesis -- that this same persistent, metabolically costly activation mark plausibly manifests clinically as a multi-day PEM crash once the sustained response outstrips available energy supply (Marcucci & Rumio 2026) -- is retained, but is this atlas's own extrapolation, not a claim either cited paper makes directly. certo2025 removed: it has no histone-lactylation content and was mis-cited here.",
     "refs": [
       "ziogas2025",
-      "marcucci2026",
-      "certo2025"
+      "marcucci2026"
     ],
     "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1104,12 +1073,12 @@ export const nodes = [
       "luo2012",
       "docSiege"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "OPEN 2026-09-12: xu2015becn1's abstract/MeSH don't specify its exact cell system (PMID 25906440, Autophagy 2015;11:617-28) -- downgraded conservatively rather than left at the unsupported L4_primary_human; needs a full-text check to confirm or promote. luo2012 is again the BIM-not-BIK paper (see the `bik` node above) cited here for the BECN1-sequestration mechanism -- same flag applies. See literature-agent audit of commit 20ae777.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1130,12 +1099,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Autophagosome membrane marker; LC3-II/I ratio with p62 is the standard flux readout in Arm 1.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1156,12 +1124,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Accumulates when flux is blocked — the readout that separates \"more autophagosomes\" from \"working autophagy\".",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1192,7 +1159,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1222,7 +1188,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1252,7 +1217,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1288,7 +1252,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1319,7 +1282,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1340,12 +1302,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Where mitophagy should terminate. In this disease the cargo arrives and is not destroyed.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -1366,12 +1327,15 @@ export const nodes = [
     ],
     "lod": 1,
     "evidence": "S",
+    "refs": [
+      "liu2026nlrp3"
+    ],
     "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Added the missing citation 2026-09-12 -- this node's own detail text already described Liu 2026's finding but never actually listed it in refs. liu2026nlrp3 includes a human-cell arm alongside zebrafish/mouse, per its own bibliography entry.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "kinetics": {
@@ -1407,12 +1371,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "metabolic_bypass_flux",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1429,12 +1393,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "signal_transduction",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1451,12 +1415,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1470,12 +1434,12 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1494,12 +1458,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1513,14 +1477,14 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "B",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1537,12 +1501,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "metabolic_bypass_flux",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1559,14 +1523,14 @@ export const edges = [
     "refs": [
       "xu2023vdac1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "macropore_translocation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1584,12 +1548,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1603,14 +1567,14 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "A",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "organellar_damage_release",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1628,14 +1592,14 @@ export const edges = [
       "rabinowitz2025",
       "xu2023vdac1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "macropore_translocation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1650,12 +1614,12 @@ export const edges = [
     "loop": "A",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "organellar_damage_release",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1675,12 +1639,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1700,12 +1664,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1720,14 +1684,14 @@ export const edges = [
     "refs": [
       "xu2023vdac1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "macropore_translocation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1741,12 +1705,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1761,12 +1725,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1780,12 +1744,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1799,12 +1763,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1818,12 +1782,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1837,12 +1801,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1856,12 +1820,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1874,12 +1838,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1892,12 +1856,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1911,12 +1875,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1933,12 +1897,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1952,12 +1916,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1974,12 +1938,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1993,12 +1957,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2016,12 +1980,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2038,12 +2002,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2057,12 +2021,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2076,12 +2040,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2099,12 +2063,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2123,12 +2087,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): this edge's destination (pem) is a systemic clinical outcome -- matched to that endpoint's array (same convention as inflammasome.js's aim2->psa edge) rather than the generic myeloid+cd4_tcell template. ziogas2025 (the H3K18la source) is monocyte-only with no CD4 T-cell basis.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -2146,34 +2111,35 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
     "from": "lactate",
     "to": "psa",
     "kind": "drive",
-    "label": "synovial lactate entrapment & Th17 priming",
+    "label": "lactate-driven immune-cell entrapment in inflamed tissue (mechanism site unconfirmed for PsA specifically)",
     "pathways": [
       "clinical"
     ],
-    "evidence": "G",
+    "evidence": "I",
     "refs": [
       "certo2025"
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): this edge's destination (psa) is a systemic clinical outcome -- matched to that endpoint's array rather than the generic myeloid+cd4_tcell template. certo2025 does show real CD4 T-cell (TH1/17/FH) biology via SLC5A12, so cd4_tcell wasn't baseless here the way it was elsewhere in this file -- but the paper's own system is salivary-gland ectopic lymphoid structures in Sjogren's disease, not synovium, and it found no effect on Il17 (the lactate-responsive population was TFH/IL-21). The original 'synovial ... Th17 priming' label traces to two papers not currently in refs.js (Haas et al. PLoS Biol 2015; Pucino et al. Cell Metab 2019) -- unverified this session, label softened and evidence downgraded S/G->I pending that citation being added properly rather than asserted via certo2025.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -2188,14 +2154,14 @@ export const edges = [
     "refs": [
       "yang2025bik"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2207,14 +2173,14 @@ export const edges = [
       "mito"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "organellar_damage_release",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2228,12 +2194,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "organellar_damage_release",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2248,12 +2214,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2269,14 +2235,15 @@ export const edges = [
       "luo2012",
       "yang2025bik"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "luo2012 is the BIM-not-BIK paper (see the `bik` node above); yang2025bik is THP-1/U937. Fixed 2026-09-12; see literature-agent audit of commit 20ae777.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2290,12 +2257,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2309,12 +2276,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2328,12 +2295,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2347,12 +2314,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2365,12 +2332,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2384,12 +2351,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2403,12 +2370,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "compartment_translocation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2422,12 +2389,12 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2444,12 +2411,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2466,12 +2433,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2490,12 +2457,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2509,12 +2476,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2534,12 +2501,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2553,12 +2520,12 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2575,12 +2542,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2595,12 +2562,12 @@ export const edges = [
     "loop": "sting-fission",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2614,12 +2581,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2633,12 +2600,12 @@ export const edges = [
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2653,12 +2620,12 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -2668,12 +2635,14 @@ export const edges = [
     "sign": "+",
     "interaction_type": "metabolic_bypass_flux",
     "evidence": "S",
+    "refs": [
+      "liu2026nlrp3"
+    ],
     "evidence_tier": "L4_primary_human",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "loop": "B",
@@ -2686,12 +2655,14 @@ export const edges = [
     "sign": "+",
     "interaction_type": "metabolic_bypass_flux",
     "evidence": "S",
+    "refs": [
+      "liu2026nlrp3"
+    ],
     "evidence_tier": "L4_primary_human",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "loop": "B",

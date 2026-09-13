@@ -307,7 +307,7 @@ export const nodes = [
     "lod": 2,
     "evidence": "S",
     "summary": "Co-matured with IL-1β; drives IFN-γ from NK and T cells, linking Loop B back into the interferon arm.",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -526,7 +526,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -547,7 +546,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -562,13 +560,12 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "B",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -591,7 +588,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -611,7 +607,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -630,7 +625,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -651,7 +645,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -670,7 +663,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -693,7 +685,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -713,7 +704,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -732,7 +722,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -754,7 +743,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -772,7 +760,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -792,7 +779,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -815,7 +801,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -833,7 +818,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -854,7 +838,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -873,7 +856,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -891,12 +873,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): this edge's own label names psoriatic KERATINOCYTES specifically (no myeloid-vocabulary token exists for that), but its destination (psa) is a systemic clinical outcome -- matched to that endpoint's array rather than the generic myeloid template.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -909,13 +892,12 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "B",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -934,13 +916,12 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "B",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -959,13 +940,12 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "B",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -984,13 +964,12 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "B",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1003,13 +982,12 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "B",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -1036,7 +1014,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1055,7 +1032,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1074,7 +1050,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1093,7 +1068,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1115,7 +1089,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1139,7 +1112,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1162,7 +1134,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   }

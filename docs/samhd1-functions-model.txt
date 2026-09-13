@@ -89,93 +89,93 @@ interferonopathy-ags | Type I Interferonopathy / AGS-like Spectrum | L5 | system
 
 §2 CAUSAL LINKS (90 mechanistic connections)
 from | to | kind | interaction_type | evidence_tier | cell_context | detail
-dntpase | sphase | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | The dNTP pool is the substrate supply for replication; SAMHD1 holds it in the narrow band S phase requires. Excess is as damaging as scarcity.
-dntpase | g1s | maintains | homeostatic_coupling | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-dntpase | checkpoint | maintains | homeostatic_coupling | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-dntpase | cgas-sting | prevents | metabolic_bypass_flux | L4_primary_human | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | An unrestrained dNTP pool degrades POLG fidelity and yields the damaged mtDNA that becomes a cGAS ligand. The enzymatic defect and the interferon phenotype are the same lesion seen at two removes.
-dntpase | metabolic | maintains | homeostatic_coupling | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-dna-resection | checkpoint | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-dna-resection | cgas-sting | prevents | allosteric_suppression | L4_primary_human | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Failed resection leaves unrepaired ends and micronuclei — cytosolic DNA that cGAS reads as infection.
-rloop | fork | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Unresolved DNA–RNA hybrids are a principal source of fork collapse; the two functions are one continuous piece of genome maintenance.
-rloop | cgas-sting | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-fork | senescence | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-fork | checkpoint | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-telomere | senescence | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-telomere | aging | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-ox-dna-bind | senescence | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Oxidation enhances SAMHD1's DNA binding, which reads as a damage-responsive mode. Its consequence for senescence is inference, not demonstration.
-line1 | cgas-sting | prevents | allosteric_suppression | L4_primary_human | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | L1 reverse-transcription intermediates are cytosolic DNA. Restriction failure supplies cGAS with ligand continuously rather than episodically.
-line1 | sterile-inflam | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-lentivirus | sterile-inflam | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | The antiviral function is well demonstrated; its contribution to STERILE inflammation in an uninfected patient is inference.
-dna-virus | sterile-inflam | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-rnp-sequestration | ifn-i | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Non-catalytic RNP sequestration and stress-granule trapping prevent retroelement sensing by cytosolic receptors.
-chemo-hydrolysis | sphase | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Hydrolysis of nucleoside analogue triphosphates (Ara-CTP, dFdCTP) prevents premature S-phase arrest and cytotoxicity.
-mrna-deg | transcription | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-llps | dsrna-seq | performs | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-llps | stress-granule | performs | signal_transduction | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-dsrna-seq | ifn-i | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Sequestering immunostimulatory dsRNA in condensates keeps it away from RIG-I and MDA5 — restriction by phase separation rather than by catalysis.
-stress-granule | line1 | maintains | homeostatic_coupling | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | L1 ORF1p ribonucleoprotein particles are held in granules, out of circulation.
-vdac1 | deltapsi | maintains | macropore_translocation | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | SAMHD1 interacts physically with VDAC1 and must be present in the mitochondrial compartment to prevent membrane-potential collapse.
-vdac1 | mtdna-leak | maintains | macropore_translocation | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-mtdna-leak | mtdna-ifn | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-mtdna-ifn | ifn-i | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-deltapsi | cytc | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-deltapsi | metabolic | maintains | homeostatic_coupling | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-cytc | apoptosis | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-bik | apoptosis | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-bik | autophagy | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | BIK — which SAMHD1 itself upregulates — sequesters BECN1, biasing the cell toward apoptosis over mitophagy.
-autophagy | deltapsi | maintains | homeostatic_coupling | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Damaged mitochondria that are tagged but not cleared keep degrading the potential of the pool that remains.
-cgas-sting | ifn-i | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-cgas-sting | nfkb | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-nfkb | sterile-inflam | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-nfkb | ip10 | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-tlr4 | nfkb | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-ifn-i | ip10 | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | IP-10/CXCL10 is an ISG; it is the readout by which the interferon arm is measured clinically.
-ifn-i | m1m2 | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-m1m2 | mono-mac | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-sterile-inflam | cytokine-storm | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | The step with the least direct support in the whole atlas. No cytokine-storm event has been documented in this variant; it is a mechanistic extrapolation from the suppression functions, and is graded accordingly.
-ip10 | cytokine-storm | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-ifn-i | cd8 | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-sterile-inflam | prostatitis | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-prostatitis | bladder | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-sterile-inflam | bladder | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-checkpoint | cll | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-checkpoint | breast-ca | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-checkpoint | colon-ca | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-checkpoint | lung-ca | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-senescence | prostate-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-aging | prostate-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | 
-metabolic | rcc | drives | signal_transduction | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | The exception that keeps the rest honest: here SAMHD1 supports tumour progression, so having less of it is protective rather than harmful.
-site1-gtp | tetramer-switch | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | GTP binding at Site 1 primes dimer-dimer interface
-site2-dgtp | tetramer-switch | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | dNTP binding at Site 2 completes tetramer activation
-tetramer-switch | dntpase | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Active homotetramer executes dNTP hydrolysis
-tetramer-switch | lentivirus | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Tetramer dNTP depletion blocks lentiviral cDNA synthesis
-tetramer-switch | dna-virus | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Tetramer dNTP depletion blocks DNA viral replication
-tetramer-switch | cytarabine-metab | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Tetramer active site dephosphorylates Ara-CTP
-cdk1-cdk2 | p-t592 | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | CDK1/2 phosphorylates Thr592 in cycling cells
-pp2a-b55 | p-t592 | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | PP2A-B55α dephosphorylates Thr592 at mitotic exit
-ankib1-ub | sting-gain | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | K11-ubiquitination creates positive STING gain control
-sting-gain | ifn-i | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | K11-ubiquitinated SAMHD1 stabilizes STING signalosome to potentiate Type I IFN output
-dntpase | nlrp3-metab | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | SAMHD1 dNTPase depletes dNTP pools that trigger NLRP3
-nlrp3-metab | il1b-release | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | NLRP3 assembly drives caspase-1 cleavage and IL-1β/18 release
-il1b-release | sterile-inflam | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Mature IL-1β drives chronic sterile tissue inflammation
-il1b-release | cytokine-storm | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Hyperactive IL-1β/18 release fuels systemic cytokine storm
-ctip-interact | dna-resection | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | CtIP recruitment stimulates 5-3 DNA end resection
-mrn-complex | fork | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | MRN interaction coordinates MRE11 fork protection
-dna-resection | rad51-brca2 | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Resected ssDNA templates RAD51-BRCA2 filament loading
-rad51-brca2 | breast-ca | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Homologous recombination suppresses hereditary breast cancer
-fork | parp1-axis | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Intact fork protection prevents PARP1 hyperactivation
-parp1-axis | cll | drives | signal_transduction | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Replication stress and PARP1 overload drive genomic instability in CLL
-cytarabine-metab | chemo-sensitivity | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | SAMHD1 Ara-C hydrolysis prevents clinical hypersensitivity
-vpx-degradation | lentivirus | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Vpx degradation destroys SAMHD1 to relieve viral restriction
-sterile-inflam | mecfs-phenotype | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Sterile innate inflammation drives ME/CFS clinical symptoms
-deltapsi | mecfs-phenotype | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Mitochondrial membrane potential collapse triggers post-exertional crashes
-ifn-i | interferonopathy-ags | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Constitutive Type I IFN elevation causes Aicardi-Goutières syndrome spectrum
-nfkb | psa-phenotype | prevents | allosteric_suppression | L3_cell_line | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | NF-κB suppression restrains psoriatic synovial inflammation
-ifn-i | dntpase | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | [FEEDBACK LOOP] Type I IFN induces SAMHD1 expression via ISRE promoter
-deltapsi | ox-dna-bind | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | [FEEDBACK LOOP] Mitochondrial ROS oxidizes C522 to lock DNA binding
-sphase | cdk1-cdk2 | drives | signal_transduction | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | [FEEDBACK LOOP] S-phase entry activates CDK2 kinase
-autophagy | mtdna-leak | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | [FEEDBACK LOOP] Mitophagy clears damaged mitochondria to block mtDNA escape
-p-t592 | lentivirus | prevents | allosteric_suppression | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | T592 phosphorylation in S/G2 phase switches off retroviral restriction
-p-t592 | fork | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Phosphorylated SAMHD1 preserves replication fork protection during DNA synthesis; asymmetric latch uncoupling in heterozygous A565T complexes causes dominant-negative fork collapse
-p-t592 | dna-resection | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | Symmetric phosphorylation-gated latch transition is required for coordinated CtIP/MRE11 recruitment to DNA double-strand breaks during homologous recombination
-dntpase | telomere | maintains | homeostatic_coupling | L2_recombinant | [monocyte,macrophage,microglia,vic_cardiac,cd4_tcell] | dGTP pool restriction directly regulates telomerase processivity and telomere length
+dntpase | sphase | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | The dNTP pool is the substrate supply for replication; SAMHD1 holds it in the narrow band S phase requires. Excess is as damaging as scarcity.
+dntpase | g1s | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+dntpase | checkpoint | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+dntpase | cgas-sting | prevents | metabolic_bypass_flux | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | An unrestrained dNTP pool degrades POLG fidelity and yields the damaged mtDNA that becomes a cGAS ligand. The enzymatic defect and the interferon phenotype are the same lesion seen at two removes.
+dntpase | metabolic | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+dna-resection | checkpoint | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+dna-resection | cgas-sting | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Failed resection leaves unrepaired ends and micronuclei — cytosolic DNA that cGAS reads as infection.
+rloop | fork | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Unresolved DNA–RNA hybrids are a principal source of fork collapse; the two functions are one continuous piece of genome maintenance.
+rloop | cgas-sting | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+fork | senescence | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+fork | checkpoint | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+telomere | senescence | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+telomere | aging | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+ox-dna-bind | senescence | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Oxidation enhances SAMHD1's DNA binding, which reads as a damage-responsive mode. Its consequence for senescence is inference, not demonstration.
+line1 | cgas-sting | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | L1 reverse-transcription intermediates are cytosolic DNA. Restriction failure supplies cGAS with ligand continuously rather than episodically.
+line1 | sterile-inflam | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+lentivirus | sterile-inflam | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | The antiviral function is well demonstrated; its contribution to STERILE inflammation in an uninfected patient is inference.
+dna-virus | sterile-inflam | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+rnp-sequestration | ifn-i | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Non-catalytic RNP sequestration and stress-granule trapping prevent retroelement sensing by cytosolic receptors.
+chemo-hydrolysis | sphase | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Hydrolysis of nucleoside analogue triphosphates (Ara-CTP, dFdCTP) prevents premature S-phase arrest and cytotoxicity.
+mrna-deg | transcription | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+llps | dsrna-seq | performs | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+llps | stress-granule | performs | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+dsrna-seq | ifn-i | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Sequestering immunostimulatory dsRNA in condensates keeps it away from RIG-I and MDA5 — restriction by phase separation rather than by catalysis.
+stress-granule | line1 | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | L1 ORF1p ribonucleoprotein particles are held in granules, out of circulation.
+vdac1 | deltapsi | maintains | macropore_translocation | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | SAMHD1 interacts physically with VDAC1 and must be present in the mitochondrial compartment to prevent membrane-potential collapse.
+vdac1 | mtdna-leak | maintains | macropore_translocation | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+mtdna-leak | mtdna-ifn | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+mtdna-ifn | ifn-i | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+deltapsi | cytc | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+deltapsi | metabolic | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+cytc | apoptosis | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+bik | apoptosis | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+bik | autophagy | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | BIK — which SAMHD1 itself upregulates — sequesters BECN1, biasing the cell toward apoptosis over mitophagy.
+autophagy | deltapsi | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Damaged mitochondria that are tagged but not cleared keep degrading the potential of the pool that remains.
+cgas-sting | ifn-i | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+cgas-sting | nfkb | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+nfkb | sterile-inflam | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+nfkb | ip10 | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+tlr4 | nfkb | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+ifn-i | ip10 | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | IP-10/CXCL10 is an ISG; it is the readout by which the interferon arm is measured clinically.
+ifn-i | m1m2 | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+m1m2 | mono-mac | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+sterile-inflam | cytokine-storm | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | The step with the least direct support in the whole atlas. No cytokine-storm event has been documented in this variant; it is a mechanistic extrapolation from the suppression functions, and is graded accordingly.
+ip10 | cytokine-storm | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+ifn-i | cd8 | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+sterile-inflam | prostatitis | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+prostatitis | bladder | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+sterile-inflam | bladder | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+checkpoint | cll | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+checkpoint | breast-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+checkpoint | colon-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+checkpoint | lung-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+senescence | prostate-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+aging | prostate-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | 
+metabolic | rcc | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | The exception that keeps the rest honest: here SAMHD1 supports tumour progression, so having less of it is protective rather than harmful.
+site1-gtp | tetramer-switch | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | GTP binding at Site 1 primes dimer-dimer interface
+site2-dgtp | tetramer-switch | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | dNTP binding at Site 2 completes tetramer activation
+tetramer-switch | dntpase | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Active homotetramer executes dNTP hydrolysis
+tetramer-switch | lentivirus | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Tetramer dNTP depletion blocks lentiviral cDNA synthesis
+tetramer-switch | dna-virus | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Tetramer dNTP depletion blocks DNA viral replication
+tetramer-switch | cytarabine-metab | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Tetramer active site dephosphorylates Ara-CTP
+cdk1-cdk2 | p-t592 | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | CDK1/2 phosphorylates Thr592 in cycling cells
+pp2a-b55 | p-t592 | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | PP2A-B55α dephosphorylates Thr592 at mitotic exit
+ankib1-ub | sting-gain | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | K11-ubiquitination creates positive STING gain control
+sting-gain | ifn-i | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | K11-ubiquitinated SAMHD1 stabilizes STING signalosome to potentiate Type I IFN output
+dntpase | nlrp3-metab | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | SAMHD1 dNTPase depletes dNTP pools that trigger NLRP3
+nlrp3-metab | il1b-release | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | NLRP3 assembly drives caspase-1 cleavage and IL-1β/18 release
+il1b-release | sterile-inflam | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Mature IL-1β drives chronic sterile tissue inflammation
+il1b-release | cytokine-storm | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Hyperactive IL-1β/18 release fuels systemic cytokine storm
+ctip-interact | dna-resection | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | CtIP recruitment stimulates 5-3 DNA end resection
+mrn-complex | fork | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | MRN interaction coordinates MRE11 fork protection
+dna-resection | rad51-brca2 | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Resected ssDNA templates RAD51-BRCA2 filament loading
+rad51-brca2 | breast-ca | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Homologous recombination suppresses hereditary breast cancer
+fork | parp1-axis | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Intact fork protection prevents PARP1 hyperactivation
+parp1-axis | cll | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Replication stress and PARP1 overload drive genomic instability in CLL
+cytarabine-metab | chemo-sensitivity | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | SAMHD1 Ara-C hydrolysis prevents clinical hypersensitivity
+vpx-degradation | lentivirus | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Vpx degradation destroys SAMHD1 to relieve viral restriction
+sterile-inflam | mecfs-phenotype | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Sterile innate inflammation drives ME/CFS clinical symptoms
+deltapsi | mecfs-phenotype | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Mitochondrial membrane potential collapse triggers post-exertional crashes
+ifn-i | interferonopathy-ags | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Constitutive Type I IFN elevation causes Aicardi-Goutières syndrome spectrum
+nfkb | psa-phenotype | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | NF-κB suppression restrains psoriatic synovial inflammation
+ifn-i | dntpase | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | [FEEDBACK LOOP] Type I IFN induces SAMHD1 expression via ISRE promoter
+deltapsi | ox-dna-bind | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | [FEEDBACK LOOP] Mitochondrial ROS oxidizes C522 to lock DNA binding
+sphase | cdk1-cdk2 | drives | signal_transduction | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | [FEEDBACK LOOP] S-phase entry activates CDK2 kinase
+autophagy | mtdna-leak | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | [FEEDBACK LOOP] Mitophagy clears damaged mitochondria to block mtDNA escape
+p-t592 | lentivirus | prevents | allosteric_suppression | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | T592 phosphorylation in S/G2 phase switches off retroviral restriction
+p-t592 | fork | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Phosphorylated SAMHD1 preserves replication fork protection during DNA synthesis; asymmetric latch uncoupling in heterozygous A565T complexes causes dominant-negative fork collapse
+p-t592 | dna-resection | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | Symmetric phosphorylation-gated latch transition is required for coordinated CtIP/MRE11 recruitment to DNA double-strand breaks during homologous recombination
+dntpase | telomere | maintains | homeostatic_coupling | L1_in_silico | [monocyte,macrophage,microglia,cd4_tcell] | dGTP pool restriction directly regulates telomerase processivity and telomere length

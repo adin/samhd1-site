@@ -241,9 +241,10 @@ export const nodes = [
     "key": true,
     "summary": "Senses long duplex RNA by cooperative filament assembly. The retroelement sensor of the RLR family.",
     "detail": "MDA5 has no end-recognition mechanism — it polymerises along the length of a duplex, so it reads duplex LENGTH as the danger signal. Its physiological self-antigen problem is Alu inverted-repeat dsRNA in 3′UTRs, which ADAR1 p150 must continuously edit to keep below the MDA5 threshold. IFIH1 gain-of-function is AGS7; ADAR1 loss is AGS6. Both converge on this node.",
-    "samhd1": "SAMHD1 deficiency activates MDA5 in a cGAS/STING-INDEPENDENT manner — a genuinely separate arm from Loop A. SAMHD1 normally sequesters immunostimulatory dsRNA in LLPS condensates; losing that sequestration exposes duplex RNA that MDA5 reads as viral.",
+    "samhd1": "SAMHD1 deficiency activates MDA5 in a cGAS/STING-DEPENDENT manner (Schumann et al. 2023) — this axis requires priming through the cGAS/STING pathway rather than running as a fully separate arm from Loop A, as an earlier version of this note had it backwards. SAMHD1 also normally sequesters immunostimulatory dsRNA in LLPS condensates (Maharana et al. 2022, not Schumann -- corrected 2026-09-13); losing that sequestration exposes duplex RNA that MDA5 reads as viral.",
     "refs": [
       "schumann2023",
+      "maharana2022",
       "ahmad2018",
       "liddicoat2015",
       "ricemda5"
@@ -303,9 +304,10 @@ export const nodes = [
     "summary": "Mixed pool: Alu inverted repeats, mitochondrial bidirectional transcripts, HERV transcripts, viral replication intermediates.",
     "samhd1": "SAMHD1 normally holds this pool inside LLPS condensates. Haploinsufficiency releases it into free solution where MDA5 can polymerise on it.",
     "refs": [
-      "schumann2023",
+      "maharana2022",
       "ahmad2018"
     ],
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit follow-up): schumann2023 replaced with maharana2022 -- this node's entire claim is about LLPS condensate sequestration, which schumann2023 has no content on at all.",
     "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
@@ -902,7 +904,7 @@ export const nodes = [
       "doc10arm",
       "reilly2013"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -992,7 +994,7 @@ export const nodes = [
       "yang2016irf3",
       "doc10arm"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1034,7 +1036,7 @@ export const nodes = [
       "li2013irf7",
       "docConcept"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1168,7 +1170,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1188,7 +1189,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1207,7 +1207,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1227,7 +1226,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1241,13 +1239,12 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "A",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1267,7 +1264,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1282,15 +1278,15 @@ export const edges = [
     ],
     "evidence": "S",
     "refs": [
-      "schumann2023"
+      "maharana2022"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit follow-up): schumann2023 replaced with maharana2022 -- this edge represents dsRNA released from condensates becoming available to MDA5, which is maharana2022's finding, not schumann2023's (which has no condensate content). Note this citation covers the release/availability step, not the classical cooperative-filament-nucleation biophysics itself (Peisley/Hur-lab structural work, not cited in this atlas) -- flagged rather than left silently uncited.",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1309,7 +1305,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1332,7 +1327,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1351,7 +1345,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1367,13 +1360,12 @@ export const edges = [
     "refs": [
       "espada2023"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1392,7 +1384,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1411,7 +1402,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1429,7 +1419,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1448,7 +1437,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1466,7 +1454,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1486,7 +1473,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1501,13 +1487,12 @@ export const edges = [
     "refs": [
       "espada2023"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1526,7 +1511,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1539,13 +1523,12 @@ export const edges = [
       "tlr"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1564,7 +1547,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1584,7 +1566,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1602,7 +1583,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1620,7 +1600,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1639,7 +1618,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1658,7 +1636,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1671,13 +1648,15 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
+    "refs": [
+      "uematsu2005"
+    ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1699,7 +1678,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1721,7 +1699,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1739,7 +1716,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1758,7 +1734,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1781,7 +1756,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1801,7 +1775,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1821,7 +1794,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1841,7 +1813,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1861,7 +1832,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1886,7 +1856,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1906,7 +1875,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1920,15 +1888,21 @@ export const edges = [
       "rlr-mavs",
       "tlr"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L4_primary_human",
+    "refs": [
+      "sharma2003",
+      "mori2004irf3",
+      "servant2003",
+      "mcwhirter2003"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Was L1_in_silico with only an unsourced STRING score; sharma2003, mori2004irf3, servant2003 and mcwhirter2003 (Tbk1-/- MEFs) establish the mechanism and the Ser386/396 sites, all in human cell lines/mouse MEFs -- none SAMHD1-specific, hence evidence 'G' not 'S' (corrected 2026-09-12 per literature-agent review; the initial fix wrongly kept 'S').",
     "interaction_type": "kinase_phosphorylation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -1945,14 +1919,18 @@ export const edges = [
       "cgas-sting",
       "tlr"
     ],
-    "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "evidence": "G",
+    "refs": [
+      "sharma2003",
+      "lin2000irf7"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Was L1_in_silico with only an unsourced STRING score (string_experimental 0.331 is notably weak vs tbk1->irf3's 0.927 -- kept visible rather than hidden behind the combined score). sharma2003 + lin2000irf7 (human IRF7 Ser477/Ser479 phospho-acceptor sites) establish the mechanism in human cell lines -- none SAMHD1-specific, hence 'G' not 'S' (corrected 2026-09-12 per literature-agent review; the initial fix wrongly kept 'S').",
     "interaction_type": "kinase_phosphorylation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -1975,13 +1953,12 @@ export const edges = [
     "refs": [
       "espada2023"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1993,13 +1970,16 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
+    "refs": [
+      "sharma2003",
+      "fitzgerald2003"
+    ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -2018,7 +1998,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -2037,7 +2016,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -2056,7 +2034,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -2075,7 +2052,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -2098,7 +2074,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -2114,7 +2089,7 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "non_canonical_signaling",
-    "detail": "Graded I deliberately: the source paper (fibroblasts/U2OS only) shows this ISG pattern co-occurring with nuclear STING accumulation, not a demonstrated mechanistic chain to it. Do not read `drive` here as established causation -- it is the closest available edge kind for a candidate/proposed association, not a claim the intermediary step is proven. Cell context (monocyte/macrophage/microglia/vic_cardiac/cd4_tcell) is this atlas's own disease-relevant modeling target, not a tested system.",
+    "detail": "Graded I deliberately: the source paper (fibroblasts/U2OS only) shows this ISG pattern co-occurring with nuclear STING accumulation, not a demonstrated mechanistic chain to it. Do not read `drive` here as established causation -- it is the closest available edge kind for a candidate/proposed association, not a claim the intermediary step is proven. Cell context (monocyte/macrophage/microglia/cd4_tcell) is this atlas's own disease-relevant modeling target, not a tested system.",
     "refs": [
       "teodorocastro2026"
     ],
@@ -2122,7 +2097,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   }

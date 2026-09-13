@@ -23,6 +23,26 @@
  *   samhd1:    'what A565T haploinsufficiency does here', // optional, gets the amber box
  *   drugs:     ['upadacitinib'],        // optional — node ids of drugs acting here
  *   refs:      ['west2015'],            // optional — keys into data/refs.js
+ *   evidence_tier: 'L3_cell_line',      // optional — see EVIDENCE_TIER below. Orthogonal to `evidence`,
+ *                                       // not a replacement for it: both may be present and disagree
+ *                                       // in ways that look contradictory but aren't (e.g. evidence:'S'
+ *                                       // + evidence_tier:'L3_cell_line' is a SAMHD1-specific finding
+ *                                       // shown in a cell line — both fields are correct at once).
+ *   evidenceTierNote: '...',            // optional — required whenever evidence_tier was corrected from
+ *                                       // a mechanical/templated value; documents the per-ref reasoning
+ *   cell_context: ['monocyte'],         // optional — see CELL_CONTEXT below. NOT a per-citation claim.
+ *   cellContextNote: '...',             // optional — same convention as evidenceTierNote, for cell_context
+ *   kinetics: { Km_uM: 5.2 },           // optional — MEASURED biochemical rate/affinity constants only
+ *                                       // (Km, kcat, Kd, Hill coefficient...). Never clinical/pedigree
+ *                                       // metadata (penetrance, carrier counts) — that has no home in
+ *                                       // this schema yet; do not invent one by overloading `kinetics`.
+ *   db_xrefs: { uniprot: 'Q9Y3Z3' },    // optional — UniProt/Ensembl/HGNC/ChEMBL identifiers
+ *   interaction_type: 'enzymatic_hydrolysis', // optional — free-text mechanism label, PER EDGE JUDGMENT.
+ *                                       // Do not assign by a fixed lookup keyed on `kind` — `kind:
+ *                                       // 'inhibit'` covers mechanistically distinct events (allosteric
+ *                                       // suppression, protein-protein suppression, enzymatic hydrolysis,
+ *                                       // oligomerisation restraint) and a single lookup table conflates
+ *                                       // them (see redteam audit of commit 20ae777).
  * }
  *
  * ── EDGE ────────────────────────────────────────────────────────────────
@@ -36,12 +56,46 @@
  *   detail: '...',                      // optional
  *   refs: ['rabinowitz2025'],
  *   bend: 0.18,                         // optional — curve amount, default 0.12
+ *   // + evidence_tier / evidenceTierNote / cell_context / cellContextNote / kinetics / db_xrefs /
+ *   // interaction_type, all as documented on NODE above — every one applies to edges identically.
  * }
  *
  * EVIDENCE KEY (from Mitochondria under siege.tex):
  *   S — demonstrated in SAMHD1-deficient cells / animals / AGS patients
  *   G — well established in related immune or mitochondrial systems, imported here
  *   I — mechanistically consistent extrapolation, not yet tested in SAMHD1 models
+ *
+ * EVIDENCE_TIER (added 2026-09; orthogonal axis to the evidence key above — experimental
+ * SYSTEM, not SAMHD1-specificity):
+ *   L1_in_silico      — computational/structural prediction only, nothing wet-lab
+ *   L3_cell_line       — cell line (may be primary-tissue-derived, e.g. THP-1) or mouse
+ *   L4_primary_human   — primary human cells/tissue
+ *   L6_human_clinical  — human clinical cohort/patient observation
+ *   (L2_recombinant and L5_animal_in_vivo are valid tier NAMES used elsewhere in this
+ *   project's other atlas but have no assigned nodes here yet — do not force a cell-line
+ *   or animal finding into L1/L3/L4/L6 if one of those two fits better.)
+ *   Assign per claim, from what the CITED ref actually demonstrates — never by node
+ *   `klass`, edge `kind`, or any other structural field. A zero-`refs` node/edge has no
+ *   evidentiary basis for any tier above L1_in_silico.
+ *
+ * CELL_CONTEXT (added 2026-09): this atlas's own disease-relevant MODELING TARGET for a
+ * node/edge — i.e. which of this atlas's myeloid/immune/responder-cell lineages the
+ * mechanism is being scoped to for this model — NOT a claim that the cited paper's own
+ * experiments were run in those exact cells. A citation demonstrated in HeLa/U2OS/mouse
+ * can still correctly carry a myeloid cell_context if that is the disease population this
+ * atlas is modeling; the `evidence_tier` field is what carries the real experimental
+ * system. That said, cell_context is still supposed to track the mechanism's actual
+ * biological compartment within THIS atlas's causal graph — e.g. a Loop C node that is
+ * mechanistically inside the NK/Th1 responder cell (see the `compartment: 'responder'`
+ * nodes in cytokines.js/trailshort.js) must carry the responder-lineage array
+ * (['cd4_tcell','cd8_tcell','nk_cell'], optionally plus 'monocyte' only on an edge that
+ * literally crosses from the myeloid to the responder cell), never the generic myeloid
+ * template — that mislabels which cell the step happens in, which is a real topical
+ * error, not just an evidence-strength question. Do not invent a cell type with zero
+ * basis anywhere in this atlas's own refs.js (the vic_cardiac incident, fixed 2026-09-12:
+ * a real cell type from one uncited paper, mechanically templated onto 481 unrelated
+ * entries) — every cell_context value should trace to either a cited ref or this atlas's
+ * own stated disease scope, not be copy-pasted by default.
  */
 
 // ── Compartments ─────────────────────────────────────────────────────────

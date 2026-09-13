@@ -49,12 +49,13 @@ export const nodes = [
       "goodier2016"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -80,12 +81,13 @@ export const nodes = [
       "ahmad2018"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -110,12 +112,13 @@ export const nodes = [
       "rowe2010"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -135,13 +138,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "RNA Pol II transcript from the internal 5′UTR promoter; exported and translated in the cytoplasm.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -161,13 +165,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Coats L1 RNA in a strong cis preference, so an L1 mRNA is mobilised by the proteins it encoded.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -196,13 +201,14 @@ export const nodes = [
       "hu2015samhd1",
       "herrmann2018"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -227,13 +233,14 @@ export const nodes = [
       "hu2015samhd1",
       "herrmann2018"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -255,13 +262,14 @@ export const nodes = [
     "evidence": "G",
     "summary": "ORF2p nicks genomic DNA at a TTAAAA-like consensus; the freed 3′-OH primes reverse transcription in situ.",
     "detail": "The mechanism is the reason retrotransposition is inseparable from DNA damage: every insertion attempt begins with a deliberate nick in the genome, and most attempts abort, leaving the break behind.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -288,12 +296,13 @@ export const nodes = [
       "zhao2013samhd1"
     ],
     "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -322,12 +331,13 @@ export const nodes = [
       "stetson2008"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -356,12 +366,13 @@ export const nodes = [
       "riceadar"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -382,13 +393,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Feeds the cytosolic dsRNA pool, TLR7/8 in endosomes, and TLR4 via Env protein.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -415,12 +427,13 @@ export const nodes = [
       "liu2018hush"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -440,13 +453,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "The effector arm of HUSH: physically compacts chromatin over the target locus.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -466,13 +480,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Deposits H3K9me3, the repressive mark that keeps L1 and HERV loci heterochromatic.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -492,13 +507,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Read by HP1, propagated across the locus. The physical substrate of retroelement silence.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -519,13 +535,14 @@ export const nodes = [
     "evidence": "G",
     "summary": "Maintains CpG methylation of the L1 5′UTR promoter through replication — the oldest defence layer.",
     "detail": "Global hypomethylation in cancer and in ageing de-represses L1 by exactly this route, which is why retroelement activity and genomic instability track together across so many conditions.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -549,12 +566,13 @@ export const nodes = [
       "rowe2010"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -579,12 +597,13 @@ export const nodes = [
       "moldovan2015"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -604,13 +623,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Associates with L1 RNP and unwinds/destabilises it; an ISG, so interferon reinforces this layer.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -631,13 +651,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "dsRNA-activated; makes 2-5A to switch on RNase L. A parallel dsRNA-sensing arm to MDA5.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -658,13 +679,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Cleaves single-stranded RNA indiscriminately once activated — including L1 and Alu transcripts.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -694,12 +716,13 @@ export const nodes = [
       "ahmad2018"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -721,13 +744,14 @@ export const nodes = [
     "evidence": "G",
     "summary": "Cytidine deaminases that hypermutate L1 cDNA (C→U, read as G→A) before it can integrate.",
     "detail": "The same enzymes are a major endogenous mutagen in cancer genomes — restriction and mutagenesis are the same activity pointed at different substrates.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -756,12 +780,13 @@ export const nodes = [
       "thomas2017"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -787,12 +812,13 @@ export const nodes = [
       "crow2006rnaseh2"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -823,13 +849,15 @@ export const nodes = [
       "ricemda5",
       "docConcept"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L6_human_clinical",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): all six refs are human genetics discovery cohorts (or the internal concept note) -- no cell-line system at all, and the node's own incident edge samhd1->ags-family already correctly carries L6_human_clinical on the same citations. The node itself had been left at the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   },
   {
@@ -850,13 +878,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Rupture-prone envelopes that expose genomic DNA to cGAS — a nuclear source of Loop A ligand.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): hsc had zero hematopoietic-stem-cell basis across this file's 22 citations -- the actual stem-cell content is pluripotent (mouse/human ESC in rowe2010/liu2018hush, hiPSC-derived neurons/astrocytes in thomas2017), so corrected to ipsc, matching the mito.js/PR #120 precedent. cd4_tcell removed: not one citation in this file used a T cell of any kind (systems verified: HeLa/HEK293, KBM7/K562 -- both myeloid CML lines, THP-1, mouse ESC/embryos, hiPSC neural models, Trex1/Samhd1 KO mice, human AGS cohorts) -- it was this atlas's inherited default template token, not per-entry judgment. microglia added: AGS is a neuroinflammatory encephalopathy and thomas2017 (this file's only disease-model citation) is a CNS/AGS model, making microglia the best-supported non-monocyte lineage in the file (the model's own IFN source is astrocytes, not microglia specifically -- no atlas token exists for that, noted rather than invented). dendritic_cell kept as a defensible monocyte-lineage modeling target even though no citation demonstrates DC-specific retroelement biology. This also converges the node and edge arrays, which previously differed for no mechanistic reason -- ten node/edge pairs sharing the identical sole citation (e.g. trim28 vs trim28->herv-locus, both rowe2010) had disagreeing cell_context, proof the split was a batch-authoring artifact, not deliberate. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "cd4_tcell",
+      "microglia",
       "dendritic_cell",
-      "hsc"
+      "ipsc"
     ]
   }
 ];
@@ -871,14 +900,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -890,14 +920,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -909,14 +940,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -928,14 +960,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -946,14 +979,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -965,14 +999,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "compartment_translocation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -985,14 +1020,15 @@ export const edges = [
       "genome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1007,12 +1043,13 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1025,14 +1062,15 @@ export const edges = [
       "cgas-sting"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1044,14 +1082,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1064,14 +1103,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1086,12 +1126,13 @@ export const edges = [
     "bend": 0.5,
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1103,14 +1144,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1123,14 +1165,15 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1141,14 +1184,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1160,14 +1204,15 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1180,14 +1225,15 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1200,14 +1246,15 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1219,14 +1266,15 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1244,12 +1292,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1261,14 +1310,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1280,14 +1330,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1298,14 +1349,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1322,12 +1374,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1338,14 +1391,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1357,14 +1411,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1381,12 +1436,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1397,14 +1453,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1421,12 +1478,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1438,14 +1496,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1457,14 +1516,15 @@ export const edges = [
       "isg"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1477,14 +1537,15 @@ export const edges = [
       "isg"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1495,14 +1556,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1520,12 +1582,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1537,14 +1600,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1562,12 +1626,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1580,14 +1645,15 @@ export const edges = [
       "genome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1600,14 +1666,15 @@ export const edges = [
       "genome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1619,14 +1686,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1642,14 +1710,15 @@ export const edges = [
     "refs": [
       "zhao2013samhd1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1665,14 +1734,15 @@ export const edges = [
     "refs": [
       "hu2015samhd1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1687,16 +1757,18 @@ export const edges = [
     ],
     "evidence": "S",
     "refs": [
-      "schumann2023"
+      "maharana2022"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit follow-up): this edge previously cited schumann2023, which has no LLPS/condensate content at all -- the actual source is maharana2022 (SAMHD1 as an ssRNA 3' exonuclease whose loss dissolves RNA-protein condensates, releasing sequestered dsRNA to RLR sensing).",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1713,14 +1785,15 @@ export const edges = [
       "zhao2013samhd1",
       "docConcept"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1740,12 +1813,13 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1759,14 +1833,15 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1778,14 +1853,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1797,14 +1873,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1817,14 +1894,18 @@ export const edges = [
       "samhd1"
     ],
     "evidence": "S",
-    "evidence_tier": "L4_primary_human",
+    "refs": [
+      "rice2009"
+    ],
+    "evidence_tier": "L6_human_clinical",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1836,14 +1917,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1855,14 +1937,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1874,14 +1957,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1893,14 +1977,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1912,14 +1997,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1932,14 +2018,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1951,14 +2038,15 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   },
   {
@@ -1975,14 +2063,15 @@ export const edges = [
     "refs": [
       "yang2016irf3"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
-      "cd4_tcell"
+      "dendritic_cell",
+      "ipsc"
     ]
   }
 ];

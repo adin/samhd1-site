@@ -34,7 +34,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "db_xrefs": {
@@ -110,7 +109,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -142,7 +140,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -180,7 +177,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -212,7 +208,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -243,7 +238,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "db_xrefs": {
@@ -281,7 +275,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -311,7 +304,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "db_xrefs": {
@@ -343,7 +335,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -375,7 +366,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -407,7 +397,6 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ]
   },
@@ -497,7 +486,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -520,7 +508,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -543,7 +530,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -567,7 +553,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -592,7 +577,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -610,7 +594,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -634,7 +617,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -653,7 +635,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -676,7 +657,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -704,7 +684,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -727,7 +706,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -748,7 +726,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -771,7 +748,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -797,7 +773,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -820,7 +795,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -843,7 +817,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -866,7 +839,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -889,7 +861,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -912,7 +883,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -935,7 +905,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -954,7 +923,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -973,7 +941,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -996,7 +963,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1015,7 +981,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1033,7 +998,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1053,7 +1017,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1072,7 +1035,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1094,7 +1056,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1119,7 +1080,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1137,7 +1097,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1161,7 +1120,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "cd4_tcell"
     ]
   },
@@ -1177,7 +1135,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "label": "Assembles into 2:2 mixed tetramers"
@@ -1194,7 +1151,6 @@ export const edges = [
       "monocyte",
       "macrophage",
       "microglia",
-      "vic_cardiac",
       "ipsc"
     ],
     "label": "Preserves partial ~50% dNTP depletion"
