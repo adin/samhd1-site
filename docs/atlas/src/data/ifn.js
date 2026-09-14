@@ -63,9 +63,10 @@ export const nodes = [
       4
     ],
     "lod": 1,
-    "evidence": "S",
+    "evidence": "G",
     "summary": "The second-wave amplifier set, driven by IRF7 rather than IRF3.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -245,12 +246,10 @@ export const nodes = [
     "refs": [
       "fragoulis2023"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L6_human_clinical",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): fragoulis2023 is a human clinical cohort (peripheral blood), not a cell-line study -- upgraded from the generic L3_cell_line template. Separately flagged (not fixed here, needs a citation decision, not a mechanical one): fragoulis2023's own reported IL17/IL23 mRNA data show no significant difference between PsA patients and controls, so this citation does not actually demonstrate the claim it is attached to.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node's own `full` field says 'Th17 effector' -- IL-17A is made by Th17/ILC3/gammadelta T cells, not monocytes/macrophages/microglia/DCs. Narrowed to match cytokines.js's th17-cell node (same citation, already correctly cd4_tcell-only per PR #112) -- the myeloid template had been left on the cytokine itself while PR #112 fixed the surrounding Th17 axis nodes.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -302,13 +301,15 @@ export const nodes = [
     "refs": [
       "che2025"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L6_human_clinical",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): che2025 is a human ME/CFS clinical cohort, not a cell-line study -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node's own summary calls GDF15 'the canonical CIRCULATING readout' -- a plasma biomarker, not a cell-intrinsic myeloid claim. Matched to the systemic clinical-outcome array (see drugs.js's mecfs node) rather than the generic myeloid template, same convention PR #112 used for mcp1/psa/pem. Softer than those cases since ISR-driven GDF15 genuinely is produced by myeloid cells -- the systemic array better represents 'circulating readout' than a producing-cell claim would.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -368,7 +369,8 @@ export const nodes = [
     "refs": [
       "zhang2015isg15"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to L4_primary_human, matching the isg15 node and isg15->usp18 edge which already correctly carry this tier on the same citation (zhang2015isg15 = human ISG15-deficiency patient cells).",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -397,7 +399,7 @@ export const nodes = [
       14
     ],
     "lod": 1,
-    "evidence": "S",
+    "evidence": "G",
     "key": true,
     "summary": "Shared by type I, type II and type III interferon receptors. The pharmacologic choke point of the whole ISG arm.",
     "samhd1": "JAK1-selective inhibition clears the inflammatory arm of this disease almost completely and the bioenergetic arm barely at all. What it fails to move is therefore a map of everything downstream of the genetic lesion that does not route through JAK–STAT: Loop B, the direct mitochondrial injuries, and the upstream ANKIB1 priming that JAK inhibition never reaches.",
@@ -410,6 +412,7 @@ export const nodes = [
       "rodriguez2023"
     ],
     "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S->G -- fremond2023's real corrected citation (see refs.js) is a JAK-inhibitor AGS cohort with ZERO SAMHD1 patients (RNASEH2B/ADAR1/TREX1/IFIH1/RNU7-1 only), so it cannot support an S grade. rodriguez2023 could not be verified as a real paper at all (see refs.js flag) and is not being relied on for this grade. doc10arm is an internal project document. If a genuine SAMHD1-specific JAK-inhibitor citation is found, this can be revisited.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -481,7 +484,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Partners JAK1 on IFNGR. Also the erythropoietin/thrombopoietin kinase — the source of JAK-inhibitor cytopenias.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -507,7 +511,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Uses JAK1 + JAK2 → STAT1 homodimer (GAF) → GAS elements.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -533,7 +538,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Epithelial-restricted; converges on the same JAK1/TYK2 → ISGF3 module.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): same as the ifnl node -- 'epithelial-restricted' per its own summary, no myeloid basis. Left empty pending an epithelial-cell vocabulary token; see ifnl's note.",
     "cell_context": []
   },
@@ -555,7 +561,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Reads IL-1β back into MyD88 → NF-κB — how Loop B keeps its own priming signal alive.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -582,7 +589,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "NF-κB activation and, via ROS, chronic sublethal mPTP opening.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -618,7 +626,8 @@ export const nodes = [
       "rabinowitz2025",
       "bhimavarapu2015"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): neither ref is primary human tissue -- rabinowitz2025 is SAMHD1-KO THP-1 monocytes (a cell line, matching the ifnar1 node's own correct tier on this same ref) and bhimavarapu2015 (real author: Sisler et al. 2015, see refs.js) is a mouse study. L4_primary_human was wrong; L3_cell_line is the best fit config.js offers without introducing an unused L5_animal_in_vivo tier for a single mixed-evidence node.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -647,9 +656,10 @@ export const nodes = [
       24
     ],
     "lod": 2,
-    "evidence": "S",
+    "evidence": "G",
     "summary": "Type-I-specific; provides the transactivation domain of ISGF3.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. Also, evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -680,7 +690,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "The DNA-binding subunit of ISGF3; supplies ISRE specificity.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -705,9 +716,10 @@ export const nodes = [
       -2
     ],
     "lod": 1,
-    "evidence": "S",
+    "evidence": "G",
     "summary": "The type-I interferon transcription complex. Binds ISRE elements across several hundred ISGs.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. Also, evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -768,7 +780,8 @@ export const nodes = [
     "evidence": "G",
     "summary": "Requires IRF3 dimers (PRDIII-I) AND NF-κB (PRDII) AND ATF2/c-Jun on the same enhanceosome.",
     "detail": "The AND-gate architecture is why interferon induction is normally so hard to trigger — and why priming several inputs at once, as the ANKIB1 node does, changes the output so dramatically.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -795,7 +808,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "ISGF3 binding sites upstream of several hundred interferon-stimulated genes.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -821,7 +835,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "STAT1-homodimer (GAF) binding sites — the type II interferon transcriptional programme.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -852,9 +867,12 @@ export const nodes = [
     "samhd1": "The concept note predicts a SERONEGATIVE profile: standard serum cytokine panels normal, but intracellular ISG expression elevated. Workup should target IFN-α/β, free ISG15, CXCL10 and ISG scoring rather than a conventional cytokine panel.",
     "refs": [
       "tesser2025",
-      "docConcept"
+      "docConcept",
+      "han2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L6_human_clinical",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): tesser2025 is a 39-patient human clinical cohort (whole-blood RT-qPCR validation study), not a cell-line study -- upgraded from the generic L3_cell_line template. han2026 (SAMHD1-AGS patient PBMC scRNA-seq) added as a directly relevant citation -- its top upregulated genes (IFIT1, IFIT3, IFI44L, ISG15, OAS1) are this node's own gene list.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell's only real basis anywhere in this atlas's ISG-programme/IFN-receptor machinery is han2026's SAMHD1-AGS patient PBMC scRNA-seq (also the basis for cd4_tcell in sensing.js's cgas node) -- no other citation in ifn.js resolves a T cell. Kept, since IFNAR/JAK-STAT signaling is genuinely constitutive on T cells and this is this file's closest citation to a real basis, but caveated: han2026's abstract describes whole-PBMC (not cell-sorted) scRNA-seq from a single patient, and CD4-cluster-level ISG resolution could not be independently confirmed from the abstract alone (full text is paywalled). Worth re-verifying against full text since two files now lean on this claim.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -955,7 +973,8 @@ export const nodes = [
     "refs": [
       "zhang2015isg15"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to L4_primary_human, matching the isg15 node and isg15->usp18 edge which already correctly carry this tier on the same citation (zhang2015isg15 = human ISG15-deficiency patient cells).",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -987,7 +1006,8 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Second brake layer: direct JAK inhibition plus ElonginBC-Cul2 ubiquitination of receptor complexes.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1038,14 +1058,17 @@ export const edges = [
       "rlr-mavs",
       "tlr"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "compartment_translocation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1058,12 +1081,15 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1076,14 +1102,17 @@ export const edges = [
       "cgas-sting",
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1095,14 +1124,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "irf7",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1120,10 +1152,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this is the IFN-lambda PRODUCTION arm, kept myeloid/DC -- pDCs/cDCs are significant IFN-lambda producers. Distinct from ifnl->ifnlr/ifnlr->jak1 (the RECEPTION arm, cleared to [] since IFNLR1 expression is epithelial/neutrophil-restricted). The ifnl node's own summary conflates production and reception by calling the ligand itself 'epithelial-restricted' when only the receptor is.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1135,14 +1169,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1153,14 +1190,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1171,14 +1211,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "irf7",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1190,12 +1233,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1207,14 +1253,11 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
-    "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this edge and ifnlr->jak1 are the IFN-lambda RECEPTION arm -- IFNLR1 is epithelial/neutrophil-restricted (this is what the ifnl/ifnlr nodes' own PR #112 clearing to [] already established), so an edge between two [] nodes inherited the myeloid template with zero overlap to either endpoint (the disjoint-check violation PR #112 defined). Cleared to match. This is distinct from IFN-lambda PRODUCTION (see irf3->ifnl), which is not epithelial-restricted and correctly keeps myeloid/DC.",
+    "cell_context": []
   },
   {
     "from": "il1b",
@@ -1225,12 +1268,15 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1242,12 +1288,15 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1262,12 +1311,15 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1279,12 +1331,15 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1302,10 +1357,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1319,12 +1376,15 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1335,14 +1395,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1354,12 +1417,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1371,12 +1437,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1388,14 +1457,11 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
-    "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): same reasoning as ifnl->ifnlr -- IFN-lambda reception is epithelial/neutrophil-restricted, matching the ifnl/ifnlr nodes' own [] clearing from PR #112. Cleared to match rather than left as a disjoint edge.",
+    "cell_context": []
   },
   {
     "from": "jak1",
@@ -1405,14 +1471,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -1429,14 +1498,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1448,12 +1520,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1472,10 +1547,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1494,10 +1571,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1515,10 +1594,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1530,14 +1611,17 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -1553,13 +1637,16 @@ export const edges = [
     "pathways": [
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1572,12 +1659,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1590,12 +1680,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "compartment_translocation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1607,14 +1700,17 @@ export const edges = [
       "ifn-jak",
       "isg"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1626,14 +1722,17 @@ export const edges = [
     "pathways": [
       "isg"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1645,12 +1744,15 @@ export const edges = [
       "isg"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1661,14 +1763,17 @@ export const edges = [
     "pathways": [
       "isg"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1679,13 +1784,16 @@ export const edges = [
     "pathways": [
       "isg"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1697,12 +1805,15 @@ export const edges = [
       "isg"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1724,10 +1835,12 @@ export const edges = [
     "evidence_tier": "L3_cell_line",
     "evidenceTierNote": "Was zero-refs L4_primary_human (mechanically downgraded to L1 2026-09-12, then properly sourced): marie1998 is the primary paper establishing IRF7 as an ISG whose induction feeds the delayed IFN-alpha gene set -- mouse/human cell lines, not SAMHD1-specific, hence G/L3 not S/L4.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1738,13 +1851,16 @@ export const edges = [
     "pathways": [
       "isg"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1763,10 +1879,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1785,10 +1903,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1800,13 +1920,16 @@ export const edges = [
       "metabolic",
       "mito"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1820,12 +1943,15 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1843,10 +1969,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1859,14 +1987,17 @@ export const edges = [
       "isg",
       "ifn-jak"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "bend": 0.3,
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1878,12 +2009,15 @@ export const edges = [
       "isg"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1901,10 +2035,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1923,10 +2059,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1945,10 +2083,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1982,13 +2122,16 @@ export const edges = [
     "refs": [
       "che2025"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L6_human_clinical",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): che2025 is a human clinical cohort -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matched to gdf15's own systemic clinical-outcome array (a circulating biomarker readout, not a myeloid-intrinsic claim).",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -1999,12 +2142,15 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2016,12 +2162,15 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2033,12 +2182,15 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2052,12 +2204,15 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.35,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2075,10 +2230,11 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this is the myeloid-to-responder crossing edge (config.js's own rule for exactly this case) -- il23 is a myeloid DC/macrophage product, il17a is a Th17 effector cytokine (see the il17a node). microglia dropped: fragoulis2023 is peripheral blood, no CNS basis in this file's refs for this specific claim.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   }

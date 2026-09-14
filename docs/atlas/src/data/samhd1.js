@@ -265,12 +265,13 @@ export const nodes = [
     "key": true,
     "summary": "Same SAMHD1-MRE11 resection machinery as the fork/mre11 nodes, driven to a pathological excess by nuclear STING.",
     "detail": "Dose is the point, not a new mechanism: controlled MRE11-mediated resection at stalled forks is fork restart and protective (Coquel 2018); the same activity, driven to excess by STING accumulation on chromatin, degrades forks instead (Teodoro-Castro 2026). SAMHD1 depletion rescues fork speed and symmetry specifically in STING-high cells, phenocopying STING abrogation.\n\nDELIBERATELY NOT AN EDGE — no samhd1→ndd edge is drawn. EDGE_KINDS in config.js has no unsigned kind: every kind (including `drive`) carries a fixed sign, and this relation flips sign with dose/context exactly like the SAMHD1/NK-function relation on the `samhd1` node — an edge whose sign cannot be defended is worse than a documented gap. What SAMHD1's presence does to fork outcome depends entirely on whether nuclear STING is high (pathological) or baseline (protective); that condition, not a sign, is what the next reader needs.",
-    "samhd1": "OPEN QUESTION, not yet resolved by any published data specific to A565T: haploinsufficiency reduces dNTPase activity, but this axis is about SAMHD1's MRE11-recruitment/resection function, not its dNTPase function (the same phospho-T592-dependent split documented on the samhd1-t592 node). Whether partial A565T loss of function shifts a heterozygous cell's fork outcome toward the protective (Coquel) or pathological (Teodoro-Castro) regime under STING-high conditions is not established either way — do not guess a direction here. CELL-CONTEXT NOTE: Teodoro-Castro 2026 demonstrated this in progerin fibroblasts/U2OS, not the myeloid/immune cell_context below (this atlas's own modeling target).",
+    "samhd1": "OPEN QUESTION, not yet resolved by any published data specific to A565T: haploinsufficiency reduces dNTPase activity, but this axis is about SAMHD1's MRE11-recruitment/resection function, not its dNTPase function (the same phospho-T592-dependent split documented on the samhd1-t592 node). Whether partial A565T loss of function shifts a heterozygous cell's fork outcome toward the protective (Coquel) or pathological (Teodoro-Castro) regime under STING-high conditions is not established either way — do not guess a direction here.",
     "refs": [
       "teodorocastro2026",
       "coquel2018"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): Teodoro-Castro 2026 demonstrated this in progerin fibroblasts/U2OS, not the myeloid/immune cells listed below (this atlas's own disease-relevant modeling target, not a tested system). This caveat previously lived in `samhd1` as an ad hoc \"CELL-CONTEXT NOTE\", moved to its proper schema field here.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -327,7 +328,7 @@ export const nodes = [
       -18
     ],
     "lod": 2,
-    "evidence": "S",
+    "evidence": "G",
     "summary": "Repair choice here determines whether the cell keeps its genome or accumulates rearrangements.",
     "evidence_tier": "L1_in_silico",
     "evidenceTierNote": "No refs -- a general DNA-repair-biology node with no independent citation of its own, not something 'demonstrated in primary human cells'. Fixed 2026-09-12; see redteam audit (commit 20ae777).",
@@ -419,7 +420,7 @@ export const nodes = [
     "evidence": "S",
     "summary": "Three converging pressures: elevated dNTP replication error load, impaired HR, and retroelement insertion burden — the first now has independent population-level grounding.",
     "detail": "Replication-error load (pressure 1 of 3) gains independent population-level grounding from Weischenfeldt/Macintyre/Reimand et al. 2026: replication-error-driven mutational processes are a dominant class in ~1/3 of primary prostate cancer genomes at cohort scale (959 donors), not merely a pressure predicted from this variant's own cascade. The study is signature-level and does NOT name or assay SAMHD1 — it corroborates the mechanism CLASS, not the gene.",
-    "samhd1": "Translates into a cancer-surveillance rationale rather than a claim of present malignancy: prostate (BIK + SAMHD1 co-segregating susceptibility), colorectal (heterozygous SAMHD1 mutations), and haematological risk from SAMHD1's canonical tumour-suppressor role in myeloid and lymphoid lineages. It is also the reason the framework treats amlexanox as a tradeoff rather than a free anti-inflammatory.\n\nSurveillance instrument (added 2026-09, validation pending): Weischenfeldt et al. 2026's eight-signature integrated-mutational-footprint panel is projected by its authors to reach clinic \"within the next few years\" on existing sequencing platforms. If it does, it becomes the direct readout for the replication-error mutational pressure this variant predicts in tissue already carrying the Pavlovich OR 2.02 and BIK co-segregation signal — named here as the ANTICIPATED instrument, not a currently validated one.",
+    "samhd1": "Translates into a cancer-surveillance rationale rather than a claim of present malignancy: prostate (BIK and SAMHD1 independently associated susceptibility genes in the same case-control cohort -- pavlovich2025, driven by specific missense variants BIK S87G and SAMHD1 Q465K/V112I, not A565T, and not a pedigree-linkage/co-segregation finding), colorectal (heterozygous SAMHD1 mutations), and haematological risk from SAMHD1's canonical tumour-suppressor role in myeloid and lymphoid lineages. It is also the reason the framework treats amlexanox as a tradeoff rather than a free anti-inflammatory.\n\nSurveillance instrument (added 2026-09, validation pending): Weischenfeldt et al. 2026's eight-signature integrated-mutational-footprint panel is projected by its authors to reach clinic \"within the next few years\" on existing sequencing platforms. If it does, it becomes the direct readout for the replication-error mutational pressure this variant predicts in tissue already carrying the BIK/SAMHD1 association signal above — named here as the ANTICIPATED instrument, not a currently validated one. Fixed 2026-09-13 (cell_context topical-fit literature audit): removed the \"OR 2.02\" figure and \"co-segregation\" framing -- neither could be verified against pavlovich2025's own abstract/tables; \"co-segregating\" specifically implies pedigree linkage the paper doesn't report. Re-add a specific OR only after confirming it against the paper's own results.",
     "refs": [
       "pavlovich2025",
       "daddacha2017",
@@ -462,7 +463,14 @@ export const nodes = [
     "summary": "In A565T heterozygotes, SAMHD1 forms mixed 2xWT + 2xA565T tetramers retaining ~50% dNTPase but uncoupling cooperative PTM switches.",
     "detail": "Binomial distribution predicts 37.5% of complexes assemble as 2:2 heterotetramers (assumes equal WT/A565T abundance and random assembly). They maintain dosage-limited basal dNTPase activity (ipTM=0.81, an AlphaFold structure-prediction confidence metric, not a measured binding affinity) but suffer severe allosteric uncoupling at the phosphorylated C-terminal hinge.",
     "samhd1": "The structural basis for heterozygous haploinsufficiency with 100% phenotypic penetrance.",
-    "modelNote": "OPEN 2026-09-12 -- no direct measurement exists for THIS specific mixed 2:2 complex's Kd/Hill coefficient. A prior version of this node carried tetramer_Kd_uM=2.4 and hill_coefficient=2.1 copied verbatim from the wild-type dntpase node's own sourced values (ref [7], Ji et al. 2014 PNAS) -- those describe wild-type tetramerization, not the mixed heterotetramer, and were never actually measured for this complex. Removed rather than left misleadingly precise; re-add only with its own citation. See redteam audit 2026-09-12 (commit 20ae777)."
+    "modelNote": "OPEN 2026-09-12 -- no direct measurement exists for THIS specific mixed 2:2 complex's Kd/Hill coefficient. A prior version of this node carried tetramer_Kd_uM=2.4 and hill_coefficient=2.1 copied verbatim from the wild-type dntpase node's own sourced values (ref [7], Ji et al. 2014 PNAS) -- those describe wild-type tetramerization, not the mixed heterotetramer, and were never actually measured for this complex. Removed rather than left misleadingly precise; re-add only with its own citation. See redteam audit 2026-09-12 (commit 20ae777).",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node had no cell_context field at all, while both its own incident edges (a565t->samhd1-heterotetramer, samhd1-heterotetramer->dntp-pool) already correctly carried the myeloid+ipsc array. Added to match.",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "microglia",
+      "ipsc"
+    ]
   }
 ];
 
@@ -480,13 +488,15 @@ export const edges = [
       "schneider2022",
       "rentoft2016"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -502,13 +512,15 @@ export const edges = [
     "refs": [
       "herrmann2018"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -524,13 +536,15 @@ export const edges = [
     "refs": [
       "rabinowitz2025"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "compartment_translocation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -547,13 +561,15 @@ export const edges = [
       "franzolin2013",
       "ji2014"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -573,11 +589,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -590,11 +607,12 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -613,11 +631,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -628,14 +647,15 @@ export const edges = [
     "pathways": [
       "genome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -653,11 +673,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ],
     "db_scores": {
       "string_combined": 0.814,
@@ -677,14 +698,15 @@ export const edges = [
     "refs": [
       "wang2018"
     ],
-    "evidenceTierNote": "OPEN 2026-09-12 -- wang2018's methodology (cell line vs primary human) not yet verified against PubMed; the systemic pattern found elsewhere in this file (espada2023, xu2023vdac1, daddacha2017, herrmann2018, yang2025bik all mistagged L4_primary_human when actually cell-line/mouse) makes this tier suspect too, but left unchanged rather than guessed. Verify before trusting.",
+    "evidenceTierNote": "RESOLVED 2026-09-13 (cell_context topical-fit literature audit) -- wang2018 (real first author Chen S, see refs.js) verified via PubMed: Chen S et al., PNAS 2018;115(16):E3798-E3807 used THP-1, HEK293, PRIMARY HUMAN monocyte-derived macrophages, AND Samhd1-KO/heterozygous mice. L4_primary_human is correct; the OPEN flag from 2026-09-12 is closed. (Unlike the other edges in this file that were mistagged L4 -- espada2023, xu2023vdac1, daddacha2017, herrmann2018, rabinowitz2025, franzolin2013/ji2014, schneider2022/rentoft2016, yang2016irf3, all fixed to L3_cell_line in this same pass -- this one's primary-human claim actually holds up.)",
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -702,11 +724,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -722,11 +745,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -742,13 +766,15 @@ export const edges = [
     "refs": [
       "xu2023vdac1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -767,13 +793,15 @@ export const edges = [
       "xu2023vdac1",
       "rabinowitz2025"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -789,13 +817,15 @@ export const edges = [
     "refs": [
       "rabinowitz2025"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -813,11 +843,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -829,17 +860,19 @@ export const edges = [
       "samhd1",
       "mitophagy"
     ],
-    "evidence": "I",
+    "evidence": "S",
     "refs": [
       "yaxian2025"
     ],
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this edge was under-graded (evidence 'I', tier L1_in_silico) despite having a real, directly-on-point citation -- yaxian2025 is a myeloid-conditional Samhd1-KO MOUSE study directly demonstrating SAMHD1 loss -> PI3K/AKT/mTOR activation -> MITF nuclear translocation -> CTSD suppression, with rapamycin rescue in vivo. Upgraded to evidence 'S' (demonstrated in SAMHD1-deficient animals) and evidence_tier L3_cell_line (mouse).",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -857,11 +890,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -879,11 +913,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -901,11 +936,12 @@ export const edges = [
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -916,14 +952,15 @@ export const edges = [
     "pathways": [
       "genome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -934,14 +971,15 @@ export const edges = [
     "pathways": [
       "genome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -959,11 +997,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -974,14 +1013,15 @@ export const edges = [
     "pathways": [
       "genome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -991,14 +1031,15 @@ export const edges = [
     "pathways": [
       "genome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1013,11 +1054,12 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1028,14 +1070,15 @@ export const edges = [
     "pathways": [
       "genome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1049,14 +1092,18 @@ export const edges = [
     ],
     "evidence": "S",
     "loop": "A",
-    "evidenceNote": "Coquel et al. 2018 (Nature; PMID 29670289) explicitly reports single-stranded DNA activating cGAS-STING in this system -- this edge correctly reflects its cited source, despite cGAS's canonical dsDNA preference. Methodology was HEK293/HeLa cell lines, not primary human tissue (per the paper's own MeSH terms), hence L3 not L4. Verified 2026-09-12; see redteam audit (commit 20ae777).",
+    "refs": [
+      "coquel2018"
+    ],
+    "evidenceNote": "Coquel et al. 2018 (Nature; PMID 29670289) explicitly reports single-stranded DNA activating cGAS-STING in this system -- this edge correctly reflects its cited source, despite cGAS's canonical dsDNA preference. Methodology was HEK293/HeLa cell lines, not primary human tissue (per the paper's own MeSH terms), hence L3 not L4. Verified 2026-09-12; see redteam audit (commit 20ae777). Fixed 2026-09-13 (cell_context topical-fit literature audit): added the missing refs entry itself -- this note already named coquel2018 as the source but the edge had no refs array, leaving its L3_cell_line tier technically unsupported by any citation field.",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1070,17 +1117,18 @@ export const edges = [
     ],
     "evidence": "S",
     "bend": 0.4,
-    "detail": "Closes a feedforward loop distinct from the existing irf3→samhd1 transcriptional edge: STING's contribution to dNTP depletion and NDD is MEDIATED BY SAMHD1 (Teodoro-Castro 2026) — a functional engagement of SAMHD1's existing resection/dNTPase activity by the nuclear STING pool, not necessarily new SAMHD1 transcription. The existing irf3→samhd1 edge is the \"upward\" therapeutic direction (Arms 3–4); this edge is the reason that direction now has a ceiling — raising SAMHD1 in a cell with elevated nuclear STING risks feeding the same pathological axis (see the polyiclc and ndd nodes). CELL-CONTEXT NOTE: demonstrated in progerin-inducible fibroblasts and U2OS only, not in the myeloid/immune cell_context listed below -- that list is this atlas's own disease-relevant modeling target, not a tested system.",
+    "detail": "Closes a feedforward loop distinct from the existing irf3→samhd1 transcriptional edge: STING's contribution to dNTP depletion and NDD is MEDIATED BY SAMHD1 (Teodoro-Castro 2026) — a functional engagement of SAMHD1's existing resection/dNTPase activity by the nuclear STING pool, not necessarily new SAMHD1 transcription. The existing irf3→samhd1 edge is the \"upward\" therapeutic direction (Arms 3–4); this edge is the reason that direction now has a ceiling — raising SAMHD1 in a cell with elevated nuclear STING risks feeding the same pathological axis (see the polyiclc and ndd nodes).",
     "refs": [
       "teodorocastro2026"
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). Demonstrated in progerin-inducible fibroblasts and U2OS only, not myeloid/immune cells -- ipsc is this atlas's own disease-relevant modeling target, not a tested system (this caveat previously lived in `detail` as an ad hoc \"CELL-CONTEXT NOTE\", moved to its proper schema field here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1091,13 +1139,15 @@ export const edges = [
       "genome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. A real micronucleus-rupture citation (e.g. Mackenzie/Harding 2017) could restore a higher tier if added properly; not added here since it isn't currently in refs.js and shouldn't be asserted without verification.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -1114,13 +1164,15 @@ export const edges = [
     "refs": [
       "yang2016irf3"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): downgraded from the generic L4_primary_human template -- its citation's own system is a cell line/mouse, not primary human tissue.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {

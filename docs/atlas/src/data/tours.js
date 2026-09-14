@@ -246,11 +246,12 @@ export const TOURS = [
         nodes: ['ankib1', 'k11ub', 'tbk1', 'irf3'], layers: ['ankib1'],
       },
       {
-        title: 'Five substrates, primed at once',
-        text: 'STING, TRIF, NEMO, OPTN — and ANKIB1 itself. SAMHD1 loss primes all of them simultaneously: dNTPase ' +
+        title: 'Four substrates, primed at once',
+        text: 'STING, TRIF, NEMO — and ANKIB1 itself. SAMHD1 loss primes all of them simultaneously: dNTPase ' +
               'failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression ' +
-              'primes NEMO. A lowered threshold on every input at once gives moderate-amplitude unrelenting output ' +
-              'rather than discrete surges.',
+              'primes NEMO. OPTN is not itself a substrate: it reads the K11 mark on those three via its UBAN ' +
+              'domain, and that recruitment is what brings TBK1 in. A lowered threshold on every input at once ' +
+              'gives moderate-amplitude unrelenting output rather than discrete surges.',
         nodes: ['k11ub', 'sting', 'trif', 'nemo', 'optn', 'ankib1'], layers: ['ankib1', 'cgas-sting', 'tlr', 'nfkb'],
       },
       {

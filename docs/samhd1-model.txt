@@ -139,37 +139,37 @@ clinical|Clinical outcomes|22
 # consequences are in §6 — both keyed by node id.
 cgas|cGAS|CYT|SEN|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q8N884","ensembl":"ENSG00000164430","hgnc":"HGNC:21367","chembl":"CHEMBL3706170"}|{"DNA_length_threshold_bp":45,"cGAMP_synth_kcat_s":1.2,"Kd_dsDNA_nM":25}|cgas-sting|Length-dependent cytosolic dsDNA sensor. Binds DNA as a 2:2 ladder and switches on its nucleotidyl-transferase activity.
 cgamp|2′3′-cGAMP|CYT|MET|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting|Non-canonical 2′-5′/3′-5′ cyclic dinucleotide; the highest-affinity endogenous STING agonist known.
-sting|STING|ER|ADA|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q86WV6","ensembl":"ENSG00000184584","hgnc":"HGNC:27962","chembl":"CHEMBL3714578"}|{"Kd_cGAMP_nM":4.8,"oligomerization_threshold_nM":15}|cgas-sting,ankib1|ER-resident dimer. cGAMP binding closes its ligand-binding lid, triggering polymerisation and ER exit.
-sting-golgi|STING°(Golgi)|ER|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting|Palmitoylation at Cys88/91 clusters STING into signalling-competent microdomains on Golgi membranes.
-sting-nuclear|STING (nuclear/chromatin)|NUC|ADA|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,genome|A cGAMP-independent STING pool: replication stress alone drives STING onto chromatin, bypassing cytosolic-DNA sensing entirely.
+sting|STING|ER|ADA|S|L6_human_clinical|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q86WV6","ensembl":"ENSG00000184584","hgnc":"HGNC:27962","chembl":"CHEMBL3714578"}|{"Kd_cGAMP_nM":4.8,"oligomerization_threshold_nM":15}|cgas-sting,ankib1|ER-resident dimer. cGAMP binding closes its ligand-binding lid, triggering polymerisation and ER exit.
+sting-golgi|STING°(Golgi)|ER|ADA|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting|Palmitoylation at Cys88/91 clusters STING into signalling-competent microdomains on Golgi membranes.
+sting-nuclear|STING (nuclear/chromatin)|NUC|ADA|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|-|cgas-sting,genome|A cGAMP-independent STING pool: replication stress alone drives STING onto chromatin, bypassing cytosolic-DNA sensing entirely.
 rigi|RIG-I|CYT|SEN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs|Senses short 5′-triphosphate blunt-ended dsRNA — the signature of viral replication intermediates.
 mda5|MDA5|CYT|SEN|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,retro|Senses long duplex RNA by cooperative filament assembly. The retroelement sensor of the RLR family.
-lgp2|LGP2|CYT|SEN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs|CARD-less RLR that tunes MDA5 filament nucleation — accelerates it at low levels, caps it at high levels.
+lgp2|LGP2|CYT|SEN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs|CARD-less RLR that tunes MDA5 filament nucleation — accelerates it at low levels, caps it at high levels.
 dsrna-cyt|cytosolic dsRNA|CYT|LIG|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,retro|Mixed pool: Alu inverted repeats, mitochondrial bidirectional transcripts, HERV transcripts, viral replication intermediates.
-mtdsrna|mito dsRNA|MIT|LIG|I|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,mito|Both mtDNA strands are transcribed fully; the resulting complementary RNAs form duplexes that PNPASE and SUV3 normally degrade.
+mtdsrna|mito dsRNA|MIT|LIG|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,mito|Both mtDNA strands are transcribed fully; the resulting complementary RNAs form duplexes that PNPASE and SUV3 normally degrade.
 mavs|MAVS|MIT|ADA|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,mito|Tail-anchored in the outer mitochondrial membrane. RLR CARDs seed self-propagating MAVS prion-like filaments.
-mavs-perox|MAVS (peroxisomal)|PER|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs|Drives rapid, IFN-independent ISG expression; the mitochondrial pool supplies the slower type-I IFN amplitude.
-traf3|TRAF3|CYT|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,tlr|K63-Ub ligase that couples MAVS and TRIF to the TBK1/IKKε arm (IRF branch).
-traf6|TRAF6|CYT|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,tlr,nfkb|K63-Ub ligase that couples MAVS/MyD88 to the IKK complex (NF-κB branch).
+mavs-perox|MAVS (peroxisomal)|PER|ADA|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs|Drives rapid, IFN-independent ISG expression; the mitochondrial pool supplies the slower type-I IFN amplitude.
+traf3|TRAF3|CYT|ADA|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,tlr|K63-Ub ligase that couples MAVS and TRIF to the TBK1/IKKε arm (IRF branch).
+traf6|TRAF6|CYT|ADA|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,tlr,nfkb|K63-Ub ligase that couples MAVS/MyD88 to the IKK complex (NF-κB branch).
 tlr3|TLR3|END|REC|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr|Endosomal dsRNA receptor. The only TLR that signals exclusively through TRIF.
-tlr7|TLR7/8|END|REC|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr,retro|Sense GU-rich ssRNA including HERV and LINE-1 transcripts delivered by autophagy or phagocytosis.
-tlr9|TLR9|END|REC|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr|Senses hypomethylated CpG DNA — including mtDNA, which is bacterially hypomethylated by ancestry.
-ll37|LL-37|EXT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr|A cationic antimicrobial peptide whose second job is to chaperone self-DNA — converting an inert host molecule into a TLR9 agonist.
-ll37-dna|LL-37 · self-DNA|END|LIG|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr|The conversion product. This is the node that carries the claim, because self-DNA alone is not a TLR9 agonist and this complex is.
+tlr7|TLR7/8|END|REC|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|tlr,retro|Sense GU-rich ssRNA including HERV and LINE-1 transcripts delivered by autophagy or phagocytosis.
+tlr9|TLR9|END|REC|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|tlr|Senses hypomethylated CpG DNA — including mtDNA, which is bacterially hypomethylated by ancestry.
+ll37|LL-37|EXT|EFF|G|L3_cell_line|[dendritic_cell]|-|-|tlr|A cationic antimicrobial peptide whose second job is to chaperone self-DNA — converting an inert host molecule into a TLR9 agonist.
+ll37-dna|LL-37 · self-DNA|END|LIG|G|L3_cell_line|[dendritic_cell]|-|-|tlr|The conversion product. This is the node that carries the claim, because self-DNA alone is not a TLR9 agonist and this complex is.
 tlr4|TLR4|MEM|REC|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr,nfkb|Surface receptor using both MyD88 (NF-κB) and, after endocytosis, TRIF (IRF3). The canonical NLRP3 priming signal.
 trif|TRIF|END|ADA|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr,ankib1|The IRF3-directing TLR adaptor; also a bona fide ANKIB1 K11-Ub substrate.
-myd88|MyD88|END|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr,nfkb|Assembles the Myddosome with IRAK4/IRAK1 → TRAF6 → NF-κB, and in pDCs → IRF7 directly.
-irak14|IRAK4/1|END|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|tlr,nfkb|Myddosome kinases; IRAK1 phosphorylates IRF7 directly in the plasmacytoid dendritic-cell IFN burst.
-ankib1|ANKIB1|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9P2G1","ensembl":"ENSG00000113889","hgnc":"HGNC:19363"}|-|ankib1,cgas-sting,tlr|Assembles K11-linked ubiquitin chains on STING, TRIF, NEMO, OPTN — and on itself. The gain-control knob of the whole system.
-k11ub|K11-Ub chains|CYT|MET|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ankib1|Distinct from K48 (degradation) and K63 (canonical signalling). K11 loading on the five substrates lowers scaffold-assembly threshold.
+myd88|MyD88|END|ADA|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|tlr,nfkb|Assembles the Myddosome with IRAK4/IRAK1 → TRAF6 → NF-κB, and in pDCs → IRF7 directly.
+irak14|IRAK4/1|END|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|tlr,nfkb|Myddosome kinases; IRAK1 phosphorylates IRF7 directly in the plasmacytoid dendritic-cell IFN burst.
+ankib1|ANKIB1|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9P2G1","ensembl":"ENSG00000113889","hgnc":"HGNC:19363"}|-|ankib1,cgas-sting,tlr|Assembles K11-linked ubiquitin chains on STING, TRIF, NEMO — and on itself. OPTN is then recruited to read those chains, not itself a substrate. The gain-control knob of the whole system.
+k11ub|K11-Ub chains|CYT|MET|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ankib1|Distinct from K48 (degradation) and K63 (canonical signalling). K11 loading on the four substrates lowers scaffold-assembly threshold and recruits OPTN as a reader.
 optn|OPTN|CYT|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ankib1,mitophagy|Dual role: recruits TBK1 into signalling scaffolds, and acts as an autophagy receptor on ubiquitinated mitochondria.
 nemo|NEMO|CYT|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9Y6K9","ensembl":"ENSG00000269386","hgnc":"HGNC:5961"}|-|nfkb,ankib1|Regulatory subunit of the IKK complex; ubiquitin-chain receptor and ANKIB1 K11-Ub substrate.
 tbk1|TBK1|CYT|KIN|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9UHD2","ensembl":"ENSG00000183747","hgnc":"HGNC:11584","chembl":"CHEMBL5686"}|{"p_Ser172_turnover_s":3.4,"amlexanox_IC50_uM":5.6}|cgas-sting,rlr-mavs,tlr,ankib1|The master switch linking every upstream sensor to IRF3/IRF7 transactivation. Trans-autophosphorylates at Ser172.
 ikke|IKKε|CYT|KIN|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q14164","ensembl":"ENSG00000143464","hgnc":"HGNC:5962","chembl":"CHEMBL5687"}|-|cgas-sting,rlr-mavs,ankib1,metabolic|TBK1 paralogue; the dominant IRF7 kinase and an independent driver of metabolic inflammation.
 irf3|IRF3|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q14653","ensembl":"ENSG00000126456","hgnc":"HGNC:6118"}|-|cgas-sting,rlr-mavs,tlr|Constitutively expressed first-wave IFN transcription factor. Phosphorylation → dimerisation → nuclear import.
 irf7|IRF7|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q92985","ensembl":"ENSG00000185507","hgnc":"HGNC:6122"}|-|cgas-sting,tlr,metabolic|The second-wave amplifier: itself an ISG, so once interferon starts, IRF7 rises and drives more interferon.
-ikk|IKKβ|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"O15111","ensembl":"ENSG00000104365","hgnc":"HGNC:5960"}|-|nfkb|Phosphorylates IκBα on Ser32/36, marking it for K48-Ub and proteasomal destruction. The canonical arm runs through here; IKKα carries the non-canonical one.
-ikba|IκBα|CYT|STR|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Masks the NF-κB nuclear localisation signal. Its degradation is the licensing step for NF-κB nuclear entry.
+ikk|IKKβ|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"O15111","ensembl":"ENSG00000104365","hgnc":"HGNC:5960"}|-|nfkb|Phosphorylates IκBα on Ser32/36, marking it for K48-Ub and proteasomal destruction. The canonical arm runs through here; IKKα carries the non-canonical one.
+ikba|IκBα|CYT|STR|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Masks the NF-κB nuclear localisation signal. Its degradation is the licensing step for NF-κB nuclear entry.
 nfkb|NF-κB p65/p50|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P19838","ensembl":"ENSG00000109320","hgnc":"HGNC:7794"}|-|nfkb,inflammasome|Drives the NLRP3 priming signal (NLRP3 + pro-IL-1β transcription), IL-6, IL-23, TNF-α and IκBα.
 vdac1|VDAC1|MIT|STR|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|{"uniprot":"P21796","ensembl":"ENSG00000213886","hgnc":"HGNC:12682"}|-|mito,cgas-sting|The most abundant outer-membrane protein and the gatekeeper of metabolite flux — and, when it oligomerises, of DNA escape.
 vdac1-oligo|VDAC1 macropore|MIT|STR|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|-|mito,cgas-sting|The primary constitutive mtDNA-fragment escape route in SAMHD1 haploinsufficiency.
@@ -216,37 +216,37 @@ dnase1l3|DNASE1L3|EXT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|
 autolysosome|autolysosome|LYS|STR|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|-|mitophagy|Where mitophagy should terminate. In this disease the cargo arrives and is not destroyed.
 pnc1-dntp-bypass|PNC1/PNC2 dNTP Bypass|MIT|MET|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|{"uniprot":"Q9BSK2","ensembl":"ENSG00000117010","hgnc":"HGNC:20658"}|{"dGTP_Vmax_nmol_min_mg":3.8,"Km_cytosolic_dGTP_uM":12}|mito,metabolic|Cytosolic dNTP excess floods PNC1/PNC2, bypassing CMPK2 salvage and causing matrix pool asymmetry.
 ifnb|IFN-β|EXT|CYT|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P01574","ensembl":"ENSG00000171855","hgnc":"HGNC:5434"}|-|ifn-jak,cgas-sting|The single-gene first-wave interferon. IRF3-driven, requires no new protein synthesis.
-ifna|IFN-α (13 subtypes)|EXT|CYT|S|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P01562","ensembl":"ENSG00000188383","hgnc":"HGNC:5431"}|-|ifn-jak|The second-wave amplifier set, driven by IRF7 rather than IRF3.
+ifna|IFN-α (13 subtypes)|EXT|CYT|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P01562","ensembl":"ENSG00000188383","hgnc":"HGNC:5431"}|-|ifn-jak|The second-wave amplifier set, driven by IRF7 rather than IRF3.
 ifng|IFN-γ|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,clinical|Different receptor, different STAT dimer, overlapping ISG output. Drives the collagen-catabolic arm.
 ifnl|IFN-λ|EXT|CYT|G|L3_cell_line|[]|-|-|ifn-jak,ankib1|Epithelial-restricted receptor, identical downstream JAK module. Also driven by the ANKIB1 K11-Ub node.
 il6|IL-6|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,clinical|NF-κB output; dose-dependently elevated in ME/CFS PBMCs after poly I:C stimulation.
 tnfa|TNF-α|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,mito|Drives sublethal chronic mPTP opening via ROS — a persistent cytochrome-c leak rather than an execution signal.
 il23|IL-23|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,clinical|NF-κB output driving Th17 differentiation — the psoriatic arthritis axis.
-il17a|IL-17A|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|clinical|With TNF-α, drives enthesitis at tendon–bone and fascial insertions.
+il17a|IL-17A|EXT|CYT|G|L6_human_clinical|[cd4_tcell]|-|-|clinical|With TNF-α, drives enthesitis at tendon–bone and fascial insertions.
 mcp1|MCP-1 / CCL2|EXT|CYT|S|L3_cell_line|[]|-|-|metabolic,clinical|IRF7 transactivates MCP-1 specifically in VISCERAL adipocytes, not subcutaneous ones.
-gdf15|GDF15|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|metabolic,mito|The canonical circulating readout of integrated mitochondrial stress; elevated post-exercise in ME/CFS.
+gdf15|GDF15|EXT|CYT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|metabolic,mito|The canonical circulating readout of integrated mitochondrial stress; elevated post-exercise in ME/CFS.
 ifnar1|IFNAR1|MEM|REC|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P17181","ensembl":"ENSG00000142166","hgnc":"HGNC:5432"}|-|ifn-jak|Low-affinity subunit, constitutively associated with TYK2. Ligand affinity here sets ISG-response breadth.
-ifnar2|IFNAR2|MEM|REC|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P48551","ensembl":"ENSG00000159110","hgnc":"HGNC:5433"}|-|ifn-jak,isg|High-affinity subunit bound to JAK1; the docking site for the USP18 negative-feedback brake.
-jak1|JAK1|CYT|KIN|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P23458","ensembl":"ENSG00000162434","hgnc":"HGNC:6190","chembl":"CHEMBL2835"}|-|ifn-jak|Shared by type I, type II and type III interferon receptors. The pharmacologic choke point of the whole ISG arm.
+ifnar2|IFNAR2|MEM|REC|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P48551","ensembl":"ENSG00000159110","hgnc":"HGNC:5433"}|-|ifn-jak,isg|High-affinity subunit bound to JAK1; the docking site for the USP18 negative-feedback brake.
+jak1|JAK1|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P23458","ensembl":"ENSG00000162434","hgnc":"HGNC:6190","chembl":"CHEMBL2835"}|-|ifn-jak|Shared by type I, type II and type III interferon receptors. The pharmacologic choke point of the whole ISG arm.
 tyk2|TYK2|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P29597","ensembl":"ENSG00000105397","hgnc":"HGNC:12440","chembl":"CHEMBL3553"}|-|ifn-jak|Partners JAK1 on IFNAR1. Human TYK2 deficiency is well tolerated, which is what makes it a clean drug target.
-jak2|JAK2|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|Partners JAK1 on IFNGR. Also the erythropoietin/thrombopoietin kinase — the source of JAK-inhibitor cytopenias.
-ifngr|IFNGR1/2|MEM|REC|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|Uses JAK1 + JAK2 → STAT1 homodimer (GAF) → GAS elements.
-ifnlr|IFNLR1/IL10RB|MEM|REC|G|L3_cell_line|[]|-|-|ifn-jak|Epithelial-restricted; converges on the same JAK1/TYK2 → ISGF3 module.
-il1r|IL-1R1|MEM|REC|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome,nfkb|Reads IL-1β back into MyD88 → NF-κB — how Loop B keeps its own priming signal alive.
-tnfr|TNFR1|MEM|REC|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,mito|NF-κB activation and, via ROS, chronic sublethal mPTP opening.
-stat1|STAT1|CYT|TF|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P42224","ensembl":"ENSG00000115415","hgnc":"HGNC:11362"}|-|ifn-jak,metabolic|Y701-phosphorylated by JAK1/TYK2. Forms ISGF3 with STAT2/IRF9, or GAF homodimers downstream of IFN-γ.
-stat2|STAT2|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P52630","ensembl":"ENSG00000170581","hgnc":"HGNC:11363"}|-|ifn-jak|Type-I-specific; provides the transactivation domain of ISGF3.
-irf9|IRF9|CYT|TF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|The DNA-binding subunit of ISGF3; supplies ISRE specificity.
-isgf3|ISGF3|NUC|COM|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,isg|The type-I interferon transcription complex. Binds ISRE elements across several hundred ISGs.
+jak2|JAK2|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|Partners JAK1 on IFNGR. Also the erythropoietin/thrombopoietin kinase — the source of JAK-inhibitor cytopenias.
+ifngr|IFNGR1/2|MEM|REC|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|Uses JAK1 + JAK2 → STAT1 homodimer (GAF) → GAS elements.
+ifnlr|IFNLR1/IL10RB|MEM|REC|G|L1_in_silico|[]|-|-|ifn-jak|Epithelial-restricted; converges on the same JAK1/TYK2 → ISGF3 module.
+il1r|IL-1R1|MEM|REC|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome,nfkb|Reads IL-1β back into MyD88 → NF-κB — how Loop B keeps its own priming signal alive.
+tnfr|TNFR1|MEM|REC|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,mito|NF-κB activation and, via ROS, chronic sublethal mPTP opening.
+stat1|STAT1|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P42224","ensembl":"ENSG00000115415","hgnc":"HGNC:11362"}|-|ifn-jak,metabolic|Y701-phosphorylated by JAK1/TYK2. Forms ISGF3 with STAT2/IRF9, or GAF homodimers downstream of IFN-γ.
+stat2|STAT2|CYT|TF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P52630","ensembl":"ENSG00000170581","hgnc":"HGNC:11363"}|-|ifn-jak|Type-I-specific; provides the transactivation domain of ISGF3.
+irf9|IRF9|CYT|TF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|The DNA-binding subunit of ISGF3; supplies ISRE specificity.
+isgf3|ISGF3|NUC|COM|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,isg|The type-I interferon transcription complex. Binds ISRE elements across several hundred ISGs.
 pyr-stat1|pyr-STAT1 (K201)|CYT|TF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,metabolic|Glycolytic overflow covalently pyruvilates STAT1 at Lys201, selectively disrupting STAT1–STAT2 heterodimerization.
-ifnb1-gene|IFNB1 locus|NUC|STR|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,rlr-mavs,tlr|Requires IRF3 dimers (PRDIII-I) AND NF-κB (PRDII) AND ATF2/c-Jun on the same enhanceosome.
-isre|ISRE elements|NUC|STR|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,isg|ISGF3 binding sites upstream of several hundred interferon-stimulated genes.
-gas|GAS elements|NUC|STR|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|STAT1-homodimer (GAF) binding sites — the type II interferon transcriptional programme.
-isg-set|ISG programme|NUC|COM|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|isg,ifn-jak|Several hundred genes. The quantitative ISG score is the practical clinical biomarker of this disease.
+ifnb1-gene|IFNB1 locus|NUC|STR|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,rlr-mavs,tlr|Requires IRF3 dimers (PRDIII-I) AND NF-κB (PRDII) AND ATF2/c-Jun on the same enhanceosome.
+isre|ISRE elements|NUC|STR|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,isg|ISGF3 binding sites upstream of several hundred interferon-stimulated genes.
+gas|GAS elements|NUC|STR|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|STAT1-homodimer (GAF) binding sites — the type II interferon transcriptional programme.
+isg-set|ISG programme|NUC|COM|S|L6_human_clinical|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|isg,ifn-jak|Several hundred genes. The quantitative ISG score is the practical clinical biomarker of this disease.
 pgc1a|PGC-1α|NUC|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|metabolic,mito|Directly repressed by IFN-I/STAT1 → mitochondrial biogenesis failure.
 isg15|ISG15|CYT|EFF|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P05161","ensembl":"ENSG00000187608","hgnc":"HGNC:6153"}|-|isg,mitophagy|The hinge of the whole ISG arm: stabilises the USP18 brake, but also ISGylates MFN1/2 and BECN1 to block mitophagy.
-usp18|USP18|CYT|EFF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9UMW8","ensembl":"ENSG00000184981","hgnc":"HGNC:12629"}|-|isg,ifn-jak|Sterically displaces JAK1 from IFNAR2. Its protease activity is dispensable for this function.
-socs|SOCS1/3|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|isg,ifn-jak|Second brake layer: direct JAK inhibition plus ElonginBC-Cul2 ubiquitination of receptor complexes.
+usp18|USP18|CYT|EFF|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9UMW8","ensembl":"ENSG00000184981","hgnc":"HGNC:12629"}|-|isg,ifn-jak|Sterically displaces JAK1 from IFNAR2. Its protease activity is dispensable for this function.
+socs|SOCS1/3|CYT|EFF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|isg,ifn-jak|Second brake layer: direct JAK inhibition plus ElonginBC-Cul2 ubiquitination of receptor complexes.
 irf1|IRF1|NUC|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|isg|Drives PARP12 → ISG15 in the axis that ISGylates MFN1/2 and blocks PINK1/Parkin mitophagy.
 nlrp3|NLRP3|CYT|SEN|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q96P20","ensembl":"ENSG00000162711","hgnc":"HGNC:16400","chembl":"CHEMBL3714856"}|{"ASC_nucleation_rate_s":0.85,"ox_mtDNA_Kd_nM":18}|inflammasome|Two-signal sensor: NF-κB primes its expression (signal 1), then ox-mtDNA, MSU crystals or K⁺ efflux trigger assembly (signal 2).
 aim2|AIM2|CYT|SEN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome,cgas-sting|The third cytosolic DNA sensor. Binds dsDNA ≥ ~80 bp along the backbone and nucleates ASC directly — no NLRP3, no NEK7, no priming step.
@@ -342,29 +342,29 @@ fork|stalled replication fork|NUC|STR|S|L3_cell_line|[monocyte,macrophage,microg
 mre11|MRE11|NUC|ENZ|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|{"uniprot":"P49959","ensembl":"ENSG00000020922","hgnc":"HGNC:7230"}|-|genome|Recruited by SAMHD1 for controlled nascent-strand degradation at stalled forks.
 ndd|excess nascent-DNA degradation (NDD)|NUC|OUT|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|-|genome|Same SAMHD1-MRE11 resection machinery as the fork/mre11 nodes, driven to a pathological excess by nuclear STING.
 ctip|CtIP|NUC|ENZ|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|{"uniprot":"Q99708","ensembl":"ENSG00000101773","hgnc":"HGNC:9888"}|-|genome|SAMHD1 recruits CtIP to double-strand breaks to initiate resection for homologous recombination.
-dsb|DNA double-strand break|NUC|STR|S|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|-|genome|Repair choice here determines whether the cell keeps its genome or accumulates rearrangements.
+dsb|DNA double-strand break|NUC|STR|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|-|genome|Repair choice here determines whether the cell keeps its genome or accumulates rearrangements.
 rloop|R-loops|NUC|STR|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|-|genome,retro|SAMHD1 prevents R-loop formation; accumulation drives transcription–replication conflict and breaks.
 ssdna|cytosolic ssDNA fragments|CYT|LIG|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|-|genome,cgas-sting|The genomic contribution to the cGAS ligand pool — parallel to the mitochondrial and retroelement routes.
 genomic-instability|genomic instability|NUC|OUT|S|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|genome,clinical|Three converging pressures: elevated dNTP replication error load, impaired HR, and retroelement insertion burden — the first now has independent population-level grounding.
-samhd1-heterotetramer|SAMHD1 heterotetramer (2xWT + 2xA565T)|CYT|COM|I|L1_in_silico|[]|-|{"mixed_tetramer_fraction":0.375,"mixed_tetramer_fraction_basis":"binomial_prediction: C(4,2)/2^4, assumes equal WT/A565T monomer abundance and random assembly -- not directly measured","tetramer_Kd_uM":null,"hill_coefficient":null}|samhd1,metabolic|In A565T heterozygotes, SAMHD1 forms mixed 2xWT + 2xA565T tetramers retaining ~50% dNTPase but uncoupling cooperative PTM switches.
-apc-antigen|peptide–MHC|EXT|COM|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The physiological input. Everything in this arm is a response to an antigen a T cell has recognised.
-tcr-cd3|TCR–CD3|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The antigen receptor itself. It has no catalytic activity of its own — all its signalling is borrowed from associated kinases.
-lck|Lck|RES|KIN|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The Src-family kinase that phosphorylates the CD3ζ ITAMs — the first catalytic event of the cascade.
-cd28|CD28|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|Signal 2. Antigen recognition alone drives anergy; costimulation is what makes it activation.
-trail-fl|TRAIL (full length)|EXT|CYT|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The functional counterpart. It trimerises DR4/DR5 and kills; TRAILshort occupies the same receptor and does not.
-trailshort|TRAILshort|EXT|CYT|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|A non-trimerising TRAIL splice variant that silences T cells by phosphatase recruitment rather than by killing them.
-dr5|DR5 (TRAIL-R2)|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The receptor TRAILshort binds preferentially. Engaged WITHOUT clustering, it becomes a phosphatase-docking site instead of a death platform.
-shp1|SHP-1 (PTPN6)|RES|ENZ|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The actual effector. Recruited to TRAILshort-bound DR5, autophosphorylated at Y536, and it switches the TCR off from the inside.
-cd3z|CD3ζ|RES|ADA|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The ITAM platform ZAP-70 docks onto. TRAILshort does not remove it — it breaks the association.
-zap70|ZAP-70|RES|KIN|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The dephosphorylation target (Y319). Everything downstream in the TCR cascade falls behind it.
-lat|LAT|RES|ADA|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The scaffold ZAP-70 phosphorylates at Y191/Y220, and the point where one lost phosphosite becomes a whole lost programme.
-plcg1|PLCγ1|RES|ENZ|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|Recruited to phospho-LAT and activated at Y783. Its output is the calcium and DAG arm that licenses the effector programme.
-cd69|CD69|RES|EFF|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The earliest surface readout of successful activation — up within hours, and reduced by TRAILshort.
-cd40l|CD40L|RES|EFF|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|The molecule by which an activated T cell licenses B cells and dendritic cells. Losing it silences help, not just killing.
-tcell-prolif|clonal proliferation|RES|EFF|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr|Measured by CFSE dilution. Suppressed by TRAILshort EVs across a Transwell, and restored by SHP-1 inhibition.
-car-t|CD19 CAR-T|EXT|DRU|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr,drugs|A therapy this arm predicts will underperform in a TRAILshort-high tumour — and did, in humanised mice.
-anti-trailshort|anti-TRAILshort|EXT|DRU|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr,drugs|Neutralising the ligand restores T-cell function — the "release the brake" direction.
-nsc87877|NSC-87877|RES|DRU|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell,monocyte]|-|-|tcr,drugs|Blocks the phosphatase rather than the ligand. Works, but only modestly — and the gap is informative.
+samhd1-heterotetramer|SAMHD1 heterotetramer (2xWT + 2xA565T)|CYT|COM|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|{"mixed_tetramer_fraction":0.375,"mixed_tetramer_fraction_basis":"binomial_prediction: C(4,2)/2^4, assumes equal WT/A565T monomer abundance and random assembly -- not directly measured","tetramer_Kd_uM":null,"hill_coefficient":null}|samhd1,metabolic|In A565T heterozygotes, SAMHD1 forms mixed 2xWT + 2xA565T tetramers retaining ~50% dNTPase but uncoupling cooperative PTM switches.
+apc-antigen|peptide–MHC|EXT|COM|G|L4_primary_human|[cd4_tcell,cd8_tcell,monocyte,macrophage]|-|-|tcr|The physiological input. Everything in this arm is a response to an antigen a T cell has recognised.
+tcr-cd3|TCR–CD3|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The antigen receptor itself. It has no catalytic activity of its own — all its signalling is borrowed from associated kinases.
+lck|Lck|RES|KIN|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The Src-family kinase that phosphorylates the CD3ζ ITAMs — the first catalytic event of the cascade.
+cd28|CD28|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|Signal 2. Antigen recognition alone drives anergy; costimulation is what makes it activation.
+trail-fl|TRAIL (full length)|EXT|CYT|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The functional counterpart. It trimerises DR4/DR5 and kills; TRAILshort occupies the same receptor and does not.
+trailshort|TRAILshort|EXT|CYT|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|A non-trimerising TRAIL splice variant that silences T cells by phosphatase recruitment rather than by killing them.
+dr5|DR5 (TRAIL-R2)|RES|REC|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The receptor TRAILshort binds preferentially. Engaged WITHOUT clustering, it becomes a phosphatase-docking site instead of a death platform.
+shp1|SHP-1 (PTPN6)|RES|ENZ|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The actual effector. Recruited to TRAILshort-bound DR5, autophosphorylated at Y536, and it switches the TCR off from the inside.
+cd3z|CD3ζ|RES|ADA|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The ITAM platform ZAP-70 docks onto. TRAILshort does not remove it — it breaks the association.
+zap70|ZAP-70|RES|KIN|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The dephosphorylation target (Y319). Everything downstream in the TCR cascade falls behind it.
+lat|LAT|RES|ADA|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The scaffold ZAP-70 phosphorylates at Y191/Y220, and the point where one lost phosphosite becomes a whole lost programme.
+plcg1|PLCγ1|RES|ENZ|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|Recruited to phospho-LAT and activated at Y783. Its output is the calcium and DAG arm that licenses the effector programme.
+cd69|CD69|RES|EFF|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The earliest surface readout of successful activation — up within hours, and reduced by TRAILshort.
+cd40l|CD40L|RES|EFF|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|The molecule by which an activated T cell licenses B cells and dendritic cells. Losing it silences help, not just killing.
+tcell-prolif|clonal proliferation|RES|EFF|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr|Measured by CFSE dilution. Suppressed by TRAILshort EVs across a Transwell, and restored by SHP-1 inhibition.
+car-t|CD19 CAR-T|EXT|DRU|G|L5_animal_in_vivo|[cd4_tcell,cd8_tcell]|-|-|tcr,drugs|A therapy this arm predicts will underperform in a TRAILshort-high tumour — and did, in humanised mice.
+anti-trailshort|anti-TRAILshort|EXT|DRU|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr,drugs|Neutralising the ligand restores T-cell function — the "release the brake" direction.
+nsc87877|NSC-87877|RES|DRU|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr,drugs|Blocks the phosphatase rather than the ligand. Works, but only modestly — and the gap is informative.
 upadacitinib|upadacitinib|CYT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|{"chembl":"CHEMBL3989938","drugbank":"DB12399"}|-|drugs|Arrests IFNAR signal transduction at JAK1 — the only node in this framework with in-human response data.
 brepocitinib|brepocitinib / TYK2i|CYT|DRU|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|Alternative to JAK1-only blockade; adds IL-12/IL-23 coverage relevant to the Th17/psoriatic arm.
 tofacitinib|tofacitinib|CYT|DRU|S|L6_human_clinical|[monocyte,macrophage,cd4_tcell]|{"chembl":"CHEMBL221959","drugbank":"DB08895"}|-|drugs|Real-world clinical rescue in a complete-SAMHD1-loss patient (Baker et al. 2026) -- not a proposed ex-vivo arm from this atlas's own 10-arm study, but actual human treatment-response data.
@@ -397,16 +397,16 @@ tadekinig-alfa|tadekinig alfa|EXT|DRU|S|L1_in_silico|[systemic_immune,monocyte,m
 §6 A565T EFFECTS   node|what haploinsufficiency does here
 # The haploinsufficiency model proper: only nodes carrying an explicit claim.
 cgas|A565T haploinsufficiency supplies cGAS with three ligand streams at once: mtDNA fragments through the VDAC1 macropore, ssDNA fragments from collapsed replication forks, and LINE-1 cDNA that escaped restriction. This is the entry point of Loop A.
-sting|STING is one of the five ANKIB1 K11-Ub substrates held constitutively primed by SAMHD1 loss. Primed STING lowers the threshold for TBK1/IRF3 scaffold assembly, producing tonic rather than pulsatile interferon.
+sting|STING is one of four ANKIB1 K11-Ub substrates (fixed 2026-09-13: OPTN is a reader of the K11 mark, not a fifth substrate -- see the ankib1 node) held constitutively primed by SAMHD1 loss. Primed STING lowers the threshold for TBK1/IRF3 scaffold assembly, producing tonic rather than pulsatile interferon.
 mda5|SAMHD1 deficiency activates MDA5 in a cGAS/STING-DEPENDENT manner (Schumann et al. 2023) — this axis requires priming through the cGAS/STING pathway rather than running as a fully separate arm from Loop A, as an earlier version of this note had it backwards. SAMHD1 also normally sequesters immunostimulatory dsRNA in LLPS condensates (Maharana et al. 2022, not Schumann -- corrected 2026-09-13); losing that sequestration exposes duplex RNA that MDA5 reads as viral.
 dsrna-cyt|SAMHD1 normally holds this pool inside LLPS condensates. Haploinsufficiency releases it into free solution where MDA5 can polymerise on it.
 mavs|SAMHD1 impairs type I IFN induction through the MAVS–IKKε–IRF3/7 axis; losing it de-represses this platform at the same time as the mitochondrion beneath it is being damaged.
 tlr3|A two-phase onset — prodromal immune fragility, then a full phenotype precipitated by acute viral infection — is read as the TLR3→IRF3→SAMHD1 loop failing to terminate the innate response after viral clearance. Losing the induction arm means the response has no scheduled end.
 ll37|No SAMHD1 link is claimed, and none should be read in. This arm is in the atlas because the phenotype includes enthesitis-predominant psoriatic arthritis and the canonical psoriasis initiation mechanism was absent — a gap in the DISEASE model rather than in the SAMHD1 cascade. What joins it to the rest of the board is its product, IFN-α, which is already modelled; it does not join through SAMHD1.
 tlr4|TLR4 engagement triggers interferon-independent G0 arrest with SAMHD1-dependent dNTP depletion — a normal response that a haploinsufficient cell cannot execute properly.
-trif|Reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed — one of the five substrates that lowers the TBK1/IRF3 assembly threshold.
-ankib1|This is the framework's central gain-control claim. SAMHD1 loss primes all five substrates at once: dNTPase failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression primes NEMO. Worse, ANKIB1 AUTO-ubiquitinates during activation and is degraded by the proteasome — so the master negative regulator destroys itself exactly when it is needed most. A self-terminating feedback controller cannot hold homeostasis under chronic drive. Predicted readout: ANKIB1 protein REDUCED at baseline in A565T cells, restored by amlexanox (Arms 5–6) but NOT by upadacitinib (Arm 2).
-nemo|Loss of SAMHD1's NF-κB-suppressive function leaves NEMO constitutively primed — the third of the five ANKIB1 substrates.
+trif|Reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed — one of four substrates (fixed 2026-09-13: OPTN is a K11-mark reader, not a fifth substrate -- see the ankib1 node) that lowers the TBK1/IRF3 assembly threshold.
+ankib1|This is the framework's central gain-control claim. SAMHD1 loss primes all four substrates at once: dNTPase failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression primes NEMO. Worse, ANKIB1 AUTO-ubiquitinates during activation and is degraded by the proteasome — so the master negative regulator destroys itself exactly when it is needed most. A self-terminating feedback controller cannot hold homeostasis under chronic drive. Predicted readout: ANKIB1 protein REDUCED at baseline in A565T cells, restored by amlexanox (Arms 5–6) but NOT by upadacitinib (Arm 2).
+nemo|Loss of SAMHD1's NF-κB-suppressive function leaves NEMO constitutively primed — the third of four ANKIB1 substrates (fixed 2026-09-13: OPTN is a K11-mark reader, not a fifth substrate -- see the ankib1 node).
 tbk1|p-TBK1(Ser172) is unaffected by JAK1 inhibition, making it the cleanest pharmacologic separator across the study arms: it moves with amlexanox (Arms 5–6) and not with upadacitinib (Arm 2).
 ikke|SAMHD1 occupies IRF7's inhibitory domain and physically prevents IKKε-mediated phosphorylation. Haploinsufficiency removes that block, so IKKε phosphorylates IRF7 constitutively.
 irf3|The IRF3→SAMHD1 induction arm is the therapeutic "upward" direction (Arms 3–4). It is also the reason amlexanox carries a genome-stability tradeoff: suppressing IRF3 lowers SAMHD1 transcription in a cell that is already haploinsufficient.
@@ -450,8 +450,8 @@ samhd1|Highly conserved down to zebrafish. Nuclear-predominant, but with functio
 a565t|The interpretive constraint is clinical, and it is the honest part of this framework: the observed course is survival to middle age without AGS, with symptomatic improvement during acute viral illness. Both are inconsistent with complete dNTPase loss and consistent with ~40–60% residual activity — one functional allele. Enough to prevent AGS5, not enough to prevent a sustained low-grade interferonopathy. Because SAMHD1 is an obligate homotetramer, HD-domain missense variants can additionally poison wild-type tetramers, so real activity may sit below 50%.
 samhd1-t592|The p-T592/total-SAMHD1 RATIO — not total protein — is proposed as a therapeutic monitoring biomarker. It is the readout that would catch amlexanox starving the genome-stability arm while it improves inflammation.
 dntp-pool|Measured by LC-MS/MS. This is the first-line Arm 1 readout, and the cheapest decisive experiment in the programme: a 40–60% elevation in primary heterozygous cells would establish that haploinsufficiency alone perturbs the pool, which no published work has yet shown.
-ndd|OPEN QUESTION, not yet resolved by any published data specific to A565T: haploinsufficiency reduces dNTPase activity, but this axis is about SAMHD1's MRE11-recruitment/resection function, not its dNTPase function (the same phospho-T592-dependent split documented on the samhd1-t592 node). Whether partial A565T loss of function shifts a heterozygous cell's fork outcome toward the protective (Coquel) or pathological (Teodoro-Castro) regime under STING-high conditions is not established either way — do not guess a direction here. CELL-CONTEXT NOTE: Teodoro-Castro 2026 demonstrated this in progerin fibroblasts/U2OS, not the myeloid/immune cell_context below (this atlas's own modeling target).
-genomic-instability|Translates into a cancer-surveillance rationale rather than a claim of present malignancy: prostate (BIK + SAMHD1 co-segregating susceptibility), colorectal (heterozygous SAMHD1 mutations), and haematological risk from SAMHD1's canonical tumour-suppressor role in myeloid and lymphoid lineages. It is also the reason the framework treats amlexanox as a tradeoff rather than a free anti-inflammatory. Surveillance instrument (added 2026-09, validation pending): Weischenfeldt et al. 2026's eight-signature integrated-mutational-footprint panel is projected by its authors to reach clinic "within the next few years" on existing sequencing platforms. If it does, it becomes the direct readout for the replication-error mutational pressure this variant predicts in tissue already carrying the Pavlovich OR 2.02 and BIK co-segregation signal — named here as the ANTICIPATED instrument, not a currently validated one.
+ndd|OPEN QUESTION, not yet resolved by any published data specific to A565T: haploinsufficiency reduces dNTPase activity, but this axis is about SAMHD1's MRE11-recruitment/resection function, not its dNTPase function (the same phospho-T592-dependent split documented on the samhd1-t592 node). Whether partial A565T loss of function shifts a heterozygous cell's fork outcome toward the protective (Coquel) or pathological (Teodoro-Castro) regime under STING-high conditions is not established either way — do not guess a direction here.
+genomic-instability|Translates into a cancer-surveillance rationale rather than a claim of present malignancy: prostate (BIK and SAMHD1 independently associated susceptibility genes in the same case-control cohort -- pavlovich2025, driven by specific missense variants BIK S87G and SAMHD1 Q465K/V112I, not A565T, and not a pedigree-linkage/co-segregation finding), colorectal (heterozygous SAMHD1 mutations), and haematological risk from SAMHD1's canonical tumour-suppressor role in myeloid and lymphoid lineages. It is also the reason the framework treats amlexanox as a tradeoff rather than a free anti-inflammatory. Surveillance instrument (added 2026-09, validation pending): Weischenfeldt et al. 2026's eight-signature integrated-mutational-footprint panel is projected by its authors to reach clinic "within the next few years" on existing sequencing platforms. If it does, it becomes the direct readout for the replication-error mutational pressure this variant predicts in tissue already carrying the BIK/SAMHD1 association signal above — named here as the ANTICIPATED instrument, not a currently validated one. Fixed 2026-09-13 (cell_context topical-fit literature audit): removed the "OR 2.02" figure and "co-segregation" framing -- neither could be verified against pavlovich2025's own abstract/tables; "co-segregating" specifically implies pedigree linkage the paper doesn't report. Re-add a specific OR only after confirming it against the paper's own results.
 samhd1-heterotetramer|The structural basis for heterozygous haploinsufficiency with 100% phenotypic penetrance.
 trailshort|NO established SAMHD1 link. This arm is imported context for the T-cell attrition phenotype, not a consequence of A565T. Treat it as a candidate modifier to be tested, not as part of the variant cascade.
 upadacitinib|Predicted NOT to change: dNTP pools, R-loops, autophagy flux, p-TBK1(Ser172), ANKIB1 protein, IL-1β, or ASC speck burden. Everything it fails to move is a map of the disease it does not treat.
@@ -478,8 +478,8 @@ tlr3|TLR3 → TRIF → TBK1 → IRF3 is also the arm that INDUCES SAMHD1 transcr
 tlr9|Mitochondrial DNA released from dying cells is a TLR9 agonist as well as a cGAS ligand: the same molecule drives two receptors in two compartments.
 ll37|LL-37 is massively overexpressed in psoriatic skin. It binds extracellular self-DNA electrostatically and condenses it into ordered aggregates that resist nuclease digestion and are retained in the pDC early endosome long enough to signal. Neither component does this alone: LL-37 without DNA is not an interferon stimulus, and self-DNA without LL-37 is not a TLR9 ligand.
 ll37-dna|Lande et al. showed the discrimination is one of trafficking and residence rather than of chemistry — the aggregate is delivered to and retained in the early endosome, which is the compartment where a pDC couples TLR9 to IRF7 rather than to NF-κB. Same receptor, same nucleotide sequence, different outcome, because a peptide changed where and for how long the ligand sat.
-ankib1|Betrancourt/Rieser/Walczak (Nat Cell Biol 2026) established K11 ubiquitination as the linkage that drives type-I/III interferon induction downstream of both cGAS–STING and TLR3/4. ANKIB1 is not a terminal effector — it sets the THRESHOLD at which TBK1/IRF3 scaffolds assemble. That is why the resulting phenotype is a moderate, unrelenting tonic interferon output rather than discrete cytokine surges.
-k11ub|Measurable with linkage-specific antibodies (clone 2A3/2E6) or K11-TUBE reagents — which is what makes K11-Ub/STING loading a candidate patient-stratification biomarker rather than a purely theoretical node.
+ankib1|Betrancourt/Rieser/Walczak (Nat Cell Biol 2026) established K11 ubiquitination as the linkage that drives type-I/III interferon induction downstream of both cGAS–STING and TLR3/4. ANKIB1 is not a terminal effector — it sets the THRESHOLD at which TBK1/IRF3 scaffolds assemble. That is why the resulting phenotype is a moderate, unrelenting tonic interferon output rather than discrete cytokine surges. Fixed 2026-09-13 (sensing.js literature audit follow-up): per the paper's own abstract, K11 chains on the signalosome components facilitate OPTN RECRUITMENT, which in turn enables TBK1/IRF3 recruitment and activation -- OPTN is a reader of the K11 mark, not a fifth substrate it is written onto.
+k11ub|Measurable with linkage-specific antibodies (clone 2A3/2E6) or K11-TUBE reagents — which is what makes K11-Ub/STING loading a candidate patient-stratification biomarker rather than a purely theoretical node. Fixed 2026-09-13 (sensing.js literature audit follow-up): four substrates, not five -- OPTN reads the K11 mark via its UBAN domain rather than being ubiquitinated itself.
 optn|OPTN sits at the exact junction where this disease turns on itself — the same protein that amplifies interferon signalling is the one needed to clear the damaged mitochondria producing the ligands.
 tbk1|TBK1 activation requires clustering on a scaffold, not simple ligand binding — which is precisely why K11-Ub priming of the scaffold components is a gain-control mechanism rather than an on/off switch.
 ikke|Reilly et al. showed TBK1/IKKε inhibition improves obesity-related metabolic dysfunction — which is why amlexanox lands on both the interferon and the metabolic arms of this phenotype at once.
@@ -611,9 +611,9 @@ hypergammaglobulinemia|IgG 19.9-24.4 g/L (normal 6.6-15.3) with NEGATIVE antinuc
 esr-crp-dissociation|ESR 8-22 mm/h (normal 0-10) alongside CRP persistently <0.2-0.4 mg/L (normal 0-5). Plausibly consistent with an IFN-I/fibrinogen drive uncoupled from IL-6-driven hepatic acute-phase response, but this citation does not establish that mechanism directly -- it reports the dissociation, not its cause. Relevant to workup: standard CRP-based inflammation screening would miss this patient's disease activity.
 perniosis|Present from late infancy with autoamputation of toes and mild erosion of fingers/ears; decreased following tofacitinib treatment alongside ISG normalization. Single-patient observation, complete SAMHD1 loss (not this atlas's heterozygous A565T model), though perniosis is a recognized FCL/AGS-spectrum feature more broadly.
 tadekinig-alfa|Tadekinig alfa binds IL-18 with picomolar affinity (Kd ~400 pM), preventing receptor engagement and blocking downstream NK/Th1 IFN-γ release.
-sting-nuclear>isg-set|Graded I deliberately: the source paper (fibroblasts/U2OS only) shows this ISG pattern co-occurring with nuclear STING accumulation, not a demonstrated mechanistic chain to it. Do not read `drive` here as established causation -- it is the closest available edge kind for a candidate/proposed association, not a claim the intermediary step is proven. Cell context (monocyte/macrophage/microglia/cd4_tcell) is this atlas's own disease-relevant modeling target, not a tested system.
+sting-nuclear>isg-set|Graded I deliberately: the source paper (fibroblasts/U2OS only) shows this ISG pattern co-occurring with nuclear STING accumulation, not a demonstrated mechanistic chain to it. Do not read `drive` here as established causation -- it is the closest available edge kind for a candidate/proposed association, not a claim the intermediary step is proven. Cell context (monocyte/macrophage/microglia/ipsc) is this atlas's own disease-relevant modeling target, not a tested system.
 oxmtdna>nlrp3|Cross-species: SAMHD1 deletion promoted NLRP3 hyperactivation in cells from zebrafish, mice AND humans (Liu 2026). The strongest evidence in this atlas — and it does not extend to Loop C.
-sting>samhd1|Closes a feedforward loop distinct from the existing irf3→samhd1 transcriptional edge: STING's contribution to dNTP depletion and NDD is MEDIATED BY SAMHD1 (Teodoro-Castro 2026) — a functional engagement of SAMHD1's existing resection/dNTPase activity by the nuclear STING pool, not necessarily new SAMHD1 transcription. The existing irf3→samhd1 edge is the "upward" therapeutic direction (Arms 3–4); this edge is the reason that direction now has a ceiling — raising SAMHD1 in a cell with elevated nuclear STING risks feeding the same pathological axis (see the polyiclc and ndd nodes). CELL-CONTEXT NOTE: demonstrated in progerin-inducible fibroblasts and U2OS only, not in the myeloid/immune cell_context listed below -- that list is this atlas's own disease-relevant modeling target, not a tested system.
+sting>samhd1|Closes a feedforward loop distinct from the existing irf3→samhd1 transcriptional edge: STING's contribution to dNTP depletion and NDD is MEDIATED BY SAMHD1 (Teodoro-Castro 2026) — a functional engagement of SAMHD1's existing resection/dNTPase activity by the nuclear STING pool, not necessarily new SAMHD1 transcription. The existing irf3→samhd1 edge is the "upward" therapeutic direction (Arms 3–4); this edge is the reason that direction now has a ceiling — raising SAMHD1 in a cell with elevated nuclear STING risks feeding the same pathological axis (see the polyiclc and ndd nodes).
 trail-fl>dr5|The signalling TRAILshort displaces. Both ligands occupy the same receptor; only this one clusters it.
 trailshort>dr5|DR5-KO cells lose TRAILshort signalling entirely, establishing this as the required junction. The absence of clustering is the whole mechanism: an occupied but unclustered DR5 recruits a phosphatase instead of a death-inducing signalling complex.
 shp1>zap70|The sign-negative step, and the one the whole arm turns on. CRISPR KO or siRNA of SHP-1 reverses it cleanly; the small-molecule inhibitor only partially.
@@ -622,54 +622,54 @@ trailshort>car-t|CAR-T cells transduce through the same CD3ζ ITAMs as a native 
 trailshort>immunodef|The in vivo arm: TRAILshort-knockin promoted persistence of transformed MEFs and L428 lymphoma in humanised mice and antagonised CD19 CAR-T control, while the human association data span chronic viral infection, malignancy and autoimmunity.
 
 §8 EDGES   from|kind|sign|interaction_type|to|ev|ev_tier|cell_context|db_scores|loop|label
-cgas|produce|+|catalytic_activation|cgamp|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|A|ATP + GTP → 2′3′-cGAMP
-cgamp|activate|+|catalytic_activation|sting|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|A|binds CDN pocket, closes lid
-sting|translocate|+|compartment_translocation|sting-golgi|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ER → ERGIC → Golgi trafficking
-sting-golgi|activate|+|catalytic_activation|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|A|CTT recruits TBK1
-sting|activate|+|catalytic_activation|tbk1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|STING–TBK1 scaffold
-sting|activate|+|catalytic_activation|nemo|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||STING → NF-κB branch
-dsrna-cyt|sense|+|nucleic_acid_sensing|mda5|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||long duplex → cooperative filament
-dsrna-cyt|sense|+|nucleic_acid_sensing|rigi|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||5′ppp blunt end
-mtdsrna|sense|+|nucleic_acid_sensing|mda5|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||mito dsRNA escape (stressor S5)
-lgp2|activate|+|catalytic_activation|mda5|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||tunes filament nucleation
-mda5|activate|+|catalytic_activation|mavs|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||CARD–CARD prion-like seeding
-rigi|activate|+|catalytic_activation|mavs|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||CARD–CARD seeding
-mda5|activate|+|catalytic_activation|mavs-perox|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||peroxisomal platform — fast, IFN-independent ISGs
-mavs|activate|+|catalytic_activation|traf3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-mavs|activate|+|catalytic_activation|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-mavs-perox|activate|+|catalytic_activation|traf3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-traf3|activate|+|catalytic_activation|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||K63-Ub scaffolding
-traf3|activate|+|catalytic_activation|ikke|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-traf6|activate|+|catalytic_activation|ikk|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||K63-Ub → TAK1 → IKK
-tlr3|activate|+|catalytic_activation|trif|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||TIR–TIR, TRIF-exclusive
-tlr4|activate|+|catalytic_activation|trif|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||after endocytosis (TRAM-dependent)
-tlr4|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||surface, MAL-dependent
-tlr7|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-tlr9|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-myd88|activate|+|catalytic_activation|irak14|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Myddosome assembly
-irak14|activate|+|catalytic_activation|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-irak14|phos|+|kinase_phosphorylation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||IRAK1 → IRF7 (pDC burst)
-ll37|bind|+|allosteric_binding|ll37-dna|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||condenses self-DNA into nuclease-resistant aggregates
-ll37-dna|sense|+|nucleic_acid_sensing|tlr9|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the conversion step — self-DNA alone is NOT a TLR9 agonist, the complex is
-trif|activate|+|catalytic_activation|traf3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-trif|activate|+|catalytic_activation|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ankib1|produce|+|catalytic_activation|k11ub|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|ankib1|assembles K11-linked chains
-k11ub|ubiq|+|ubiquitin_conjugation|sting|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|ankib1|substrate 1 — primes STING
-k11ub|ubiq|+|ubiquitin_conjugation|trif|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|ankib1|substrate 2 — primes TRIF
-k11ub|ubiq|+|ubiquitin_conjugation|nemo|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|ankib1|substrate 3 — primes NEMO
-k11ub|ubiq|+|ubiquitin_conjugation|optn|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|ankib1|substrate 4 — primes OPTN
-k11ub|ubiq|+|ubiquitin_conjugation|ankib1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|ankib1|substrate 5 — AUTO-ubiquitination → proteasomal self-destruction
-optn|activate|+|catalytic_activation|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|ankib1|OPTN recruits TBK1 to the scaffold
-tbk1|phos|+|kinase_phosphorylation|irf3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.927,"string_database":0.9}|A|Ser386/396 → dimerisation
-tbk1|phos|+|kinase_phosphorylation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.992,"string_experimental":0.331,"string_database":0.9}||
-ikke|phos|+|kinase_phosphorylation|irf7|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|irf7|dominant IRF7 kinase — blocked by SAMHD1 in health
-ikke|phos|+|kinase_phosphorylation|irf3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nemo|activate|+|catalytic_activation|ikk|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ubiquitin-chain-dependent IKK activation
-ikk|phos|+|kinase_phosphorylation|ikba|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Ser32/36 → K48-Ub → proteasome
-ikba|inhibit|-|allosteric_suppression|nfkb|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||masks NLS until degraded
-ikk|activate|+|catalytic_activation|nfkb|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||releases p65/p50
+cgas|produce|+|catalytic_activation|cgamp|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|ATP + GTP → 2′3′-cGAMP
+cgamp|activate|+|catalytic_activation|sting|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|binds CDN pocket, closes lid
+sting|translocate|+|compartment_translocation|sting-golgi|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ER → ERGIC → Golgi trafficking
+sting-golgi|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|CTT recruits TBK1
+sting|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|STING–TBK1 scaffold
+sting|activate|+|catalytic_activation|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||STING → NF-κB branch
+dsrna-cyt|sense|+|nucleic_acid_sensing|mda5|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||long duplex → cooperative filament
+dsrna-cyt|sense|+|nucleic_acid_sensing|rigi|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||5′ppp blunt end
+mtdsrna|sense|+|nucleic_acid_sensing|mda5|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||mito dsRNA escape (stressor S5)
+lgp2|activate|+|catalytic_activation|mda5|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||tunes filament nucleation
+mda5|activate|+|catalytic_activation|mavs|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||CARD–CARD prion-like seeding
+rigi|activate|+|catalytic_activation|mavs|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||CARD–CARD seeding
+mda5|activate|+|catalytic_activation|mavs-perox|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||peroxisomal platform — fast, IFN-independent ISGs
+mavs|activate|+|catalytic_activation|traf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+mavs|activate|+|catalytic_activation|traf6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+mavs-perox|activate|+|catalytic_activation|traf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+traf3|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||K63-Ub scaffolding
+traf3|activate|+|catalytic_activation|ikke|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+traf6|activate|+|catalytic_activation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||K63-Ub → TAK1 → IKK
+tlr3|activate|+|catalytic_activation|trif|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TIR–TIR, TRIF-exclusive
+tlr4|activate|+|catalytic_activation|trif|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||after endocytosis (TRAM-dependent)
+tlr4|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||surface, MAL-dependent
+tlr7|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+tlr9|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+myd88|activate|+|catalytic_activation|irak14|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||Myddosome assembly
+irak14|activate|+|catalytic_activation|traf6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+irak14|phos|+|kinase_phosphorylation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IRAK1 → IRF7 (pDC burst)
+ll37|bind|+|allosteric_binding|ll37-dna|G|L3_cell_line|[dendritic_cell]|-||condenses self-DNA into nuclease-resistant aggregates
+ll37-dna|sense|+|nucleic_acid_sensing|tlr9|G|L3_cell_line|[dendritic_cell]|-||the conversion step — self-DNA alone is NOT a TLR9 agonist, the complex is
+trif|activate|+|catalytic_activation|traf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+trif|activate|+|catalytic_activation|traf6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ankib1|produce|+|catalytic_activation|k11ub|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|assembles K11-linked chains
+k11ub|ubiq|+|ubiquitin_conjugation|sting|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 1 — primes STING
+k11ub|ubiq|+|ubiquitin_conjugation|trif|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 2 — primes TRIF
+k11ub|ubiq|+|ubiquitin_conjugation|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 3 — primes NEMO
+k11ub|bind|+|ubiquitin_reader_recruitment|optn|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|OPTN reads the K11 mark via its UBAN domain (recruitment, not a substrate event)
+k11ub|ubiq|+|ubiquitin_conjugation|ankib1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 4 — AUTO-ubiquitination → proteasomal self-destruction
+optn|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|OPTN recruits TBK1 to the scaffold
+tbk1|phos|+|kinase_phosphorylation|irf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.927,"string_database":0.9}|A|Ser386/396 → dimerisation
+tbk1|phos|+|kinase_phosphorylation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.992,"string_experimental":0.331,"string_database":0.9}||
+ikke|phos|+|kinase_phosphorylation|irf7|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|dominant IRF7 kinase — blocked by SAMHD1 in health
+ikke|phos|+|kinase_phosphorylation|irf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+nemo|activate|+|catalytic_activation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ubiquitin-chain-dependent IKK activation
+ikk|phos|+|kinase_phosphorylation|ikba|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||Ser32/36 → K48-Ub → proteasome
+ikba|inhibit|-|allosteric_suppression|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||masks NLS until degraded
+ikk|activate|+|catalytic_activation|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||releases p65/p50
 fork|drive|+|catalytic_activation|sting-nuclear|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||Replication stress drives nuclear/chromatin STING accumulation, cGAMP-independent (demonstrated in fibroblasts/U2OS; myeloid cell-context is atlas extrapolation, not directly tested)
-sting-nuclear|drive|+|non_canonical_signaling|isg-set|I|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||CANDIDATE non-canonical association between nuclear/chromatin STING and residual ISG activation (p-STAT1, ISG15, RIG-I), observed alongside absent p-TBK1/p-IRF3 -- the direct causal intermediary remains unresolved
+sting-nuclear|drive|+|non_canonical_signaling|isg-set|I|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||CANDIDATE non-canonical association between nuclear/chromatin STING and residual ISG activation (p-STAT1, ISG15, RIG-I), observed alongside absent p-TBK1/p-IRF3 -- the direct causal intermediary remains unresolved
 pnc1|transport|+|metabolic_bypass_flux|mito-dntp|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-||imports cytosolic dNTPs (incl. dGTP) across the inner membrane
 pnc2|transport|+|signal_transduction|mito-dntp|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
 mito-dntp|inhibit|-|allosteric_suppression|polg|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||dGTP skew impairs fidelity + processivity
@@ -733,61 +733,61 @@ mfn|bind|+|allosteric_binding|pink1|G|L3_cell_line|[monocyte,macrophage,microgli
 mtdna|produce|+|catalytic_activation|mtdsrna|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||bidirectional transcription → complementary duplexes
 dntp-pool|drive|+|metabolic_bypass_flux|pnc1-dntp-bypass|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|B|Cytosolic dNTP excess floods PNC1/PNC2
 pnc1-dntp-bypass|transport|+|metabolic_bypass_flux|mito-dntp|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|B|Imports excess dNTP into matrix
-irf3|translocate|+|compartment_translocation|ifnb1-gene|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|dimer → nuclear import → PRDIII-I
-nfkb|activate|+|catalytic_activation|ifnb1-gene|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||PRDII — the AND-gate partner
-ifnb1-gene|produce|+|catalytic_activation|ifnb|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|IFN-β synthesis and secretion
-irf7|produce|+|catalytic_activation|ifna|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|irf7|second-wave IFN-α subtypes
-irf3|produce|+|catalytic_activation|ifnl|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ifnb|bind|+|allosteric_binding|ifnar1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|autocrine and paracrine
-ifnb|bind|+|allosteric_binding|ifnar2|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|
-ifna|bind|+|allosteric_binding|ifnar1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|irf7|
-ifng|bind|+|allosteric_binding|ifngr|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ifnl|bind|+|allosteric_binding|ifnlr|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-il1b|bind|+|allosteric_binding|il1r|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|
-tnfa|bind|+|allosteric_binding|tnfr|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-il1r|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|TIR-domain recruitment
-tnfr|activate|+|catalytic_activation|ikk|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-tnfr|drive|+|catalytic_activation|mptp|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ROS → chronic sublethal mPTP opening (stressor S8)
-ifnar1|activate|+|catalytic_activation|tyk2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|A|constitutively associated
-ifnar2|activate|+|catalytic_activation|jak1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|
-ifngr|activate|+|catalytic_activation|jak2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ifngr|activate|+|catalytic_activation|jak1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ifnlr|activate|+|catalytic_activation|jak1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-jak1|phos|+|kinase_phosphorylation|stat1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.985,"string_database":0.9}|A|Y701
-tyk2|phos|+|kinase_phosphorylation|stat2|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|Y690
-jak2|phos|+|kinase_phosphorylation|stat1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-stat1|drive|+|catalytic_activation|pyr-stat1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||STAT1 Lys201 pyruvilation
-glycolysis|drive|+|catalytic_activation|pyr-stat1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||glycolytic pyruvate overflow drives pyruvilation
-pyr-stat1|inhibit|-|allosteric_suppression|isgf3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||blocks STAT1–STAT2 heterodimerization; uncouples antiviral ISGs
-stat1|bind|+|allosteric_binding|isgf3|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.99,"string_database":0.9}|A|STAT1:STAT2:IRF9 assembly
-stat2|bind|+|allosteric_binding|isgf3|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||
-irf9|bind|+|allosteric_binding|isgf3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||supplies ISRE DNA-binding specificity
-stat1|translocate|+|compartment_translocation|gas|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||GAF homodimer → GAS
-isgf3|bind|+|allosteric_binding|isre|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|
-isre|produce|+|catalytic_activation|isg-set|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|several hundred ISGs
-gas|produce|+|catalytic_activation|isg-set|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-isg-set|produce|+|catalytic_activation|isg15|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|A|
-isg-set|produce|+|catalytic_activation|usp18|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||
-isg-set|produce|+|catalytic_activation|socs|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-isg-set|produce|+|catalytic_activation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|irf7|IRF7 is itself an ISG — the amplifier is interferon-inducible
-isg-set|produce|+|catalytic_activation|irf1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||
-stat1|inhibit|-|allosteric_suppression|pgc1a|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||represses PGC-1α → biogenesis failure (stressor #5)
-stat1|inhibit|-|allosteric_suppression|etc-i|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||sustained STAT1/2 suppresses Complexes I and III
-stat1|inhibit|-|allosteric_suppression|etc-iii|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||
-pgc1a|produce|+|catalytic_activation|tfam|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||NRF1/NRF2 → TFAM → biogenesis
-isg15|activate|+|catalytic_activation|usp18|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||free ISG15 stabilises USP18 against degradation
-usp18|inhibit|-|allosteric_suppression|ifnar2|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||sterically displaces JAK1 — the primary brake
-socs|inhibit|-|allosteric_suppression|jak1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-irf1|produce|+|catalytic_activation|isg15|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||IRF1 → PARP12 → ISG15
-isg15|inhibit|-|allosteric_suppression|mfn|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||ISGylation of MFN1/2 blocks PINK1/Parkin mitophagy
-isg15|inhibit|-|allosteric_suppression|becn1|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||ISGylates BECN1, competing with activating K63-Ub (KEYSTONE stressor S6)
+irf3|translocate|+|compartment_translocation|ifnb1-gene|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|dimer → nuclear import → PRDIII-I
+nfkb|activate|+|catalytic_activation|ifnb1-gene|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||PRDII — the AND-gate partner
+ifnb1-gene|produce|+|catalytic_activation|ifnb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|IFN-β synthesis and secretion
+irf7|produce|+|catalytic_activation|ifna|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|second-wave IFN-α subtypes
+irf3|produce|+|catalytic_activation|ifnl|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ifnb|bind|+|allosteric_binding|ifnar1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|autocrine and paracrine
+ifnb|bind|+|allosteric_binding|ifnar2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|
+ifna|bind|+|allosteric_binding|ifnar1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|
+ifng|bind|+|allosteric_binding|ifngr|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ifnl|bind|+|allosteric_binding|ifnlr|G|L1_in_silico|[]|-||
+il1b|bind|+|allosteric_binding|il1r|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|B|
+tnfa|bind|+|allosteric_binding|tnfr|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+il1r|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|B|TIR-domain recruitment
+tnfr|activate|+|catalytic_activation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+tnfr|drive|+|catalytic_activation|mptp|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ROS → chronic sublethal mPTP opening (stressor S8)
+ifnar1|activate|+|catalytic_activation|tyk2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|constitutively associated
+ifnar2|activate|+|catalytic_activation|jak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|
+ifngr|activate|+|catalytic_activation|jak2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ifngr|activate|+|catalytic_activation|jak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ifnlr|activate|+|catalytic_activation|jak1|G|L1_in_silico|[]|-||
+jak1|phos|+|kinase_phosphorylation|stat1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.985,"string_database":0.9}|A|Y701
+tyk2|phos|+|kinase_phosphorylation|stat2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|Y690
+jak2|phos|+|kinase_phosphorylation|stat1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+stat1|drive|+|catalytic_activation|pyr-stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||STAT1 Lys201 pyruvilation
+glycolysis|drive|+|catalytic_activation|pyr-stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||glycolytic pyruvate overflow drives pyruvilation
+pyr-stat1|inhibit|-|allosteric_suppression|isgf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||blocks STAT1–STAT2 heterodimerization; uncouples antiviral ISGs
+stat1|bind|+|allosteric_binding|isgf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.99,"string_database":0.9}|A|STAT1:STAT2:IRF9 assembly
+stat2|bind|+|allosteric_binding|isgf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+irf9|bind|+|allosteric_binding|isgf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||supplies ISRE DNA-binding specificity
+stat1|translocate|+|compartment_translocation|gas|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||GAF homodimer → GAS
+isgf3|bind|+|allosteric_binding|isre|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|
+isre|produce|+|catalytic_activation|isg-set|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|several hundred ISGs
+gas|produce|+|catalytic_activation|isg-set|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+isg-set|produce|+|catalytic_activation|isg15|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|
+isg-set|produce|+|catalytic_activation|usp18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+isg-set|produce|+|catalytic_activation|socs|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+isg-set|produce|+|catalytic_activation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|IRF7 is itself an ISG — the amplifier is interferon-inducible
+isg-set|produce|+|catalytic_activation|irf1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+stat1|inhibit|-|allosteric_suppression|pgc1a|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||represses PGC-1α → biogenesis failure (stressor #5)
+stat1|inhibit|-|allosteric_suppression|etc-i|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||sustained STAT1/2 suppresses Complexes I and III
+stat1|inhibit|-|allosteric_suppression|etc-iii|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+pgc1a|produce|+|catalytic_activation|tfam|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||NRF1/NRF2 → TFAM → biogenesis
+isg15|activate|+|catalytic_activation|usp18|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||free ISG15 stabilises USP18 against degradation
+usp18|inhibit|-|allosteric_suppression|ifnar2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||sterically displaces JAK1 — the primary brake
+socs|inhibit|-|allosteric_suppression|jak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+irf1|produce|+|catalytic_activation|isg15|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||IRF1 → PARP12 → ISG15
+isg15|inhibit|-|allosteric_suppression|mfn|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ISGylation of MFN1/2 blocks PINK1/Parkin mitophagy
+isg15|inhibit|-|allosteric_suppression|becn1|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ISGylates BECN1, competing with activating K63-Ub (KEYSTONE stressor S6)
 irf7|produce|+|catalytic_activation|mcp1|S|L4_primary_human|[]|-||transactivates MCP-1 in VISCERAL adipocytes only
-atp|produce|+|catalytic_activation|gdf15|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||integrated mitochondrial stress response
-nfkb|produce|+|catalytic_activation|il6|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nfkb|produce|+|catalytic_activation|tnfa|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nfkb|produce|+|catalytic_activation|il23|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nfkb|produce|+|catalytic_activation|ikba|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||its own inhibitor — the oscillator that a constitutive drive flattens
-il23|drive|+|catalytic_activation|il17a|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Th17 differentiation
+atp|produce|+|catalytic_activation|gdf15|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||integrated mitochondrial stress response
+nfkb|produce|+|catalytic_activation|il6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+nfkb|produce|+|catalytic_activation|tnfa|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+nfkb|produce|+|catalytic_activation|il23|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+nfkb|produce|+|catalytic_activation|ikba|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||its own inhibitor — the oscillator that a constitutive drive flattens
+il23|drive|+|catalytic_activation|il17a|G|L3_cell_line|[monocyte,macrophage,dendritic_cell,cd4_tcell]|-||Th17 differentiation
 nfkb|produce|+|catalytic_activation|nlrp3|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|B|signal 1 — transcriptional priming
 nfkb|produce|+|catalytic_activation|proil1b|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|signal 1 — pro-IL-1β transcription
 mtros|activate|+|catalytic_activation|nfkb|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|B|mtROS primes NF-κB
@@ -969,59 +969,59 @@ isg-set|produce|+|catalytic_activation|zap|G|L1_in_silico|[monocyte,macrophage,m
 isg-set|produce|+|catalytic_activation|adar1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||ADAR1 p150 is itself interferon-induced
 isg-set|produce|+|catalytic_activation|oas|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||
 isg-set|produce|+|catalytic_activation|samhd1|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||SAMHD1 is an ISG — the pathway tries to fix itself and cannot
-a565t|inhibit|-|allosteric_suppression|samhd1|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||2.4× reduced protein stability; ~40–60% residual dNTPase (one functional allele)
-samhd1|phos|+|kinase_phosphorylation|samhd1-t592|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||CDK1/2–cyclin A phospho-switch
-samhd1|translocate|+|compartment_translocation|samhd1-mito|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||mitochondrial pool — required in situ
-samhd1|inhibit|-|allosteric_suppression|dntp-pool|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||dNTP triphosphohydrolase — the primary restriction
-dntp-pool|drive|+|catalytic_activation|pnc1|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||cytosolic excess floods the inner-membrane carriers
-dntp-pool|drive|+|catalytic_activation|pnc2|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||
-dntp-pool|produce|+|catalytic_activation|urate|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|B|GOLD stream — dG catabolism → purine degradation → urate retention
-dntp-pool|drive|+|catalytic_activation|fork|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||unbalanced pools raise replication error rate
-samhd1|inhibit|-|allosteric_suppression|irf7|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.814,"string_database":0.5}||BRAKE 1 — occupies the IRF7 inhibitory domain, blocking IKKε phosphorylation
-samhd1|inhibit|-|allosteric_suppression|nfkb|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||BRAKE 4 — direct suppression of the NF-κB pathway
-samhd1|inhibit|-|allosteric_suppression|mavs|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||impairs IFN-I induction through the MAVS–IKKε–IRF3/7 axis
-samhd1|inhibit|-|allosteric_suppression|ikke|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-samhd1-mito|bind|+|allosteric_binding|vdac1|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||physical interaction on the outer membrane
-samhd1-mito|inhibit|-|allosteric_suppression|vdac1-oligo|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|A|the interaction RESTRAINS oligomerisation — losing it is what opens the macropore
-samhd1-mito|activate|+|catalytic_activation|deltapsi|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||presence in the compartment preserves ΔΨm
-samhd1|activate|+|catalytic_activation|bik|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||SAMHD1 directly upregulates BIK in THP-1 cells
-samhd1|inhibit|-|allosteric_suppression|mtor|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||SAMHD1 → mTOR → MITF → CTSD autophagy-lysosomal axis
-samhd1-t592|activate|+|catalytic_activation|ctip|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||recruits CtIP for end resection → homologous recombination
-samhd1-t592|activate|+|catalytic_activation|mre11|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||controlled nascent-strand degradation at stalled forks
-samhd1-t592|inhibit|-|allosteric_suppression|rloop|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||prevents R-loop formation
-ctip|inhibit|-|allosteric_suppression|dsb|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||resection commits the break to homologous recombination — i.e. resolves it
-mre11|inhibit|-|allosteric_suppression|fork|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||fork protection — controlled resection prevents collapse
-fork|produce|+|catalytic_activation|ssdna|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||collapse → immunogenic ssDNA fragments into the cytosol
-rloop|drive|+|catalytic_activation|dsb|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||transcription–replication conflict
-dsb|drive|+|catalytic_activation|genomic-instability|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||
-l1-insertion|drive|+|catalytic_activation|genomic-instability|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||retroelement mutagenic burden
-dntp-pool|drive|+|catalytic_activation|genomic-instability|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||replication error load
-ssdna|sense|+|nucleic_acid_sensing|cgas|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|A|genomic contribution to the cGAS ligand pool
-sting|drive|+|catalytic_activation|samhd1|S|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Nuclear STING engages SAMHD1-dependent fork pathology in the tested STING-high cellular context (fibroblasts/U2OS)
-dsb|produce|+|catalytic_activation|micronucleus|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-irf3|produce|+|catalytic_activation|samhd1|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||IRF3 induces SAMHD1 transcription — the "upward" therapeutic direction (Arms 3–4)
+a565t|inhibit|-|allosteric_suppression|samhd1|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||2.4× reduced protein stability; ~40–60% residual dNTPase (one functional allele)
+samhd1|phos|+|kinase_phosphorylation|samhd1-t592|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||CDK1/2–cyclin A phospho-switch
+samhd1|translocate|+|compartment_translocation|samhd1-mito|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||mitochondrial pool — required in situ
+samhd1|inhibit|-|allosteric_suppression|dntp-pool|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||dNTP triphosphohydrolase — the primary restriction
+dntp-pool|drive|+|catalytic_activation|pnc1|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||cytosolic excess floods the inner-membrane carriers
+dntp-pool|drive|+|catalytic_activation|pnc2|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+dntp-pool|produce|+|catalytic_activation|urate|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|B|GOLD stream — dG catabolism → purine degradation → urate retention
+dntp-pool|drive|+|catalytic_activation|fork|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||unbalanced pools raise replication error rate
+samhd1|inhibit|-|allosteric_suppression|irf7|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|{"string_combined":0.814,"string_database":0.5}||BRAKE 1 — occupies the IRF7 inhibitory domain, blocking IKKε phosphorylation
+samhd1|inhibit|-|allosteric_suppression|nfkb|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-||BRAKE 4 — direct suppression of the NF-κB pathway
+samhd1|inhibit|-|allosteric_suppression|mavs|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||impairs IFN-I induction through the MAVS–IKKε–IRF3/7 axis
+samhd1|inhibit|-|allosteric_suppression|ikke|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
+samhd1-mito|bind|+|allosteric_binding|vdac1|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||physical interaction on the outer membrane
+samhd1-mito|inhibit|-|allosteric_suppression|vdac1-oligo|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|A|the interaction RESTRAINS oligomerisation — losing it is what opens the macropore
+samhd1-mito|activate|+|catalytic_activation|deltapsi|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||presence in the compartment preserves ΔΨm
+samhd1|activate|+|catalytic_activation|bik|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||SAMHD1 directly upregulates BIK in THP-1 cells
+samhd1|inhibit|-|allosteric_suppression|mtor|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||SAMHD1 → mTOR → MITF → CTSD autophagy-lysosomal axis
+samhd1-t592|activate|+|catalytic_activation|ctip|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||recruits CtIP for end resection → homologous recombination
+samhd1-t592|activate|+|catalytic_activation|mre11|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||controlled nascent-strand degradation at stalled forks
+samhd1-t592|inhibit|-|allosteric_suppression|rloop|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-||prevents R-loop formation
+ctip|inhibit|-|allosteric_suppression|dsb|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||resection commits the break to homologous recombination — i.e. resolves it
+mre11|inhibit|-|allosteric_suppression|fork|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||fork protection — controlled resection prevents collapse
+fork|produce|+|catalytic_activation|ssdna|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||collapse → immunogenic ssDNA fragments into the cytosol
+rloop|drive|+|catalytic_activation|dsb|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||transcription–replication conflict
+dsb|drive|+|catalytic_activation|genomic-instability|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+l1-insertion|drive|+|catalytic_activation|genomic-instability|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||retroelement mutagenic burden
+dntp-pool|drive|+|catalytic_activation|genomic-instability|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||replication error load
+ssdna|sense|+|nucleic_acid_sensing|cgas|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|A|genomic contribution to the cGAS ligand pool
+sting|drive|+|catalytic_activation|samhd1|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||Nuclear STING engages SAMHD1-dependent fork pathology in the tested STING-high cellular context (fibroblasts/U2OS)
+dsb|produce|+|catalytic_activation|micronucleus|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+irf3|produce|+|catalytic_activation|samhd1|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||IRF3 induces SAMHD1 transcription — the "upward" therapeutic direction (Arms 3–4)
 a565t|produce|+|catalytic_activation|samhd1-heterotetramer|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||Assembles into 2:2 mixed tetramers
 samhd1-heterotetramer|inhibit|-|allosteric_suppression|dntp-pool|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||Preserves partial ~50% dNTP depletion
-apc-antigen|bind|+|allosteric_binding|tcr-cd3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||peptide–MHC engagement — signal 1
-tcr-cd3|activate|+|catalytic_activation|lck|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||receptor engagement brings Lck to the CD3 tails
-lck|phos|+|kinase_phosphorylation|cd3z|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||phosphorylates the CD3ζ ITAMs — the phosphates SHP-1 later removes
-cd28|activate|+|catalytic_activation|tcell-prolif|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||signal 2 — without costimulation, antigen recognition drives anergy rather than activation
-trail-fl|bind|+|allosteric_binding|dr5|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||trimerises DR5 → DISC → apoptosis, necroptosis, or non-apoptotic NF-κB/p38
-trailshort|inhibit|-|allosteric_suppression|trail-fl|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||dominant negative — blocks TRAIL-mediated apoptosis in producing AND bystander cells
-trailshort|bind|+|allosteric_binding|dr5|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||binds DR5 preferentially — but cannot trimerise, so the receptor never clusters
-dr5|activate|+|catalytic_activation|shp1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||recruits SHP-1 and drives autophosphorylation at Y536
-cd3z|bind|+|allosteric_binding|zap70|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||phospho-ITAMs dock the ZAP-70 tandem SH2 module — the association TRAILshort disrupts
-shp1|inhibit|-|allosteric_suppression|zap70|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||dephosphorylates ZAP-70 at Y319
-zap70|phos|+|kinase_phosphorylation|lat|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||phosphorylates LAT at Y191/Y220
-lat|activate|+|catalytic_activation|plcg1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||phospho-LAT recruits and activates PLCγ1 (pY783)
-plcg1|activate|+|catalytic_activation|responder-cell|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||proximal TCR output — CD69/CD40L upregulation, proliferation, cytokine production
-plcg1|activate|+|catalytic_activation|cd69|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||early activation marker — CD69+CD40L+CD4+ fraction falls under TRAILshort
-plcg1|activate|+|catalytic_activation|cd40l|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||T-cell help — the output that makes this tolerance rather than only cytotoxicity loss
-plcg1|activate|+|catalytic_activation|tcell-prolif|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||clonal expansion, by CFSE dilution — suppressed across a Transwell by TRAILshort EVs
-trailshort|inhibit|-|allosteric_suppression|car-t|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||antagonises CD19-directed CAR-T control of lymphoma in humanised mice
-trailshort|drive|+|catalytic_activation|immunodef|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||T-cell hyporesponsiveness → impaired viral and tumour control
-anti-trailshort|inhibit|-|allosteric_suppression|trailshort|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||neutralises the ligand — restores IFN-γ in patient B-cell malignancy co-cultures
-nsc87877|inhibit|-|allosteric_suppression|shp1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||SHP-1 inhibition — partial rescue of p–ZAP-70, fuller rescue of CD69/CD40L and IFN-γ
+apc-antigen|bind|+|allosteric_binding|tcr-cd3|G|L4_primary_human|[cd4_tcell,cd8_tcell,monocyte,macrophage]|-||peptide–MHC engagement — signal 1
+tcr-cd3|activate|+|catalytic_activation|lck|G|L3_cell_line|[cd4_tcell,cd8_tcell]|-||receptor engagement brings Lck to the CD3 tails
+lck|phos|+|kinase_phosphorylation|cd3z|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-||phosphorylates the CD3ζ ITAMs — the phosphates SHP-1 later removes
+cd28|activate|+|catalytic_activation|tcell-prolif|G|L3_cell_line|[cd4_tcell,cd8_tcell]|-||signal 2 — without costimulation, antigen recognition drives anergy rather than activation
+trail-fl|bind|+|allosteric_binding|dr5|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||trimerises DR5 → DISC → apoptosis, necroptosis, or non-apoptotic NF-κB/p38
+trailshort|inhibit|-|allosteric_suppression|trail-fl|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||dominant negative — blocks TRAIL-mediated apoptosis in producing AND bystander cells
+trailshort|bind|+|allosteric_binding|dr5|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||binds DR5 preferentially — but cannot trimerise, so the receptor never clusters
+dr5|activate|+|catalytic_activation|shp1|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||recruits SHP-1 and drives autophosphorylation at Y536
+cd3z|bind|+|allosteric_binding|zap70|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||phospho-ITAMs dock the ZAP-70 tandem SH2 module — the association TRAILshort disrupts
+shp1|inhibit|-|allosteric_suppression|zap70|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||dephosphorylates ZAP-70 at Y319
+zap70|phos|+|kinase_phosphorylation|lat|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||phosphorylates LAT at Y191/Y220
+lat|activate|+|catalytic_activation|plcg1|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||phospho-LAT recruits and activates PLCγ1 (pY783)
+plcg1|activate|+|catalytic_activation|responder-cell|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||proximal TCR output — CD69/CD40L upregulation, proliferation, cytokine production
+plcg1|activate|+|catalytic_activation|cd69|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||early activation marker — CD69+CD40L+CD4+ fraction falls under TRAILshort
+plcg1|activate|+|catalytic_activation|cd40l|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||T-cell help — the output that makes this tolerance rather than only cytotoxicity loss
+plcg1|activate|+|catalytic_activation|tcell-prolif|G|L4_primary_human|[cd4_tcell,cd8_tcell]|-||clonal expansion, by CFSE dilution — suppressed across a Transwell by TRAILshort EVs
+trailshort|inhibit|-|allosteric_suppression|car-t|G|L5_animal_in_vivo|[cd4_tcell,cd8_tcell]|-||antagonises CD19-directed CAR-T control of lymphoma in humanised mice
+trailshort|drive|+|catalytic_activation|immunodef|G|L5_animal_in_vivo|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||T-cell hyporesponsiveness → impaired viral and tumour control
+anti-trailshort|inhibit|-|allosteric_suppression|trailshort|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||neutralises the ligand — restores IFN-γ in patient B-cell malignancy co-cultures
+nsc87877|inhibit|-|allosteric_suppression|shp1|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||SHP-1 inhibition — partial rescue of p–ZAP-70, fuller rescue of CD69/CD40L and IFN-γ
 upadacitinib|inhibit|-|allosteric_suppression|jak1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 2 — JAK1-selective
 brepocitinib|inhibit|-|allosteric_suppression|tyk2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||dual JAK1/TYK2
 amlexanox|inhibit|-|allosteric_suppression|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 5 — cuts IFN production at source
@@ -1169,16 +1169,16 @@ rentoft2016|Rentoft M et al. Heterozygous colon cancer-associated mutations of S
 franzolin2013|Franzolin E et al. The deoxynucleotide triphosphohydrolase SAMHD1 is a major regulator of DNA precursor pools in mammalian cells. PNAS 2013;110(35):14272–7.|
 ji2014|Ji X et al. Structural basis of cellular dNTP regulation by SAMHD1. PNAS 2014;111(41):E4305–14.|
 bester2025|Bester AC et al. SAMHD1 shapes dNTP homeostasis by allosteric regulation in resting cells. Nat Commun 2025.|doi:10.1038/s41467-025-56208-y
-rice2009|Rice GI et al. Mutations in SAMHD1 cause Aicardi-Goutières syndrome at the AGS5 locus. Nat Genet 2009;41:829–32.|
+rice2009|Rice GI et al. Mutations involved in Aicardi-Goutières syndrome implicate SAMHD1 as regulator of the innate immune response. Nat Genet 2009;41:829–32.|doi:10.1038/ng.373
 daddacha2017|Daddacha W et al. SAMHD1 promotes DNA end resection to facilitate DNA repair by homologous recombination. Cell Rep 2017;20(8):1921–35.|
 park2021|Park K et al. AGS-associated gene SAMHD1 preserves genome integrity by preventing R-loop formation. PLoS Genet 2021;17:e1009523.|
 coquel2018|Coquel F et al. SAMHD1 acts at stalled replication forks to prevent interferon induction. Nature 2018;557:57–61.|doi:10.1038/s41586-018-0050-1
 teodorocastro2026|Teodoro-Castro B et al. A toxic STING-SAMHD1 axis drives replication stress in progeria and cancer cells. Nucleic Acids Res 2026;54(11):gkag614. Inducible progerin human dermal fibroblasts, U2OS STING-null reconstitution, DNA fiber assays, SIRF-PLA, subcellular fractionation, LC-MS dNTP metabolomics. Replication stress drives STING into the nucleus/chromatin WITHOUT cGAMP elevation or TBK1/IRF3 activation; nuclear STING limits dNTPs (fork slowing) and facilitates MRE11-mediated nascent DNA degradation (NDD) once stalled — both mediated by SAMHD1. SAMHD1 depletion phenocopies STING abrogation and rescues fork speed/stability. The pathological mirror of Coquel 2018’s protective SAMHD1-MRE11 resection — same machinery, opposite outcome, dose/context-dependent.|doi:10.1093/nar/gkag614
-espada2023|Espada CE et al. SAMHD1 impairs type I interferon induction through the MAVS, IKKε, and IRF7 signaling axis. J Biol Chem 2023;299:104925.|doi:10.1016/j.jbc.2023.104925
+espada2023|Espada CE et al. SAMHD1 impairs type I interferon induction through the MAVS, IKKε, and IRF7 signaling axis during viral infection. J Biol Chem 2023;299:104925.|doi:10.1016/j.jbc.2023.104925
 schumann2023|Schumann T et al. Deficiency for SAMHD1 activates MDA5 in a cGAS/STING-DEPENDENT manner. J Exp Med 2023;220(1):e20220829.|doi:10.1084/jem.20220829
 maharana2022|Maharana S et al. SAMHD1 controls innate immunity by regulating condensation of immunogenic self RNA. Mol Cell 2022;82(19):3712-3728.e10.|doi:10.1016/j.molcel.2022.08.031
 wang2018|Chen S et al. SAMHD1 suppresses innate immune responses to viral infections and inflammatory stimuli by inhibiting the NF-κB and interferon pathways. PNAS 2018;115(16):E3798–807.|doi:10.1073/pnas.1801213115
-mlcochova2020|Mlcochova P et al. TLR4-mediated pathway triggers interferon-independent G0 arrest and SAMHD1-dependent dNTP depletion. EMBO Rep 2020;21(3):e49420.|
+mlcochova2020|Mlcochova P, Winstone H, Zuliani-Alvarez L, Gupta RK. TLR4-mediated pathway triggers interferon-independent G0 arrest and antiviral SAMHD1 activity in macrophages. Cell Rep 2020;30(12):3972-3980.e5.|doi:10.1016/j.celrep.2020.03.008
 yang2016irf3|Yang S et al. Interferon Regulatory Factor 3 is a Key Regulation Factor for Inducing the Expression of SAMHD1 in Antiviral Innate Immunity. Sci Rep 2016;6:29665.|doi:10.1038/srep29665
 sharma2003|Sharma S et al. Triggering the interferon antiviral response through an IKK-related pathway. Science 2003;300(5622):1148-51.|doi:10.1126/science.1081315
 fitzgerald2003|Fitzgerald KA et al. IKKepsilon and TBK1 are essential components of the IRF3 signaling pathway. Nat Immunol 2003;4(5):491-6.|doi:10.1038/ni921
@@ -1190,7 +1190,7 @@ mori2004irf3|Mori M et al. Identification of Ser-386 of interferon regulatory fa
 servant2003|Servant MJ et al. Identification of the minimal phosphoacceptor site required for in vivo activation of interferon regulatory factor 3 in response to virus and double-stranded RNA. J Biol Chem 2003;278(11):9441-7.|doi:10.1074/jbc.M209851200
 marie1998|Marie I, Durbin JE, Levy DE. Differential viral induction of distinct interferon-alpha genes by positive feedback through interferon regulatory factor-7. EMBO J 1998;17(22):6660-9.|doi:10.1093/emboj/17.22.6660
 ma2012tbk1|Ma X et al. Molecular basis of Tank-binding kinase 1 activation by transautophosphorylation. PNAS 2012;109(24):9378-83.|doi:10.1073/pnas.1121552109
-betrancourt2026|Betrancourt A, … Rieser E, Walczak H et al. Lysine-11 ubiquitination drives type-I/III interferon induction by cGAS–STING and TLR3/4 via ANKIB1. Nat Cell Biol 2026;28:608–21.|doi:10.1038/s41556-026-01886-z
+betrancourt2026|Betrancourt A, … Rieser E, Walczak H et al. Lysine-11 ubiquitination drives type-I/III interferon induction by cGAS–STING and Toll-like receptors 3 and 4. Nat Cell Biol 2026;28:608–21.|doi:10.1038/s41556-026-01886-z
 baker2026|Baker PJ et al. Iterative genetic testing identifies SAMHD1 deficiency caused by a homozygous balanced translocation. J Hum Immun 2026;2(6):e20260044. 13yo male, complete SAMHD1 protein loss via t(17;20)(p11.2;q11.23); FCL-like phenotype (perniosis/autoamputation, small-joint arthritis) WITHOUT AGS neurological features or cerebral calcification -- patient is heterozygous for the STING HAQ allele, proposed by the authors as a partial explanation. Treated with tofacitinib (JAK1/3i): 6-gene ISG panel, joint count (14->0), NK cells, and switched memory B cells all normalized.|doi:10.70962/jhi.20260044
 simchoni2025haq|Simchoni N et al. The common HAQ STING allele prevents clinical penetrance of COPA syndrome. J Exp Med 2025;222(4):e20242179. HAQ STING acts dominantly to dampen COPA-dependent STING signaling; co-segregates with clinical nonpenetrance in unaffected carriers. Cited directly by Baker et al. 2026 as the precedent for their own patient's STING-HAQ genotype.|doi:10.1084/jem.20242179
 west2015|West AP et al. Mitochondrial DNA stress primes the antiviral innate immune response. Nature 2015;520:553–7.|doi:10.1038/nature14156
@@ -1230,25 +1230,25 @@ mihaylova2024|Mihaylova V et al. JAK inhibitors improve ATP production and mitoc
 fremond2023|Frémond ML et al. JAK inhibition in monogenic interferonopathies. J Clin Immunol 2023.|pmid:36763178
 rodriguez2023|Rodríguez-García E et al. Homozygous SAMHD1 AGS; divergent phenotypes; JAK inhibitors effective. JIMD 2023.|
 tesser2025|Tesser A et al. Type I interferon signature: a quantitative standardised method for assessment in interferonopathies. Clin Exp Immunol 2025;219(1):uxaf018.|
-crow2006trex1|Crow YJ et al. Mutations in the gene encoding the 3′-5′ DNA exonuclease TREX1 cause Aicardi-Goutières syndrome at the AGS1 locus. Nat Genet 2006;38:917–20.|
-stetson2008|Stetson DB et al. Trex1 prevents cell-intrinsic initiation of autoimmunity. Cell 2008;134:587–98.|
-crow2006rnaseh2|Crow YJ et al. Mutations in genes encoding ribonuclease H2 subunits cause Aicardi-Goutières syndrome. Nat Genet 2006;38:910–6.|
-ricemda5|Rice GI et al. Gain-of-function mutations in IFIH1 cause a spectrum of human disease phenotypes associated with upregulated type I interferon signalling. Nat Genet 2014;46:503–9.|
-riceadar|Rice GI et al. Mutations in ADAR1 cause Aicardi-Goutières syndrome associated with a type I interferon signature. Nat Genet 2012;44:1243–8.|
-ahmad2018|Ahmad S et al. Breaching self-tolerance to Alu duplex RNA underlies MDA5-mediated inflammation. Cell 2018;172:797–810.|
-liddicoat2015|Liddicoat BJ et al. RNA editing by ADAR1 prevents MDA5 sensing of endogenous dsRNA as nonself. Science 2015;349:1115–20.|
-zhao2013samhd1|Zhao K et al. Modulation of LINE-1 and Alu/SVA retrotransposition by Aicardi-Goutières syndrome-related SAMHD1. Cell Rep 2013;4:1108–15.|
-herrmann2018|Herrmann A et al. The SAMHD1-mediated block of LINE-1 retroelements is regulated by phosphorylation. Mob DNA 2018;9:11.|
-hu2015samhd1|Hu S et al. SAMHD1 inhibits LINE-1 retrotransposition by promoting stress granule formation. PLoS Genet 2015;11:e1005367.|
-liu2018hush|Liu N et al. Selective silencing of euchromatic L1s revealed by genome-wide screens for L1 regulators. Nature 2018;553:228–32.|
-tchasovnikarova2015|Tchasovnikarova IA et al. Epigenetic silencing by the HUSH complex mediates position-effect variegation in human cells. Science 2015;348:1481–5.|
-rowe2010|Rowe HM et al. KAP1 controls endogenous retroviruses in embryonic stem cells. Nature 2010;463:237–40.|
-richardson2014|Richardson SR et al. The influence of LINE-1 and SINE retrotransposons on mammalian genomes. Microbiol Spectr 2014;3:MDNA3-0061.|
-goodier2016|Goodier JL. Restricting retrotransposons: a review. Mob DNA 2016;7:16.|
-moldovan2015|Moldovan JB, Moran JV. The zinc-finger antiviral protein ZAP inhibits LINE and Alu retrotransposition. PLoS Genet 2015;11:e1005121.|
+crow2006trex1|Crow YJ et al. Mutations in the gene encoding the 3′-5′ DNA exonuclease TREX1 cause Aicardi-Goutières syndrome at the AGS1 locus. Nat Genet 2006;38:917–20.|doi:10.1038/ng1845
+stetson2008|Stetson DB et al. Trex1 prevents cell-intrinsic initiation of autoimmunity. Cell 2008;134:587–98.|doi:10.1016/j.cell.2008.06.032
+crow2006rnaseh2|Crow YJ et al. Mutations in genes encoding ribonuclease H2 subunits cause Aicardi-Goutières syndrome and mimic congenital viral brain infection. Nat Genet 2006;38:910–6.|doi:10.1038/ng1842
+ricemda5|Rice GI et al. Gain-of-function mutations in IFIH1 cause a spectrum of human disease phenotypes associated with upregulated type I interferon signalling. Nat Genet 2014;46:503–9.|doi:10.1038/ng.2933
+riceadar|Rice GI et al. Mutations in ADAR1 cause Aicardi-Goutières syndrome associated with a type I interferon signature. Nat Genet 2012;44:1243–8.|doi:10.1038/ng.2414
+ahmad2018|Ahmad S et al. Breaching self-tolerance to Alu duplex RNA underlies MDA5-mediated inflammation. Cell 2018;172:797–810.|doi:10.1016/j.cell.2017.12.016
+liddicoat2015|Liddicoat BJ et al. RNA editing by ADAR1 prevents MDA5 sensing of endogenous dsRNA as nonself. Science 2015;349:1115–20.|doi:10.1126/science.aac7049
+zhao2013samhd1|Zhao K et al. Modulation of LINE-1 and Alu/SVA retrotransposition by Aicardi-Goutières syndrome-related SAMHD1. Cell Rep 2013;4:1108–15.|doi:10.1016/j.celrep.2013.08.019
+herrmann2018|Herrmann A et al. The SAMHD1-mediated block of LINE-1 retroelements is regulated by phosphorylation. Mob DNA 2018;9:11.|doi:10.1186/s13100-018-0116-5
+hu2015samhd1|Hu S et al. SAMHD1 inhibits LINE-1 retrotransposition by promoting stress granule formation. PLoS Genet 2015;11:e1005367.|doi:10.1371/journal.pgen.1005367
+liu2018hush|Liu N et al. Selective silencing of euchromatic L1s revealed by genome-wide screens for L1 regulators. Nature 2018;553:228–32.|doi:10.1038/nature25179
+tchasovnikarova2015|Tchasovnikarova IA et al. Epigenetic silencing by the HUSH complex mediates position-effect variegation in human cells. Science 2015;348:1481–5.|doi:10.1126/science.aaa7227
+rowe2010|Rowe HM et al. KAP1 controls endogenous retroviruses in embryonic stem cells. Nature 2010;463:237–40.|doi:10.1038/nature08674
+richardson2014|Richardson SR et al. The influence of LINE-1 and SINE retrotransposons on mammalian genomes. Microbiol Spectr 2015;3(2):MDNA3-0061-2014.|doi:10.1128/microbiolspec.mdna3-0061-2014
+goodier2016|Goodier JL. Restricting retrotransposons: a review. Mob DNA 2016;7:16.|doi:10.1186/s13100-016-0070-z
+moldovan2015|Moldovan JB, Moran JV. The zinc-finger antiviral protein ZAP inhibits LINE and Alu retrotransposition. PLoS Genet 2015;11:e1005121.|doi:10.1371/journal.pgen.1005121
 richardson2018|Richardson SR et al. Heritable L1 retrotransposition in the mouse primordial germline and early embryo. Genome Res 2017;27:1395–405.|
-demarco2021|De Cecco M et al. L1 drives IFN in senescent cells and promotes age-associated inflammation. Nature 2019;566:73–8.|
-thomas2017|Thomas CA et al. Modeling of TREX1-dependent autoimmune disease using human stem cells highlights L1 accumulation as a source of neuroinflammation. Cell Stem Cell 2017;21:319–31.|
+demarco2021|De Cecco M et al. L1 drives IFN in senescent cells and promotes age-associated inflammation. Nature 2019;566:73–8.|doi:10.1038/s41586-018-0784-9
+thomas2017|Thomas CA et al. Modeling of TREX1-dependent autoimmune disease using human stem cells highlights L1 accumulation as a source of neuroinflammation. Cell Stem Cell 2017;21:319–31.|doi:10.1016/j.stem.2017.07.009
 zhang2024l1cgas|Reviews of L1 cDNA as a cGAS ligand and the retroelement origin of sterile interferon. (Composite anchor — see Goodier 2016, De Cecco 2019, Thomas 2017.)|
 jiao2020|Jiao H, Wachsmuth L, Kumari S et al. Z-nucleic-acid sensing triggers ZBP1-dependent necroptosis and inflammation. Nature 2020;580:391–395.|doi:10.1038/s41586-020-2129-8
 zhang2022adar|Zhang T, Yin C, Fedorov A et al. ADAR1 masks the cancer immunotherapeutic promise of ZBP1-driven necroptosis. Nature 2022;606:594–602.|doi:10.1038/s41586-022-04753-7

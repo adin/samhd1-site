@@ -37,6 +37,7 @@ export const nodes = [
       "coquel2018"
     ],
     "evidence_tier": "L4_primary_human",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell's basis file-wide traces to this node's own han2026 citation -- scRNA-seq of a SAMHD1-AGS patient's PBMCs, which resolved a CD4 T-cell cluster with broadly elevated ISGs sensitive to the cGAS inhibitor IMSB301. Genuine disease-modeling support, unlike mito.js/retro.js where cd4_tcell had zero basis -- but honestly caveated: this is whole-PBMC data, so the CD4 ISG signal could be paracrine (myeloid-made IFN, T cells responding) rather than cell-intrinsic cGAS/STING sensing inside the T cell itself. cell_context doesn't require cell-intrinsic proof, but every other cd4_tcell instance in this file rides on this single citation by template inheritance, not its own evidence.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -106,14 +107,15 @@ export const nodes = [
     "key": true,
     "summary": "ER-resident dimer. cGAMP binding closes its ligand-binding lid, triggering polymerisation and ER exit.",
     "detail": "Activated STING traffics ER → ERGIC → Golgi. Only after it reaches the ERGIC does its C-terminal tail recruit TBK1 in a way that permits IRF3 phosphorylation — trafficking is part of the switch, not incidental to it.\n\nGENOTYPE MODIFIER, EXPLICITLY HYPOTHETICAL (added 2026-09, Baker et al. 2026 + Simchoni et al. 2025): a patient with COMPLETE SAMHD1 loss (homozygous balanced translocation, not this atlas's heterozygous A565T model) who is also heterozygous for the common STING1 HAQ allele presented WITHOUT the AGS-typical neurological features or cerebral calcification. Baker et al. propose the HAQ allele as a partial explanation, citing Simchoni et al. 2025's demonstration that HAQ STING dominantly dampens COPA-syndrome-driven STING signaling as precedent -- but say so explicitly as hypothetical, pending a larger SAMHD1-deficiency cohort. No causal edge is drawn for this: it is a single-patient genotype observation with an authors'-own-flagged-speculative mechanism, not a demonstrated dose-response.",
-    "samhd1": "STING is one of the five ANKIB1 K11-Ub substrates held constitutively primed by SAMHD1 loss. Primed STING lowers the threshold for TBK1/IRF3 scaffold assembly, producing tonic rather than pulsatile interferon.",
+    "samhd1": "STING is one of four ANKIB1 K11-Ub substrates (fixed 2026-09-13: OPTN is a reader of the K11 mark, not a fifth substrate -- see the ankib1 node) held constitutively primed by SAMHD1 loss. Primed STING lowers the threshold for TBK1/IRF3 scaffold assembly, producing tonic rather than pulsatile interferon.",
     "refs": [
       "betrancourt2026",
       "ng2024",
       "baker2026",
       "simchoni2025haq"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L6_human_clinical",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): two of four refs are human clinical (baker2026, a single SAMHD1 patient; simchoni2025haq, 35 genotyped individuals including 26 affected), matching the retro.js ags-family precedent -- upgraded from the generic L4_primary_human template.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -150,7 +152,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Palmitoylation at Cys88/91 clusters STING into signalling-competent microdomains on Golgi membranes.",
     "detail": "This step is where the covalent-inhibitor class (H-151, nitrofurans) acts, and it is the reason STING signalling is terminated by lysosomal degradation rather than by dephosphorylation.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -183,12 +185,12 @@ export const nodes = [
       "teodorocastro2026"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node's own detail field already carried a CELL-CONTEXT NOTE (2026-09-12) explaining teodorocastro2026 ran in fibroblasts/U2OS, not myeloid/immune cells -- but the cell_context array itself hadn't been updated to match its own outgoing edge (fork->sting-nuclear), which already uses the honest ipsc-modeling-target array instead of asserting dendritic_cell/cd4_tcell. Converged to match.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "ipsc"
     ]
   },
   {
@@ -275,7 +277,7 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "CARD-less RLR that tunes MDA5 filament nucleation — accelerates it at low levels, caps it at high levels.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -339,7 +341,8 @@ export const nodes = [
     "refs": [
       "docSiege"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): only ref is docSiege, an internal project document -- no external literature basis, and this node's own outgoing edge (mtdsrna->mda5, same ref) was already correctly L1_in_silico. Matched.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -399,7 +402,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Drives rapid, IFN-independent ISG expression; the mitochondrial pool supplies the slower type-I IFN amplitude.",
     "detail": "Two platforms, two kinetics: peroxisomal MAVS gives an immediate local antiviral state, mitochondrial MAVS gives the systemic interferon wave. Only the mitochondrial pool is degraded by mitochondrial injury.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -426,7 +429,7 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "K63-Ub ligase that couples MAVS and TRIF to the TBK1/IKKε arm (IRF branch).",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -454,7 +457,7 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "K63-Ub ligase that couples MAVS/MyD88 to the IKK complex (NF-κB branch).",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -518,13 +521,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Sense GU-rich ssRNA including HERV and LINE-1 transcripts delivered by autophagy or phagocytosis.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): human TLR7 is pDC/B-cell restricted for the classical IFN-alpha induction role this atlas models; cd4_tcell dropped, dendritic_cell kept alongside the broader myeloid lineages.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -545,13 +549,14 @@ export const nodes = [
     "evidence": "G",
     "summary": "Senses hypomethylated CpG DNA — including mtDNA, which is bacterially hypomethylated by ancestry.",
     "detail": "Mitochondrial DNA released from dying cells is a TLR9 agonist as well as a cGAS ligand: the same molecule drives two receptors in two compartments.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): human TLR9 is pDC/B-cell restricted for the classical IFN-alpha induction role this atlas models; cd4_tcell dropped, dendritic_cell kept alongside the broader myeloid lineages.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -578,12 +583,9 @@ export const nodes = [
       "ganguly2009"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): LL-37 itself is made by keratinocytes and neutrophils, neither of which exists in this atlas's vocabulary (this node's own samhd1 text already disclaims any SAMHD1 link -- a disease-model gap, not a cascade one). The only immune lineage with real support is the pDC that senses the complex (lande2007, ganguly2009 are both pDC/human-DC papers) -- narrowed from the generic template to dendritic_cell only.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -608,12 +610,9 @@ export const nodes = [
       "lande2007"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): same reasoning as the ll37 node -- lande2007 is a pDC-specific paper (the whole claim is about pDC endosomal trafficking); narrowed to dendritic_cell only.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -666,7 +665,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "S",
     "summary": "The IRF3-directing TLR adaptor; also a bona fide ANKIB1 K11-Ub substrate.",
-    "samhd1": "Reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed — one of the five substrates that lowers the TBK1/IRF3 assembly threshold.",
+    "samhd1": "Reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed — one of four substrates (fixed 2026-09-13: OPTN is a K11-mark reader, not a fifth substrate -- see the ankib1 node) that lowers the TBK1/IRF3 assembly threshold.",
     "refs": [
       "betrancourt2026"
     ],
@@ -697,13 +696,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Assembles the Myddosome with IRAK4/IRAK1 → TRAF6 → NF-κB, and in pDCs → IRF7 directly.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node's own summary says its IRF7 route is specifically in pDCs; cd4_tcell dropped, dendritic_cell kept alongside the broader myeloid lineages.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -724,13 +724,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Myddosome kinases; IRAK1 phosphorylates IRF7 directly in the plasmacytoid dendritic-cell IFN burst.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node's own summary names the plasmacytoid dendritic-cell IFN burst specifically; cd4_tcell dropped, dendritic_cell kept alongside the broader myeloid lineages.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -752,9 +753,9 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "key": true,
-    "summary": "Assembles K11-linked ubiquitin chains on STING, TRIF, NEMO, OPTN — and on itself. The gain-control knob of the whole system.",
-    "detail": "Betrancourt/Rieser/Walczak (Nat Cell Biol 2026) established K11 ubiquitination as the linkage that drives type-I/III interferon induction downstream of both cGAS–STING and TLR3/4. ANKIB1 is not a terminal effector — it sets the THRESHOLD at which TBK1/IRF3 scaffolds assemble. That is why the resulting phenotype is a moderate, unrelenting tonic interferon output rather than discrete cytokine surges.",
-    "samhd1": "This is the framework's central gain-control claim. SAMHD1 loss primes all five substrates at once: dNTPase failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression primes NEMO. Worse, ANKIB1 AUTO-ubiquitinates during activation and is degraded by the proteasome — so the master negative regulator destroys itself exactly when it is needed most. A self-terminating feedback controller cannot hold homeostasis under chronic drive. Predicted readout: ANKIB1 protein REDUCED at baseline in A565T cells, restored by amlexanox (Arms 5–6) but NOT by upadacitinib (Arm 2).",
+    "summary": "Assembles K11-linked ubiquitin chains on STING, TRIF, NEMO — and on itself. OPTN is then recruited to read those chains, not itself a substrate. The gain-control knob of the whole system.",
+    "detail": "Betrancourt/Rieser/Walczak (Nat Cell Biol 2026) established K11 ubiquitination as the linkage that drives type-I/III interferon induction downstream of both cGAS–STING and TLR3/4. ANKIB1 is not a terminal effector — it sets the THRESHOLD at which TBK1/IRF3 scaffolds assemble. That is why the resulting phenotype is a moderate, unrelenting tonic interferon output rather than discrete cytokine surges. Fixed 2026-09-13 (sensing.js literature audit follow-up): per the paper's own abstract, K11 chains on the signalosome components facilitate OPTN RECRUITMENT, which in turn enables TBK1/IRF3 recruitment and activation -- OPTN is a reader of the K11 mark, not a fifth substrate it is written onto.",
+    "samhd1": "This is the framework's central gain-control claim. SAMHD1 loss primes all four substrates at once: dNTPase failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression primes NEMO. Worse, ANKIB1 AUTO-ubiquitinates during activation and is degraded by the proteasome — so the master negative regulator destroys itself exactly when it is needed most. A self-terminating feedback controller cannot hold homeostasis under chronic drive. Predicted readout: ANKIB1 protein REDUCED at baseline in A565T cells, restored by amlexanox (Arms 5–6) but NOT by upadacitinib (Arm 2).",
     "refs": [
       "betrancourt2026",
       "doc10arm",
@@ -790,8 +791,8 @@ export const nodes = [
     ],
     "lod": 1,
     "evidence": "G",
-    "summary": "Distinct from K48 (degradation) and K63 (canonical signalling). K11 loading on the five substrates lowers scaffold-assembly threshold.",
-    "detail": "Measurable with linkage-specific antibodies (clone 2A3/2E6) or K11-TUBE reagents — which is what makes K11-Ub/STING loading a candidate patient-stratification biomarker rather than a purely theoretical node.",
+    "summary": "Distinct from K48 (degradation) and K63 (canonical signalling). K11 loading on the four substrates lowers scaffold-assembly threshold and recruits OPTN as a reader.",
+    "detail": "Measurable with linkage-specific antibodies (clone 2A3/2E6) or K11-TUBE reagents — which is what makes K11-Ub/STING loading a candidate patient-stratification biomarker rather than a purely theoretical node. Fixed 2026-09-13 (sensing.js literature audit follow-up): four substrates, not five -- OPTN reads the K11 mark via its UBAN domain rather than being ubiquitinated itself.",
     "refs": [
       "betrancourt2026",
       "doc10arm"
@@ -854,7 +855,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "summary": "Regulatory subunit of the IKK complex; ubiquitin-chain receptor and ANKIB1 K11-Ub substrate.",
-    "samhd1": "Loss of SAMHD1's NF-κB-suppressive function leaves NEMO constitutively primed — the third of the five ANKIB1 substrates.",
+    "samhd1": "Loss of SAMHD1's NF-κB-suppressive function leaves NEMO constitutively primed — the third of four ANKIB1 substrates (fixed 2026-09-13: OPTN is a K11-mark reader, not a fifth substrate -- see the ankib1 node).",
     "refs": [
       "wang2018",
       "betrancourt2026"
@@ -1067,7 +1068,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "summary": "Phosphorylates IκBα on Ser32/36, marking it for K48-Ub and proteasomal destruction. The canonical arm runs through here; IKKα carries the non-canonical one.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1099,7 +1100,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Masks the NF-κB nuclear localisation signal. Its degradation is the licensing step for NF-κB nuclear entry.",
     "detail": "IκBα is itself an NF-κB target gene, giving the pathway its classic oscillatory negative feedback — oscillation that a constitutively driven system flattens into a plateau.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1166,10 +1167,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1183,12 +1186,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1201,12 +1206,14 @@ export const edges = [
       "cgas-sting"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "compartment_translocation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1220,12 +1227,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1237,14 +1246,16 @@ export const edges = [
     "pathways": [
       "cgas-sting"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1258,12 +1269,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1283,10 +1296,12 @@ export const edges = [
     "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit follow-up): schumann2023 replaced with maharana2022 -- this edge represents dsRNA released from condensates becoming available to MDA5, which is maharana2022's finding, not schumann2023's (which has no condensate content). Note this citation covers the release/availability step, not the classical cooperative-filament-nucleation biophysics itself (Peisley/Hur-lab structural work, not cited in this atlas) -- flagged rather than left silently uncited.",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1299,12 +1314,14 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1323,10 +1340,12 @@ export const edges = [
     ],
     "evidence_tier": "L1_in_silico",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1339,12 +1358,14 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1362,10 +1383,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1378,12 +1401,14 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1396,12 +1421,14 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1413,12 +1440,14 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1431,12 +1460,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1448,12 +1479,14 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1467,12 +1500,14 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1489,10 +1524,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1505,12 +1542,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1522,13 +1561,15 @@ export const edges = [
     "pathways": [
       "tlr"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1541,12 +1582,14 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1560,12 +1603,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1577,13 +1622,15 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the tlr7/myd88 nodes' own cell_context (no T-cell basis in this atlas's TLR7 vocabulary) -- cd4_tcell dropped, dendritic_cell added.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1594,13 +1641,15 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the tlr9/myd88 nodes' own cell_context -- cd4_tcell dropped, dendritic_cell added.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1612,13 +1661,15 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the myd88/irak14 nodes' own cell_context -- cd4_tcell dropped, dendritic_cell added.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1630,13 +1681,15 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches its own source node (irak14) -- cd4_tcell dropped, dendritic_cell added, for consistency with irak14's other outgoing edge (->irf7) since this node's own cell_context no longer carries cd4_tcell at all.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1653,11 +1706,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this edge's own label says 'pDC burst' and its citation (uematsu2005) is a pDC-specific IFN-alpha induction paper -- cd4_tcell dropped, dendritic_cell added.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1674,11 +1728,9 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the ll37/ll37-dna nodes -- lande2007 is pDC-specific, narrowed from the generic myeloid+cd4_tcell template to dendritic_cell only.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1695,11 +1747,9 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the ll37/ll37-dna nodes -- lande2007 is pDC-specific, and human TLR9 is itself pDC/B-cell restricted. Narrowed to dendritic_cell only.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1710,12 +1760,14 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1728,12 +1780,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1752,10 +1806,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1769,12 +1825,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "ankib1",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "ubiquitin_conjugation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1788,12 +1846,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "ankib1",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "ubiquitin_conjugation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1807,31 +1867,36 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "ankib1",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "ubiquitin_conjugation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
   {
     "from": "k11ub",
     "to": "optn",
-    "kind": "ubiq",
-    "label": "substrate 4 — primes OPTN",
+    "kind": "bind",
+    "label": "OPTN reads the K11 mark via its UBAN domain (recruitment, not a substrate event)",
     "pathways": [
       "ankib1"
     ],
     "evidence": "G",
     "loop": "ankib1",
-    "evidence_tier": "L3_cell_line",
-    "interaction_type": "ubiquitin_conjugation",
+    "evidence_tier": "L1_in_silico",
+    "interaction_type": "ubiquitin_reader_recruitment",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit + follow-up): zero refs, so capped at L1_in_silico per config.js's own rule. Separately, this edge previously modeled OPTN as ANKIB1's fourth K11-Ub substrate ('substrate 4 — primes OPTN', kind ubiq, interaction_type ubiquitin_conjugation). Per betrancourt2026's own abstract, OPTN is instead RECRUITED by the K11 chains already on STING/TRIF/NEMO, and that recruitment is what enables TBK1/IRF3 activation -- a reader event, not a conjugation event. Kind/label/interaction_type corrected accordingly; see the ankib1 node for the renumbered substrate count (four, not five).",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1839,7 +1904,7 @@ export const edges = [
     "from": "k11ub",
     "to": "ankib1",
     "kind": "ubiq",
-    "label": "substrate 5 — AUTO-ubiquitination → proteasomal self-destruction",
+    "label": "substrate 4 — AUTO-ubiquitination → proteasomal self-destruction",
     "pathways": [
       "ankib1"
     ],
@@ -1851,11 +1916,14 @@ export const edges = [
       "doc10arm"
     ],
     "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Renumbered 2026-09-13 (sensing.js literature audit follow-up) from 'substrate 5' to 'substrate 4' -- OPTN (the old substrate 4) is a K11-mark reader, not a fifth substrate; see the k11ub->optn edge and the ankib1 node.",
     "interaction_type": "ubiquitin_conjugation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1869,12 +1937,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "ankib1",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1899,10 +1969,12 @@ export const edges = [
     "evidence_tier": "L3_cell_line",
     "evidenceTierNote": "Was L1_in_silico with only an unsourced STRING score; sharma2003, mori2004irf3, servant2003 and mcwhirter2003 (Tbk1-/- MEFs) establish the mechanism and the Ser386/396 sites, all in human cell lines/mouse MEFs -- none SAMHD1-specific, hence evidence 'G' not 'S' (corrected 2026-09-12 per literature-agent review; the initial fix wrongly kept 'S').",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -1927,10 +1999,12 @@ export const edges = [
     "evidence_tier": "L3_cell_line",
     "evidenceTierNote": "Was L1_in_silico with only an unsourced STRING score (string_experimental 0.331 is notably weak vs tbk1->irf3's 0.927 -- kept visible rather than hidden behind the combined score). sharma2003 + lin2000irf7 (human IRF7 Ser477/Ser479 phospho-acceptor sites) establish the mechanism in human cell lines -- none SAMHD1-specific, hence 'G' not 'S' (corrected 2026-09-12 per literature-agent review; the initial fix wrongly kept 'S').",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ],
     "db_scores": {
@@ -1955,10 +2029,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1976,10 +2052,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -1992,12 +2070,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2010,12 +2090,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2028,12 +2110,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2046,12 +2130,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
+      "dendritic_cell",
       "cd4_tcell"
     ]
   },
@@ -2089,15 +2175,16 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L3_cell_line",
     "interaction_type": "non_canonical_signaling",
-    "detail": "Graded I deliberately: the source paper (fibroblasts/U2OS only) shows this ISG pattern co-occurring with nuclear STING accumulation, not a demonstrated mechanistic chain to it. Do not read `drive` here as established causation -- it is the closest available edge kind for a candidate/proposed association, not a claim the intermediary step is proven. Cell context (monocyte/macrophage/microglia/cd4_tcell) is this atlas's own disease-relevant modeling target, not a tested system.",
+    "detail": "Graded I deliberately: the source paper (fibroblasts/U2OS only) shows this ISG pattern co-occurring with nuclear STING accumulation, not a demonstrated mechanistic chain to it. Do not read `drive` here as established causation -- it is the closest available edge kind for a candidate/proposed association, not a claim the intermediary step is proven. Cell context (monocyte/macrophage/microglia/ipsc) is this atlas's own disease-relevant modeling target, not a tested system.",
     "refs": [
       "teodorocastro2026"
     ],
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match its own source node (sting-nuclear) and sibling edge (fork->sting-nuclear), both of which use ipsc rather than dendritic_cell/cd4_tcell for the same fibroblast/U2OS-sourced, not-yet-tested-in-myeloid mechanism.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "ipsc"
     ]
   }
 ];

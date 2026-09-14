@@ -67,12 +67,14 @@ export const nodes = [
       "rudolph2006",
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026's primary-human antigen-presentation data (autologous macrophages presenting tetanus toxoid/EBV gp350) supplies this tier; rudolph2006 is recombinant TCR-pMHC crystallography, co-cited for the structural claim, not the cell system.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this is the myeloid-to-responder crossing node/edge config.js explicitly carves out -- the presenting cell is myeloid (jalali2026 used autologous macrophages), not the responder. nk_cell dropped (peptide-MHC/alphabetaTCR recognition is not NK biology); macrophage added (the actual presenting cell type used).",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "monocyte",
+      "macrophage"
     ]
   },
   {
@@ -99,11 +101,11 @@ export const nodes = [
       "rudolph2006"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -128,11 +130,11 @@ export const nodes = [
       "courtney2018"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -157,11 +159,11 @@ export const nodes = [
       "esensten2016"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -185,12 +187,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -216,12 +219,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them. cd4_tcell/cd8_tcell are natively demonstrated in jalali2026 (primary human T cells, the strongest cd4_tcell basis found across this whole audit thread). nk_cell is KEPT as this atlas's Loop C modeling-target extension -- NK cells appear in jalali2026 exactly once, as TRAIL producers, never as tested targets of TRAILshort suppression. Biologically defensible on the shared ITAM-signalling machinery nodes (NK cells express Lck/CD3zeta/ZAP-70/LAT/PLCg and SHP-1 is a central NK inhibitory-receptor phosphatase) but not independently demonstrated here.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -245,12 +249,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -278,12 +283,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -308,12 +314,13 @@ export const nodes = [
       "jalali2026",
       "courtney2018"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -339,12 +346,13 @@ export const nodes = [
       "jalali2026",
       "courtney2018"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -368,12 +376,13 @@ export const nodes = [
       "jalali2026",
       "courtney2018"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -397,12 +406,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -426,12 +436,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -455,12 +466,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -484,12 +496,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -514,12 +527,12 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L5_animal_in_vivo",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this claim rests on hu-CD34+ NSG humanised-mouse in vivo data (this node's own detail field says so) -- config.js documents L5_animal_in_vivo as a valid tier for this atlas, not yet assigned anywhere; this is the first use. L3_cell_line's own gloss does cover mouse work generically, so this is a precision upgrade, not a correction of an outright error.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): CAR-T cells are T cells by construction -- nk_cell and monocyte both dropped.",
     "cell_context": [
       "cd4_tcell",
-      "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "cd8_tcell"
     ]
   },
   {
@@ -544,12 +557,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026's anti-TRAILshort data used patient splenocytes (marginal zone lymphoma / DLBCL / florid lymphoid hyperplasia) -- upgraded from the generic L3_cell_line template (L6_human_clinical arguable, L4 taken as the conservative floor).",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   },
   {
@@ -574,12 +588,13 @@ export const nodes = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): monocyte dropped -- config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them (see the trailshort node's note for the full nk_cell reasoning). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
-      "nk_cell",
-      "monocyte"
+      "nk_cell"
     ]
   }
 ];
@@ -598,13 +613,15 @@ export const edges = [
       "rudolph2006",
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the apc-antigen node's own tier fix -- jalali2026's primary-human antigen data.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this is the myeloid-to-responder crossing edge config.js explicitly carves out. Matches the apc-antigen node's own array.",
     "cell_context": [
+      "cd4_tcell",
+      "cd8_tcell",
       "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "macrophage"
     ]
   },
   {
@@ -621,11 +638,10 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): alphabetaTCR-restricted signalling step; nk_cell dropped along with monocyte/macrophage/microglia.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell"
     ]
   },
   {
@@ -642,11 +658,11 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -664,11 +680,10 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): esensten2016 is a T-cell costimulation review; CD28 costimulation is not NK biology in this claim. nk_cell dropped along with monocyte/macrophage/microglia.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell"
     ]
   },
   {
@@ -684,13 +699,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -706,13 +722,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -728,13 +745,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -749,13 +767,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -770,13 +789,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -793,13 +813,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -814,13 +835,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -835,13 +857,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -859,13 +882,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches cytokines.js's responder-cell node exactly (same array, same Loop C destination).",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -880,13 +904,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -901,13 +926,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -922,13 +948,13 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): the destination node describes antigen-driven clonal T-cell expansion specifically -- nk_cell dropped along with monocyte/macrophage/microglia.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell"
     ]
   },
   {
@@ -946,13 +972,13 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L5_animal_in_vivo",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the car-t node's own tier fix -- hu-CD34+ NSG humanised-mouse in vivo data.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the car-t node -- CAR-T cells are T cells by construction.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell"
     ]
   },
   {
@@ -970,13 +996,16 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L5_animal_in_vivo",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): the in vivo arm's own detail text is humanised-mouse data.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matched to immunodef's own systemic clinical-outcome array (klass: outcome, L6_human_clinical) rather than the generic myeloid template, same convention as inflammasome.js/drugs.js/ifn.js's systemic-endpoint edges.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
     ]
   },
   {
@@ -992,13 +1021,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the anti-trailshort node's own tier fix -- jalali2026's patient-splenocyte data.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   },
   {
@@ -1014,13 +1044,14 @@ export const edges = [
     "refs": [
       "jalali2026"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): jalali2026 demonstrated this in primary human CD4+/CD8+ T cells -- upgraded from the generic L3_cell_line template.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): converged to match this edge's own endpoint nodes (config.js's own CELL_CONTEXT doc explicitly names this file's responder-cell nodes and prohibits the generic myeloid template on them). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
     ]
   }
 ];
