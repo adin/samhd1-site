@@ -524,13 +524,15 @@ export const nodes = [
     ],
     "lod": 1,
     "evidence": "G",
-    "summary": "IL-23 → Th17 → IL-17A/TNF-α at tendon–bone and fascial insertions.",
-    "detail": "The distinction matters: PsA is established at the diagnosis level, whereas SAMHD1-to-PsA causality remains a mechanistic hypothesis pending specialist review and cell-based confirmation.",
+    "summary": "Entheseal inflammatory axis: myeloid IL-23 and resident γδ T-cell IL-17A at tendon–bone and fascial insertions.",
+    "detail": "Bridgewood 2019 and Cuthbert 2019 establish co-located myeloid IL-23 and resident γδ T-cell IL-17A in human enthesis tissue. Inferred coupling and SAMHD1-to-PsA causality remain disease-model hypotheses pending direct clinical evaluation.",
     "refs": [
-      "fragoulis2023",
+      "bridgewood2019",
+      "cuthbert2019",
       "docConcept"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Bridgewood 2019 and Cuthbert 2019 establish the local myeloid IL-23 and resident gamma-delta T cell IL-17A axis in human enthesis tissue ex vivo; linkage to SAMHD1 deficiency is a disease-model hypothesis.",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",
@@ -616,10 +618,13 @@ export const nodes = [
     ],
     "lod": 2,
     "evidence": "G",
-    "summary": "Tonic IFN-γ → STAT1 antagonises TGF-β/Smad3 collagen-I transcription while upregulating MMP-1/MMP-3.",
+    "summary": "Hypothesized two-hit uncoupled catabolism: tonic IFN-γ/STAT1 blocks collagen-I synthesis (Hit 1) while inflammatory cytokines upregulate MMPs (Hit 2); direct evidence in SAMHD1 deficiency is pending.",
     "refs": [
+      "ghosh2001",
+      "ulloa1999",
+      "agren2015",
       "verrecchia2004",
-      "fragoulis2023"
+      "wang2018"
     ],
     "evidence_tier": "L6_human_clinical",
     "cell_context": [
@@ -1249,12 +1254,13 @@ export const edges = [
     "from": "ifng",
     "to": "connective",
     "kind": "drive",
-    "label": "STAT1 antagonises TGF-β/Smad3; MMP-1/3 up",
+    "label": "STAT1 blocks collagen-I synthesis (Hit 1)",
     "pathways": [
       "clinical"
     ],
     "evidence": "G",
     "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Demonstrated in human dermal fibroblasts (Ghosh 2001, Ulloa 1999): IFN-γ/STAT1 competitively sequesters p300/CBP and induces Smad7, blocking TGF-β/Smad3 procollagen transcription. Synergistic uncoupling via TNF-α-driven MMP-1/MMP-3 degradation (Hit 2; Ågren 2015) represents a plausible disease-model hypothesis; clinical confirmation in SAMHD1 deficiency remains to be directly demonstrated.",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",

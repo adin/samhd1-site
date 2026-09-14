@@ -44,12 +44,13 @@ export const nodes = [
     ],
     "lod": 1,
     "evidence": "G",
-    "summary": "The IL-23-responsive compartment. In enthesitis the dominant producers are tissue-resident γδ T and ILC3, not circulating Th17.",
-    "detail": "This distinction is clinically load-bearing: entheseal IL-17 comes largely from resident innate-like lymphocytes responding to IL-23, which is why the psoriatic arthritis arm can run without a classical autoantigen or autoantibody.",
+    "summary": "The entheseal IL-17-producing compartment, dominated by resident γδ T cells capable of IL-17A production (Cuthbert 2019).",
+    "detail": "Cuthbert 2019 demonstrated that resident human entheseal γδ T cells produce IL-17A independently of IL-23R transcript expression, distinguishing local entheseal pathology from circulating Th17 autoantigen-driven models.",
     "refs": [
-      "fragoulis2023"
+      "cuthbert2019"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Cuthbert 2019 demonstrated that human enthesis tissue harbors resident gamma-delta T cells capable of IL-17A production independently of conventional circulation (primary human tissue ex vivo).",
     "cell_context": [
       "cd4_tcell"
     ]

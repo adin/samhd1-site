@@ -42,20 +42,24 @@ export const REFS = {
   },
   "[4]": {
     "bibliography": {
-      "short": "Academic OUP 2023 - Oxidation",
-      "full": "Academic OUP. Protein oxidation increases SAMHD1 binding ssDNA via its C-terminal domain. Nucleic Acids Research. 2023;51(13):7014-7033.",
-      "url": "https://academic.oup.com/nar/article/51/13/7014/7184168"
+      "short": "Simermeyer TL et al. 2023 - Oxidation",
+      "full": "Simermeyer TL, Batalis S, Rogers LC, Zalesak OJ, Hollis T. Protein oxidation increases SAMHD1 binding ssDNA via its regulatory site. Nucleic Acids Res. 2023;51(13):7014-7033.",
+      "url": "https://doi.org/10.1093/nar/gkad447",
+      "doi": "10.1093/nar/gkad447",
+      "pmid": "37246644"
     },
     "atlas": {
       "finding": "Protein oxidation at C522 (sulfenic acid) increases SAMHD1 ssDNA binding affinity 5-10 fold during S-phase",
-      "flag": "unresolved"
+      "note": "Resolved 2026-09-14: author was previously stored as publisher name 'Academic OUP' and title was truncated. True source is Simermeyer TL et al., Nucleic Acids Res 2023;51(13):7014-7033 (PMID 37246644, DOI 10.1093/nar/gkad447)."
     }
   },
   "[5]": {
     "bibliography": {
       "short": "Yang J et al. 2021 - MCL",
       "full": "Yang J et al. SAMHD1 Mutations and Expression in Mantle Cell Lymphoma. Front Oncol. 2021;11:763151.",
-      "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2021.763151/full"
+      "url": "https://doi.org/10.3389/fonc.2021.763151",
+      "doi": "10.3389/fonc.2021.763151",
+      "pmid": "34976810"
     },
     "atlas": {
       "finding": "Four novel missense mutations in SAMHD1 discovered in mantle cell lymphoma patients"
@@ -109,13 +113,15 @@ export const REFS = {
   },
   "[10]": {
     "bibliography": {
-      "short": "ScienceDirect 2018",
-      "full": "ScienceDirect. SAMHD1 Suppression of Antiviral Immune Responses. Trends Microbiol. 2018.",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0966842X18302051"
+      "short": "Chen S et al. 2019 - Antiviral suppression",
+      "full": "Chen S, Bonifati S, Qin Z, St Gelais C, Wu L. SAMHD1 Suppression of Antiviral Immune Responses. Trends Microbiol. 2019;27(3):254-267.",
+      "url": "https://doi.org/10.1016/j.tim.2018.09.009",
+      "doi": "10.1016/j.tim.2018.09.009",
+      "pmid": "30336972"
     },
     "atlas": {
       "finding": "SAMHD1 suppresses antiviral immune responses through NF-κB and interferon pathway inhibition",
-      "flag": "unresolved"
+      "note": "Resolved 2026-09-14: author was previously stored as publisher name 'ScienceDirect'. True source is Chen S et al., Trends Microbiol 2019;27(3):254-267 (PMID 30336972, DOI 10.1016/j.tim.2018.09.009)."
     }
   },
   "[11]": {
@@ -369,7 +375,10 @@ export const REFS = {
       "url": "https://www.sciencedirect.com/science/article/abs/pii/S0141813025077451"
     },
     "atlas": {
-      "finding": "NEW 2025: SAMHD1 regulates autophagy-lysosomal flux through mTOR-MITF-CTSD axis; deficiency impairs autophagy, enhances MITF nuclear translocation, suppresses cathepsin D, causes lysosomal dysfunction and inflammation"
+      "finding": "NEW 2025: SAMHD1 regulates autophagy-lysosomal flux through mTOR-MITF-CTSD axis; deficiency impairs autophagy, enhances MITF nuclear translocation, suppresses cathepsin D, causes lysosomal dysfunction and inflammation",
+      "flag": "deprecated",
+      "duplicateOf": "[41]",
+      "note": "Superseded by [41]. Original entry misattributed this to 'Zeng M et al.' with a truncated title -- no author named Zeng appears in the author list. Correct paper is Yaxian L et al. (PMID 40886983, DOI 10.1016/j.ijbiomac.2025.147188)."
     }
   },
   "[41]": {

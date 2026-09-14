@@ -97,10 +97,12 @@ export const nodes = [
     ],
     "lod": 1,
     "evidence": "G",
-    "summary": "Different receptor, different STAT dimer, overlapping ISG output. Drives the collagen-catabolic arm.",
-    "detail": "Tonic IFN-γ suppresses collagen-I transcription via STAT1 antagonism of TGF-β/Smad3 while coordinately upregulating MMP-1 and MMP-3 in dermal fibroblasts — the established mechanism behind the connective-tissue and fascial failure phenotype.",
+    "summary": "Different receptor, different STAT dimer, overlapping ISG output. Suppresses procollagen synthesis via STAT1 antagonism of TGF-β/Smad3.",
+    "detail": "Tonic IFN-γ suppresses type I collagen (COL1A1/COL1A2) transcription via STAT1 competition for p300/CBP and Smad7 induction, antagonizing anabolic TGF-β/Smad3 signaling in dermal fibroblasts (Hit 1; Ghosh 2001, Ulloa 1999). As a disease-model hypothesis, concomitant TNF-α-driven matrix metalloproteinase (MMP-1/MMP-3) induction (Hit 2; Ågren 2015) could plausibly uncouple matrix synthesis from degradation and contribute to connective-tissue pathology; direct evidence in SAMHD1-associated disease is not yet available.",
     "refs": [
-      "verrecchia2004"
+      "ghosh2001",
+      "ulloa1999",
+      "agren2015"
     ],
     "evidence_tier": "L3_cell_line",
     "cell_context": [
@@ -213,11 +215,12 @@ export const nodes = [
     ],
     "lod": 2,
     "evidence": "G",
-    "summary": "NF-κB output driving Th17 differentiation — the psoriatic arthritis axis.",
+    "summary": "Local myeloid cytokine output in human enthesis tissue (Bridgewood 2019). Inferred in SpA disease models to support local inflammation.",
     "refs": [
-      "fragoulis2023"
+      "bridgewood2019"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Bridgewood 2019 demonstrated that CD14+ myeloid cells in normal human enthesis tissue produce IL-23 upon stimulation (ex vivo primary human tissue).",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -242,12 +245,12 @@ export const nodes = [
     ],
     "lod": 2,
     "evidence": "G",
-    "summary": "With TNF-α, drives enthesitis at tendon–bone and fascial insertions.",
+    "summary": "IL-17A was measured in peripheral blood as part of a PsA cytokine panel, but was not significantly elevated, and the study did not connect IL-17A to DNA damage or the reduced IFN-I score.",
     "refs": [
       "fragoulis2023"
     ],
     "evidence_tier": "L6_human_clinical",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): fragoulis2023 is a human clinical cohort (peripheral blood), not a cell-line study -- upgraded from the generic L3_cell_line template. Separately flagged (not fixed here, needs a citation decision, not a mechanical one): fragoulis2023's own reported IL17/IL23 mRNA data show no significant difference between PsA patients and controls, so this citation does not actually demonstrate the claim it is attached to.",
+    "evidenceTierNote": "Fragoulis 2023 investigated DNA damage and type I IFN scores in PsA PBMCs, observing increased DNA damage alongside a lower IFN-I score; IL-17A was measured as part of a peripheral cytokine panel but was not significantly elevated and was not connected to DNA damage or IFN score. Extrapolation to entheseal tissue pathology represents an imported spondyloarthritis disease hypothesis rather than an empirical finding of this paper.",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node's own `full` field says 'Th17 effector' -- IL-17A is made by Th17/ILC3/gammadelta T cells, not monocytes/macrophages/microglia/DCs. Narrowed to match cytokines.js's th17-cell node (same citation, already correctly cd4_tcell-only per PR #112) -- the myeloid template had been left on the cytokine itself while PR #112 fixed the surrounding Th17 axis nodes.",
     "cell_context": [
       "cd4_tcell"
@@ -402,7 +405,7 @@ export const nodes = [
     "evidence": "G",
     "key": true,
     "summary": "Shared by type I, type II and type III interferon receptors. The pharmacologic choke point of the whole ISG arm.",
-    "samhd1": "JAK1-selective inhibition clears the inflammatory arm of this disease almost completely and the bioenergetic arm barely at all. What it fails to move is therefore a map of everything downstream of the genetic lesion that does not route through JAK–STAT: Loop B, the direct mitochondrial injuries, and the upstream ANKIB1 priming that JAK inhibition never reaches.",
+    "samhd1": "JAK inhibition can suppress interferon-associated systemic manifestations in biallelic SAMHD1 deficiency and other AGS genotypes, but responses are variable, neurological benefit is limited, and effects on bioenergetic abnormalities or heterozygous p.Ala565Thr disease remain unestablished. The working model predicts that residual manifestations may reflect mechanisms not routed through JAK–STAT, including Loop B, direct mitochondrial injury, and upstream ANKIB1-associated priming.",
     "drugs": [
       "upadacitinib"
     ],
@@ -412,7 +415,7 @@ export const nodes = [
       "rodriguez2023"
     ],
     "evidence_tier": "L3_cell_line",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S->G -- fremond2023's real corrected citation (see refs.js) is a JAK-inhibitor AGS cohort with ZERO SAMHD1 patients (RNASEH2B/ADAR1/TREX1/IFIH1/RNU7-1 only), so it cannot support an S grade. rodriguez2023 could not be verified as a real paper at all (see refs.js flag) and is not being relied on for this grade. doc10arm is an internal project document. If a genuine SAMHD1-specific JAK-inhibitor citation is found, this can be revisited.",
+    "evidenceTierNote": "Updated 2026-09-14: rodriguez2023 verified and resolved to Emreol HE et al., Rheumatology 2026;65(1):keaf695 (PMID 41496005), confirming a pediatric homozygous SAMHD1 cohort treated with JAK inhibitors (tofacitinib) showing variable but positive clinical responses. Note: fremond2023 remains a cross-genotype AGS real-world benchmark (RNASEH2B/ADAR1/TREX1/IFIH1/RNU7-1).",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1873,11 +1876,12 @@ export const edges = [
       "metabolic",
       "mito"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "refs": [
       "bhimavarapu2015"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Sisler et al. 2015 demonstrated STAT1-mediated transcriptional repression of PGC-1alpha in murine models; mapped to general literature (G) and animal-model cell-line fallback (L3_cell_line).",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2220,17 +2224,19 @@ export const edges = [
     "from": "il23",
     "to": "il17a",
     "kind": "drive",
-    "label": "Th17 differentiation",
+    "label": "inferred SpA axis",
     "pathways": [
       "clinical"
     ],
-    "evidence": "G",
+    "evidence": "I",
     "refs": [
-      "fragoulis2023"
+      "bridgewood2019",
+      "cuthbert2019"
     ],
-    "evidence_tier": "L3_cell_line",
-    "interaction_type": "catalytic_activation",
-    "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this is the myeloid-to-responder crossing edge (config.js's own rule for exactly this case) -- il23 is a myeloid DC/macrophage product, il17a is a Th17 effector cytokine (see the il17a node). microglia dropped: fragoulis2023 is peripheral blood, no CNS basis in this file's refs for this specific claim.",
+    "evidence_tier": "L1_in_silico",
+    "interaction_type": "signal_transduction",
+    "evidenceTierNote": "Inferred spondyloarthritis disease-model axis. Bridgewood 2019 and Cuthbert 2019 establish co-located myeloid IL-23 production and resident gamma-delta T-cell IL-17A capability in human enthesis tissue, but direct IL-23-to-IL-17 driving was not demonstrated in enthesis.",
+    "cellContextNote": "This is the myeloid-to-responder crossing edge: il23 is a myeloid DC/macrophage product, il17a is produced by resident entheseal lymphocytes. Direct coupling represents an inferred SpA disease model (Bridgewood 2019, Cuthbert 2019).",
     "cell_context": [
       "monocyte",
       "macrophage",

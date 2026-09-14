@@ -876,7 +876,7 @@ export const FUNCTIONS = [
     "loss": 0.6,
     "refs": [
       "[6]",
-      "[40]",
+      "[41]",
       "[42]"
     ],
     "layer": 3,
@@ -1513,7 +1513,6 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.6,
     "refs": [
-      "[40]",
       "[41]"
     ],
     "layer": 3,

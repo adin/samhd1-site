@@ -21,7 +21,7 @@ export const nodes = [
     "samhd1": "Highly conserved down to zebrafish. Nuclear-predominant, but with functionally required cytosolic and mitochondrial pools. NOTE, and do not collapse this into an edge: the SAMHD1/NK-function relation is CONTEXT-DEPENDENT with opposite signs — SAMHD1 restrains NK killing in the tumour microenvironment (Sun 2025, Gutiérrez-Chamorro 2024) but supports NK/CD4/CD8 responses in acute retroviral infection, in male mice only (Barrett 2022). No signed edge is drawn for it, deliberately.",
     "refs": [
       "ji2014",
-      "bester2025",
+      "mccown2025",
       "franzolin2013",
       "daddacha2017",
       "sun2025nk",
@@ -29,7 +29,7 @@ export const nodes = [
       "barrett2022"
     ],
     "evidence_tier": "L3_cell_line",
-    "evidenceTierNote": "Composite node citing 7 papers of mixed methodology: structural/recombinant (ji2014, bester2025), cell-line (franzolin2013, daddacha2017), mouse (sun2025nk, barrett2022), and one real human clinical cohort (gutierrez2024, breast cancer patients). A single evidence_tier can't fairly represent all seven -- set to the majority-characteristic tier (cell-line/non-primary-human) rather than the strongest one, since the node's overall claim isn't specifically the gutierrez2024 finding. Fixed 2026-09-12; see redteam audit (commit 20ae777).",
+    "evidenceTierNote": "Composite node citing 7 papers of mixed methodology: structural/recombinant (ji2014, mccown2025), cell-line (franzolin2013, daddacha2017), mouse (sun2025nk, barrett2022), and one real human clinical cohort (gutierrez2024, breast cancer patients). A single evidence_tier can't fairly represent all seven -- set to the majority-characteristic tier (cell-line/non-primary-human) rather than the strongest one, since the node's overall claim isn't specifically the gutierrez2024 finding. Fixed 2026-09-12; see redteam audit (commit 20ae777).",
     "cell_context": [
       "monocyte",
       "macrophage",
