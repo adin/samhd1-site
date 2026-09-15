@@ -153,6 +153,7 @@ export const nodes = [
     "summary": "Palmitoylation at Cys88/91 clusters STING into signalling-competent microdomains on Golgi membranes.",
     "detail": "This step is where the covalent-inhibitor class (H-151, nitrofurans) acts, and it is the reason STING signalling is terminated by lysosomal degradation rather than by dephosphorylation.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -278,6 +279,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "CARD-less RLR that tunes MDA5 filament nucleation — accelerates it at low levels, caps it at high levels.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -403,6 +405,7 @@ export const nodes = [
     "summary": "Drives rapid, IFN-independent ISG expression; the mitochondrial pool supplies the slower type-I IFN amplitude.",
     "detail": "Two platforms, two kinetics: peroxisomal MAVS gives an immediate local antiviral state, mitochondrial MAVS gives the systemic interferon wave. Only the mitochondrial pool is degraded by mitochondrial injury.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -430,6 +433,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "K63-Ub ligase that couples MAVS and TRIF to the TBK1/IKKε arm (IRF branch).",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -458,6 +462,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "K63-Ub ligase that couples MAVS/MyD88 to the IKK complex (NF-κB branch).",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1069,6 +1074,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Phosphorylates IκBα on Ser32/36, marking it for K48-Ub and proteasomal destruction. The canonical arm runs through here; IKKα carries the non-canonical one.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1101,6 +1107,7 @@ export const nodes = [
     "summary": "Masks the NF-κB nuclear localisation signal. Its degradation is the licensing step for NF-κB nuclear entry.",
     "detail": "IκBα is itself an NF-κB target gene, giving the pathway its classic oscillatory negative feedback — oscillation that a constitutively driven system flattens into a plateau.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1135,7 +1142,8 @@ export const nodes = [
       "swanson2019",
       "docConcept"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): upgraded L3_cell_line -> L4_primary_human -- wang2018/Chen2018 (THP-1 + primary human monocyte-derived macrophages) already supports this exact tier on nfkb.js's nfkb-targets node, which cites the same wang2018+swanson2019 pair. This file's own audit (PR #125) had left it at L3_cell_line before nfkb.js's later audit (PR #133) established the correct tier on the shared citation; queued in the handoff as a reconciliation follow-up, now resolved.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1187,6 +1195,7 @@ export const edges = [
     "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1207,6 +1216,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "compartment_translocation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1228,6 +1238,7 @@ export const edges = [
     "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1249,6 +1260,7 @@ export const edges = [
     "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1270,6 +1282,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1315,6 +1328,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "nucleic_acid_sensing",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1359,6 +1373,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1402,6 +1417,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1422,6 +1438,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1441,6 +1458,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1461,6 +1479,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1480,6 +1499,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1501,6 +1521,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1543,6 +1564,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1563,6 +1585,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1583,6 +1606,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1604,6 +1628,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1761,6 +1786,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1781,6 +1807,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1826,6 +1853,7 @@ export const edges = [
     "evidence": "G",
     "loop": "ankib1",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "ubiquitin_conjugation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1847,6 +1875,7 @@ export const edges = [
     "evidence": "G",
     "loop": "ankib1",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "ubiquitin_conjugation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1868,6 +1897,7 @@ export const edges = [
     "evidence": "G",
     "loop": "ankib1",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "ubiquitin_conjugation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1938,6 +1968,7 @@ export const edges = [
     "evidence": "G",
     "loop": "ankib1",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2071,6 +2102,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2091,6 +2123,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "kinase_phosphorylation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2111,6 +2144,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2131,6 +2165,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [

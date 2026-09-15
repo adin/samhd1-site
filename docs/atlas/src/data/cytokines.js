@@ -20,13 +20,14 @@ export const nodes = [
     "summary": "IFN-γ is made HERE, not in the cell whose mitochondria are failing. Loop C is paracrine by construction.",
     "detail": "NK cells respond fastest and need no antigen; Th1 cells sustain the response. Both read the same two signals — IL-18 through a MyD88 receptor and IL-12 through a STAT4 receptor — and neither alone is sufficient.",
     "samhd1": "This is the step that is missing from the compressed chain. An inflammasome running constitutively in one cell recruits a second cell into the disease, and that second cell sends back a cytokine that damages the first one further.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cellContextNote": "Fixed 2026-09-12 (redteam audit of commit 20ae777): this node's own compartment field already says 'responder' and its label says 'NK / Th1 cell', but cell_context still carried the generic myeloid template (monocyte/macrophage/microglia/dendritic_cell/cd4_tcell) instead of the responder-lineage array its sibling node il18r-nfkb already used correctly. Propagated the same fix through the whole responder arm of this Loop C pathway (il18r, il12r, stat4, tbet, and the crossing edges il18->il18r/il12->il12r/cxcl9-11->responder-cell) and the Th17 axis (th17-cell/il23r/stat3/rorgt -> cd4_tcell only) and pdc (-> dendritic_cell only), based on each node's own compartment/label/text, not external lookup.",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "th17-cell",
@@ -80,10 +81,11 @@ export const nodes = [
       "uematsu2005",
       "honda2005"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
     "cell_context": [
       "dendritic_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier upgraded L3_cell_line -> L4_primary_human -- siegal1999 (PMID 10364556) isolated the principal type-I-IFN-producing cells directly from human blood (primary human cells), which is exactly this node's/edge's load-bearing claim. The other three pDC-arm edges (tlr7->pdc, tlr9->pdc, irf7->pdc) correctly stay L3_cell_line since honda2005/uematsu2005 are mouse-knockout studies."
   },
   {
     "id": "il18r",
@@ -104,12 +106,13 @@ export const nodes = [
     "evidence": "G",
     "summary": "An IL-1-family receptor: TIR domains, MyD88, IRAK — the same module TLRs use.",
     "detail": "Because IL-18 signals through MyD88, the inflammasome output reaches NF-κB in the responder cell by exactly the route a pathogen would use. The cell cannot distinguish sterile metabolic inflammasome activity from infection.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "il18bp",
@@ -131,14 +134,15 @@ export const nodes = [
     "summary": "A high-affinity secreted decoy that neutralises free IL-18. Itself IFN-γ-inducible — the loop builds its own brake.",
     "detail": "The clinically useful readout is not total IL-18 but FREE IL-18 — the fraction unbound by IL-18BP. Total IL-18 can look unremarkable while free IL-18 is high, which is the same measurement trap the concept note describes for serum cytokines generally. Recombinant IL-18BP (tadekinig alfa) exists as a therapeutic.",
     "samhd1": "Worth measuring alongside free ISG15 in this framework: both are brakes that are induced by the very signal they oppose, and both are candidates for being present, engaged, and overwhelmed.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "il12",
@@ -159,14 +163,15 @@ export const nodes = [
     "evidence": "G",
     "summary": "Made by activated myeloid cells. Shares its p40 subunit with IL-23 — which is why one antibody can hit both.",
     "detail": "The p40 sharing is the reason ustekinumab (anti-p40) suppresses the Th1 and Th17 arms together while anti-p19 agents spare IL-12. In a disease with both an IFN-γ arm and a Th17 arm, that choice is not neutral.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "il12r",
@@ -188,12 +193,13 @@ export const nodes = [
     "drugs": [
       "brepocitinib"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "stat4",
@@ -212,12 +218,13 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "The Th1 STAT. Induces T-bet, which is what actually licenses the IFNG locus.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "tbet",
@@ -237,12 +244,13 @@ export const nodes = [
     "evidence": "G",
     "summary": "Remodels the IFNG locus. Without it, IL-18 and IL-12 signalling produce no interferon-γ.",
     "detail": "T-bet is the step that makes the two-signal requirement real: IL-18's NF-κB arm cannot transactivate a closed locus, and IL-12's STAT4 arm is what opens it.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "gaf",
@@ -263,14 +271,15 @@ export const nodes = [
     "evidence": "G",
     "summary": "A different dimer from ISGF3, reading a different element (GAS, not ISRE) — but drawing on the same STAT1 pool.",
     "detail": "Type-I and type-II interferon compete for STAT1. That shared dependency is why JAK1 inhibition dampens both arms, and why STAT1 abundance is a better readout of total interferon burden than either ligand alone.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "cxcl9-11",
@@ -295,14 +304,15 @@ export const nodes = [
       "docConcept",
       "tesser2025"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- tesser2025 is a whole-blood ISG-panel assay-standardization paper (PMID 40127048) that never mentions CXCL9/10/11; it only supports the \"ISG scoring\" leg of this node's samhd1 text, not the CXCL9-11 claim itself. docConcept is an internal project note, not external literature. Same \"provenance-only, not primary evidence for the stated mechanism\" pattern as nfkb.js's lubac/betrancourt2026 finding."
   },
   {
     "id": "ciita",
@@ -321,14 +331,15 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "IFN-γ turns non-professional cells into antigen presenters — how an innate loop acquires an adaptive audience.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped per the file-wide template fix. Kept the remaining myeloid array (monocyte/macrophage/microglia/dendritic_cell) even though this node's own summary emphasizes IFN-gamma inducing CIITA/MHC-II in \"non-professional\" (i.e. non-myeloid) cells -- no stromal/epithelial vocabulary token exists yet (same gap as il17ra/act1); the myeloid half of the claim (professional APCs upregulating MHC-II further) is independently true, just narrower than the full sentence.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "nos2",
@@ -349,14 +360,15 @@ export const nodes = [
     "evidence": "G",
     "summary": "IFN-γ + NF-κB output. NO nitrosylates and inhibits Complexes I and IV — an interferon-driven respiratory lesion.",
     "detail": "NOS2 induction is one of the most direct routes from a cytokine to a bioenergetic defect: nitric oxide competes with oxygen at cytochrome c oxidase and S-nitrosylates Complex I.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "m1",
@@ -384,14 +396,14 @@ export const nodes = [
       "xu2023vdac1",
       "tannahill2013"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
-      "systemic_immune",
-      "cns_neuro",
-      "cardiovascular",
-      "hepatic",
-      "musculoskeletal"
-    ]
+      "monocyte",
+      "macrophage",
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context corrected from the systemic clinical-outcome array to myeloid-only. This node's own detail/samhd1 text describes an intracellular macrophage metabolic program (\"M1 is where Loop C re-enters the mitochondrion... raises mtROS and remodels the TCA cycle... Samhd1-KO drives M1 skewing directly, alongside deltaPsi-m collapse\") -- an event physically happening inside the macrophage, not a secreted/clinical biomarker abstraction. Same \"deliberate half-crossing\" rule as celldeath.js/inflammasome.js (mlkl->necroptosis, gsdmd-pore->pyroptosis): stays myeloid. All five incident edges (gas->m1, ifng->m1, m1->mtros, m1->succinate, m1->deltapsi) and all five neighbour nodes are myeloid; this node was the sole disjoint outlier. cd4_tcell also dropped per the file-wide template drop -- see the handoff.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L6_human_clinical -> L3_cell_line. Its refs (xu2023vdac1: mouse peritoneal macrophages + RAW264.7, PMID 37175593; tannahill2013: mouse BMDMs, DOI 10.1038/nature11986) are both mouse/cell-line studies with no human clinical component -- L6 was a tier-inflation bug. Converges with mito.js's deltapsi node and two vdac1 edges, and samhd1.js's two edges, which already cite the same xu2023vdac1 paper at L3_cell_line."
   },
   {
     "id": "il23r",
@@ -413,10 +425,11 @@ export const nodes = [
     "drugs": [
       "brepocitinib"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "stat3",
@@ -435,10 +448,11 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "The Th17 STAT, driven by IL-6 and IL-23. Induces RORγt.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "rorgt",
@@ -457,10 +471,11 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "summary": "Master Th17 transcription factor. IL-23 does not create Th17 cells so much as stabilise and license them.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "il17ra",
@@ -480,9 +495,10 @@ export const nodes = [
     "evidence": "G",
     "summary": "Signals through ACT1 → TRAF6 → NF-κB in fibroblasts, synoviocytes and keratinocytes.",
     "detail": "IL-17 is a weak cytokine alone and a potent one with TNF-α. The synergy is why enthesitis responds to blocking either arm and why the two appear together in every mechanistic account of psoriatic disease.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): this node's own `full` field says 'on the target tissue' and its summary names fibroblasts, synoviocytes and keratinocytes explicitly -- none myeloid/immune. Left empty pending a stromal/epithelial vocabulary token; see ifn.js's ifnl node for the same pattern.",
-    "cell_context": []
+    "cell_context": [],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "act1",
@@ -502,9 +518,10 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "U-box E3 that couples IL-17R to TRAF6 → NF-κB — closing an IL-17 → NF-κB → IL-23 feed-forward at tissue level.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): this is IL-17RA's direct downstream adaptor, in the same target-tissue cell as il17ra (its own summary says 'at tissue level'), not myeloid. Left empty for the same reason as il17ra; see that node's note.",
-    "cell_context": []
+    "cell_context": [],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "il22",
@@ -523,14 +540,12 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Epithelial proliferation (IL-22) and myeloid recruitment (GM-CSF) — the rest of the Th17 output.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context corrected from the myeloid template to cd4_tcell-only, matching ifn.js's il17a fix (PR #128) -- both are Th17-lineage effector cytokines produced by the same th17-cell node (th17-cell->il22 edge already carried cd4_tcell-only), and this node's own full field says \"Additional Th17-lineage effector cytokines\".",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "id": "il18r-nfkb",
@@ -549,7 +564,7 @@ export const nodes = [
     ],
     "lod": 1,
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
@@ -557,7 +572,8 @@ export const nodes = [
     ],
     "summary": "IL-18R MyD88-dependent NF-κB transactivation inside responder lymphoid cells.",
     "detail": "IL-18 engagement of IL-18Rα/β recruits MyD88, IRAK4 and TRAF6, activating NF-κB to drive co-transcription of IFN-γ and chemokines in NK/Th1 cells.",
-    "samhd1": "Second arm of the paracrine Loop C circuit."
+    "samhd1": "Second arm of the paracrine Loop C circuit.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   }
 ];
 
@@ -574,7 +590,7 @@ export const edges = [
     "evidence": "G",
     "loop": "C",
     "bend": 0.2,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
@@ -582,7 +598,8 @@ export const edges = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il18bp",
@@ -593,14 +610,16 @@ export const edges = [
       "ifn-gamma"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il18r",
@@ -613,13 +632,15 @@ export const edges = [
     "evidence": "G",
     "loop": "C",
     "bend": 0.3,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "cellContextNote": "Confirmed 2026-09-15 (cell_context literature-verification audit): cell_context intentionally stays [cd4_tcell, cd8_tcell, nk_cell] even though it is disjoint from the shared myd88 node's own myeloid array -- IL-18R->MyD88 signaling happens inside the responder (NK/Th1) cell here, reusing the same myd88 node the myeloid TLR pathway also uses in sensing.js. Not a bug; a graph-topology limitation of sharing one node across two compartments.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il12",
@@ -631,7 +652,7 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
@@ -639,7 +660,8 @@ export const edges = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "nfkb-targets",
@@ -651,14 +673,16 @@ export const edges = [
       "ifn-gamma"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il12r",
@@ -670,13 +694,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "kinase_phosphorylation",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "stat4",
@@ -688,13 +713,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "tbet",
@@ -706,13 +732,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il18r",
@@ -722,14 +749,15 @@ export const edges = [
       "ifn-gamma"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "cd4_tcell",
+      "cd8_tcell",
+      "nk_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context corrected from the myeloid template to the responder array (cd4_tcell/cd8_tcell/nk_cell) -- both endpoints (il18r, responder-cell) are already-correct responder-compartment nodes from PR #112; this edge lies entirely inside the responder cell and had been missed because it happened to share the cd4_tcell token with the myeloid template, hiding the mismatch from a naive overlap check. config.js's CELL_CONTEXT block explicitly prohibits the myeloid template on cytokines.js's compartment:'responder' nodes.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "responder-cell",
@@ -741,13 +769,14 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "ifng",
@@ -760,14 +789,16 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "stat1",
@@ -780,14 +811,16 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "gaf",
@@ -799,14 +832,16 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "compartment_translocation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "gas",
@@ -818,14 +853,16 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "gas",
@@ -835,14 +872,16 @@ export const edges = [
       "ifn-gamma"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "gas",
@@ -852,14 +891,16 @@ export const edges = [
       "ifn-gamma"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "gas",
@@ -871,14 +912,16 @@ export const edges = [
       "isg"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "gas",
@@ -889,16 +932,17 @@ export const edges = [
       "ifn-gamma",
       "metabolic"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "C",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> G -- zero refs, no SAMHD1-specific citation for this generic IFN-gamma -> GAF/GAS -> M1 step (textbook macrophage activation); evidence_tier correctly already L1_in_silico."
   },
   {
     "from": "cxcl9-11",
@@ -911,7 +955,7 @@ export const edges = [
     "evidence": "G",
     "loop": "C",
     "bend": 0.35,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
@@ -919,7 +963,8 @@ export const edges = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "m1",
@@ -930,16 +975,17 @@ export const edges = [
       "ifn-gamma",
       "mito"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "C",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> G -- zero refs, no SAMHD1-specific citation for generic M1 metabolic reprogramming/mtROS (tannahill2013-class textbook biology, not cited on this edge); evidence_tier correctly already L1_in_silico."
   },
   {
     "from": "m1",
@@ -952,14 +998,15 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "nos2",
@@ -971,14 +1018,15 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "nos2",
@@ -990,14 +1038,15 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "m1",
@@ -1012,14 +1061,15 @@ export const edges = [
     "refs": [
       "xu2023vdac1"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L4_primary_human -> L3_cell_line -- xu2023vdac1 (PMID 37175593) is mouse peritoneal macrophages/RAW264.7, not primary human tissue; this also resolves a same-citation tier inconsistency with the m1 node (see its note) and converges with mito.js's deltapsi node's own L3_cell_line tier on the identical citation."
   },
   {
     "from": "tlr7",
@@ -1036,11 +1086,9 @@ export const edges = [
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context narrowed to dendritic_cell -- PR #112 already narrowed the pdc node itself to dendritic_cell-only, but missed all four of its incident edges, leaving the node disjoint from every one of its own edges. This node's own detail text (\"the same receptor gives NF-kB cytokines in a macrophage and an interferon burst here -- the difference is the cell, not the receptor\") and this edge's own label directly say this is the pDC-specific arm, not the generic myeloid template. Matches sensing.js's already-merged pDC carve-out for the same TLR7/TLR9/MyD88 arm."
   },
   {
     "from": "tlr9",
@@ -1057,11 +1105,9 @@ export const edges = [
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context narrowed to dendritic_cell -- PR #112 already narrowed the pdc node itself to dendritic_cell-only, but missed all four of its incident edges, leaving the node disjoint from every one of its own edges. This node's own detail text (\"the same receptor gives NF-kB cytokines in a macrophage and an interferon burst here -- the difference is the cell, not the receptor\") and this edge's own label directly say this is the pDC-specific arm, not the generic myeloid template. Matches sensing.js's already-merged pDC carve-out for the same TLR7/TLR9/MyD88 arm."
   },
   {
     "from": "irf7",
@@ -1080,11 +1126,9 @@ export const edges = [
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context narrowed to dendritic_cell -- PR #112 already narrowed the pdc node itself to dendritic_cell-only, but missed all four of its incident edges, leaving the node disjoint from every one of its own edges. This node's own detail text (\"the same receptor gives NF-kB cytokines in a macrophage and an interferon burst here -- the difference is the cell, not the receptor\") and this edge's own label directly say this is the pDC-specific arm, not the generic myeloid template. Matches sensing.js's already-merged pDC carve-out for the same TLR7/TLR9/MyD88 arm."
   },
   {
     "from": "pdc",
@@ -1100,14 +1144,13 @@ export const edges = [
       "siegal1999",
       "uematsu2005"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "dendritic_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context narrowed to dendritic_cell -- PR #112 already narrowed the pdc node itself to dendritic_cell-only, but missed all four of its incident edges, leaving the node disjoint from every one of its own edges. This node's own detail text (\"the same receptor gives NF-kB cytokines in a macrophage and an interferon burst here -- the difference is the cell, not the receptor\") and this edge's own label directly say this is the pDC-specific arm, not the generic myeloid template. Matches sensing.js's already-merged pDC carve-out for the same TLR7/TLR9/MyD88 arm.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier upgraded L3_cell_line -> L4_primary_human -- siegal1999 (PMID 10364556) isolated the principal type-I-IFN-producing cells directly from human blood (primary human cells), which is exactly this node's/edge's load-bearing claim. The other three pDC-arm edges (tlr7->pdc, tlr9->pdc, irf7->pdc) correctly stay L3_cell_line since honda2005/uematsu2005 are mouse-knockout studies."
   },
   {
     "from": "il23",
@@ -1117,13 +1160,14 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
       "macrophage",
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il23r",
@@ -1134,11 +1178,12 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "kinase_phosphorylation",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il6",
@@ -1149,13 +1194,14 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "stat3",
@@ -1165,11 +1211,12 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "rorgt",
@@ -1180,11 +1227,12 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "th17-cell",
@@ -1194,11 +1242,12 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "th17-cell",
@@ -1208,11 +1257,12 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il1b",
@@ -1225,13 +1275,14 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.25,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "cd4_tcell"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il17a",
@@ -1241,9 +1292,10 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
-    "cell_context": []
+    "cell_context": [],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il17ra",
@@ -1253,9 +1305,10 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
-    "cell_context": []
+    "cell_context": [],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "act1",
@@ -1268,9 +1321,10 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.3,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
-    "cell_context": []
+    "cell_context": [],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "tnfa",
@@ -1281,9 +1335,10 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
-    "cell_context": []
+    "cell_context": [],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "ifng",
@@ -1293,14 +1348,15 @@ export const edges = [
       "ifn-gamma"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "cxcl9-11",
@@ -1314,11 +1370,13 @@ export const edges = [
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the naci node it points to -- this edge is a secreted/clinical biomarker abstraction (CXCL10 as a NACI workup biomarker), the side of the half-crossing rule that retags systemic, not the side that stays myeloid."
   },
   {
     "from": "il22",
@@ -1328,14 +1386,17 @@ export const edges = [
       "clinical"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the psa node it points to -- this edge is a secreted/clinical biomarker abstraction (IL-22 driving psoriatic-arthritis outcome), the side of the half-crossing rule that DOES retag systemic (same pattern as ifn.js's atp->gdf15 / drugs.js's mecfs), not the side that stays myeloid.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il18r",
@@ -1344,14 +1405,15 @@ export const edges = [
     "sign": "+",
     "interaction_type": "catalytic_activation",
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
     ],
     "loop": "C",
-    "label": "IL-18R recruits MyD88 → NF-κB"
+    "label": "IL-18R recruits MyD88 → NF-κB",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "il18r-nfkb",
@@ -1360,14 +1422,15 @@ export const edges = [
     "sign": "+",
     "interaction_type": "transcriptional_priming",
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
     ],
     "loop": "C",
-    "label": "Transactivates IFN-γ in responder cells"
+    "label": "Transactivates IFN-γ in responder cells",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   }
 ];
 

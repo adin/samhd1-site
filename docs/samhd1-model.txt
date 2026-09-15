@@ -123,7 +123,7 @@ inflammasome|NLRP3 (Loop B)|25
 celldeath|Cell death (ZBP1/RIPK3)|8
 ifn-jak|IFNAR–JAK/TYK2–STAT|23
 ifn-gamma|IFN-γ loop (Loop C)|15
-th17|IL-12/IL-23 – Th1/Th17|10
+th17|IL-12/IL-23 – Th1/Th17|9
 tcr|TCR signalling (TRAILshort)|18
 isg|ISG effectors & brakes|15
 mito|Mitochondrial injury|39
@@ -170,7 +170,7 @@ irf3|IRF3|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd
 irf7|IRF7|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q92985","ensembl":"ENSG00000185507","hgnc":"HGNC:6122"}|-|cgas-sting,tlr,metabolic|The second-wave amplifier: itself an ISG, so once interferon starts, IRF7 rises and drives more interferon.
 ikk|IKKβ|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"O15111","ensembl":"ENSG00000104365","hgnc":"HGNC:5960"}|-|nfkb|Phosphorylates IκBα on Ser32/36, marking it for K48-Ub and proteasomal destruction. The canonical arm runs through here; IKKα carries the non-canonical one.
 ikba|IκBα|CYT|STR|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Masks the NF-κB nuclear localisation signal. Its degradation is the licensing step for NF-κB nuclear entry.
-nfkb|NF-κB p65/p50|CYT|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P19838","ensembl":"ENSG00000109320","hgnc":"HGNC:7794"}|-|nfkb,inflammasome|Drives the NLRP3 priming signal (NLRP3 + pro-IL-1β transcription), IL-6, IL-23, TNF-α and IκBα.
+nfkb|NF-κB p65/p50|CYT|TF|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P19838","ensembl":"ENSG00000109320","hgnc":"HGNC:7794"}|-|nfkb,inflammasome|Drives the NLRP3 priming signal (NLRP3 + pro-IL-1β transcription), IL-6, IL-23, TNF-α and IκBα.
 vdac1|VDAC1|MIT|STR|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|{"uniprot":"P21796","ensembl":"ENSG00000213886","hgnc":"HGNC:12682"}|-|mito,cgas-sting|The most abundant outer-membrane protein and the gatekeeper of metabolite flux — and, when it oligomerises, of DNA escape.
 vdac1-oligo|VDAC1 macropore|MIT|STR|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|-|mito,cgas-sting|The primary constitutive mtDNA-fragment escape route in SAMHD1 haploinsufficiency.
 mptp|mPTP|MIT|STR|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|-|mito|Second mtDNA escape route, opening downstream of ΔΨm collapse and Ca²⁺/ROS overload.
@@ -219,7 +219,7 @@ ifnb|IFN-β|EXT|CYT|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_
 ifna|IFN-α (13 subtypes)|EXT|CYT|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P01562","ensembl":"ENSG00000188383","hgnc":"HGNC:5431"}|-|ifn-jak|The second-wave amplifier set, driven by IRF7 rather than IRF3.
 ifng|IFN-γ|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,clinical|Different receptor, different STAT dimer, overlapping ISG output. Suppresses procollagen synthesis via STAT1 antagonism of TGF-β/Smad3.
 ifnl|IFN-λ|EXT|CYT|G|L3_cell_line|[]|-|-|ifn-jak,ankib1|Epithelial-restricted receptor, identical downstream JAK module. Also driven by the ANKIB1 K11-Ub node.
-il6|IL-6|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,clinical|NF-κB output; dose-dependently elevated in ME/CFS PBMCs after poly I:C stimulation.
+il6|IL-6|EXT|CYT|G|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,clinical|NF-κB output; dose-dependently elevated in ME/CFS PBMCs after poly I:C stimulation.
 tnfa|TNF-α|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,mito|Drives sublethal chronic mPTP opening via ROS — a persistent cytochrome-c leak rather than an execution signal.
 il23|IL-23|EXT|CYT|G|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,clinical|Local myeloid cytokine output in human enthesis tissue (Bridgewood 2019). Inferred in SpA disease models to support local inflammation.
 il17a|IL-17A|EXT|CYT|G|L6_human_clinical|[cd4_tcell]|-|-|clinical|IL-17A was measured in peripheral blood as part of a PsA cytokine panel, but was not significantly elevated, and the study did not connect IL-17A to DNA damage or the reduced IFN-I score.
@@ -248,63 +248,63 @@ isg15|ISG15|CYT|EFF|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_
 usp18|USP18|CYT|EFF|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9UMW8","ensembl":"ENSG00000184981","hgnc":"HGNC:12629"}|-|isg,ifn-jak|Sterically displaces JAK1 from IFNAR2. Its protease activity is dispensable for this function.
 socs|SOCS1/3|CYT|EFF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|isg,ifn-jak|Second brake layer: direct JAK inhibition plus ElonginBC-Cul2 ubiquitination of receptor complexes.
 irf1|IRF1|NUC|TF|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|isg|Drives PARP12 → ISG15 in the axis that ISGylates MFN1/2 and blocks PINK1/Parkin mitophagy.
-nlrp3|NLRP3|CYT|SEN|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q96P20","ensembl":"ENSG00000162711","hgnc":"HGNC:16400","chembl":"CHEMBL3714856"}|{"ASC_nucleation_rate_s":0.85,"ox_mtDNA_Kd_nM":18}|inflammasome|Two-signal sensor: NF-κB primes its expression (signal 1), then ox-mtDNA, MSU crystals or K⁺ efflux trigger assembly (signal 2).
-aim2|AIM2|CYT|SEN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome,cgas-sting|The third cytosolic DNA sensor. Binds dsDNA ≥ ~80 bp along the backbone and nucleates ASC directly — no NLRP3, no NEK7, no priming step.
-ifi16|IFI16|NUC|SEN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,inflammasome|The other ALR: predominantly nuclear, and required for full cGAS–STING signalling in human macrophages rather than acting instead of it.
-nek7|NEK7|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome|Bridges adjacent NLRP3 subunits; required for oligomerisation and mutually exclusive with mitosis.
-asc|ASC speck|CYT|COM|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q9ULZ3","ensembl":"ENSG00000103490","hgnc":"HGNC:9360"}|-|inflammasome|Single micron-scale prion-like polymer per cell — the visible, countable commitment step of the loop.
-casp1|caspase-1|CYT|ENZ|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P29466","ensembl":"ENSG00000137752","hgnc":"HGNC:1499","chembl":"CHEMBL234"}|-|inflammasome|Proximity-induced autoprocessing on the ASC filament; cleaves pro-IL-1β, pro-IL-18 and GSDMD.
-proil1b|pro-IL-1β|CYT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome,nfkb|Transcribed by NF-κB (signal 1). Held inert until caspase-1 cleaves it.
-il1b|IL-1β|EXT|CYT|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P01584","ensembl":"ENSG00000125538","hgnc":"HGNC:5992","chembl":"CHEMBL5546"}|-|inflammasome|The output of Loop B and the primary readout separating it from the interferon arm.
-il18|IL-18|EXT|CYT|S|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"Q14116","ensembl":"ENSG00000150782","hgnc":"HGNC:5986","chembl":"CHEMBL5749"}|-|inflammasome|Co-matured with IL-1β; drives IFN-γ from NK and T cells, linking Loop B back into the interferon arm.
-gsdmd|GSDMD|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"uniprot":"P57764","ensembl":"ENSG00000104518","hgnc":"HGNC:13308"}|-|inflammasome|Cleaved N-terminal fragment oligomerises into plasma-membrane pores — the IL-1β export route and the pyroptotic lesion.
-gsdmd-pore|GSDMD pore|MEM|STR|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome|Unconventional secretion channel below lytic threshold; the pyroptotic lesion above it.
-pyroptosis|pyroptosis|CYT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|inflammasome|Spills cytosolic contents — including mtDNA — into the extracellular space, re-arming bystander cGAS.
-p2x7|P2X7|MEM|REC|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome|The classic signal-2 route: extracellular ATP from dying cells → K⁺ efflux → NLRP3 assembly.
-urate|uric acid|CYT|MET|I|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome,metabolic|Excess dGTP is catabolised through the purine pathway; humans lack uricase, so urate is the endpoint.
-msu|MSU crystals|CYT|LIG|I|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome|Third NLRP3 input, independent of cGAS status; hits an NLRP3 already sensitised by NF-κB priming.
-tak1|TAK1 / TAB1-3|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Reads K63-ubiquitin chains through TAB2/3 and phosphorylates IKKβ at Ser177/181.
-lubac|LUBAC|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,ankib1|The only E3 that builds M1-linear ubiquitin. Conjugates it onto NEMO, stabilising the active IKK complex.
-m1ub|M1-linear Ub|CYT|MET|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Head-to-tail ubiquitin chains — the linkage NEMO binds with highest affinity.
-a20|A20 / TNFAIP3|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|NF-κB target gene and NF-κB terminator: a dual DUB/E3 that strips K63 chains and adds K48.
-cyld|CYLD|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Removes K63 and M1 chains from NEMO, TRAF2/6 and RIP1. A tumour suppressor, for the obvious reason.
-otulin|OTULIN|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Exclusively hydrolyses M1-linear chains, counter-balancing LUBAC. Its loss causes ORAS, an autoinflammatory syndrome.
-nik|NIK|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Constitutively degraded at rest; stabilised by receptor engagement, then activates IKKα.
-ikka|IKKα|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Phosphorylates p100 for partial proteasomal processing to p52 — a slower, NEMO-independent arm.
-relb|p52 : RelB|NUC|TF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Drives BAFF, CCL19/21 and lymphoid-organisation genes rather than the acute inflammatory set.
-baff|BAFF|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,th17|B-cell survival and differentiation factor; elevated across interferonopathies and autoimmune disease.
-nfkb-targets|NF-κB target set|NUC|COM|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,inflammasome|One transcription factor, the entire priming layer: the inflammasome components, its substrates, the Th17-driving cytokine, and its own brakes.
-proil18|pro-IL-18|CYT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|inflammasome,nfkb,ifn-gamma|Unlike pro-IL-1β, it is constitutively present in many cells — so caspase-1 activation alone can release mature IL-18 fast.
-cxcl8|CXCL8 / IL-8|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Canonical NF-κB output and part of the ME/CFS cytokine panel measured in Arm 1.
-responder-cell|NK / Th1 cell|RES|CEL|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma,th17|IFN-γ is made HERE, not in the cell whose mitochondria are failing. Loop C is paracrine by construction.
+nlrp3|NLRP3|CYT|SEN|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|{"uniprot":"Q96P20","ensembl":"ENSG00000162711","hgnc":"HGNC:16400","chembl":"CHEMBL3714856"}|{"ASC_nucleation_rate_s":0.85,"ox_mtDNA_Kd_nM":18}|inflammasome|Two-signal sensor: NF-κB primes its expression (signal 1), then ox-mtDNA, MSU crystals or K⁺ efflux trigger assembly (signal 2).
+aim2|AIM2|CYT|SEN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome,cgas-sting|The third cytosolic DNA sensor. Binds dsDNA ≥ ~80 bp along the backbone and nucleates ASC directly — no NLRP3, no NEK7, no priming step.
+ifi16|IFI16|NUC|SEN|G|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|-|-|cgas-sting,inflammasome|The other ALR: predominantly nuclear, and required for full cGAS–STING signalling in human macrophages rather than acting instead of it.
+nek7|NEK7|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome|Bridges adjacent NLRP3 subunits; required for oligomerisation and mutually exclusive with mitosis.
+asc|ASC speck|CYT|COM|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"uniprot":"Q9ULZ3","ensembl":"ENSG00000103490","hgnc":"HGNC:9360"}|-|inflammasome|Single micron-scale prion-like polymer per cell — the visible, countable commitment step of the loop.
+casp1|caspase-1|CYT|ENZ|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"uniprot":"P29466","ensembl":"ENSG00000137752","hgnc":"HGNC:1499","chembl":"CHEMBL234"}|-|inflammasome|Proximity-induced autoprocessing on the ASC filament; cleaves pro-IL-1β, pro-IL-18 and GSDMD.
+proil1b|pro-IL-1β|CYT|CYT|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome,nfkb|Transcribed by NF-κB (signal 1). Held inert until caspase-1 cleaves it.
+il1b|IL-1β|EXT|CYT|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|{"uniprot":"P01584","ensembl":"ENSG00000125538","hgnc":"HGNC:5992","chembl":"CHEMBL5546"}|-|inflammasome|The output of Loop B and the primary readout separating it from the interferon arm.
+il18|IL-18|EXT|CYT|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"uniprot":"Q14116","ensembl":"ENSG00000150782","hgnc":"HGNC:5986","chembl":"CHEMBL5749"}|-|inflammasome|Co-matured with IL-1β; drives IFN-γ from NK and T cells, linking Loop B back into the interferon arm.
+gsdmd|GSDMD|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|{"uniprot":"P57764","ensembl":"ENSG00000104518","hgnc":"HGNC:13308"}|-|inflammasome|Cleaved N-terminal fragment oligomerises into plasma-membrane pores — the IL-1β export route and the pyroptotic lesion.
+gsdmd-pore|GSDMD pore|MEM|STR|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome|Unconventional secretion channel below lytic threshold; the pyroptotic lesion above it.
+pyroptosis|pyroptosis|CYT|OUT|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|inflammasome|Spills cytosolic contents — including mtDNA — into the extracellular space, re-arming bystander cGAS.
+p2x7|P2X7|MEM|REC|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome|The classic signal-2 route: extracellular ATP from dying cells → K⁺ efflux → NLRP3 assembly.
+urate|uric acid|CYT|MET|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome,metabolic|Excess dGTP is catabolised through the purine pathway; humans lack uricase, so urate is the endpoint.
+msu|MSU crystals|CYT|LIG|I|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome|Third NLRP3 input, independent of cGAS status; hits an NLRP3 already sensitised by NF-κB priming.
+tak1|TAK1 / TAB1-3|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Reads K63-ubiquitin chains through TAB2/3 and phosphorylates IKKβ at Ser177/181.
+lubac|LUBAC|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb,ankib1|The only E3 that builds M1-linear ubiquitin. Conjugates it onto NEMO, stabilising the active IKK complex.
+m1ub|M1-linear Ub|CYT|MET|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Head-to-tail ubiquitin chains — the linkage NEMO binds with highest affinity.
+a20|A20 / TNFAIP3|CYT|EFF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|NF-κB target gene and NF-κB terminator: a dual DUB/E3 that strips K63 chains and adds K48.
+cyld|CYLD|CYT|EFF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Removes K63 and M1 chains from NEMO, TRAF2/6 and RIP1. A tumour suppressor, for the obvious reason.
+otulin|OTULIN|CYT|EFF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Exclusively hydrolyses M1-linear chains, counter-balancing LUBAC. Its loss causes ORAS, an autoinflammatory syndrome.
+nik|NIK|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Constitutively degraded at rest; stabilised by receptor engagement, then activates IKKα.
+ikka|IKKα|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Phosphorylates p100 for partial proteasomal processing to p52 — a slower, NEMO-independent arm.
+relb|p52 : RelB|NUC|TF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Drives BAFF, CCL19/21 and lymphoid-organisation genes rather than the acute inflammatory set.
+baff|BAFF|EXT|CYT|G|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,b_cell]|-|-|nfkb|B-cell survival and differentiation factor; elevated across interferonopathies and autoimmune disease.
+nfkb-targets|NF-κB target set|NUC|COM|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb,inflammasome|One transcription factor, the entire priming layer: the inflammasome components, its substrates, the Th17-driving cytokine, and its own brakes.
+proil18|pro-IL-18|CYT|CYT|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome,nfkb,ifn-gamma|Unlike pro-IL-1β, it is constitutively present in many cells — so caspase-1 activation alone can release mature IL-18 fast.
+cxcl8|CXCL8 / IL-8|EXT|CYT|G|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|-|-|nfkb|Canonical NF-κB output and part of the ME/CFS cytokine panel measured in Arm 1.
+responder-cell|NK / Th1 cell|RES|CEL|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma,th17|IFN-γ is made HERE, not in the cell whose mitochondria are failing. Loop C is paracrine by construction.
 th17-cell|Th17 / ILC3 / γδ T|RES|CEL|G|L4_primary_human|[cd4_tcell]|-|-|th17|The entheseal IL-17-producing compartment, dominated by resident γδ T cells capable of IL-17A production (Cuthbert 2019).
-pdc|pDC|RES|CEL|G|L3_cell_line|[dendritic_cell]|-|-|tlr,ifn-jak|The cell that converts TLR7/9 ligation into an IFN-α burst — orders of magnitude more type-I interferon per cell than any other blood leukocyte.
-il18r|IL-18R1 / IL-18RAP|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma,inflammasome|An IL-1-family receptor: TIR domains, MyD88, IRAK — the same module TLRs use.
-il18bp|IL-18BP|EXT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-gamma,isg|A high-affinity secreted decoy that neutralises free IL-18. Itself IFN-γ-inducible — the loop builds its own brake.
-il12|IL-12 (p35/p40)|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-gamma,th17|Made by activated myeloid cells. Shares its p40 subunit with IL-23 — which is why one antibody can hit both.
-il12r|IL-12Rβ1/β2|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma|Signals through TYK2 and JAK2 → STAT4. The TYK2 dependence is why TYK2 inhibitors reach this arm.
-stat4|STAT4|RES|TF|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma|The Th1 STAT. Induces T-bet, which is what actually licenses the IFNG locus.
-tbet|T-bet (TBX21)|RES|TF|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma|Remodels the IFNG locus. Without it, IL-18 and IL-12 signalling produce no interferon-γ.
-gaf|STAT1 : STAT1 (GAF)|CYT|COM|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-gamma,ifn-jak|A different dimer from ISGF3, reading a different element (GAS, not ISRE) — but drawing on the same STAT1 pool.
-cxcl9-11|CXCL9/10/11|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-gamma,isg|CXCR3 ligands that recruit more Th1 and NK cells — the loop's amplification step at tissue level.
-ciita|CIITA → MHC-II|NUC|TF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-gamma|IFN-γ turns non-professional cells into antigen presenters — how an innate loop acquires an adaptive audience.
-nos2|NOS2 / iNOS|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-gamma,metabolic|IFN-γ + NF-κB output. NO nitrosylates and inhibits Complexes I and IV — an interferon-driven respiratory lesion.
-m1|M1 polarisation|CYT|OUT|S|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|ifn-gamma,metabolic,mito|IFN-γ locks macrophages into aerobic glycolysis with a broken TCA cycle, high mtROS, and succinate accumulation.
-il23r|IL-23R / IL-12Rβ1|RES|REC|G|L3_cell_line|[cd4_tcell]|-|-|th17|JAK2/TYK2 → STAT3. IL23R variants are among the strongest genetic associations in psoriatic disease.
-stat3|STAT3|RES|TF|G|L3_cell_line|[cd4_tcell]|-|-|th17|The Th17 STAT, driven by IL-6 and IL-23. Induces RORγt.
-rorgt|RORγt (RORC)|RES|TF|G|L3_cell_line|[cd4_tcell]|-|-|th17|Master Th17 transcription factor. IL-23 does not create Th17 cells so much as stabilise and license them.
-il17ra|IL-17RA / RC|MEM|REC|G|L3_cell_line|[]|-|-|th17|Signals through ACT1 → TRAF6 → NF-κB in fibroblasts, synoviocytes and keratinocytes.
-act1|ACT1 (TRAF3IP2)|CYT|ADA|G|L3_cell_line|[]|-|-|th17,nfkb|U-box E3 that couples IL-17R to TRAF6 → NF-κB — closing an IL-17 → NF-κB → IL-23 feed-forward at tissue level.
-il22|IL-22 / GM-CSF|EXT|CYT|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|th17|Epithelial proliferation (IL-22) and myeloid recruitment (GM-CSF) — the rest of the Th17 output.
-il18r-nfkb|IL-18R → NF-κB (Responder)|CYT|TF|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma,nfkb|IL-18R MyD88-dependent NF-κB transactivation inside responder lymphoid cells.
-z-rna|Z-form nucleic acid|CYT|LIG|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|celldeath,retro|Left-handed duplex conformation favoured by alternating purine-pyrimidine repeats — abundant in ERV and SINE transcripts.
-zbp1|ZBP1|CYT|SEN|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|{"uniprot":"Q9H171","ensembl":"ENSG00000171806","hgnc":"HGNC:30950"}|-|celldeath,retro|Two Zα domains read Z-form nucleic acid; two RHIM domains hand the signal to RIPK3. Itself an interferon-stimulated gene.
-ripk3|RIPK3|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|{"uniprot":"Q9Y572","ensembl":"ENSG00000129465","hgnc":"HGNC:10021"}|-|celldeath|RHIM-dependent amyloid-like assembly with ZBP1 or RIPK1; phosphorylates MLKL. The commitment step.
-ripk1|RIPK1|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|celldeath,nfkb|The three-way switch: scaffold for NF-κB survival signalling, or substrate for caspase-8, or RHIM partner for necroptosis.
-mlkl|MLKL|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|celldeath|Phosphorylated by RIPK3, then oligomerises and permeabilises the plasma membrane directly.
-casp8|caspase-8 / FADD|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|celldeath|Cleaves RIPK1 and RIPK3 to suppress necroptosis. Losing it does not stop death — it switches the mode.
-necroptosis|necroptosis|CYT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|celldeath|Membrane rupture with the cytosol intact — maximally immunogenic, and invisible to every caspase inhibitor.
-panoptosome|PANoptosome|CYT|COM|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|celldeath,inflammasome|ZBP1 scaffolds NLRP3, ASC, caspase-1, caspase-8 and RIPK3 into one complex — the three death modes stop being separate.
+pdc|pDC|RES|CEL|G|L4_primary_human|[dendritic_cell]|-|-|tlr,ifn-jak|The cell that converts TLR7/9 ligation into an IFN-α burst — orders of magnitude more type-I interferon per cell than any other blood leukocyte.
+il18r|IL-18R1 / IL-18RAP|RES|REC|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma,inflammasome|An IL-1-family receptor: TIR domains, MyD88, IRAK — the same module TLRs use.
+il18bp|IL-18BP|EXT|EFF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|ifn-gamma,isg|A high-affinity secreted decoy that neutralises free IL-18. Itself IFN-γ-inducible — the loop builds its own brake.
+il12|IL-12 (p35/p40)|EXT|CYT|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|ifn-gamma,th17|Made by activated myeloid cells. Shares its p40 subunit with IL-23 — which is why one antibody can hit both.
+il12r|IL-12Rβ1/β2|RES|REC|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma|Signals through TYK2 and JAK2 → STAT4. The TYK2 dependence is why TYK2 inhibitors reach this arm.
+stat4|STAT4|RES|TF|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma|The Th1 STAT. Induces T-bet, which is what actually licenses the IFNG locus.
+tbet|T-bet (TBX21)|RES|TF|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma|Remodels the IFNG locus. Without it, IL-18 and IL-12 signalling produce no interferon-γ.
+gaf|STAT1 : STAT1 (GAF)|CYT|COM|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|ifn-gamma,ifn-jak|A different dimer from ISGF3, reading a different element (GAS, not ISRE) — but drawing on the same STAT1 pool.
+cxcl9-11|CXCL9/10/11|EXT|CYT|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|ifn-gamma,isg|CXCR3 ligands that recruit more Th1 and NK cells — the loop's amplification step at tissue level.
+ciita|CIITA → MHC-II|NUC|TF|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|ifn-gamma|IFN-γ turns non-professional cells into antigen presenters — how an innate loop acquires an adaptive audience.
+nos2|NOS2 / iNOS|CYT|ENZ|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|ifn-gamma,metabolic|IFN-γ + NF-κB output. NO nitrosylates and inhibits Complexes I and IV — an interferon-driven respiratory lesion.
+m1|M1 polarisation|CYT|OUT|S|L3_cell_line|[monocyte,macrophage,microglia]|-|-|ifn-gamma,metabolic,mito|IFN-γ locks macrophages into aerobic glycolysis with a broken TCA cycle, high mtROS, and succinate accumulation.
+il23r|IL-23R / IL-12Rβ1|RES|REC|G|L1_in_silico|[cd4_tcell]|-|-|th17|JAK2/TYK2 → STAT3. IL23R variants are among the strongest genetic associations in psoriatic disease.
+stat3|STAT3|RES|TF|G|L1_in_silico|[cd4_tcell]|-|-|th17|The Th17 STAT, driven by IL-6 and IL-23. Induces RORγt.
+rorgt|RORγt (RORC)|RES|TF|G|L1_in_silico|[cd4_tcell]|-|-|th17|Master Th17 transcription factor. IL-23 does not create Th17 cells so much as stabilise and license them.
+il17ra|IL-17RA / RC|MEM|REC|G|L1_in_silico|[]|-|-|th17|Signals through ACT1 → TRAF6 → NF-κB in fibroblasts, synoviocytes and keratinocytes.
+act1|ACT1 (TRAF3IP2)|CYT|ADA|G|L1_in_silico|[]|-|-|th17,nfkb|U-box E3 that couples IL-17R to TRAF6 → NF-κB — closing an IL-17 → NF-κB → IL-23 feed-forward at tissue level.
+il22|IL-22 / GM-CSF|EXT|CYT|G|L1_in_silico|[cd4_tcell]|-|-|th17|Epithelial proliferation (IL-22) and myeloid recruitment (GM-CSF) — the rest of the Th17 output.
+il18r-nfkb|IL-18R → NF-κB (Responder)|CYT|TF|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma,nfkb|IL-18R MyD88-dependent NF-κB transactivation inside responder lymphoid cells.
+z-rna|Z-form nucleic acid|CYT|LIG|G|L3_cell_line|[monocyte,macrophage,microglia]|-|-|celldeath,retro|Left-handed duplex conformation favoured by alternating purine-pyrimidine repeats — retroelement transcripts are a candidate endogenous source.
+zbp1|ZBP1|CYT|SEN|G|L3_cell_line|[monocyte,macrophage,microglia]|{"uniprot":"Q9H171","ensembl":"ENSG00000171806","hgnc":"HGNC:30950"}|-|celldeath,retro|Two Zα domains read Z-form nucleic acid; two RHIM domains hand the signal to RIPK3. Itself an interferon-stimulated gene.
+ripk3|RIPK3|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia]|{"uniprot":"Q9Y572","ensembl":"ENSG00000129465","hgnc":"HGNC:10021"}|-|celldeath|RHIM-dependent amyloid-like assembly with ZBP1 or RIPK1; phosphorylates MLKL. The commitment step.
+ripk1|RIPK1|CYT|KIN|G|L1_in_silico|[monocyte,macrophage,microglia]|-|-|celldeath,nfkb|The three-way switch: scaffold for NF-κB survival signalling, or substrate for caspase-8, or RHIM partner for necroptosis.
+mlkl|MLKL|CYT|EFF|G|L3_cell_line|[monocyte,macrophage,microglia]|-|-|celldeath|Phosphorylated by RIPK3, then oligomerises and permeabilises the plasma membrane directly.
+casp8|caspase-8 / FADD|CYT|ENZ|G|L5_animal_in_vivo|[monocyte,macrophage,microglia]|-|-|celldeath|Cleaves RIPK1 and RIPK3 to suppress necroptosis. Losing it does not stop death — it switches the mode.
+necroptosis|necroptosis|CYT|OUT|G|L3_cell_line|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|celldeath|Membrane rupture with the cytosol intact — maximally immunogenic, and invisible to every caspase inhibitor.
+panoptosome|PANoptosome|CYT|COM|G|L1_in_silico|[monocyte,macrophage,microglia]|-|-|celldeath,inflammasome|ZBP1 scaffolds NLRP3, ASC, caspase-1, caspase-8 and RIPK3 into one complex — the three death modes stop being separate.
 l1-locus|LINE-1 locus|NUC|RET|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-|-|retro,genome|~500 000 copies, ~17% of the genome, ~100 still retrotransposition-competent. 6 kb bicistronic unit with its own internal promoter.
 alu-locus|Alu / SINE loci|NUC|RET|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-|-|retro,rlr-mavs|~1.1 million copies, ~11% of the genome. Non-autonomous — mobilised in trans by L1 ORF2p.
 herv-locus|HERV loci|NUC|RET|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-|-|retro|~8% of the genome. Mostly ORF-dead, but transcriptionally reactivatable and immunogenic.
@@ -365,34 +365,34 @@ tcell-prolif|clonal proliferation|RES|EFF|G|L4_primary_human|[cd4_tcell,cd8_tcel
 car-t|CD19 CAR-T|EXT|DRU|G|L5_animal_in_vivo|[cd4_tcell,cd8_tcell]|-|-|tcr,drugs|A therapy this arm predicts will underperform in a TRAILshort-high tumour — and did, in humanised mice.
 anti-trailshort|anti-TRAILshort|EXT|DRU|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr,drugs|Neutralising the ligand restores T-cell function — the "release the brake" direction.
 nsc87877|NSC-87877|RES|DRU|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-|-|tcr,drugs|Blocks the phosphatase rather than the ligand. Works, but only modestly — and the gap is informative.
-upadacitinib|upadacitinib|CYT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|{"chembl":"CHEMBL3989938","drugbank":"DB12399"}|-|drugs|Arrests IFNAR signal transduction at JAK1 — the only node in this framework with in-human response data.
-brepocitinib|brepocitinib / TYK2i|CYT|DRU|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|Alternative to JAK1-only blockade; adds IL-12/IL-23 coverage relevant to the Th17/psoriatic arm.
-tofacitinib|tofacitinib|CYT|DRU|S|L6_human_clinical|[monocyte,macrophage,cd4_tcell]|{"chembl":"CHEMBL221959","drugbank":"DB08895"}|-|drugs|Real-world clinical rescue in a complete-SAMHD1-loss patient (Baker et al. 2026) -- not a proposed ex-vivo arm from this atlas's own 10-arm study, but actual human treatment-response data.
-amlexanox|amlexanox|CYT|DRU|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|{"chembl":"CHEMBL442","drugbank":"DB00223"}|-|drugs|Cuts interferon production at source rather than blocking its reception. Also an established metabolic agent.
-polyiclc|poly-ICLC (Hiltonol)|END|DRU|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|The "upward" direction: drive IRF3 to INDUCE more SAMHD1 protein in a haploinsufficient cell.
-vbit4|VBIT-4|MIT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|Closes the macropore. In SAMHD1-KO monocytes it prevents mtDNA release and FULLY abolishes the spontaneous ISG response.
+upadacitinib|upadacitinib|CYT|DRU|S|L6_human_clinical|[monocyte,macrophage,microglia]|{"chembl":"CHEMBL3989938","drugbank":"DB12399"}|-|drugs|Arrests IFNAR signal transduction at JAK1 — the only node in this framework with in-human response data.
+brepocitinib|brepocitinib / TYK2i|CYT|DRU|G|L1_in_silico|[monocyte,macrophage,microglia]|-|-|drugs|Alternative to JAK1-only blockade; adds IL-12/IL-23 coverage relevant to the Th17/psoriatic arm.
+tofacitinib|tofacitinib|CYT|DRU|S|L6_human_clinical|[monocyte,macrophage]|{"chembl":"CHEMBL221959","drugbank":"DB08895"}|-|drugs|Real-world clinical rescue in a complete-SAMHD1-loss patient (Baker et al. 2026) -- not a proposed ex-vivo arm from this atlas's own 10-arm study, but actual human treatment-response data.
+amlexanox|amlexanox|CYT|DRU|G|L3_cell_line|[monocyte,macrophage,microglia]|{"chembl":"CHEMBL442","drugbank":"DB00223"}|-|drugs|Cuts interferon production at source rather than blocking its reception. Also an established metabolic agent.
+polyiclc|poly-ICLC (Hiltonol)|END|DRU|S|L4_primary_human|[monocyte,macrophage,microglia]|-|-|drugs|The "upward" direction: drive IRF3 to INDUCE more SAMHD1 protein in a haploinsufficient cell.
+vbit4|VBIT-4|MIT|DRU|S|L3_cell_line|[monocyte,macrophage,microglia]|-|-|drugs|Closes the macropore. In SAMHD1-KO monocytes it prevents mtDNA release and FULLY abolishes the spontaneous ISG response.
 imsb301|IMSB301|CYT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|Intercepts cytosolic DNA AFTER mitochondrial egress. Blind to the ox-mtDNA/NLRP3 arm by construction.
-mcc950|MCC950|CYT|DRU|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|Binds the NACHT-domain Walker B motif, blocking ATPase-driven assembly downstream of BOTH ox-mtDNA and MSU inputs.
-plp|PLP / vitamin B6|MIT|DRU|I|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|The only arm upstream of BOTH NLRP3 and VDAC1 — and clinically available over the counter.
-allopurinol|allopurinol|CYT|DRU|I|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|Would cut the GOLD stream at urate production if MSU crystals prove to be a real third NLRP3 input.
-abe8e|ABE8e-YA base editor|NUC|DRU|I|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs|The curative horizon: a clean transition mutation is a premier base-editing candidate, with no double-strand break required.
-arac|Ara-C (Ara-CTP)|CYT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs,genome|SAMHD1 hydrolyzes and inactivates Ara-CTP; haploinsufficiency causes marked hypersensitivity and clinical chemotherapy toxicity.
-gemcitabine|gemcitabine (dFdCTP)|CYT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|-|drugs,genome|Substrate of SAMHD1 catalytic inactivation; defective tetramer assembly impairs drug hydrolysis, enhancing cytotoxic stalling.
+mcc950|MCC950|CYT|DRU|G|L3_cell_line|[monocyte,macrophage,microglia]|-|-|drugs|Binds the NACHT-domain Walker B motif, blocking ATPase-driven assembly downstream of BOTH ox-mtDNA and MSU inputs.
+plp|PLP / vitamin B6|MIT|DRU|I|L3_cell_line|[monocyte,macrophage,microglia]|-|-|drugs|The only arm upstream of BOTH NLRP3 and VDAC1 — and clinically available over the counter.
+allopurinol|allopurinol|CYT|DRU|I|L3_cell_line|[monocyte,macrophage,microglia]|-|-|drugs|Would cut the GOLD stream at urate production if MSU crystals prove to be a real third NLRP3 input.
+abe8e|ABE8e-YA base editor|NUC|DRU|I|L1_in_silico|[monocyte,macrophage,microglia]|-|-|drugs|The curative horizon: a clean transition mutation is a premier base-editing candidate, with no double-strand break required.
+arac|Ara-C (Ara-CTP)|CYT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia]|-|-|drugs,genome|SAMHD1 hydrolyzes and inactivates Ara-CTP; haploinsufficiency causes marked hypersensitivity and clinical chemotherapy toxicity.
+gemcitabine|gemcitabine (dFdCTP)|CYT|DRU|S|L4_primary_human|[monocyte,macrophage,microglia]|-|-|drugs,genome|Substrate of SAMHD1 catalytic inactivation; defective tetramer assembly impairs drug hydrolysis, enhancing cytotoxic stalling.
 naci|NACI|EXT|OUT|I|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Tonic, source-driven interferon activation with no flare-remit cyclicity and a seronegative cytokine profile.
 mecfs|ME/CFS|EXT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Multi-generational, concordant phenotype, with age at onset falling in each successive generation.
-pem|PEM / fatigue|EXT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Reduced OXPHOS, impaired ATP generation, metabolic shifts worsening post-exertion — and largely refractory to JAK inhibition.
+pem|PEM / fatigue|EXT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Impaired energy production (citric-acid cycle, fatty-acid beta-oxidation) on plasma metabolomics, worsening post-exertion -- and largely refractory to JAK inhibition.
 psa|psoriatic arthritis|EXT|OUT|G|L4_primary_human|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Entheseal inflammatory axis: myeloid IL-23 and resident γδ T-cell IL-17A at tendon–bone and fascial insertions.
-steatosis|metabolic interferonopathy|EXT|OUT|S|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Diet-refractory steatosis, pancreatic fatty infiltration and android-pattern central adiposity.
+steatosis|metabolic interferonopathy|EXT|OUT|S|L4_primary_human|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Diet-refractory steatosis, pancreatic fatty infiltration and android-pattern central adiposity.
 immunodef|immunodeficiency|EXT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Impaired intrinsic antiviral restriction + chronic antigenic load + interferon-driven lymphocyte attrition.
-connective|connective tissue failure|EXT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Hypothesized two-hit uncoupled catabolism: tonic IFN-γ/STAT1 blocks collagen-I synthesis (Hit 1) while inflammatory cytokines upregulate MMPs (Hit 2); direct evidence in SAMHD1 deficiency is pending.
-dysautonomia|dysautonomia / SFN|EXT|OUT|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Chronic tonic type-I IFN drives progressive injury to intraepidermal autonomic nerve fibres.
-cancer-risk|cancer surveillance|EXT|OUT|S|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Prostate (BIK + SAMHD1 co-segregating), colorectal (heterozygous SAMHD1) and haematological lineages.
-nk-lymphopenia|NK cell lymphopenia|EXT|OUT|S|L6_human_clinical|[systemic_immune]|-|-|clinical|Peripheral NK cell counts persistently below normal range, normalizing with tofacitinib -- observed in a complete-SAMHD1-loss patient (Baker et al. 2026).
+connective|connective tissue failure|EXT|OUT|G|L4_primary_human|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Hypothesized two-hit uncoupled catabolism: tonic IFN-γ/STAT1 blocks collagen-I synthesis (Hit 1) while inflammatory cytokines upregulate MMPs (Hit 2); direct evidence in SAMHD1 deficiency is pending.
+dysautonomia|dysautonomia / SFN|EXT|OUT|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Chronic tonic type-I IFN drives progressive injury to intraepidermal autonomic nerve fibres.
+cancer-risk|cancer surveillance|EXT|OUT|S|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-|-|clinical|Prostate (BIK and SAMHD1 both confirmed susceptibility genes), colorectal (heterozygous SAMHD1) and haematological lineages.
+nk-lymphopenia|NK cell lymphopenia|EXT|OUT|S|L6_human_clinical|[systemic_immune,nk_cell]|-|-|clinical|Peripheral NK cell counts persistently below normal range, normalizing with tofacitinib -- observed in a complete-SAMHD1-loss patient (Baker et al. 2026).
 memory-b-deficiency|switched memory B-cell deficiency|EXT|OUT|S|L6_human_clinical|[systemic_immune,b_cell]|-|-|clinical|Switched memory B cells markedly low despite elevated total CD19+ B cells; increased >3-fold after tofacitinib.
 hypergammaglobulinemia|hypergammaglobulinemia|EXT|OUT|S|L6_human_clinical|[systemic_immune,b_cell]|-|-|clinical|IgG persistently above normal range, with negative autoantibody serologies -- polyclonal, not a specific autoimmune signature.
 esr-crp-dissociation|ESR / CRP dissociation|EXT|OUT|S|L6_human_clinical|[systemic_immune,hepatic]|-|-|clinical|ESR elevated while CRP stays normal or low -- a biomarker pattern, not a proven mechanism, worth flagging for interferonopathy workups.
 perniosis|perniosis / acral ischemia|EXT|OUT|S|L6_human_clinical|[systemic_immune,cardiovascular]|-|-|clinical|Severe perniosis with acral autoamputation from late infancy, decreasing with tofacitinib -- a hallmark familial-chilblain-lupus-spectrum presentation.
-tadekinig-alfa|tadekinig alfa|EXT|DRU|S|L1_in_silico|[systemic_immune,monocyte,macrophage]|{"drugbank":"DB12845"}|-|drugs,ifn-gamma|High-affinity soluble decoy receptor neutralizing circulating IL-18 to extinguish Loop C paracrine signaling.
+tadekinig-alfa|tadekinig alfa|EXT|DRU|I|L1_in_silico|[systemic_immune,monocyte,macrophage]|{"drugbank":"DB12845"}|-|drugs,ifn-gamma|High-affinity soluble decoy receptor neutralizing circulating IL-18 to extinguish Loop C paracrine signaling.
 
 §6 A565T EFFECTS   node|what haploinsufficiency does here
 # The haploinsufficiency model proper: only nodes carrying an explicit claim.
@@ -431,7 +431,7 @@ usp18|Tonic IFN upregulates ISG15, which stabilises USP18 — but this compensat
 nlrp3|SAMHD1 is a metabolic gatekeeper of NLRP3: dNTPase loss ALONE — with no obesity and no exogenous trigger — drives cytoplasmic dNTP accumulation, mitochondrial dNTP overload, ox-mtDNA generation and NLRP3 hyperactivation. SAMHD1-deficient animals develop elevated circulating IL-1β, insulin resistance and steatohepatitis without any diet challenge.
 aim2|IMPORTANT FOR THE STUDY DESIGN, and untested. The atlas claims ox-mtDNA→NLRP3 and fragments→cGAS run in parallel; AIM2 is the third DNA sensor a reviewer will ask about, and it changes how Arm 9 reads. MCC950 inhibits NLRP3 specifically — it does NOT touch AIM2. So residual IL-1β and residual ASC specks under MCC950 have TWO possible explanations: a caspase-1-independent maturation route (the current reading), or an AIM2 inflammasome the drug was never going to block. Those are distinguishable — AIM2 specks are NLRP3-independent and NEK7-independent — and the arm should be designed to tell them apart rather than attributing the residual to the first hypothesis.
 il1b|Predicted to stay ELEVATED in Arm 2 (upadacitinib) and Arm 5 (amlexanox) despite improving cytokine panels — because the dNTP→PNC1/2→ox-mtDNA→NLRP3 cascade is upstream of both drug targets. Persistent IL-1β in those arms is the formal proof that Loop B is an independent, currently unaddressed therapeutic axis.
-baff|Amlexanox suppresses BAFF induction alongside type-I IFN production — one of the reasons the TBK1/IKKε clamp is expected to reach further than JAK1 blockade alone.
+baff|Amlexanox suppresses BAFF induction alongside type-I IFN production — one of the reasons the TBK1/IKKε clamp is expected to reach further than JAK1 blockade alone. In bjork2025 this suppression was indirect: BAFF was measured as an induced transcript in bulk PBMC via supernatant transfer, and the paper does not attribute BAFF production to a specific subset or establish direct BAFF inhibition -- the effect runs through reduced type-I IFN in the transferred supernatant.
 nfkb-targets|SAMHD1 suppresses the NF-κB pathway directly, so haploinsufficiency raises the resting level of every gene on this list at once. That is Brake 4 — and it is why Loop B and the Th17 arm are elevated at baseline rather than only after a trigger.
 responder-cell|This is the step that is missing from the compressed chain. An inflammasome running constitutively in one cell recruits a second cell into the disease, and that second cell sends back a cytokine that damages the first one further.
 pdc|NOT demonstrated in a SAMHD1 system, and graded G for exactly that reason — it sits downstream of an S claim without inheriting its grade. What makes the cell worth drawing is arithmetic rather than a new mechanism: IRF7 is the node SAMHD1 physically restrains (Brake 1), and the pDC is where derepressed IRF7 has the largest per-cell interferon consequence. Whether pDCs contribute measurably to the tonic IFN-α of this phenotype is a MEASUREMENT — pDC frequency together with per-cell IFN-α — not something this model asserts.
@@ -603,14 +603,14 @@ arac|Schneider et al. (Nature Medicine 2017) and Herold et al. (2017) demonstrat
 naci|Distinguished from AGS, SAVI and CANDLE by kinetics and biomarkers rather than by signalling architecture: non-acute (persistently engaged, not episodic), chronic (sustained over decades, progressive rather than episodic), and acting through intracellular ISG induction rather than elevated serum cytokines. That last property is the clinically actionable part — it predicts that standard cytokine panels will read normal in active multi-system disease, and it redirects workup toward IFN-α/β, free ISG15, CXCL10 and ISG scoring.
 mecfs|Heightened innate immunity, mitochondrial dysfunction, lipid oxidation and a Warburg shift are all documented in ME/CFS cohorts independently. SAMHD1 haploinsufficiency is proposed as a genetic driver of that convergent interferon–mitochondrial phenotype in a subset — not as an explanation for all of ME/CFS. Falling age at onset across generations is consistent with apparent anticipation, plausibly from cumulative genomic instability or telomere attrition.
 psa|Bridgewood 2019 and Cuthbert 2019 establish co-located myeloid IL-23 and resident γδ T-cell IL-17A in human enthesis tissue. Inferred coupling and SAMHD1-to-PsA causality remain disease-model hypotheses pending direct clinical evaluation.
-steatosis|Two independent drivers converge here. IRF7 → MCP-1 in visceral adipocytes gives the distribution (android, with no subcutaneous lower-body accumulation). The NLRP3/IL-1β arm gives the hepatic insulin resistance — and SAMHD1-null animals develop steatohepatitis with no diet challenge at all, which is why this phenotype is modelled as immune-driven rather than as a caloric-balance problem.
+steatosis|Two independent drivers converge here. IRF7 → MCP-1 in visceral adipocytes gives the distribution (android, with no subcutaneous lower-body accumulation). The NLRP3/IL-1β arm gives the hepatic insulin resistance — and myeloid-SAMHD1-deficient mice develop worse steatohepatitis than diet-matched controls under the SAME high-fat-diet challenge (Liu 2026 fed both groups a 24-week HFD; the phenotype is not spontaneous), which is why this arm is modelled as an immune-status modifier of a caloric challenge rather than a pure caloric-balance problem. Notably, global (not myeloid-conditional) Samhd1 knockout did NOT show the same liver-steatosis change in that study — this arm is specifically myeloid-driven.
 cancer-risk|Framed as a surveillance rationale, not a claim of present malignancy — and as the reason IRF3→SAMHD1 signalling should not be blunted too aggressively. SAMHD1 is a canonical tumour suppressor in myeloid and lymphoid lineages, so structural uncoupling drives replication stress in exactly the compartments this disease already inflames.
 nk-lymphopenia|NK cell counts of 27-125 x10^6/L (normal 70-480) pre-tofacitinib, rising to 88 post-treatment -- consistent with, but not proof of, tonic IFN-I-driven exhaustion. Single-patient observation in COMPLETE SAMHD1 loss, not this atlas's heterozygous A565T model; the paper does not establish the mechanism independently of the treatment-response correlation.
 memory-b-deficiency|A dissociation the source paper does not mechanistically resolve: total CD19+ B cells were elevated throughout, while the switched-memory (CD19+CD27+IgM-IgD-) subset was very low pre-treatment and increased more than threefold post-tofacitinib. Single-patient observation, complete SAMHD1 loss.
 hypergammaglobulinemia|IgG 19.9-24.4 g/L (normal 6.6-15.3) with NEGATIVE antinuclear, anti-extractable-nuclear, anti-dsDNA, anti-proteinase-3, anti-myeloperoxidase, and antiphospholipid antibody titers -- consistent with polyclonal B-cell activation rather than a specific autoantibody-driven process. Single-patient observation, complete SAMHD1 loss.
 esr-crp-dissociation|ESR 8-22 mm/h (normal 0-10) alongside CRP persistently <0.2-0.4 mg/L (normal 0-5). Plausibly consistent with an IFN-I/fibrinogen drive uncoupled from IL-6-driven hepatic acute-phase response, but this citation does not establish that mechanism directly -- it reports the dissociation, not its cause. Relevant to workup: standard CRP-based inflammation screening would miss this patient's disease activity.
 perniosis|Present from late infancy with autoamputation of toes and mild erosion of fingers/ears; decreased following tofacitinib treatment alongside ISG normalization. Single-patient observation, complete SAMHD1 loss (not this atlas's heterozygous A565T model), though perniosis is a recognized FCL/AGS-spectrum feature more broadly.
-tadekinig-alfa|Tadekinig alfa binds IL-18 with picomolar affinity (Kd ~400 pM), preventing receptor engagement and blocking downstream NK/Th1 IFN-γ release.
+tadekinig-alfa|Tadekinig alfa binds IL-18 with high, picomolar-range affinity, preventing receptor engagement and blocking downstream NK/Th1 IFN-γ release (Novick et al. 1999).
 sting-nuclear>isg-set|Graded I deliberately: the source paper (fibroblasts/U2OS only) shows this ISG pattern co-occurring with nuclear STING accumulation, not a demonstrated mechanistic chain to it. Do not read `drive` here as established causation -- it is the closest available edge kind for a candidate/proposed association, not a claim the intermediary step is proven. Cell context (monocyte/macrophage/microglia/ipsc) is this atlas's own disease-relevant modeling target, not a tested system.
 oxmtdna>nlrp3|Cross-species: SAMHD1 deletion promoted NLRP3 hyperactivation in cells from zebrafish, mice AND humans (Liu 2026). The strongest evidence in this atlas — and it does not extend to Loop C.
 sting>samhd1|Closes a feedforward loop distinct from the existing irf3→samhd1 transcriptional edge: STING's contribution to dNTP depletion and NDD is MEDIATED BY SAMHD1 (Teodoro-Castro 2026) — a functional engagement of SAMHD1's existing resection/dNTPase activity by the nuclear STING pool, not necessarily new SAMHD1 transcription. The existing irf3→samhd1 edge is the "upward" therapeutic direction (Arms 3–4); this edge is the reason that direction now has a ceiling — raising SAMHD1 in a cell with elevated nuclear STING risks feeding the same pathological axis (see the polyiclc and ndd nodes).
@@ -681,55 +681,55 @@ vdac1|activate|+|macropore_translocation|vdac1-oligo|S|L3_cell_line|[monocyte,ma
 mtros|drive|+|catalytic_activation|vdac1-oligo|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|A|mtROS drives oligomerisation
 mtdna|release|+|organellar_damage_release|mtdna-frag|S|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|A|escape through the macropore
 vdac1-oligo|release|+|macropore_translocation|mtdna-frag|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|A|primary constitutive escape route
-mptp|release|+|organellar_damage_release|mtdna-frag|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|A|secondary route, downstream of ΔΨm collapse
+mptp|release|+|organellar_damage_release|mtdna-frag|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|A|secondary route, downstream of ΔΨm collapse
 mtdna-frag|sense|+|nucleic_acid_sensing|cgas|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|A|cGAS binds cytosolic dsDNA → Loop A initiation
 oxmtdna|activate|+|catalytic_activation|nlrp3|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|B|direct NLRP3 ligand → Loop B initiation
 vdac1-oligo|inhibit|-|macropore_translocation|deltapsi|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||ΔΨm collapse
-deltapsi|inhibit|-|allosteric_suppression|mptp|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||intact potential holds the pore shut — collapse is what lowers the threshold
-deltapsi|activate|+|catalytic_activation|atp|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||proton-motive force drives Complex V
-deltapsi|activate|+|catalytic_activation|tom20|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||import is ΔΨm-dependent
-tom20|degrade|-|allosteric_suppression|pink1|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||healthy import → PARL cleavage of PINK1
-etc-i|produce|+|catalytic_activation|mtros|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||reverse electron transport
-etc-i|activate|+|catalytic_activation|deltapsi|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
-etc-iii|activate|+|catalytic_activation|deltapsi|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
-etc-iii|produce|+|catalytic_activation|mtros|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
-etc-iv|activate|+|catalytic_activation|deltapsi|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
-etc-v|produce|+|catalytic_activation|atp|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
+deltapsi|inhibit|-|allosteric_suppression|mptp|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||intact potential holds the pore shut — collapse is what lowers the threshold
+deltapsi|activate|+|catalytic_activation|atp|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||proton-motive force drives Complex V
+deltapsi|activate|+|catalytic_activation|tom20|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||import is ΔΨm-dependent
+tom20|degrade|-|allosteric_suppression|pink1|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||healthy import → PARL cleavage of PINK1
+etc-i|produce|+|catalytic_activation|mtros|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||reverse electron transport
+etc-i|activate|+|catalytic_activation|deltapsi|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+etc-iii|activate|+|catalytic_activation|deltapsi|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+etc-iii|produce|+|catalytic_activation|mtros|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+etc-iv|activate|+|catalytic_activation|deltapsi|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+etc-v|produce|+|catalytic_activation|atp|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
 ceramide|inhibit|-|allosteric_suppression|etc-iii|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||direct Complex III inhibition + inner-membrane permeabilisation
-ceramide|activate|+|catalytic_activation|mptp|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||raises mPTP propensity
+ceramide|activate|+|catalytic_activation|mptp|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||raises mPTP propensity
 succinate|activate|+|catalytic_activation|hif1a|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||inhibits PHD → normoxic HIF-1α stabilisation
-etc-iii|produce|+|catalytic_activation|succinate|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||TCA remodelling in M1 skewing
+etc-iii|produce|+|catalytic_activation|succinate|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||TCA remodelling in M1 skewing
 deltapsi|drive|+|catalytic_activation|glycolysis|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||OXPHOS collapse forces emergency fermentative glycolysis
 hif1a|activate|+|catalytic_activation|glycolysis|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||normoxic HIF-1α upregulates glycolytic enzymes
-glycolysis|produce|+|catalytic_activation|atp|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||emergency glycolytic ATP generation
-glycolysis|produce|+|catalytic_activation|lactate|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||LDHA reduction of pyruvate to lactate
+glycolysis|produce|+|catalytic_activation|atp|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||emergency glycolytic ATP generation
+glycolysis|produce|+|catalytic_activation|lactate|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||LDHA reduction of pyruvate to lactate
 lactate|drive|+|catalytic_activation|h3k18la|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||enzymatic histone lactylation at Lys18
 h3k18la|drive|+|catalytic_activation|pem|G|L3_cell_line|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||epigenetic chromatin lock driving multi-day PEM crashes
 glycolysis|inhibit|-|allosteric_suppression|mlkl|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||necrosis defense: glycolytic ATP prevents bioenergetic necrotic lysis
 lactate|drive|+|catalytic_activation|psa|I|L3_cell_line|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||lactate-driven immune-cell entrapment in inflamed tissue (mechanism site unconfirmed for PsA specifically)
 bik|activate|+|catalytic_activation|baxbak|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||BH3-only priming
 baxbak|release|+|organellar_damage_release|cytc|S|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||sublethal / minority MOMP
-mptp|release|+|organellar_damage_release|cytc|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||chronic sublethal leak (TNF-α/ROS driven)
-cytc|inhibit|-|allosteric_suppression|etc-iv|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||losing the shuttle breaks III→IV
+mptp|release|+|organellar_damage_release|cytc|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||chronic sublethal leak (TNF-α/ROS driven)
+cytc|inhibit|-|allosteric_suppression|etc-iv|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||losing the shuttle breaks III→IV
 bik|inhibit|-|allosteric_suppression|becn1|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||BH3-only proteins sequester BECN1 → apoptosis bias over mitophagy
-deltapsi|inhibit|-|allosteric_suppression|pink1|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||intact potential imports and destroys PINK1 — collapse is what stabilises it
-pink1|phos|+|kinase_phosphorylation|parkin|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||pSer65-Ub recruits and activates Parkin
-parkin|activate|+|catalytic_activation|optn|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||Ub coat read by OPTN/p62 receptors
-optn|bind|+|allosteric_binding|lc3|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||LIR-motif engagement of the phagophore
-p62|bind|+|allosteric_binding|lc3|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
-becn1|activate|+|catalytic_activation|lc3|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||PI3KC3 initiation
-lc3|translocate|+|compartment_translocation|autolysosome|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||autophagosome–lysosome fusion
+deltapsi|inhibit|-|allosteric_suppression|pink1|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||intact potential imports and destroys PINK1 — collapse is what stabilises it
+pink1|phos|+|kinase_phosphorylation|parkin|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||pSer65-Ub recruits and activates Parkin
+parkin|activate|+|catalytic_activation|optn|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||Ub coat read by OPTN/p62 receptors
+optn|bind|+|allosteric_binding|lc3|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||LIR-motif engagement of the phagophore
+p62|bind|+|allosteric_binding|lc3|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+becn1|activate|+|catalytic_activation|lc3|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||PI3KC3 initiation
+lc3|translocate|+|compartment_translocation|autolysosome|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||autophagosome–lysosome fusion
 ctsd|activate|+|catalytic_activation|autolysosome|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||hydrolytic degradation of cargo
 mtor|inhibit|-|allosteric_suppression|mitf|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||phosphorylation → cytoplasmic retention
 mitf|produce|+|catalytic_activation|ctsd|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||transcribes lysosomal hydrolases
 mitf|produce|+|catalytic_activation|dnase2|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||DNase II is a MITF/TFEB lysosomal target gene — the same failure hits it
-autolysosome|activate|+|catalytic_activation|dnase2|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||acidified compartment licenses the nuclease
+autolysosome|activate|+|catalytic_activation|dnase2|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||acidified compartment licenses the nuclease
 dnase2|degrade|-|allosteric_suppression|mtdna-frag|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|A|THE MISSING EDGE — destroys engulfed mtDNA before it can reach cGAS
 dnase2|degrade|-|allosteric_suppression|l1-cdna|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||lysosomal disposal of retroelement DNA
 dnase1l3|degrade|-|allosteric_suppression|ssdna|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||digests chromatin inside apoptotic microparticles
 drp1|drive|+|catalytic_activation|mtros|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|sting-fission|fragmentation raises surface-to-volume → more mtROS
-mfn|inhibit|-|allosteric_suppression|drp1|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||fusion opposes fission
-mfn|bind|+|allosteric_binding|pink1|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||MFN2 is a Parkin substrate on the mitophagy path
+mfn|inhibit|-|allosteric_suppression|drp1|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||fusion opposes fission
+mfn|bind|+|allosteric_binding|pink1|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||MFN2 is a Parkin substrate on the mitophagy path
 mtdna|produce|+|catalytic_activation|mtdsrna|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||bidirectional transcription → complementary duplexes
 dntp-pool|drive|+|metabolic_bypass_flux|pnc1-dntp-bypass|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|B|Cytosolic dNTP excess floods PNC1/PNC2
 pnc1-dntp-bypass|transport|+|metabolic_bypass_flux|mito-dntp|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-|B|Imports excess dNTP into matrix
@@ -788,130 +788,130 @@ nfkb|produce|+|catalytic_activation|tnfa|G|L1_in_silico|[monocyte,macrophage,mic
 nfkb|produce|+|catalytic_activation|il23|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 nfkb|produce|+|catalytic_activation|ikba|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||its own inhibitor — the oscillator that a constitutive drive flattens
 il23|drive|+|signal_transduction|il17a|I|L1_in_silico|[monocyte,macrophage,dendritic_cell,cd4_tcell]|-||inferred SpA axis
-nfkb|produce|+|catalytic_activation|nlrp3|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-|B|signal 1 — transcriptional priming
-nfkb|produce|+|catalytic_activation|proil1b|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|signal 1 — pro-IL-1β transcription
-mtros|activate|+|catalytic_activation|nfkb|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|B|mtROS primes NF-κB
-msu|activate|+|catalytic_activation|nlrp3|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|B|GOLD feedforward — crystal activation, cGAS-independent
-urate|produce|+|catalytic_activation|msu|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|B|urate retention → crystal formation in cytosol
-p2x7|activate|+|catalytic_activation|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||K⁺ efflux
-mtros|activate|+|catalytic_activation|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|mtROS as signal 2
-nek7|bind|+|allosteric_binding|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||licenses oligomerisation
-mtdna-frag|sense|+|nucleic_acid_sensing|aim2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the same fragment pool that feeds cGAS also feeds AIM2
-l1-cdna|sense|+|nucleic_acid_sensing|aim2|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||retroelement cDNA as inflammasome ligand
-micronucleus|sense|+|nucleic_acid_sensing|aim2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-aim2|activate|+|catalytic_activation|asc|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||nucleates ASC DIRECTLY — no NLRP3, no NEK7, no priming, and no MCC950 sensitivity
-mtdna-frag|sense|+|nucleic_acid_sensing|ifi16|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ssdna|sense|+|nucleic_acid_sensing|ifi16|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||nuclear ligands from replication stress
-ifi16|activate|+|catalytic_activation|sting|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|A|promotes cGAMP production and STING activation — a cooperator, not a rival
-ifi16|activate|+|catalytic_activation|asc|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-isg-set|produce|+|catalytic_activation|aim2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||both ALRs are interferon-inducible
-isg-set|produce|+|catalytic_activation|ifi16|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
+nfkb|produce|+|catalytic_activation|nlrp3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|signal 1 — transcriptional priming
+nfkb|produce|+|catalytic_activation|proil1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|signal 1 — pro-IL-1β transcription
+mtros|activate|+|catalytic_activation|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|mtROS primes NF-κB
+msu|activate|+|catalytic_activation|nlrp3|I|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-|B|GOLD feedforward — crystal activation, cGAS-independent
+urate|produce|+|catalytic_activation|msu|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|urate retention → crystal formation in cytosol
+p2x7|activate|+|catalytic_activation|nlrp3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||K⁺ efflux
+mtros|activate|+|catalytic_activation|nlrp3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|mtROS as signal 2
+nek7|bind|+|allosteric_binding|nlrp3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||licenses oligomerisation
+mtdna-frag|sense|+|nucleic_acid_sensing|aim2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||the same fragment pool that feeds cGAS also feeds AIM2
+l1-cdna|sense|+|nucleic_acid_sensing|aim2|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||retroelement cDNA as inflammasome ligand
+micronucleus|sense|+|nucleic_acid_sensing|aim2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+aim2|activate|+|catalytic_activation|asc|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||nucleates ASC DIRECTLY — no NLRP3, no NEK7, no priming, and no MCC950 sensitivity
+mtdna-frag|sense|+|nucleic_acid_sensing|ifi16|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+ssdna|sense|+|nucleic_acid_sensing|ifi16|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||nuclear ligands from replication stress
+ifi16|activate|+|catalytic_activation|sting|G|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|-|A|promotes cGAMP production and STING activation — a cooperator, not a rival
+ifi16|activate|+|catalytic_activation|asc|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+isg-set|produce|+|catalytic_activation|aim2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||both ALRs are interferon-inducible
+isg-set|produce|+|catalytic_activation|ifi16|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
 aim2|drive|+|catalytic_activation|psa|G|L3_cell_line|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||cytosolic DNA activates AIM2 in psoriatic keratinocytes
-nlrp3|activate|+|catalytic_activation|asc|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.995,"string_database":0.9}|B|PYD–PYD nucleation of the speck
-asc|activate|+|catalytic_activation|casp1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.995,"string_database":0.9}|B|CARD–CARD → proximity-induced autoprocessing
-casp1|produce|+|catalytic_activation|il1b|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.97,"string_database":0.9}|B|cleaves pro-IL-1β → mature IL-1β
-proil1b|produce|+|catalytic_activation|il1b|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|B|maturation
-casp1|produce|+|catalytic_activation|il18|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.965,"string_database":0.9}|B|
-casp1|activate|+|catalytic_activation|gsdmd|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||cleaves GSDMD
-gsdmd|translocate|+|compartment_translocation|gsdmd-pore|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||N-terminal fragment oligomerises in the plasma membrane
-gsdmd-pore|release|+|organellar_damage_release|il1b|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||unconventional secretion
-gsdmd-pore|drive|+|catalytic_activation|pyroptosis|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||above lytic threshold
-il1b|activate|+|catalytic_activation|nfkb|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|IL-1R → further NF-κB priming (Loop B closure)
-pyroptosis|release|+|organellar_damage_release|mtdna-frag|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||DOTTED CROSS-LINK — pyroptotic mtDNA reactivates bystander cGAS
-il1b|produce|+|catalytic_activation|ceramide|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||IL-1β → ceramide synthesis → inner-membrane injury
-traf6|activate|+|catalytic_activation|tak1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||K63 chains read by TAB2/3
-tak1|phos|+|kinase_phosphorylation|ikk|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Ser177/181 on the activation loop
-lubac|produce|+|catalytic_activation|m1ub|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the only E3 that builds head-to-tail chains
-m1ub|ubiq|+|ubiquitin_conjugation|nemo|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||linear chains on NEMO stabilise the active IKK complex
-a20|inhibit|-|allosteric_suppression|nemo|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||strips K63, adds K48 — the pathway's own off-switch
-cyld|inhibit|-|allosteric_suppression|nemo|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||removes K63 and M1 chains
-otulin|degrade|-|allosteric_suppression|m1ub|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||linear-chain-specific hydrolysis, counter-balancing LUBAC
-nfkb-targets|produce|+|catalytic_activation|a20|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||A20 is an NF-κB target gene — negative feedback
-nik|phos|+|kinase_phosphorylation|ikka|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ikka|activate|+|catalytic_activation|relb|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||p100 → p52 partial proteasomal processing
-relb|produce|+|catalytic_activation|baff|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-tbk1|activate|+|catalytic_activation|nik|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||TBK1/IKKε cross-talk into the non-canonical arm
-nfkb|translocate|+|compartment_translocation|nfkb-targets|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||nuclear import → κB elements
-nfkb-targets|produce|+|catalytic_activation|nlrp3|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|B|NLRP3 protein — signal 1
-nfkb-targets|produce|+|catalytic_activation|proil1b|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|pro-IL-1β — inflammasome substrate 1
-nfkb-targets|produce|+|catalytic_activation|proil18|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|C|pro-IL-18 — inflammasome substrate 2
-nfkb-targets|produce|+|catalytic_activation|il23|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||IL-23p19 — the Th17 driver
-nfkb-targets|produce|+|catalytic_activation|il6|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nfkb-targets|produce|+|catalytic_activation|tnfa|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nfkb-targets|produce|+|catalytic_activation|cxcl8|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nfkb-targets|produce|+|catalytic_activation|ikba|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||its own inhibitor — the oscillator a constitutive drive flattens
-proil18|produce|+|catalytic_activation|il18|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|C|caspase-1 cleavage → mature IL-18
-casp1|activate|+|catalytic_activation|proil18|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|C|cleaves pro-IL-18
-samhd1|inhibit|-|allosteric_suppression|nfkb-targets|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||BRAKE 4 — suppression here lowers the entire priming layer at once
-il18|bind|+|allosteric_binding|il18r|G|L3_cell_line|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 1 — mature IL-18 crosses to a NEIGHBOURING cell
-il18bp|inhibit|-|allosteric_suppression|il18|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||decoy — only FREE IL-18 signals
-il18r|activate|+|catalytic_activation|myd88|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 2 — TIR domain, the same module TLRs use
-il12|bind|+|allosteric_binding|il12r|G|L3_cell_line|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 3 — second signal, from the same inflamed myeloid cell
-nfkb-targets|produce|+|catalytic_activation|il12|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||IL-12p35/p40 from the activated myeloid cell
-il12r|phos|+|kinase_phosphorylation|stat4|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 4 — TYK2/JAK2 → STAT4
-stat4|produce|+|catalytic_activation|tbet|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 5 — T-bet opens the IFNG locus
-tbet|activate|+|catalytic_activation|responder-cell|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|C|Th1/NK effector programme
-il18r|activate|+|catalytic_activation|responder-cell|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-responder-cell|produce|+|catalytic_activation|ifng|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 6 — IFN-γ requires BOTH signals; neither alone suffices
-ifng|bind|+|allosteric_binding|ifngr|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|C|STEP 7 — paracrine return to the cell that started it
-stat1|bind|+|allosteric_binding|gaf|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|C|STEP 8 — STAT1 homodimer, not ISGF3
-gaf|translocate|+|compartment_translocation|gas|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|C|GAS elements — a different programme from ISRE
-gas|produce|+|catalytic_activation|cxcl9-11|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|C|CXCR3 ligands recruit more Th1/NK — tissue-level amplification
-gas|produce|+|catalytic_activation|ciita|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-gas|produce|+|catalytic_activation|nos2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-gas|produce|+|catalytic_activation|il18bp|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the loop induces its own brake — as the type-I arm does with USP18
-gas|produce|+|catalytic_activation|m1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|C|STEP 9 — classical macrophage activation
-cxcl9-11|drive|+|catalytic_activation|responder-cell|G|L3_cell_line|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|recruits more responders — Loop C amplifies at tissue scale
-m1|drive|+|catalytic_activation|mtros|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-|C|STEP 10 — M1 metabolic reprogramming raises mtROS
-m1|produce|+|catalytic_activation|succinate|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|C|broken TCA cycle → succinate accumulation
-nos2|inhibit|-|allosteric_suppression|etc-i|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||NO S-nitrosylates Complex I
-nos2|inhibit|-|allosteric_suppression|etc-iv|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||NO competes with O₂ at cytochrome c oxidase
-m1|inhibit|-|allosteric_suppression|deltapsi|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||M1 skewing accompanies ΔΨm collapse in Samhd1-KO
-tlr7|activate|+|catalytic_activation|pdc|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ssRNA — a pDC expresses essentially only TLR7 and TLR9 among the TLRs
-tlr9|activate|+|catalytic_activation|pdc|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||CpG DNA — the receptor the LL-37 arm converts a SELF ligand for
-irf7|activate|+|catalytic_activation|pdc|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||constitutively high resting IRF7 licenses the burst — a licensing step, not lineage
-pdc|produce|+|catalytic_activation|ifna|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the IFN-α burst — the reason one rare cell type can set the interferon tone of a tissue
-il23|bind|+|allosteric_binding|il23r|G|L3_cell_line|[monocyte,macrophage,cd4_tcell]|-||
-il23r|phos|+|kinase_phosphorylation|stat3|G|L3_cell_line|[cd4_tcell]|-||JAK2/TYK2 → STAT3
-il6|activate|+|catalytic_activation|stat3|G|L3_cell_line|[monocyte,macrophage,cd4_tcell]|-||IL-6 is the other STAT3 input — with TGF-β it initiates Th17
-stat3|produce|+|catalytic_activation|rorgt|G|L3_cell_line|[cd4_tcell]|-||
-rorgt|activate|+|catalytic_activation|th17-cell|G|L3_cell_line|[cd4_tcell]|-||licenses the IL-17 programme
-th17-cell|produce|+|catalytic_activation|il17a|G|L3_cell_line|[cd4_tcell]|-||
-th17-cell|produce|+|catalytic_activation|il22|G|L3_cell_line|[cd4_tcell]|-||
-il1b|activate|+|catalytic_activation|th17-cell|G|L3_cell_line|[monocyte,macrophage,cd4_tcell]|-||IL-1β is a Th17-stabilising signal — Loop B feeds the Th17 arm directly
-il17a|bind|+|allosteric_binding|il17ra|G|L3_cell_line|[]|-||
-il17ra|activate|+|catalytic_activation|act1|G|L3_cell_line|[]|-||
-act1|activate|+|catalytic_activation|traf6|G|L3_cell_line|[]|-||IL-17 → NF-κB in the target tissue — a feed-forward at tissue level
-tnfa|activate|+|catalytic_activation|il17ra|G|L3_cell_line|[]|-||TNF-α synergy — IL-17 is weak alone and potent with it
-ifng|drive|+|catalytic_activation|m1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-cxcl9-11|drive|+|catalytic_activation|naci|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||CXCL10 as a NACI workup biomarker
-il22|drive|+|catalytic_activation|psa|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-il18r|activate|+|catalytic_activation|il18r-nfkb|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|C|IL-18R recruits MyD88 → NF-κB
-il18r-nfkb|produce|+|transcriptional_priming|ifng|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|C|Transactivates IFN-γ in responder cells
-herv-rna|produce|+|catalytic_activation|z-rna|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ERV transcripts are the major endogenous Z-form source
-alu-dsrna|produce|+|catalytic_activation|z-rna|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||alternating purine-pyrimidine repeats flip to Z under torsional strain
-l1-mrna|produce|+|catalytic_activation|z-rna|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||
-adar1|inhibit|-|allosteric_suppression|z-rna|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||THE MISSING BRANCH — the Zα domain competes with ZBP1 for Z-form, a job separate from A-to-I editing
-adar1|inhibit|-|allosteric_suppression|zbp1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ADAR1 Zα mutants cause ZBP1-dependent disease rescued by deleting ZBP1, not MDA5
-z-rna|sense|+|nucleic_acid_sensing|zbp1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Zα domains read the left-handed conformation
-zbp1|activate|+|catalytic_activation|ripk3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|{"string_combined":0.998,"string_experimental":0.92,"string_database":0.9}||RHIM–RHIM amyloid-like nucleation
-zbp1|activate|+|catalytic_activation|ripk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||RHIM engagement — the branch point between survival and death
-ripk1|activate|+|catalytic_activation|ripk3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ripk1|activate|+|catalytic_activation|nfkb|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the survival branch — ubiquitin editing decides which one runs
-lubac|ubiq|+|ubiquitin_conjugation|ripk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||M1 chains push RIPK1 toward survival signalling
-ripk3|phos|+|kinase_phosphorylation|mlkl|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||activation-loop phosphorylation → oligomerisation
-mlkl|drive|+|catalytic_activation|necroptosis|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||direct plasma-membrane permeabilisation
-casp8|degrade|-|allosteric_suppression|ripk3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||cleaves RIPK1/RIPK3 — losing this switches death mode rather than preventing death
-casp8|degrade|-|allosteric_suppression|ripk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-mlkl|activate|+|catalytic_activation|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|B|sub-lytic MLKL pores drive K⁺ efflux — a second, caspase-1-independent route to ASC specks
-necroptosis|release|+|organellar_damage_release|mtdna-frag|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-|A|lytic death spills mtDNA — the same cross-link pyroptosis makes, by a route no caspase inhibitor blocks
-zbp1|activate|+|catalytic_activation|panoptosome|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-nlrp3|bind|+|allosteric_binding|panoptosome|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ripk3|bind|+|allosteric_binding|panoptosome|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-casp8|bind|+|allosteric_binding|panoptosome|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-panoptosome|activate|+|catalytic_activation|casp1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the three death modes stop being separable here
-zbp1|activate|+|catalytic_activation|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ZBP1 was first described as a cytosolic DNA sensor driving IRF3
-isg-set|produce|+|catalytic_activation|zbp1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||ZBP1 is an ISG — the interferon state raises the sensor while retroelement de-repression raises the ligand
+nlrp3|activate|+|catalytic_activation|asc|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.995,"string_database":0.9}|B|PYD–PYD nucleation of the speck
+asc|activate|+|catalytic_activation|casp1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.995,"string_database":0.9}|B|CARD–CARD → proximity-induced autoprocessing
+casp1|produce|+|catalytic_activation|il1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.97,"string_database":0.9}|B|cleaves pro-IL-1β → mature IL-1β
+proil1b|produce|+|catalytic_activation|il1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|maturation
+casp1|produce|+|catalytic_activation|il18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.965,"string_database":0.9}|B|
+casp1|activate|+|catalytic_activation|gsdmd|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||cleaves GSDMD
+gsdmd|translocate|+|compartment_translocation|gsdmd-pore|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||N-terminal fragment oligomerises in the plasma membrane
+gsdmd-pore|release|+|organellar_damage_release|il1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||unconventional secretion
+gsdmd-pore|drive|+|catalytic_activation|pyroptosis|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||above lytic threshold
+il1b|activate|+|catalytic_activation|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|IL-1R → further NF-κB priming (Loop B closure)
+pyroptosis|release|+|organellar_damage_release|mtdna-frag|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||DOTTED CROSS-LINK — pyroptotic mtDNA reactivates bystander cGAS
+il1b|produce|+|catalytic_activation|ceramide|I|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IL-1β → ceramide synthesis → inner-membrane injury
+traf6|activate|+|catalytic_activation|tak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||K63 chains read by TAB2/3
+tak1|phos|+|kinase_phosphorylation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||Ser177/181 on the activation loop
+lubac|produce|+|catalytic_activation|m1ub|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||the only E3 that builds head-to-tail chains
+m1ub|ubiq|+|ubiquitin_conjugation|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||linear chains on NEMO stabilise the active IKK complex
+a20|inhibit|-|allosteric_suppression|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||strips K63, adds K48 — the pathway's own off-switch
+cyld|inhibit|-|allosteric_suppression|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||removes K63 and M1 chains
+otulin|degrade|-|allosteric_suppression|m1ub|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||linear-chain-specific hydrolysis, counter-balancing LUBAC
+nfkb-targets|produce|+|catalytic_activation|a20|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||A20 is an NF-κB target gene — negative feedback
+nik|phos|+|kinase_phosphorylation|ikka|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+ikka|activate|+|catalytic_activation|relb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||p100 → p52 partial proteasomal processing
+relb|produce|+|catalytic_activation|baff|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+tbk1|activate|+|catalytic_activation|nik|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||TBK1/IKKε cross-talk into the non-canonical arm
+nfkb|translocate|+|compartment_translocation|nfkb-targets|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||nuclear import → κB elements
+nfkb-targets|produce|+|catalytic_activation|nlrp3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|NLRP3 protein — signal 1
+nfkb-targets|produce|+|catalytic_activation|proil1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|pro-IL-1β — inflammasome substrate 1
+nfkb-targets|produce|+|catalytic_activation|proil18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|pro-IL-18 — inflammasome substrate 2
+nfkb-targets|produce|+|catalytic_activation|il23|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||IL-23p19 — the Th17 driver
+nfkb-targets|produce|+|catalytic_activation|il6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+nfkb-targets|produce|+|catalytic_activation|tnfa|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+nfkb-targets|produce|+|catalytic_activation|cxcl8|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+nfkb-targets|produce|+|catalytic_activation|ikba|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||its own inhibitor — the oscillator a constitutive drive flattens
+proil18|produce|+|catalytic_activation|il18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|caspase-1 cleavage → mature IL-18
+casp1|activate|+|catalytic_activation|proil18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|cleaves pro-IL-18
+samhd1|inhibit|-|allosteric_suppression|nfkb-targets|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|-||BRAKE 4 — suppression here lowers the entire priming layer at once
+il18|bind|+|allosteric_binding|il18r|G|L1_in_silico|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 1 — mature IL-18 crosses to a NEIGHBOURING cell
+il18bp|inhibit|-|allosteric_suppression|il18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||decoy — only FREE IL-18 signals
+il18r|activate|+|catalytic_activation|myd88|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 2 — TIR domain, the same module TLRs use
+il12|bind|+|allosteric_binding|il12r|G|L1_in_silico|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 3 — second signal, from the same inflamed myeloid cell
+nfkb-targets|produce|+|catalytic_activation|il12|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||IL-12p35/p40 from the activated myeloid cell
+il12r|phos|+|kinase_phosphorylation|stat4|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 4 — TYK2/JAK2 → STAT4
+stat4|produce|+|catalytic_activation|tbet|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 5 — T-bet opens the IFNG locus
+tbet|activate|+|catalytic_activation|responder-cell|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|Th1/NK effector programme
+il18r|activate|+|catalytic_activation|responder-cell|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-||
+responder-cell|produce|+|catalytic_activation|ifng|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 6 — IFN-γ requires BOTH signals; neither alone suffices
+ifng|bind|+|allosteric_binding|ifngr|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|STEP 7 — paracrine return to the cell that started it
+stat1|bind|+|allosteric_binding|gaf|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|STEP 8 — STAT1 homodimer, not ISGF3
+gaf|translocate|+|compartment_translocation|gas|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|GAS elements — a different programme from ISRE
+gas|produce|+|catalytic_activation|cxcl9-11|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|CXCR3 ligands recruit more Th1/NK — tissue-level amplification
+gas|produce|+|catalytic_activation|ciita|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+gas|produce|+|catalytic_activation|nos2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+gas|produce|+|catalytic_activation|il18bp|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||the loop induces its own brake — as the type-I arm does with USP18
+gas|produce|+|catalytic_activation|m1|G|L1_in_silico|[monocyte,macrophage,microglia]|-|C|STEP 9 — classical macrophage activation
+cxcl9-11|drive|+|catalytic_activation|responder-cell|G|L1_in_silico|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|recruits more responders — Loop C amplifies at tissue scale
+m1|drive|+|catalytic_activation|mtros|G|L1_in_silico|[monocyte,macrophage,microglia]|-|C|STEP 10 — M1 metabolic reprogramming raises mtROS
+m1|produce|+|catalytic_activation|succinate|G|L1_in_silico|[monocyte,macrophage,microglia]|-|C|broken TCA cycle → succinate accumulation
+nos2|inhibit|-|allosteric_suppression|etc-i|G|L1_in_silico|[monocyte,macrophage,microglia]|-||NO S-nitrosylates Complex I
+nos2|inhibit|-|allosteric_suppression|etc-iv|G|L1_in_silico|[monocyte,macrophage,microglia]|-||NO competes with O₂ at cytochrome c oxidase
+m1|inhibit|-|allosteric_suppression|deltapsi|S|L3_cell_line|[monocyte,macrophage,microglia]|-||M1 skewing accompanies ΔΨm collapse in Samhd1-KO
+tlr7|activate|+|catalytic_activation|pdc|G|L3_cell_line|[dendritic_cell]|-||ssRNA — a pDC expresses essentially only TLR7 and TLR9 among the TLRs
+tlr9|activate|+|catalytic_activation|pdc|G|L3_cell_line|[dendritic_cell]|-||CpG DNA — the receptor the LL-37 arm converts a SELF ligand for
+irf7|activate|+|catalytic_activation|pdc|G|L3_cell_line|[dendritic_cell]|-||constitutively high resting IRF7 licenses the burst — a licensing step, not lineage
+pdc|produce|+|catalytic_activation|ifna|G|L4_primary_human|[dendritic_cell]|-||the IFN-α burst — the reason one rare cell type can set the interferon tone of a tissue
+il23|bind|+|allosteric_binding|il23r|G|L1_in_silico|[monocyte,macrophage,cd4_tcell]|-||
+il23r|phos|+|kinase_phosphorylation|stat3|G|L1_in_silico|[cd4_tcell]|-||JAK2/TYK2 → STAT3
+il6|activate|+|catalytic_activation|stat3|G|L1_in_silico|[monocyte,macrophage,cd4_tcell]|-||IL-6 is the other STAT3 input — with TGF-β it initiates Th17
+stat3|produce|+|catalytic_activation|rorgt|G|L1_in_silico|[cd4_tcell]|-||
+rorgt|activate|+|catalytic_activation|th17-cell|G|L1_in_silico|[cd4_tcell]|-||licenses the IL-17 programme
+th17-cell|produce|+|catalytic_activation|il17a|G|L1_in_silico|[cd4_tcell]|-||
+th17-cell|produce|+|catalytic_activation|il22|G|L1_in_silico|[cd4_tcell]|-||
+il1b|activate|+|catalytic_activation|th17-cell|G|L1_in_silico|[monocyte,macrophage,cd4_tcell]|-||IL-1β is a Th17-stabilising signal — Loop B feeds the Th17 arm directly
+il17a|bind|+|allosteric_binding|il17ra|G|L1_in_silico|[]|-||
+il17ra|activate|+|catalytic_activation|act1|G|L1_in_silico|[]|-||
+act1|activate|+|catalytic_activation|traf6|G|L1_in_silico|[]|-||IL-17 → NF-κB in the target tissue — a feed-forward at tissue level
+tnfa|activate|+|catalytic_activation|il17ra|G|L1_in_silico|[]|-||TNF-α synergy — IL-17 is weak alone and potent with it
+ifng|drive|+|catalytic_activation|m1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+cxcl9-11|drive|+|catalytic_activation|naci|I|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||CXCL10 as a NACI workup biomarker
+il22|drive|+|catalytic_activation|psa|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||
+il18r|activate|+|catalytic_activation|il18r-nfkb|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|IL-18R recruits MyD88 → NF-κB
+il18r-nfkb|produce|+|transcriptional_priming|ifng|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|Transactivates IFN-γ in responder cells
+herv-rna|produce|+|catalytic_activation|z-rna|G|L3_cell_line|[monocyte,macrophage,microglia]|-||retroelement/ERV transcripts are a candidate endogenous Z-form source
+alu-dsrna|produce|+|catalytic_activation|z-rna|G|L1_in_silico|[monocyte,macrophage,microglia]|-||alternating purine-pyrimidine repeats flip to Z under torsional strain
+l1-mrna|produce|+|catalytic_activation|z-rna|I|L1_in_silico|[monocyte,macrophage,microglia]|-||
+adar1|inhibit|-|allosteric_suppression|z-rna|G|L3_cell_line|[monocyte,macrophage,microglia]|-||THE MISSING BRANCH — the Zα domain competes with ZBP1 for Z-form, a job separate from A-to-I editing
+adar1|inhibit|-|allosteric_suppression|zbp1|G|L5_animal_in_vivo|[monocyte,macrophage,microglia]|-||ADAR1 Zα mutants cause ZBP1-dependent disease rescued by deleting ZBP1, not MDA5
+z-rna|sense|+|nucleic_acid_sensing|zbp1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||Zα domains read the left-handed conformation
+zbp1|activate|+|catalytic_activation|ripk3|G|L3_cell_line|[monocyte,macrophage,microglia]|{"string_combined":0.998,"string_experimental":0.92,"string_database":0.9}||RHIM–RHIM amyloid-like nucleation
+zbp1|activate|+|catalytic_activation|ripk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||RHIM engagement — the branch point between survival and death
+ripk1|activate|+|catalytic_activation|ripk3|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+ripk1|activate|+|catalytic_activation|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia]|-||the survival branch — ubiquitin editing decides which one runs
+lubac|ubiq|+|ubiquitin_conjugation|ripk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||M1 chains push RIPK1 toward survival signalling
+ripk3|phos|+|kinase_phosphorylation|mlkl|G|L3_cell_line|[monocyte,macrophage,microglia]|-||activation-loop phosphorylation → oligomerisation
+mlkl|drive|+|catalytic_activation|necroptosis|G|L1_in_silico|[monocyte,macrophage,microglia]|-||direct plasma-membrane permeabilisation
+casp8|degrade|-|allosteric_suppression|ripk3|G|L5_animal_in_vivo|[monocyte,macrophage,microglia]|-||cleaves RIPK1/RIPK3 — losing this switches death mode rather than preventing death
+casp8|degrade|-|allosteric_suppression|ripk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+mlkl|activate|+|catalytic_activation|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia]|-|B|sub-lytic MLKL pores drive K⁺ efflux — a second, caspase-1-independent route to ASC specks
+necroptosis|release|+|organellar_damage_release|mtdna-frag|G|L1_in_silico|[monocyte,macrophage,microglia]|-|A|lytic death spills mtDNA — the same cross-link pyroptosis makes, by a route no caspase inhibitor blocks
+zbp1|activate|+|catalytic_activation|panoptosome|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+nlrp3|bind|+|allosteric_binding|panoptosome|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+ripk3|bind|+|allosteric_binding|panoptosome|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+casp8|bind|+|allosteric_binding|panoptosome|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+panoptosome|activate|+|catalytic_activation|casp1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||the three death modes stop being separable here
+zbp1|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||ZBP1 was first described as a cytosolic DNA sensor driving IRF3
+isg-set|produce|+|catalytic_activation|zbp1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||ZBP1 is an ISG — the interferon state raises the sensor while retroelement de-repression raises the ligand
 necroptosis|drive|+|catalytic_activation|mecfs|I|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||candidate contributor — untested
 l1-locus|produce|+|catalytic_activation|l1-mrna|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||Pol II from the internal 5′UTR promoter
 l1-mrna|produce|+|catalytic_activation|orf1p|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||cap-dependent translation
@@ -1022,41 +1022,41 @@ trailshort|inhibit|-|allosteric_suppression|car-t|G|L5_animal_in_vivo|[cd4_tcell
 trailshort|drive|+|catalytic_activation|immunodef|G|L5_animal_in_vivo|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||T-cell hyporesponsiveness → impaired viral and tumour control
 anti-trailshort|inhibit|-|allosteric_suppression|trailshort|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||neutralises the ligand — restores IFN-γ in patient B-cell malignancy co-cultures
 nsc87877|inhibit|-|allosteric_suppression|shp1|G|L4_primary_human|[cd4_tcell,cd8_tcell,nk_cell]|-||SHP-1 inhibition — partial rescue of p–ZAP-70, fuller rescue of CD69/CD40L and IFN-γ
-upadacitinib|inhibit|-|allosteric_suppression|jak1|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 2 — JAK1-selective
-brepocitinib|inhibit|-|allosteric_suppression|tyk2|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||dual JAK1/TYK2
-amlexanox|inhibit|-|allosteric_suppression|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 5 — cuts IFN production at source
-amlexanox|inhibit|-|allosteric_suppression|ikke|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-amlexanox|inhibit|-|allosteric_suppression|samhd1|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||TRADEOFF — suppressing IRF3 lowers SAMHD1 transcription in an already haploinsufficient cell
-polyiclc|activate|+|catalytic_activation|tlr3|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||Arms 3–4 — agonist, the "upward" direction
-vbit4|inhibit|-|allosteric_suppression|vdac1-oligo|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 7 — outer membrane, ≤5 µM ceiling
-imsb301|inhibit|-|allosteric_suppression|cgas|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 8 — cytosolic sensor
-mcc950|inhibit|-|allosteric_suppression|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 9 — NACHT Walker B motif
-plp|inhibit|-|allosteric_suppression|pnc1|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 10 — inner membrane, upstream of BOTH loops
-allopurinol|inhibit|-|allosteric_suppression|urate|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||candidate adjunct if the GOLD stream is real
-abe8e|inhibit|-|allosteric_suppression|a565t|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||A·T → G·C reversion to wild type
-samhd1|inhibit|-|allosteric_suppression|arac|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||hydrolyzes Ara-CTP; haploinsufficiency causes hypersensitivity
-samhd1|inhibit|-|allosteric_suppression|gemcitabine|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||hydrolyzes dFdCTP; loss enhances cytotoxicity
-ifnb|drive|+|catalytic_activation|naci|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||tonic, moderate-amplitude, source-driven
-isg-set|drive|+|catalytic_activation|naci|I|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||intracellular ISG induction with flat serum cytokines
-atp|drive|+|catalytic_activation|pem|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||the JAK-refractory bioenergetic residual
-atp|drive|+|catalytic_activation|mecfs|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
+upadacitinib|inhibit|-|allosteric_suppression|jak1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||Arm 2 — JAK1-selective
+brepocitinib|inhibit|-|allosteric_suppression|tyk2|G|L1_in_silico|[monocyte,macrophage,microglia]|-||dual JAK1/TYK2
+amlexanox|inhibit|-|allosteric_suppression|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||Arm 5 — cuts IFN production at source
+amlexanox|inhibit|-|allosteric_suppression|ikke|G|L3_cell_line|[monocyte,macrophage,microglia]|-||
+amlexanox|inhibit|-|allosteric_suppression|samhd1|I|L1_in_silico|[monocyte,macrophage,microglia]|-||TRADEOFF — suppressing IRF3 lowers SAMHD1 transcription in an already haploinsufficient cell
+polyiclc|activate|+|catalytic_activation|tlr3|G|L1_in_silico|[monocyte,macrophage,microglia]|-||Arms 3–4 — agonist, the "upward" direction
+vbit4|inhibit|-|allosteric_suppression|vdac1-oligo|S|L3_cell_line|[monocyte,macrophage,microglia]|-||Arm 7 — outer membrane, ≤5 µM ceiling
+imsb301|inhibit|-|allosteric_suppression|cgas|S|L4_primary_human|[monocyte,macrophage,microglia,cd4_tcell]|-||Arm 8 — cytosolic sensor
+mcc950|inhibit|-|allosteric_suppression|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia]|-||Arm 9 — NACHT Walker B motif
+plp|inhibit|-|allosteric_suppression|pnc1|I|L1_in_silico|[monocyte,macrophage,microglia]|-||Arm 10 — inner membrane, upstream of BOTH loops
+allopurinol|inhibit|-|allosteric_suppression|urate|I|L1_in_silico|[monocyte,macrophage,microglia]|-||candidate adjunct if the GOLD stream is real
+abe8e|inhibit|-|allosteric_suppression|a565t|I|L1_in_silico|[monocyte,macrophage,microglia]|-||A·T → G·C reversion to wild type
+samhd1|inhibit|-|allosteric_suppression|arac|S|L4_primary_human|[monocyte,macrophage,microglia]|-||hydrolyzes Ara-CTP; haploinsufficiency causes hypersensitivity
+samhd1|inhibit|-|allosteric_suppression|gemcitabine|S|L4_primary_human|[monocyte,macrophage,microglia]|-||hydrolyzes dFdCTP; loss enhances cytotoxicity
+ifnb|drive|+|catalytic_activation|naci|I|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||tonic, moderate-amplitude, source-driven
+isg-set|drive|+|catalytic_activation|naci|I|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||intracellular ISG induction with flat serum cytokines
+atp|drive|+|catalytic_activation|pem|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||the JAK-refractory bioenergetic residual
+atp|drive|+|catalytic_activation|mecfs|G|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||
 naci|drive|+|catalytic_activation|mecfs|I|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||
-il17a|drive|+|catalytic_activation|psa|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||enthesitis at tendon–bone insertions
-il17a|drive|+|catalytic_activation|connective|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||
-ifng|drive|+|catalytic_activation|connective|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||STAT1 blocks collagen-I synthesis (Hit 1)
-mcp1|drive|+|catalytic_activation|steatosis|S|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||visceral adipocyte inflammation → android distribution
-il1b|drive|+|catalytic_activation|steatosis|S|L1_in_silico|[monocyte,macrophage,microglia,cd4_tcell]|-||JAK-resistant hepatic insulin resistance
-hif1a|drive|+|catalytic_activation|steatosis|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||Warburg shift
-ifnb|drive|+|catalytic_activation|immunodef|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||IFN-mediated lymphocyte attrition
-ifnb|drive|+|catalytic_activation|dysautonomia|G|L3_cell_line|[monocyte,macrophage,microglia,cd4_tcell]|-||small-fibre neuropathy
-genomic-instability|drive|+|catalytic_activation|cancer-risk|S|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||
-tadekinig-alfa|inhibit|-|allosteric_suppression|il18|S|L1_in_silico|[systemic_immune]|-|C|Neutralizes free IL-18
-isg-set|drive|+|catalytic_activation|nk-lymphopenia|S|L6_human_clinical|[systemic_immune]|-||Tonic ISG elevation tracks with peripheral NK depletion (single-patient, treatment-response correlation, not isolated mechanism)
+il17a|drive|+|catalytic_activation|psa|G|L4_primary_human|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||enthesitis at tendon–bone insertions
+il17a|drive|+|catalytic_activation|connective|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||
+ifng|drive|+|catalytic_activation|connective|G|L4_primary_human|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||STAT1 blocks collagen-I synthesis (Hit 1)
+mcp1|drive|+|catalytic_activation|steatosis|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||visceral adipocyte inflammation → android distribution
+il1b|drive|+|catalytic_activation|steatosis|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||JAK-resistant hepatic insulin resistance
+hif1a|drive|+|catalytic_activation|steatosis|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||Warburg shift
+ifnb|drive|+|catalytic_activation|immunodef|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||IFN-mediated lymphocyte attrition
+ifnb|drive|+|catalytic_activation|dysautonomia|G|L1_in_silico|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||small-fibre neuropathy
+genomic-instability|drive|+|catalytic_activation|cancer-risk|S|L6_human_clinical|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||
+tadekinig-alfa|inhibit|-|allosteric_suppression|il18|G|L3_cell_line|[systemic_immune]|-|C|Neutralizes free IL-18
+isg-set|drive|+|catalytic_activation|nk-lymphopenia|S|L6_human_clinical|[systemic_immune,nk_cell]|-||Tonic ISG elevation tracks with peripheral NK depletion (single-patient, treatment-response correlation, not isolated mechanism)
 isg-set|drive|+|catalytic_activation|memory-b-deficiency|S|L6_human_clinical|[systemic_immune,b_cell]|-||Tonic ISG elevation tracks with switched memory B-cell block, reversed by JAK inhibition
 isg-set|drive|+|catalytic_activation|hypergammaglobulinemia|S|L6_human_clinical|[systemic_immune,b_cell]|-||Tonic ISG elevation tracks with polyclonal IgG elevation, uncoupled from specific autoantibodies
 isg-set|drive|+|catalytic_activation|esr-crp-dissociation|S|L6_human_clinical|[systemic_immune,hepatic]|-||Tonic ISG elevation plausibly explains the ESR-high/CRP-normal pattern -- reported, not mechanistically proven, by this citation
 isg-set|drive|+|catalytic_activation|perniosis|S|L6_human_clinical|[systemic_immune,cardiovascular]|-||Tonic Type-I IFN drives microvascular endotheliopathy and acral tissue loss, reversed by JAK inhibition
-tofacitinib|inhibit|-|allosteric_suppression|isg-set|S|L6_human_clinical|[monocyte,macrophage,cd4_tcell]|-||JAK1/3 blockade normalizes the 6-gene ISG panel in a complete-SAMHD1-loss patient
+tofacitinib|inhibit|-|allosteric_suppression|isg-set|S|L6_human_clinical|[monocyte,macrophage]|-||JAK1/3 blockade normalizes the 6-gene ISG panel in a complete-SAMHD1-loss patient
 
 §9 LOOPS AND STREAMS
 # A stream is a VIEW over the graph: an ordered node chain, not extra data.
@@ -1222,14 +1222,15 @@ liu2026nlrp3|Liu D, Zhou C, Wang X, Luo Z, Xu R, … Hancks DC, Chen EH, Liang S
 li2025hipsc|Li H, Afroze M, Arora G et al. SAMHD1 knockout hiPSC model enables high lentiviral transduction efficiency in myeloid cell types. Front Genet 2025;16:1574545.|doi:10.3389/fgene.2025.1574545
 swanson2019|Swanson KV, Deng M, Ting JP-Y. The NLRP3 inflammasome: molecular activation and regulation to therapeutics. Nat Rev Immunol 2019;19:477–89.|doi:10.1038/s41577-019-0165-0
 martinon2006|Martinon F et al. Gout-associated uric acid crystals activate the NALP3 inflammasome. Nature 2006;440:237–41.|doi:10.1038/nature04516
+novick1999|Novick D, Kim SH, Fantuzzi G, Reznikov LL, Dinarello CA, Rubinstein M. Interleukin-18 binding protein: a novel modulator of the Th1 cytokine response. Immunity 1999;10(1):127-136.|doi:10.1016/S1074-7613(00)80013-8
 coll2019|Coll RC et al. MCC950 directly targets the NLRP3 ATP-hydrolysis motif for inflammasome inhibition. Nat Commun 2019;10:2986.|doi:10.1038/s41467-019-10702-2
-shi2015gsdmd|Shi J et al. Cleavage of GSDMD by inflammatory caspases determines pyroptotic cell death. Nature 2015;526:660–5.|
+shi2015gsdmd|Shi J et al. Cleavage of GSDMD by inflammatory caspases determines pyroptotic cell death. Nature 2015;526:660–5.|doi:10.1038/nature15514
 zhang2015isg15|Zhang X et al. Human intracellular ISG15 prevents interferon-α/β over-amplification and auto-inflammation. Nature 2015;517:89–93.|doi:10.1038/nature13801
 bhimavarapu2015|Sisler JD, Morgan M, Raje V, Vogel KM, Chellappan SP, Spiegel S, Larner AC. The Signal Transducer and Activator of Transcription 1 (STAT1) Inhibits Mitochondrial Biogenesis in Liver and Fatty Acid Oxidation in Adipocytes. PLoS One 2015;10(12):e0144444.|doi:10.1371/journal.pone.0144444
 mihaylova2024|Mihaylova V et al. JAK inhibitors improve ATP production and mitochondrial function in rheumatoid arthritis: a pilot study. Rheumatol Int 2024;44(1):57-65.|doi:10.1007/s00296-023-05501-4
 fremond2023|Frémond ML, Hully M, Fournier B et al. JAK Inhibition in Aicardi-Goutières Syndrome: a Monocentric Multidisciplinary Real-World Approach Study. J Clin Immunol 2023;43(6):1436-1447.|doi:10.1007/s10875-023-01500-z
 rodriguez2023|Emreol HE, Ünal D, Ayvaz DNC, Bilginer Y, Özen S. One mutation, divergent journeys: expanding the clinical spectrum of homozygous SAMHD1 deficiency in childhood. Rheumatology (Oxford) 2026;65(1):keaf695.|doi:10.1093/rheumatology/keaf695
-tesser2025|Tesser A et al. Type I interferon signature: a quantitative standardised method for assessment in interferonopathies. Clin Exp Immunol 2025;219(1):uxaf018.|
+tesser2025|Tesser A, Bocca P, Ulivi M, Pin A, Pastorino C, Cangelosi D, Santori E, Drago E, Caorsi R, Candotti F, Gattorno M, Tommasini A, Volpi S. Type I interferon signature: a quantitative standardized method for clinical application. Clin Exp Immunol 2025;219(1):uxaf018.|doi:10.1093/cei/uxaf018
 crow2006trex1|Crow YJ et al. Mutations in the gene encoding the 3′-5′ DNA exonuclease TREX1 cause Aicardi-Goutières syndrome at the AGS1 locus. Nat Genet 2006;38:917–20.|doi:10.1038/ng1845
 stetson2008|Stetson DB et al. Trex1 prevents cell-intrinsic initiation of autoimmunity. Cell 2008;134:587–98.|doi:10.1016/j.cell.2008.06.032
 crow2006rnaseh2|Crow YJ et al. Mutations in genes encoding ribonuclease H2 subunits cause Aicardi-Goutières syndrome and mimic congenital viral brain infection. Nat Genet 2006;38:910–6.|doi:10.1038/ng1842
@@ -1253,11 +1254,11 @@ zhang2024l1cgas|Reviews of L1 cDNA as a cGAS ligand and the retroelement origin 
 jiao2020|Jiao H, Wachsmuth L, Kumari S et al. Z-nucleic-acid sensing triggers ZBP1-dependent necroptosis and inflammation. Nature 2020;580:391–395.|doi:10.1038/s41586-020-2129-8
 zhang2022adar|Zhang T, Yin C, Fedorov A et al. ADAR1 masks the cancer immunotherapeutic promise of ZBP1-driven necroptosis. Nature 2022;606:594–602.|doi:10.1038/s41586-022-04753-7
 dereuver2022|de Reuver R, Verdonck S, Dierick E et al. ADAR1 prevents autoinflammation by suppressing spontaneous ZBP1 activation. Nature 2022;607:784–789.|doi:10.1038/s41586-022-04974-w
-upton2012|Upton JW, Kaiser WJ, Mocarski ES. DAI/ZBP1/DLM-1 complexes with RIP3 to mediate virus-induced programmed necrosis. Cell Host Microbe 2012;11:290–297.|doi:10.1016/j.chom.2012.01.016
+upton2012|Upton JW, Kaiser WJ, Mocarski ES. DAI/ZBP1/DLM-1 complexes with RIP3 to mediate virus-induced programmed necrosis that is targeted by murine cytomegalovirus vIRA. Cell Host Microbe 2012;11:290–297.|doi:10.1016/j.chom.2012.01.016
 sun2012mlkl|Sun L, Wang H, Wang Z et al. Mixed lineage kinase domain-like protein mediates necrosis signaling downstream of RIP3 kinase. Cell 2012;148:213–227.|doi:10.1016/j.cell.2011.11.031
 kaiser2011|Kaiser WJ, Upton JW, Long AB et al. RIP3 mediates the embryonic lethality of caspase-8-deficient mice. Nature 2011;471:368–372.|doi:10.1038/nature09857
 conos2017|Conos SA, Chen KW, De Nardo D et al. Active MLKL triggers the NLRP3 inflammasome in a cell-intrinsic manner. PNAS 2017;114:E961–E969.|doi:10.1073/pnas.1613305114
-malireddi2019|Malireddi RKS, Kesavardhana S, Kanneganti T-D. ZBP1 and PANoptosis. Front Cell Infect Microbiol 2019;9:406.|doi:10.3389/fcimb.2019.00406
+malireddi2019|Malireddi RKS, Kesavardhana S, Kanneganti T-D. ZBP1 and TAK1: Master Regulators of NLRP3 Inflammasome/Pyroptosis, Apoptosis, and Necroptosis (PAN-optosis). Front Cell Infect Microbiol 2019;9:406.|doi:10.3389/fcimb.2019.00406
 kawane2006|Kawane K, Ohtani M, Miwa K et al. Chronic polyarthritis caused by mammalian DNA that escapes from degradation in macrophages. Nature 2006;443:998–1002.|doi:10.1038/nature05245
 rodero2017|Rodero MP, Tesser A, Bartok E et al. Type I interferon-mediated autoinflammation due to DNASE2 deficiency. Nat Commun 2017;8:2176.|doi:10.1038/s41467-017-01932-3
 lan2014|Lan YY, Londoño D, Bouley R, Rooney MS, Hacohen N. Dnase2a deficiency uncovers lysosomal clearance of damaged nuclear DNA via autophagy. Cell Rep 2014;9:180–192.|doi:10.1016/j.celrep.2014.08.074
@@ -1272,7 +1273,7 @@ kuroda2020|Kuroda M et al. Interferon regulatory factor 7 mediates obesity-assoc
 ghazarian2017|Ghazarian M et al. Type I interferon responses drive intrahepatic T cells to promote metabolic syndrome. Sci Immunol 2017;2(10):eaai7616.|
 li2013irf7|Wang XA et al. IRF7 deficiency prevents diet-induced obesity and insulin resistance. Am J Physiol Endocrinol Metab 2013;305(4):E485–95.|doi:10.1152/ajpendo.00505.2012
 reilly2013|Reilly SM et al. An inhibitor of the protein kinases TBK1 and IKK-ε improves obesity-related metabolic dysfunctions in mice. Nat Med 2013;19(3):313–21.|doi:10.1038/nm.3082
-bjork2025|Björk A et al. Amlexanox inhibits production of type I interferon and suppresses B cell differentiation in vitro. RMD Open 2025;11:e005351.|doi:10.1136/rmdopen-2024-005351
+bjork2025|Björk A et al. Amlexanox inhibits production of type I interferon and suppresses B cell differentiation in vitro: a possible therapeutic option for systemic lupus erythematosus and other systemic inflammatory diseases. RMD Open 2025;11:e005351.|doi:10.1136/rmdopen-2024-005351
 che2025|Che X, Hornig M, Bateman L, Klimas N, Komaroff AL, Lipkin WI et al. Heightened innate immunity may trigger chronic inflammation, fatigue and post-exertional malaise in ME/CFS. npj Metab Health Dis 2025;3:34.|doi:10.1038/s44324-025-00079-w
 ghosh2001|Ghosh AK, Yuan W, Mori Y, Chen SJ, Varga J. Antagonistic regulation of type I collagen gene expression by interferon-gamma and transforming growth factor-beta. Integration at the level of p300/CBP transcriptional coactivators. J Biol Chem 2001;276(14):11041–8.|doi:10.1074/jbc.M004709200
 ulloa1999|Ulloa L, Doody J, Massagué J. Inhibition of transforming growth factor-beta/SMAD signalling by the interferon-gamma/STAT pathway. Nature 1999;397(6721):710–3.|doi:10.1038/17826

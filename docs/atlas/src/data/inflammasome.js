@@ -38,12 +38,12 @@ export const nodes = [
       "docSiege"
     ],
     "evidence_tier": "L4_primary_human",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "kinetics": {
       "ASC_nucleation_rate_s": 0.85,
@@ -83,12 +83,12 @@ export const nodes = [
       "dombrowski2011"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- of this node's 3 refs, hornung2009aim2/fernandes2009aim2 are THP-1/macrophage-native and independently anchor the myeloid array; dombrowski2011 (cultured keratinocytes + psoriatic skin) is the same PR #112 keratinocyte finding already quarantined to the aim2->psa edge (its own cellContextNote there). The keratinocyte content is confined to one sentence of this node's own detail field ('In psoriatic lesions AIM2 is activated by cytosolic DNA in keratinocytes') -- it does not extend this node's lineage array, since the other 4 AIM2-touching edges (mtdna-frag->aim2, l1-cdna->aim2, micronucleus->aim2, isg-set->aim2) carry no keratinocyte citation. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -114,13 +114,14 @@ export const nodes = [
       "unterholzner2010",
       "jonsson2017"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): jonsson2017 used both THP-1 and primary human monocyte-derived macrophages (siRNA knockdown validated in primary MDMs per the paper's own methods) -- this node's own summary already says 'in human macrophages'.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -140,13 +141,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Bridges adjacent NLRP3 subunits; required for oligomerisation and mutually exclusive with mitosis.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -164,7 +166,7 @@ export const nodes = [
       18
     ],
     "lod": 1,
-    "evidence": "S",
+    "evidence": "G",
     "key": true,
     "summary": "Single micron-scale prion-like polymer per cell — the visible, countable commitment step of the loop.",
     "detail": "ASC speck formation by immunofluorescence is a primary Arm 1 readout precisely because it is binary and countable. Specks are also released intact and keep processing IL-1β extracellularly.",
@@ -172,13 +174,14 @@ export const nodes = [
       "swanson2019",
       "doc10arm"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): downgraded L3_cell_line -> L1_in_silico -- swanson2019 is a Nat Rev Immunol review and doc10arm is this project's own study proposal; neither demonstrates anything in any experimental system, so L3_cell_line asserted a cell-line demonstration that does not exist in the citation chain (same class as drugs.js's brepocitinib/abe8e finding, both capped on a prospectus-only citation). The original 2026-09-14 note's comparison to sensing.js/nfkb.js was based on those files' nfkb/nfkb-targets nodes, which are NOT swanson2019-alone (they also cite wang2018, a genuine primary-human paper) -- not a valid precedent for this node's tier.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_xrefs": {
       "uniprot": "Q9ULZ3",
@@ -201,19 +204,20 @@ export const nodes = [
       10
     ],
     "lod": 1,
-    "evidence": "S",
+    "evidence": "G",
     "summary": "Proximity-induced autoprocessing on the ASC filament; cleaves pro-IL-1β, pro-IL-18 and GSDMD.",
     "detail": "Note the compartment: caspase-1 activation is strictly cytosolic. It does not happen inside the mitochondrion, even though its trigger comes from there.",
     "refs": [
       "docSiege"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): sole ref is docSiege, an internal project document -- no external literature basis. Matches the sensing.js/PR #125 docSiege-only precedent.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_xrefs": {
       "uniprot": "P29466",
@@ -240,13 +244,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Transcribed by NF-κB (signal 1). Held inert until caspase-1 cleaves it.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -276,12 +281,12 @@ export const nodes = [
       "doc10arm"
     ],
     "evidence_tier": "L4_primary_human",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_xrefs": {
       "uniprot": "P01584",
@@ -305,15 +310,16 @@ export const nodes = [
       20
     ],
     "lod": 2,
-    "evidence": "S",
+    "evidence": "G",
     "summary": "Co-matured with IL-1β; drives IFN-γ from NK and T cells, linking Loop B back into the interferon arm.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): evidence downgraded S -> G -- zero refs, no SAMHD1-specific citation for the co-maturation claim.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped along with the rest of this file. This node's own summary describes a producer/target split (IL-18 drives NK/T-cell IFN-gamma) similar to ifn.js's il23/nfkb.js's baff, but is zero-ref -- adding nk_cell/cd4_tcell here would be a new uncited assertion, not a convergence. The IL-18->NK/Th1 responder arm is modelled downstream in cytokines.js, not here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_xrefs": {
       "uniprot": "Q14116",
@@ -343,12 +349,12 @@ export const nodes = [
       "shi2015gsdmd"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_xrefs": {
       "uniprot": "P57764",
@@ -373,13 +379,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "Unconventional secretion channel below lytic threshold; the pyroptotic lesion above it.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -403,7 +410,8 @@ export const nodes = [
     "refs": [
       "docSiege"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): sole ref is docSiege, an internal project document -- no external literature basis. Same class as celldeath.js's necroptosis tier self-contradiction (PR #134): this node's own producing edge (gsdmd-pore->pyroptosis) was zero-ref, now also L1_in_silico.",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",
@@ -429,13 +437,14 @@ export const nodes = [
     "lod": 2,
     "evidence": "G",
     "summary": "The classic signal-2 route: extracellular ATP from dying cells → K⁺ efflux → NLRP3 assembly.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -462,13 +471,14 @@ export const nodes = [
     "refs": [
       "martinon2006"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): claim-support issue, not a system-tier one -- martinon2006's own content is entirely MSU/CPPD crystal-NALP3 engagement; it has no purine-catabolism or uricase content and does not support this node's dGTP->urate biochemistry claim. The dGTP->urate step is inferred biochemistry with no cited source; capped rather than left implying martinon2006 demonstrates it.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -495,12 +505,12 @@ export const nodes = [
       "docSiege"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 12 citations resolve a T-cell-intrinsic finding for the NLRP3/AIM2 inflammasome-pyroptosis axis (liu2026nlrp3 is myeloid-conditional Samhd1-KO; hornung2009aim2/fernandes2009aim2/martinon2006/shi2015gsdmd are THP-1/BMDM-native; jonsson2017/unterholzner2010 are THP-1 + primary human MDM; dombrowski2011 is keratinocyte, quarantined to the aim2 node/aim2->psa edge, see their own notes). No ipsc basis to swap in either -- no stem-cell citation anywhere here. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "dendritic_cell",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   }
 ];
@@ -515,18 +525,20 @@ export const edges = [
       "inflammasome",
       "nfkb"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "B",
     "refs": [
       "swanson2019"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): downgraded L3_cell_line -> L1_in_silico -- sole ref swanson2019 is a review, demonstrating nothing in any experimental system. The 2026-09-14 note flagged mito.js's swanson2019-citing mtros node (still L4_primary_human) as a comparison point; verified that node's tier directly against its own citations (WebSearch, PMID 40384854) and confirmed it correctly rests on kim2025 (CD14+ monocytes from human sepsis patients), a citation this edge does not share -- so mtros and this edge are not actually reconcilable to the same tier, and no change to mtros is needed. This edge's own tier was simply too high on its own single review citation.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -540,13 +552,15 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -558,15 +572,16 @@ export const edges = [
       "inflammasome",
       "mito"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "B",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -582,13 +597,15 @@ export const edges = [
     "refs": [
       "martinon2006"
     ],
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with the msu node (L3_cell_line) on the shared martinon2006 citation (mouse macrophages) -- was incorrectly left at the generic zero-ref default despite carrying a real citation.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -603,11 +620,12 @@ export const edges = [
     "loop": "B",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -619,13 +637,15 @@ export const edges = [
       "inflammasome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -639,13 +659,15 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -657,13 +679,15 @@ export const edges = [
       "inflammasome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -681,11 +705,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -700,11 +725,12 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -716,13 +742,15 @@ export const edges = [
       "genome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -739,11 +767,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -754,13 +783,15 @@ export const edges = [
       "cgas-sting"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -773,13 +804,15 @@ export const edges = [
       "cgas-sting"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -795,13 +828,15 @@ export const edges = [
     "refs": [
       "jonsson2017"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with the ifi16 node's own tier fix -- same jonsson2017 citation, primary human MDMs.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -812,13 +847,15 @@ export const edges = [
       "inflammasome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. Also flagged: neither of the ifi16 node's own refs (unterholzner2010, jonsson2017) describes an IFI16 inflammasome -- both frame IFI16 as a cGAS/STING cooperator, matching that node's own summary ('a cooperator, not a rival'). A real primary source exists (Kerur N et al., Cell Host Microbe 2011;9(5):363-75, PMID 21575908) but is not currently in refs.js and its system is KSHV-infected endothelial cells, not myeloid -- not added here, flagged for a deliberate future decision rather than importing a non-myeloid system onto a myeloid-tagged edge.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -832,13 +869,15 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.3,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. Also flagged: dombrowski2011 (already on the aim2 node, see its own note) states IFN-gamma induces AIM2, which would ground this edge's interferon-inducibility claim -- not added here since doing so would import that citation's keratinocyte system onto this edge; left as an optional pickup rather than a silent gap.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -850,13 +889,15 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.32,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -890,15 +931,16 @@ export const edges = [
     "pathways": [
       "inflammasome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "B",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_scores": {
       "string_combined": 0.999,
@@ -914,15 +956,16 @@ export const edges = [
     "pathways": [
       "inflammasome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "B",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_scores": {
       "string_combined": 0.999,
@@ -938,15 +981,16 @@ export const edges = [
     "pathways": [
       "inflammasome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "B",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_scores": {
       "string_combined": 0.999,
@@ -962,15 +1006,16 @@ export const edges = [
     "pathways": [
       "inflammasome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "B",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -980,15 +1025,16 @@ export const edges = [
     "pathways": [
       "inflammasome"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "loop": "B",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ],
     "db_scores": {
       "string_combined": 0.999,
@@ -1010,11 +1056,12 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1026,13 +1073,15 @@ export const edges = [
       "inflammasome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "compartment_translocation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1044,13 +1093,15 @@ export const edges = [
       "inflammasome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "organellar_damage_release",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1062,13 +1113,15 @@ export const edges = [
       "inflammasome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. DELIBERATE HALF-CROSSING, kept myeloid rather than retagged to pyroptosis's own systemic array: GSDMD pore formation physically occurs inside the myeloid cell -- retagging systemic would mislabel which cell the step happens in, matching the celldeath.js/PR #134 mlkl->necroptosis precedent.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1083,13 +1136,15 @@ export const edges = [
     "evidence": "G",
     "loop": "B",
     "bend": 0.45,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1106,13 +1161,15 @@ export const edges = [
     "refs": [
       "docSiege"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): sole ref is docSiege, an internal project document -- no external literature basis. DELIBERATE HALF-CROSSING, kept myeloid rather than retagged to pyroptosis's own systemic array: mtDNA release from a lysing cell physically occurs inside the myeloid cell, matching the celldeath.js/PR #134 necroptosis->mtdna-frag precedent.",
     "interaction_type": "organellar_damage_release",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   },
   {
@@ -1124,17 +1181,19 @@ export const edges = [
       "inflammasome",
       "mito"
     ],
-    "evidence": "S",
+    "evidence": "I",
     "refs": [
       "gudz1997"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): gudz1997 is isolated rat heart/muscle mitochondria + HL-60 cells -- no primary human data. Matches mito.js's ceramide node, which already carries gudz1997 at L3_cell_line with the identical reasoning. Claim-support note (also why evidence was downgraded S->I): gudz1997 shows ceramide directly inhibits Complex III -- it supports only the second half of this edge's label (ceramide -> inner-membrane injury), not the first (IL-1b -> ceramide synthesis), which is uncited.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
-      "cd4_tcell"
+      "dendritic_cell"
     ]
   }
 ];

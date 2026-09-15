@@ -24,17 +24,18 @@ export const nodes = [
       "fremond2023",
       "mihaylova2024"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L6_human_clinical",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ],
     "db_xrefs": {
       "chembl": "CHEMBL3989938",
       "drugbank": "DB12399"
-    }
+    },
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier upgraded L4_primary_human -> L6_human_clinical -- this node's own summary/detail describe an actual observed clinical treatment response (doc10arm, this atlas's own subject), matching the already-L6 tofacitinib node's precedent for real-patient-response data. The evidence:\"S\" grade rests on doc10arm alone: fremond2023 is a real AGS JAK-inhibition cohort with zero SAMHD1 cases (per its own refs.js note) and mihaylova2024 is a rheumatoid-arthritis pilot -- neither is SAMHD1-specific, both are legitimate generic supporting-mechanism refs, not the basis for the S grade."
   },
   {
     "id": "brepocitinib",
@@ -56,13 +57,14 @@ export const nodes = [
     "refs": [
       "docGlass"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L3_cell_line -> L1_in_silico -- its sole ref (docGlass) is this project's executive prospectus, not wet-lab evidence; L3_cell_line asserted a cell-line demonstration that does not exist in the citation chain."
   },
   {
     "id": "tofacitinib",
@@ -88,13 +90,13 @@ export const nodes = [
     "evidence_tier": "L6_human_clinical",
     "cell_context": [
       "monocyte",
-      "macrophage",
-      "cd4_tcell"
+      "macrophage"
     ],
     "db_xrefs": {
       "chembl": "CHEMBL221959",
       "drugbank": "DB08895"
-    }
+    },
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped per the file-wide template fix. microglia deliberately NOT added, unlike every other drug node in this file -- baker2026's own refs.js note records this patient's phenotype as \"WITHOUT AGS neurological features or cerebral calcification,\" so its sole citation specifically lacks CNS/microglial involvement; adding microglia would assert something the citation does not support."
   },
   {
     "id": "amlexanox",
@@ -127,13 +129,13 @@ export const nodes = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ],
     "db_xrefs": {
       "chembl": "CHEMBL442",
       "drugbank": "DB00223"
-    }
+    },
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "id": "polyiclc",
@@ -163,9 +165,9 @@ export const nodes = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "id": "vbit4",
@@ -191,13 +193,14 @@ export const nodes = [
       "vbit4mem2025",
       "doc10arm"
     ],
-    "evidence_tier": "L4_primary_human",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L4_primary_human -> L3_cell_line. Its own citations do not demonstrate primary human tissue: rabinowitz2025's refs.js note already flags its system as SAMHD1-KO THP-1 monocytes (a cell line), and xu2023vdac1 is mouse/RAW264.7 (already L3_cell_line elsewhere in this atlas). vbit4mem2025 is an uncitable dosing note and doc10arm is a study proposal, not data."
   },
   {
     "id": "imsb301",
@@ -229,7 +232,8 @@ export const nodes = [
       "macrophage",
       "microglia",
       "cd4_tcell"
-    ]
+    ],
+    "cellContextNote": "Confirmed 2026-09-15 (cell_context literature-verification audit): cd4_tcell kept -- the sole documented exception in this file. han2026 (whole-PBMC SAMHD1-AGS scRNA-seq) is this file's only cd4_tcell basis and it is this node's own direct citation, unlike every other drug node here where han2026 is peripheral. Same whole-PBMC/paracrine caveat as sensing.js: the T-cell ISG signal could be paracrine (myeloid-made IFN, T cells responding) rather than cell-intrinsic."
   },
   {
     "id": "mcc950",
@@ -257,9 +261,9 @@ export const nodes = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "id": "plp",
@@ -292,9 +296,9 @@ export const nodes = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "id": "allopurinol",
@@ -321,9 +325,9 @@ export const nodes = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "id": "abe8e",
@@ -345,13 +349,14 @@ export const nodes = [
     "refs": [
       "docGlass"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L3_cell_line -> L1_in_silico -- its sole ref (docGlass) is this project's executive prospectus, not wet-lab evidence; L3_cell_line asserted a cell-line demonstration that does not exist in the citation chain."
   },
   {
     "id": "arac",
@@ -380,9 +385,9 @@ export const nodes = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "id": "gemcitabine",
@@ -409,9 +414,9 @@ export const nodes = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "id": "naci",
@@ -494,7 +499,7 @@ export const nodes = [
     ],
     "lod": 2,
     "evidence": "G",
-    "summary": "Reduced OXPHOS, impaired ATP generation, metabolic shifts worsening post-exertion — and largely refractory to JAK inhibition.",
+    "summary": "Impaired energy production (citric-acid cycle, fatty-acid beta-oxidation) on plasma metabolomics, worsening post-exertion -- and largely refractory to JAK inhibition.",
     "refs": [
       "che2025",
       "doc10arm"
@@ -558,20 +563,21 @@ export const nodes = [
     "lod": 1,
     "evidence": "S",
     "summary": "Diet-refractory steatosis, pancreatic fatty infiltration and android-pattern central adiposity.",
-    "detail": "Two independent drivers converge here. IRF7 → MCP-1 in visceral adipocytes gives the distribution (android, with no subcutaneous lower-body accumulation). The NLRP3/IL-1β arm gives the hepatic insulin resistance — and SAMHD1-null animals develop steatohepatitis with no diet challenge at all, which is why this phenotype is modelled as immune-driven rather than as a caloric-balance problem.",
+    "detail": "Two independent drivers converge here. IRF7 → MCP-1 in visceral adipocytes gives the distribution (android, with no subcutaneous lower-body accumulation). The NLRP3/IL-1β arm gives the hepatic insulin resistance — and myeloid-SAMHD1-deficient mice develop worse steatohepatitis than diet-matched controls under the SAME high-fat-diet challenge (Liu 2026 fed both groups a 24-week HFD; the phenotype is not spontaneous), which is why this arm is modelled as an immune-status modifier of a caloric challenge rather than a pure caloric-balance problem. Notably, global (not myeloid-conditional) Samhd1 knockout did NOT show the same liver-steatosis change in that study — this arm is specifically myeloid-driven.",
     "refs": [
       "kuroda2020",
       "ghazarian2017",
       "liu2026nlrp3"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L4_primary_human",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L6_human_clinical -> L4_primary_human -- kuroda2020 and ghazarian2017 are mouse studies; liu2026nlrp3's human component is macrophages isolated from obese human donors (ex vivo primary human cells), not a clinical cohort or trial. evidence \"S\" unchanged -- liu2026nlrp3 is genuinely SAMHD1-specific (myeloid-conditional Samhd1(dMye) KO)."
   },
   {
     "id": "immunodef",
@@ -626,14 +632,15 @@ export const nodes = [
       "verrecchia2004",
       "wang2018"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L4_primary_human",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L6_human_clinical -> L4_primary_human -- none of its five refs is a human clinical cohort (ghosh2001/ulloa1999 are cell-based, agren2015 is human skin explants ex vivo, verrecchia2004 is a review, wang2018/Chen S is cell-line). L4 (agren2015/ghosh2001, primary human tissue ex vivo) is the ceiling this bibliography supports -- matches what the ifng->connective edge's own evidenceTierNote already says."
   },
   {
     "id": "dysautonomia",
@@ -655,14 +662,15 @@ export const nodes = [
     "refs": [
       "wirth2021"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L1_in_silico",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier downgraded L6_human_clinical -> L1_in_silico -- its sole ref (wirth2021) is \"A unifying hypothesis of ME/CFS pathophysiology,\" a review article, not primary data. Same class as nfkb.js's lubac/betrancourt2026 and celldeath.js's malireddi2019 (review-only citations capped rather than trusted for tier)."
   },
   {
     "id": "cancer-risk",
@@ -680,7 +688,7 @@ export const nodes = [
     ],
     "lod": 2,
     "evidence": "S",
-    "summary": "Prostate (BIK + SAMHD1 co-segregating), colorectal (heterozygous SAMHD1) and haematological lineages.",
+    "summary": "Prostate (BIK and SAMHD1 both confirmed susceptibility genes), colorectal (heterozygous SAMHD1) and haematological lineages.",
     "detail": "Framed as a surveillance rationale, not a claim of present malignancy — and as the reason IRF3→SAMHD1 signalling should not be blunted too aggressively. SAMHD1 is a canonical tumour suppressor in myeloid and lymphoid lineages, so structural uncoupling drives replication stress in exactly the compartments this disease already inflames.",
     "refs": [
       "pavlovich2025",
@@ -718,8 +726,10 @@ export const nodes = [
     ],
     "evidence_tier": "L6_human_clinical",
     "cell_context": [
-      "systemic_immune"
-    ]
+      "systemic_immune",
+      "nk_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): nk_cell token added -- this node is literally \"NK cell lymphopenia,\" and its sibling nodes in the same baker2026 cluster already carry their own specific token (memory-b-deficiency/hypergammaglobulinemia: b_cell; esr-crp-dissociation: hepatic; perniosis: cardiovascular). nk_cell is established atlas vocabulary (cytokines.js/trailshort.js), not a new token."
   },
   {
     "id": "memory-b-deficiency",
@@ -845,7 +855,7 @@ export const nodes = [
       44
     ],
     "lod": 1,
-    "evidence": "S",
+    "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "cell_context": [
       "systemic_immune",
@@ -853,11 +863,15 @@ export const nodes = [
       "macrophage"
     ],
     "summary": "High-affinity soluble decoy receptor neutralizing circulating IL-18 to extinguish Loop C paracrine signaling.",
-    "detail": "Tadekinig alfa binds IL-18 with picomolar affinity (Kd ~400 pM), preventing receptor engagement and blocking downstream NK/Th1 IFN-γ release.",
+    "detail": "Tadekinig alfa binds IL-18 with high, picomolar-range affinity, preventing receptor engagement and blocking downstream NK/Th1 IFN-γ release (Novick et al. 1999).",
     "samhd1": "Direct therapeutic interrupter of Loop C in SAMHD1-driven interferonopathies and systemic autoinflammation.",
     "db_xrefs": {
       "drugbank": "DB12845"
-    }
+    },
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> I -- this node's own samhd1 field describes a proposed therapeutic interruption, not a demonstrated one (nobody has run rhIL-18BP against a SAMHD1-deficient system); matches the correctly-graded sibling proposed arms plp/allopurinol/abe8e. evidence_tier L1_in_silico already correct, no change.",
+    "refs": [
+      "novick1999"
+    ]
   }
 ];
 
@@ -870,15 +884,16 @@ export const edges = [
     "pathways": [
       "drugs"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> G -- zero refs; \"upadacitinib inhibits JAK1\" is a generic pharmacology fact true independent of SAMHD1 biology. The SAMHD1-specific part of the story lives on the upadacitinib node (doc10arm), not this edge's own mechanistic claim. evidence_tier L1_in_silico already correct, no change."
   },
   {
     "from": "brepocitinib",
@@ -889,14 +904,15 @@ export const edges = [
       "drugs"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "amlexanox",
@@ -912,9 +928,13 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "refs": [
+      "reilly2013"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): formal ref added (reilly2013 -- the amlexanox-as-TBK1/IKKe-inhibitor paper already cited on the amlexanox node, and this edge's own on-point mechanism source) rather than leaving the edge zero-ref. evidence_tier L3_cell_line unchanged -- reilly2013 is a mouse study, correctly at cell-line tier."
   },
   {
     "from": "amlexanox",
@@ -929,9 +949,13 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "refs": [
+      "reilly2013"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): formal ref added (reilly2013 -- the amlexanox-as-TBK1/IKKe-inhibitor paper already cited on the amlexanox node, and this edge's own on-point mechanism source) rather than leaving the edge zero-ref. evidence_tier L3_cell_line unchanged -- reilly2013 is a mouse study, correctly at cell-line tier."
   },
   {
     "from": "amlexanox",
@@ -949,9 +973,9 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "from": "polyiclc",
@@ -961,15 +985,16 @@ export const edges = [
     "pathways": [
       "drugs"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> G -- zero refs; \"poly-ICLC activates TLR3\" is a generic pharmacology fact true independent of SAMHD1 biology. evidence_tier L1_in_silico already correct, no change."
   },
   {
     "from": "vbit4",
@@ -980,14 +1005,18 @@ export const edges = [
       "drugs"
     ],
     "evidence": "S",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "refs": [
+      "rabinowitz2025"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): formal ref added (rabinowitz2025 -- confirmed via full text that VBIT-4 was used in SAMHD1-KO THP-1 cells and blocked the ISG response, i.e. genuinely demonstrated in a SAMHD1-deficient system) rather than leaving the edge zero-ref. evidence \"S\" correctly stands; evidence_tier raised L1_in_silico -> L3_cell_line to match the cell-line system (matches the vbit4 node's own corrected tier)."
   },
   {
     "from": "imsb301",
@@ -998,14 +1027,19 @@ export const edges = [
       "drugs"
     ],
     "evidence": "S",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia",
       "cd4_tcell"
-    ]
+    ],
+    "refs": [
+      "han2026",
+      "immunesensor"
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): formal refs added (han2026 -- IMSB301 in SAMHD1-patient PBMCs, the single best-evidenced drug-target claim in this file, previously the worst-documented; immunesensor -- the compound's own Phase 1 trial description) rather than leaving the edge zero-ref. evidence_tier raised L1_in_silico -> L4_primary_human to match. cell_context unchanged (keeps cd4_tcell -- see the imsb301 node's note, the sole documented exception in this file)."
   },
   {
     "from": "mcc950",
@@ -1021,9 +1055,13 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "refs": [
+      "coll2019"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): formal ref added (coll2019 -- the MCC950-targets-the-NACHT-Walker-B-motif paper this edge's own label paraphrases, already on the mcc950 node) rather than leaving the edge zero-ref. evidence_tier L3_cell_line unchanged."
   },
   {
     "from": "plp",
@@ -1039,9 +1077,9 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "from": "allopurinol",
@@ -1057,9 +1095,9 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "from": "abe8e",
@@ -1075,9 +1113,9 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "from": "samhd1",
@@ -1098,9 +1136,9 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "from": "samhd1",
@@ -1120,9 +1158,9 @@ export const edges = [
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "microglia"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
     "from": "ifnb",
@@ -1136,11 +1174,13 @@ export const edges = [
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the destination node -- this edge describes a secreted mediator acting on an organism-level outcome, the same rule PR #112 already applied to naci->mecfs/mcp1->steatosis/genomic-instability->cancer-risk in this file and cytokines.js PR #137 applied to edges pointing into this file's own naci/psa nodes."
   },
   {
     "from": "isg-set",
@@ -1154,11 +1194,13 @@ export const edges = [
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the destination node -- this edge describes a secreted mediator acting on an organism-level outcome, the same rule PR #112 already applied to naci->mecfs/mcp1->steatosis/genomic-instability->cancer-risk in this file and cytokines.js PR #137 applied to edges pointing into this file's own naci/psa nodes."
   },
   {
     "from": "atp",
@@ -1170,14 +1212,20 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L6_human_clinical",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the destination node -- this edge describes a secreted mediator acting on an organism-level outcome, the same rule PR #112 already applied to naci->mecfs/mcp1->steatosis/genomic-instability->cancer-risk in this file and cytokines.js PR #137 applied to edges pointing into this file's own naci/psa nodes.",
+    "refs": [
+      "che2025"
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): che2025 (already cited on both destination nodes) directly supports this edge's own claim -- a human ME/CFS cohort reporting impaired energy production via the citric acid cycle, fatty-acid beta-oxidation and the urea cycle. Added as a formal ref rather than leaving the edge zero-ref; evidence_tier raised L3_cell_line -> L6_human_clinical to match."
   },
   {
     "from": "atp",
@@ -1187,14 +1235,20 @@ export const edges = [
       "clinical"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L6_human_clinical",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the destination node -- this edge describes a secreted mediator acting on an organism-level outcome, the same rule PR #112 already applied to naci->mecfs/mcp1->steatosis/genomic-instability->cancer-risk in this file and cytokines.js PR #137 applied to edges pointing into this file's own naci/psa nodes.",
+    "refs": [
+      "che2025"
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): che2025 (already cited on both destination nodes) directly supports this edge's own claim -- a human ME/CFS cohort reporting impaired energy production via the citric acid cycle, fatty-acid beta-oxidation and the urea cycle. Added as a formal ref rather than leaving the edge zero-ref; evidence_tier raised L3_cell_line -> L6_human_clinical to match."
   },
   {
     "from": "naci",
@@ -1224,14 +1278,21 @@ export const edges = [
       "clinical"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the psa node -- il17a's own array (ifn.js) is cd4_tcell-only (a narrow Th17-effector node, PR #128) and the target tissue (enthesis) is neither myeloid nor a T-cell compartment, so neither endpoint supports \"myeloid\" truthfully; the shared cd4_tcell token was hiding this mismatch (the trailshort.js blind spot). Not tagged cd4_tcell-only either -- that would make the edge disjoint from psa.",
+    "refs": [
+      "cuthbert2019",
+      "bridgewood2019"
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cuthbert2019/bridgewood2019 (already on the psa node) directly support this edge's own claim -- both are ex vivo human enthesis tissue studies establishing the myeloid-IL-23/gamma-delta-T-IL-17A axis this edge describes. Added as formal refs; evidence_tier raised L3_cell_line -> L4_primary_human to match."
   },
   {
     "from": "il17a",
@@ -1241,14 +1302,17 @@ export const edges = [
       "clinical"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the connective node -- same reasoning as il17a->psa (see that edge's note): il17a's own array is cd4_tcell-only and the target tissue is neither myeloid nor T-cell, so the myeloid template was disjoint from both the true producer context and the destination.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, and no citation in this file's bibliography specifically supports IL-17A driving fascial/ligamentous connective-tissue failure (unlike il17a->psa, where cuthbert2019/bridgewood2019 are on-point)."
   },
   {
     "from": "ifng",
@@ -1259,14 +1323,21 @@ export const edges = [
       "clinical"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
-    "evidenceTierNote": "Demonstrated in human dermal fibroblasts (Ghosh 2001, Ulloa 1999): IFN-γ/STAT1 competitively sequesters p300/CBP and induces Smad7, blocking TGF-β/Smad3 procollagen transcription. Synergistic uncoupling via TNF-α-driven MMP-1/MMP-3 degradation (Hit 2; Ågren 2015) represents a plausible disease-model hypothesis; clinical confirmation in SAMHD1 deficiency remains to be directly demonstrated.",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): formal refs array added (ghosh2001, ulloa1999, agren2015 -- already named in prose in this edge's own evidenceTierNote below, and already on the connective node, but never copied into the refs field, leaving this edge incorrectly zero-ref). evidence_tier raised L3_cell_line -> L4_primary_human to match (ghosh2001/agren2015 are human tissue ex vivo). Original note retained: Demonstrated in human dermal fibroblasts (Ghosh 2001, Ulloa 1999): IFN-gamma/STAT1 competitively sequesters p300/CBP and induces Smad7, blocking TGF-beta/Smad3 procollagen transcription. Synergistic uncoupling via TNF-alpha-driven MMP-1/MMP-3 degradation (Hit 2; Agren 2015) represents a plausible disease-model hypothesis; clinical confirmation in SAMHD1 deficiency remains to be directly demonstrated.",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the connective node -- this edge describes IFN-gamma/STAT1 acting on the dermal fibroblast (per its own evidenceTierNote naming Ghosh 2001), a non-myeloid target tissue, not an event inside the myeloid producer cell.",
+    "refs": [
+      "ghosh2001",
+      "ulloa1999",
+      "agren2015"
     ]
   },
   {
@@ -1278,7 +1349,7 @@ export const edges = [
       "clinical",
       "metabolic"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): mcp1's own node is visceral-adipocyte-specific (no myeloid vocabulary token exists for that), but this edge's destination (steatosis) is a systemic clinical outcome -- matched the edge to the endpoint that has a valid tag rather than the generic myeloid template.",
@@ -1288,7 +1359,8 @@ export const edges = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> G -- zero refs; kuroda2020 (on the steatosis node) supports IRF7->MCP-1 in obesity generically, not a SAMHD1-specific finding."
   },
   {
     "from": "il1b",
@@ -1299,15 +1371,18 @@ export const edges = [
       "clinical",
       "metabolic"
     ],
-    "evidence": "S",
+    "evidence": "G",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the steatosis node -- IL-1beta acting on hepatic insulin resistance is a secreted-mediator/organ-level effect, not an event inside the myeloid producer cell.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> G -- zero refs; liu2026nlrp3 (on the steatosis node) genuinely links SAMHD1 loss to NLRP3/IL-1beta hyperactivation, but this edge's specific claim (IL-1beta driving hepatic insulin resistance) is standard IL-1beta/metabolic literature, not something that paper itself demonstrates. evidence_tier L1_in_silico already correct, no change."
   },
   {
     "from": "hif1a",
@@ -1319,14 +1394,17 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the steatosis node and its sibling edges (mcp1->steatosis, il1b->steatosis) into the same node -- leaving this one on the myeloid template while its two siblings are systemic recreated the exact inconsistency PR #112 fixed for mcp1/il1b.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "ifnb",
@@ -1337,14 +1415,17 @@ export const edges = [
       "clinical"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the destination node -- this edge describes a secreted mediator acting on an organism-level outcome, the same rule PR #112 already applied to naci->mecfs/mcp1->steatosis/genomic-instability->cancer-risk in this file and cytokines.js PR #137 applied to edges pointing into this file's own naci/psa nodes.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "ifnb",
@@ -1355,14 +1436,17 @@ export const edges = [
       "clinical"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cell_context retagged to the systemic clinical-outcome array, matching the destination node -- this edge describes a secreted mediator acting on an organism-level outcome, the same rule PR #112 already applied to naci->mecfs/mcp1->steatosis/genomic-instability->cancer-risk in this file and cytokines.js PR #137 applied to edges pointing into this file's own naci/psa nodes.",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
   },
   {
     "from": "genomic-instability",
@@ -1373,7 +1457,7 @@ export const edges = [
       "genome"
     ],
     "evidence": "S",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L6_human_clinical",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): both endpoints (genomic-instability, cancer-risk) are systemic clinical-outcome nodes tagged with the systemic array, but this edge carried the generic myeloid template. Matched the edge to its endpoints.",
     "cell_context": [
@@ -1382,21 +1466,33 @@ export const edges = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ]
+    ],
+    "refs": [
+      "rentoft2016",
+      "pavlovich2025"
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): formal refs added (rentoft2016 -- \"Heterozygous colon cancer-associated mutations of SAMHD1 have functional significance,\" precisely this edge's own claim in SAMHD1; pavlovich2025 -- confirms BIK/SAMHD1 as prostate-cancer susceptibility genes) rather than leaving the edge zero-ref. Both are human genetic-association studies; evidence_tier raised L1_in_silico -> L6_human_clinical to match."
   },
   {
     "from": "tadekinig-alfa",
     "to": "il18",
     "kind": "inhibit",
-    "sign": "-",
     "interaction_type": "allosteric_suppression",
-    "evidence": "S",
-    "evidence_tier": "L1_in_silico",
+    "evidence": "G",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "systemic_immune"
     ],
     "loop": "C",
-    "label": "Neutralizes free IL-18"
+    "label": "Neutralizes free IL-18",
+    "pathways": [
+      "drugs",
+      "ifn-gamma"
+    ],
+    "refs": [
+      "novick1999"
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> G, matching the tadekinig-alfa node's own downgrade (see that node's note) -- IL-18BP neutralizing IL-18 is established non-SAMHD1 biology (novick1999, added as a formal ref: IL-18BP abolishes IL-18-induced IFN-gamma/IL-8/NF-kB activation), not a SAMHD1-specific finding. evidence_tier set L3_cell_line to match novick1999's in vitro/biochemical system. Also removed an undocumented \"sign\" field (config.js derives edge polarity from EDGE_KINDS[kind].sign; kind:\"inhibit\" already supplies it) and added a missing pathways array to match the source node."
   },
   {
     "from": "isg-set",
@@ -1413,8 +1509,10 @@ export const edges = [
       "baker2026"
     ],
     "cell_context": [
-      "systemic_immune"
-    ]
+      "systemic_immune",
+      "nk_cell"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): nk_cell token added to match the nk-lymphopenia node's own correction (see that node's note)."
   },
   {
     "from": "isg-set",
@@ -1509,9 +1607,9 @@ export const edges = [
     ],
     "cell_context": [
       "monocyte",
-      "macrophage",
-      "cd4_tcell"
-    ]
+      "macrophage"
+    ],
+    "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped, microglia deliberately not added -- matches the tofacitinib node's own correction (see that node's note; baker2026's patient specifically lacked AGS neurological/CNS features)."
   }
 ];
 

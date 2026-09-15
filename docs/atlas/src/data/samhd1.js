@@ -454,6 +454,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "kinetics": {
       "mixed_tetramer_fraction": 0.375,
       "mixed_tetramer_fraction_basis": "binomial_prediction: C(4,2)/2^4, assumes equal WT/A565T monomer abundance and random assembly -- not directly measured",
@@ -606,6 +607,7 @@ export const edges = [
     ],
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -649,6 +651,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -954,6 +957,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -973,6 +977,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1015,6 +1020,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1033,6 +1039,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1053,6 +1060,7 @@ export const edges = [
     ],
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1072,6 +1080,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- none of this file's 28 citations demonstrate T-cell-intrinsic SAMHD1 biology (the classic resting-CD4-T-cell HIV-1 restriction literature is absent from this file's refs). Corrected to ipsc, matching this edge's own endpoint nodes' cell_context (all 11 non-empty nodes already correctly carry ipsc, a decision validated in an earlier session and not reopened here). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1183,6 +1192,7 @@ export const edges = [
     "interaction_type": "catalytic_activation",
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1199,6 +1209,7 @@ export const edges = [
     "interaction_type": "allosteric_suppression",
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",

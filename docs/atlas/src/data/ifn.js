@@ -159,7 +159,8 @@ export const nodes = [
     "refs": [
       "che2025"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): upgraded L3_cell_line -> L4_primary_human -- che2025 (this node's own citation) is a human ME/CFS cohort study reporting IL-6 dose-dependently elevated in patient PBMCs ex vivo (per this node's own summary), matching the tier already established on nfkb.js's cxcl8 node, which cites the same che2025 paper. This file's own audit (PR #128) had left it at L3_cell_line before nfkb.js's later audit (PR #133) established the correct tier on the shared citation; queued in the handoff as a reconciliation follow-up, now resolved.",
     "cell_context": [
       "monocyte",
       "macrophage",

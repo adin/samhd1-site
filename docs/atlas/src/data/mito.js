@@ -158,6 +158,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Macropore formation for cytochrome-c release; sublethal (\"minority\") MOMP also permits mtDNA herniation.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -332,6 +333,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Protein import machinery. ΔΨm-dependent: when the potential collapses, import stops and PINK1 accumulates.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -489,6 +491,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Terminal oxidase; its activity falls with cytochrome-c leak and with mtDNA-encoded subunit loss.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -515,6 +518,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Uses the proton-motive force to make ATP; runs in reverse to defend ΔΨm when the ETC fails, burning ATP.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -572,6 +576,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Externalised cardiolipin is itself a mitophagy \"eat-me\" signal and an NLRP3-binding surface.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -725,6 +730,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "The rest of the mtDNA replisome; stalls with POLG when nucleotide supply is unbalanced.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -790,6 +796,7 @@ export const nodes = [
       "swanson2019"
     ],
     "evidence_tier": "L4_primary_human",
+    "evidenceTierNote": "Confirmed 2026-09-15 (cell_context audit tier-reconciliation cleanup): tier verified correct as-is. Rests on kim2025 (CD14+ monocytes from human sepsis patients, PMID 40384854), not on swanson2019 (a review, demonstrates nothing) or docSiege (this project's own figure-legend document). Checked against inflammasome.js's nfkb->nlrp3 edge, which shares only the swanson2019 citation with this node (not kim2025) -- the two are not reconcilable to a common tier because they don't share a comparably strong source; see that edge's own note.",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1100,6 +1107,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Autophagosome membrane marker; LC3-II/I ratio with p62 is the standard flux readout in Arm 1.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1125,6 +1133,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Accumulates when flux is blocked — the readout that separates \"more autophagosomes\" from \"working autophagy\".",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1303,6 +1312,7 @@ export const nodes = [
     "evidence": "G",
     "summary": "Where mitophagy should terminate. In this disease the cargo arrives and is not destroyed.",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1433,6 +1443,7 @@ export const edges = [
     ],
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1478,6 +1489,7 @@ export const edges = [
     "evidence": "S",
     "loop": "B",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1568,6 +1580,7 @@ export const edges = [
     "evidence": "S",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "organellar_damage_release",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1612,7 +1625,7 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "organellar_damage_release",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1620,7 +1633,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "mtdna-frag",
@@ -1703,7 +1717,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1711,7 +1725,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "deltapsi",
@@ -1723,7 +1738,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1731,7 +1746,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "deltapsi",
@@ -1742,7 +1758,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1750,7 +1766,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "tom20",
@@ -1761,7 +1778,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1769,7 +1786,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "etc-i",
@@ -1780,7 +1798,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1788,7 +1806,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "etc-i",
@@ -1799,7 +1818,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1807,7 +1826,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "etc-iii",
@@ -1818,7 +1838,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1826,7 +1846,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "etc-iii",
@@ -1836,7 +1857,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1844,7 +1865,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "etc-iv",
@@ -1854,7 +1876,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1862,7 +1884,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "etc-v",
@@ -1873,7 +1896,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1881,7 +1904,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "ceramide",
@@ -1914,7 +1938,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1922,7 +1946,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "succinate",
@@ -1955,7 +1980,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -1963,7 +1988,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "deltapsi",
@@ -2019,7 +2045,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2027,7 +2053,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "glycolysis",
@@ -2038,7 +2065,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2046,7 +2073,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "lactate",
@@ -2174,6 +2202,7 @@ export const edges = [
     ],
     "evidence": "S",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "organellar_damage_release",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2192,7 +2221,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "organellar_damage_release",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2200,7 +2229,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "cytc",
@@ -2212,7 +2242,7 @@ export const edges = [
       "metabolic"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2220,7 +2250,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "bik",
@@ -2255,7 +2286,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2263,7 +2294,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "pink1",
@@ -2274,7 +2306,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "kinase_phosphorylation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2282,7 +2314,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "parkin",
@@ -2293,7 +2326,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2301,7 +2334,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "optn",
@@ -2312,7 +2346,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2320,7 +2354,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "p62",
@@ -2330,7 +2365,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2338,7 +2373,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "becn1",
@@ -2349,7 +2385,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2357,7 +2393,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "lc3",
@@ -2368,7 +2405,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "compartment_translocation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2376,7 +2413,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "ctsd",
@@ -2388,6 +2426,7 @@ export const edges = [
     ],
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2474,7 +2513,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2482,7 +2521,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "dnase2",
@@ -2519,6 +2559,7 @@ export const edges = [
     ],
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2561,6 +2602,7 @@ export const edges = [
     "evidence": "I",
     "loop": "sting-fission",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2579,7 +2621,7 @@ export const edges = [
       "mito"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2587,7 +2629,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "mfn",
@@ -2598,7 +2641,7 @@ export const edges = [
       "mitophagy"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [
@@ -2606,7 +2649,8 @@ export const edges = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context audit tier-reconciliation cleanup): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. Missed during this file's original audit (PR #120, 2026-09-13); found in an atlas-wide zero-ref sweep run as part of the audit's cross-file tier-reconciliation cleanup."
   },
   {
     "from": "mtdna",
@@ -2619,6 +2663,7 @@ export const edges = [
     ],
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit literature audit): cd4_tcell was this atlas's default template token, not per-edge judgment -- no citation in this file supports CD4 T-cell involvement in this intracellular organelle mechanism. Corrected to ipsc, matching this edge's own endpoint nodes' cell_context and the file's SAMHD1 iPSC-derived-myeloid modeling platform (see analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md).",
     "cell_context": [

@@ -54,7 +54,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "key": true,
-    "summary": "Left-handed duplex conformation favoured by alternating purine-pyrimidine repeats — abundant in ERV and SINE transcripts.",
+    "summary": "Left-handed duplex conformation favoured by alternating purine-pyrimidine repeats — retroelement transcripts are a candidate endogenous source.",
     "detail": "Z-form is a conformation, not a sequence: the same molecule flips between B and Z depending on torsional strain, salt and sequence. That is why it works as a danger signal at all — the cell is reading a physical state that accumulates when repeat transcription runs unchecked, rather than a motif a virus could simply mutate away.",
     "samhd1": "The substrate pool for this sensor is exactly what SAMHD1 haploinsufficiency raises. HERV and LINE-1 de-repression is already modelled in the retroelement layer; this is where those transcripts acquire a second way to be dangerous, independent of MDA5.",
     "refs": [
@@ -62,11 +62,11 @@ export const nodes = [
       "zhang2022adar"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -96,11 +96,11 @@ export const nodes = [
       "zhang2022adar"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ],
     "db_xrefs": {
       "uniprot": "Q9H171",
@@ -131,11 +131,11 @@ export const nodes = [
       "sun2012mlkl"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ],
     "db_xrefs": {
       "uniprot": "Q9Y572",
@@ -162,12 +162,13 @@ export const nodes = [
     "evidence": "G",
     "summary": "The three-way switch: scaffold for NF-κB survival signalling, or substrate for caspase-8, or RHIM partner for necroptosis.",
     "detail": "Which of the three happens is decided by ubiquitin editing — the same LUBAC/A20/CYLD machinery already in the NF-κB module. That makes RIPK1 a direct link between this arm and the ubiquitin control layer.",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -193,11 +194,11 @@ export const nodes = [
       "conos2017"
     ],
     "evidence_tier": "L3_cell_line",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -221,12 +222,13 @@ export const nodes = [
     "refs": [
       "kaiser2011"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L5_animal_in_vivo",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): kaiser2011's claim is mouse embryonic-lethality/RIPK3-rescue in vivo genetics, not a cell-line finding. config.js explicitly warns against forcing an animal finding into L1/L3/L4/L6 when L5_animal_in_vivo fits better; matches the trailshort.js/PR #130 precedent for this atlas's first use of the tier.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -251,7 +253,8 @@ export const nodes = [
     "refs": [
       "sun2012mlkl"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): sun2012mlkl is human tumour cell lines plus necrosulfonamide chemistry -- no human clinical data anywhere in this file's 8 citations. Downgraded from the generic L6_human_clinical template; this was also the file's one node/edge tier self-contradiction (its only producing edge, mlkl->necroptosis, is zero-ref L3_cell_line/now L1_in_silico). cell_context stays the systemic array -- the two fields are orthogonal and PR #112's decision on this node is unaffected.",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",
@@ -282,12 +285,13 @@ export const nodes = [
     "refs": [
       "malireddi2019"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): malireddi2019 is a review article (Malireddi, Kesavardhana, Kanneganti, Front Cell Infect Microbiol 2019) -- no primary data of its own, so it cannot support a tier above L1_in_silico despite being a real, non-fabricated citation (same class as nfkb.js's betrancourt2026/lubac finding, PR #133). Capped rather than substituting an unverified primary citation.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   }
 ];
@@ -297,22 +301,24 @@ export const edges = [
     "from": "herv-rna",
     "to": "z-rna",
     "kind": "produce",
-    "label": "ERV transcripts are the major endogenous Z-form source",
+    "label": "retroelement/ERV transcripts are a candidate endogenous Z-form source",
     "pathways": [
       "celldeath",
       "retro"
     ],
     "evidence": "G",
     "refs": [
+      "jiao2020",
       "zhang2022adar"
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): claim-support fix, not a tier fix -- the label previously said ERV transcripts are the MAJOR endogenous Z-form source, sourced only to zhang2022adar. That paper's own Z-form mapping localises endogenous Z-RNA to the 3'UTRs of interferon-stimulated mRNAs, not to ERVs (it discusses EREs only in the general ADAR1/dsRNA-immunogenicity framing) -- it does not support 'major source'. jiao2020 (complementary reads from endogenous retroelements detected in mouse epidermal RNA) is the closer support and is now added, but even that shows association in mouse epidermis, not a 'major source' claim -- label softened to 'candidate' accordingly. Matches the z-rna node's own refs (both jiao2020+zhang2022adar already there); its summary softened in step.",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -325,13 +331,14 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -345,11 +352,11 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -369,11 +376,11 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -388,13 +395,14 @@ export const edges = [
     "refs": [
       "dereuver2022"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L5_animal_in_vivo",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): this edge's own label is a pure mouse-genetics epistasis result (ADAR1 Zalpha mutant phenotype rescued by ZBP1 deletion, not MDA5) -- dereuver2022's claim here is in vivo genetics, not cell-line. Matches the casp8/casp8->ripk3 fix above and the trailshort.js/PR #130 precedent.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -411,11 +419,11 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "nucleic_acid_sensing",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -432,11 +440,11 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ],
     "db_scores": {
       "string_combined": 0.998,
@@ -453,13 +461,14 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -470,13 +479,14 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -489,13 +499,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -508,13 +519,14 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "ubiquitin_conjugation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -531,11 +543,11 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "kinase_phosphorylation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -547,13 +559,14 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. DELIBERATE HALF-CROSSING, kept myeloid rather than retagged to necroptosis's own systemic array: MLKL pore formation physically occurs inside the myeloid cell -- retagging systemic would mislabel which cell the step happens in (the config.js topical error), unlike gdf15/immunodef which are secreted/clinical abstractions. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -568,13 +581,14 @@ export const edges = [
     "refs": [
       "kaiser2011"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L5_animal_in_vivo",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): kaiser2011's claim is mouse embryonic-lethality/RIPK3-rescue in vivo genetics, not a cell-line finding. config.js explicitly warns against forcing an animal finding into L1/L3/L4/L6 when L5_animal_in_vivo fits better; matches the trailshort.js/PR #130 precedent for this atlas's first use of the tier.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -585,13 +599,14 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_suppression",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -610,11 +625,11 @@ export const edges = [
     ],
     "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -629,13 +644,14 @@ export const edges = [
     "evidence": "G",
     "bend": 0.45,
     "loop": "A",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "organellar_damage_release",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. DELIBERATE HALF-CROSSING, kept myeloid rather than retagged to necroptosis's own systemic array: mtDNA spilling from a lysing cell physically occurs inside the myeloid cell -- retagging systemic would mislabel which cell the step happens in (the config.js topical error), unlike gdf15/immunodef which are secreted/clinical abstractions. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -646,13 +662,14 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -664,13 +681,14 @@ export const edges = [
       "inflammasome"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -681,13 +699,14 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -698,13 +717,14 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "allosteric_binding",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -720,13 +740,14 @@ export const edges = [
     "refs": [
       "malireddi2019"
     ],
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): malireddi2019 is a review article (Malireddi, Kesavardhana, Kanneganti, Front Cell Infect Microbiol 2019) -- no primary data of its own, so it cannot support a tier above L1_in_silico despite being a real, non-fabricated citation (same class as nfkb.js's betrancourt2026/lubac finding, PR #133). Capped rather than substituting an unverified primary citation.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -739,13 +760,14 @@ export const edges = [
       "cgas-sting"
     ],
     "evidence": "G",
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
@@ -759,13 +781,14 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.35,
-    "evidence_tier": "L3_cell_line",
+    "evidence_tier": "L1_in_silico",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
     "interaction_type": "catalytic_activation",
+    "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
-      "microglia",
-      "cd4_tcell"
+      "microglia"
     ]
   },
   {
