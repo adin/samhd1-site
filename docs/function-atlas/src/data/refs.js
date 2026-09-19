@@ -368,19 +368,7 @@ export const REFS = {
       "finding": "SAMHD1 binds preferentially to ssRNA; monomeric form binds RNA while tetrameric form required for dNTPase binds weakly; ssRNA binding induces higher-order oligomeric states distinct from tetramer"
     }
   },
-  "[40]": {
-    "bibliography": {
-      "short": "Zeng M et al. 2025 - Autophagy",
-      "full": "Zeng M et al. SAMHD1 deficiency disrupts macrophage autophagy-lysosomal homeostasis and promotes inflammation via the mTOR-MITF-CTSD axis in ulcerative colitis. Int J Biol Macromol. 2025;Jan online.",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0141813025077451"
-    },
-    "atlas": {
-      "finding": "NEW 2025: SAMHD1 regulates autophagy-lysosomal flux through mTOR-MITF-CTSD axis; deficiency impairs autophagy, enhances MITF nuclear translocation, suppresses cathepsin D, causes lysosomal dysfunction and inflammation",
-      "flag": "deprecated",
-      "duplicateOf": "[41]",
-      "note": "Superseded by [41]. Original entry misattributed this to 'Zeng M et al.' with a truncated title -- no author named Zeng appears in the author list. Correct paper is Yaxian L et al. (PMID 40886983, DOI 10.1016/j.ijbiomac.2025.147188)."
-    }
-  },
+  
   "[41]": {
     "bibliography": {
       "short": "Yaxian L et al. 2025 - Autophagy in ulcerative colitis",
