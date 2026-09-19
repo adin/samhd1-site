@@ -88,6 +88,10 @@ markdown_extensions:
       permalink: true
 
 extra:
+  # Pre-launch: keep the site out of search results (overrides/main.html emits a
+  # robots noindex meta while this is false). Launch = set to true AND edit
+  # docs/robots.txt (see the checklist at the top of that file).
+  discoverable: false
   social:
     - icon: fontawesome/solid/rss
       link: feed_rss_created.xml

@@ -16,4 +16,11 @@
   <link rel="apple-touch-icon" href="{{ 'assets/apple-touch-icon.png' | url }}">
   {# Tab-bar and address-bar tint, matching --gc-black. #}
   <meta name="theme-color" content="#0b0b0c">
+  {# Pre-launch: ask search engines not to list any page. Flip
+     `extra.discoverable` in mkdocs.yml to true to drop this tag. noindex only
+     works if crawlers may fetch the page, so docs/robots.txt deliberately does
+     NOT disallow search engines — only AI-training crawlers. #}
+  {% if not config.extra.discoverable %}
+  <meta name="robots" content="noindex, nofollow">
+  {% endif %}
 {% endblock %}
