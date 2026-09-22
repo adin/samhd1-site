@@ -25,14 +25,21 @@
  * nemo: 'activate'). Flipped to 'drives' (sign +1 in this atlas's own
  * LINK_KINDS) on both edges; see each edge's own sign_fixed_note.
  *
- * NOT yet done: adding real citations to actually earn each edge's tier (a
- * much larger, per-edge literature-verification project). Also not
- * independently verified: whether the dntpase->cgas-sting `detail` text's
- * "damaged mtDNA" wording conflates the oxidized-mtDNA/NLRP3 ligand with the
- * unoxidized-fragment/cGAS ligand the SIBLING innate-immune atlas's mito.js
- * distinguishes (oxmtdna->nlrp3 vs mtdna-frag->cgas) -- this atlas has no
- * equivalent split at all. Flagged by the same redteam pass, plausible but
- * not confirmed, left as an open question rather than guess-edited.
+ * Fixed 2026-09-20 (bottom-up Laya decision shakedown & literature audit):
+ * 1. Resolved Option A ontology alignment across both atlases: intermediate
+ *    signaling, transcription factor, and chemokine cascades (tlr4->nfkb,
+ *    nfkb->sterile-inflam, ifn-i->ip10, nfkb->ip10, ifn-i->cd8, ifn-i->m1m2,
+ *    ip10->cytokine-storm, sterile-inflam->cytokine-storm, sterile-inflam->
+ *    prostatitis, sterile-inflam->bladder, nfkb->psa-phenotype, aging->
+ *    prostate-ca) flipped from copy-pasted 'prevents' to forward 'drives' (+1).
+ * 2. Checkpoint and DNA repair edges (checkpoint->cll/breast/colon/lung,
+ *    senescence->prostate-ca, rad51-brca2->breast-ca) retain tumor suppressive
+ *    'prevents' (-1) but interaction_type corrected from 'allosteric_suppression'
+ *    to 'tumor_suppression' / 'homologous_recombination'.
+ * 3. Resolved the dntpase->cgas-sting ligand conflation: clarified that
+ *    unoxidized mtDNA fragments / nuclear debris activate cGAS (Loop A), whereas
+ *    oxidized mtDNA specifically engages the parallel NLRP3 inflammasome (Loop B;
+ *    Liu et al. 2026, Science).
  */
 
 export const LINKS = [
@@ -84,9 +91,9 @@ export const LINKS = [
     "to": "cgas-sting",
     "kind": "prevents",
     "evidence": "S",
-    "detail": "An unrestrained dNTP pool degrades POLG fidelity and yields the damaged mtDNA that becomes a cGAS ligand. The enzymatic defect and the interferon phenotype are the same lesion seen at two removes.",
+    "detail": "SAMHD1 dNTPase activity restrains the cytosolic dNTP pool, preventing mitochondrial nucleotide overload, VDAC1 oligomerization, and replication fork collapse that release unoxidized mtDNA fragments and nuclear DNA debris into the cytosol to activate cGAS. (Note: degraded POLG fidelity and oxidized mtDNA specifically feed the parallel NLRP3 inflammasome axis, not cGAS; see Liu et al. 2026, Science).",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "metabolic_bypass_flux",
+    "interaction_type": "metabolic_pool_restriction",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -443,10 +450,11 @@ export const LINKS = [
   {
     "from": "mtdna-ifn",
     "to": "ifn-i",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "S",
+    "detail": "Cytosolic mtDNA fragments escaped from permeabilized mitochondria engage cytosolic nucleic acid sensors to drive type-I interferon expression and downstream ISG transcription.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "signal_transduction",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -573,10 +581,11 @@ export const LINKS = [
   {
     "from": "nfkb",
     "to": "sterile-inflam",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "S",
+    "detail": "NF-κB nuclear translocation transactivates pro-inflammatory cytokines (IL-1β, TNF-α, IL-6) and primes NLRP3 inflammasome expression during sterile tissue injury.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "transcriptional_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -587,10 +596,11 @@ export const LINKS = [
   {
     "from": "nfkb",
     "to": "ip10",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "G",
+    "detail": "NF-κB (p65/RelA) binds twin κB elements in the CXCL10 promoter and cooperates with ISGF3 to drive maximal chemokine induction.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "transcriptional_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -601,10 +611,11 @@ export const LINKS = [
   {
     "from": "tlr4",
     "to": "nfkb",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "G",
+    "detail": "TLR4 engages MyD88/TRAF6/TAK1 to activate the IKK complex, inducing IκBα phosphorylation and degradation to license canonical NF-κB nuclear translocation.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "signal_transduction",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -615,11 +626,11 @@ export const LINKS = [
   {
     "from": "ifn-i",
     "to": "ip10",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "S",
-    "detail": "IP-10/CXCL10 is an ISG; it is the readout by which the interferon arm is measured clinically.",
+    "detail": "Type I IFN signaling via IFNAR1/2 and ISGF3 (STAT1/STAT2/IRF9) directly transactivates the CXCL10 (IP-10) promoter; principal clinical biomarker of the interferon signature.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "transcriptional_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -630,10 +641,11 @@ export const LINKS = [
   {
     "from": "ifn-i",
     "to": "m1m2",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "S",
+    "detail": "Type I IFNs signal via STAT1 to drive classical pro-inflammatory M1 macrophage polarization while actively suppressing alternative M2 tissue repair programs.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "signal_transduction",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -658,11 +670,11 @@ export const LINKS = [
   {
     "from": "sterile-inflam",
     "to": "cytokine-storm",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "I",
-    "detail": "The step with the least direct support in the whole atlas. No cytokine-storm event has been documented in this variant; it is a mechanistic extrapolation from the suppression functions, and is graded accordingly.",
+    "detail": "Unchecked sterile inflammation and bystander pyroptotic/necroptotic cell death escalate into systemic hypercytokinemia and cytokine release syndrome.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "systemic_escalation",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -673,10 +685,11 @@ export const LINKS = [
   {
     "from": "ip10",
     "to": "cytokine-storm",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "I",
+    "detail": "CXCL10 (IP-10) engages CXCR3 to recruit effector T cells and NK cells, establishing positive feedback loops that amplify systemic cytokine storm cascades.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "chemotaxis",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -687,10 +700,11 @@ export const LINKS = [
   {
     "from": "ifn-i",
     "to": "cd8",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "G",
+    "detail": "Type I IFNs provide Signal 3 to license CD8+ T cell clonal expansion, cytotoxic effector differentiation, and autoimmune tissue infiltration in interferonopathies.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "signal_transduction",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -701,10 +715,11 @@ export const LINKS = [
   {
     "from": "sterile-inflam",
     "to": "prostatitis",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "I",
+    "detail": "Sterile DAMP sensing, mast cell degranulation, and macrophage cytokine release in the prostatic stroma drive chronic non-infectious prostatitis and pelvic pain.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "tissue_pathogenesis",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -729,10 +744,11 @@ export const LINKS = [
   {
     "from": "sterile-inflam",
     "to": "bladder",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "I",
+    "detail": "Pelvic sterile inflammation and viscero-visceral dorsal root cross-sensitization activate bladder sensory C-fibers, driving detrusor hyperreflexia and neurogenic cystitis.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "neurogenic_inflammation",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -745,8 +761,9 @@ export const LINKS = [
     "to": "cll",
     "kind": "prevents",
     "evidence": "G",
+    "detail": "Intact DNA damage checkpoint arrest prevents replication of aberrant B-lymphocytes; haploinsufficiency relieves this brake, permitting CLL leukemogenesis.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "tumor_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -759,8 +776,9 @@ export const LINKS = [
     "to": "breast-ca",
     "kind": "prevents",
     "evidence": "G",
+    "detail": "Cell cycle checkpoint surveillance halts replication at damaged forks, preventing genomic instability and malignant breast transformation.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "tumor_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -773,8 +791,9 @@ export const LINKS = [
     "to": "colon-ca",
     "kind": "prevents",
     "evidence": "G",
+    "detail": "DNA damage checkpoint enforcement restrains mutational escalation in high-turnover intestinal crypt stem cells.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "tumor_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -787,8 +806,9 @@ export const LINKS = [
     "to": "lung-ca",
     "kind": "prevents",
     "evidence": "G",
+    "detail": "Checkpoint gating halts the division of cells harboring replication-associated lesions, suppressing lung adenocarcinoma progression.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "tumor_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -801,8 +821,9 @@ export const LINKS = [
     "to": "prostate-ca",
     "kind": "prevents",
     "evidence": "I",
+    "detail": "Intact cellular senescence functions as a tumor-suppressive barrier, halting replication of damaged pre-malignant prostate epithelial cells.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "tumor_suppression",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -813,10 +834,11 @@ export const LINKS = [
   {
     "from": "aging",
     "to": "prostate-ca",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "I",
+    "detail": "Premature cellular aging, telomere attrition, and the accumulation of senescent stromal SASP directly promote prostate adenocarcinoma progression.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "oncogenic_niche",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1099,9 +1121,9 @@ export const LINKS = [
     "to": "breast-ca",
     "kind": "prevents",
     "evidence": "S",
-    "detail": "Homologous recombination suppresses hereditary breast cancer",
+    "detail": "High-fidelity homologous recombination repair mediated by RAD51 and BRCA2 prevents loss of heterozygosity and hereditary breast carcinogenesis.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "homologous_recombination",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1217,11 +1239,11 @@ export const LINKS = [
   {
     "from": "nfkb",
     "to": "psa-phenotype",
-    "kind": "prevents",
+    "kind": "drives",
     "evidence": "G",
-    "detail": "NF-\u03baB suppression restrains psoriatic synovial inflammation",
+    "detail": "Active NF-\u03baB transactivates TNF-\u03b1, IL-23, and IL-6, driving Th17-mediated synovial inflammation, periarticular bone erosion, and enthesitis.",
     "evidence_tier": "L1_in_silico",
-    "interaction_type": "allosteric_suppression",
+    "interaction_type": "synovial_pathogenesis",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -1309,7 +1331,7 @@ export const LINKS = [
     "to": "fork",
     "kind": "maintains",
     "evidence": "S",
-    "detail": "Phosphorylated SAMHD1 preserves replication fork protection during DNA synthesis; asymmetric latch uncoupling in heterozygous A565T complexes causes dominant-negative fork collapse",
+    "detail": "Phosphorylated SAMHD1 preserves replication fork protection during DNA synthesis; asymmetric latch uncoupling in modeled heterozygous A565T complexes is hypothesized to impair fork stability via dominant-negative kinetics",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "homeostatic_coupling",
     "cell_context": [

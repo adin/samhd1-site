@@ -940,6 +940,7 @@ export const edges = [
     "from": "amlexanox",
     "to": "ikke",
     "kind": "inhibit",
+    "label": "Arm 5 — cuts IFN production at source by inhibiting IKKε kinase activity",
     "pathways": [
       "drugs"
     ],

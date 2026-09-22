@@ -2484,7 +2484,7 @@ export const edges = [
     "from": "mitf",
     "to": "dnase2",
     "kind": "produce",
-    "label": "DNase II is a MITF/TFEB lysosomal target gene — the same failure hits it",
+    "label": "transcribes lysosomal DNase II endonuclease for DNA clearance",
     "pathways": [
       "mitophagy",
       "cgas-sting"

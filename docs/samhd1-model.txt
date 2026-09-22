@@ -722,7 +722,7 @@ lc3|translocate|+|compartment_translocation|autolysosome|G|L1_in_silico|[monocyt
 ctsd|activate|+|catalytic_activation|autolysosome|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||hydrolytic degradation of cargo
 mtor|inhibit|-|allosteric_suppression|mitf|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||phosphorylation → cytoplasmic retention
 mitf|produce|+|catalytic_activation|ctsd|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||transcribes lysosomal hydrolases
-mitf|produce|+|catalytic_activation|dnase2|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||DNase II is a MITF/TFEB lysosomal target gene — the same failure hits it
+mitf|produce|+|catalytic_activation|dnase2|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||transcribes lysosomal DNase II endonuclease for DNA clearance
 autolysosome|activate|+|catalytic_activation|dnase2|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||acidified compartment licenses the nuclease
 dnase2|degrade|-|allosteric_suppression|mtdna-frag|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|A|THE MISSING EDGE — destroys engulfed mtDNA before it can reach cGAS
 dnase2|degrade|-|allosteric_suppression|l1-cdna|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||lysosomal disposal of retroelement DNA
@@ -1025,7 +1025,7 @@ nsc87877|inhibit|-|allosteric_suppression|shp1|G|L4_primary_human|[cd4_tcell,cd8
 upadacitinib|inhibit|-|allosteric_suppression|jak1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||Arm 2 — JAK1-selective
 brepocitinib|inhibit|-|allosteric_suppression|tyk2|G|L1_in_silico|[monocyte,macrophage,microglia]|-||dual JAK1/TYK2
 amlexanox|inhibit|-|allosteric_suppression|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||Arm 5 — cuts IFN production at source
-amlexanox|inhibit|-|allosteric_suppression|ikke|G|L3_cell_line|[monocyte,macrophage,microglia]|-||
+amlexanox|inhibit|-|allosteric_suppression|ikke|G|L3_cell_line|[monocyte,macrophage,microglia]|-||Arm 5 — cuts IFN production at source by inhibiting IKKε kinase activity
 amlexanox|inhibit|-|allosteric_suppression|samhd1|I|L1_in_silico|[monocyte,macrophage,microglia]|-||TRADEOFF — suppressing IRF3 lowers SAMHD1 transcription in an already haploinsufficient cell
 polyiclc|activate|+|catalytic_activation|tlr3|G|L1_in_silico|[monocyte,macrophage,microglia]|-||Arms 3–4 — agonist, the "upward" direction
 vbit4|inhibit|-|allosteric_suppression|vdac1-oligo|S|L3_cell_line|[monocyte,macrophage,microglia]|-||Arm 7 — outer membrane, ≤5 µM ceiling

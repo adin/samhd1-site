@@ -301,7 +301,7 @@ export const REFS = {
       "doi": "10.1038/s44324-025-00079-w"
     },
     "atlas": {
-      "finding": "Columbia/Lipkin study with Dr. Nancy Klimas. ME/CFS shows heightened innate immune responses with elevated IL-6, IL-1β, TNF-α, IFN-γ. LPS stimulation produces excessive cytokines. Validates SAMHD1 dysfunction as ME/CFS mechanism",
+      "finding": "Columbia/Lipkin study with Dr. Nancy Klimas. ME/CFS shows heightened innate immune responses with elevated IL-6, IL-1β, TNF-α, IFN-γ. LPS stimulation produces excessive cytokines, demonstrating clinical phenotypes aligned with modeled SAMHD1 insufficiency hypotheses",
       "note": "One of the two entries the PII guard flags for the reviewer term 'Klimas' — a genuine co-author, not an identifier. Left in place deliberately.",
       "verifiedBy": "bib:che_heightened_2025 (npj Metab Health Dis; title matches)"
     }
@@ -621,7 +621,7 @@ export const REFS = {
       "url": "file:///analysis/reports/SAMHD1_AF3_Phosphorylation_Claude_Science_Briefing.md"
     },
     "atlas": {
-      "finding": "Heterozygous A565T preserves basal allosteric catalytic core under nucleotide saturation (~50% dNTPase capacity), but induces asymmetric latch torsional mismatch upon Thr592 phosphorylation (Dist_CTD_A2 deficit 4.4 Å, pLDDT -4.9), causing dominant-negative uncoupling of PTM-dependent replication fork protection and DNA repair"
+      "finding": "Heterozygous A565T modeling suggests preservation of basal allosteric catalytic core under nucleotide saturation (~50% dNTPase capacity), with simulated asymmetric latch torsional mismatch upon Thr592 phosphorylation (Dist_CTD_A2 deficit 4.4 Å, pLDDT -4.9) supporting an in-silico hypothesis of dominant-negative uncoupling of PTM-dependent replication fork protection, pending prospective biochemical validation"
     }
   }
 };
