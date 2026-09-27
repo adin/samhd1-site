@@ -135,7 +135,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P06239",
+      "ensembl": "ENSG00000182866",
+      "hgnc": "HGNC:6524"
+    }
   },
   {
     "id": "cd28",
@@ -164,7 +169,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P10747",
+      "ensembl": "ENSG00000178562",
+      "hgnc": "HGNC:1653"
+    }
   },
   {
     "id": "trail-fl",
@@ -194,7 +204,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P50591",
+      "ensembl": "ENSG00000121858",
+      "hgnc": "HGNC:11925"
+    }
   },
   {
     "id": "trailshort",
@@ -256,7 +271,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O14763",
+      "ensembl": "ENSG00000120889",
+      "hgnc": "HGNC:11905"
+    }
   },
   {
     "id": "shp1",
@@ -290,7 +310,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P29350",
+      "ensembl": "ENSG00000111679",
+      "hgnc": "HGNC:9658"
+    }
   },
   {
     "id": "cd3z",
@@ -321,7 +346,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P20963",
+      "ensembl": "ENSG00000198821",
+      "hgnc": "HGNC:1677"
+    }
   },
   {
     "id": "zap70",
@@ -353,7 +383,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P43403",
+      "ensembl": "ENSG00000115085",
+      "hgnc": "HGNC:12858"
+    }
   },
   {
     "id": "lat",
@@ -383,7 +418,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O43561",
+      "ensembl": "ENSG00000213658",
+      "hgnc": "HGNC:18874"
+    }
   },
   {
     "id": "plcg1",
@@ -413,7 +453,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P19174",
+      "ensembl": "ENSG00000124181",
+      "hgnc": "HGNC:9065"
+    }
   },
   {
     "id": "cd69",
@@ -443,7 +488,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q07108",
+      "ensembl": "ENSG00000110848",
+      "hgnc": "HGNC:1694"
+    }
   },
   {
     "id": "cd40l",
@@ -473,7 +523,12 @@ export const nodes = [
       "cd4_tcell",
       "cd8_tcell",
       "nk_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P29965",
+      "ensembl": "ENSG00000102245",
+      "hgnc": "HGNC:11935"
+    }
   },
   {
     "id": "tcell-prolif",

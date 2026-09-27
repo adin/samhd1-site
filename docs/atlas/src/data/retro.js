@@ -466,7 +466,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9Y6X9",
+      "ensembl": "ENSG00000133422",
+      "hgnc": "HGNC:23573"
+    }
   },
   {
     "id": "setdb1",
@@ -494,7 +499,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q15047",
+      "ensembl": "ENSG00000143379",
+      "hgnc": "HGNC:10761"
+    }
   },
   {
     "id": "h3k9me3",
@@ -581,7 +591,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q13263",
+      "ensembl": "ENSG00000130726",
+      "hgnc": "HGNC:16384"
+    }
   },
   {
     "id": "zap",
@@ -612,7 +627,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q7Z2W4",
+      "ensembl": "ENSG00000105939",
+      "hgnc": "HGNC:23721"
+    }
   },
   {
     "id": "mov10",
@@ -640,7 +660,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9HCE1",
+      "ensembl": "ENSG00000155363",
+      "hgnc": "HGNC:7200"
+    }
   },
   {
     "id": "oas",
@@ -698,7 +723,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q05823",
+      "ensembl": "ENSG00000135828",
+      "hgnc": "HGNC:10050"
+    }
   },
   {
     "id": "adar1",
@@ -734,7 +764,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P55265",
+      "ensembl": "ENSG00000160710",
+      "hgnc": "HGNC:225"
+    }
   },
   {
     "id": "apobec3",
@@ -799,7 +834,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9NSU2",
+      "ensembl": "ENSG00000213689",
+      "hgnc": "HGNC:12269"
+    }
   },
   {
     "id": "rnaseh2",

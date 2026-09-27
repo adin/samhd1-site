@@ -38,8 +38,8 @@ export const nodes = [
     ],
     "db_xrefs": {
       "uniprot": "P21796",
-      "ensembl": "ENSG00000213886",
-      "hgnc": "HGNC:12682"
+      "ensembl": "ENSG00000213585",
+      "hgnc": "HGNC:12669"
     }
   },
   {
@@ -138,7 +138,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q13323",
+      "ensembl": "ENSG00000100290",
+      "hgnc": "HGNC:1051"
+    }
   },
   {
     "id": "baxbak",
@@ -222,7 +227,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O00429",
+      "ensembl": "ENSG00000087470",
+      "hgnc": "HGNC:2973"
+    }
   },
   {
     "id": "mfn",
@@ -283,7 +293,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9BXM7",
+      "ensembl": "ENSG00000158828",
+      "hgnc": "HGNC:14581"
+    }
   },
   {
     "id": "parkin",
@@ -313,7 +328,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O60260",
+      "ensembl": "ENSG00000185345",
+      "hgnc": "HGNC:8607"
+    }
   },
   {
     "id": "tom20",
@@ -378,7 +398,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9BSK2",
+      "ensembl": "ENSG00000171612",
+      "hgnc": "HGNC:29681"
+    }
   },
   {
     "id": "pnc2",
@@ -408,7 +433,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q96CQ1",
+      "ensembl": "ENSG00000114120",
+      "hgnc": "HGNC:25554"
+    }
   },
   {
     "id": "etc-i",
@@ -710,7 +740,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q00059",
+      "ensembl": "ENSG00000108064",
+      "hgnc": "HGNC:11741"
+    }
   },
   {
     "id": "twnk",
@@ -926,7 +961,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q16665",
+      "ensembl": "ENSG00000100644",
+      "hgnc": "HGNC:4910"
+    }
   },
   {
     "id": "atp",
@@ -1087,7 +1127,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q14457",
+      "ensembl": "ENSG00000126581",
+      "hgnc": "HGNC:1034"
+    }
   },
   {
     "id": "lc3",
@@ -1139,7 +1184,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q13501",
+      "ensembl": "ENSG00000161011",
+      "hgnc": "HGNC:11280"
+    }
   },
   {
     "id": "mtor",
@@ -1227,7 +1277,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P07339",
+      "ensembl": "ENSG00000117984",
+      "hgnc": "HGNC:2529"
+    }
   },
   {
     "id": "dnase2",
@@ -1262,7 +1317,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O00115",
+      "ensembl": "ENSG00000105612",
+      "hgnc": "HGNC:2960"
+    }
   },
   {
     "id": "dnase1l3",
@@ -1292,7 +1352,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "ipsc"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q13609",
+      "ensembl": "ENSG00000163687",
+      "hgnc": "HGNC:2959"
+    }
   },
   {
     "id": "autolysosome",
@@ -1354,12 +1419,7 @@ export const nodes = [
     },
     "summary": "Cytosolic dNTP excess floods PNC1/PNC2, bypassing CMPK2 salvage and causing matrix pool asymmetry.",
     "detail": "Liu 2026 (Science 391:eadq9006) demonstrated that cytosolic dNTP accumulating behind disabled SAMHD1 is transported into mitochondria via SLC25A33/36, supplying excess substrate for aberrant mtDNA neosynthesis.",
-    "samhd1": "Direct consequence of SAMHD1 dNTPase failure; the metabolic bridge between cytosolic dNTP excess and mitochondrial matrix DNA damage.",
-    "db_xrefs": {
-      "uniprot": "Q9BSK2",
-      "ensembl": "ENSG00000117010",
-      "hgnc": "HGNC:20658"
-    }
+    "samhd1": "Direct consequence of SAMHD1 dNTPase failure; the metabolic bridge between cytosolic dNTP excess and mitochondrial matrix DNA damage."
   }
 ];
 

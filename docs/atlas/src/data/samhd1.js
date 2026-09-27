@@ -310,7 +310,7 @@ export const nodes = [
     "db_xrefs": {
       "uniprot": "Q99708",
       "ensembl": "ENSG00000101773",
-      "hgnc": "HGNC:9888"
+      "hgnc": "HGNC:9891"
     }
   },
   {

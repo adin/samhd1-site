@@ -142,7 +142,12 @@ export const nodes = [
       "dendritic_cell"
     ],
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "O95998",
+      "ensembl": "ENSG00000137496",
+      "hgnc": "HGNC:5987"
+    }
   },
   {
     "id": "il12",
@@ -224,7 +229,12 @@ export const nodes = [
       "cd8_tcell",
       "nk_cell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "Q14765",
+      "ensembl": "ENSG00000138378",
+      "hgnc": "HGNC:11365"
+    }
   },
   {
     "id": "tbet",
@@ -250,7 +260,12 @@ export const nodes = [
       "cd8_tcell",
       "nk_cell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "Q9UL17",
+      "ensembl": "ENSG00000073861",
+      "hgnc": "HGNC:11599"
+    }
   },
   {
     "id": "gaf",
@@ -339,7 +354,12 @@ export const nodes = [
       "dendritic_cell"
     ],
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped per the file-wide template fix. Kept the remaining myeloid array (monocyte/macrophage/microglia/dendritic_cell) even though this node's own summary emphasizes IFN-gamma inducing CIITA/MHC-II in \"non-professional\" (i.e. non-myeloid) cells -- no stromal/epithelial vocabulary token exists yet (same gap as il17ra/act1); the myeloid half of the claim (professional APCs upregulating MHC-II further) is independently true, just narrower than the full sentence.",
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "P33076",
+      "ensembl": "ENSG00000179583",
+      "hgnc": "HGNC:7067"
+    }
   },
   {
     "id": "nos2",
@@ -368,7 +388,12 @@ export const nodes = [
       "dendritic_cell"
     ],
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "P35228",
+      "ensembl": "ENSG00000007171",
+      "hgnc": "HGNC:7873"
+    }
   },
   {
     "id": "m1",
@@ -452,7 +477,12 @@ export const nodes = [
     "cell_context": [
       "cd4_tcell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "P40763",
+      "ensembl": "ENSG00000168610",
+      "hgnc": "HGNC:11364"
+    }
   },
   {
     "id": "rorgt",
@@ -475,7 +505,12 @@ export const nodes = [
     "cell_context": [
       "cd4_tcell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "P51449",
+      "ensembl": "ENSG00000143365",
+      "hgnc": "HGNC:10260"
+    }
   },
   {
     "id": "il17ra",
@@ -521,7 +556,12 @@ export const nodes = [
     "evidence_tier": "L1_in_silico",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): this is IL-17RA's direct downstream adaptor, in the same target-tissue cell as il17ra (its own summary says 'at tissue level'), not myeloid. Left empty for the same reason as il17ra; see that node's note.",
     "cell_context": [],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling.",
+    "db_xrefs": {
+      "uniprot": "O43734",
+      "ensembl": "ENSG00000056972",
+      "hgnc": "HGNC:1343"
+    }
   },
   {
     "id": "il22",
@@ -1360,7 +1400,7 @@ export const edges = [
   },
   {
     "from": "cxcl9-11",
-    "to": "naci",
+    "to": "naci-pheno",
     "kind": "drive",
     "label": "CXCL10 as a NACI workup biomarker",
     "pathways": [

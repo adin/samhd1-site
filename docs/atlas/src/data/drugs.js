@@ -31,8 +31,8 @@ export const nodes = [
       "microglia"
     ],
     "db_xrefs": {
-      "chembl": "CHEMBL3989938",
-      "drugbank": "DB12399"
+      "chembl": "CHEMBL3622821",
+      "drugbank": "DB15091"
     },
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier upgraded L4_primary_human -> L6_human_clinical -- this node's own summary/detail describe an actual observed clinical treatment response (doc10arm, this atlas's own subject), matching the already-L6 tofacitinib node's precedent for real-patient-response data. The evidence:\"S\" grade rests on doc10arm alone: fremond2023 is a real AGS JAK-inhibition cohort with zero SAMHD1 cases (per its own refs.js note) and mihaylova2024 is a rheumatoid-arthritis pilot -- neither is SAMHD1-specific, both are legitimate generic supporting-mechanism refs, not the basis for the S grade."
@@ -132,8 +132,8 @@ export const nodes = [
       "microglia"
     ],
     "db_xrefs": {
-      "chembl": "CHEMBL442",
-      "drugbank": "DB00223"
+      "chembl": "CHEMBL1096",
+      "drugbank": "DB01025"
     },
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
@@ -419,8 +419,8 @@ export const nodes = [
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations give no CD4 T-cell support for the myeloid template (han2026, the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js, is peripheral here -- only cited by the imsb301 node/edge, which keeps cd4_tcell as the sole documented exception). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md."
   },
   {
-    "id": "naci",
-    "label": "NACI",
+    "id": "naci-pheno",
+    "label": "NACI (phenotype)",
     "full": "Non-Acute Chronic Interferonopathy — the proposed diagnostic category",
     "compartment": "extracellular",
     "klass": "outcome",
@@ -435,7 +435,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "I",
     "key": true,
-    "summary": "Tonic, source-driven interferon activation with no flare-remit cyclicity and a seronegative cytokine profile.",
+    "summary": "Tonic, source-driven interferon activation with no flare-remit cyclicity and a seronegative cytokine profile, without acute encephalopathy as part of the core phenotype; presents as ME/CFS, psoriatic arthritis, dysautonomia or a combination, with variable expressivity within a pedigree.",
     "detail": "Distinguished from AGS, SAVI and CANDLE by kinetics and biomarkers rather than by signalling architecture: non-acute (persistently engaged, not episodic), chronic (sustained over decades, progressive rather than episodic), and acting through intracellular ISG induction rather than elevated serum cytokines. That last property is the clinically actionable part — it predicts that standard cytokine panels will read normal in active multi-system disease, and it redirects workup toward IFN-α/β, free ISG15, CXCL10 and ISG scoring.",
     "samhd1": "Proposed as a descriptive category for this patient's pattern, explicitly NOT an established clinical entity. It requires independent validation before use outside the concept note.",
     "refs": [
@@ -449,7 +449,52 @@ export const nodes = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ]
+    ],
+    "is_a": [
+      "naci-class"
+    ],
+    "db_xrefs": {
+      "local": "NACI:0001",
+      "pending_mondo": true,
+      "parent_mondo": "MONDO:0700264",
+      "related_mondo": "MONDO:0700260"
+    }
+  },
+  {
+    "id": "naci-class",
+    "label": "NACI (disease class)",
+    "full": "Non-Acute Chronic Interferonopathy — the proposed genotype-agnostic disease class",
+    "compartment": "extracellular",
+    "klass": "outcome",
+    "pathways": [
+      "clinical"
+    ],
+    "pos": [
+      0,
+      -118,
+      44
+    ],
+    "lod": 1,
+    "evidence": "I",
+    "summary": "Mechanistic disease class defined by tonic sub-threshold type I/II IFN signalling arising from heterozygous loss of function in nucleic-acid metabolism genes or acquired equivalents — not tied to any single genotype.",
+    "detail": "The umbrella that naci-pheno instantiates: SAMHD1 p.A565T heterozygosity is one path into NACI, not NACI itself, and many genetic and acquired entry routes are expected. Class membership is recorded as the non-causal is_a property on naci-pheno, never as an edge, so it is not walked when signs are multiplied along paths. Like naci-pheno, this is a proposed category, NOT an established clinical entity; a MONDO submission is being drafted, and pending_mondo marks it until an ID is assigned.",
+    "refs": [
+      "docConcept"
+    ],
+    "evidence_tier": "L1_in_silico",
+    "cell_context": [
+      "systemic_immune",
+      "cns_neuro",
+      "cardiovascular",
+      "hepatic",
+      "musculoskeletal"
+    ],
+    "db_xrefs": {
+      "local": "NACI:0000",
+      "pending_mondo": true,
+      "parent_mondo": "MONDO:0700264",
+      "note": "genotype-agnostic umbrella; SAMHD1 het A565T is one of many expected genetic and acquired entry routes"
+    }
   },
   {
     "id": "mecfs",
@@ -866,7 +911,7 @@ export const nodes = [
     "detail": "Tadekinig alfa binds IL-18 with high, picomolar-range affinity, preventing receptor engagement and blocking downstream NK/Th1 IFN-γ release (Novick et al. 1999).",
     "samhd1": "Direct therapeutic interrupter of Loop C in SAMHD1-driven interferonopathies and systemic autoinflammation.",
     "db_xrefs": {
-      "drugbank": "DB12845"
+      "chembl": "CHEMBL2108054"
     },
     "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence downgraded S -> I -- this node's own samhd1 field describes a proposed therapeutic interruption, not a demonstrated one (nobody has run rhIL-18BP against a SAMHD1-deficient system); matches the correctly-graded sibling proposed arms plp/allopurinol/abe8e. evidence_tier L1_in_silico already correct, no change.",
     "refs": [
@@ -1165,7 +1210,7 @@ export const edges = [
   },
   {
     "from": "ifnb",
-    "to": "naci",
+    "to": "naci-pheno",
     "kind": "drive",
     "label": "tonic, moderate-amplitude, source-driven",
     "pathways": [
@@ -1185,7 +1230,7 @@ export const edges = [
   },
   {
     "from": "isg-set",
-    "to": "naci",
+    "to": "naci-pheno",
     "kind": "drive",
     "label": "intracellular ISG induction with flat serum cytokines",
     "pathways": [
@@ -1252,7 +1297,7 @@ export const edges = [
     "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): che2025 (already cited on both destination nodes) directly supports this edge's own claim -- a human ME/CFS cohort reporting impaired energy production via the citric acid cycle, fatty-acid beta-oxidation and the urea cycle. Added as a formal ref rather than leaving the edge zero-ref; evidence_tier raised L3_cell_line -> L6_human_clinical to match."
   },
   {
-    "from": "naci",
+    "from": "naci-pheno",
     "to": "mecfs",
     "kind": "drive",
     "pathways": [
@@ -1261,7 +1306,7 @@ export const edges = [
     "evidence": "I",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "catalytic_activation",
-    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): both endpoints (naci, mecfs) are systemic clinical-outcome nodes tagged with the systemic array, but this edge carried the generic myeloid template. Matched the edge to its endpoints.",
+    "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): both endpoints (naci-pheno, mecfs) are systemic clinical-outcome nodes tagged with the systemic array, but this edge carried the generic myeloid template. Matched the edge to its endpoints.",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",

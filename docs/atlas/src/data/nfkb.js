@@ -134,7 +134,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P21580",
+      "ensembl": "ENSG00000118503",
+      "hgnc": "HGNC:11896"
+    }
   },
   {
     "id": "cyld",
@@ -161,7 +166,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9NQC7",
+      "ensembl": "ENSG00000083799",
+      "hgnc": "HGNC:2584"
+    }
   },
   {
     "id": "otulin",
@@ -189,7 +199,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q96BN8",
+      "ensembl": "ENSG00000154124",
+      "hgnc": "HGNC:25118"
+    }
   },
   {
     "id": "nik",
@@ -216,7 +231,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q99558",
+      "ensembl": "ENSG00000006062",
+      "hgnc": "HGNC:6853"
+    }
   },
   {
     "id": "ikka",
@@ -243,7 +263,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O15111",
+      "ensembl": "ENSG00000213341",
+      "hgnc": "HGNC:1974"
+    }
   },
   {
     "id": "relb",
@@ -302,7 +327,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "b_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9Y275",
+      "ensembl": "ENSG00000102524",
+      "hgnc": "HGNC:11929"
+    }
   },
   {
     "id": "nfkb-targets",
@@ -397,7 +427,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P10145",
+      "ensembl": "ENSG00000169429",
+      "hgnc": "HGNC:6025"
+    }
   }
 ];
 

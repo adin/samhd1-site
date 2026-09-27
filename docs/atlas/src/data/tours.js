@@ -313,7 +313,7 @@ export const TOURS = [
               'inflammasome feedback all recreate the ligands that started it. That is the mechanistic definition of ' +
               'non-acute chronicity — and the reason the concept note names the pattern NACI rather than filing it ' +
               'under the flare-remit interferonopathies.',
-        nodes: ['naci', 'ankib1', 'isg-set', 'nlrp3', 'atp'], layers: ['clinical', 'ankib1', 'isg', 'inflammasome'],
+        nodes: ['naci-pheno', 'ankib1', 'isg-set', 'nlrp3', 'atp'], layers: ['clinical', 'ankib1', 'isg', 'inflammasome'],
       },
     ],
   },
@@ -576,7 +576,7 @@ export const PATH_PRESETS = [
     title: 'A565T → every clinical endpoint',
     blurb: 'Variant to diagnosis, one reaction at a time.',
     from: 'a565t',
-    to: ['mecfs', 'psa', 'steatosis', 'naci', 'connective', 'immunodef', 'dysautonomia', 'cancer-risk', 'pem'],
+    to: ['mecfs', 'psa', 'steatosis', 'naci-pheno', 'connective', 'immunodef', 'dysautonomia', 'cancer-risk', 'pem'],
   },
   {
     id: 'mtdna-ifn',

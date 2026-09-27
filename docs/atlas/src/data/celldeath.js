@@ -104,8 +104,8 @@ export const nodes = [
     ],
     "db_xrefs": {
       "uniprot": "Q9H171",
-      "ensembl": "ENSG00000171806",
-      "hgnc": "HGNC:30950"
+      "ensembl": "ENSG00000124256",
+      "hgnc": "HGNC:16176"
     }
   },
   {
@@ -169,7 +169,12 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q13546",
+      "ensembl": "ENSG00000137275",
+      "hgnc": "HGNC:10019"
+    }
   },
   {
     "id": "mlkl",
@@ -199,7 +204,12 @@ export const nodes = [
       "monocyte",
       "macrophage",
       "microglia"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q8NB16",
+      "ensembl": "ENSG00000168404",
+      "hgnc": "HGNC:26617"
+    }
   },
   {
     "id": "casp8",

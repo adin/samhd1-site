@@ -54,7 +54,7 @@ export const nodes = [
       "uniprot": "Q8N884",
       "ensembl": "ENSG00000164430",
       "hgnc": "HGNC:21367",
-      "chembl": "CHEMBL3706170"
+      "chembl": "CHEMBL4105728"
     }
   },
   {
@@ -131,7 +131,7 @@ export const nodes = [
       "uniprot": "Q86WV6",
       "ensembl": "ENSG00000184584",
       "hgnc": "HGNC:27962",
-      "chembl": "CHEMBL3714578"
+      "chembl": "CHEMBL4523377"
     }
   },
   {
@@ -222,7 +222,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O95786",
+      "ensembl": "ENSG00000107201",
+      "hgnc": "HGNC:19102"
+    }
   },
   {
     "id": "mda5",
@@ -259,7 +264,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9BYX4",
+      "ensembl": "ENSG00000115267",
+      "hgnc": "HGNC:18873"
+    }
   },
   {
     "id": "lgp2",
@@ -286,7 +296,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q96C10",
+      "ensembl": "ENSG00000108771",
+      "hgnc": "HGNC:29517"
+    }
   },
   {
     "id": "dsrna-cyt",
@@ -384,7 +399,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q7Z434",
+      "ensembl": "ENSG00000088888",
+      "hgnc": "HGNC:29233"
+    }
   },
   {
     "id": "mavs-perox",
@@ -440,7 +460,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q13114",
+      "ensembl": "ENSG00000131323",
+      "hgnc": "HGNC:12033"
+    }
   },
   {
     "id": "traf6",
@@ -469,7 +494,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9Y4K3",
+      "ensembl": "ENSG00000175104",
+      "hgnc": "HGNC:12036"
+    }
   },
   {
     "id": "tlr3",
@@ -506,7 +536,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O15455",
+      "ensembl": "ENSG00000164342",
+      "hgnc": "HGNC:11849"
+    }
   },
   {
     "id": "tlr7",
@@ -562,7 +597,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9NR96",
+      "ensembl": "ENSG00000239732",
+      "hgnc": "HGNC:15633"
+    }
   },
   {
     "id": "ll37",
@@ -591,7 +631,12 @@ export const nodes = [
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): LL-37 itself is made by keratinocytes and neutrophils, neither of which exists in this atlas's vocabulary (this node's own samhd1 text already disclaims any SAMHD1 link -- a disease-model gap, not a cascade one). The only immune lineage with real support is the pDC that senses the complex (lande2007, ganguly2009 are both pDC/human-DC papers) -- narrowed from the generic template to dendritic_cell only.",
     "cell_context": [
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P49913",
+      "ensembl": "ENSG00000164047",
+      "hgnc": "HGNC:1472"
+    }
   },
   {
     "id": "ll37-dna",
@@ -650,7 +695,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O00206",
+      "ensembl": "ENSG00000136869",
+      "hgnc": "HGNC:11850"
+    }
   },
   {
     "id": "trif",
@@ -681,7 +731,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q8IUC6",
+      "ensembl": "ENSG00000127666",
+      "hgnc": "HGNC:18348"
+    }
   },
   {
     "id": "myd88",
@@ -709,7 +764,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q99836",
+      "ensembl": "ENSG00000172936",
+      "hgnc": "HGNC:7562"
+    }
   },
   {
     "id": "irak14",
@@ -776,8 +836,8 @@ export const nodes = [
     ],
     "db_xrefs": {
       "uniprot": "Q9P2G1",
-      "ensembl": "ENSG00000113889",
-      "hgnc": "HGNC:19363"
+      "ensembl": "ENSG00000001629",
+      "hgnc": "HGNC:22215"
     }
   },
   {
@@ -840,7 +900,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q96CV9",
+      "ensembl": "ENSG00000123240",
+      "hgnc": "HGNC:17142"
+    }
   },
   {
     "id": "nemo",
@@ -875,7 +940,7 @@ export const nodes = [
     ],
     "db_xrefs": {
       "uniprot": "Q9Y6K9",
-      "ensembl": "ENSG00000269386",
+      "ensembl": "ENSG00000269335",
       "hgnc": "HGNC:5961"
     }
   },
@@ -924,9 +989,9 @@ export const nodes = [
     },
     "db_xrefs": {
       "uniprot": "Q9UHD2",
-      "ensembl": "ENSG00000183747",
+      "ensembl": "ENSG00000183735",
       "hgnc": "HGNC:11584",
-      "chembl": "CHEMBL5686"
+      "chembl": "CHEMBL5408"
     }
   },
   {
@@ -969,9 +1034,9 @@ export const nodes = [
     ],
     "db_xrefs": {
       "uniprot": "Q14164",
-      "ensembl": "ENSG00000143464",
-      "hgnc": "HGNC:5962",
-      "chembl": "CHEMBL5687"
+      "ensembl": "ENSG00000263528",
+      "hgnc": "HGNC:14552",
+      "chembl": "CHEMBL3529"
     }
   },
   {
@@ -1083,7 +1148,7 @@ export const nodes = [
       "cd4_tcell"
     ],
     "db_xrefs": {
-      "uniprot": "O15111",
+      "uniprot": "O14920",
       "ensembl": "ENSG00000104365",
       "hgnc": "HGNC:5960"
     }
@@ -1114,7 +1179,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P25963",
+      "ensembl": "ENSG00000100906",
+      "hgnc": "HGNC:7797"
+    }
   },
   {
     "id": "nfkb",

@@ -53,7 +53,7 @@ export const nodes = [
       "uniprot": "Q96P20",
       "ensembl": "ENSG00000162711",
       "hgnc": "HGNC:16400",
-      "chembl": "CHEMBL3714856"
+      "chembl": "CHEMBL1741208"
     }
   },
   {
@@ -89,7 +89,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O14862",
+      "ensembl": "ENSG00000163568",
+      "hgnc": "HGNC:357"
+    }
   },
   {
     "id": "ifi16",
@@ -122,7 +127,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q16666",
+      "ensembl": "ENSG00000163565",
+      "hgnc": "HGNC:5395"
+    }
   },
   {
     "id": "nek7",
@@ -149,7 +159,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q8TDX7",
+      "ensembl": "ENSG00000151414",
+      "hgnc": "HGNC:13386"
+    }
   },
   {
     "id": "asc",
@@ -186,7 +201,7 @@ export const nodes = [
     "db_xrefs": {
       "uniprot": "Q9ULZ3",
       "ensembl": "ENSG00000103490",
-      "hgnc": "HGNC:9360"
+      "hgnc": "HGNC:16608"
     }
   },
   {
@@ -223,7 +238,7 @@ export const nodes = [
       "uniprot": "P29466",
       "ensembl": "ENSG00000137752",
       "hgnc": "HGNC:1499",
-      "chembl": "CHEMBL234"
+      "chembl": "CHEMBL4801"
     }
   },
   {
@@ -292,7 +307,7 @@ export const nodes = [
       "uniprot": "P01584",
       "ensembl": "ENSG00000125538",
       "hgnc": "HGNC:5992",
-      "chembl": "CHEMBL5546"
+      "chembl": "CHEMBL1909490"
     }
   },
   {
@@ -325,7 +340,7 @@ export const nodes = [
       "uniprot": "Q14116",
       "ensembl": "ENSG00000150782",
       "hgnc": "HGNC:5986",
-      "chembl": "CHEMBL5749"
+      "chembl": "CHEMBL1741305"
     }
   },
   {
@@ -359,7 +374,7 @@ export const nodes = [
     "db_xrefs": {
       "uniprot": "P57764",
       "ensembl": "ENSG00000104518",
-      "hgnc": "HGNC:13308"
+      "hgnc": "HGNC:25697"
     }
   },
   {
@@ -445,7 +460,12 @@ export const nodes = [
       "macrophage",
       "microglia",
       "dendritic_cell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q99572",
+      "ensembl": "ENSG00000089041",
+      "hgnc": "HGNC:8537"
+    }
   },
   {
     "id": "urate",

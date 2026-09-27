@@ -76,8 +76,8 @@ export const nodes = [
     ],
     "db_xrefs": {
       "uniprot": "P01562",
-      "ensembl": "ENSG00000188383",
-      "hgnc": "HGNC:5431"
+      "ensembl": "ENSG00000197919",
+      "hgnc": "HGNC:5417"
     }
   },
   {
@@ -111,7 +111,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P01579",
+      "ensembl": "ENSG00000111537",
+      "hgnc": "HGNC:5438"
+    }
   },
   {
     "id": "ifnl",
@@ -167,7 +172,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P05231",
+      "ensembl": "ENSG00000136244",
+      "hgnc": "HGNC:6018"
+    }
   },
   {
     "id": "tnfa",
@@ -197,7 +207,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P01375",
+      "ensembl": "ENSG00000232810",
+      "hgnc": "HGNC:11892"
+    }
   },
   {
     "id": "il23",
@@ -255,7 +270,12 @@ export const nodes = [
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node's own `full` field says 'Th17 effector' -- IL-17A is made by Th17/ILC3/gammadelta T cells, not monocytes/macrophages/microglia/DCs. Narrowed to match cytokines.js's th17-cell node (same citation, already correctly cd4_tcell-only per PR #112) -- the myeloid template had been left on the cytokine itself while PR #112 fixed the surrounding Th17 axis nodes.",
     "cell_context": [
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q16552",
+      "ensembl": "ENSG00000112115",
+      "hgnc": "HGNC:5981"
+    }
   },
   {
     "id": "mcp1",
@@ -282,7 +302,12 @@ export const nodes = [
     ],
     "evidence_tier": "L3_cell_line",
     "cellContextNote": "Fixed 2026-09-12 (cell_context topical-fit re-audit): this node's own summary specifically says VISCERAL ADIPOCYTES, not subcutaneous ones -- the generic myeloid template does not fit at all. Left empty pending an adipocyte vocabulary token; see ifnl's note for the same pattern.",
-    "cell_context": []
+    "cell_context": [],
+    "db_xrefs": {
+      "uniprot": "P13500",
+      "ensembl": "ENSG00000108691",
+      "hgnc": "HGNC:10618"
+    }
   },
   {
     "id": "gdf15",
@@ -314,7 +339,12 @@ export const nodes = [
       "cardiovascular",
       "hepatic",
       "musculoskeletal"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q99988",
+      "ensembl": "ENSG00000130513",
+      "hgnc": "HGNC:30142"
+    }
   },
   {
     "id": "ifnar1",
@@ -496,7 +526,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "O60674",
+      "ensembl": "ENSG00000096968",
+      "hgnc": "HGNC:6192"
+    }
   },
   {
     "id": "ifngr",
@@ -573,7 +608,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P14778",
+      "ensembl": "ENSG00000115594",
+      "hgnc": "HGNC:5993"
+    }
   },
   {
     "id": "tnfr",
@@ -601,7 +641,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P19438",
+      "ensembl": "ENSG00000067182",
+      "hgnc": "HGNC:11916"
+    }
   },
   {
     "id": "stat1",
@@ -702,7 +747,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q00978",
+      "ensembl": "ENSG00000213928",
+      "hgnc": "HGNC:6131"
+    }
   },
   {
     "id": "isgf3",
@@ -914,7 +964,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "Q9UBK2",
+      "ensembl": "ENSG00000109819",
+      "hgnc": "HGNC:9237"
+    }
   },
   {
     "id": "isg15",
@@ -952,7 +1007,7 @@ export const nodes = [
     "db_xrefs": {
       "uniprot": "P05161",
       "ensembl": "ENSG00000187608",
-      "hgnc": "HGNC:6153"
+      "hgnc": "HGNC:4053"
     }
   },
   {
@@ -988,8 +1043,8 @@ export const nodes = [
     ],
     "db_xrefs": {
       "uniprot": "Q9UMW8",
-      "ensembl": "ENSG00000184981",
-      "hgnc": "HGNC:12629"
+      "ensembl": "ENSG00000184979",
+      "hgnc": "HGNC:12616"
     }
   },
   {
@@ -1047,7 +1102,12 @@ export const nodes = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
-    ]
+    ],
+    "db_xrefs": {
+      "uniprot": "P10914",
+      "ensembl": "ENSG00000125347",
+      "hgnc": "HGNC:6116"
+    }
   }
 ];
 
