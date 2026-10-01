@@ -1918,7 +1918,7 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Direct physical interaction with CtIP at double-strand breaks, stimulating CtIP endonuclease activity and loading the MRE11 complex to initiate 5'-3' DNA end resection for homologous recombination",
-    "rationale": "Definitive physical mechanism for SAMHD1's cancer-protective DNA repair role (Coquel et al. 2018, Nature); A565T in C-terminal region impairs CtIP recruitment",
+    "rationale": "Definitive physical mechanism for SAMHD1's cancer-protective DNA repair role (Daddacha et al. 2017, Cell Rep); A565T in C-terminal region impairs CtIP recruitment",
     "locEvidence": "S",
     "domain": "genome",
     "lossLabel": "Significantly Impaired",

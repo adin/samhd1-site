@@ -170,7 +170,7 @@ export const REFS = {
   "[16]": {
     "bibliography": {
       "short": "Chen S et al. 2018 - SAMHD1 suppresses NF-κB and IFN",
-      "full": "Zhao K et al. SAMHD1 suppresses innate immune responses to viral infections and inflammatory stimuli by inhibiting the NF-κB and interferon pathways. Proc Natl Acad Sci USA. 2018;115(18):E4284-E4293.",
+      "full": "Chen S, Bonifati S, Qin Z, St Gelais C, Wu L. SAMHD1 suppresses innate immune responses to viral infections and inflammatory stimuli by inhibiting the NF-κB and interferon pathways. Proc Natl Acad Sci USA. 2018;115(16):E3798-E3807.",
       "url": "https://doi.org/10.1073/pnas.1801213115",
       "doi": "10.1073/pnas.1801213115"
     },
@@ -272,9 +272,11 @@ export const REFS = {
   
   "[29]": {
     "bibliography": {
-      "short": "Antonucci JM et al. 2016 - CD8",
-      "full": "Antonucci JM, St Gelais C, de Silva S, et al. SAMHD1 Suppression of Antiviral Immune Responses. Cell Rep. 2016;16(6):1692-1704. PMID: 27477284; PMCID: PMC6377309.",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6377309/"
+      "short": "Chen S et al. 2019 - Antiviral suppression (as [10])",
+      "full": "Chen S, Bonifati S, Qin Z, St Gelais C, Wu L. SAMHD1 Suppression of Antiviral Immune Responses. Trends Microbiol. 2019;27(3):254-267. PMID 30336972; PMCID PMC6377309.",
+      "url": "https://doi.org/10.1016/j.tim.2018.09.009",
+      "doi": "10.1016/j.tim.2018.09.009",
+      "pmid": "30336972"
     },
     "atlas": {
       "finding": "Details how SAMHD1 suppresses CD8+ T cell hyperactivation and prevents autoimmune responses"
@@ -282,8 +284,8 @@ export const REFS = {
   },
   "[30]": {
     "bibliography": {
-      "short": "Yang L et al. 2025 - BIK mBio",
-      "full": "Yang L et al. SAMHD1 enhances HIV-1-induced apoptosis in monocytic cells via VDAC1-mediated mitochondrial pathway and BIK upregulation. mBio. 2025;16(3):e00425-25.",
+      "short": "Yang H et al. 2025 - BIK mBio",
+      "full": "Yang H, Cheung PH, Wu L. SAMHD1 enhances HIV-1-induced apoptosis in monocytic cells via the mitochondrial pathway. mBio. 2025;16(7):e00425-25.",
       "url": "https://journals.asm.org/doi/10.1128/mbio.00425-25",
       "doi": "10.1128/mbio.00425-25"
     },
@@ -296,7 +298,7 @@ export const REFS = {
   "[33]": {
     "bibliography": {
       "short": "Che X, Klimas N et al. 2025 - Columbia ME/CFS",
-      "full": "Che X, Ranjan A, Bateman L, Klimas N, Komaroff AL, Levine SM, Montoya JG, Peterson DL, Pearlman C, Lipkin WI. Heightened innate immunity may trigger chronic inflammation, fatigue and post-exertional malaise in ME/CFS. npj Metabolic Health and Disease. 2025;3:5.",
+      "full": "Che X, Ranjan A, Guo C, Zhang K, Goldsmith R, Levine S, Moneghetti KJ, Zhai Y, Ge L, Mishra N, Hornig M, Bateman L, Klimas NG, Montoya JG, Peterson DL, Klein SL, Fiehn O, Komaroff AL, Lipkin WI. Heightened innate immunity may trigger chronic inflammation, fatigue and post-exertional malaise in ME/CFS. npj Metab Health Dis. 2025;3(1):34.",
       "url": "https://doi.org/10.1038/s44324-025-00079-w",
       "doi": "10.1038/s44324-025-00079-w"
     },
@@ -329,9 +331,11 @@ export const REFS = {
   },
   "[36]": {
     "bibliography": {
-      "short": "Coquel F et al. 2018 - LINE-1 S-phase",
-      "full": "Coquel F et al. The SAMHD1-mediated block of LINE-1 retroelements is regulated by the cell cycle. PMC. 2018;PMC5872582.",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5872582/"
+      "short": "Herrmann A et al. 2018 - LINE-1 phosphorylation",
+      "full": "Herrmann A, Wittmann S, Thomas D, Shepard CN, Kim B, Ferreirós N, Gramberg T. The SAMHD1-mediated block of LINE-1 retroelements is regulated by phosphorylation. Mob DNA. 2018;9:11.",
+      "url": "https://doi.org/10.1186/s13100-018-0116-5",
+      "doi": "10.1186/s13100-018-0116-5",
+      "pmid": "29610582"
     },
     "atlas": {
       "finding": "SAMHD1 restricts LINE-1 in cell cycle-dependent manner; stress granule mechanism active when dNTPase function reduced during S-phase"
@@ -536,11 +540,11 @@ export const REFS = {
   },
   "[56]": {
     "bibliography": {
-      "short": "Coquel F et al. 2018 - Nature",
-      "full": "Coquel F, et al. SAMHD1 promotes DNA end resection to facilitate homologous recombination by interacting with CtIP. Nature. 2018;563(7732):578-583.",
-      "url": "https://doi.org/10.1038/s41586-018-0028-4",
-      "doi": "10.1038/s41586-018-0028-4",
-      "pmid": "30429548"
+      "short": "Daddacha W et al. 2017 - End resection / CtIP",
+      "full": "Daddacha W, Koyen AE, Bastien AJ, Head PE, Dhere VR, Nabeta GN, Connolly EC, Werner E, Madden MZ, Daly MB, Minten EV, Whelan DR, Schlafstein AJ, Zhang H, Anand R, Doronio C, Withers D, Yu DS. SAMHD1 Promotes DNA End Resection to Facilitate DNA Repair by Homologous Recombination. Cell Rep. 2017;20(8):1921-1935.",
+      "url": "https://doi.org/10.1016/j.celrep.2017.08.008",
+      "doi": "10.1016/j.celrep.2017.08.008",
+      "pmid": "28834754"
     },
     "atlas": {
       "finding": "Shows SAMHD1 physical interaction with CtIP at double-strand breaks and stalled replication forks, promoting MRE11 recruitment, end resection, and RAD51 filament assembly"
@@ -562,7 +566,7 @@ export const REFS = {
     "bibliography": {
       "short": "Rice GI et al. 2009 - Nat Genet",
       "full": "Rice GI, Bond J, Asipu A, et al. Mutations involved in Aicardi-Goutières syndrome implicate SAMHD1 as regulator of the innate immune response. Nat Genet. 2009;41(7):829-832.",
-      "url": "https://doi.org/10.1038/ng.424",
+      "url": "https://doi.org/10.1038/ng.373",
       "doi": "10.1038/ng.373",
       "pmid": "19525956"
     },
