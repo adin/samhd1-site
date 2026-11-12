@@ -277,6 +277,10 @@ export const EDGE_KINDS = {
   degrade:     { color: 0xff7a4d, head: 'bar',   label: 'degrades',        sign: -1 },
   release:     { color: 0xffab3d, head: 'arrow', label: 'releases',        sign: +1, dashed: true },
   drive:       { color: 0xe0674f, head: 'arrow', label: 'drives',          sign: +1 },
+  // Added 2026-11-11 (review ruling on the curated-database fill): a link two reviewers agree is real but
+  // whose sign they do not agree on. sign 0 makes any route through it read 'no net direction' instead
+  // of silently counting as an activation, and the influence propagation stops at it.
+  associate:   { color: 0x8a94a6, head: 'none',  label: 'associates with (sign unknown)', sign: 0, dashed: true },
 };
 
 export const EVIDENCE = {

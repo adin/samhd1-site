@@ -489,14 +489,18 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0018): refs kaiser2008, li2012 (PMID 18941233, 22817896) from reactome,signor (enzymatic reaction,phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia"
+    ],
+    "refs": [
+      "kaiser2008",
+      "li2012"
     ]
   },
   {
@@ -609,14 +613,18 @@ export const edges = [
       "celldeath"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0004): refs lin1999, donepudi2003 (PMID 10521396, 12620240) from reactome,signor (cleavage,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): cd4_tcell dropped -- none of this file's 8 citations (conos2017, dereuver2022, jiao2020, kaiser2011, malireddi2019, sun2012mlkl, upton2012, zhang2022adar) resolve a T-cell-intrinsic finding for the ZBP1/RIPK1/RIPK3/MLKL necroptosis-PANoptosis axis this file models. No ipsc basis to swap in either (no stem-cell citation here). Honest caveat: only conos2017 (BMDM) is myeloid-native primary data; the rest are keratinocyte/intestinal-epithelium/fibroblast/tumour-line/whole-mouse systems -- a borrowed-mechanism pattern (the pgc1a precedent), not a topical mismatch, since this file's own header scopes it explicitly to the atlas's myeloid disease population (retroelement de-repression + tonic IFN raising ZBP1 as an ISG). dendritic_cell intentionally NOT added despite the post-audit convention elsewhere (retro.js/sensing.js/ifn.js/nfkb.js) -- no citation here supports it and this file had no pre-existing occurrence to converge from. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
       "macrophage",
       "microglia"
+    ],
+    "refs": [
+      "lin1999",
+      "donepudi2003"
     ]
   },
   {

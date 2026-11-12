@@ -395,8 +395,8 @@ export function renderEdgeInspector(edge, cb) {
   parts.push(`<span class="tag ev-${edge.evidence}">${edge.evidence} — ${esc(EVIDENCE[edge.evidence].label)}</span>`);
   // The polarity is the whole reason the cascade navigator can reason rather
   // than merely walk, so it is stated outright rather than left to the glyph.
-  parts.push(`<span class="tag" style="border-color:${sign < 0 ? '#46d18a80' : '#e0674f80'}">` +
-    `${sign < 0 ? '↓ suppresses' : '↑ increases'} its target</span>`);
+  parts.push(`<span class="tag" style="border-color:${sign < 0 ? '#46d18a80' : sign > 0 ? '#e0674f80' : '#8a94a680'}">` +
+    `${sign < 0 ? '↓ suppresses' : sign > 0 ? '↑ increases' : '· effect on'} its target${sign === 0 ? ' unknown' : ''}</span>`);
   if (edge.loop) parts.push(`<span class="tag" style="border-color:#c06bff80">loop ${esc(edge.loop)}</span>`);
   for (const p of edge.pathways ?? []) {
     if (PATHWAYS[p]) parts.push(`<span class="tag" style="border-color:${hex(PATHWAYS[p].color)}66">${esc(PATHWAYS[p].label)}</span>`);
@@ -499,7 +499,7 @@ export function buildLegend() {
   const kinds = Object.values(EDGE_KINDS).sort((a, b) => (a.sign ?? 1) - (b.sign ?? 1));
   for (const kind of kinds) {
     parts.push(`<div class="lg-row">${edgeGlyph(kind)}<span>${esc(kind.label)}` +
-      `<i class="lg-sign ${(kind.sign ?? 1) < 0 ? 'down' : 'up'}">${(kind.sign ?? 1) < 0 ? '↓' : '↑'}</i></span></div>`);
+      `<i class="lg-sign ${(kind.sign ?? 1) < 0 ? 'down' : (kind.sign ?? 1) > 0 ? 'up' : ''}">${(kind.sign ?? 1) < 0 ? '↓' : (kind.sign ?? 1) > 0 ? '↑' : '·'}</i></span></div>`);
   }
   parts.push('</div>');
   parts.push('<p class="lg-note">Net effect along a route is the <b>product</b> of these: ' +
@@ -800,13 +800,16 @@ export function renderRouteList(query, result, activeIdx, cb) {
   }
 
   const up = routes.filter((r) => r.sign > 0).length;
-  const down = routes.length - up;
+  const down = routes.filter((r) => r.sign < 0).length;
+  // Routes through an unsigned 'associate' edge have sign 0: no net direction.
+  const unsigned = routes.length - up - down;
 
   parts.push('<div class="insp-tags">');
   parts.push(`<span class="tag">${total ?? routes.length} route${(total ?? routes.length) === 1 ? '' : 's'}${truncated ? '+' : ''}</span>`);
   parts.push(`<span class="tag">${routes[0].length}–${routes[routes.length - 1].length} steps</span>`);
   if (up) parts.push(`<span class="tag" style="border-color:#e0674f80">${up} increase</span>`);
   if (down) parts.push(`<span class="tag" style="border-color:#46d18a80">${down} suppress</span>`);
+  if (unsigned) parts.push(`<span class="tag">${unsigned} direction unknown</span>`);
   parts.push('</div>');
 
   if (total > routes.length) {
@@ -873,7 +876,7 @@ export function showPathStep(route, stepIdx, cb) {
   pathHud.innerHTML = `
     <div class="step-kicker">
       Step ${stepIdx + 1} of ${route.steps.length}
-      &nbsp;·&nbsp; net so far <b class="${running > 0 ? 'up' : 'down'}">${SIGN_GLYPH(running)} ${esc(signLabel(running))}</b>
+      &nbsp;·&nbsp; net so far <b class="${running > 0 ? 'up' : running < 0 ? 'down' : ''}">${SIGN_GLYPH(running)} ${esc(signLabel(running))}</b>
       &nbsp;·&nbsp; route grade <span class="ev ev-${route.grade}">${route.grade}</span>
     </div>
     <h3>

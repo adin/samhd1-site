@@ -1190,8 +1190,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "irf7",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs. | Curated-database fill 2026-11-11 (CP-0074): refs hoshino2006 (PMID 16612387) from signor (functional association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1200,6 +1200,9 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "hoshino2006"
     ]
   },
   {
@@ -1235,8 +1238,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs. | Curated-database fill 2026-11-11 (CP-0010): refs domanski1997, cutrone2001 (PMID 9334213, 11278538) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1245,6 +1248,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "domanski1997",
+      "cutrone2001"
     ]
   },
   {
@@ -1256,8 +1263,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs. | Curated-database fill 2026-11-11 (CP-0021): refs cutrone2001, gavutis2005 (PMID 11278538, 15778442) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1266,6 +1273,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "cutrone2001",
+      "gavutis2005"
     ]
   },
   {
@@ -1277,8 +1288,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "irf7",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs. | Curated-database fill 2026-11-11 (CP-0060): refs novick1994 (PMID 8181059) from signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1287,6 +1298,9 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "novick1994"
     ]
   },
   {
@@ -1297,8 +1311,8 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0015): refs kotenko1995, briscoe1996 (PMID 7673114, 8631301) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1307,6 +1321,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "kotenko1995",
+      "briscoe1996"
     ]
   },
   {
@@ -1317,11 +1335,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0027): refs sheppard2002, dumoutier2004 (PMID 12469119, 15166220) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this edge and ifnlr->jak1 are the IFN-lambda RECEPTION arm -- IFNLR1 is epithelial/neutrophil-restricted (this is what the ifnl/ifnlr nodes' own PR #112 clearing to [] already established), so an edge between two [] nodes inherited the myeloid template with zero overlap to either endpoint (the disjoint-check violation PR #112 defined). Cleared to match. This is distinct from IFN-lambda PRODUCTION (see irf3->ifnl), which is not epithelial-restricted and correctly keeps myeloid/DC.",
-    "cell_context": []
+    "cell_context": [],
+    "refs": [
+      "sheppard2002",
+      "dumoutier2004"
+    ]
   },
   {
     "from": "il1b",
@@ -1332,8 +1354,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0036): refs dower, kanakaraj1998 (PMID 2946959, 9625767) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1342,6 +1364,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "dower",
+      "kanakaraj1998"
     ]
   },
   {
@@ -1352,8 +1378,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0011): refs stauber1988, tang1996 (PMID 2848815, 8679576) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_binding",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1362,6 +1388,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "stauber1988",
+      "tang1996"
     ]
   },
   {
@@ -1375,8 +1405,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0029): refs wesche1997, knop1999 (PMID 9430229, 10217414) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1385,6 +1415,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "wesche1997",
+      "knop1999"
     ]
   },
   {
@@ -1441,7 +1475,7 @@ export const edges = [
     "evidence": "G",
     "loop": "A",
     "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0048): refs colamonici1994, yan1996 (PMID 7526154, 8605876) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier left at L1_in_silico: MeSH does not name a cell or animal system (or the ref is a review).",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1450,6 +1484,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "colamonici1994",
+      "yan1996"
     ]
   },
   {
@@ -1481,8 +1519,8 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0032): refs krause2002, platanias2005 (PMID 12438563, 15864272) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1491,6 +1529,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "krause2002",
+      "platanias2005"
     ]
   },
   {
@@ -1501,8 +1543,8 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0025): refs sakatsume1995, krause2002 (PMID 7615558, 12438563) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1511,6 +1553,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "sakatsume1995",
+      "krause2002"
     ]
   },
   {
@@ -1521,11 +1567,15 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0008): refs finbloom1995, lejeune2002 (PMID 7543512, 12087100) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): same reasoning as ifnl->ifnlr -- IFN-lambda reception is epithelial/neutrophil-restricted, matching the ifnl/ifnlr nodes' own [] clearing from PR #112. Cleared to match rather than left as a disjoint edge.",
-    "cell_context": []
+    "cell_context": [],
+    "refs": [
+      "finbloom1995",
+      "lejeune2002"
+    ]
   },
   {
     "from": "jak1",
@@ -1537,8 +1587,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs. | Curated-database fill 2026-11-11 (CP-0001): refs shuai1994, quelle1995 (PMID 7510216, 7657660) from reactome,signor (enzymatic reaction,phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "kinase_phosphorylation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1552,7 +1602,11 @@ export const edges = [
       "string_combined": 0.999,
       "string_experimental": 0.985,
       "string_database": 0.9
-    }
+    },
+    "refs": [
+      "shuai1994",
+      "quelle1995"
+    ]
   },
   {
     "from": "tyk2",
@@ -1584,8 +1638,8 @@ export const edges = [
       "ifn-jak"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0003): refs quelle1995, vanderbruggen1995 (PMID 7657660, 7888666) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "kinase_phosphorylation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1594,6 +1648,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "quelle1995",
+      "vanderbruggen1995"
     ]
   },
   {
@@ -2054,8 +2112,8 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.3,
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): evidence downgraded S -> G in the same pass -- S requires SAMHD1-specific evidence, impossible with zero refs. | Curated-database fill 2026-11-11 (CP-0072): refs malakhova2006 (PMID 16710296) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2064,6 +2122,9 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "malakhova2006"
     ]
   },
   {
@@ -2074,8 +2135,8 @@ export const edges = [
       "isg"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0026): refs sasaki1999, schmitz2000 (PMID 10421843, 10777583) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2084,6 +2145,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "sasaki1999",
+      "schmitz2000"
     ]
   },
   {
@@ -2269,8 +2334,8 @@ export const edges = [
     ],
     "evidence": "G",
     "bend": 0.35,
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0023): refs beg1992, baldi1996 (PMID 1340770, 8550590) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact, same class found in retro.js/sensing.js. pDCs are the professional type-I IFN producers (see cytokines.js's pdc node), so an interferon-pathway file excluding dendritic cells from every edge was backwards. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2279,6 +2344,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "beg1992",
+      "baldi1996"
     ]
   },
   {

@@ -1,5 +1,5 @@
 # SAMHD1 p.A565T — CAUSAL MODEL  (machine-readable, generated)
-# 257 nodes · 435 edges · 20 layers · 10 streams
+# 277 nodes · 518 edges · 20 layers · 10 streams
 # source: viz/innate-immune-3d · regenerate: jsc -m tools/export_context.mjs > samhd1-model.txt
 # DO NOT EDIT BY HAND — regenerate instead.
 
@@ -18,7 +18,7 @@ multiplicative along a path — a route with an even number of - edges is net
 activating. This is how the model DERIVES an effect rather than asserting it.
 
 EDGE KINDS (kind = sign):
-  activate=+ produce=+ inhibit=- translocate=+ bind=+ ubiq=+ phos=+ transport=+ sense=+ degrade=- release=+ drive=+
+  activate=+ produce=+ inhibit=- translocate=+ bind=+ ubiq=+ phos=+ transport=+ sense=+ degrade=- release=+ drive=+ associate=0
 
 COMPARTMENT CODES:
   EXT=Extracellular · MEM=Plasma membrane · CYT=Cytosol · NUC=Nucleus · MIT=Mitochondrion · ER=ER / Golgi · END=Endosome · LYS=Lysosome · PER=Peroxisome · RES=Responder cell · GRA=Stress granule
@@ -116,20 +116,20 @@ GRA|Stress granule|Where SAMHD1 sequesters immunostimulatory dsRNA in LLPS conde
 
 §4 LAYERS   key|label|nodes
 samhd1|SAMHD1 node|6
-cgas-sting|cGAS–STING (Loop A)|24
-rlr-mavs|RIG-I / MDA5 – MAVS|16
-tlr|TLR3/4/7/9 – TRIF/MyD88|18
+cgas-sting|cGAS–STING (Loop A)|33
+rlr-mavs|RIG-I / MDA5 – MAVS|19
+tlr|TLR3/4/7/9 – TRIF/MyD88|19
 ankib1|ANKIB1 K11-Ub gain node|10
-nfkb|NF-κB|30
-inflammasome|NLRP3 (Loop B)|25
+nfkb|NF-κB|36
+inflammasome|NLRP3 (Loop B)|28
 celldeath|Cell death (ZBP1/RIPK3)|8
-ifn-jak|IFNAR–JAK/TYK2–STAT|23
-ifn-gamma|IFN-γ loop (Loop C)|15
-th17|IL-12/IL-23 – Th1/Th17|9
+ifn-jak|IFNAR–JAK/TYK2–STAT|25
+ifn-gamma|IFN-γ loop (Loop C)|16
+th17|IL-12/IL-23 – Th1/Th17|11
 tcr|TCR signalling (TRAILshort)|18
-isg|ISG effectors & brakes|15
-mito|Mitochondrial injury|39
-mitophagy|Mitophagy / lysosome|16
+isg|ISG effectors & brakes|16
+mito|Mitochondrial injury|42
+mitophagy|Mitophagy / lysosome|20
 retro|Retroelement defence|35
 genome|Genome stability|21
 metabolic|Metabolic / bioenergetic|30
@@ -396,6 +396,26 @@ hypergammaglobulinemia|hypergammaglobulinemia|EXT|OUT|S|L6_human_clinical|[syste
 esr-crp-dissociation|ESR / CRP dissociation|EXT|OUT|S|L6_human_clinical|[systemic_immune,hepatic]|-|-|clinical|ESR elevated while CRP stays normal or low -- a biomarker pattern, not a proven mechanism, worth flagging for interferonopathy workups.
 perniosis|perniosis / acral ischemia|EXT|OUT|S|L6_human_clinical|[systemic_immune,cardiovascular]|-|-|clinical|Severe perniosis with acral autoamputation from late infancy, decreasing with tofacitinib -- a hallmark familial-chilblain-lupus-spectrum presentation.
 tadekinig-alfa|tadekinig alfa|EXT|DRU|I|L1_in_silico|[systemic_immune,monocyte,macrophage]|{"chembl":"CHEMBL2108054"}|-|drugs,ifn-gamma|High-affinity soluble decoy receptor neutralizing circulating IL-18 to extinguish Loop C paracrine signaling.
+rnf5|RNF5|ER|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,rlr-mavs|ER/mitochondria-associated E3 ligase that K48-ubiquitinates STING and MAVS for degradation, terminating both DNA- and RNA-sensing arms.
+msk1|MSK1|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,th17|Nuclear kinase downstream of p38/ERK that phosphorylates p65 (Ser276) and STAT3, raising their transcriptional output.
+ptpn2|TC-PTP|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak,th17|Tyrosine phosphatase that dephosphorylates JAK1, STAT1 and STAT3; a signal-termination brake on the interferon and IL-6/IL-23 arms.
+il1rn|IL-1Ra|EXT|LIG|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome|Secreted antagonist that occupies IL-1R1 without signalling; the physiological brake on the IL-1 arm of Loop B.
+il1r2|IL-1R2|MEM|REC|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|-|inflammasome|Decoy receptor that binds IL-1β without signalling, sequestering it from IL-1R1.
+cxcr3|CXCR3|RES|REC|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-|-|ifn-gamma,isg|Receptor for CXCL9/10/11 on Th1, CD8 and NK cells; recruits the IFN-γ-producing responders, closing the chemokine arm of Loop C.
+trim21|TRIM21|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,tlr|E3 ligase that ubiquitinates IRF7 for degradation and ubiquitinates p62 to limit its oligomerisation; a second brake on IRF7 alongside SAMHD1.
+tax1bp1|TAX1BP1|CYT|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,mitophagy|Ubiquitin-binding adaptor that recruits A20 to TRAF3/TRAF6 to end NF-κB and IRF3 signalling, and an autophagy receptor; its net sign depends on context.
+gr|GR|CYT|TF|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb|Ligand-activated nuclear receptor that transrepresses NF-κB and induces IκBα; the cortisol axis input to the inflammatory network.
+mst1|MST1|CYT|KIN|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|mitophagy,cgas-sting|Hippo-pathway kinase that phosphorylates Beclin-1, IRF3 and LAT; effects differ by substrate.
+rnf26|RNF26|ER|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,mitophagy|ER E3 ligase that puts K11 chains on STING (protecting it early) and organises perinuclear endosomes via p62; temporally opposite effects.
+mul1|MUL1|MIT|ENZ|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-|-|mito,cgas-sting|Outer-membrane E3/SUMO ligase that SUMOylates DRP1 and ubiquitinates STING.
+marchf5|MARCH5|MIT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-|-|mito,mitophagy|Outer-membrane E3 ligase acting on mitofusins, DRP1 and Parkin; tunes fission-fusion and mitophagy depending on stress.
+abin1|ABIN-1|CYT|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|nfkb,cgas-sting|Ubiquitin-binding A20 partner that restrains NF-κB and IRF3 signalling; TBK1 phosphorylates it.
+trim23|TRIM23|CYT|ENZ|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,nfkb|K27-linked ubiquitin ligase acting on NEMO/TRAF6 and TBK1, needed for TBK1 activation in antiviral autophagy.
+pin1|PIN1|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting|Prolyl isomerase that binds phosphorylated IRF3; reported both to promote IRF3 turnover and to support its activity.
+trim65|TRIM65|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|rlr-mavs,inflammasome|E3 ligase that K63-ubiquitinates MDA5 (activating) and ubiquitinates NLRP3 (restraining); one regulator touching Loop A-adjacent RNA sensing and Loop B.
+pias1|PIAS1|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|ifn-jak|SUMO ligase that blocks STAT1 DNA binding; IKKα phosphorylation switches it on.
+calcineurin|Calcineurin|CYT|ENZ|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|mito,nfkb|Ca²⁺-activated phosphatase that dephosphorylates DRP1 (Ser637) to drive fission, and shapes IL-6 transcription.
+ddx3x|DDX3X|CYT|ADA|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|-|cgas-sting,rlr-mavs|Helicase that scaffolds TBK1/IKKε and is itself a TBK1 substrate; supports IFN-β induction.
 
 §5a CLASS MEMBERSHIP   id|is_a
 # Non-causal: a node that instantiates a broader class. Never an edge, so it is
@@ -629,54 +649,137 @@ shp1>zap70|The sign-negative step, and the one the whole arm turns on. CRISPR KO
 plcg1>responder-cell|This is the edge that joins the TCR arm to Loop C. Follow the signs from TRAILshort and the product is negative: the atlas therefore DERIVES a damping of the paracrine IFN-γ source rather than asserting it.
 trailshort>car-t|CAR-T cells transduce through the same CD3ζ ITAMs as a native TCR, so a phosphatase lesion at ZAP-70 reaches them unchanged. The CAR alters recognition, not transduction.
 trailshort>immunodef|The in vivo arm: TRAILshort-knockin promoted persistence of transformed MEFs and L428 lymphoma in humanised mice and antagonised CD19 CAR-T control, while the human association data span chronic viral infection, malignancy and autoimmunity.
+jak1>stat3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: JAK1 → STAT3. Reviewer notes: Sol: JAK1-dependent activating STAT3 phosphorylation is established in appropriate cytokine-receptor contexts. DeepSeek: JAK1→STAT3 is canonical (IL-6 family, gp130). Add. /
+jak2>stat3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: JAK2 → STAT3. Reviewer notes: Sol: JAK2-dependent activating STAT3 phosphorylation is established but must remain receptor- and cell-context constrained. DeepSeek: JAK2→STAT3 is canonical (G-CSF, IL-6 family). Add. /
+tyk2>stat3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TYK2 → STAT3. Reviewer notes: Sol: TYK2 contributes to STAT3 activation in defined cytokine pathways, but direct phosphorylation must be supported separately from receptor-complex dependence. DeepSeek: TYK2→STAT3 is documented (IL-12/IL-23 arm). Add. /
+ifnlr>tyk2|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IL10RB → TYK2 (the atlas nodes are IFNLR1/IL10RB → TYK2). Reviewer notes: Sol: IL10RB-associated TYK2 participates in IFN-λ receptor signaling, provided the edge is restricted to the assembled IFN-λ receptor rather than every IL10RB-containing complex. DeepSeek: IFNLR1/IL-10RB recruits TYK2; canonical. Add. /
+jak2>stat4|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: JAK2 → STAT4. Reviewer notes: Sol: IL-12R-associated JAK2 contributes to activating STAT4 phosphorylation and fills a kinase-level gap hidden by the current receptor shortcut. DeepSeek: JAK2→STAT4 is the IL-12 arm; canonical. Add. /
+tyk2>stat1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TYK2 → STAT1. Reviewer notes: Sol: TYK2 contributes to STAT1 activation in appropriate cytokine-receptor complexes, without establishing exclusive substrate assignment. DeepSeek: TYK2→STAT1 is secondary to JAK1 but documented; add with a note that JAK1 is the dominant STAT1 kinase. /
+tyk2>stat4|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TYK2 → STAT4. Reviewer notes: Sol: IL-12R-associated TYK2 contributes to activating STAT4 phosphorylation and complements the JAK2 branch. DeepSeek: TYK2→STAT4 is the IL-12 arm; canonical. Add. /
+jak1>stat2|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: JAK1 → STAT2. Reviewer notes: Sol: JAK1 contributes to IFN-induced STAT2 phosphorylation, with direct catalysis distinguished from dependence on the intact receptor kinase pair. DeepSeek: JAK1→STAT2 Y690 is the missing ISGF3-assembly edge; canonical. Add — high value. /
+tak1>ikka|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: MAP3K7 → CHUK (the atlas nodes are TAK1 / TAB1-3 → IKKα). Reviewer notes: Sol: TAK1 can activate IKKα within canonical IKK signaling, but this must not automatically activate the distinct NIK-dependent noncanonical pathway. DeepSeek: TAK1 phosphorylates both IKKα and IKKβ; canonical. Add. /
+socs>jak2|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: SOCS1 → JAK2 (the atlas nodes are SOCS1/3 → JAK2). Reviewer notes: Sol: SOCS1 inhibits JAK2 through kinase inhibition and associated turnover mechanisms, with SOCS1 distinguished from SOCS3. DeepSeek: SOCS1 binds JAK2 and inhibits it (KIR + SOCS-box ubiquitination). The proposal's "sign unknown" is wrong — the sign is **negative**. Add with sign −. /
+trif>ripk1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, they did not agree on a sign (Sol 'context-dependent', DeepSeek '+'), so it is an unsigned association link (review ruling 2026-11-11). Gene-level row: TICAM1 → RIPK1 (the atlas nodes are TRIF → RIPK1). Reviewer notes: Sol: TRIF recruits RIPK1 through RHIM-dependent machinery, with NF-κB and death outputs determined by complex state. DeepSeek: TRIF RHIM→RIPK1; canonical. Add. /
+ripk1>tak1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: RIPK1 → TAB2 (the atlas nodes are RIPK1 → TAK1 / TAB1-3). Reviewer notes: Sol: Ubiquitinated RIPK1 scaffolds recruit TAB2/3–TAK1 signaling machinery, but TAB2 association must not be mislabeled direct RIPK1 phosphorylation of TAK1. DeepSeek: RIPK1 K63-Ub→TAB2/3→TAK1; canonical. Add. /
+ripk1>nemo|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: RIPK1 → IKBKG (the atlas nodes are RIPK1 → NEMO). Reviewer notes: Sol: Ubiquitinated RIPK1 supports NEMO/IKK recruitment in survival signaling, whereas RIPK1 kinase activity is not synonymous with this scaffold function. DeepSeek: RIPK1 K63-Ub→NEMO; canonical. Add. /
+traf6>irf7|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TRAF6 → IRF7. Reviewer notes: Sol: TRAF6-dependent ubiquitin signaling supports IRF7 activation in appropriate innate receptor complexes, without substituting for activating phosphorylation. DeepSeek: TRAF6 K63-ubiquitinates IRF7 downstream of TLR7/9; well-documented in pDC biology, PMIDs on-target.
+lck>cd28|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: LCK → CD28 (the atlas nodes are Lck → CD28). Reviewer notes: Sol: Lck can phosphorylate CD28 cytoplasmic signaling motifs, although productive signaling requires receptor engagement and appropriate cellular context. DeepSeek: Lck phosphorylates the CD28 cytoplasmic tail at Y191 to recruit PI3K; PMIDs 8992971/9973466 are the reference papers.
+a20>traf6|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TNFAIP3 → TRAF6 (the atlas nodes are A20 / TNFAIP3 → TRAF6). Reviewer notes: Sol: A20 restrains TRAF6-dependent signaling through ubiquitin-system regulation, although direct substrate deubiquitination is not its only mechanism. DeepSeek: A20 deubiquitinates K63 chains on TRAF6, terminating TLR/IL-1R signaling; PMIDs on-target.
+il23r>jak2|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IL23R → JAK2 (the atlas nodes are IL-23R / IL-12Rβ1 → JAK2). Reviewer notes: Sol: Ligated IL-23 receptor complexes activate associated JAK2, but physical association alone is not evidence of kinase activation. DeepSeek: IL-23R–JAK2 physical association is documented; PMIDs 12023369/27193299 on-target.
+il23r>tyk2|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IL23R → TYK2 (the atlas nodes are IL-23R / IL-12Rβ1 → TYK2). Reviewer notes: Sol: The complete IL-23 receptor activates TYK2 through its IL12RB1 chain, not through direct attribution to IL23R alone. DeepSeek: IL-23R–TYK2 physical association is documented; same PMIDs as CP-0111.
+ikk>cyld|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IKBKB → CYLD (the atlas nodes are IKKβ → CYLD). Reviewer notes: Sol: IKK-dependent phosphorylation can inhibit CYLD deubiquitinase function, so a universally positive phosphorylation edge would invert the effect. DeepSeek: IKKβ phosphorylates CYLD to inactivate its deubiquitinase activity; PMID 15870263 supports the direction.
+shp1>jak2|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: PTPN6 → JAK2 (the atlas nodes are SHP-1 (PTPN6) → JAK2). Reviewer notes: Sol: SHP-1 negatively regulates JAK2 through dephosphorylation in established cytokine-receptor systems. DeepSeek: SHP-1 dephosphorylates JAK2; PMIDs 8943354/9162089 are on-target.
+ikka>ikba|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: CHUK → NFKBIA (the atlas nodes are IKKα → IκBα). Reviewer notes: Sol: IKKα phosphorylation can target IκBα for degradation, decreasing inhibitor abundance rather than positively activating the inhibitor. DeepSeek: IKKα can phosphorylate IκBα at S32/36, licensing its K48-ubiquitination and degradation; PMIDs 9315679/9346241 on-target.
+ifng>socs|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IFNG → SOCS1 (the atlas nodes are IFN-γ → SOCS1/3). Reviewer notes: Sol: IFN-γ induces SOCS1 through downstream transcriptional signaling rather than direct cytokine–SOCS1 physical association. DeepSeek: IFN-γ induces SOCS1 via GAS; PMIDs 10421843/19482358 are on-target.
+shp1>lck|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, they did not agree on a sign (Sol 'context-dependent', DeepSeek '-'), so it is an unsigned association link (review ruling 2026-11-11). Gene-level row: PTPN6 → LCK (the atlas nodes are SHP-1 (PTPN6) → Lck). Reviewer notes: Sol: SHP-1 effects on Lck depend on the phosphosite and signaling setting, preventing an unconditional inhibitory sign from dephosphorylation alone. DeepSeek: SHP-1 dephosphorylates Lck at Y394/Y505; PMIDs 11294838/18759926 on-target for T-cell context.
+mtor>stat3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, they did not agree on a sign (Sol 'context-dependent', DeepSeek '+'), so it is an unsigned association link (review ruling 2026-11-11). Gene-level row: MTOR → STAT3 (the atlas nodes are mTORC1 → STAT3). Reviewer notes: Sol: mTOR can regulate STAT3 Ser727 phosphorylation, which is distinct from receptor-driven Tyr705 activation and depends on mTOR complex identity. DeepSeek: mTOR phosphorylates STAT3 at S727, boosting its transcriptional activity; PMID 16740698 supports the direction.
+stat3>socs|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: STAT3 → SOCS3 (the atlas nodes are STAT3 → SOCS1/3). Reviewer notes: Sol: STAT3 induces SOCS3 transcription as an established cytokine-signaling negative-feedback mechanism. DeepSeek: STAT3 directly transactivates SOCS3; PMID 11159537 is on-target.
+socs>stat3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: SOCS3 → STAT3 (the atlas nodes are SOCS1/3 → STAT3). Reviewer notes: Sol: SOCS3 attenuates selected receptor–JAK–STAT3 pathways rather than directly inhibiting STAT3 in every signaling context. DeepSeek: SOCS3 inhibits STAT3 via the receptor–JAK complex; PMID 21628332 is on-target.
+stat1>tbet|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: STAT1 → TBX21 (the atlas nodes are STAT1 → T-bet (TBX21)). Reviewer notes: Sol: IFN-γ–STAT1 signaling promotes T-bet expression in responder lymphocytes, requiring responder-local STAT1 rather than the macrophage pool. DeepSeek: STAT1 induces TBX21 (T-bet) via GAS elements; this is a genuine Loop C gap-fill not currently on the `ifn-gamma` layer.
+stat1>tlr3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: STAT1 → TLR3. Reviewer notes: Sol: Interferon–STAT1-dependent transcription can increase TLR3 expression, although promoter regulation can involve additional transcription factors. DeepSeek: STAT1 drives TLR3 expression via ISRE components in the TLR3 promoter; PMID 16628196 supports the direction but as a transcriptional effect, not an enzymatic one.
+ikke>stat1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IKBKE → STAT1 (the atlas nodes are IKKε → STAT1). Reviewer notes: Sol: IKKε phosphorylation of STAT1 Ser708 supports selected interferon responses and must not be conflated with JAK-mediated Tyr701 phosphorylation. DeepSeek: IKKε phosphorylates STAT1 at S708; PMID 17502367 is the reference paper.
+parkin>mfn|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: PRKN → MFN2 (the atlas nodes are Parkin → MFN1/2). Reviewer notes: Sol: Activated Parkin ubiquitinates MFN2 and can promote its removal or degradation during mitochondrial quality control. DeepSeek: Parkin ubiquitinates MFN2 at K416 under mitophagic stress; PMID 20871098 is on-target.
+a20>ripk1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, they did not agree on a sign (Sol 'context-dependent', DeepSeek '-'), so it is an unsigned association link (review ruling 2026-11-11). Gene-level row: TNFAIP3 → RIPK1 (the atlas nodes are A20 / TNFAIP3 → RIPK1). Reviewer notes: Sol: A20 edits RIPK1-associated ubiquitin signaling, with different consequences for NF-κB signaling and cell-death competence. DeepSeek: A20 K48-ubiquitinates RIPK1 downstream of TNFR1; PMID 15258597 is on-target.
+trail-fl>nfkb|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TNFSF10 → NFKB1 (the atlas nodes are TRAIL (full length) → NF-κB p65/p50). Reviewer notes: Sol: Full-length TRAIL can activate NF-κB through death receptors in permissive contexts, unlike a universal response or TRAILshort mechanism. DeepSeek: Full-length TRAIL activates NF-κB (the atlas's own correction note already records this contrast with TRAILshort); PMID 23647548 supports the direction.
+irf1>socs|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IRF1 → SOCS1 (the atlas nodes are IRF1 → SOCS1/3). Reviewer notes: Sol: IRF1 can promote SOCS1 transcription, providing a potential interferon-induced feedback branch. DeepSeek: IRF1 transactivates SOCS1 as part of the IFN-γ negative-feedback arm; PMID 19482358 supports it.
+mitf>becn1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TFEB → BECN1 (the atlas nodes are MITF / TFEB → BECN1). Reviewer notes: Sol: TFEB promotes autophagy-gene transcription including BECN1, but this is TFEB-specific evidence rather than interchangeable evidence for MITF. DeepSeek: TFEB directly transactivates BECN1 as part of the CLEAR network; PMID 28552616 is on-target.
+myd88>traf3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, they did not agree on a sign (Sol 'context-dependent', DeepSeek '+'), so it is an unsigned association link (review ruling 2026-11-11). Gene-level row: MYD88 → TRAF3 (the atlas nodes are MyD88 → TRAF3). Reviewer notes: Sol: TRAF3 can participate in MyD88-associated signaling complexes, but recruitment does not carry a universal activating sign. DeepSeek: MyD88–TRAF3 physical association upstream of IRF7 in pDCs; PMID 16306937 is on-target.
+cyld>tak1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: CYLD → MAP3K7 (the atlas nodes are CYLD → TAK1 / TAB1-3). Reviewer notes: Sol: CYLD can restrain TAK1-pathway activation by removing signaling-associated ubiquitin chains, with substrate specificity requiring citation confirmation. DeepSeek: CYLD deubiquitinates TAK1 K63 chains, terminating signaling; PMID 29291351 is on-target.
+tnfa>il6|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TNF → IL6 (the atlas nodes are TNF-α → IL-6). Reviewer notes: Sol: TNF induces IL6 transcription through receptor-driven inflammatory signaling, making this an indirect regulatory edge. DeepSeek: TNF-α transcriptionally induces IL-6 through NF-κB; PMID 32446778 supports the functional association.
+tbk1>ripk1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TBK1 → RIPK1. Reviewer notes: Sol: TBK1 phosphorylation restrains RIPK1 kinase-dependent cell death, not necessarily RIPK1's NF-κB scaffolding function. DeepSeek: TBK1 phosphorylates RIPK1 at T189 to block necroptotic RHIM assembly; PMID 30146158 is on-target.
+mitf>lc3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TFEB → MAP1LC3B (the atlas nodes are MITF / TFEB → LC3-II). Reviewer notes: Sol: TFEB induces MAP1LC3B transcription, but increased LC3 expression does not establish increased LC3-II or completed autophagic flux. DeepSeek: TFEB transactivates MAP1LC3B in the CLEAR network; PMID 28552616 is on-target.
+ifna>ifnar2|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IFNA1 → IFNAR2 (the atlas nodes are IFN-α (13 subtypes) → IFNAR2). Reviewer notes: Sol: IFN-α binds IFNAR2 as part of the IFNAR1/2 signaling receptor, filling a missing ligand–receptor binding edge. DeepSeek: IFN-α binds IFNAR2 as its high-affinity subunit; PMID 11278538 is on-target.
+tbk1>p62|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TBK1 → SQSTM1 (the atlas nodes are TBK1 → p62 / SQSTM1). Reviewer notes: Sol: TBK1 phosphorylation can enhance p62 ubiquitin-cargo recognition, providing a mechanistic selective-autophagy link. DeepSeek: TBK1 phosphorylates p62/SQSTM1 at S403 to enhance cargo recognition; PMID 22921120 is on-target.
+cyld>traf6|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: CYLD → TRAF6. Reviewer notes: Sol: CYLD removes activating ubiquitin chains from TRAF6 and restrains downstream inflammatory signaling. DeepSeek: CYLD deubiquitinates TRAF6 K63 chains, terminating NF-κB activation; PMID 12917689 is the reference paper.
+shp1>cd3z|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: PTPN6 → CD247 (the atlas nodes are SHP-1 (PTPN6) → CD3ζ). Reviewer notes: Sol: SHP-1 can dephosphorylate CD3ζ signaling motifs and reduce productive proximal T-cell receptor signaling. DeepSeek: SHP-1 dephosphorylates CD3ζ ITAMs; PMID 18759926 supports the direction.
+ikke>act1|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IKBKE → TRAF3IP2 (the atlas nodes are IKKε → ACT1 (TRAF3IP2)). Reviewer notes: Sol: IKKε phosphorylation of ACT1 supports an IL-17-induced post-transcriptional signaling branch rather than simply duplicating canonical NF-κB activation. DeepSeek: IKKε phosphorylates ACT1 (TRAF3IP2), coupling IL-17 signaling to IKKε activity; PMID 21822257 is on-target.
+ikke>cyld|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: IKBKE → CYLD (the atlas nodes are IKKε → CYLD). Reviewer notes: Sol: IKKε phosphorylation can inhibit CYLD tumor-suppressive deubiquitinase activity, requiring an inhibitory modification-aware representation. DeepSeek: IKKε phosphorylates CYLD; PMID 19481526 is on-target.
+mavs>ifnb|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: MAVS → IFNB1 (the atlas nodes are MAVS → IFN-β). Reviewer notes: Sol: MAVS induces IFNB1 through downstream kinase and transcription-factor pathways, making this a supported but already mechanistically represented shortcut. DeepSeek: MAVS drives IFNB1 transcription via the RIG-I/MDA5–MAVS–TBK1–IRF3 axis; PMID 22588174 is on-target.
+tlr7>tnfa|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: TLR8 → TNF (the atlas nodes are TLR7/8 → TNF-α). Reviewer notes: Sol: TLR8 activation induces TNF production in responsive human myeloid cells, but the existing tlr7 node explicitly combines TLR7 and TLR8 and must retain that distinction. DeepSeek: TLR7/8→TNF via MyD88–NF-κB is textbook; redundant with `tlr7→myd88→nfkb` but harmless as a shortcut.
+shp1>stat3|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '-'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: PTPN6 → STAT3 (the atlas nodes are SHP-1 (PTPN6) → STAT3). Reviewer notes: Sol: SHP-1 can dephosphorylate and inhibit activated STAT3, subject to confirmation that the cited study establishes the relevant substrate relationship. DeepSeek: SHP-1 dephosphorylates STAT3; fits `shp1` node and would extend its reach past `zap70`.
+ikka>irf7|Added from SIGNOR (direction curated) after two-family review (Sol, DeepSeek): both kept it, both gave sign '+'. The SIGNOR copy used here has no effect column, so the sign is the reviewers' agreed reading, not a curated field. Gene-level row: CHUK → IRF7 (the atlas nodes are IKKα → IRF7). Reviewer notes: Sol: IKKα supports IRF7 activation in the TLR7/9-driven plasmacytoid-dendritic-cell interferon pathway rather than representing a universal noncanonical NF-κB step. DeepSeek: IKKα (CHUK)→IRF7 phosphorylation (PMID 16612387) is real and adds a second IRF7 kinase beyond `ikke`.
+rnf5>sting|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+rnf5>mavs|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+msk1>nfkb|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+ptpn2>jak1|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+ptpn2>stat1|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+ptpn2>stat3|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+il1rn>il1r|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons. SIGNOR cited PMID 2876877, an unrelated 1986 cerebrospinal-fluid paper; replaced with the two 1990 IL-1Ra discovery papers.
+il1r2>il1b|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons. Direction inverted from the SIGNOR row (IL1B → IL1R2 binding): both reviewers read the decoy as a brake on IL-1β.
+cxcl9-11>cxcr3|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+trim21>irf7|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+trim21>p62|New node agreed by both reviewer families. Sign: the reviewers agreed on the node's direction of effect; this edge's kind was written per anchor from the SIGNOR row and their reasons.
+tax1bp1>a20|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+ikka>tax1bp1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+tax1bp1>traf3|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+gr>ikba|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+gr>nfkb|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+gr>lck|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+mst1>becn1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+rnf26>sting|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+rnf26>p62|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+mul1>sting|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+marchf5>drp1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+marchf5>parkin|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+tbk1>abin1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+abin1>traf3|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+trim23>tbk1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+pin1>irf3|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+pin1>ifnb|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+trim65>mda5|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+trim65>nlrp3|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+pias1>stat1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned. Second SIGNOR PMID 23663276 is an IL-6 myokine review with no PIAS1 content; dropped.
+ikka>pias1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+calcineurin>drp1|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
+tbk1>ddx3x|New node agreed by both reviewer families. The reviewers did not agree on this node's sign, so its links are unsigned.
 
 §8 EDGES   from|kind|sign|interaction_type|to|ev|ev_tier|cell_context|db_scores|loop|label
 cgas|produce|+|catalytic_activation|cgamp|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|ATP + GTP → 2′3′-cGAMP
 cgamp|activate|+|catalytic_activation|sting|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|binds CDN pocket, closes lid
 sting|translocate|+|compartment_translocation|sting-golgi|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ER → ERGIC → Golgi trafficking
 sting-golgi|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|CTT recruits TBK1
-sting|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|STING–TBK1 scaffold
+sting|activate|+|catalytic_activation|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|STING–TBK1 scaffold
 sting|activate|+|catalytic_activation|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||STING → NF-κB branch
 dsrna-cyt|sense|+|nucleic_acid_sensing|mda5|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||long duplex → cooperative filament
 dsrna-cyt|sense|+|nucleic_acid_sensing|rigi|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||5′ppp blunt end
 mtdsrna|sense|+|nucleic_acid_sensing|mda5|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||mito dsRNA escape (stressor S5)
 lgp2|activate|+|catalytic_activation|mda5|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||tunes filament nucleation
 mda5|activate|+|catalytic_activation|mavs|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||CARD–CARD prion-like seeding
-rigi|activate|+|catalytic_activation|mavs|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||CARD–CARD seeding
+rigi|activate|+|catalytic_activation|mavs|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||CARD–CARD seeding
 mda5|activate|+|catalytic_activation|mavs-perox|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||peroxisomal platform — fast, IFN-independent ISGs
-mavs|activate|+|catalytic_activation|traf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-mavs|activate|+|catalytic_activation|traf6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+mavs|activate|+|catalytic_activation|traf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+mavs|activate|+|catalytic_activation|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 mavs-perox|activate|+|catalytic_activation|traf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-traf3|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||K63-Ub scaffolding
+traf3|activate|+|catalytic_activation|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||K63-Ub scaffolding
 traf3|activate|+|catalytic_activation|ikke|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 traf6|activate|+|catalytic_activation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||K63-Ub → TAK1 → IKK
-tlr3|activate|+|catalytic_activation|trif|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TIR–TIR, TRIF-exclusive
-tlr4|activate|+|catalytic_activation|trif|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||after endocytosis (TRAM-dependent)
-tlr4|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||surface, MAL-dependent
-tlr7|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
-tlr9|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
-myd88|activate|+|catalytic_activation|irak14|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||Myddosome assembly
-irak14|activate|+|catalytic_activation|traf6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
+tlr3|activate|+|catalytic_activation|trif|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TIR–TIR, TRIF-exclusive
+tlr4|activate|+|catalytic_activation|trif|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||after endocytosis (TRAM-dependent)
+tlr4|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||surface, MAL-dependent
+tlr7|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||
+tlr9|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||
+myd88|activate|+|catalytic_activation|irak14|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||Myddosome assembly
+irak14|activate|+|catalytic_activation|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||
 irak14|phos|+|kinase_phosphorylation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IRAK1 → IRF7 (pDC burst)
 ll37|bind|+|allosteric_binding|ll37-dna|G|L3_cell_line|[dendritic_cell]|-||condenses self-DNA into nuclease-resistant aggregates
 ll37-dna|sense|+|nucleic_acid_sensing|tlr9|G|L3_cell_line|[dendritic_cell]|-||the conversion step — self-DNA alone is NOT a TLR9 agonist, the complex is
-trif|activate|+|catalytic_activation|traf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-trif|activate|+|catalytic_activation|traf6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+trif|activate|+|catalytic_activation|traf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+trif|activate|+|catalytic_activation|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 ankib1|produce|+|catalytic_activation|k11ub|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|assembles K11-linked chains
 k11ub|ubiq|+|ubiquitin_conjugation|sting|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 1 — primes STING
 k11ub|ubiq|+|ubiquitin_conjugation|trif|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 2 — primes TRIF
 k11ub|ubiq|+|ubiquitin_conjugation|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 3 — primes NEMO
 k11ub|bind|+|ubiquitin_reader_recruitment|optn|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|OPTN reads the K11 mark via its UBAN domain (recruitment, not a substrate event)
 k11ub|ubiq|+|ubiquitin_conjugation|ankib1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|substrate 4 — AUTO-ubiquitination → proteasomal self-destruction
-optn|activate|+|catalytic_activation|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|OPTN recruits TBK1 to the scaffold
+optn|activate|+|catalytic_activation|tbk1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|ankib1|OPTN recruits TBK1 to the scaffold
 tbk1|phos|+|kinase_phosphorylation|irf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.927,"string_database":0.9}|A|Ser386/396 → dimerisation
 tbk1|phos|+|kinase_phosphorylation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.992,"string_experimental":0.331,"string_database":0.9}||
 ikke|phos|+|kinase_phosphorylation|irf7|S|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|dominant IRF7 kinase — blocked by SAMHD1 in health
 ikke|phos|+|kinase_phosphorylation|irf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-nemo|activate|+|catalytic_activation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ubiquitin-chain-dependent IKK activation
-ikk|phos|+|kinase_phosphorylation|ikba|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||Ser32/36 → K48-Ub → proteasome
-ikba|inhibit|-|allosteric_suppression|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||masks NLS until degraded
-ikk|activate|+|catalytic_activation|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||releases p65/p50
+nemo|activate|+|catalytic_activation|ikk|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ubiquitin-chain-dependent IKK activation
+ikk|phos|+|kinase_phosphorylation|ikba|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||Ser32/36 → K48-Ub → proteasome
+ikba|inhibit|-|allosteric_suppression|nfkb|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||masks NLS until degraded
+ikk|activate|+|catalytic_activation|nfkb|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||releases p65/p50
 fork|drive|+|catalytic_activation|sting-nuclear|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||Replication stress drives nuclear/chromatin STING accumulation, cGAMP-independent (demonstrated in fibroblasts/U2OS; myeloid cell-context is atlas extrapolation, not directly tested)
 sting-nuclear|drive|+|non_canonical_signaling|isg-set|I|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||CANDIDATE non-canonical association between nuclear/chromatin STING and residual ISG activation (p-STAT1, ISG15, RIG-I), observed alongside absent p-TBK1/p-IRF3 -- the direct causal intermediary remains unresolved
 pnc1|transport|+|metabolic_bypass_flux|mito-dntp|S|L4_primary_human|[monocyte,macrophage,microglia,ipsc]|-||imports cytosolic dNTPs (incl. dGTP) across the inner membrane
@@ -717,15 +820,15 @@ h3k18la|drive|+|catalytic_activation|pem|G|L3_cell_line|[systemic_immune,cns_neu
 glycolysis|inhibit|-|allosteric_suppression|mlkl|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||necrosis defense: glycolytic ATP prevents bioenergetic necrotic lysis
 lactate|drive|+|catalytic_activation|psa|I|L3_cell_line|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||lactate-driven immune-cell entrapment in inflamed tissue (mechanism site unconfirmed for PsA specifically)
 bik|activate|+|catalytic_activation|baxbak|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||BH3-only priming
-baxbak|release|+|organellar_damage_release|cytc|S|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||sublethal / minority MOMP
+baxbak|release|+|organellar_damage_release|cytc|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||sublethal / minority MOMP
 mptp|release|+|organellar_damage_release|cytc|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||chronic sublethal leak (TNF-α/ROS driven)
 cytc|inhibit|-|allosteric_suppression|etc-iv|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||losing the shuttle breaks III→IV
 bik|inhibit|-|allosteric_suppression|becn1|S|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||BH3-only proteins sequester BECN1 → apoptosis bias over mitophagy
 deltapsi|inhibit|-|allosteric_suppression|pink1|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||intact potential imports and destroys PINK1 — collapse is what stabilises it
-pink1|phos|+|kinase_phosphorylation|parkin|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||pSer65-Ub recruits and activates Parkin
+pink1|phos|+|kinase_phosphorylation|parkin|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||pSer65-Ub recruits and activates Parkin
 parkin|activate|+|catalytic_activation|optn|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||Ub coat read by OPTN/p62 receptors
-optn|bind|+|allosteric_binding|lc3|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||LIR-motif engagement of the phagophore
-p62|bind|+|allosteric_binding|lc3|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||
+optn|bind|+|allosteric_binding|lc3|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||LIR-motif engagement of the phagophore
+p62|bind|+|allosteric_binding|lc3|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||
 becn1|activate|+|catalytic_activation|lc3|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||PI3KC3 initiation
 lc3|translocate|+|compartment_translocation|autolysosome|G|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||autophagosome–lysosome fusion
 ctsd|activate|+|catalytic_activation|autolysosome|I|L1_in_silico|[monocyte,macrophage,microglia,ipsc]|-||hydrolytic degradation of cargo
@@ -745,26 +848,26 @@ pnc1-dntp-bypass|transport|+|metabolic_bypass_flux|mito-dntp|S|L4_primary_human|
 irf3|translocate|+|compartment_translocation|ifnb1-gene|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|dimer → nuclear import → PRDIII-I
 nfkb|activate|+|catalytic_activation|ifnb1-gene|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||PRDII — the AND-gate partner
 ifnb1-gene|produce|+|catalytic_activation|ifnb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|IFN-β synthesis and secretion
-irf7|produce|+|catalytic_activation|ifna|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|second-wave IFN-α subtypes
+irf7|produce|+|catalytic_activation|ifna|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|second-wave IFN-α subtypes
 irf3|produce|+|catalytic_activation|ifnl|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-ifnb|bind|+|allosteric_binding|ifnar1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|autocrine and paracrine
-ifnb|bind|+|allosteric_binding|ifnar2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|
-ifna|bind|+|allosteric_binding|ifnar1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|
-ifng|bind|+|allosteric_binding|ifngr|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-ifnl|bind|+|allosteric_binding|ifnlr|G|L1_in_silico|[]|-||
-il1b|bind|+|allosteric_binding|il1r|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|B|
-tnfa|bind|+|allosteric_binding|tnfr|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-il1r|activate|+|catalytic_activation|myd88|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|B|TIR-domain recruitment
+ifnb|bind|+|allosteric_binding|ifnar1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|autocrine and paracrine
+ifnb|bind|+|allosteric_binding|ifnar2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|
+ifna|bind|+|allosteric_binding|ifnar1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|irf7|
+ifng|bind|+|allosteric_binding|ifngr|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ifnl|bind|+|allosteric_binding|ifnlr|G|L3_cell_line|[]|-||
+il1b|bind|+|allosteric_binding|il1r|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|B|
+tnfa|bind|+|allosteric_binding|tnfr|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+il1r|activate|+|catalytic_activation|myd88|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|B|TIR-domain recruitment
 tnfr|activate|+|catalytic_activation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 tnfr|drive|+|catalytic_activation|mptp|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ROS → chronic sublethal mPTP opening (stressor S8)
 ifnar1|activate|+|catalytic_activation|tyk2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|constitutively associated
 ifnar2|activate|+|catalytic_activation|jak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|
-ifngr|activate|+|catalytic_activation|jak2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-ifngr|activate|+|catalytic_activation|jak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-ifnlr|activate|+|catalytic_activation|jak1|G|L1_in_silico|[]|-||
-jak1|phos|+|kinase_phosphorylation|stat1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.985,"string_database":0.9}|A|Y701
+ifngr|activate|+|catalytic_activation|jak2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ifngr|activate|+|catalytic_activation|jak1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+ifnlr|activate|+|catalytic_activation|jak1|G|L3_cell_line|[]|-||
+jak1|phos|+|kinase_phosphorylation|stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|{"string_combined":0.999,"string_experimental":0.985,"string_database":0.9}|A|Y701
 tyk2|phos|+|kinase_phosphorylation|stat2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-|A|Y690
-jak2|phos|+|kinase_phosphorylation|stat1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+jak2|phos|+|kinase_phosphorylation|stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 stat1|drive|+|catalytic_activation|pyr-stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||STAT1 Lys201 pyruvilation
 glycolysis|drive|+|catalytic_activation|pyr-stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||glycolytic pyruvate overflow drives pyruvilation
 pyr-stat1|inhibit|-|allosteric_suppression|isgf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||blocks STAT1–STAT2 heterodimerization; uncouples antiviral ISGs
@@ -785,8 +888,8 @@ stat1|inhibit|-|allosteric_suppression|etc-i|S|L4_primary_human|[monocyte,macrop
 stat1|inhibit|-|allosteric_suppression|etc-iii|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 pgc1a|produce|+|catalytic_activation|tfam|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||NRF1/NRF2 → TFAM → biogenesis
 isg15|activate|+|catalytic_activation|usp18|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||free ISG15 stabilises USP18 against degradation
-usp18|inhibit|-|allosteric_suppression|ifnar2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||sterically displaces JAK1 — the primary brake
-socs|inhibit|-|allosteric_suppression|jak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
+usp18|inhibit|-|allosteric_suppression|ifnar2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||sterically displaces JAK1 — the primary brake
+socs|inhibit|-|allosteric_suppression|jak1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 irf1|produce|+|catalytic_activation|isg15|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||IRF1 → PARP12 → ISG15
 isg15|inhibit|-|allosteric_suppression|mfn|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ISGylation of MFN1/2 blocks PINK1/Parkin mitophagy
 isg15|inhibit|-|allosteric_suppression|becn1|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ISGylates BECN1, competing with activating K63-Ub (KEYSTONE stressor S6)
@@ -795,7 +898,7 @@ atp|produce|+|catalytic_activation|gdf15|G|L6_human_clinical|[systemic_immune,cn
 nfkb|produce|+|catalytic_activation|il6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 nfkb|produce|+|catalytic_activation|tnfa|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
 nfkb|produce|+|catalytic_activation|il23|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||
-nfkb|produce|+|catalytic_activation|ikba|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||its own inhibitor — the oscillator that a constitutive drive flattens
+nfkb|produce|+|catalytic_activation|ikba|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||its own inhibitor — the oscillator that a constitutive drive flattens
 il23|drive|+|signal_transduction|il17a|I|L1_in_silico|[monocyte,macrophage,dendritic_cell,cd4_tcell]|-||inferred SpA axis
 nfkb|produce|+|catalytic_activation|nlrp3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|signal 1 — transcriptional priming
 nfkb|produce|+|catalytic_activation|proil1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|signal 1 — pro-IL-1β transcription
@@ -817,10 +920,10 @@ isg-set|produce|+|catalytic_activation|aim2|G|L1_in_silico|[monocyte,macrophage,
 isg-set|produce|+|catalytic_activation|ifi16|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
 aim2|drive|+|catalytic_activation|psa|G|L3_cell_line|[systemic_immune,cns_neuro,cardiovascular,hepatic,musculoskeletal]|-||cytosolic DNA activates AIM2 in psoriatic keratinocytes
 nlrp3|activate|+|catalytic_activation|asc|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.995,"string_database":0.9}|B|PYD–PYD nucleation of the speck
-asc|activate|+|catalytic_activation|casp1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.995,"string_database":0.9}|B|CARD–CARD → proximity-induced autoprocessing
-casp1|produce|+|catalytic_activation|il1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.97,"string_database":0.9}|B|cleaves pro-IL-1β → mature IL-1β
+asc|activate|+|catalytic_activation|casp1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.995,"string_database":0.9}|B|CARD–CARD → proximity-induced autoprocessing
+casp1|produce|+|catalytic_activation|il1b|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.97,"string_database":0.9}|B|cleaves pro-IL-1β → mature IL-1β
 proil1b|produce|+|catalytic_activation|il1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|maturation
-casp1|produce|+|catalytic_activation|il18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.965,"string_database":0.9}|B|
+casp1|produce|+|catalytic_activation|il18|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|{"string_combined":0.999,"string_experimental":0.965,"string_database":0.9}|B|
 casp1|activate|+|catalytic_activation|gsdmd|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||cleaves GSDMD
 gsdmd|translocate|+|compartment_translocation|gsdmd-pore|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||N-terminal fragment oligomerises in the plasma membrane
 gsdmd-pore|release|+|organellar_damage_release|il1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||unconventional secretion
@@ -828,16 +931,16 @@ gsdmd-pore|drive|+|catalytic_activation|pyroptosis|G|L1_in_silico|[monocyte,macr
 il1b|activate|+|catalytic_activation|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|B|IL-1R → further NF-κB priming (Loop B closure)
 pyroptosis|release|+|organellar_damage_release|mtdna-frag|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||DOTTED CROSS-LINK — pyroptotic mtDNA reactivates bystander cGAS
 il1b|produce|+|catalytic_activation|ceramide|I|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IL-1β → ceramide synthesis → inner-membrane injury
-traf6|activate|+|catalytic_activation|tak1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||K63 chains read by TAB2/3
-tak1|phos|+|kinase_phosphorylation|ikk|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||Ser177/181 on the activation loop
+traf6|activate|+|catalytic_activation|tak1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||K63 chains read by TAB2/3
+tak1|phos|+|kinase_phosphorylation|ikk|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||Ser177/181 on the activation loop
 lubac|produce|+|catalytic_activation|m1ub|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||the only E3 that builds head-to-tail chains
 m1ub|ubiq|+|ubiquitin_conjugation|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||linear chains on NEMO stabilise the active IKK complex
 a20|inhibit|-|allosteric_suppression|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||strips K63, adds K48 — the pathway's own off-switch
-cyld|inhibit|-|allosteric_suppression|nemo|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||removes K63 and M1 chains
+cyld|inhibit|-|allosteric_suppression|nemo|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||removes K63 and M1 chains
 otulin|degrade|-|allosteric_suppression|m1ub|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||linear-chain-specific hydrolysis, counter-balancing LUBAC
 nfkb-targets|produce|+|catalytic_activation|a20|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||A20 is an NF-κB target gene — negative feedback
-nik|phos|+|kinase_phosphorylation|ikka|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
-ikka|activate|+|catalytic_activation|relb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||p100 → p52 partial proteasomal processing
+nik|phos|+|kinase_phosphorylation|ikka|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||
+ikka|activate|+|catalytic_activation|relb|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||p100 → p52 partial proteasomal processing
 relb|produce|+|catalytic_activation|baff|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||
 tbk1|activate|+|catalytic_activation|nik|I|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||TBK1/IKKε cross-talk into the non-canonical arm
 nfkb|translocate|+|compartment_translocation|nfkb-targets|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||nuclear import → κB elements
@@ -852,17 +955,17 @@ nfkb-targets|produce|+|catalytic_activation|ikba|G|L1_in_silico|[monocyte,macrop
 proil18|produce|+|catalytic_activation|il18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|caspase-1 cleavage → mature IL-18
 casp1|activate|+|catalytic_activation|proil18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|cleaves pro-IL-18
 samhd1|inhibit|-|allosteric_suppression|nfkb-targets|S|L4_primary_human|[monocyte,macrophage,microglia,dendritic_cell]|-||BRAKE 4 — suppression here lowers the entire priming layer at once
-il18|bind|+|allosteric_binding|il18r|G|L1_in_silico|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 1 — mature IL-18 crosses to a NEIGHBOURING cell
-il18bp|inhibit|-|allosteric_suppression|il18|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||decoy — only FREE IL-18 signals
+il18|bind|+|allosteric_binding|il18r|G|L3_cell_line|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 1 — mature IL-18 crosses to a NEIGHBOURING cell
+il18bp|inhibit|-|allosteric_suppression|il18|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||decoy — only FREE IL-18 signals
 il18r|activate|+|catalytic_activation|myd88|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 2 — TIR domain, the same module TLRs use
-il12|bind|+|allosteric_binding|il12r|G|L1_in_silico|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 3 — second signal, from the same inflamed myeloid cell
+il12|bind|+|allosteric_binding|il12r|G|L3_cell_line|[monocyte,macrophage,cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 3 — second signal, from the same inflamed myeloid cell
 nfkb-targets|produce|+|catalytic_activation|il12|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||IL-12p35/p40 from the activated myeloid cell
 il12r|phos|+|kinase_phosphorylation|stat4|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 4 — TYK2/JAK2 → STAT4
 stat4|produce|+|catalytic_activation|tbet|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 5 — T-bet opens the IFNG locus
 tbet|activate|+|catalytic_activation|responder-cell|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|Th1/NK effector programme
 il18r|activate|+|catalytic_activation|responder-cell|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-||
 responder-cell|produce|+|catalytic_activation|ifng|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-|C|STEP 6 — IFN-γ requires BOTH signals; neither alone suffices
-ifng|bind|+|allosteric_binding|ifngr|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|STEP 7 — paracrine return to the cell that started it
+ifng|bind|+|allosteric_binding|ifngr|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-|C|STEP 7 — paracrine return to the cell that started it
 stat1|bind|+|allosteric_binding|gaf|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|STEP 8 — STAT1 homodimer, not ISGF3
 gaf|translocate|+|compartment_translocation|gas|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|GAS elements — a different programme from ISRE
 gas|produce|+|catalytic_activation|cxcl9-11|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-|C|CXCR3 ligands recruit more Th1/NK — tissue-level amplification
@@ -880,15 +983,15 @@ tlr7|activate|+|catalytic_activation|pdc|G|L3_cell_line|[dendritic_cell]|-||ssRN
 tlr9|activate|+|catalytic_activation|pdc|G|L3_cell_line|[dendritic_cell]|-||CpG DNA — the receptor the LL-37 arm converts a SELF ligand for
 irf7|activate|+|catalytic_activation|pdc|G|L3_cell_line|[dendritic_cell]|-||constitutively high resting IRF7 licenses the burst — a licensing step, not lineage
 pdc|produce|+|catalytic_activation|ifna|G|L4_primary_human|[dendritic_cell]|-||the IFN-α burst — the reason one rare cell type can set the interferon tone of a tissue
-il23|bind|+|allosteric_binding|il23r|G|L1_in_silico|[monocyte,macrophage,cd4_tcell]|-||
+il23|bind|+|allosteric_binding|il23r|G|L3_cell_line|[monocyte,macrophage,cd4_tcell]|-||
 il23r|phos|+|kinase_phosphorylation|stat3|G|L1_in_silico|[cd4_tcell]|-||JAK2/TYK2 → STAT3
-il6|activate|+|catalytic_activation|stat3|G|L1_in_silico|[monocyte,macrophage,cd4_tcell]|-||IL-6 is the other STAT3 input — with TGF-β it initiates Th17
+il6|activate|+|catalytic_activation|stat3|G|L3_cell_line|[monocyte,macrophage,cd4_tcell]|-||IL-6 is the other STAT3 input — with TGF-β it initiates Th17
 stat3|produce|+|catalytic_activation|rorgt|G|L1_in_silico|[cd4_tcell]|-||
 rorgt|activate|+|catalytic_activation|th17-cell|G|L1_in_silico|[cd4_tcell]|-||licenses the IL-17 programme
 th17-cell|produce|+|catalytic_activation|il17a|G|L1_in_silico|[cd4_tcell]|-||
 th17-cell|produce|+|catalytic_activation|il22|G|L1_in_silico|[cd4_tcell]|-||
 il1b|activate|+|catalytic_activation|th17-cell|G|L1_in_silico|[monocyte,macrophage,cd4_tcell]|-||IL-1β is a Th17-stabilising signal — Loop B feeds the Th17 arm directly
-il17a|bind|+|allosteric_binding|il17ra|G|L1_in_silico|[]|-||
+il17a|bind|+|allosteric_binding|il17ra|G|L3_cell_line|[]|-||
 il17ra|activate|+|catalytic_activation|act1|G|L1_in_silico|[]|-||
 act1|activate|+|catalytic_activation|traf6|G|L1_in_silico|[]|-||IL-17 → NF-κB in the target tissue — a feed-forward at tissue level
 tnfa|activate|+|catalytic_activation|il17ra|G|L1_in_silico|[]|-||TNF-α synergy — IL-17 is weak alone and potent with it
@@ -905,13 +1008,13 @@ adar1|inhibit|-|allosteric_suppression|zbp1|G|L5_animal_in_vivo|[monocyte,macrop
 z-rna|sense|+|nucleic_acid_sensing|zbp1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||Zα domains read the left-handed conformation
 zbp1|activate|+|catalytic_activation|ripk3|G|L3_cell_line|[monocyte,macrophage,microglia]|{"string_combined":0.998,"string_experimental":0.92,"string_database":0.9}||RHIM–RHIM amyloid-like nucleation
 zbp1|activate|+|catalytic_activation|ripk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||RHIM engagement — the branch point between survival and death
-ripk1|activate|+|catalytic_activation|ripk3|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+ripk1|activate|+|catalytic_activation|ripk3|G|L3_cell_line|[monocyte,macrophage,microglia]|-||
 ripk1|activate|+|catalytic_activation|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia]|-||the survival branch — ubiquitin editing decides which one runs
 lubac|ubiq|+|ubiquitin_conjugation|ripk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||M1 chains push RIPK1 toward survival signalling
 ripk3|phos|+|kinase_phosphorylation|mlkl|G|L3_cell_line|[monocyte,macrophage,microglia]|-||activation-loop phosphorylation → oligomerisation
 mlkl|drive|+|catalytic_activation|necroptosis|G|L1_in_silico|[monocyte,macrophage,microglia]|-||direct plasma-membrane permeabilisation
 casp8|degrade|-|allosteric_suppression|ripk3|G|L5_animal_in_vivo|[monocyte,macrophage,microglia]|-||cleaves RIPK1/RIPK3 — losing this switches death mode rather than preventing death
-casp8|degrade|-|allosteric_suppression|ripk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
+casp8|degrade|-|allosteric_suppression|ripk1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||
 mlkl|activate|+|catalytic_activation|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia]|-|B|sub-lytic MLKL pores drive K⁺ efflux — a second, caspase-1-independent route to ASC specks
 necroptosis|release|+|organellar_damage_release|mtdna-frag|G|L1_in_silico|[monocyte,macrophage,microglia]|-|A|lytic death spills mtDNA — the same cross-link pyroptosis makes, by a route no caspase inhibitor blocks
 zbp1|activate|+|catalytic_activation|panoptosome|G|L1_in_silico|[monocyte,macrophage,microglia]|-||
@@ -942,8 +1045,8 @@ herv-rna|sense|+|nucleic_acid_sensing|tlr7|G|L1_in_silico|[monocyte,macrophage,m
 herv-rna|sense|+|nucleic_acid_sensing|tlr4|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||HERV-K/W Env protein is a TLR4 agonist
 alu-dsrna|produce|+|catalytic_activation|dsrna-cyt|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||
 alu-dsrna|sense|+|nucleic_acid_sensing|mda5|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||THE endogenous MDA5 ligand — self RNA read as viral
-hush|activate|+|catalytic_activation|setdb1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||recruits the methyltransferase
-hush|activate|+|catalytic_activation|morc2|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||ATP-dependent chromatin compaction
+hush|activate|+|catalytic_activation|setdb1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||recruits the methyltransferase
+hush|activate|+|catalytic_activation|morc2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||ATP-dependent chromatin compaction
 setdb1|produce|+|catalytic_activation|h3k9me3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||
 h3k9me3|inhibit|-|allosteric_suppression|l1-locus|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||heterochromatic silencing of young L1s
 morc2|inhibit|-|allosteric_suppression|l1-locus|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,ipsc]|-||
@@ -1066,6 +1169,89 @@ isg-set|drive|+|catalytic_activation|hypergammaglobulinemia|S|L6_human_clinical|
 isg-set|drive|+|catalytic_activation|esr-crp-dissociation|S|L6_human_clinical|[systemic_immune,hepatic]|-||Tonic ISG elevation plausibly explains the ESR-high/CRP-normal pattern -- reported, not mechanistically proven, by this citation
 isg-set|drive|+|catalytic_activation|perniosis|S|L6_human_clinical|[systemic_immune,cardiovascular]|-||Tonic Type-I IFN drives microvascular endotheliopathy and acral tissue loss, reversed by JAK inhibition
 tofacitinib|inhibit|-|allosteric_suppression|isg-set|S|L6_human_clinical|[monocyte,macrophage]|-||JAK1/3 blockade normalizes the 6-gene ISG panel in a complete-SAMHD1-loss patient
+jak1|phos|+|kinase_phosphorylation|stat3|G|L3_cell_line|[cd4_tcell]|-||JAK1 → STAT3
+jak2|phos|+|kinase_phosphorylation|stat3|G|L3_cell_line|[cd4_tcell]|-||JAK2 → STAT3
+tyk2|phos|+|kinase_phosphorylation|stat3|G|L3_cell_line|[cd4_tcell]|-||TYK2 → STAT3
+ifnlr|activate|+|protein_protein_activation|tyk2|G|L3_cell_line|[]|-||IL10RB → TYK2
+jak2|phos|+|kinase_phosphorylation|stat4|G|L3_cell_line|[cd4_tcell]|-||JAK2 → STAT4
+tyk2|phos|+|kinase_phosphorylation|stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TYK2 → STAT1
+tyk2|phos|+|kinase_phosphorylation|stat4|G|L3_cell_line|[cd4_tcell]|-||TYK2 → STAT4
+jak1|phos|+|kinase_phosphorylation|stat2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||JAK1 → STAT2
+tak1|activate|+|protein_protein_activation|ikka|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||MAP3K7 → CHUK
+socs|inhibit|-|ubiquitination_inhibition|jak2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||SOCS1 → JAK2
+trif|associate|0|physical_association|ripk1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||TICAM1 → RIPK1
+ripk1|activate|+|protein_protein_activation|tak1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||RIPK1 → TAB2
+ripk1|activate|+|protein_protein_activation|nemo|G|L3_cell_line|[monocyte,macrophage,microglia]|-||RIPK1 → IKBKG
+traf6|ubiq|+|ubiquitination|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TRAF6 → IRF7
+lck|phos|+|kinase_phosphorylation|cd28|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-||LCK → CD28
+a20|inhibit|-|deubiquitination|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||TNFAIP3 → TRAF6
+il23r|activate|+|protein_protein_activation|jak2|G|L3_cell_line|[cd4_tcell]|-||IL23R → JAK2
+il23r|activate|+|protein_protein_activation|tyk2|G|L3_cell_line|[cd4_tcell]|-||IL23R → TYK2
+ikk|inhibit|-|inhibitory_phosphorylation|cyld|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IKBKB → CYLD
+shp1|inhibit|-|dephosphorylation|jak2|G|L3_cell_line|[cd4_tcell]|-||PTPN6 → JAK2
+ikka|inhibit|-|inhibitory_phosphorylation|ikba|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||CHUK → NFKBIA
+ifng|activate|+|functional_activation|socs|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||IFNG → SOCS1
+shp1|associate|0|dephosphorylation|lck|G|L3_cell_line|[cd4_tcell,cd8_tcell,nk_cell]|-||PTPN6 → LCK
+mtor|associate|0|phosphorylation|stat3|G|L1_in_silico|[]|-||MTOR → STAT3
+stat3|activate|+|functional_activation|socs|G|L3_cell_line|[cd4_tcell]|-||STAT3 → SOCS3
+socs|inhibit|-|protein_protein_suppression|stat3|G|L3_cell_line|[cd4_tcell]|-||SOCS3 → STAT3
+stat1|activate|+|functional_activation|tbet|G|L3_cell_line|[cd4_tcell]|-||STAT1 → TBX21
+stat1|activate|+|functional_activation|tlr3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||STAT1 → TLR3
+ikke|phos|+|kinase_phosphorylation|stat1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||IKBKE → STAT1
+parkin|inhibit|-|ubiquitination_inhibition|mfn|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||PRKN → MFN2
+a20|associate|0|ubiquitination|ripk1|G|L1_in_silico|[monocyte,macrophage,microglia]|-||TNFAIP3 → RIPK1
+trail-fl|activate|+|functional_activation|nfkb|G|L3_cell_line|[cd4_tcell]|-||TNFSF10 → NFKB1
+irf1|activate|+|functional_activation|socs|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||IRF1 → SOCS1
+mitf|activate|+|functional_activation|becn1|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||TFEB → BECN1
+myd88|associate|0|physical_association|traf3|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||MYD88 → TRAF3
+cyld|inhibit|-|deubiquitination|tak1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||CYLD → MAP3K7
+tnfa|activate|+|functional_activation|il6|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TNF → IL6
+tbk1|inhibit|-|inhibitory_phosphorylation|ripk1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||TBK1 → RIPK1
+mitf|activate|+|functional_activation|lc3|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||TFEB → MAP1LC3B
+ifna|activate|+|protein_protein_activation|ifnar2|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||IFNA1 → IFNAR2
+tbk1|phos|+|kinase_phosphorylation|p62|G|L3_cell_line|[monocyte,macrophage,microglia]|-||TBK1 → SQSTM1
+cyld|inhibit|-|deubiquitination|traf6|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||CYLD → TRAF6
+shp1|inhibit|-|dephosphorylation|cd3z|G|L1_in_silico|[cd4_tcell,cd8_tcell,nk_cell]|-||PTPN6 → CD247
+ikke|phos|+|kinase_phosphorylation|act1|G|L3_cell_line|[]|-||IKBKE → TRAF3IP2
+ikke|inhibit|-|inhibitory_phosphorylation|cyld|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IKBKE → CYLD
+mavs|activate|+|functional_activation|ifnb|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||MAVS → IFNB1
+tlr7|activate|+|functional_activation|tnfa|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||TLR8 → TNF
+shp1|inhibit|-|dephosphorylation|stat3|G|L1_in_silico|[cd4_tcell]|-||PTPN6 → STAT3
+ikka|phos|+|kinase_phosphorylation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||CHUK → IRF7
+rnf5|degrade|-|ubiquitination_degradation|sting|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||RNF5 K48-ubiquitinates STING
+rnf5|degrade|-|ubiquitination_degradation|mavs|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||RNF5 ubiquitinates MAVS
+msk1|phos|+|kinase_phosphorylation|nfkb|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||MSK1 phosphorylates p65 Ser276
+ptpn2|inhibit|-|dephosphorylation|jak1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TC-PTP dephosphorylates JAK1
+ptpn2|inhibit|-|dephosphorylation|stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TC-PTP dephosphorylates STAT1
+ptpn2|inhibit|-|dephosphorylation|stat3|G|L3_cell_line|[cd4_tcell]|-||TC-PTP dephosphorylates STAT3
+il1rn|inhibit|-|receptor_antagonism|il1r|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IL-1Ra blocks IL-1R1
+il1r2|inhibit|-|decoy_sequestration|il1b|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell]|-||IL-1R2 sequesters IL-1β
+cxcl9-11|activate|+|ligand_receptor|cxcr3|G|L3_cell_line|[]|-||CXCL9/10/11 → CXCR3
+trim21|degrade|-|ubiquitination_degradation|irf7|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TRIM21 ubiquitinates IRF7
+trim21|inhibit|-|ubiquitination_inhibition|p62|G|L3_cell_line|[monocyte,macrophage,microglia]|-||TRIM21 ubiquitinates p62, blocking oligomerisation
+tax1bp1|associate|0|physical_association|a20|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||TAX1BP1 · A20
+ikka|associate|0|phosphorylation|tax1bp1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IKKα phosphorylates TAX1BP1
+tax1bp1|associate|0|physical_association|traf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TAX1BP1 · TRAF3
+gr|associate|0|transcriptional_regulation|ikba|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||GR → IκBα induction
+gr|associate|0|transrepression|nfkb|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||GR · NF-κB
+gr|associate|0|physical_association|lck|G|L3_cell_line|[cd4_tcell]|-||GR · LCK
+mst1|associate|0|phosphorylation|becn1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||MST1 phosphorylates Beclin-1
+rnf26|associate|0|ubiquitination|sting|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||RNF26 K11-ubiquitinates STING
+rnf26|associate|0|ubiquitination|p62|G|L3_cell_line|[monocyte,macrophage,microglia]|-||RNF26 ubiquitinates p62
+mul1|associate|0|ubiquitination|sting|G|L1_in_silico|[monocyte,macrophage,microglia]|-||MUL1 ubiquitinates STING
+marchf5|associate|0|functional_association|drp1|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||MARCH5 · DRP1
+marchf5|associate|0|ubiquitination|parkin|G|L3_cell_line|[monocyte,macrophage,microglia,ipsc]|-||MARCH5 ubiquitinates Parkin
+tbk1|associate|0|phosphorylation|abin1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TBK1 phosphorylates ABIN-1
+abin1|associate|0|physical_association|traf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||ABIN-1 · TRAF3
+trim23|associate|0|physical_association|tbk1|G|L1_in_silico|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TRIM23 · TBK1
+pin1|associate|0|prolyl_isomerisation|irf3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||PIN1 · IRF3
+pin1|associate|0|functional_association|ifnb|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||PIN1 → IFN-β output
+trim65|associate|0|ubiquitination|mda5|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TRIM65 K63-ubiquitinates MDA5
+trim65|associate|0|ubiquitination|nlrp3|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||TRIM65 ubiquitinates NLRP3
+pias1|associate|0|physical_association|stat1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||PIAS1 · STAT1
+ikka|associate|0|phosphorylation|pias1|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell]|-||IKKα phosphorylates PIAS1
+calcineurin|associate|0|dephosphorylation|drp1|G|L3_cell_line|[monocyte,macrophage,microglia]|-||Calcineurin dephosphorylates DRP1
+tbk1|associate|0|phosphorylation|ddx3x|G|L3_cell_line|[monocyte,macrophage,microglia,dendritic_cell,cd4_tcell]|-||TBK1 phosphorylates DDX3X
 
 §9 LOOPS AND STREAMS
 # A stream is a VIEW over the graph: an ordered node chain, not extra data.
@@ -1322,6 +1508,174 @@ ziogas2025|Ziogas A, Novakovic B, Ventriglia L, Galang N, Tran KA et al. Long-te
 certo2025|Certo M, Pontarini E, Gilbert SG, Schmidt R, Turner JD et al. Lactate signalling leads to aggregation of immune-inflammatory hotspots and SLC5A12 blockade promotes their resolution. Nat Metab 2025;7(10):1663–1680.|doi:10.1038/s42255-025-01331-9
 schneider2017|Schneider C, Oellerich T, Baldauf HM et al. SAMHD1 is a biomarker for cytarabine response and a therapeutic target in acute myeloid leukemia. Nat Med 2017;23(2):250–255.|doi:10.1038/nm.4255
 herold2017|Herold N, Rudd SG, Ljungblad L et al. Targeting SAMHD1 with the Vpx protein to improve cytarabine therapy for hematological malignancies. Nat Med 2017;23(2):256–263.|doi:10.1038/nm.4265
+shuai1994|Shuai K et al. Interferon activation of the transcription factor Stat91 involves dimerization through SH2-phosphotyrosyl peptide interactions. Cell 1994;76(5):821-8.|doi:10.1016/0092-8674(94)90357-3
+quelle1995|Quelle FW et al. Phosphorylation and activation of the DNA binding activity of purified Stat1 by the Janus protein-tyrosine kinases and the epidermal growth factor receptor. J Biol Chem 1995;270(35):20775-80.|doi:10.1074/jbc.270.35.20775
+wesche1997|Wesche H et al. MyD88: an adapter that recruits IRAK to the IL-1 receptor complex. Immunity 1997;7(6):837-47.|doi:10.1016/s1074-7613(00)80402-1
+knop1999|Knop J et al. Effects of IL-1 receptor-associated kinase (IRAK) expression on IL-1 signaling are independent of its kinase activity. FEBS Lett 1999;448(1):81-5.|doi:10.1016/s0014-5793(99)00322-1
+vanderbruggen1995|van der Bruggen T et al. Interleukin-5 signaling in human eosinophils involves JAK2 tyrosine kinase and Stat1 alpha. Blood 1995;85(6):1442-8.|pmid:7888666
+lin1999|Lin Y et al. Cleavage of the death domain kinase RIP by caspase-8 prompts TNF-induced apoptosis. Genes Dev 1999;13(19):2514-26.|doi:10.1101/gad.13.19.2514
+donepudi2003|Donepudi M et al. Insights into the regulatory mechanism for caspase-8 activation. Mol Cell 2003;11(2):543-9.|doi:10.1016/s1097-2765(03)00059-5
+cao1996|Cao Z et al. TRAF6 is a signal transducer for interleukin-1. Nature 1996;383(6599):443-6.|doi:10.1038/383443a0
+burns1998|Burns K et al. MyD88, an adapter protein involved in interleukin-1 signaling. J Biol Chem 1998;273(20):12203-9.|doi:10.1074/jbc.273.20.12203
+chizzonite1992|Chizzonite R et al. IL-12 receptor. I. Characterization of the receptor on phytohemagglutinin-activated human lymphoblasts. J Immunol 1992;148(10):3117-24.|pmid:1578138
+ling1995|Ling P et al. Human IL-12 p40 homodimer binds to the IL-12 receptor but does not mediate biologic activity. J Immunol 1995;154(1):116-27.|pmid:7527811
+kishimoto2000|Kishimoto K et al. TAK1 mitogen-activated protein kinase kinase kinase is activated by autophosphorylation within its activation loop. J Biol Chem 2000;275(10):7359-64.|doi:10.1074/jbc.275.10.7359
+sakurai2000|Sakurai H et al. Phosphorylation-dependent activation of TAK1 mitogen-activated protein kinase kinase kinase by TAB1. FEBS Lett 2000;474(2-3):141-5.|doi:10.1016/s0014-5793(00)01588-x
+finbloom1995|Finbloom DS et al. IL-10 induces the tyrosine phosphorylation of tyk2 and Jak1 and the differential assembly of STAT1 alpha and STAT3 complexes in human T cells and monocytes. J Immunol 1995;155(3):1079-90.|pmid:7543512
+lejeune2002|Lejeune D et al. Interleukin-22 (IL-22) activates the JAK/STAT, ERK, JNK, and p38 MAP kinase pathways in a rat hepatoma cell line. Pathways that are shared with and distinct from IL-10. J Biol Chem 2002;277(37):33676-82.|doi:10.1074/jbc.M204204200
+krappmann2000|Krappmann D et al. The I kappa B kinase (IKK) complex is tripartite and contains IKK gamma but not IKAP as a regular component. J Biol Chem 2000;275(38):29779-87.|doi:10.1074/jbc.M003902200
+gil2001|Gil J et al. The catalytic activity of dsRNA-dependent protein kinase, PKR, is required for NF-kappaB activation. Oncogene 2001;20(3):385-94.|doi:10.1038/sj.onc.1204109
+domanski1997|Domanski P et al. A region of the beta subunit of the interferon alpha receptor different from box 1 interacts with Jak1 and is sufficient to activate the Jak-Stat pathway and induce an antiviral state. J Biol Chem 1997;272(42):26388-93.|doi:10.1074/jbc.272.42.26388
+cutrone2001|Cutrone EC et al. Identification of critical residues in bovine IFNAR-1 responsible for interferon binding. J Biol Chem 2001;276(20):17140-8.|doi:10.1074/jbc.M009663200
+stauber1988|Stauber GB et al. Human tumor necrosis factor-alpha receptor. Purification by immunoaffinity chromatography and initial characterization. J Biol Chem 1988;263(35):19098-104.|pmid:2848815
+tang1996|Tang P et al. Human pro-tumor necrosis factor is a homotrimer. Biochemistry 1996;35(25):8216-25.|doi:10.1021/bi952182t
+didonato1997|DiDonato JA et al. A cytokine-responsive IkappaB kinase that activates the transcription factor NF-kappaB. Nature 1997;388(6642):548-54.|doi:10.1038/41493
+heissmeyer1999|Heissmeyer V et al. NF-kappaB p105 is a target of IkappaB kinases and controls signal induction of Bcl-3-p50 complexes. EMBO J 1999;18(17):4766-78.|doi:10.1093/emboj/18.17.4766
+hemmi2004|Hemmi H et al. The roles of two IkappaB kinase-related kinases in lipopolysaccharide and double stranded RNA signaling and viral infection. J Exp Med 2004;199(12):1641-50.|doi:10.1084/jem.20040520
+kotenko1995|Kotenko SV et al. Interaction between the components of the interferon gamma receptor complex. J Biol Chem 1995;270(36):20915-21.|doi:10.1074/jbc.270.36.20915
+briscoe1996|Briscoe J et al. Kinase-negative mutants of JAK1 can sustain interferon-gamma-inducible gene expression but not an antiviral state. EMBO J 1996;15(4):799-809.|pmid:8631301
+li1997|Li Z et al. A new member of the I kappaB protein family, I kappaB epsilon, inhibits RelA (p65)-mediated NF-kappaB transcription. Mol Cell Biol 1997;17(10):6184-90.|doi:10.1128/MCB.17.10.6184
+kaiser2008|Kaiser WJ et al. Receptor-interacting protein homotypic interaction motif-dependent control of NF-kappa B activation via the DNA-dependent activator of IFN regulatory factors. J Immunol 2008;181(9):6427-34.|doi:10.4049/jimmunol.181.9.6427
+li2012|Li J et al. The RIP1/RIP3 necrosome forms a functional amyloid signaling complex required for programmed necrosis. Cell 2012;150(2):339-50.|doi:10.1016/j.cell.2012.06.019
+dunne2003|Dunne A et al. Structural complementarity of Toll/interleukin-1 receptor domains in Toll-like receptors and the adaptors Mal and MyD88. J Biol Chem 2003;278(42):41443-51.|doi:10.1074/jbc.M301742200
+pankiv2007|Pankiv S et al. p62/SQSTM1 binds directly to Atg8/LC3 to facilitate degradation of ubiquitinated protein aggregates by autophagy. J Biol Chem 2007;282(33):24131-45.|doi:10.1074/jbc.M702824200
+kirkin2009|Kirkin V et al. A role for NBR1 in autophagosomal degradation of ubiquitinated substrates. Mol Cell 2009;33(4):505-16.|doi:10.1016/j.molcel.2009.01.020
+gavutis2005|Gavutis M et al. Lateral ligand-receptor interactions on membranes probed by simultaneous fluorescence-interference detection. Biophys J 2005;88(6):4289-302.|doi:10.1529/biophysj.104.055855
+beg1992|Beg AA et al. I kappa B interacts with the nuclear localization sequences of the subunits of NF-kappa B: a mechanism for cytoplasmic retention. Genes Dev 1992;6(10):1899-913.|doi:10.1101/gad.6.10.1899
+baldi1996|Baldi L et al. Critical role for lysines 21 and 22 in signal-induced, ubiquitin-mediated proteolysis of I kappa B-alpha. J Biol Chem 1996;271(1):376-9.|doi:10.1074/jbc.271.1.376
+arch1998|Arch RH et al. Tumor necrosis factor receptor-associated factors (TRAFs)--a family of adapter proteins that regulates life and death. Genes Dev 1998;12(18):2821-30.|doi:10.1101/gad.12.18.2821
+wang2001|Wang C et al. TAK1 is a ubiquitin-dependent kinase of MKK and IKK. Nature 2001;412(6844):346-51.|doi:10.1038/35085597
+sakatsume1995|Sakatsume M et al. The Jak kinases differentially associate with the alpha and beta (accessory factor) chains of the interferon gamma receptor to form a functional receptor unit capable of activating STAT transcription factors. J Biol Chem 1995;270(29):17528-34.|doi:10.1074/jbc.270.29.17528
+krause2002|Krause CD et al. Seeing the light: preassembly and ligand-induced changes of the interferon gamma receptor complex in cells. Mol Cell Proteomics 2002;1(10):805-15.|doi:10.1074/mcp.m200065-mcp200
+sasaki1999|Sasaki A et al. Cytokine-inducible SH2 protein-3 (CIS3/SOCS3) inhibits Janus tyrosine kinase by binding through the N-terminal kinase inhibitory region as well as SH2 domain. Genes Cells 1999;4(6):339-51.|doi:10.1046/j.1365-2443.1999.00263.x
+schmitz2000|Schmitz J et al. SOCS3 exerts its inhibitory function on interleukin-6 signal transduction through the SHP2 recruitment site of gp130. J Biol Chem 2000;275(17):12848-56.|doi:10.1074/jbc.275.17.12848
+sheppard2002|Sheppard P et al. IL-28, IL-29 and their class II cytokine receptor IL-28R. Nat Immunol 2002;4(1):63-8.|doi:10.1038/ni873
+dumoutier2004|Dumoutier L et al. Role of the interleukin (IL)-28 receptor tyrosine residues for antiviral and antiproliferative activity of IL-29/interferon-lambda 1: similarities with type I interferon signaling. J Biol Chem 2004;279(31):32269-74.|doi:10.1074/jbc.M404789200
+zhong2008|Zhong B et al. The adaptor protein MITA links virus-sensing receptors to IRF3 transcription factor activation. Immunity 2008;29(4):538-50.|doi:10.1016/j.immuni.2008.09.003
+chen2011|Chen H et al. Activation of STAT6 by STING is critical for antiviral innate immunity. Cell 2011;147(2):436-46.|doi:10.1016/j.cell.2011.09.022
+mankouri2010|Mankouri J et al. Optineurin negatively regulates the induction of IFNbeta in response to RNA virus infection. PLoS Pathog 2010;6(2):e1000778.|doi:10.1371/journal.ppat.1000778
+gleason2011|Gleason CE et al. Polyubiquitin binding to optineurin is required for optimal activation of TANK-binding kinase 1 and production of interferon β. J Biol Chem 2011;286(41):35663-35674.|doi:10.1074/jbc.M111.267567
+platanias2005|Platanias LC. Mechanisms of type-I- and type-II-interferon-mediated signalling. Nat Rev Immunol 2005;5(5):375-86.|doi:10.1038/nri1604
+ling1998|Ling L et al. NF-kappaB-inducing kinase activates IKK-alpha by phosphorylation of Ser-176. Proc Natl Acad Sci U S A 1998;95(7):3792-7.|doi:10.1073/pnas.95.7.3792
+hacker2006|Häcker H et al. Regulation and function of IKK and IKK-related kinases. Sci STKE 2006;2006(357):re13.|doi:10.1126/stke.3572006re13
+seth2005|Seth RB et al. Identification and characterization of MAVS, a mitochondrial antiviral signaling protein that activates NF-kappaB and IRF 3. Cell 2005;122(5):669-82.|doi:10.1016/j.cell.2005.08.012
+xu2005|Xu LG et al. VISA is an adapter protein required for virus-triggered IFN-beta signaling. Mol Cell 2005;19(6):727-40.|doi:10.1016/j.molcel.2005.08.014
+chockalingam2008|Chockalingam A et al. TLR9 traffics through the Golgi complex to localize to endolysosomes and respond to CpG DNA. Immunol Cell Biol 2008;87(3):209-17.|doi:10.1038/icb.2008.101
+dower|Dower SK et al. The cell surface receptors for interleukin-1 alpha and interleukin-1 beta are identical. Nature None;324(6094):266-8.|doi:10.1038/324266a0
+kanakaraj1998|Kanakaraj P et al. Interleukin (IL)-1 receptor-associated kinase (IRAK) requirement for optimal induction of multiple IL-1 signaling pathways and IL-6 production. J Exp Med 1998;187(12):2073-9.|doi:10.1084/jem.187.12.2073
+cussonhermance2005|Cusson-Hermance N et al. Rip1 mediates the Trif-dependent toll-like receptor 3- and 4-induced NF-{kappa}B activation but does not contribute to interferon regulatory factor 3 activation. J Biol Chem 2005;280(44):36560-6.|doi:10.1074/jbc.M506831200
+lamothe2006|Lamothe B et al. Site-specific Lys-63-linked tumor necrosis factor receptor-associated factor 6 auto-ubiquitination is a critical determinant of I kappa B kinase activation. J Biol Chem 2006;282(6):4102-12.|doi:10.1074/jbc.M609503200
+yamamoto2003|Yamamoto M et al. Role of adaptor TRIF in the MyD88-independent toll-like receptor signaling pathway. Science 2003;301(5633):640-3.|doi:10.1126/science.1087262
+piao2009|Piao W et al. Endotoxin tolerance dysregulates MyD88- and Toll/IL-1R domain-containing adapter inducing IFN-beta-dependent pathways and increases expression of negative regulators of TLR signaling. J Leukoc Biol 2009;86(4):863-75.|doi:10.1189/jlb.0309189
+hemmann1996|Hemmann U et al. Differential activation of acute phase response factor/Stat3 and Stat1 via the cytoplasmic domain of the interleukin 6 signal transducer gp130. II. Src homology SH2 domains define the specificity of stat factor activation. J Biol Chem 1996;271(22):12999-3007.|doi:10.1074/jbc.271.22.12999
+decker2000|Decker T et al. Serine phosphorylation of STATs. Oncogene 2000;19(21):2628-37.|doi:10.1038/sj.onc.1203481
+jiang2004|Jiang Z et al. Toll-like receptor 3-mediated activation of NF-kappaB and IRF3 diverges at Toll-IL-1 receptor domain-containing adapter inducing IFN-beta. Proc Natl Acad Sci U S A 2004;101(10):3533-8.|doi:10.1073/pnas.0308496101
+oganesyan2005|Oganesyan G et al. Critical role of TRAF3 in the Toll-like receptor-dependent and -independent antiviral response. Nature 2005;439(7073):208-11.|doi:10.1038/nature04374
+tseng2009|Tseng PH et al. Different modes of ubiquitination of the adaptor TRAF3 selectively activate the expression of type I interferons and proinflammatory cytokines. Nat Immunol 2009;11(1):70-5.|doi:10.1038/ni.1819
+tchasovnikarova2017|Tchasovnikarova IA et al. Hyperactivation of HUSH complex function by Charcot-Marie-Tooth disease mutation in MORC2. Nat Genet 2017;49(7):1035-1044.|doi:10.1038/ng.3878
+lin2010|Lin SC et al. Helical assembly in the MyD88-IRAK4-IRAK2 complex in TLR/IL-1R signalling. Nature 2010;465(7300):885-90.|doi:10.1038/nature09121
+eskes2000|Eskes R et al. Bid induces the oligomerization and insertion of Bax into the outer mitochondrial membrane. Mol Cell Biol 2000;20(3):929-35.|pmid:10629050
+korsmeyer2000|Korsmeyer SJ et al. Pro-apoptotic cascade activates BID, which oligomerizes BAK or BAX into pores that result in the release of cytochrome c. Cell Death Differ 2000;7(12):1166-73.|doi:10.1038/sj.cdd.4400783
+torigoe1997|Torigoe K et al. Purification and characterization of the human interleukin-18 receptor. J Biol Chem 1997;272(41):25737-42.|doi:10.1074/jbc.272.41.25737
+born1998|Born TL et al. Cloning of a novel receptor subunit, AcPL, required for interleukin-18 signaling. J Biol Chem 1998;273(45):29445-50.|doi:10.1074/jbc.273.45.29445
+colamonici1994|Colamonici O et al. Direct binding to and tyrosine phosphorylation of the alpha subunit of the type I interferon receptor by p135tyk2 tyrosine kinase. Mol Cell Biol 1994;14(12):8133-42.|doi:10.1128/mcb.14.12.8133-8142.1994
+yan1996|Yan H et al. Phosphorylated interferon-alpha receptor 1 subunit (IFNaR1) acts as a docking site for the latent form of the 113 kDa STAT2 protein. EMBO J 1996;15(5):1064-74.|pmid:8605876
+kondapalli2012|Kondapalli C et al. PINK1 is activated by mitochondrial membrane potential depolarization and stimulates Parkin E3 ligase activity by phosphorylating Serine 65. Open Biol 2012;2(5):120080.|doi:10.1098/rsob.120080
+gladkova2018|Gladkova C et al. Mechanism of parkin activation by PINK1. Nature 2018;559(7714):410-414.|doi:10.1038/s41586-018-0224-x
+parham2002|Parham C et al. A receptor for the heterodimeric cytokine IL-23 is composed of IL-12Rbeta1 and a novel cytokine receptor subunit, IL-23R. J Immunol 2002;168(11):5699-708.|doi:10.4049/jimmunol.168.11.5699
+floss2016|Floss DM et al. Defining the functional binding sites of interleukin 12 receptor β1 and interleukin 23 receptor to Janus kinases. Mol Biol Cell 2016;27(14):2301-16.|doi:10.1091/mbc.E14-12-1645
+xiao2001|Xiao G et al. NF-kappaB-inducing kinase regulates the processing of NF-kappaB2 p100. Mol Cell 2001;7(2):401-9.|doi:10.1016/s1097-2765(01)00187-3
+liao2004|Liao G et al. Regulation of the NF-kappaB-inducing kinase by tumor necrosis factor receptor-associated factor 3-induced degradation. J Biol Chem 2004;279(25):26243-50.|doi:10.1074/jbc.M403286200
+kayagaki2007|Kayagaki N et al. DUBA: a deubiquitinase that regulates type I interferon production. Science 2007;318(5856):1628-32.|doi:10.1126/science.1145918
+yao1997|Yao Z et al. Molecular characterization of the human interleukin (IL)-17 receptor. Cytokine 1997;9(11):794-800.|doi:10.1006/cyto.1997.0240
+toy2006|Toy D et al. Cutting edge: interleukin 17 signals through a heteromeric receptor complex. J Immunol 2006;177(1):36-9.|doi:10.4049/jimmunol.177.1.36
+rosendorff2006|Rosendorff A et al. NXP-2 association with SUMO-2 depends on lysines required for transcriptional repression. Proc Natl Acad Sci U S A 2006;103(14):5308-13.|doi:10.1073/pnas.0601066103
+basavapathruni2016|Basavapathruni A et al. Characterization of the Enzymatic Activity of SETDB1 and Its 1:1 Complex with ATF7IP. Biochemistry 2016;55(11):1645-51.|doi:10.1021/acs.biochem.5b01202
+novick1994|Novick D et al. The human interferon alpha/beta receptor: characterization and molecular cloning. Cell 1994;77(3):391-400.|doi:10.1016/0092-8674(94)90154-6
+kovalenko2003|Kovalenko A et al. The tumour suppressor CYLD negatively regulates NF-kappaB signalling by deubiquitination. Nature 2003;424(6950):801-5.|doi:10.1038/nature01802
+srinivasula2002|Srinivasula SM et al. The PYRIN-CARD protein ASC is an activating adaptor for caspase-1. J Biol Chem 2002;277(24):21119-22.|doi:10.1074/jbc.C200179200
+manji2002|Manji GA et al. PYPAF1, a PYRIN-containing Apaf1-like protein that assembles with ASC and regulates activation of NF-kappa B. J Biol Chem 2002;277(13):11570-5.|doi:10.1074/jbc.M112208200
+moore2016|Moore AS et al. Dynamic recruitment and activation of ALS-associated TBK1 with its target optineurin are required for efficient mitophagy. Proc Natl Acad Sci U S A 2016;113(24):E3349-58.|doi:10.1073/pnas.1523810113
+ghayur1997|Ghayur T et al. Caspase-1 processes IFN-gamma-inducing factor and regulates LPS-induced IFN-gamma production. Nature 1997;386(6625):619-23.|doi:10.1038/386619a0
+malakhova2006|Malakhova OA et al. UBP43 is a novel regulator of interferon signaling independent of its ISG15 isopeptidase activity. EMBO J 2006;25(11):2358-67.|doi:10.1038/sj.emboj.7601149
+hoshino2006|Hoshino K et al. IkappaB kinase-alpha is critical for interferon-alpha production induced by Toll-like receptors 7 and 9. Nature 2006;440(7086):949-53.|doi:10.1038/nature04641
+lai1996|Lai CF et al. Receptors for interleukin (IL)-10 and IL-6-type cytokines use similar signaling mechanisms for inducing transcription through IL-6 response elements. J Biol Chem 1996;271(24):13968-75.|doi:10.1074/jbc.271.24.13968
+bjrbaek1997|Bjørbaek C et al. Divergent signaling capacities of the long and short isoforms of the leptin receptor. J Biol Chem 1997;272(51):32686-95.|doi:10.1074/jbc.272.51.32686
+rani1999|Rani MR et al. Catalytically active TYK2 is essential for interferon-beta-mediated phosphorylation of STAT3 and interferon-alpha receptor-1 (IFNAR-1) but not for activation of phosphoinositol 3-kinase. J Biol Chem 1999;274(45):32507-11.|doi:10.1074/jbc.274.45.32507
+riley1999|Riley JK et al. Interleukin-10 receptor signaling through the JAK-STAT pathway. Requirement for two distinct receptor-derived signals for anti-inflammatory action. J Biol Chem 1999;274(23):16513-21.|doi:10.1074/jbc.274.23.16513
+naeger1999|Naeger LK et al. Identification of a STAT4 binding site in the interleukin-12 receptor required for signaling. J Biol Chem 1999;274(4):1875-8.|doi:10.1074/jbc.274.4.1875
+yao1999|Yao BB et al. Direct interaction of STAT4 with the IL-12 receptor. Arch Biochem Biophys 1999;368(1):147-55.|doi:10.1006/abbi.1999.1302
+mowen2000|Mowen K et al. Regulation of STAT1 nuclear export by Jak1. Mol Cell Biol 2000;20(19):7273-81.|doi:10.1128/MCB.20.19.7273-7281.2000
+bluyssen1997|Bluyssen HA et al. Stat2 is a transcriptional activator that requires sequence-specific contacts provided by stat1 and p48 for stable interaction with DNA. J Biol Chem 1997;272(7):4600-5.|doi:10.1074/jbc.272.7.4600
+kanayama2004|Kanayama A et al. TAB2 and TAB3 activate the NF-kappaB pathway through binding to polyubiquitin chains. Mol Cell 2004;15(4):535-48.|doi:10.1016/j.molcel.2004.08.008
+ea2006|Ea CK et al. Activation of IKK by TNFalpha requires site-specific ubiquitination of RIP1 and polyubiquitin binding by NEMO. Mol Cell 2006;22(2):245-57.|doi:10.1016/j.molcel.2006.03.026
+chaudhary2000|Chaudhary PM et al. Activation of the NF-kappaB pathway by caspase 8 and its homologs. Oncogene 2000;19(39):4451-60.|doi:10.1038/sj.onc.1203812
+kawai2004|Kawai T et al. Interferon-alpha induction through Toll-like receptors involves a direct interaction of IRF7 with MyD88 and TRAF6. Nat Immunol 2004;5(10):1061-8.|doi:10.1038/ni1118
+king1997|King PD et al. Analysis of CD28 cytoplasmic tail tyrosine residues as regulators and substrates for the protein tyrosine kinases, EMT and LCK. J Immunol 1997;158(2):580-90.|pmid:8992971
+sadra1999|Sadra A et al. Identification of tyrosine phosphorylation sites in the CD28 cytoplasmic domain and their role in the costimulation of Jurkat T cells. J Immunol 1999;162(4):1966-73.|pmid:9973466
+boone2004|Boone DL et al. The ubiquitin-modifying enzyme A20 is required for termination of Toll-like receptor responses. Nat Immunol 2004;5(10):1052-60.|doi:10.1038/ni1110
+lin2007|Lin SC et al. Molecular basis for the unique deubiquitinating activity of the NF-kappaB inhibitor A20. J Mol Biol 2007;376(2):526-40.|doi:10.1016/j.jmb.2007.11.092
+reiley2005|Reiley W et al. Regulation of the deubiquitinating enzyme CYLD by IkappaB kinase gamma-dependent phosphorylation. Mol Cell Biol 2005;25(10):3886-95.|doi:10.1128/MCB.25.10.3886-3895.2005
+thein2014|Thein S et al. CaMKII mediates recruitment and activation of the deubiquitinase CYLD at the postsynaptic density. PLoS One 2014;9(3):e91312.|doi:10.1371/journal.pone.0091312
+jiao1996|Jiao H et al. Direct association with and dephosphorylation of Jak2 kinase by the SH2-domain-containing protein tyrosine phosphatase SHP-1. Mol Cell Biol 1996;16(12):6985-92.|doi:10.1128/MCB.16.12.6985
+bone1997|Bone H et al. SHP1 and SHP2 protein-tyrosine phosphatases associate with betac after interleukin-3-induced receptor tyrosine phosphorylation. Identification of potential binding sites and substrates. J Biol Chem 1997;272(22):14470-6.|doi:10.1074/jbc.272.22.14470
+zandi1997|Zandi E et al. The IkappaB kinase complex (IKK) contains two kinase subunits, IKKalpha and IKKbeta, necessary for IkappaB phosphorylation and NF-kappaB activation. Cell 1997;91(2):243-52.|doi:10.1016/s0092-8674(00)80406-7
+letourneur2009|Letourneur M et al. Sp2 regulates interferon-gamma-mediated socs1 gene expression. Mol Immunol 2009;46(11-12):2151-60.|doi:10.1016/j.molimm.2009.05.004
+chiang2001|Chiang GG et al. Specific dephosphorylation of the Lck tyrosine protein kinase at Tyr-394 by the SHP-1 protein-tyrosine phosphatase. J Biol Chem 2001;276(25):23173-8.|doi:10.1074/jbc.M101219200
+brender2001|Brender C et al. STAT3-mediated constitutive expression of SOCS-3 in cutaneous T-cell lymphoma. Blood 2001;97(4):1056-62.|doi:10.1182/blood.v97.4.1056
+he2003|He B et al. Cloning and characterization of a functional promoter of the human SOCS-3 gene. Biochem Biophys Res Commun 2003;301(2):386-91.|doi:10.1016/s0006-291x(02)03071-1
+whyte2011|Whyte CS et al. Suppressor of cytokine signaling (SOCS)1 is a key determinant of differential macrophage activation and function. J Leukoc Biol 2011;90(5):845-54.|doi:10.1189/jlb.1110644
+carow2014|Carow B et al. SOCS3, a Major Regulator of Infection and Inflammation. Front Immunol 2014;5:58.|doi:10.3389/fimmu.2014.00058
+mendoza2005|Mendoza L. A network model for the control of the differentiation process in Th cells. Biosystems 2005;84(2):101-14.|doi:10.1016/j.biosystems.2005.10.004
+dai2006|Dai X et al. SOCS1-negative feedback of STAT1 activation is a key pathway in the dsRNA-induced innate immune response of human keratinocytes. J Invest Dermatol 2006;126(7):1574-81.|doi:10.1038/sj.jid.5700294
+schindler2007|Schindler C et al. JAK-STAT signaling: from interferons to cytokines. J Biol Chem 2007;282(28):20059-63.|doi:10.1074/jbc.R700016200
+gegg2010|Gegg ME et al. Mitofusin 1 and mitofusin 2 are ubiquitinated in a PINK1/parkin-dependent manner upon induction of mitophagy. Hum Mol Genet 2010;19(24):4861-70.|doi:10.1093/hmg/ddq419
+wang2013|Wang D et al. TRAIL-induced miR-146a expression suppresses CXCR4-mediated human breast cancer migration. FEBS J 2013;280(14):3340-53.|doi:10.1111/febs.12323
+li2017|Li X et al. Nucleus-Translocated ACSS2 Promotes Gene Transcription for Lysosomal Biogenesis and Autophagy. Mol Cell 2017;66(5):684-697.e9.|doi:10.1016/j.molcel.2017.04.026
+ji2018|Ji YX et al. The deubiquitinating enzyme cylindromatosis mitigates nonalcoholic steatohepatitis. Nat Med 2018;24(2):213-223.|doi:10.1038/nm.4461
+coperchini2020|Coperchini F et al. The cytokine storm in COVID-19: An overview of the involvement of the chemokine/chemokine-receptor system. Cytokine Growth Factor Rev 2020;53:25-32.|doi:10.1016/j.cytogfr.2020.05.003
+xu2018|Xu D et al. TBK1 Suppresses RIPK1-Driven Apoptosis and Inflammation during Development and in Aging. Cell 2018;174(6):1477-1491.e19.|doi:10.1016/j.cell.2018.07.041
+pilli2012|Pilli M et al. TBK-1 promotes autophagy-mediated antimicrobial defense by controlling autophagosome maturation. Immunity 2012;37(2):223-34.|doi:10.1016/j.immuni.2012.04.015
+trompouki2003|Trompouki E et al. CYLD is a deubiquitinating enzyme that negatively regulates NF-kappaB activation by TNFR family members. Nature 2003;424(6950):793-6.|doi:10.1038/nature01803
+fife2008|Fife BT et al. Control of peripheral T-cell tolerance and autoimmunity via the CTLA-4 and PD-1 pathways. Immunol Rev 2008;224:166-82.|doi:10.1111/j.1600-065X.2008.00662.x
+bulek2011|Bulek K et al. The inducible kinase IKKi is required for IL-17-dependent signaling associated with neutrophilia and pulmonary inflammation. Nat Immunol 2011;12(9):844-52.|doi:10.1038/ni.2080
+hutti2009|Hutti JE et al. Phosphorylation of the tumor suppressor CYLD by the breast cancer oncogene IKKepsilon promotes cell transformation. Mol Cell 2009;34(4):461-72.|doi:10.1016/j.molcel.2009.04.031
+kondo2012|Kondo T et al. TRIM59 interacts with ECSIT and negatively regulates NF-κB and IRF-3/7-mediated signal pathways. Biochem Biophys Res Commun 2012;422(3):501-7.|doi:10.1016/j.bbrc.2012.05.028
+gorden2005|Gorden KB et al. Synthetic TLR agonists reveal functional differences between human TLR7 and TLR8. J Immunol 2005;174(3):1259-68.|doi:10.4049/jimmunol.174.3.1259
+xu2008|Xu D et al. Protein tyrosine phosphatases in the JAK/STAT pathway. Front Biosci 2008;13:4925-32.|doi:10.2741/3051
+zhong2009|Zhong B et al. The ubiquitin ligase RNF5 regulates antiviral responses by mediating degradation of the adaptor protein MITA. Immunity 2009;30(3):397-407.|doi:10.1016/j.immuni.2009.01.008
+zhong2010|Zhong B et al. The E3 ubiquitin ligase RNF5 targets virus-induced signaling adaptor for ubiquitination and degradation. J Immunol 2010;184(11):6249-55.|doi:10.4049/jimmunol.0903748
+vermeulen2003|Vermeulen L et al. Transcriptional activation of the NF-kappaB p65 subunit by mitogen- and stress-activated protein kinase-1 (MSK1). EMBO J 2003;22(6):1313-24.|doi:10.1093/emboj/cdg139
+simoncic2002|Simoncic PD et al. The T cell protein tyrosine phosphatase is a negative regulator of janus family kinases 1 and 3. Curr Biol 2002;12(6):446-53.|doi:10.1016/s0960-9822(02)00697-8
+bourdeau2005|Bourdeau A et al. Cytoplasmic protein tyrosine phosphatases, regulation and function: the roles of PTP1B and TC-PTP. Curr Opin Cell Biol 2005;17(2):203-9.|doi:10.1016/j.ceb.2005.02.001
+tenhoeve2002|ten Hoeve J et al. Identification of a nuclear Stat1 protein tyrosine phosphatase. Mol Cell Biol 2002;22(16):5662-8.|doi:10.1128/MCB.22.16.5662-5668.2002
+hannum1990|Hannum CH et al. Interleukin-1 receptor antagonist activity of a human interleukin-1 inhibitor. Nature 1990;343(6256):336-40.|doi:10.1038/343336a0
+eisenberg1990|Eisenberg SP et al. Primary structure and functional expression from complementary DNA of a human interleukin-1 receptor antagonist. Nature 1990;343(6256):341-6.|doi:10.1038/343341a0
+colotta1993|Colotta F et al. Interleukin-1 type II receptor: a decoy target for IL-1 that is regulated by IL-4. Science 1993;261(5120):472-5.|doi:10.1126/science.8332913
+smit2003|Smit MJ et al. CXCR3-mediated chemotaxis of human T cells is regulated by a Gi- and phospholipase C-dependent pathway and not via activation of MEK/p44/p42 MAPK nor Akt/PI-3 kinase. Blood 2003;102(6):1959-65.|doi:10.1182/blood-2002-12-3945
+higgs2010|Higgs R et al. Self protection from anti-viral responses--Ro52 promotes degradation of the transcription factor IRF7 downstream of the viral Toll-Like receptors. PLoS One 2010;5(7):e11776.|doi:10.1371/journal.pone.0011776
+pan2016|Pan JA et al. TRIM21 Ubiquitylates SQSTM1/p62 and Suppresses Protein Sequestration to Regulate Redox Homeostasis. Mol Cell 2016;61(5):720-733.|doi:10.1016/j.molcel.2016.02.007
+devalck1999|De Valck D et al. The zinc finger protein A20 interacts with a novel anti-apoptotic protein which is cleaved by specific caspases. Oncogene 1999;18(29):4182-90.|doi:10.1038/sj.onc.1202787
+shembade2011|Shembade N et al. The kinase IKKα inhibits activation of the transcription factor NF-κB by phosphorylating the regulatory molecule TAX1BP1. Nat Immunol 2011;12(9):834-43.|doi:10.1038/ni.2066
+gao2011|Gao L et al. ABIN1 protein cooperates with TAX1BP1 and A20 proteins to inhibit antiviral signaling. J Biol Chem 2011;286(42):36592-602.|doi:10.1074/jbc.M111.283762
+scheinman1995|Scheinman RI et al. Role of transcriptional activation of I kappa B alpha in mediation of immunosuppression by glucocorticoids. Science 1995;270(5234):283-6.|doi:10.1126/science.270.5234.283
+cato1996|Cato AC et al. Molecular mechanisms of anti-inflammatory action of glucocorticoids. Bioessays 1996;18(5):371-8.|doi:10.1002/bies.950180507
+lowenberg2006|Löwenberg M et al. Glucocorticoids cause rapid dissociation of a T-cell-receptor-associated protein complex containing LCK and FYN. EMBO Rep 2006;7(10):1023-9.|doi:10.1038/sj.embor.7400775
+maejima2013|Maejima Y et al. Mst1 inhibits autophagy by promoting the interaction between Beclin1 and Bcl-2. Nat Med 2013;19(11):1478-88.|doi:10.1038/nm.3322
+qin2014|Qin Y et al. RNF26 temporally regulates virus-triggered type I interferon induction by two distinct mechanisms. PLoS Pathog 2014;10(9):e1004358.|doi:10.1371/journal.ppat.1004358
+jongsma2016|Jongsma ML et al. An ER-Associated Pathway Defines Endosomal Architecture for Controlled Cargo Transport. Cell 2016;166(1):152-66.|doi:10.1016/j.cell.2016.05.078
+ni2017|Ni G et al. Ubiquitination of STING at lysine 224 controls IRF3 activation. Sci Immunol 2017;2(11).|doi:10.1126/sciimmunol.aah7119
+yonashiro2006|Yonashiro R et al. A novel mitochondrial ubiquitin ligase plays a critical role in mitochondrial dynamics. EMBO J 2006;25(15):3618-26.|doi:10.1038/sj.emboj.7601249
+shiiba2021|Shiiba I et al. MITOL promotes cell survival by degrading Parkin during mitophagy. EMBO Rep 2021;22(3):e49097.|doi:10.15252/embr.201949097
+zhou2022|Zhou J et al. TBK1 phosphorylation activates LIR-dependent degradation of the inflammation repressor TNIP1. J Cell Biol 2022;222(2).|doi:10.1083/jcb.202108144
+sparrer2017|Sparrer KMJ et al. TRIM23 mediates virus-induced autophagy via activation of TBK1. Nat Microbiol 2017;2(11):1543-1557.|doi:10.1038/s41564-017-0017-2
+saitoh2006|Saitoh T et al. Negative regulation of interferon-regulatory factor 3-dependent innate antiviral response by the prolyl isomerase Pin1. Nat Immunol 2006;7(6):598-605.|doi:10.1038/ni1347
+lang2016|Lang X et al. TRIM65-catalized ubiquitination is essential for MDA5-mediated antiviral innate immunity. J Exp Med 2016;214(2):459-473.|doi:10.1084/jem.20160592
+tang2021|Tang T et al. The E3 Ubiquitin Ligase TRIM65 Negatively Regulates Inflammasome Activation Through Promoting Ubiquitination of NLRP3. Front Immunol 2021;12:741839.|doi:10.3389/fimmu.2021.741839
+duong2004|Duong FH et al. Hepatitis C virus inhibits interferon signaling through up-regulation of protein phosphatase 2A. Gastroenterology 2004;126(1):263-77.|doi:10.1053/j.gastro.2003.10.076
+liu2007|Liu B et al. Proinflammatory stimuli induce IKKalpha-mediated phosphorylation of PIAS1 to restrict inflammation and immunity. Cell 2007;129(5):903-14.|doi:10.1016/j.cell.2007.03.056
+cereghetti2008|Cereghetti GM et al. Dephosphorylation by calcineurin regulates translocation of Drp1 to mitochondria. Proc Natl Acad Sci U S A 2008;105(41):15803-8.|doi:10.1073/pnas.0808249105
+soulat2008|Soulat D et al. The DEAD-box helicase DDX3X is a critical component of the TANK-binding kinase 1-dependent innate immune response. EMBO J 2008;27(15):2135-46.|doi:10.1038/emboj.2008.126
 
 §12 PRIVACY
 Case notes present in this build: YES (16 entries).

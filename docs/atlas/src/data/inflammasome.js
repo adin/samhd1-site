@@ -966,7 +966,11 @@ export const edges = [
       "string_combined": 0.999,
       "string_experimental": 0.995,
       "string_database": 0.9
-    }
+    },
+    "refs": [
+      "manji2002"
+    ],
+    "evidenceTierNote": "Curated-database fill 2026-11-11 (CP-0065): refs manji2002 (PMID 11786556) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier left at L1_in_silico: MeSH does not name a cell or animal system (or the ref is a review)."
   },
   {
     "from": "asc",
@@ -978,7 +982,7 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
@@ -991,7 +995,11 @@ export const edges = [
       "string_combined": 0.999,
       "string_experimental": 0.995,
       "string_database": 0.9
-    }
+    },
+    "refs": [
+      "srinivasula2002"
+    ],
+    "evidenceTierNote": "Curated-database fill 2026-11-11 (CP-0064): refs srinivasula2002 (PMID 11967258) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods."
   },
   {
     "from": "casp1",
@@ -1003,7 +1011,7 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
@@ -1016,7 +1024,11 @@ export const edges = [
       "string_combined": 0.999,
       "string_experimental": 0.97,
       "string_database": 0.9
-    }
+    },
+    "refs": [
+      "ghayur1997"
+    ],
+    "evidenceTierNote": "Curated-database fill 2026-11-11 (CP-0069): refs ghayur1997 (PMID 9121587) from reactome (cleavage); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods."
   },
   {
     "from": "proil1b",
@@ -1047,7 +1059,7 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "B",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js/nfkb.js: identical-citation node/edge pairs disagreed with no mechanistic reason, e.g. msu node vs msu->nlrp3 on the same martinon2006).",
     "cell_context": [
@@ -1060,7 +1072,11 @@ export const edges = [
       "string_combined": 0.999,
       "string_experimental": 0.965,
       "string_database": 0.9
-    }
+    },
+    "refs": [
+      "ghayur1997"
+    ],
+    "evidenceTierNote": "Curated-database fill 2026-11-11 (CP-0071): refs ghayur1997 (PMID 9121587) from reactome (cleavage); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods."
   },
   {
     "from": "casp1",

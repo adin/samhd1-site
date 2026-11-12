@@ -630,7 +630,7 @@ export const edges = [
     "evidence": "G",
     "loop": "C",
     "bend": 0.2,
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
@@ -639,7 +639,11 @@ export const edges = [
       "cd8_tcell",
       "nk_cell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. | Curated-database fill 2026-11-11 (CP-0047): refs torigoe1997, born1998 (PMID 9325300, 9792649) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
+    "refs": [
+      "torigoe1997",
+      "born1998"
+    ]
   },
   {
     "from": "il18bp",
@@ -650,7 +654,7 @@ export const edges = [
       "ifn-gamma"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_suppression",
     "cell_context": [
       "monocyte",
@@ -659,7 +663,10 @@ export const edges = [
       "dendritic_cell"
     ],
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. | Curated-database fill 2026-11-11 (CP-0070): refs novick1999 (PMID 10023777) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
+    "refs": [
+      "novick1999"
+    ]
   },
   {
     "from": "il18r",
@@ -692,7 +699,7 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
@@ -701,7 +708,11 @@ export const edges = [
       "cd8_tcell",
       "nk_cell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. | Curated-database fill 2026-11-11 (CP-0006): refs chizzonite1992, ling1995 (PMID 1578138, 7527811) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
+    "refs": [
+      "chizzonite1992",
+      "ling1995"
+    ]
   },
   {
     "from": "nfkb-targets",
@@ -829,7 +840,7 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "C",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
@@ -838,7 +849,11 @@ export const edges = [
       "dendritic_cell"
     ],
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped -- this file's own citations (cuthbert2019, honda2005, siegal1999, tannahill2013, tesser2025, uematsu2005, xu2023vdac1) give no CD4 T-cell support for the myeloid template; han2026 (the SAMHD1-AGS PBMC scRNA-seq paper that supports cd4_tcell in sensing.js/ifn.js) is absent from this file's bibliography. See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. | Curated-database fill 2026-11-11 (CP-0015): refs kotenko1995, briscoe1996 (PMID 7673114, 8631301) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
+    "refs": [
+      "kotenko1995",
+      "briscoe1996"
+    ]
   },
   {
     "from": "stat1",
@@ -1200,14 +1215,18 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
     "cell_context": [
       "monocyte",
       "macrophage",
       "cd4_tcell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. | Curated-database fill 2026-11-11 (CP-0050): refs parham2002, floss2016 (PMID 12023369, 27193299) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
+    "refs": [
+      "parham2002",
+      "floss2016"
+    ]
   },
   {
     "from": "il23r",
@@ -1234,14 +1253,18 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "catalytic_activation",
     "cell_context": [
       "monocyte",
       "macrophage",
       "cd4_tcell"
     ],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. | Curated-database fill 2026-11-11 (CP-0039): refs hemmann1996, decker2000 (PMID 8662795, 10851062) from reactome,signor (functional association,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
+    "refs": [
+      "hemmann1996",
+      "decker2000"
+    ]
   },
   {
     "from": "stat3",
@@ -1332,10 +1355,14 @@ export const edges = [
       "th17"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "interaction_type": "allosteric_binding",
     "cell_context": [],
-    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling."
+    "evidenceTierNote": "Fixed 2026-09-15 (cell_context literature-verification audit): evidence_tier capped L3_cell_line -> L1_in_silico -- zero refs, no citation supports a tier above the config.js in-silico ceiling. | Curated-database fill 2026-11-11 (CP-0053): refs yao1997, toy2006 (PMID 9367539, 16785495) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
+    "refs": [
+      "yao1997",
+      "toy2006"
+    ]
   },
   {
     "from": "il17ra",

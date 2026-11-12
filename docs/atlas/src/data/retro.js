@@ -1382,8 +1382,8 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0044): refs tchasovnikarova2017, liu2018hush (PMID 28581500, 29211708) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
@@ -1392,6 +1392,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "ipsc"
+    ],
+    "refs": [
+      "tchasovnikarova2017",
+      "liu2018hush"
     ]
   },
   {
@@ -1403,8 +1407,8 @@ export const edges = [
       "retro"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0043): refs tchasovnikarova2017, liu2018hush (PMID 28581500, 29211708) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
@@ -1413,6 +1417,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "ipsc"
+    ],
+    "refs": [
+      "tchasovnikarova2017",
+      "liu2018hush"
     ]
   },
   {
@@ -1531,7 +1539,7 @@ export const edges = [
     ],
     "evidence": "G",
     "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0055): refs rosendorff2006, basavapathruni2016 (PMID 16567619, 26813693) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier left at L1_in_silico: MeSH does not name a cell or animal system (or the ref is a review).",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): cd4_tcell removed (no citation in this file used a T cell of any kind) and dendritic_cell/ipsc added, converging this edge's cell_context with its own endpoint nodes' array -- the prior node/edge split was a pure batch-authoring artifact (this exact edge array, minus cd4_tcell, is this atlas's 353-instance default template, applied here without per-edge judgment). See the retro.js node cellContextNote and analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md for the full reasoning (hsc->ipsc, microglia's AGS/CNS basis, etc.).",
     "cell_context": [
@@ -1540,6 +1548,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "ipsc"
+    ],
+    "refs": [
+      "rosendorff2006",
+      "basavapathruni2016"
     ]
   },
   {

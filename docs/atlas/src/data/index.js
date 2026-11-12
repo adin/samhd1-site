@@ -17,6 +17,7 @@ import * as retro        from './retro.js';
 import * as samhd1       from './samhd1.js';
 import * as trailshort   from './trailshort.js';
 import * as drugs        from './drugs.js';
+import * as curated      from './curated.js';
 
 import { COMPARTMENTS, CLASSES, PATHWAYS, EDGE_KINDS } from '../config.js';
 import { CASE_NOTES, HAS_CASE_NOTES } from './case-notes.js';
@@ -33,6 +34,7 @@ const MODULES = [
   ['samhd1', samhd1],
   ['trailshort', trailshort],
   ['drugs', drugs],
+  ['curated', curated],
 ];
 
 export const NODES = [];

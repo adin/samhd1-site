@@ -1329,8 +1329,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "A",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0028): refs zhong2008, chen2011 (PMID 18818105, 22000020) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1339,6 +1339,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "zhong2008",
+      "chen2011"
     ]
   },
   {
@@ -1486,8 +1490,8 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0034): refs seth2005, xu2005 (PMID 16125763, 16153868) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1496,6 +1500,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "seth2005",
+      "xu2005"
     ]
   },
   {
@@ -1527,8 +1535,8 @@ export const edges = [
       "rlr-mavs"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0052): refs oganesyan2005, kayagaki2007 (PMID 16306936, 17991829) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1537,6 +1545,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "oganesyan2005",
+      "kayagaki2007"
     ]
   },
   {
@@ -1548,8 +1560,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0063): refs xu2005 (PMID 16153868) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1558,6 +1570,9 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "xu2005"
     ]
   },
   {
@@ -1590,8 +1605,8 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0014): refs fitzgerald2003, hemmi2004 (PMID 12692549, 15210742) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1600,6 +1615,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "fitzgerald2003",
+      "hemmi2004"
     ]
   },
   {
@@ -1654,8 +1673,8 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0041): refs yamamoto2003, jiang2004 (PMID 12855817, 14982987) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1664,6 +1683,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "yamamoto2003",
+      "jiang2004"
     ]
   },
   {
@@ -1675,8 +1698,8 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0038): refs yamamoto2003, piao2009 (PMID 12855817, 19656901) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1685,6 +1708,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "yamamoto2003",
+      "piao2009"
     ]
   },
   {
@@ -1697,8 +1724,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0019): refs wesche1997, dunne2003 (PMID 9430229, 12888566) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1707,6 +1734,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "wesche1997",
+      "dunne2003"
     ]
   },
   {
@@ -1717,8 +1748,8 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0045): refs wesche1997, lin2010 (PMID 9430229, 20485341) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the tlr7/myd88 nodes' own cell_context (no T-cell basis in this atlas's TLR7 vocabulary) -- cd4_tcell dropped, dendritic_cell added.",
     "cell_context": [
@@ -1726,6 +1757,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "wesche1997",
+      "lin2010"
     ]
   },
   {
@@ -1736,8 +1771,8 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0035): refs wesche1997, chockalingam2008 (PMID 9430229, 19079358) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the tlr9/myd88 nodes' own cell_context -- cd4_tcell dropped, dendritic_cell added.",
     "cell_context": [
@@ -1745,6 +1780,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "wesche1997",
+      "chockalingam2008"
     ]
   },
   {
@@ -1756,8 +1795,8 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0002): refs wesche1997, knop1999 (PMID 9430229, 10217414) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches the myd88/irak14 nodes' own cell_context -- cd4_tcell dropped, dendritic_cell added.",
     "cell_context": [
@@ -1765,6 +1804,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "wesche1997",
+      "knop1999"
     ]
   },
   {
@@ -1776,8 +1819,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0005): refs cao1996, burns1998 (PMID 8837778, 9575168) from reactome,signor (physical association,ubiquitination); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): matches its own source node (irak14) -- cd4_tcell dropped, dendritic_cell added, for consistency with irak14's other outgoing edge (->irf7) since this node's own cell_context no longer carries cd4_tcell at all.",
     "cell_context": [
@@ -1785,6 +1828,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "cao1996",
+      "burns1998"
     ]
   },
   {
@@ -1855,8 +1902,8 @@ export const edges = [
       "tlr"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0042): refs oganesyan2005, tseng2009 (PMID 16306936, 19898473) from reactome (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1865,6 +1912,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "oganesyan2005",
+      "tseng2009"
     ]
   },
   {
@@ -1876,8 +1927,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0037): refs cussonhermance2005, lamothe2006 (PMID 16115877, 17135271) from reactome,signor (functional association,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -1886,6 +1937,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "cussonhermance2005",
+      "lamothe2006"
     ]
   },
   {
@@ -2037,8 +2092,8 @@ export const edges = [
     ],
     "evidence": "G",
     "loop": "ankib1",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0031): refs mankouri2010, gleason2011 (PMID 20174559, 21862579) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2047,6 +2102,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "mankouri2010",
+      "gleason2011"
     ]
   },
   {
@@ -2171,8 +2230,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0009): refs krappmann2000, gil2001 (PMID 10893415, 11313968) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2181,6 +2240,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "krappmann2000",
+      "gil2001"
     ]
   },
   {
@@ -2192,8 +2255,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0017): refs didonato1997, li1997 (PMID 9252186, 9315679) from reactome,signor (enzymatic reaction,phosphorylation); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "kinase_phosphorylation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2202,6 +2265,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "didonato1997",
+      "li1997"
     ]
   },
   {
@@ -2213,8 +2280,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0022): refs beg1992, baldi1996 (PMID 1340770, 8550590) from reactome,signor (physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2223,6 +2290,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "beg1992",
+      "baldi1996"
     ]
   },
   {
@@ -2234,8 +2305,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.)",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit follow-up): zero refs -- config.js caps a zero-refs entry at L1_in_silico. (Tier already correct; this note documents why, closing a gap Jules PR review caught on ifn.js and that also applied here.) | Curated-database fill 2026-11-11 (CP-0013): refs didonato1997, heissmeyer1999 (PMID 9252186, 10469655) from reactome,signor (enzymatic reaction,phosphorylation); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2244,6 +2315,10 @@ export const edges = [
       "microglia",
       "dendritic_cell",
       "cd4_tcell"
+    ],
+    "refs": [
+      "didonato1997",
+      "heissmeyer1999"
     ]
   },
   {

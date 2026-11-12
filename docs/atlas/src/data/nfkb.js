@@ -446,8 +446,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0007): refs kishimoto2000, sakurai2000 (PMID 10702308, 10838074) from reactome,signor (physical association,ubiquitination); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations, see the node-level note for the full reasoning), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js).",
     "cell_context": [
@@ -455,6 +455,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "kishimoto2000",
+      "sakurai2000"
     ]
   },
   {
@@ -466,8 +470,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0024): refs arch1998, wang2001 (PMID 9744859, 11460167) from reactome,signor (enzymatic reaction,phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "kinase_phosphorylation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations, see the node-level note for the full reasoning), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js).",
     "cell_context": [
@@ -475,6 +479,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "arch1998",
+      "wang2001"
     ]
   },
   {
@@ -547,8 +555,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0062): refs kovalenko2003 (PMID 12917691) from reactome (deubiquitination,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "allosteric_suppression",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations, see the node-level note for the full reasoning), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js).",
     "cell_context": [
@@ -556,6 +564,9 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "kovalenko2003"
     ]
   },
   {
@@ -607,8 +618,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0033): refs ling1998, hacker2006 (PMID 9520446, 17047224) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "kinase_phosphorylation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations, see the node-level note for the full reasoning), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js).",
     "cell_context": [
@@ -616,6 +627,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "ling1998",
+      "hacker2006"
     ]
   },
   {
@@ -627,8 +642,8 @@ export const edges = [
       "nfkb"
     ],
     "evidence": "G",
-    "evidence_tier": "L1_in_silico",
-    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico.",
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): zero refs -- config.js caps a zero-refs entry at L1_in_silico. | Curated-database fill 2026-11-11 (CP-0051): refs xiao2001, liao2004 (PMID 11239468, 15084608) from reactome,signor (phosphorylation,physical association); Sol and DeepSeek both kept it. evidence_tier L1_in_silico -> L3_cell_line from the cited papers' MeSH (cell/animal system); a floor until someone reads the methods.",
     "interaction_type": "catalytic_activation",
     "cellContextNote": "Fixed 2026-09-14 (cell_context topical-fit literature audit): converged with this edge's own endpoint nodes -- cd4_tcell dropped (no T-cell basis in this file's citations, see the node-level note for the full reasoning), dendritic_cell added (batch-authoring artifact, same pattern as retro.js/sensing.js/ifn.js).",
     "cell_context": [
@@ -636,6 +651,10 @@ export const edges = [
       "macrophage",
       "microglia",
       "dendritic_cell"
+    ],
+    "refs": [
+      "xiao2001",
+      "liao2004"
     ]
   },
   {
