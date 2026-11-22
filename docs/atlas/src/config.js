@@ -330,7 +330,7 @@ export const STREAMS = {
     inputs: ['a565t', 'dntp-pool'],
     outputs: ['oxmtdna', 'nlrp3'],
     chain: ['a565t', 'samhd1', 'dntp-pool', 'pnc1', 'pnc2', 'mito-dntp', 'polg', 'mtdna', 'mtros', 'oxmtdna', 'nlrp3'],
-    refs: ['dolce2001', 'lunetti2016', 'liu2026nlrp3', 'elpeleg2008', 'docSiege'],
+    refs: ['dolce2001', 'liu2026nlrp3', 'elpeleg2008', 'docSiege'],
   },
 
   blue: {
@@ -488,10 +488,10 @@ export const STREAMS = {
       'PINK1/Parkin mitophagy, ISGylated BECN1 blocks autophagic flux by a second independent route, unopposed MFN ' +
       'loss tips fusion–fission toward DRP1, fragmentation raises mtROS, and mtROS drives further VDAC1 ' +
       'oligomerisation. More DNA escapes to cGAS. That is what closes it into a loop.',
-      'The brake is the ANKIB1/K11-Ub node — ANKIB1 assembles K11-linked ubiquitin on TRIF/NEMO and attenuates the ' +
-      'amplification, so the loop runs with its own inhibitor already engaged, exactly as the IFN-γ arm does with ' +
-      'IL-18BP. That is the proposed reason a heterozygote smoulders at moderate amplitude instead of presenting ' +
-      'in acute interferon crisis. And once running it needs NO new dNTP input — so test it against cGAS blockade ' +
+      'ANKIB1 is not a brake on this loop. Its K11-linked ubiquitin on STING, TRIF and NEMO recruits OPTN and TBK1 and ' +
+      'AMPLIFIES interferon induction (Betrancourt 2026), so losing ANKIB1 lowers it. What holds a heterozygote at ' +
+      'moderate amplitude instead of acute interferon crisis is not established (OPEN: the earlier ANKIB1-as-brake ' +
+      'explanation contradicted the paper). And once running it needs NO new dNTP input — so test it against cGAS blockade ' +
       '(IMSB301 normalises the ISG signature in AGS PBMCs; SAMHD1+cGAS double KO abolishes it) rather than against ' +
       'upstream nucleotide rescue, which alone need not stop it.',
     ],

@@ -1001,7 +1001,7 @@ export const LINKS = [
     "to": "ifn-i",
     "kind": "drives",
     "evidence": "S",
-    "detail": "K11-ubiquitinated SAMHD1 stabilizes STING signalosome to potentiate Type I IFN output",
+    "detail": "ANKIB1-driven K11 ubiquitination of the STING signalosome (STING, TRIF, NEMO, OPTN) recruits TBK1 and potentiates Type I IFN output; SAMHD1 is not a reported substrate",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "signal_transduction",
     "cell_context": [

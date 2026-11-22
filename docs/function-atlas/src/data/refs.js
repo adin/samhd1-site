@@ -470,48 +470,51 @@ export const REFS = {
   },
   "[50]": {
     "bibliography": {
-      "short": "Ji X et al. 2013 - PNAS Allostery",
-      "full": "Ji X, Tang C, Zhao Q, et al. Mechanism of allosteric activation of SAMHD1 by dGTP. Proc Natl Acad Sci USA. 2013;110(33):E3059-E3068.",
-      "url": "https://doi.org/10.1073/pnas.1300050110",
-      "doi": "10.1073/pnas.1300050110",
-      "pmid": "23898188"
+      "short": "Ji X et al. 2013 - NSMB Allostery",
+      "full": "Ji X, Wu Y, Yan J, Mehrens J, Yang H, DeLucia M, Hao C, Gronenborn AM, Skowronski J, Ahn J, Xiong Y. Mechanism of allosteric activation of SAMHD1 by dGTP. Nat Struct Mol Biol. 2013;20(11):1304-1309.",
+      "url": "https://doi.org/10.1038/nsmb.2692",
+      "doi": "10.1038/nsmb.2692",
+      "pmid": "24141705"
     },
     "atlas": {
-      "finding": "Delineates two distinct allosteric binding sites (Site 1 for GTP/dGTP and Site 2 for allosteric dNTPs) required for cooperative homotetramer assembly and active site formation"
+      "finding": "Crystal structure of the tetrameric SAMHD1-dGTP complex: dGTP binding at allosteric sites promotes tetramerization of two inactive dimers and reorganises the substrate-binding pocket to give the active enzyme"
     }
   },
   "[51]": {
     "bibliography": {
-      "short": "Zhu C et al. 2015 - Cell Reports",
-      "full": "Zhu C, Gao W, Zhao K, et al. Structural insight into dGTP-induced tetramerization of SAMHD1. Cell Rep. 2015;10(12):1891-1901.",
-      "url": "https://doi.org/10.1016/j.celrep.2015.08.036",
-      "doi": "10.1016/j.celrep.2015.08.036",
-      "pmid": "25818296"
+      "short": "Zhu C et al. 2013 - Nat Commun",
+      "full": "Zhu C, Gao W, Zhao K, Qin X, Zhang Y, Peng X, Zhang L, Dong Y, Zhang W, Li P, Wei W, Gong Y, Yu XF. Structural insight into dGTP-dependent activation of tetrameric SAMHD1 deoxynucleoside triphosphate triphosphohydrolase. Nat Commun. 2013;4:2722.",
+      "url": "https://doi.org/10.1038/ncomms3722",
+      "doi": "10.1038/ncomms3722",
+      "pmid": "24217394"
     },
     "atlas": {
-      "finding": "Quantifies cooperative tetramerization kinetics; establishes that 50% reduction in competent monomer concentration produces non-linear >75% collapse in active tetramer pool"
+      "finding": "1.8 A crystal structure of homotetrameric SAMHD1 with dGTP/dATP; dGTP-dependent tetramer formation requires three subunits; allosteric-site mutations impair tetramer formation and dNTPase activity. NOTE: the earlier text here (a >75% collapse in the active tetramer pool at 50% monomer) is not stated in this paper; if it is a modelled result it belongs to the project's own calculation, not this citation"
     }
   },
   "[52]": {
     "bibliography": {
-      "short": "Rieser et al. 2026 - Nat Cell Biol",
-      "full": "Rieser E, et al. ANKIB1-mediated K11-ubiquitination of SAMHD1 potentiates STING-dependent innate immune signaling. Nature Cell Biology. 2026;28(2):215-228.",
-      "url": "https://doi.org/10.1038/s41556-026-01582-y",
-      "doi": "10.1038/s41556-026-01582-y"
+      "short": "Betrancourt et al. 2026 - Nat Cell Biol",
+      "full": "Betrancourt A, Cinko MT, Rieser E, Walczak H. Lysine-11 ubiquitination drives type-I/III interferon induction by cGAS-STING and Toll-like receptors 3 and 4. Nat Cell Biol. 2026;28(3):608-621.",
+      "url": "https://doi.org/10.1038/s41556-026-01886-z",
+      "doi": "10.1038/s41556-026-01886-z",
+      "pmid": "41792265"
     },
     "atlas": {
-      "finding": "Identifies ANKIB1 E3 ligase mediating K11-linked ubiquitination of SAMHD1, creating an active gain-control mechanism that licenses STING signaling amplitude"
+      "finding": "ANKIB1 attaches K11-linked ubiquitin to components of the TLR3 and cGAS-STING signalosomes (substrates named: TRIF, STING, NEMO, OPTN and ANKIB1 itself), facilitating OPTN recruitment and so TBK1/IRF3 activation; ANKIB1 knockout lowers type-I/III interferon induction in mice. SAMHD1 is not a reported substrate.",
+      "note": "Replaced 2026-11-21. The earlier [52] entry (Rieser E et al., 'ANKIB1-mediated K11-ubiquitination of SAMHD1 potentiates STING-dependent innate immune signaling', Nat Cell Biol 2026;28(2):215-228, doi 10.1038/s41556-026-01582-y) does not resolve at Crossref and its title does not match any published paper. The paper it was meant to be is this one."
     }
   },
   "[53]": {
     "bibliography": {
-      "short": "Liu Y et al. 2026 - Science",
-      "full": "Liu Y, et al. SAMHD1 regulates NLRP3 inflammasome activation through dNTP pool control. Science. 2026;391(6784):450-458.",
-      "url": "https://doi.org/10.1126/science.ade3042",
-      "doi": "10.1126/science.ade3042"
+      "short": "Liu D et al. 2026 - Science",
+      "full": "Liu D, Zhou C, Wang X, Luo Z, Xu R, Huo S, Guo L, Luo X, Yang S, Click A, Vancil J, Barajas P, Mijares V, Baniasadi H, Yan N, Rehwinkel J, Hancks DC, Chen EH, Liang S, Zhong Z. Nucleotide metabolic rewiring enables NLRP3 inflammasome hyperactivation in obesity. Science. 2026;391(6782):eadq9006.",
+      "url": "https://doi.org/10.1126/science.adq9006",
+      "doi": "10.1126/science.adq9006",
+      "pmid": "41538457"
     },
     "atlas": {
-      "finding": "Demonstrates that expanded dNTP pools directly trigger NLRP3 inflammasome assembly, caspase-1 activation, and IL-1β/IL-18 release independent of canonical priming"
+      "finding": "Obesity disrupts SAMHD1 in macrophages; the resulting dNTP accumulation is transported into mitochondria, drives mtDNA neosynthesis and oxidised mtDNA, and hyperactivates the NLRP3 inflammasome (IL-1β). SAMHD1 deletion promotes NLRP3 hyperactivation in zebrafish, mouse and human cells; blocking mitochondrial dNTP transport prevents it"
     }
   },
   "[54]": {
@@ -528,11 +531,10 @@ export const REFS = {
   },
   "[55]": {
     "bibliography": {
-      "short": "Morris ER et al. 2020 - JBC",
-      "full": "Morris ER, Caswell SJ, et al. Structural and dynamic basis of allosteric regulation and catalytic mechanism of SAMHD1. J Biol Chem. 2020;295(28):9642-9654.",
-      "url": "https://doi.org/10.1074/jbc.RA120.015094",
-      "doi": "10.1074/jbc.RA120.015094",
-      "pmid": "32467228"
+      "short": "UNVERIFIED - Morris ER et al. 2020 - JBC (no matching paper found)",
+      "full": "UNVERIFIED citation. Morris ER, Caswell SJ, et al. J Biol Chem. 2020;295(28):9642-9654, as originally listed. No record under this title, journal or pages was found in PubMed on 2026-11-21, and the DOI and PMID previously given did not match it (PMID 32467228 is an unrelated receptor tyrosine kinase paper). Do not cite until a real source is identified.",
+      "url": "",
+      "doi": ""
     },
     "atlas": {
       "finding": "Biophysical characterization of the C-terminal allosteric relay; demonstrates how mutations at subunit interfaces uncouple allosteric activation from catalytic firing"

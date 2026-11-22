@@ -286,7 +286,6 @@ export const nodes = [
     "detail": "The bifurcating prediction is what makes this arm worth running:\n  Outcome A — Loop B suppressed, Loop A intact: the two loops are independently gated, and VDAC1 oligomerisation is driven by existing mtROS tone rather than by PNC1 substrate flux.\n  Outcome B — both suppressed: PNC1-driven mtROS is the dominant upstream driver, and the therapeutic target hierarchy shifts to the inner membrane.\n  Null — neither: heterozygous dNTP excess is below the SLC25A33 overload threshold, meaning this arm needs near-complete dNTPase loss to engage. Equally informative, and it defines the haploinsufficiency threshold.\n\nThe class has a positive control now. Liu 2026 blocked mitochondrial dNTP transport pharmacologically and abolished NLRP3 hyperactivation in macrophages from Samhd1-deficient mice AND from obese human donors — the rescue experiment that anchors Loop B. That validates the TARGET, not this compound: PLP itself remains graded I here, because nobody has run pyridoxal 5′-phosphate against a SAMHD1-haploinsufficient cell.",
     "refs": [
       "dolce2001",
-      "lunetti2016",
       "dinoia2014",
       "kim2025",
       "liu2026nlrp3",

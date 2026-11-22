@@ -424,7 +424,6 @@ export const nodes = [
     "evidence": "G",
     "summary": "Second inner-membrane carrier; uniports and antiports cytosine/uracil nucleotides plus guanine, and shares the overload with PNC1.",
     "refs": [
-      "lunetti2016",
       "dinoia2014"
     ],
     "evidence_tier": "L3_cell_line",
@@ -1458,7 +1457,6 @@ export const edges = [
     ],
     "evidence": "G",
     "refs": [
-      "lunetti2016",
       "dinoia2014"
     ],
     "evidence_tier": "L3_cell_line",

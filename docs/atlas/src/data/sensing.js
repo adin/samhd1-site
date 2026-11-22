@@ -107,7 +107,7 @@ export const nodes = [
     "key": true,
     "summary": "ER-resident dimer. cGAMP binding closes its ligand-binding lid, triggering polymerisation and ER exit.",
     "detail": "Activated STING traffics ER → ERGIC → Golgi. Only after it reaches the ERGIC does its C-terminal tail recruit TBK1 in a way that permits IRF3 phosphorylation — trafficking is part of the switch, not incidental to it.\n\nGENOTYPE MODIFIER, EXPLICITLY HYPOTHETICAL (added 2026-09, Baker et al. 2026 + Simchoni et al. 2025): a patient with COMPLETE SAMHD1 loss (homozygous balanced translocation, not this atlas's heterozygous A565T model) who is also heterozygous for the common STING1 HAQ allele presented WITHOUT the AGS-typical neurological features or cerebral calcification. Baker et al. propose the HAQ allele as a partial explanation, citing Simchoni et al. 2025's demonstration that HAQ STING dominantly dampens COPA-syndrome-driven STING signaling as precedent -- but say so explicitly as hypothetical, pending a larger SAMHD1-deficiency cohort. No causal edge is drawn for this: it is a single-patient genotype observation with an authors'-own-flagged-speculative mechanism, not a demonstrated dose-response.",
-    "samhd1": "STING is one of four ANKIB1 K11-Ub substrates (fixed 2026-09-13: OPTN is a reader of the K11 mark, not a fifth substrate -- see the ankib1 node) held constitutively primed by SAMHD1 loss. Primed STING lowers the threshold for TBK1/IRF3 scaffold assembly, producing tonic rather than pulsatile interferon.",
+    "samhd1": "STING is one of the ANKIB1 K11-Ub substrates named in Betrancourt 2026 (OPTN is recruited by the K11 chains and is also named a substrate; see the ankib1 node). Proposed, not shown: that SAMHD1 loss holds STING constitutively K11-primed, lowering the TBK1/IRF3 scaffold-assembly threshold and giving tonic rather than pulsatile interferon. HYPOTHESIS (grade I, 2026-11-22): no paper links SAMHD1 loss to ANKIB1 activity or K11 loading; see the ankib1 node.",
     "refs": [
       "betrancourt2026",
       "ng2024",
@@ -720,7 +720,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "S",
     "summary": "The IRF3-directing TLR adaptor; also a bona fide ANKIB1 K11-Ub substrate.",
-    "samhd1": "Reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed — one of four substrates (fixed 2026-09-13: OPTN is a K11-mark reader, not a fifth substrate -- see the ankib1 node) that lowers the TBK1/IRF3 assembly threshold.",
+    "samhd1": "TRIF is an ANKIB1 K11-Ub substrate (Betrancourt 2026; K11-linkage-specific pulldown shown explicitly for TRIF). Proposed, not shown: that reduced SAMHD1-mediated negative feedback leaves TRIF constitutively K11-primed and lowers the TBK1/IRF3 assembly threshold. HYPOTHESIS (grade I, 2026-11-22): no paper links SAMHD1 loss to ANKIB1 activity or K11 loading; see the ankib1 node.",
     "refs": [
       "betrancourt2026"
     ],
@@ -818,9 +818,9 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "key": true,
-    "summary": "Assembles K11-linked ubiquitin chains on STING, TRIF, NEMO — and on itself. OPTN is then recruited to read those chains, not itself a substrate. The gain-control knob of the whole system.",
-    "detail": "Betrancourt/Rieser/Walczak (Nat Cell Biol 2026) established K11 ubiquitination as the linkage that drives type-I/III interferon induction downstream of both cGAS–STING and TLR3/4. ANKIB1 is not a terminal effector — it sets the THRESHOLD at which TBK1/IRF3 scaffolds assemble. That is why the resulting phenotype is a moderate, unrelenting tonic interferon output rather than discrete cytokine surges. Fixed 2026-09-13 (sensing.js literature audit follow-up): per the paper's own abstract, K11 chains on the signalosome components facilitate OPTN RECRUITMENT, which in turn enables TBK1/IRF3 recruitment and activation -- OPTN is a reader of the K11 mark, not a fifth substrate it is written onto.",
-    "samhd1": "This is the framework's central gain-control claim. SAMHD1 loss primes all four substrates at once: dNTPase failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression primes NEMO. Worse, ANKIB1 AUTO-ubiquitinates during activation and is degraded by the proteasome — so the master negative regulator destroys itself exactly when it is needed most. A self-terminating feedback controller cannot hold homeostasis under chronic drive. Predicted readout: ANKIB1 protein REDUCED at baseline in A565T cells, restored by amlexanox (Arms 5–6) but NOT by upadacitinib (Arm 2).",
+    "summary": "Assembles K11-linked ubiquitin chains on TRIF, STING, NEMO, OPTN and on itself. The chains recruit OPTN, which brings in TBK1 and IRF3, so ANKIB1 DRIVES type-I/III interferon downstream of cGAS–STING and TLR3/4 (Betrancourt 2026). A separate report (Liu 2024) has it K48-ubiquitinating MAVS for degradation, which restrains RIG-I/MDA5 signalling; Betrancourt 2026 did not reproduce that.",
+    "detail": "Betrancourt/Cinko/Rieser/Walczak (Nat Cell Biol 2026) established K11 ubiquitination as the linkage that drives type-I/III interferon induction downstream of cGAS–STING and TLR3/4: ANKIB1 attaches K11 chains to components of the TLR3 and STING signalosomes, which facilitates OPTN recruitment and in turn TBK1 and IRF3 activation (ANKIB1–K11-Ub–OPTN–TBK1–IRF3). Knockout lowers interferon induction in mice, reduces lethality in a TLR3-driven interferonopathy model and worsens HSV-1 infection. The paper names TRIF, STING, NEMO, OPTN and ANKIB1 itself as substrates (K11-linkage-specific pulldown is shown explicitly for TRIF). It finds ANKIB1 dispensable for RIG-I–MAVS signalling and does not examine IRF7. Opposing report: Liu 2024 (Cell Rep 43:114687; abstract only read) has ANKIB1 K48-polyubiquitinate MAVS at K311 (identified with the K311R mutant) for proteasomal degradation, so that knockout RAISES RLR-induced interferon; Betrancourt 2026 saw no such interference and no MAVS degradation (see the ankib1→mavs edge). The K11 and K48 arms are different substrates, linkages and pathways and must not be merged. Interpretation, not in either paper: that K11 loading 'lowers the scaffold-assembly threshold' and gives tonic rather than pulsatile output. Corrected 2026-11-21 against the full text: earlier versions called ANKIB1 an attenuator or brake, and the 2026-09-13 note that OPTN is not a substrate rested on the abstract alone; the full text also lists OPTN as a substrate (OPEN: whether to add a k11ub→optn ubiquitination edge. For OPTN itself the paper's DUB profiling, Fig. 5c, shows ubiquitination predominantly reduced by AMSH and USP2 (K63) with a modest Cezanne effect, read by the authors as mainly K63-Ub plus some K11-Ub; direct K11-linkage-specific pulldown evidence is shown explicitly for TRIF only).",
+    "samhd1": "OPEN (2026-11-21): no paper links SAMHD1 loss to ANKIB1 activity or abundance (PubMed: no hits for SAMHD1 AND ANKIB1). The two do converge on the MAVS–TBK1/IKKε–IRF node: SAMHD1 binds MAVS, IKKε and IRF7 and restrains IRF7 phosphorylation (Chen 2018; Espada 2023), while ANKIB1 (K48) degrades MAVS (Liu 2024). The earlier claims here, that SAMHD1 loss 'primes' every substrate and that ANKIB1 auto-ubiquitinates and is destroyed by the proteasome, are inferences (grade I), not findings: auto-ubiquitination is shown (constitutive, and higher on stimulation); degradation is not. Direction matters: on the K11 arm ANKIB1 is a positive driver, so ANKIB1 depletion predicts LESS STING/TLR3-driven interferon, not more; on the K48 arm it predicts MORE MAVS signalling. 'ANKIB1 protein reduced at baseline in A565T cells' (restored by amlexanox, not upadacitinib) is an untested prediction whose meaning depends on which arm dominates.",
     "refs": [
       "betrancourt2026",
       "doc10arm",
@@ -857,7 +857,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "summary": "Distinct from K48 (degradation) and K63 (canonical signalling). K11 loading on the four substrates lowers scaffold-assembly threshold and recruits OPTN as a reader.",
-    "detail": "Measurable with linkage-specific antibodies (clone 2A3/2E6) or K11-TUBE reagents — which is what makes K11-Ub/STING loading a candidate patient-stratification biomarker rather than a purely theoretical node. Fixed 2026-09-13 (sensing.js literature audit follow-up): four substrates, not five -- OPTN reads the K11 mark via its UBAN domain rather than being ubiquitinated itself.",
+    "detail": "Measurable with linkage-specific antibodies (clone 2A3/2E6) or K11-TUBE reagents — which is what makes K11-Ub/STING loading a candidate patient-stratification biomarker rather than a purely theoretical node. Updated 2026-11-22 against the full text of Betrancourt 2026: the paper names TRIF, STING, NEMO, OPTN and ANKIB1 itself as ANKIB1 substrates, and OPTN is also recruited by the K11 chains (UBAN domain). The model still carries four substrate edges plus a reader edge for OPTN (OPEN: whether to add a fifth substrate edge; see the ankib1 node and the k11ub->optn edge note).",
     "refs": [
       "betrancourt2026",
       "doc10arm"
@@ -925,7 +925,7 @@ export const nodes = [
     "lod": 1,
     "evidence": "G",
     "summary": "Regulatory subunit of the IKK complex; ubiquitin-chain receptor and ANKIB1 K11-Ub substrate.",
-    "samhd1": "Loss of SAMHD1's NF-κB-suppressive function leaves NEMO constitutively primed — the third of four ANKIB1 substrates (fixed 2026-09-13: OPTN is a K11-mark reader, not a fifth substrate -- see the ankib1 node).",
+    "samhd1": "NEMO is an ANKIB1 K11-Ub substrate named in Betrancourt 2026 (see the ankib1 node). Proposed, not shown: that loss of SAMHD1's NF-κB-suppressive function leaves NEMO constitutively primed. HYPOTHESIS (grade I, 2026-11-22): no paper links SAMHD1 loss to ANKIB1 activity or K11 loading; see the ankib1 node.",
     "refs": [
       "wang2018",
       "betrancourt2026"
@@ -2045,7 +2045,7 @@ export const edges = [
     "loop": "ankib1",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "ubiquitin_reader_recruitment",
-    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit + follow-up): zero refs, so capped at L1_in_silico per config.js's own rule. Separately, this edge previously modeled OPTN as ANKIB1's fourth K11-Ub substrate ('substrate 4 — primes OPTN', kind ubiq, interaction_type ubiquitin_conjugation). Per betrancourt2026's own abstract, OPTN is instead RECRUITED by the K11 chains already on STING/TRIF/NEMO, and that recruitment is what enables TBK1/IRF3 activation -- a reader event, not a conjugation event. Kind/label/interaction_type corrected accordingly; see the ankib1 node for the renumbered substrate count (four, not five).",
+    "evidenceTierNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit + follow-up): zero refs, so capped at L1_in_silico per config.js's own rule. Separately, this edge previously modeled OPTN as ANKIB1's fourth K11-Ub substrate ('substrate 4 — primes OPTN', kind ubiq, interaction_type ubiquitin_conjugation). Per betrancourt2026's own abstract, OPTN is instead RECRUITED by the K11 chains already on STING/TRIF/NEMO, and that recruitment is what enables TBK1/IRF3 activation -- a reader event, not a conjugation event. Kind/label/interaction_type corrected accordingly; see the ankib1 node for the renumbered substrate count (four, not five). | OPEN 2026-11-21: the full text of betrancourt2026 also names OPTN as an ANKIB1 substrate (ubiquitination of NEMO and OPTN is impaired without ANKIB1), in addition to OPTN being recruited by the K11 chains. Left as a reader edge pending a decision on adding a ubiquitination edge; For OPTN itself, DUB profiling (Fig. 5c) suggests mainly K63-Ub with some K11-Ub (modest Cezanne effect); direct K11-linkage-specific pulldown evidence is shown explicitly for TRIF only.",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
       "monocyte",
@@ -2059,7 +2059,7 @@ export const edges = [
     "from": "k11ub",
     "to": "ankib1",
     "kind": "ubiq",
-    "label": "substrate 4 — AUTO-ubiquitination → proteasomal self-destruction",
+    "label": "substrate 4 — auto-ubiquitination (degradation not shown)",
     "pathways": [
       "ankib1"
     ],
@@ -2071,7 +2071,7 @@ export const edges = [
       "doc10arm"
     ],
     "evidence_tier": "L3_cell_line",
-    "evidenceTierNote": "Renumbered 2026-09-13 (sensing.js literature audit follow-up) from 'substrate 5' to 'substrate 4' -- OPTN (the old substrate 4) is a K11-mark reader, not a fifth substrate; see the k11ub->optn edge and the ankib1 node.",
+    "evidenceTierNote": "Renumbered 2026-09-13 (sensing.js literature audit follow-up) from 'substrate 5' to 'substrate 4' -- OPTN (the old substrate 4) is a K11-mark reader, not a fifth substrate; see the k11ub->optn edge and the ankib1 node. | Corrected 2026-11-21 (full text of betrancourt2026): this edge's label previously read 'AUTO-ubiquitination → proteasomal self-destruction'. The paper shows constitutive and stimulation-induced ANKIB1 auto-ubiquitination (lost with the RING1 catalytic mutant) but never shows ANKIB1 being degraded; the self-destruction reading is an inference (grade I).",
     "interaction_type": "ubiquitin_conjugation",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): dendritic_cell added to converge with this edge's own endpoint nodes, which already carried it -- the prior node/edge split was a batch-authoring artifact (identical-citation node/edge pairs, e.g. lande2007's ll37/ll37-dna nodes vs their edges, disagreed with no mechanistic reason). See analysis/handoffs/HANDOFF_2026-09-12_cell_context_topical_fit_audit.md.",
     "cell_context": [
@@ -2081,6 +2081,34 @@ export const edges = [
       "dendritic_cell",
       "cd4_tcell"
     ]
+  },
+  {
+    "from": "ankib1",
+    "to": "mavs",
+    "kind": "degrade",
+    "label": "K48-linked ubiquitination of MAVS at K311 (identified with the K311R mutant) → proteasomal degradation; dampens RLR signalling (contested)",
+    "pathways": [
+      "ankib1",
+      "rlr-mavs"
+    ],
+    "evidence": "G",
+    "loop": "ankib1",
+    "refs": [
+      "liu2024",
+      "betrancourt2026"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "evidenceTierNote": "Added 2026-11-21. liu2024 (Cell Rep 43:114687; abstract only read) reports HEK293 cells and mouse knockout, so L3 floor. betrancourt2026 (full text read) found ANKIB1 dispensable for RIG-I–MAVS signalling and detected no MAVS degradation, so this edge is contested. It is a different linkage (K48), substrate (MAVS) and pathway (RLR) from the K11 edges above and must not be merged with them.",
+    "interaction_type": "ubiquitination_degradation",
+    "detail": "Liu 2024: ANKIB1 binds MAVS and enhances K48-linked polyubiquitination at MAVS K311 (identified with the K311R mutant), causing proteasomal degradation of MAVS; ANKIB1 deficiency raises RLR-induced type-I interferon and pro-inflammatory factors and improves antiviral immunity in vivo. Opposite in direction to the K11 arm, where ANKIB1 drives interferon via OPTN–TBK1–IRF3.",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "microglia",
+      "dendritic_cell",
+      "cd4_tcell"
+    ],
+    "cellContextNote": "Added 2026-11-21: set to this atlas's default myeloid list (the disease population modelled); liu2024's own cell systems are HEK293 and mouse, read at abstract level only."
   },
   {
     "from": "optn",

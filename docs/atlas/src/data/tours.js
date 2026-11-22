@@ -239,36 +239,35 @@ export const TOURS = [
     blurb: 'Why the interferon is tonic and moderate rather than acute and surging.',
     steps: [
       {
-        title: 'A threshold, not a switch',
+        title: 'K11 chains drive the interferon signal',
         text: 'K11-linked ubiquitin is the linkage that drives type-I/III interferon induction downstream of both ' +
-              'cGAS–STING and TLR3/4. ANKIB1 assembles those chains. It is not a terminal effector — it sets the ' +
-              'threshold at which TBK1/IRF3 scaffolds assemble.',
+              'cGAS–STING and TLR3/4. ANKIB1 assembles those chains, which recruit OPTN and so bring TBK1 and IRF3 ' +
+              'into the signalling complex. Losing ANKIB1 lowers interferon induction in mice (Betrancourt 2026). ' +
+              'It is an amplifier on this arm, not a brake.',
         nodes: ['ankib1', 'k11ub', 'tbk1', 'irf3'], layers: ['ankib1'],
       },
       {
-        title: 'Four substrates, primed at once',
-        text: 'STING, TRIF, NEMO — and ANKIB1 itself. SAMHD1 loss primes all of them simultaneously: dNTPase ' +
-              'failure primes STING via cGAS, reduced negative feedback primes TRIF, reduced NF-κB suppression ' +
-              'primes NEMO. OPTN is not itself a substrate: it reads the K11 mark on those three via its UBAN ' +
-              'domain, and that recruitment is what brings TBK1 in. A lowered threshold on every input at once ' +
-              'gives moderate-amplitude unrelenting output rather than discrete surges.',
+        title: 'Substrates, and the open SAMHD1 question',
+        text: 'The paper names TRIF, STING, NEMO, OPTN and ANKIB1 itself as substrates; OPTN is also recruited by the ' +
+              'K11 chains. Whether SAMHD1 loss primes any of them is a hypothesis: no paper links SAMHD1 to ANKIB1. ' +
+              'What is established is that both proteins act on the MAVS–TBK1/IKKε–IRF node, which the next step covers.',
         nodes: ['k11ub', 'sting', 'trif', 'nemo', 'optn', 'ankib1'], layers: ['ankib1', 'cgas-sting', 'tlr', 'nfkb'],
       },
       {
-        title: 'The regulator destroys itself',
-        text: 'ANKIB1 auto-ubiquitinates during activation and is degraded by the proteasome. The master negative ' +
-              'regulator is consumed exactly when it is needed most — a self-terminating feedback controller that ' +
-              'cannot hold homeostasis under chronic drive. Prediction: ANKIB1 protein REDUCED at baseline in A565T ' +
-              'cells, with accelerated degradation on cycloheximide chase and MG132 rescue.',
-        nodes: ['ankib1', 'k11ub'], layers: ['ankib1'],
+        title: 'Two linkages, two arms',
+        text: 'K11 (Betrancourt 2026) drives interferon through OPTN–TBK1–IRF3. K48 (Liu 2024) is a different report: ' +
+              'ANKIB1 K48-ubiquitinates MAVS for degradation and so dampens RIG-I/MDA5 signalling. Betrancourt 2026 ' +
+              'found ANKIB1 dispensable for RIG-I–MAVS and saw no MAVS degradation, so the K48 arm is contested. ' +
+              'Separately, SAMHD1 binds MAVS, IKKε and IRF7 and restrains IRF7 phosphorylation (Chen 2018; Espada 2023).',
+        nodes: ['ankib1', 'k11ub', 'mavs', 'ikke', 'irf7', 'samhd1'], layers: ['ankib1', 'rlr-mavs'],
       },
       {
-        title: 'Why this is testable, and pharmacologically decisive',
-        text: 'Amlexanox (Arms 5–6) reduces TBK1-dependent activation signals, so ANKIB1 should accumulate instead of ' +
-              'self-destructing. Upadacitinib (Arm 2) acts downstream at JAK1, so ANKIB1 should stay low even as ' +
-              'cytokine readouts improve. That differential validates the axis as accessible via TBK1/IKKε and not ' +
-              'via JAK–STAT — and makes ANKIB1 protein restoration a candidate durable-response biomarker. ' +
-              'p-TBK1(Ser172), unaffected by JAK1 inhibition, is the clean pharmacologic separator.',
+        title: 'What would test it',
+        text: 'ANKIB1 auto-ubiquitination is shown; degradation is not. Open prediction: if SAMHD1 loss depleted ANKIB1, ' +
+              'the K11 arm predicts LESS STING/TLR3-driven interferon and the K48 arm MORE MAVS signalling. Measure ANKIB1 ' +
+              'protein and half-life (cycloheximide chase with MG132), K11-Ub on STING/TRIF/NEMO by linkage-specific IP, ' +
+              'and p-TBK1(Ser172) alongside p-IRF7. The amlexanox-versus-upadacitinib separator (Arms 2, 5–6) stays a ' +
+              'hypothesis that depends on which arm dominates.',
         nodes: ['ankib1', 'tbk1', 'amlexanox', 'upadacitinib', 'jak1'], layers: ['ankib1', 'drugs', 'ifn-jak'],
       },
     ],

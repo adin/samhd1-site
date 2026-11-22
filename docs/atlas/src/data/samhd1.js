@@ -63,7 +63,7 @@ export const nodes = [
     "key": true,
     "summary": "Heterozygous missense at the extreme C-terminal boundary of the phosphohydrolase HD domain — 27 residues from the T592 regulatory hinge.",
     "detail": "Introducing a polar, hydroxyl-bearing threonine at 565 warps the allosteric pocket walls of site 2 and destabilises the C-terminal regulatory lobe. The only direct functional data — Schneider, LMU Munich 2022 — showed 2.4× reduced protein stability at equal mRNA in LN-18 and THP-1, but ONLY in homozygous/complete-loss models. Heterozygous cells were never tested. gnomAD v4 AF ≈ 1.1×10⁻⁵.",
-    "samhd1": "The interpretive constraint is clinical, and it is the honest part of this framework: the observed course is survival to middle age without AGS, with symptomatic improvement during acute viral illness. Both are inconsistent with complete dNTPase loss and consistent with ~40–60% residual activity — one functional allele. Enough to prevent AGS5, not enough to prevent a sustained low-grade interferonopathy. Because SAMHD1 is an obligate homotetramer, HD-domain missense variants can additionally poison wild-type tetramers, so real activity may sit below 50%.",
+    "samhd1": "The interpretive constraint is clinical, and it is the honest part of this framework: the observed course is survival to middle age without AGS, with symptomatic improvement during acute viral illness. Both are inconsistent with complete dNTPase loss and consistent with ~40–60% residual activity — one functional allele. Enough to prevent AGS5, not enough to prevent a sustained low-grade interferonopathy. SAMHD1 is an obligate homotetramer, so HD-domain missense variants could in principle poison wild-type tetramers (dominant-negative effect), which would put real activity below 50%; this is a hypothesis, not shown for SAMHD1, and remains an open question for Arm 1 data.",
     "refs": [
       "schneider2022",
       "rentoft2016",
@@ -461,9 +461,9 @@ export const nodes = [
       "tetramer_Kd_uM": null,
       "hill_coefficient": null
     },
-    "summary": "In A565T heterozygotes, SAMHD1 forms mixed 2xWT + 2xA565T tetramers retaining ~50% dNTPase but uncoupling cooperative PTM switches.",
-    "detail": "Binomial distribution predicts 37.5% of complexes assemble as 2:2 heterotetramers (assumes equal WT/A565T abundance and random assembly). They maintain dosage-limited basal dNTPase activity (ipTM=0.81, an AlphaFold structure-prediction confidence metric, not a measured binding affinity) but suffer severe allosteric uncoupling at the phosphorylated C-terminal hinge.",
-    "samhd1": "The structural basis for heterozygous haploinsufficiency with 100% phenotypic penetrance.",
+    "summary": "Model prediction, not tested in heterozygous cells: in A565T heterozygotes, SAMHD1 may form mixed 2xWT + 2xA565T tetramers; residual dNTPase of about 50% is an estimate (one functional allele) and any uncoupling of cooperative PTM switches is hypothetical.",
+    "detail": "Binomial distribution predicts 37.5% of complexes assemble as 2:2 heterotetramers (assumes equal WT/A565T abundance and random assembly). Predicted: they would keep dosage-limited basal dNTPase activity (ipTM=0.81, an AlphaFold structure-prediction confidence metric, not a measured binding affinity) but may suffer allosteric uncoupling at the phosphorylated C-terminal hinge. This is a prediction; heterozygous cells have not been tested.",
+    "samhd1": "A proposed (untested) structural basis for heterozygous haploinsufficiency; the mixed 2:2 complex has not been measured, and the penetrance of the clinical phenotype is not established by this node.",
     "modelNote": "OPEN 2026-09-12 -- no direct measurement exists for THIS specific mixed 2:2 complex's Kd/Hill coefficient. A prior version of this node carried tetramer_Kd_uM=2.4 and hill_coefficient=2.1 copied verbatim from the wild-type dntpase node's own sourced values (ref [7], Ji et al. 2014 PNAS) -- those describe wild-type tetramerization, not the mixed heterotetramer, and were never actually measured for this complex. Removed rather than left misleadingly precise; re-add only with its own citation. See redteam audit 2026-09-12 (commit 20ae777).",
     "cellContextNote": "Fixed 2026-09-13 (cell_context topical-fit literature audit): this node had no cell_context field at all, while both its own incident edges (a565t->samhd1-heterotetramer, samhd1-heterotetramer->dntp-pool) already correctly carried the myeloid+ipsc array. Added to match.",
     "cell_context": [
@@ -1216,7 +1216,7 @@ export const edges = [
       "microglia",
       "ipsc"
     ],
-    "label": "Preserves partial ~50% dNTP depletion"
+    "label": "Predicted partial dNTP depletion (residual dNTPase activity ~50%, estimate)"
   }
 ];
 
