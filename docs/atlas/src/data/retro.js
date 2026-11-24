@@ -2161,7 +2161,8 @@ export const edges = [
     "from": "isg-set",
     "to": "samhd1",
     "kind": "produce",
-    "label": "SAMHD1 is an ISG — the pathway tries to fix itself and cannot",
+    "label": "SAMHD1 is interferon-inducible — in the cited study the induction runs through IRF3, not JAK–STAT; the pathway tries to fix itself and cannot",
+    "detail": "Amended 2026-11-24: the only reference on this edge (Yang 2016) shows that SAMHD1 upregulation after TLR3 or RIG-I/MDA5 stimulation is driven by IRF3 and is independent of the classical IFN-induced JAK-STAT pathway; the SAMHD1 promoter is a direct IRF3 target. The mechanistic edge is therefore irf3 -> samhd1 (samhd1.js). This edge records only that SAMHD1 expression follows interferon exposure. It does not show an ISGF3/JAK-STAT route, so JAK inhibition is not expected to remove this induction by itself (untested here).",
     "pathways": [
       "isg",
       "samhd1"
