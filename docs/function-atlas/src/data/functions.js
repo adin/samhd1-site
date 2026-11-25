@@ -54,14 +54,14 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Critical DNA repair mechanism for homologous recombination; failure leads to hereditary breast cancer-like phenotype with genomic instability",
-    "rationale": "Critical cancer protection mechanism; mutation disrupts CtIP recruitment to DNA breaks",
+    "rationale": "Critical cancer protection mechanism; SAMHD1 promotes CtIP recruitment to DNA breaks (Daddacha et al. 2017, whose binding-defective variant was the cancer-associated K484T). The effect of A565T on CtIP recruitment has not been tested",
     "locEvidence": "S",
     "domain": "genome",
-    "lossLabel": "Significantly Impaired",
-    "lossKind": "loss",
-    "loss": 0.75,
+    "lossLabel": "A565T effect on CtIP recruitment untested",
+    "lossKind": "untested",
     "refs": [
-      "[15]"
+      "[15]",
+      "[56]"
     ],
     "layer": 2,
     "evidence_tier": "L2_recombinant",
@@ -115,14 +115,14 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Protects stalled DNA replication forks from collapse; failure causes replication stress syndrome with early aging and cancer susceptibility",
-    "rationale": "Primary DNA repair mechanism; A565T mutation impairs MRE11 interaction and fork stabilization",
+    "rationale": "Primary DNA repair mechanism; SAMHD1 stimulates MRE11 at stalled forks (Coquel et al. 2018). The effect of A565T on MRE11 interaction and fork stability has not been tested",
     "locEvidence": "S",
     "domain": "genome",
-    "lossLabel": "Significantly Impaired",
-    "lossKind": "loss",
-    "loss": 0.75,
+    "lossLabel": "A565T effect on MRE11 interaction and fork stability untested",
+    "lossKind": "untested",
     "refs": [
-      "[9]"
+      "[9]",
+      "[64]"
     ],
     "layer": 2,
     "evidence_tier": "L2_recombinant",
@@ -175,15 +175,16 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Hydrolyzes and inactivates nucleoside analogue triphosphates (Ara-CTP, dFdCTP/gemcitabine-TP), mediating chemotherapy resistance in AML and solid tumors; haploinsufficiency induces severe clinical hypersensitivity (Schneider et al. 2017)",
-    "rationale": "Catalytic triphosphohydrolase requiring tetramer assembly; severe >75% loss in heterozygous A565T background",
+    "relevance": "Hydrolyzes and inactivates nucleoside analogue triphosphates (Ara-CTP, dFdCTP/gemcitabine-TP), mediating chemotherapy resistance in AML and solid tumors; loss of SAMHD1 sensitizes AML cells (Schneider et al. 2017); A565T reconstituted in SAMHD1-knockout glioblastoma cells behaved like the knockout (Schneider S 2022 thesis); the heterozygous effect is untested",
+    "rationale": "Catalytic triphosphohydrolase requiring tetramer assembly; the >75% heterozygous A565T loss is a model estimate, not a measurement",
     "locEvidence": "S",
     "domain": "dntp",
     "lossLabel": "Critically Impaired",
     "lossKind": "loss",
     "loss": 0.75,
     "refs": [
-      "[54]"
+      "[54]",
+      "[65]"
     ],
     "layer": 2,
     "evidence_tier": "L2_recombinant",
@@ -358,16 +359,16 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "SAMHD1 acts as ssRNA-degrading RNase controlling cellular RNA homeostasis; regulates RNA-containing biomolecular condensates through liquid-liquid phase separation; sequesters immunostimulatory dsRNA in condensates preventing aberrant innate immune activation. Loss causes RNA accumulation, impaired condensate formation, dsRNA release triggering chronic Type I IFN via RIG-I-like receptors",
-    "rationale": "Concentration-dependent phase separation with likely cooperative/threshold effects; high functional loss (~60-70%) with haploinsufficiency as condensate formation severely impaired at 50% protein",
+    "relevance": "In vitro, SAMHD1 condenses into liquid-like droplets with ssDNA or ssRNA in the presence of a crowding agent (9% PEG 2000); droplets need the SAM and C-terminal domains and are dissolved by A1-site ligands (GTP, dGTP) and small-molecule inhibitors, and ssDNA-SAMHD1 condensates form in nuclei after microinjection (Smith 2025). This is a nucleic-acid-bound oligomeric state, distinct from the dNTPase-active nucleotide-bound tetramer. Roles for SAMHD1 in sequestering immunostimulatory dsRNA in cellular condensates come from a single study (Maharana 2022, Mol Cell) and have not been independently confirmed",
+    "rationale": "Reconciles two sources: Smith 2025 (peer-reviewed, recombinant, in vitro, SAMHD1 itself condenses) and Maharana 2022 (Mol Cell, cells, RNA condensate control). Seamon 2015 found SAMHD1 binds ssRNA with no active-site-associated nuclease activity, so the earlier 'ssRNA-degrading RNase' wording is withdrawn. The earlier 70% loss was an assumption about threshold effects; no A565T condensate data exist",
     "locEvidence": "S",
     "domain": "immune",
-    "lossLabel": "Significantly Impaired",
-    "lossKind": "loss",
-    "loss": 0.7,
+    "lossLabel": "A565T condensate behaviour untested",
+    "lossKind": "untested",
     "refs": [
       "[38]",
-      "[39]"
+      "[39]",
+      "[69]"
     ],
     "layer": 2,
     "evidence_tier": "L2_recombinant",
@@ -442,26 +443,26 @@ export const FUNCTIONS = [
   },
   {
     "id": "p-t592",
-    "label": "Phosphorylation at T592 (Latch Switch)",
+    "label": "Phosphorylation at T592 (CDK kinetic switch)",
     "compartment": "nucleus",
     "tier": "regulation",
     "category": "Post-Translational Regulation",
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "CDK1/2-mediated phosphorylation of Thr592 regulates cell cycle progression and replication fork protection. Under the modeled mixed-tetramer hypothesis for heterozygous A565T, localized interface strain (Thr565-Cys554 contact) is predicted to induce asymmetric latch torsional mismatch that uncouples PTM responses, hypothesized to impair downstream homologous recombination and fork restart beyond simple 50% haploinsufficiency",
-    "rationale": "Modeled asymmetric allosteric uncoupling hypothesis (v14.4 AF3 ensemble N=346 runs / OpenMM 100ns MD); simulated phosphorylation of WT chains in mixed 2xWT+2xA565T tetramers exhibits asymmetric torsional mismatch (Dist_CTD_A2 blunted by 4.4 Å), generating an in-silico hypothesis of cooperative effector impairment (>85% loss) pending direct biochemical validation of heterozygous complexes",
+    "relevance": "CDK1/2 (cyclin A) phosphorylation of Thr592 in S/G2 acts as a kinetic switch: it has little effect on dNTPase activity or ssDNA affinity but speeds tetramer dissociation about 15-fold, and HIV-1 restriction tracks the dephosphorylated form. In cells, fork speed, MRE11-dependent degradation of nascent DNA at HU-stalled forks and cytosolic-ssDNA suppression need SAMHD1 that can be phosphorylated at T592 (T592E rescues, T592A does not; dNTPase activity is not required). Whether pT592 on monomers is needed for MRE11 or CtIP binding has not been tested.",
+    "rationale": "Mechanism from Orris 2022 (biophysics) and Coquel 2018 (cell complementation, read from figures). A565T link is untested: residue 565 is not an interface residue (F-230), the Thr565-Cys554 contact carries almost none of the A565T cost (F-246, coupling -0.28 kcal/mol), and the chi1 latch-orientation claim was retracted (F-241). The earlier mixed-tetramer latch-uncoupling hypothesis (>85% loss) is withdrawn pending direct data.",
     "locEvidence": "I",
     "domain": "viral",
-    "lossLabel": "Severely Impaired",
+    "lossLabel": "A565T effect untested (dosage-limited 50% default)",
     "lossKind": "loss",
-    "loss": 0.85,
+    "loss": 0.5,
     "refs": [
-      "[6]",
-      "[63]"
+      "[64]",
+      "[66]"
     ],
     "layer": 1,
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -508,18 +509,17 @@ export const FUNCTIONS = [
     "criticality": "High",
     "impact": "Moderate",
     "priority": "Monitor",
-    "relevance": "USP7-regulated stability modification; dysfunction leads to protein degradation and loss of tumor suppressor function",
-    "rationale": "Protein stability regulation; moderate impact on overall protein function and localization",
-    "locEvidence": "I",
+    "relevance": "USP7 de-ubiquitinates SAMHD1 at K421, which stabilizes the protein under oxidative or genotoxic stress and allows interaction with CtIP for DNA damage repair; USP7 inhibition lowers SAMHD1 and sensitizes tumour cells to chemotherapy (Liu 2023, human carcinoma cell lines and xenografts). Effect of A565T on K421 ubiquitination is untested",
+    "rationale": "Replaces the earlier source [6] (a mouse VDAC1 paper that did not support this modification) with Liu 2023. Abstract read via PubMed; K421 and CtIP interaction are stated there. The earlier 40% loss was an assumption and is withdrawn",
+    "locEvidence": "S",
     "domain": "dntp",
-    "lossLabel": "Modestly Impaired",
-    "lossKind": "loss",
-    "loss": 0.4,
+    "lossLabel": "A565T effect on K421 ubiquitination untested",
+    "lossKind": "untested",
     "refs": [
-      "[6]"
+      "[70]"
     ],
     "layer": 1,
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -566,18 +566,18 @@ export const FUNCTIONS = [
     "criticality": "Medium",
     "impact": "Moderate",
     "priority": "Monitor",
-    "relevance": "SUMO-mediated subcellular localization control; dysfunction may affect nuclear trafficking and DNA repair efficiency",
-    "rationale": "Subcellular localization control; moderate impact on nuclear trafficking efficiency",
-    "locEvidence": "I",
+    "relevance": "PIAS1 SUMOylates SAMHD1 at K469, K595 and K622 on the tetramer surface; SUMOylation-deficient SAMHD1 loses anti-EBV activity, and phosphorylated SAMHD1 can still be SUMOylated (Saiada 2021). K595 SUMOylation is required for dNTPase-independent HIV-1 restriction in non-cycling cells, and T592 phosphorylation antagonizes this antiviral activity (Martinat 2021). A role of K469 in nuclear trafficking or DNA repair is not shown, and the effect of A565T is untested",
+    "rationale": "Replaces the earlier source [6] (a mouse VDAC1 paper that did not support this modification). Abstracts read via PubMed: K469 is named in Saiada 2021; the Martinat 2021 abstract names K595 only. The earlier 40% loss and localization claim were assumptions and are withdrawn",
+    "locEvidence": "S",
     "domain": "genome",
-    "lossLabel": "Modestly Impaired",
-    "lossKind": "loss",
-    "loss": 0.4,
+    "lossLabel": "A565T effect on K469 SUMOylation untested",
+    "lossKind": "untested",
     "refs": [
-      "[6]"
+      "[71]",
+      "[72]"
     ],
     "layer": 1,
-    "evidence_tier": "L1_in_silico",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "monocyte",
       "macrophage",
@@ -898,15 +898,15 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Sequesters self-derived double-stranded RNA in RNA-containing condensates preventing aberrant innate immune activation; dsRNA enriched in condensates while ssRNA dissolves them. Loss causes dsRNA release triggering chronic interferon activation through RIG-I-like receptors - additional mechanism for chronic IFN signature in AGS beyond cGAS-STING",
-    "rationale": "Concentration-dependent condensate formation with high functional loss (~60-70%); phase separation threshold effects mean 50% protein severely impairs sequestration capacity",
+    "rationale": "Condensate behaviour of SAMHD1 is shown in vitro (Smith 2025) and RNA condensates in cells (Maharana 2022). The earlier ~60-70% loss estimate rested on an assumed phase-separation threshold and is withdrawn; no A565T construct has been tested",
     "locEvidence": "S",
     "domain": "immune",
-    "lossLabel": "Significantly Impaired",
-    "lossKind": "loss",
-    "loss": 0.7,
+    "lossLabel": "A565T effect on dsRNA sequestration untested",
+    "lossKind": "untested",
     "refs": [
       "[38]",
-      "[39]"
+      "[39]",
+      "[69]"
     ],
     "layer": 2,
     "evidence_tier": "L2_recombinant",
@@ -1475,8 +1475,8 @@ export const FUNCTIONS = [
     "criticality": "Critical",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Protein oxidation at C522 creates sulfenic acid increasing ssDNA binding affinity 5-10 fold during S-phase; redox-dependent modulation of DNA repair function. Dysfunction combined with oxidative stress severely impairs DNA repair capacity",
-    "rationale": "NEW 2023-2025: Redox-regulated DNA repair modulation; A565T mutation combined with oxidative stress (common in ME/CFS) severely impairs S-phase DNA repair capacity",
+    "relevance": "Oxidation lowers dNTPase activity and raises ssDNA binding. C522 is the initial sensor of H2O2; the sulfenic acid then switches to a C341-C350 disulfide, which is the form seen in the inhibited, DNA-bound dimer. Oxidized wild type binds ssDNA about 40-fold tighter than reduced (Kd 0.8 vs 33 uM) and overhang/fork DNA about 5-fold tighter; C522A loses the effect. ssDNA binds at the A1/A2 regulatory sites of the dimer, and GTP competes with it. Oxidation occurs in S and G2/M in PC3 cells",
+    "rationale": "Simermeyer 2023 (recombinant protein, crystal structure, PC3 cells). The T592E mimic did not change ssDNA binding with or without oxidation. The A565T link (oxidative stress in ME/CFS combined with the mutation) is a hypothesis; no A565T construct has been tested",
     "locEvidence": "S",
     "domain": "genome",
     "lossLabel": "Moderately Impaired",
@@ -1652,7 +1652,7 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Obligate cooperative homotetramer assembly driven by dual-site nucleotide occupancy (GTP at Site 1, dGTP/dNTP at Site 2). Monomers and dimers lack catalytic dNTPase activity. Under basal unphosphorylated conditions, nucleotide clamping stabilizes the catalytic Dimer 1 interface in heterozygous 2xWT+2xA565T complexes (ipTM=0.81), preserving ~50% dosage-limited dNTPase capacity",
-    "rationale": "Dosage-limited haploinsufficiency model; full allosteric saturation (4xGTP + 4xATP) stabilizes the primary catalytic core, preventing complete tetramer collapse in the unphosphorylated basal state (~50% activity loss)",
+    "rationale": "Dosage-limited haploinsufficiency model; full allosteric saturation (4xGTP at A1 + 4xdNTP at A2) stabilizes the primary catalytic core, preventing complete tetramer collapse in the unphosphorylated basal state (~50% activity loss)",
     "locEvidence": "S",
     "domain": "dntp",
     "lossLabel": "Moderately Impaired",
@@ -1662,8 +1662,8 @@ export const FUNCTIONS = [
       "[49]",
       "[50]",
       "[51]",
-      "[55]",
-      "[63]"
+      "[63]",
+      "[66]"
     ],
     "evidence_tier": "L2_recombinant",
     "cell_context": [
@@ -1702,6 +1702,88 @@ export const FUNCTIONS = [
       "cd4_tcell",
       "hek293t",
       "ipsc"
+    ]
+  },
+  {
+    "id": "metal-center",
+    "label": "Active-Site Dinuclear Metal Center (Fe plus Fe/Mn/Mg)",
+    "compartment": "cytosol",
+    "tier": "regulation",
+    "layer": 1,
+    "category": "Catalytic Cofactor",
+    "criticality": "High",
+    "impact": "Moderate",
+    "priority": "Important",
+    "relevance": "Robust dNTPase activity is supported preferentially by transition metals. Iron preferentially occupies one position of the bimetallic core and recruits the second divalent metal; manganese can substitute but assembles the dinuclear site less efficiently; the second site is permissive (Mg2+, Mn2+, Fe2+). Mg2+ alone gives tetramer with minimal turnover. Transition metals are also higher-affinity allosteric activators than Mg2+",
+    "rationale": "Reframes 'active' as tetramer plus the right metal cofactor, not nucleotide occupancy alone. Recombinant truncated enzyme under controlled metal conditions; whether A565T changes metal occupancy or affinity has not been tested",
+    "locEvidence": "I",
+    "domain": "dntp",
+    "lossLabel": "A565T metal occupancy untested",
+    "lossKind": "untested",
+    "refs": [
+      "[67]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
+  },
+  {
+    "id": "c522-redox",
+    "label": "Redox Switch (C522 sensor, C341-C350 disulfide)",
+    "compartment": "cytosol",
+    "tier": "regulation",
+    "layer": 1,
+    "category": "Allosteric Regulation",
+    "criticality": "High",
+    "impact": "Moderate",
+    "priority": "Important",
+    "relevance": "Oxidation inhibits dNTPase activity by preventing tetramerization. C522 senses H2O2 first; its sulfenic acid then switches to a C341-C350 disulfide, the final inhibited form (Simermeyer 2023). Mixed-metal active sites retain catalytic activity under redox conditions that suppress homodinuclear diiron sites, so metal plasticity buffers SAMHD1 against oxidative inhibition (Calderone 2026)",
+    "rationale": "Recombinant data. Linked to the DNA-binding function through ox-dna-bind. A565T redox sensitivity untested",
+    "locEvidence": "I",
+    "domain": "dntp",
+    "lossLabel": "A565T redox sensitivity untested",
+    "lossKind": "untested",
+    "refs": [
+      "[4]",
+      "[67]"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "cd4_tcell",
+      "hek293t",
+      "ipsc"
+    ]
+  },
+  {
+    "id": "gtp-supply",
+    "label": "Guanine-Nucleotide Supply (IMPDH to GTP/dGTP)",
+    "compartment": "cytosol",
+    "tier": "regulation",
+    "layer": 1,
+    "category": "Nucleotide Metabolism",
+    "criticality": "High",
+    "impact": "Moderate",
+    "priority": "Important",
+    "relevance": "Cellular GTP and dGTP are the allosteric activators that fill Site 1. IMPDH inhibition (mycophenolic acid) depletes GTP and dGTP, which lowers SAMHD1 activity and raises ara-CTP in SAMHD1-proficient, but not SAMHD1-deficient, AML cells; the effect is seen in a subset of AML lines and not in ALL lines",
+    "rationale": "Cell-line result from the abstract (Klootsema 2026); full text not read. Whether lowering GTP further reduces residual dNTPase in heterozygous carriers is an open hypothesis, not clinical advice",
+    "locEvidence": "I",
+    "domain": "dntp",
+    "lossLabel": "Heterozygous effect untested",
+    "lossKind": "untested",
+    "refs": [
+      "[68]"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "hsc",
+      "monocyte"
     ]
   },
   {
@@ -1752,7 +1834,6 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.5,
     "refs": [
-      "[6]",
       "[21]"
     ],
     "evidence_tier": "L2_recombinant",
@@ -1782,7 +1863,6 @@ export const FUNCTIONS = [
     "lossKind": "loss",
     "loss": 0.4,
     "refs": [
-      "[6]",
       "[21]"
     ],
     "evidence_tier": "L3_cell_line",
@@ -1918,12 +1998,11 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Direct physical interaction with CtIP at double-strand breaks, stimulating CtIP endonuclease activity and loading the MRE11 complex to initiate 5'-3' DNA end resection for homologous recombination",
-    "rationale": "Definitive physical mechanism for SAMHD1's cancer-protective DNA repair role (Daddacha et al. 2017, Cell Rep); A565T in C-terminal region impairs CtIP recruitment",
+    "rationale": "Definitive physical mechanism for SAMHD1's cancer-protective DNA repair role (Daddacha et al. 2017, Cell Rep). CtIP binding maps to aa 465-562 (K484T disrupts it); Ala565 lies just outside that region and a 1-562 truncation still binds CtIP, so any A565T effect on CtIP recruitment is untested and would have to act through reduced abundance or C-terminal conformation",
     "locEvidence": "S",
     "domain": "genome",
-    "lossLabel": "Significantly Impaired",
-    "lossKind": "loss",
-    "loss": 0.75,
+    "lossLabel": "A565T effect on CtIP binding untested",
+    "lossKind": "untested",
     "refs": [
       "[15]",
       "[56]"
@@ -2040,14 +2119,15 @@ export const FUNCTIONS = [
     "impact": "Severe",
     "priority": "Most Urgent",
     "relevance": "Enzymatically hydrolyzes the active antimetabolite triphosphates of cytarabine (Ara-CTP), decitabine, and gemcitabine (dFdCTP), neutralizing their cytotoxic DNA chain termination effects",
-    "rationale": "Major clinical biomarker in hematologic and solid oncology (Schneider et al. 2017, Nat Med); high SAMHD1 causes drug resistance, while A565T haploinsufficiency confers marked drug hypersensitivity",
+    "rationale": "Major clinical biomarker in hematologic and solid oncology (Schneider et al. 2017, Nat Med); high SAMHD1 causes drug resistance, while A565T behaved like the knockout in a knockout-reconstitution glioblastoma cell model (Schneider S 2022 thesis); the heterozygous effect is untested",
     "locEvidence": "S",
     "domain": "dntp",
     "lossLabel": "Critically Impaired",
     "lossKind": "loss",
     "loss": 0.75,
     "refs": [
-      "[54]"
+      "[54]",
+      "[65]"
     ],
     "evidence_tier": "L2_recombinant",
     "cell_context": [
@@ -2069,16 +2149,17 @@ export const FUNCTIONS = [
     "criticality": "High",
     "impact": "Severe",
     "priority": "Most Urgent",
-    "relevance": "Impaired antimetabolite hydrolysis in SAMHD1 A565T carriers leads to intracellular accumulation of Ara-CTP / gemcitabine-TP, dramatically increasing therapeutic sensitivity and toxicity risk at standard oncology doses",
-    "rationale": "Critical pharmacogenomic precision medicine endpoint; dictates tailored dosing protocols for nucleoside analogue chemotherapies",
-    "locEvidence": "S",
+    "relevance": "Hypothesis for A565T carriers: impaired antimetabolite hydrolysis could raise intracellular Ara-CTP / gemcitabine-TP and therapeutic sensitivity. Supported in a knockout-reconstitution cell model (Schneider S 2022 thesis, higher Ara-CTP and knockout-like ED50); untested in heterozygous carriers",
+    "rationale": "Critical pharmacogenomic precision medicine endpoint; tailored dosing for nucleoside analogue chemotherapies is a research hypothesis for A565T carriers, not an established consequence",
+    "locEvidence": "I",
     "domain": "dntp",
-    "lossLabel": "Therapeutic Vulnerability",
-    "lossKind": "risk",
+    "lossLabel": "Carrier sensitivity is an untested hypothesis",
+    "lossKind": "untested",
     "refs": [
-      "[54]"
+      "[54]",
+      "[65]"
     ],
-    "evidence_tier": "L6_human_clinical",
+    "evidence_tier": "L3_cell_line",
     "cell_context": [
       "systemic_immune",
       "cns_neuro",

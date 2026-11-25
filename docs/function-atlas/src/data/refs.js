@@ -49,8 +49,8 @@ export const REFS = {
       "pmid": "37246644"
     },
     "atlas": {
-      "finding": "Protein oxidation at C522 (sulfenic acid) increases SAMHD1 ssDNA binding affinity 5-10 fold during S-phase",
-      "note": "Resolved 2026-09-14: author was previously stored as publisher name 'Academic OUP' and title was truncated. True source is Simermeyer TL et al., Nucleic Acids Res 2023;51(13):7014-7033 (PMID 37246644, DOI 10.1093/nar/gkad447)."
+      "finding": "Oxidation (C522 sensor, then C341-C350 disulfide) raises SAMHD1 ssDNA binding about 40-fold (Kd 0.8 vs 33 uM) and overhang/fork DNA about 5-fold; ssDNA binds the A1/A2 regulatory sites of the dimer and GTP competes; oxidation occurs in S and G2/M in PC3 cells",
+      "note": "Full text read 2026-11-25; earlier atlas wording (C522 sulfenic acid, 5-10 fold) corrected. Resolved 2026-09-14: author was previously stored as publisher name 'Academic OUP' and title was truncated. True source is Simermeyer TL et al., Nucleic Acids Res 2023;51(13):7014-7033 (PMID 37246644, DOI 10.1093/nar/gkad447)."
     }
   },
   "[5]": {
@@ -353,13 +353,15 @@ export const REFS = {
   },
   "[38]": {
     "bibliography": {
-      "short": "Bader AS et al. 2022 - LLPS",
-      "full": "Bader AS et al. SAMHD1 controls innate immunity by regulating condensation of immunostimulatory RNA. bioRxiv. 2022;doi:10.1101/2022.07.12.499661.",
-      "url": "https://www.biorxiv.org/content/10.1101/2022.07.12.499661v1.full-text"
+      "short": "Maharana S et al. 2022 - Mol Cell",
+      "full": "Maharana S, et al. SAMHD1 controls innate immunity by regulating condensation of immunogenic self RNA. Mol Cell. 2022;82(19):3712-3728.e10. (First posted as a bioRxiv preprint, 10.1101/2022.07.12.499661, listed there under a different first author.)",
+      "url": "https://doi.org/10.1016/j.molcel.2022.08.031",
+      "doi": "10.1016/j.molcel.2022.08.031",
+      "pmid": "36150385"
     },
     "atlas": {
-      "finding": "SAMHD1 acts as ssRNA-degrading RNase; loss causes RNA accumulation impairing condensate formation by LLPS; condensates sequester immunostimulatory dsRNA; dsRNA release in AGS cells causes aberrant innate immune activation through RIG-I-like receptors",
-      "flag": "preprint"
+      "finding": "SAMHD1 binds RNA and regulates RNA-containing condensates; loss leaves immunogenic dsRNA free and drives RIG-I-like receptor signalling and type I IFN",
+      "note": "Replaces the bioRxiv preprint previously cited here; the published Mol Cell paper is already in the immune atlas as maharana2022. The earlier wording 'ssRNA-degrading RNase' is withdrawn (see Seamon 2015, no active-site-associated nuclease activity). Abstract-level summary; full text not read."
     }
   },
   "[39]": {
@@ -628,6 +630,121 @@ export const REFS = {
     },
     "atlas": {
       "finding": "Heterozygous A565T modeling suggests preservation of basal allosteric catalytic core under nucleotide saturation (~50% dNTPase capacity), with simulated asymmetric latch torsional mismatch upon Thr592 phosphorylation (Dist_CTD_A2 deficit 4.4 Å, pLDDT -4.9) supporting an in-silico hypothesis of dominant-negative uncoupling of PTM-dependent replication fork protection, pending prospective biochemical validation"
+    }
+  },
+  "[64]": {
+    "bibliography": {
+      "short": "Coquel F et al. 2018 - Nature",
+      "full": "Coquel F, Silva MJ, Techer H, et al. SAMHD1 acts at stalled replication forks to prevent interferon induction. Nature. 2018;557(7703):57-61.",
+      "url": "https://doi.org/10.1038/s41586-018-0050-1",
+      "doi": "10.1038/s41586-018-0050-1",
+      "pmid": "29670289"
+    },
+    "atlas": {
+      "finding": "SAMHD1 promotes degradation of nascent DNA at stalled forks by stimulating MRE11 exonuclease activity, activating ATR-CHK1 and allowing restart; without it ssDNA fragments reach the cytosol and activate cGAS-STING",
+      "note": "Nature body text is paywalled; figures and Extended Data legends were read directly (2026-11-25). Verified from the figures: in SAMHD1-depleted HEK293T cells, phosphomimetic T592E restores fork speed (Fig 2f, 4.1 vs 2.2 um) and MRE11-dependent nascent-DNA degradation under HU (Fig 3b) and lowers cytosolic ssDNA (Fig 3c-d), whereas non-phosphorylatable T592A does not; K312A (dNTPase-dead) also rescues, so dNTPase activity is not required. Not tested with T592 variants per the legends: iPOND/nascent-DNA association (Fig 2b, Ext Data 2; wild type only) and the in vitro MRE11 stimulation, EMSA and MST binding assays (Fig 3e-f, Ext Data 7; purified SAMHD1, no phospho-variants or CDK inhibitor named). T592 variants were also tested for dNTP pools (Ext Data 4b) and CHK1 activation (Ext Data 5g). Cellular complementation shows a requirement for T592 phosphorylation in vivo, not that pT592 on monomers is needed for MRE11 or CtIP binding."
+    }
+  },
+  "[65]": {
+    "bibliography": {
+      "short": "Schneider S 2022 - LMU thesis",
+      "full": "Schneider S. The potential role of SAMHD1 in the chemotherapy of glioblastoma multiforme. PhD dissertation, Ludwig-Maximilians-Universitat Munchen (Max von Pettenkofer Institute, supervisor O. T. Keppler); 2022.",
+      "url": "https://edoc.ub.uni-muenchen.de/30871/",
+      "doi": "10.5282/edoc.30871"
+    },
+    "atlas": {
+      "finding": "In SAMHD1-knockout LN-18 glioblastoma cells reconstituted with A565T, protein was 2.4-fold lower than wild-type reconstitution, ara-C ED50 was comparable to knockout, and ara-CTP was raised",
+      "note": "Single-construct reconstitution in a knockout background, not heterozygous carriers. Record URL and DOI (10.5282/edoc.30871) taken from the LMU repository record."
+    }
+  },
+  "[66]": {
+    "bibliography": {
+      "short": "Orris B et al. 2022 - Nucleic Acids Res",
+      "full": "Orris B, Huynh KW, Ammirati M, Han S, Bolanos B, Carmody J, Petroski MD, Bosbach B, Shields DJ, Stivers JT. Phosphorylation of SAMHD1 Thr592 increases C-terminal domain dynamics, tetramer dissociation and ssDNA binding kinetics. Nucleic Acids Res. 2022;50(13):7545-7559.",
+      "url": "https://doi.org/10.1093/nar/gkac573",
+      "doi": "10.1093/nar/gkac573",
+      "pmid": "35801923"
+    },
+    "atlas": {
+      "finding": "T592 phosphorylation has only a small effect on dNTPase activity and ssDNA affinity but accelerates tetramer dissociation about 15-fold (with or without ssDNA); ssDNA competes with GTP at the A1 site; proposed rapid, regiospecific inactivation of pSAMHD1 dNTPase at stalled forks"
+    }
+  },
+  "[67]": {
+    "bibliography": {
+      "short": "Calderone LA et al. 2026 - ACS Chem Biol",
+      "full": "Calderone LA, Gizzi A, Pinninti S, Stivers JT, Pandelia ME. Transition Metal Activation Reframes SAMHD1 Regulation. ACS Chem Biol. 2026;21(8):2001-2011.",
+      "url": "https://doi.org/10.1021/acschembio.6c00438",
+      "doi": "10.1021/acschembio.6c00438",
+      "pmid": "42457644"
+    },
+    "atlas": {
+      "finding": "Robust SAMHD1 activity is supported preferentially by transition metals; iron organizes one site of the dinuclear core and recruits a permissive second divalent metal; Mn can substitute but assembles the site less efficiently; mixed-metal sites keep activity under redox conditions that suppress diiron sites; transition metals are higher-affinity allosteric activators than Mg2+",
+      "note": "Recombinant enzyme under controlled metal and redox conditions. No A565T construct."
+    }
+  },
+  "[68]": {
+    "bibliography": {
+      "short": "Klootsema Y et al. 2026 - Cell Cycle",
+      "full": "Klootsema Y, Tsesmetzis N, Sharma S, et al. Targeting IMPDH to inhibit SAMHD1 in KMT2A-rearranged leukaemia. Cell Cycle. 2026;25(1):1-19.",
+      "url": "https://doi.org/10.1080/15384101.2025.2601796",
+      "doi": "10.1080/15384101.2025.2601796",
+      "pmid": "41399259"
+    },
+    "atlas": {
+      "finding": "IMPDH inhibition (mycophenolic acid) depleted the allosteric SAMHD1 activators GTP and dGTP, raising active ara-C/F-ara-A triphosphates in SAMHD1-proficient but not SAMHD1-deficient AML cells; synergy in a subset of AML lines, not ALL lines",
+      "note": "Abstract read via PubMed; full text not read."
+    }
+  },
+  "[69]": {
+    "bibliography": {
+      "short": "Smith BE et al. 2025 - Biochemistry",
+      "full": "Smith BE, Pohnerkar A, Orris B, Bhat S, Egleston M, Stivers JT. ssDNA and ssRNA Promote Phase Condensation of SAMHD1. Biochemistry. 2025;64(18):3886-3900.",
+      "url": "https://doi.org/10.1021/acs.biochem.5c00422",
+      "doi": "10.1021/acs.biochem.5c00422",
+      "pmid": "40913614"
+    },
+    "atlas": {
+      "finding": "With ssDNA or ssRNA and 9% PEG 2000, SAMHD1 condenses into liquid-like droplets that need the SAM and C-terminal domains and are dissolved by A1-site ligands (GTP, dGTP) and small-molecule inhibitors; ssDNA-SAMHD1 condensates form in nuclei of microinjected human cells",
+      "note": "Abstract read via PubMed; full text not read in this session. Recombinant protein; no A565T construct."
+    }
+  },
+  "[70]": {
+    "bibliography": {
+      "short": "Liu J et al. 2023 - Oncogene",
+      "full": "Liu J, Zhou T, Dong X, et al. De-ubiquitination of SAMHD1 by USP7 promotes DNA damage repair to overcome oncogenic stress and affect chemotherapy sensitivity. Oncogene. 2023;42(22):1843-1856.",
+      "url": "https://doi.org/10.1038/s41388-023-02667-w",
+      "doi": "10.1038/s41388-023-02667-w",
+      "pmid": "37081042"
+    },
+    "atlas": {
+      "finding": "USP7 interacts with SAMHD1 and de-ubiquitinates it at K421, stabilizing the protein for interaction with CtIP in DNA damage repair; USP7 inhibitor lowers SAMHD1 and sensitizes tumour cells to chemotherapy in vitro and in vivo",
+      "note": "Abstract read via PubMed (PMC10238270); full text not read here. Human carcinoma cell lines and tumour models; no A565T construct."
+    }
+  },
+  "[71]": {
+    "bibliography": {
+      "short": "Saiada F et al. 2021 - Cell Biosci",
+      "full": "Saiada F, Zhang K, Li R. PIAS1 potentiates the anti-EBV activity of SAMHD1 through SUMOylation. Cell Biosci. 2021;11(1):127.",
+      "url": "https://doi.org/10.1186/s13578-021-00636-y",
+      "doi": "10.1186/s13578-021-00636-y",
+      "pmid": "34238351"
+    },
+    "atlas": {
+      "finding": "PIAS1 interacts with and SUMOylates SAMHD1; K469, K595 and K622 on the protein surface are the major SUMOylation sites; SUMOylation-deficient SAMHD1 loses anti-EBV activity; phosphorylated SAMHD1 can be SUMOylated and the reverse",
+      "note": "Abstract read via PubMed (PMC8264492); full text not read here. EBV lytic replication in cell lines; no A565T construct."
+    }
+  },
+  "[72]": {
+    "bibliography": {
+      "short": "Martinat C et al. 2021 - Nat Commun",
+      "full": "Martinat C, Cormier A, Tobaly-Tapiero J, et al. SUMOylation of SAMHD1 at Lysine 595 is required for HIV-1 restriction in non-cycling cells. Nat Commun. 2021;12(1):4582.",
+      "url": "https://doi.org/10.1038/s41467-021-24802-5",
+      "doi": "10.1038/s41467-021-24802-5",
+      "pmid": "34321470"
+    },
+    "atlas": {
+      "finding": "SUMOylation at K595 is required for a dNTPase-independent antiviral activity in non-cycling cells; cyclin/CDK phosphorylation of T592 in cycling cells antagonizes this antiviral activity (the two modifications are not shown to exclude each other)",
+      "note": "Abstract read via PubMed (PMC8319325); names K595 only. The 2020 bioRxiv version (10.1101/2020.06.04.133439) is the preprint. Claims about K469/K622 poly-SUMO chains under MG132 were not verified from the abstract."
     }
   }
 };

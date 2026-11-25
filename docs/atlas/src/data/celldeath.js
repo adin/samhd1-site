@@ -303,6 +303,90 @@ export const nodes = [
       "macrophage",
       "microglia"
     ]
+  },
+  {
+    "id": "gas6",
+    "label": "GAS6",
+    "full": "Growth arrest-specific 6 (AXL ligand, bridges phosphatidylserine)",
+    "compartment": "extracellular",
+    "klass": "ligand",
+    "pos": [
+      -36,
+      96,
+      30
+    ],
+    "summary": "Secreted bridging ligand that links phosphatidylserine on a target cell to the AXL receptor on a phagocyte.",
+    "detail": "Transcriptomics of SAMHD1-knockdown HMC3 microglia identified GAS6 as a key upregulated molecule. Knocking down GAS6 abolished the enhanced phagocytosis of phosphatidylserine-exposing neurons.",
+    "samhd1": "Raised when SAMHD1 is knocked down in a microglial cell line. Whether partial loss (A565T carrier) raises it is untested; whether dNTPase or a scaffold function is responsible is untested.",
+    "refs": [
+      "cui2026gas6axl"
+    ],
+    "cellContextNote": "Cell context reflects the models used: HMC3 human microglial cells and Samhd1 knockout rats (Cui 2026, abstract read; full text not retrieved). Not shown in primary human microglia or human AGS brain.",
+    "evidence": "S",
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "microglia"
+    ],
+    "pathways": [
+      "celldeath"
+    ],
+    "lod": 2
+  },
+  {
+    "id": "axl",
+    "label": "AXL",
+    "full": "AXL receptor tyrosine kinase (TAM family)",
+    "compartment": "membrane",
+    "klass": "receptor",
+    "pos": [
+      -30,
+      63,
+      14
+    ],
+    "summary": "Phagocyte receptor that binds GAS6 and drives engulfment of phosphatidylserine-exposing cells; signals through PI3K/AKT.",
+    "detail": "Pharmacological AXL inhibition abolished the enhanced phagocytosis by SAMHD1-knockdown microglia and suppressed PI3K and AKT phosphorylation. The authors say the axis acts 'potentially' through PI3K/AKT.",
+    "samhd1": "Downstream of the SAMHD1-loss readout in microglia; no direct SAMHD1 interaction is claimed.",
+    "refs": [
+      "cui2026gas6axl"
+    ],
+    "cellContextNote": "Cell context reflects the models used: HMC3 human microglial cells and Samhd1 knockout rats (Cui 2026, abstract read; full text not retrieved). Not shown in primary human microglia or human AGS brain.",
+    "evidence": "S",
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "microglia"
+    ],
+    "pathways": [
+      "celldeath"
+    ],
+    "lod": 2
+  },
+  {
+    "id": "microglia-phago",
+    "label": "Microglial neuron phagocytosis",
+    "full": "Microglial engulfment of phosphatidylserine-exposing, including live, neurons",
+    "compartment": "membrane",
+    "klass": "outcome",
+    "pos": [
+      -44,
+      66,
+      4
+    ],
+    "summary": "SAMHD1-deficient microglia engulf more neurons, including live ones, and induce phosphatidylserine exposure on viable neurons.",
+    "detail": "In Samhd1 knockout rats, hippocampal neuronal apoptosis rose and neuronal density fell. In vitro, SAMHD1-knockdown HMC3 microglia took up more microspheres, apoptotic neurons and live neurons (pHrodo, live-cell imaging). Proposed as a basis for brain atrophy in AGS.",
+    "samhd1": "A homozygous-loss (AGS) phenotype in a knockout rat and a knockdown cell line. It is not evidence about heterozygous A565T carriers, and the rat-to-human step is untested.",
+    "refs": [
+      "cui2026gas6axl"
+    ],
+    "cellContextNote": "Cell context reflects the models used: HMC3 human microglial cells and Samhd1 knockout rats (Cui 2026, abstract read; full text not retrieved). Not shown in primary human microglia or human AGS brain.",
+    "evidence": "S",
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "microglia"
+    ],
+    "pathways": [
+      "celldeath"
+    ],
+    "lod": 2
   }
 ];
 
@@ -828,6 +912,63 @@ export const edges = [
       "hepatic",
       "musculoskeletal"
     ]
+  },
+  {
+    "from": "samhd1",
+    "to": "gas6",
+    "kind": "inhibit",
+    "label": "SAMHD1 loss raises GAS6 in microglia (mechanism untested)",
+    "interaction_type": "expression_suppression (mechanism untested)",
+    "pathways": [
+      "celldeath"
+    ],
+    "evidence": "S",
+    "refs": [
+      "cui2026gas6axl"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "microglia"
+    ],
+    "cellContextNote": "Cell context reflects the models used: HMC3 human microglial cells and Samhd1 knockout rats (Cui 2026, abstract read; full text not retrieved). Not shown in primary human microglia or human AGS brain."
+  },
+  {
+    "from": "gas6",
+    "to": "axl",
+    "kind": "bind",
+    "label": "GAS6 bridges phosphatidylserine to AXL",
+    "interaction_type": "ligand_receptor_binding",
+    "pathways": [
+      "celldeath"
+    ],
+    "evidence": "S",
+    "refs": [
+      "cui2026gas6axl"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "microglia"
+    ],
+    "cellContextNote": "Cell context reflects the models used: HMC3 human microglial cells and Samhd1 knockout rats (Cui 2026, abstract read; full text not retrieved). Not shown in primary human microglia or human AGS brain."
+  },
+  {
+    "from": "axl",
+    "to": "microglia-phago",
+    "kind": "activate",
+    "label": "AXL activity required for enhanced engulfment (inhibitor and GAS6 knockdown abolish it)",
+    "interaction_type": "receptor_signalling",
+    "pathways": [
+      "celldeath"
+    ],
+    "evidence": "S",
+    "refs": [
+      "cui2026gas6axl"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "cell_context": [
+      "microglia"
+    ],
+    "cellContextNote": "Cell context reflects the models used: HMC3 human microglial cells and Samhd1 knockout rats (Cui 2026, abstract read; full text not retrieved). Not shown in primary human microglia or human AGS brain."
   }
 ];
 

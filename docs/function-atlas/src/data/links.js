@@ -862,6 +862,66 @@ export const LINKS = [
     ]
   },
   {
+    "from": "metal-center",
+    "to": "dntpase",
+    "kind": "maintains",
+    "evidence": "I",
+    "detail": "Iron-organized dinuclear metal center supports catalysis; Mg2+ alone gives tetramer with minimal turnover. In vitro (Calderone 2026); A565T metal occupancy untested",
+    "evidence_tier": "L1_in_silico",
+    "interaction_type": "signal_transduction",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "microglia",
+      "cd4_tcell"
+    ]
+  },
+  {
+    "from": "c522-redox",
+    "to": "dntpase",
+    "kind": "prevents",
+    "evidence": "I",
+    "detail": "Oxidation (C522 sensor, C341-C350 disulfide) prevents tetramerization and dNTPase activity; mixed Fe-Mg active sites tolerate redox conditions that suppress diiron sites (Simermeyer 2023; Calderone 2026; recombinant)",
+    "evidence_tier": "L1_in_silico",
+    "interaction_type": "allosteric_suppression",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "microglia",
+      "cd4_tcell"
+    ]
+  },
+  {
+    "from": "c522-redox",
+    "to": "ox-dna-bind",
+    "kind": "drives",
+    "evidence": "I",
+    "detail": "The same oxidation raises ssDNA binding (about 40-fold) and overhang/fork binding (about 5-fold) by locking the dimer onto the A1/A2 regulatory sites; C522A loses the effect (Simermeyer 2023, recombinant)",
+    "evidence_tier": "L1_in_silico",
+    "interaction_type": "signal_transduction",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "microglia",
+      "cd4_tcell"
+    ]
+  },
+  {
+    "from": "gtp-supply",
+    "to": "site1-gtp",
+    "kind": "drives",
+    "evidence": "I",
+    "detail": "GTP/dGTP availability sets Site 1 occupancy; IMPDH inhibition depletes GTP/dGTP and lowers SAMHD1 activity in proficient AML cells (Klootsema 2026, abstract)",
+    "evidence_tier": "L1_in_silico",
+    "interaction_type": "homeostatic_coupling",
+    "cell_context": [
+      "monocyte",
+      "macrophage",
+      "microglia",
+      "cd4_tcell"
+    ]
+  },
+  {
     "from": "site1-gtp",
     "to": "tetramer-switch",
     "kind": "drives",
@@ -1331,22 +1391,7 @@ export const LINKS = [
     "to": "fork",
     "kind": "maintains",
     "evidence": "S",
-    "detail": "Phosphorylated SAMHD1 preserves replication fork protection during DNA synthesis; asymmetric latch uncoupling in modeled heterozygous A565T complexes is hypothesized to impair fork stability via dominant-negative kinetics",
-    "evidence_tier": "L1_in_silico",
-    "interaction_type": "homeostatic_coupling",
-    "cell_context": [
-      "monocyte",
-      "macrophage",
-      "microglia",
-      "cd4_tcell"
-    ]
-  },
-  {
-    "from": "p-t592",
-    "to": "dna-resection",
-    "kind": "maintains",
-    "evidence": "I",
-    "detail": "Symmetric phosphorylation-gated latch transition is required for coordinated CtIP/MRE11 recruitment to DNA double-strand breaks during homologous recombination",
+    "detail": "In SAMHD1-depleted HEK293T cells, phosphomimetic T592E (not T592A) restores fork speed, MRE11-dependent degradation of nascent DNA under HU and suppression of cytosolic ssDNA (Coquel 2018, Figs 2f, 3b-d); a cellular requirement for T592 phosphorylation, not shown to act through binding by pT592 monomers. Effect of A565T on this arm is untested.",
     "evidence_tier": "L1_in_silico",
     "interaction_type": "homeostatic_coupling",
     "cell_context": [

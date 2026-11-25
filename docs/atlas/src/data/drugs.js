@@ -374,8 +374,8 @@ export const nodes = [
     ],
     "lod": 2,
     "evidence": "S",
-    "summary": "SAMHD1 hydrolyzes and inactivates Ara-CTP; haploinsufficiency causes marked hypersensitivity and clinical chemotherapy toxicity.",
-    "detail": "Schneider et al. (Nature Medicine 2017) and Herold et al. (2017) demonstrated that SAMHD1 is the primary cellular triphosphohydrolase degrading Ara-CTP. Defective tetramer assembly prevents drug inactivation, creating synthetic lethality in AML/hematological malignancies but severe host toxicity under standard dosing.",
+    "summary": "SAMHD1 hydrolyzes and inactivates Ara-CTP; loss of SAMHD1 sensitizes AML cells. Whether heterozygous (haploinsufficient) carriers are hypersensitive or at risk of chemotherapy toxicity is untested.",
+    "detail": "Schneider et al. (Nature Medicine 2017) and Herold et al. (2017) demonstrated that SAMHD1 is the primary cellular triphosphohydrolase degrading Ara-CTP. Loss of SAMHD1 prevents drug inactivation and sensitizes AML cells. Whether heterozygous carriers are hypersensitive or at risk of chemotherapy toxicity has not been tested.",
     "refs": [
       "schneider2017",
       "herold2017"
@@ -916,6 +916,94 @@ export const nodes = [
     "refs": [
       "novick1999"
     ]
+  },
+  {
+    "id": "sam-5a",
+    "label": "Compound 5a (dG-linked)",
+    "full": "Deoxyguanosine-linked bifunctional SAMHD1 inhibitor (A1-site ligand)",
+    "pos": [
+      -22,
+      18,
+      30
+    ],
+    "summary": "Competes with GTP at the A1 site, locks SAMHD1 as an inactive dimer, and also blocks ssDNA/ssRNA binding.",
+    "detail": "Built from a dG fragment that targets the A1 site after a 69,000-compound screen found no viable dNTPase inhibitors. 5a is a competitive inhibitor against GTP at A1, induces inactive dimers that cannot tetramerize, and also prevents ssDNA and ssRNA binding, so one molecule disrupts both the dNTPase and the nucleic-acid functions. The structure shows the biphenyl group impeding a conformational change in the C-terminal lobe required for tetramerization. Its pocket is anchored in A1; its distance from residue 565 has not been measured. The monocyte/macrophage cell context is a modelling target, not a tested context.",
+    "samhd1": "A tool compound that lowers SAMHD1 function on purpose. In a haploinsufficient cell it would push the same direction as A565T, not rescue it. It is a precedent for what a rescue ligand must NOT do: it blocks tetramer assembly and the scaffold-type nucleic-acid functions together.",
+    "refs": [
+      "egleston2023"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "compartment": "cytosol",
+    "klass": "drug",
+    "pathways": [
+      "drugs"
+    ],
+    "lod": 2,
+    "evidence": "S",
+    "cell_context": [
+      "monocyte",
+      "macrophage"
+    ],
+    "cellContextNote": "Cell context is a modelling target, not where the compound was tested: the cited evidence is recombinant protein or non-myeloid cell lines, so it is not evidence about monocytes or macrophages."
+  },
+  {
+    "id": "th6342",
+    "label": "TH6342",
+    "full": "Small-molecule SAMHD1 inhibitor (non-competitive, pre-tetrameric)",
+    "pos": [
+      4,
+      10,
+      44
+    ],
+    "summary": "Engages pre-tetrameric SAMHD1 and prevents oligomerization and allosteric activation without occupying nucleotide pockets.",
+    "detail": "Found in a biochemical screening funnel with low micromolar potency against physiological and oncology-drug-derived substrates (including ara-CTP), with an inactive control analogue TH7126. Kinetic and thermal-shift data show it binds pre-tetrameric protein and deters oligomerization. Its binding site is unknown; the N-terminal SAM domain is not required for inhibition. In THP-1 cells it did not sensitize cells to cytarabine, with or without SAMHD1, and did not consistently engage SAMHD1 in intact cells or lysates in the single-temperature assays; the authors conclude the chemotype could not inhibit cellular SAMHD1 (Zhang 2024, full text read). In Zhang 2024 the cellular tests were in THP-1 monocytic leukaemia cells and were negative; primary monocytes and macrophages were not tested there.",
+    "samhd1": "A tool compound that lowers SAMHD1 dNTPase function. Predicted to mimic loss of function in a haploinsufficient cell, not to rescue it.",
+    "refs": [
+      "zhang2024th6342",
+      "dirks2024th6342"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "compartment": "cytosol",
+    "klass": "drug",
+    "pathways": [
+      "drugs"
+    ],
+    "lod": 2,
+    "evidence": "S",
+    "cell_context": [
+      "monocyte",
+      "macrophage"
+    ],
+    "cellContextNote": "Cell context is a modelling target for primary monocytes and macrophages, which were not tested. In Zhang 2024 the cellular tests were in THP-1 monocytic leukaemia cells and were negative. Results from other cell lines would not by themselves establish SAMHD1 target engagement."
+  },
+  {
+    "id": "np12",
+    "label": "NP12 (SAMHD1 PROTAC)",
+    "full": "First SAMHD1 PROTAC degrader with intracellular activity",
+    "pos": [
+      -18,
+      10,
+      46
+    ],
+    "summary": "Degrades SAMHD1 protein (DC50 1.2 uM at 48 h, Dmax 89% at 5 uM) and sensitizes cells to ara-C.",
+    "detail": "Reported as the first SAMHD1 degrader that works in cells; it binds SAMHD1 in cells with low off-target effects and delayed bleomycin-induced pulmonary fibrosis in mice. In the supporting information, ara-C CC50 fell about 6-fold in A549 (2300 to 370 nM), about 9-fold in HCT116, 6.5-fold in MCF-7 and 9-fold in HL60-rAra-C after NP12 treatment. The authors state existing inhibitors only act in biochemical assays. The monocyte/macrophage cell context is a modelling target, not a tested context.",
+    "samhd1": "Removes the whole protein, so it removes scaffold-type functions as well as the dNTPase. In a haploinsufficient carrier, which keeps about half the protein, further loss is expected to be harmful; it is a tool for testing dependence, not a therapy for A565T.",
+    "refs": [
+      "chen2026np12"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "compartment": "cytosol",
+    "klass": "drug",
+    "pathways": [
+      "drugs"
+    ],
+    "lod": 2,
+    "evidence": "S",
+    "cell_context": [
+      "monocyte",
+      "macrophage"
+    ],
+    "cellContextNote": "Cell context is a modelling target, not where the compound was tested: the cited evidence is recombinant protein or non-myeloid cell lines, so it is not evidence about monocytes or macrophages."
   }
 ];
 
@@ -1166,7 +1254,7 @@ export const edges = [
     "from": "samhd1",
     "to": "arac",
     "kind": "inhibit",
-    "label": "hydrolyzes Ara-CTP; haploinsufficiency causes hypersensitivity",
+    "label": "SAMHD1 reduces Ara-CTP by hydrolysis; A565T as the only SAMHD1 present (reconstitution in LN-18 GBM Samhd1-KO cells, not a genotyped homozygote) gave an ara-C ED50 like the knockout, i.e. maximal Ara sensitivity (Schneider 2022 thesis); the atlas baseline is heterozygous haploinsufficiency, and the heterozygous carrier effect is untested",
     "pathways": [
       "drugs",
       "genome"
@@ -1174,7 +1262,8 @@ export const edges = [
     "evidence": "S",
     "refs": [
       "schneider2017",
-      "herold2017"
+      "herold2017",
+      "schneider2022"
     ],
     "evidence_tier": "L4_primary_human",
     "interaction_type": "allosteric_suppression",
@@ -1655,6 +1744,66 @@ export const edges = [
       "macrophage"
     ],
     "cellContextNote": "Fixed 2026-09-15 (cell_context literature-verification audit): cd4_tcell dropped, microglia deliberately not added -- matches the tofacitinib node's own correction (see that node's note; baker2026's patient specifically lacked AGS neurological/CNS features)."
+  },
+  {
+    "from": "sam-5a",
+    "to": "samhd1",
+    "kind": "inhibit",
+    "label": "competes with GTP at A1; inactive dimers; also blocks ssDNA/ssRNA binding",
+    "pathways": [
+      "drugs"
+    ],
+    "evidence": "S",
+    "refs": [
+      "egleston2023"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "interaction_type": "allosteric_suppression",
+    "cell_context": [
+      "monocyte",
+      "macrophage"
+    ],
+    "cellContextNote": "Cell context is a modelling target, not where the compound was tested: the cited evidence is recombinant protein or non-myeloid cell lines, so it is not evidence about monocytes or macrophages."
+  },
+  {
+    "from": "th6342",
+    "to": "samhd1",
+    "kind": "inhibit",
+    "label": "non-competitive; engages pre-tetrameric SAMHD1, blocks oligomerization",
+    "pathways": [
+      "drugs"
+    ],
+    "evidence": "S",
+    "refs": [
+      "zhang2024th6342",
+      "dirks2024th6342"
+    ],
+    "evidence_tier": "L2_recombinant",
+    "interaction_type": "allosteric_suppression",
+    "cell_context": [
+      "monocyte",
+      "macrophage"
+    ],
+    "cellContextNote": "Cell context is a modelling target for primary monocytes and macrophages, which were not tested. In Zhang 2024 the cellular tests were in THP-1 monocytic leukaemia cells and were negative. Results from other cell lines would not by themselves establish SAMHD1 target engagement."
+  },
+  {
+    "from": "np12",
+    "to": "samhd1",
+    "kind": "degrade",
+    "label": "PROTAC degradation, DC50 1.2 uM (48 h), Dmax 89% at 5 uM",
+    "pathways": [
+      "drugs"
+    ],
+    "evidence": "S",
+    "refs": [
+      "chen2026np12"
+    ],
+    "evidence_tier": "L3_cell_line",
+    "interaction_type": "ubiquitination",
+    "cell_context": [
+      "monocyte",
+      "macrophage"
+    ],
+    "cellContextNote": "Cell context is a modelling target, not where the compound was tested: the cited evidence is recombinant protein or non-myeloid cell lines, so it is not evidence about monocytes or macrophages."
   }
 ];
-

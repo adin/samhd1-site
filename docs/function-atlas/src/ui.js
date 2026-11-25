@@ -156,6 +156,10 @@ export function renderInspector(id, cb) {
     } else if (kind === 'protective') {
       p.push(`<div class="loss-txt">Reduced SAMHD1 is <b>protective</b> here — the one node ` +
              `in the atlas where losing function helps.</div>`);
+    } else if (kind === 'untested') {
+      p.push(`<div class="loss-txt"><b>No measured A565T effect.</b> ${esc(n.lossLabel)}. ` +
+             `The node is shown because it shapes how SAMHD1 works, not because a ` +
+             `heterozygous deficit has been measured here.</div>`);
     } else {
       p.push(`<div class="loss-txt">${esc(n.lossLabel)} — a long-term probabilistic risk, ` +
              `not a measurable per-cell deficit. Not on the same scale as the percentages elsewhere.</div>`);
